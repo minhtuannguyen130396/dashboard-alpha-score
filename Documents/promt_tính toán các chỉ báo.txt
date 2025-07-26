@@ -1,0 +1,32 @@
+- Hàm tính toán các chỉ báo
+a)Input:
+list data của class: class StockRecord:
+    date: datetime
+    symbol: str
+    priceHigh: float
+    priceLow: float
+    priceOpen: float
+    priceAverage: float
+    priceClose: float
+    priceBasic: float
+    totalVolume: float
+    dealVolume: float
+    putthroughVolume: float
+    totalValue: float
+    putthroughValue: float
+    buyForeignQuantity: float
+    buyForeignValue: float
+    sellForeignQuantity: float
+    sellForeignValue: float
+    buyCount: float
+    buyQuantity: float
+    sellCount: float
+    sellQuantity: float
+    adjRatio: float
+    currentForeignRoom: float
+    propTradingNetDealValue: Optional[float]
+    propTradingNetPTValue: Optional[float]
+    propTradingNetValue: Optional[float]
+    unit: float
+output: chỉ báo 
+		

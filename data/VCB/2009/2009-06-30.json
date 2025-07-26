@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2009-06-30T00:00:00",
+    "symbol": "VCB",
+    "priceHigh": 60.0,
+    "priceLow": 60.0,
+    "priceOpen": 60.0,
+    "priceAverage": 60.0,
+    "priceClose": 60.0,
+    "priceBasic": 0.0,
+    "totalVolume": 294070.0,
+    "dealVolume": 294070.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 17644200000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 4100.0,
+    "buyForeignValue": 246000000.0,
+    "sellForeignQuantity": 0.0,
+    "sellForeignValue": 0.0,
+    "buyCount": 6907.0,
+    "buyQuantity": 19491860.0,
+    "sellCount": 69.0,
+    "sellQuantity": 294070.0,
+    "adjRatio": 6.5221165333460815,
+    "currentForeignRoom": 82612532.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

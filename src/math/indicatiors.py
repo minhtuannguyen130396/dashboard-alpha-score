@@ -5,10 +5,15 @@ import math
 import statistics
 from src.base.load_stock_data import StockRecord
 
-
 # Helper to extract list of floats
 def _extract(records: List[StockRecord], attr: str) -> List[float]:
     return [getattr(r, attr) for r in records]
+def average_volume(records: List[StockRecord], period: int = 10) -> float:
+    """Tính trung bình khối lượng trong n phiên gần nhất"""
+    volumes = [r.totalVolume for r in records[-period:] if r.totalVolume is not None]
+    if not volumes:
+        return 0.0
+    return sum(volumes) / len(volumes)
 
 # =========================
 # Nhóm 1: Trung bình động
@@ -608,6 +613,59 @@ class IndicatorGroup4:
             result.append(cum_vtp / cum_vol if cum_vol != 0 else None)
         print(f"[MATH][VWAP] Last point: {result[-1]}")
         return result
+    @staticmethod 
+    def is_big_buyer(records: List[StockRecord],pretiod :int = 14) -> List[bool]:
+        """Kiểm tra xem có nhà đầu tư lớn mua vào hay không"""
+        if not records:
+            return False
+        
+        def average_buy_size(_records: List[StockRecord], _period: int = 14) -> float:
+            buy_sizes = []
+            for r in _records[-_period-1:-1]:  # lấy 10 phiên trước phiên hiện tại
+                if r.buyCount and r.buyQuantity:
+                    buy_sizes.append(r.buyQuantity / r.buyCount)
+            if not buy_sizes:
+                return 0.0
+            return sum(buy_sizes) / len(buy_sizes)
+        
+        result : List[bool] = []
+        for i, record in enumerate(records):
+            if i <= pretiod:
+                result.append(False)
+            else:
+                if record.propTradingNetValue and record.propTradingNetValue > 0:
+                    result.append(True)
+                    continue
+                if record.buyForeignQuantity > record.sellForeignQuantity:
+                    result.append(True)
+                    continue
+                if record.buyCount and record.buyQuantity:
+                    avg_buy_size = record.buyQuantity / record.buyCount
+                    if avg_buy_size > 1.5 * average_buy_size(_records= records,_period = pretiod):  # tuỳ theo mã cổ phiếu
+                        result.append(True)
+                        continue
+                result.append(False)
+                
+        return result
+    @staticmethod
+    def is_fomo_by_retail(records: List[StockRecord],period:int = 14) -> List[bool]:
+        """Kiểm tra xem có hiện tượng FOMO (Fear of Missing Out) từ nhà đầu tư nhỏ lẻ hay không"""
+        if not records:
+            return []
+        result: List[bool] = []
+        for index, record in enumerate(records):
+            if index <= period:
+                result.append(False)
+                continue
+            if record.totalVolume > 2 * average_volume(records, period):
+            # nhưng không có tự doanh hoặc ngoại mua
+                if (not record.propTradingNetValue or record.propTradingNetValue <= 0) and \
+                    record.buyForeignQuantity <= record.sellForeignQuantity:
+                    result.append(True)
+                    continue
+            result.append(False)
+        return result
+        
 # =========================
 # Nhóm 5: Breadth & Market-Strength (Độ rộng thị trường)
 # =========================
@@ -756,3 +814,4 @@ class IndicatorGroup6:
                     result.append(None)
         print(f"[MATH][Correlation] Last point: {result[-1]}")
         return result
+    

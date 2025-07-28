@@ -147,12 +147,23 @@ def draw_candlestick_plotly(stock_records: List[StockRecord],
         name='EMA Volume (14 days)',
         yaxis='y2'
     ))
+    symbol = stock_records[-1].symbol
+    current_date_str = datetime.now().strftime('%Y-%m-%d')
+    output_dir = os.path.join('chart', current_date_str)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    output_dir = os.path.join(output_dir, symbol)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
     
-    fig.update_layout(title='Candlestick Chart with Buy/Sell/Adjustment Signals (Plotly)',
+    fig.update_layout(title=f"[{symbol}] Từ {stock_records[0].date.strftime('%Y-%m-%d')} đến {stock_records[-1].date.strftime('%Y-%m-%d')}",
                       xaxis_title='Date', yaxis_title='Price',
                       xaxis_rangeslider_visible=False)
-
-    fig.write_html("candlestick_chart.html", auto_open=False)
-    open_html_in_chrome("candlestick_chart.html")
+    file_name = f"chart_{stock_records[-1].symbol}_{stock_records[0].date.strftime('%Y-%m-%d')}_{stock_records[-1].date.strftime('%Y-%m-%d')}.html"
+    fig.write_html(
+        os.path.join(output_dir, file_name),  
+        auto_open=False
+    )
+    open_html_in_chrome(os.path.join(output_dir, file_name))
 
   

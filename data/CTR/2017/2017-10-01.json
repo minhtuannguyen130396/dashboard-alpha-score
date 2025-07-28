@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2017-10-31T00:00:00",
+    "symbol": "CTR",
+    "priceHigh": 35.6,
+    "priceLow": 28.0,
+    "priceOpen": 35.6,
+    "priceAverage": 28.741102181400688,
+    "priceClose": 28.0,
+    "priceBasic": 26.0,
+    "totalVolume": 174200.0,
+    "dealVolume": 174200.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 5006700000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 0.0,
+    "buyForeignValue": 0.0,
+    "sellForeignQuantity": 0.0,
+    "sellForeignValue": 0.0,
+    "buyCount": 190.0,
+    "buyQuantity": 217200.0,
+    "sellCount": 127.0,
+    "sellQuantity": 369300.0,
+    "adjRatio": 2.820403950878269,
+    "currentForeignRoom": 19864818.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

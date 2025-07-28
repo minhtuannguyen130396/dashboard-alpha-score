@@ -11,8 +11,17 @@ HEADERS           = {
     'Authorization': f'Bearer {BEARER_TOKEN}',
     'Accept'       : 'application/json'
 }
+IS_FETCH_ALL_DATA = True  # True: lấy tất cả dữ liệu, False: lấy dữ liệu mới
+IS_WEEKLY_FETCH = True  # True: lấy dữ liệu hàng tháng, False: lấy dữ liệu hàng ngày
+DATE_START_FETCH = '2025-07-01'  # Ngày bắt đầu lấy dữ liệu
+LIST_VN_30 = 'Stock_List\stock_vn_30.txt'
+LIST_MID_CAB = 'Stock_List\stock_mid_cab.txt'
+LIST_LARGE_CAB = 'Stock_List\stock_large_cab.txt'
+LIST_OTHER = 'Stock_List\stock_other.txt'
+#-----------------------------
 
-def load_stocks_from_txt(path='stock_list.txt'):
+
+def load_stocks_from_txt(path=LIST_MID_CAB):
     with open(path, 'r', encoding='utf-8') as f:
         content = f.read().strip()
     try:
@@ -30,6 +39,21 @@ def load_stocks_from_txt(path='stock_list.txt'):
                     'ipo_date'  : parts[1]
                 })
         return stocks
+list_stock_name = []
+#----Hiệu chỉnh danh sách cổ phiếu cần lấy dữ liệu------
+if IS_FETCH_ALL_DATA:
+    #load danh sách cổ phiếu lấy hàng tháng
+    for file_stock_name in [LIST_VN_30, LIST_MID_CAB, LIST_LARGE_CAB]:
+        for name in  load_stocks_from_txt(file_stock_name):
+            list_stock_name.append(name)       
+else:
+    # load danh sách cổ phiếu mới 
+    for name in load_stocks_from_txt(LIST_OTHER):
+        list_stock_name.append(name)
+        
+print(f"Total stocks to fetch: {len(list_stock_name)}")
+#-------------------------------------------------------
+
 
 def end_of_month(d: date) -> date:
     """Trả về ngày cuối cùng của tháng chứa d."""
@@ -37,16 +61,18 @@ def end_of_month(d: date) -> date:
     return first_next - timedelta(days=1)
 
 # Load danh sách
-stocks = load_stocks_from_txt()
 today  = date.today()
 
-for stock in stocks:
+for stock in list_stock_name:
     symbol     = stock['share_code']
     ipo        = datetime.strptime(stock['ipo_date'], '%Y-%m-%d').date()
-    # bắt đầu từ IPO
-    #current = ipo
-    current = datetime.strptime('2024-01-01', '%Y-%m-%d').date()
 
+    # bắt đầu từ IPO
+    if IS_WEEKLY_FETCH:
+        current = datetime.strptime(DATE_START_FETCH, '%Y-%m-%d').date()
+    else:
+        current = ipo
+        
     base_dir = os.path.join(os.getcwd(), 'data', symbol)
     os.makedirs(base_dir, exist_ok=True)
 

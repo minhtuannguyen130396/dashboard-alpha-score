@@ -42,8 +42,8 @@ def detect_market_behavior(
     lower_therious = np.min(list_point)
     print(f"Lower threshold: {lower_therious} \nHigher threshold: {higher_therious}")
     # Xác định điểm mua và bán dựa trên ngưỡng
-    buy_mask = np.array(list_point) == higher_therious
-    sell_mask = np.array(list_point) <= sale_threshold
+    buy_mask = np.array(list_point) == higher_therious -1 
+    sell_mask = np.array(list_point) <= lower_therious
     marketBehavior.buy_point = buy_mask.tolist()
     marketBehavior.sale_point = sell_mask.tolist()
     # Tính toán khối lượng và đường trung bình khối lượng

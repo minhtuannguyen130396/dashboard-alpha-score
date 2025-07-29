@@ -16,15 +16,30 @@ def open_html_in_chrome(path_to_html: str):
     webbrowser.get(chrome_path).open('file://' + os.path.realpath(path_to_html))
 
 
-def draw_candlestick_plotly(stock_records: List[StockRecord], 
-                            marketBehavior: MartketBehaviorDetector): 
+def draw_candlestick_plotly(
+    stock_records: List[StockRecord], 
+    marketBehavior: MartketBehaviorDetector, 
+    actual_sale_point: List[int],
+    actual_buy_point: List[int],
+    cash:float)    -> None:
+                             
+    """Vẽ biểu đồ nến sử dụng Plotly cho dữ liệu cổ phiếu.  
+    Thêm các điểm mua/bán và khối lượng giao dịch.
+    Args:
+        stock_records (List[StockRecord]): Danh sách các bản ghi cổ phiếu.
+        marketBehavior (MartketBehaviorDetector): Đối tượng chứa các điểm mua/bán và thông tin thị trường.
+    """
+
+
     sale_point = marketBehavior.sale_point
     buy_point = marketBehavior.buy_point
     big_buyer = marketBehavior.big_buyer
     fomo_retail = marketBehavior.fomo_retail
     ema_volume = marketBehavior.ema_volume
     total_volume = marketBehavior.total_volume
-    
+    actual_sale_point_converted = [True if actual_sale_point[i] == 1 or actual_sale_point[i] == -1 else False for i in range(len(stock_records))]
+    actual_buy_point_converted = [True if actual_buy_point[i] == 1 else False for i in range(len(stock_records))]
+  
     if len(stock_records) != len(sale_point):
         raise ValueError("Length sale_point mismatch")
     if len(stock_records) != len(buy_point):
@@ -33,6 +48,10 @@ def draw_candlestick_plotly(stock_records: List[StockRecord],
         raise ValueError("Length big_buyer mismatch")
     if len(stock_records) != len(fomo_retail):
         raise ValueError("Length fomo_retail mismatch")
+    if len(stock_records) != len(actual_buy_point):
+        raise ValueError("Length actual_buy_point mismatch")
+    if len(stock_records) != len(actual_sale_point):
+        raise ValueError("Length actual_sale_point mismatch")
 
     df = pd.DataFrame({
         "Date": [r.date for r in stock_records],
@@ -92,7 +111,33 @@ def draw_candlestick_plotly(stock_records: List[StockRecord],
         marker=dict(color='red', size=10, symbol='triangle-down'),
         name='Ban'
     ))
-
+    # Chấm mua thực tế (xanh lá)
+    fig.add_trace(go.Scatter(
+        x=df["Date"][actual_buy_point_converted],
+        y=df["Low"][actual_buy_point_converted] * 0.990,
+        mode='markers',
+        marker=dict(color='blue', size=10, symbol='circle'),
+        name='Mua Thực Tế'
+    ))
+    # Chấm bán thực tế (đỏ tươi)
+    actual_sale_color = []
+    for i in range(len(actual_sale_point)):
+        if actual_sale_point[i] == -1:
+            actual_sale_color.append('red')
+            #print(f"Actual sale at {df['Date'][i]}: {df['Close'][i]} (loss)")
+        else:
+            actual_sale_color.append('crimson')
+            #print(f"Actual sale at {df['Date'][i]}: {df['Close'][i]} (profit)")
+            
+    fig.add_trace(go.Scatter(
+        x=df["Date"][actual_sale_point_converted],
+        y=df["High"][actual_sale_point_converted] * 1.015,
+        mode='markers',
+        marker=dict(color="#E78504", size=10, symbol='circle'),
+        name='Bán Thực Tế'
+    ))
+    
+    
     # # Chấm vàng cho ngày điều chỉnh
     # fig.add_trace(go.Scatter(
     #     x=df["Date"][adjustment_mask],
@@ -152,14 +197,22 @@ def draw_candlestick_plotly(stock_records: List[StockRecord],
     output_dir = os.path.join('chart', current_date_str)
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    output_dir = os.path.join(output_dir, symbol)
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    # output_dir = os.path.join(output_dir, symbol)
+    # if not os.path.exists(output_dir):
+    #     os.makedirs(output_dir)
     
     fig.update_layout(title=f"[{symbol}] Từ {stock_records[0].date.strftime('%Y-%m-%d')} đến {stock_records[-1].date.strftime('%Y-%m-%d')}",
                       xaxis_title='Date', yaxis_title='Price',
                       xaxis_rangeslider_visible=False)
-    file_name = f"chart_{stock_records[-1].symbol}_{stock_records[0].date.strftime('%Y-%m-%d')}_{stock_records[-1].date.strftime('%Y-%m-%d')}.html"
+    file_name = f"{stock_records[-1].symbol}_{stock_records[0].date.strftime('%Y-%m-%d')}_{stock_records[-1].date.strftime('%Y-%m-%d')}.html"
+    fig.add_annotation(
+        text=f"Số tiền dư: {cash:,.0f}",
+        xref="paper", yref="paper",
+        x=1, y=-0.18,
+        showarrow=False,
+        font=dict(size=16, color="black"),
+        align="right"
+    )
     fig.write_html(
         os.path.join(output_dir, file_name),  
         auto_open=False

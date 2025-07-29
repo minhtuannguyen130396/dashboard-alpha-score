@@ -1,6 +1,5 @@
 [
   { "share_code": "VND", "ipo_date": "2016-01-01" },
-  { "share_code": "SSI", "ipo_date": "2016-01-01" },
   { "share_code": "VCI", "ipo_date": "2016-01-01" },
   { "share_code": "SHB", "ipo_date": "2016-01-01" },
   { "share_code": "HCM", "ipo_date": "2016-01-01" },
@@ -10,8 +9,6 @@
   { "share_code": "KDH", "ipo_date": "2016-01-01" },
   { "share_code": "NLG", "ipo_date": "2016-01-01" },
   { "share_code": "NVL", "ipo_date": "2016-01-01" },
-  { "share_code": "REE", "ipo_date": "2016-01-01" },
-  { "share_code": "PNJ", "ipo_date": "2016-01-01" },
   { "share_code": "VIX", "ipo_date": "2016-01-01" },
   { "share_code": "VCP", "ipo_date": "2016-01-01" },
   { "share_code": "IDC", "ipo_date": "2016-01-01" },

@@ -60,5 +60,5 @@ def calculate_stock_score(records: List[StockRecord]) -> float:
     score += bullish_score
     score -= bearish_score
 
-    print(f"Score breakdown: {score}, Bullish: {bullish_score}, Bearish: {bearish_score}")
+    #print(f"Score breakdown: {score}, Bullish: {bullish_score}, Bearish: {bearish_score}")
     return score

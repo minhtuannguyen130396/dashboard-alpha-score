@@ -43,7 +43,7 @@ list_stock_name = []
 #----Hiệu chỉnh danh sách cổ phiếu cần lấy dữ liệu------
 if IS_FETCH_ALL_DATA:
     #load danh sách cổ phiếu lấy hàng tháng
-    for file_stock_name in [LIST_VN_30, LIST_MID_CAB, LIST_LARGE_CAB]:
+    for file_stock_name in [LIST_VN_30, LIST_MID_CAB, LIST_LARGE_CAB,LIST_OTHER]:
         for name in  load_stocks_from_txt(file_stock_name):
             list_stock_name.append(name)       
 else:

@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "PDR",
+    "priceHigh": 20.85,
+    "priceLow": 20.15,
+    "priceOpen": 20.8,
+    "priceAverage": 20.402624824045706,
+    "priceClose": 20.2,
+    "priceBasic": 20.7,
+    "totalVolume": 16907800.0,
+    "dealVolume": 16907800.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 344963500000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 725500.0,
+    "buyForeignValue": 14802104309.84516,
+    "sellForeignQuantity": 1879400.0,
+    "sellForeignValue": 38344693094.3115,
+    "buyCount": 10354.0,
+    "buyQuantity": 28353928.0,
+    "sellCount": 5836.0,
+    "sellQuantity": 31351569.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 363544623.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

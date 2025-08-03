@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VHC",
+    "priceHigh": 56.8,
+    "priceLow": 55.3,
+    "priceOpen": 56.8,
+    "priceAverage": 55.70252348081928,
+    "priceClose": 55.7,
+    "priceBasic": 56.6,
+    "totalVolume": 883700.0,
+    "dealVolume": 883700.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 49224320000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 3600.0,
+    "buyForeignValue": 200529084.5309494,
+    "sellForeignQuantity": 190500.0,
+    "sellForeignValue": 10611330723.096073,
+    "buyCount": 1669.0,
+    "buyQuantity": 1566417.0,
+    "sellCount": 1004.0,
+    "sellQuantity": 3010374.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 180409465.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

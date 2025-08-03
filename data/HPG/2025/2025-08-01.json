@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "HPG",
+    "priceHigh": 25.3,
+    "priceLow": 24.8,
+    "priceOpen": 24.85,
+    "priceAverage": 25.027038540432216,
+    "priceClose": 25.15,
+    "priceBasic": 24.95,
+    "totalVolume": 51200605.0,
+    "dealVolume": 50798600.0,
+    "putthroughVolume": 402005.0,
+    "totalValue": 1281682736250.0,
+    "putthroughValue": 10344216250.0,
+    "buyForeignQuantity": 2787580.0,
+    "buyForeignValue": 69764872094.53804,
+    "sellForeignQuantity": 14070769.0,
+    "sellForeignValue": 352149678056.51886,
+    "buyCount": 30202.0,
+    "buyQuantity": 103056641.0,
+    "sellCount": 17052.0,
+    "sellQuantity": 76750992.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 2074763317.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

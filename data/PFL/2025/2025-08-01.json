@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "PFL",
+    "priceHigh": 3.2,
+    "priceLow": 2.9,
+    "priceOpen": 3.2,
+    "priceAverage": 3.0379275526946863,
+    "priceClose": 3.0,
+    "priceBasic": 3.1,
+    "totalVolume": 792300.0,
+    "dealVolume": 792300.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 2406950000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 0.0,
+    "buyForeignValue": 0.0,
+    "sellForeignQuantity": 0.0,
+    "sellForeignValue": 0.0,
+    "buyCount": 0.0,
+    "buyQuantity": 0.0,
+    "sellCount": 0.0,
+    "sellQuantity": 0.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": -94600.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

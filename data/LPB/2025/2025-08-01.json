@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "LPB",
+    "priceHigh": 34.5,
+    "priceLow": 33.45,
+    "priceOpen": 34.25,
+    "priceAverage": 33.93830558962678,
+    "priceClose": 34.5,
+    "priceBasic": 34.2,
+    "totalVolume": 3206500.0,
+    "dealVolume": 2853500.0,
+    "putthroughVolume": 353000.0,
+    "totalValue": 108141205000.0,
+    "putthroughValue": 11298250000.0,
+    "buyForeignQuantity": 280201.0,
+    "buyForeignValue": 9509547164.519012,
+    "sellForeignQuantity": 478700.0,
+    "sellForeignValue": 16246266885.754337,
+    "buyCount": 1881.0,
+    "buyQuantity": 6088862.0,
+    "sellCount": 1244.0,
+    "sellQuantity": 4519689.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 122253197.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

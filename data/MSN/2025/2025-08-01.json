@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "MSN",
+    "priceHigh": 72.5,
+    "priceLow": 71.1,
+    "priceOpen": 72.3,
+    "priceAverage": 71.82060551933554,
+    "priceClose": 72.5,
+    "priceBasic": 72.5,
+    "totalVolume": 6555500.0,
+    "dealVolume": 5598500.0,
+    "putthroughVolume": 957000.0,
+    "totalValue": 471480160000.0,
+    "putthroughValue": 69392500000.0,
+    "buyForeignQuantity": 846910.0,
+    "buyForeignValue": 60825589020.38046,
+    "sellForeignQuantity": 1018000.0,
+    "sellForeignValue": 73113376418.68358,
+    "buyCount": 6283.0,
+    "buyQuantity": 10961406.0,
+    "sellCount": 4143.0,
+    "sellQuantity": 8964785.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 1127210736.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

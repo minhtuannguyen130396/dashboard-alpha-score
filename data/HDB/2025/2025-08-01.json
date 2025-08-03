@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "HDB",
+    "priceHigh": 27.15,
+    "priceLow": 26.4,
+    "priceOpen": 26.45,
+    "priceAverage": 26.76794129805705,
+    "priceClose": 27.0,
+    "priceBasic": 26.45,
+    "totalVolume": 23544500.0,
+    "dealVolume": 18626300.0,
+    "putthroughVolume": 4918200.0,
+    "totalValue": 626965454600.0,
+    "putthroughValue": 128377749600.0,
+    "buyForeignQuantity": 3095315.0,
+    "buyForeignValue": 82855210218.99545,
+    "sellForeignQuantity": 189700.0,
+    "sellForeignValue": 5077878464.241422,
+    "buyCount": 5350.0,
+    "buyQuantity": 35418774.0,
+    "sellCount": 3624.0,
+    "sellQuantity": 31577497.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 0.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "LDG",
+    "priceHigh": 5.47,
+    "priceLow": 5.25,
+    "priceOpen": 5.35,
+    "priceAverage": 5.338186358829301,
+    "priceClose": 5.25,
+    "priceBasic": 5.57,
+    "totalVolume": 7848300.0,
+    "dealVolume": 7848300.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 41895688000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 72100.0,
+    "buyForeignValue": 384883236.47159255,
+    "sellForeignQuantity": 1153600.0,
+    "sellForeignValue": 6158131783.545481,
+    "buyCount": 3665.0,
+    "buyQuantity": 11183626.0,
+    "sellCount": 2122.0,
+    "sellQuantity": 15847672.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 124745880.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

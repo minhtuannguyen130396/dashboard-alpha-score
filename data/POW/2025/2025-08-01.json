@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "POW",
+    "priceHigh": 14.75,
+    "priceLow": 14.15,
+    "priceOpen": 14.4,
+    "priceAverage": 14.3911229890868,
+    "priceClose": 14.25,
+    "priceBasic": 14.4,
+    "totalVolume": 13451600.0,
+    "dealVolume": 13451600.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 193583630000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 122600.0,
+    "buyForeignValue": 1764351678.4620416,
+    "sellForeignQuantity": 3463100.0,
+    "sellForeignValue": 49837898023.50649,
+    "buyCount": 4887.0,
+    "buyQuantity": 30465840.0,
+    "sellCount": 4258.0,
+    "sellQuantity": 28166423.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 1068688926.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

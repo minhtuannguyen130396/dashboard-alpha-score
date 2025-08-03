@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "GAS",
+    "priceHigh": 68.2,
+    "priceLow": 67.3,
+    "priceOpen": 68.2,
+    "priceAverage": 67.70636384079154,
+    "priceClose": 67.6,
+    "priceBasic": 67.7,
+    "totalVolume": 889400.0,
+    "dealVolume": 889400.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 60218040000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 15100.0,
+    "buyForeignValue": 1022366093.9959524,
+    "sellForeignQuantity": 156932.0,
+    "sellForeignValue": 10625295090.2631,
+    "buyCount": 1428.0,
+    "buyQuantity": 1410912.0,
+    "sellCount": 919.0,
+    "sellQuantity": 1732045.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 1104756836.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

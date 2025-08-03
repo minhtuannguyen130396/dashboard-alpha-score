@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "DIG",
+    "priceHigh": 21.95,
+    "priceLow": 20.85,
+    "priceOpen": 21.9,
+    "priceAverage": 21.2130872059795,
+    "priceClose": 20.85,
+    "priceBasic": 21.75,
+    "totalVolume": 26945400.0,
+    "dealVolume": 26945400.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 571595120000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 195200.0,
+    "buyForeignValue": 4140794622.607198,
+    "sellForeignQuantity": 2355600.0,
+    "sellForeignValue": 49969548222.40531,
+    "buyCount": 16283.0,
+    "buyQuantity": 38041492.0,
+    "sellCount": 6802.0,
+    "sellQuantity": 42217738.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 283748665.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

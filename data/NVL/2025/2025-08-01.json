@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "NVL",
+    "priceHigh": 17.35,
+    "priceLow": 16.65,
+    "priceOpen": 16.95,
+    "priceAverage": 17.130556475066793,
+    "priceClose": 17.25,
+    "priceBasic": 16.65,
+    "totalVolume": 35788200.0,
+    "dealVolume": 33834400.0,
+    "putthroughVolume": 1953800.0,
+    "totalValue": 609886000000.0,
+    "putthroughValue": 30283900000.0,
+    "buyForeignQuantity": 7265555.0,
+    "buyForeignValue": 124463000250.20393,
+    "sellForeignQuantity": 2281301.0,
+    "sellForeignValue": 39079955617.12636,
+    "buyCount": 6221.0,
+    "buyQuantity": 56311823.0,
+    "sellCount": 12724.0,
+    "sellQuantity": 59914886.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 743182397.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

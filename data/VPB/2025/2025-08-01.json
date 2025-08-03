@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VPB",
+    "priceHigh": 25.9,
+    "priceLow": 25.0,
+    "priceOpen": 25.9,
+    "priceAverage": 25.47459977263488,
+    "priceClose": 25.8,
+    "priceBasic": 25.8,
+    "totalVolume": 56465400.0,
+    "dealVolume": 55593400.0,
+    "putthroughVolume": 872000.0,
+    "totalValue": 1439248415000.0,
+    "putthroughValue": 23028800000.0,
+    "buyForeignQuantity": 6387000.0,
+    "buyForeignValue": 162706268747.81897,
+    "sellForeignQuantity": 7807500.0,
+    "sellForeignValue": 198892937724.84686,
+    "buyCount": 8041.0,
+    "buyQuantity": 88087837.0,
+    "sellCount": 8720.0,
+    "sellQuantity": 79284687.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 341185944.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

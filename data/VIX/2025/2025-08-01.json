@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VIX",
+    "priceHigh": 27.8,
+    "priceLow": 26.0,
+    "priceOpen": 27.3,
+    "priceAverage": 26.776112019306396,
+    "priceClose": 26.3,
+    "priceBasic": 27.3,
+    "totalVolume": 50821700.0,
+    "dealVolume": 50221700.0,
+    "putthroughVolume": 600000.0,
+    "totalValue": 1360011865000.0,
+    "putthroughValue": 15270000000.0,
+    "buyForeignQuantity": 4430901.0,
+    "buyForeignValue": 118642301522.45674,
+    "sellForeignQuantity": 2064100.0,
+    "sellForeignValue": 55268572819.05033,
+    "buyCount": 15124.0,
+    "buyQuantity": 75963736.0,
+    "sellCount": 13632.0,
+    "sellQuantity": 80965883.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 1335401750.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "BID",
+    "priceHigh": 38.3,
+    "priceLow": 37.1,
+    "priceOpen": 37.85,
+    "priceAverage": 37.49812279741095,
+    "priceClose": 37.2,
+    "priceBasic": 37.85,
+    "totalVolume": 7122300.0,
+    "dealVolume": 7122300.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 267072880000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 395903.0,
+    "buyForeignValue": 14845619309.863386,
+    "sellForeignQuantity": 2187881.0,
+    "sellForeignValue": 82041430404.12227,
+    "buyCount": 6824.0,
+    "buyQuantity": 10612681.0,
+    "sellCount": 3653.0,
+    "sellQuantity": 11354358.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 882244996.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

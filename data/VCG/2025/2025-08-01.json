@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VCG",
+    "priceHigh": 27.45,
+    "priceLow": 25.4,
+    "priceOpen": 25.8,
+    "priceAverage": 26.497236637776567,
+    "priceClose": 26.4,
+    "priceBasic": 25.9,
+    "totalVolume": 22602900.0,
+    "dealVolume": 22602900.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 598914390000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 1745100.0,
+    "buyForeignValue": 46240327656.583885,
+    "sellForeignQuantity": 3307300.0,
+    "sellForeignValue": 87634310732.11845,
+    "buyCount": 6519.0,
+    "buyQuantity": 33922739.0,
+    "sellCount": 7966.0,
+    "sellQuantity": 34473154.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 232660037.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

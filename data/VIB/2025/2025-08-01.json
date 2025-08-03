@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VIB",
+    "priceHigh": 19.6,
+    "priceLow": 18.4,
+    "priceOpen": 19.55,
+    "priceAverage": 19.275678018076178,
+    "priceClose": 19.0,
+    "priceBasic": 19.4,
+    "totalVolume": 30980000.0,
+    "dealVolume": 30980000.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 597160505000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 130700.0,
+    "buyForeignValue": 2519331116.9625564,
+    "sellForeignQuantity": 0.0,
+    "sellForeignValue": 0.0,
+    "buyCount": 4448.0,
+    "buyQuantity": 46548061.0,
+    "sellCount": 3722.0,
+    "sellQuantity": 41554671.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 0.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

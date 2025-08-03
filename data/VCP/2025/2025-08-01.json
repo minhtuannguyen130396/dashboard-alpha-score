@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VCP",
+    "priceHigh": 28.4,
+    "priceLow": 27.3,
+    "priceOpen": 28.2,
+    "priceAverage": 27.556824512534817,
+    "priceClose": 27.9,
+    "priceBasic": 28.0,
+    "totalVolume": 35900.0,
+    "dealVolume": 35900.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 989290000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 0.0,
+    "buyForeignValue": 0.0,
+    "sellForeignQuantity": 0.0,
+    "sellForeignValue": 0.0,
+    "buyCount": 0.0,
+    "buyQuantity": 0.0,
+    "sellCount": 0.0,
+    "sellQuantity": 0.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 41854827.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

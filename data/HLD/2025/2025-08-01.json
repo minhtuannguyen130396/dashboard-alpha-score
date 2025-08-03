@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "HLD",
+    "priceHigh": 19.0,
+    "priceLow": 18.0,
+    "priceOpen": 18.9,
+    "priceAverage": 18.330026109660576,
+    "priceClose": 18.5,
+    "priceBasic": 18.1,
+    "totalVolume": 38300.0,
+    "dealVolume": 38300.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 702040000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 600.0,
+    "buyForeignValue": 10998015.665796345,
+    "sellForeignQuantity": 1200.0,
+    "sellForeignValue": 21996031.33159269,
+    "buyCount": 0.0,
+    "buyQuantity": 0.0,
+    "sellCount": 0.0,
+    "sellQuantity": 0.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 24759733.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

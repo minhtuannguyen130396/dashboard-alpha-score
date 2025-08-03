@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "DRH",
+    "priceHigh": 3.5,
+    "priceLow": 3.38,
+    "priceOpen": 3.46,
+    "priceAverage": 3.4354973907371167,
+    "priceClose": 3.39,
+    "priceBasic": 3.43,
+    "totalVolume": 1226400.0,
+    "dealVolume": 1226400.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 4213294000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 112600.0,
+    "buyForeignValue": 386837006.1969994,
+    "sellForeignQuantity": 62100.0,
+    "sellForeignValue": 213344387.96477494,
+    "buyCount": 572.0,
+    "buyQuantity": 2029649.0,
+    "sellCount": 578.0,
+    "sellQuantity": 5154835.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 60300591.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

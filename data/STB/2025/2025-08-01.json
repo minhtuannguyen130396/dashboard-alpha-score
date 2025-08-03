@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "STB",
+    "priceHigh": 50.8,
+    "priceLow": 49.1,
+    "priceOpen": 50.3,
+    "priceAverage": 49.76353706948965,
+    "priceClose": 49.4,
+    "priceBasic": 49.95,
+    "totalVolume": 14804300.0,
+    "dealVolume": 13980500.0,
+    "putthroughVolume": 823800.0,
+    "totalValue": 736768643200.0,
+    "putthroughValue": 41049513200.0,
+    "buyForeignQuantity": 1298200.0,
+    "buyForeignValue": 64603023823.61146,
+    "sellForeignQuantity": 3988750.0,
+    "sellForeignValue": 198494308485.92682,
+    "buyCount": 6619.0,
+    "buyQuantity": 18982351.0,
+    "sellCount": 6263.0,
+    "sellQuantity": 23902486.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 187802107.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

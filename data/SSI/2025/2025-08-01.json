@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "SSI",
+    "priceHigh": 34.8,
+    "priceLow": 33.1,
+    "priceOpen": 34.0,
+    "priceAverage": 33.65039160091465,
+    "priceClose": 33.2,
+    "priceBasic": 34.2,
+    "totalVolume": 57108171.0,
+    "dealVolume": 56677600.0,
+    "putthroughVolume": 430571.0,
+    "totalValue": 1920937121350.0,
+    "putthroughValue": 13713686350.0,
+    "buyForeignQuantity": 1782575.0,
+    "buyForeignValue": 59984346808.00043,
+    "sellForeignQuantity": 15633200.0,
+    "sellForeignValue": 526063301975.4188,
+    "buyCount": 26696.0,
+    "buyQuantity": 80620664.0,
+    "sellCount": 13683.0,
+    "sellQuantity": 84457810.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 1144806652.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

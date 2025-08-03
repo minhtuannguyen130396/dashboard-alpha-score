@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "MBB",
+    "priceHigh": 27.65,
+    "priceLow": 27.05,
+    "priceOpen": 27.45,
+    "priceAverage": 27.268635380393164,
+    "priceClose": 27.15,
+    "priceBasic": 27.45,
+    "totalVolume": 21897486.0,
+    "dealVolume": 17890700.0,
+    "putthroughVolume": 4006786.0,
+    "totalValue": 598217477300.0,
+    "putthroughValue": 110362502300.0,
+    "buyForeignQuantity": 2119700.0,
+    "buyForeignValue": 57801326415.8194,
+    "sellForeignQuantity": 2102400.0,
+    "sellForeignValue": 57329579023.738594,
+    "buyCount": 10154.0,
+    "buyQuantity": 43775809.0,
+    "sellCount": 5405.0,
+    "sellQuantity": 38154932.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 0.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

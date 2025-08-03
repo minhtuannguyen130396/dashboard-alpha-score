@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "BMP",
+    "priceHigh": 142.2,
+    "priceLow": 140.5,
+    "priceOpen": 141.2,
+    "priceAverage": 141.06719576719578,
+    "priceClose": 140.7,
+    "priceBasic": 140.7,
+    "totalVolume": 56700.0,
+    "dealVolume": 56700.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 7998510000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 5500.0,
+    "buyForeignValue": 775869576.7195767,
+    "sellForeignQuantity": 8600.0,
+    "sellForeignValue": 1213177883.5978837,
+    "buyCount": 287.0,
+    "buyQuantity": 131374.0,
+    "sellCount": 252.0,
+    "sellQuantity": 143431.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 11614825.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

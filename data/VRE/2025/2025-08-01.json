@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VRE",
+    "priceHigh": 28.5,
+    "priceLow": 27.75,
+    "priceOpen": 27.9,
+    "priceAverage": 28.160583789669197,
+    "priceClose": 28.45,
+    "priceBasic": 28.1,
+    "totalVolume": 3122700.0,
+    "dealVolume": 3122700.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 87937055000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 956000.0,
+    "buyForeignValue": 26921518102.92375,
+    "sellForeignQuantity": 540400.0,
+    "sellForeignValue": 15217979479.937233,
+    "buyCount": 2009.0,
+    "buyQuantity": 4699797.0,
+    "sellCount": 1605.0,
+    "sellQuantity": 4720667.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 711893683.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

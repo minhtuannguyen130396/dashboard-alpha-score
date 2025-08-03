@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "DXG",
+    "priceHigh": 20.05,
+    "priceLow": 19.3,
+    "priceOpen": 20.0,
+    "priceAverage": 19.643504172013355,
+    "priceClose": 19.7,
+    "priceBasic": 19.8,
+    "totalVolume": 15663900.0,
+    "dealVolume": 15663900.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 307693885000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 2141800.0,
+    "buyForeignValue": 42072457235.6182,
+    "sellForeignQuantity": 1051900.0,
+    "sellForeignValue": 20663002038.54085,
+    "buyCount": 7545.0,
+    "buyQuantity": 25282140.0,
+    "sellCount": 7281.0,
+    "sellQuantity": 30854544.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 245516359.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

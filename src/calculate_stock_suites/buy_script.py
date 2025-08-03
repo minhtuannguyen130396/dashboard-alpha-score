@@ -1,6 +1,6 @@
 from src.base.load_stock_data import StockRecord
 from typing import List, Tuple
-
+from src.base.fynance import FynanceRecord
 
 
 def scenario_1_buy_sale_once(
@@ -12,7 +12,7 @@ def scenario_1_buy_sale_once(
     max_between_two_buy_points: int,
     times_appear_sale_point: int,
     max_between_two_sale_points: int
-) -> Tuple[float, List[int], List[int]]:
+) -> Tuple[List[FynanceRecord], List[int], List[int]]:
     """
     Kịch bản 1: mua-bán 1 lần
     - Force sell khi giá < holding_price * (1 - cut_loss_pct/100)
@@ -31,6 +31,7 @@ def scenario_1_buy_sale_once(
     sale_list = [0] * len(records)
     max_between_sale_points = max_between_two_sale_points*times_appear_sale_point
     max_between_buy_points = max_between_two_buy_points*times_appear_buy_point
+    list_profit = []
     # Chuyển đổi tín hiệu mua/bán thành danh sách
     
     i = 0
@@ -43,9 +44,20 @@ def scenario_1_buy_sale_once(
             sale_list[i] = -1  # Đánh dấu cắt lỗ
             sell_price = records[i].priceAverage
             profit = sell_price - holding_price - 0.005 * sell_price
+            
             print(f"Profit from cut loss: {profit}")
             # Cập nhật tiền mặt và đánh dấu bán
-            cash += records[i].priceAverage
+            cash += profit
+            list_profit.append(FynanceRecord(
+                date=records[i].date,
+                profit=profit,
+                cash=cash,
+                stock_value=0.0,  # Không còn giữ cổ phiếu
+                stock_volume=0.0,  # Không còn giữ cổ phiếu
+                stock_symbol=records[i].symbol,
+                stock_price=sell_price
+            ))
+            
             holding = False
             buy_times = 0  # Reset buy times after selling
             i += 1
@@ -84,6 +96,16 @@ def scenario_1_buy_sale_once(
                     buy_times = 0  # Reset buy times after selling
                     i = j + 1
                     print(f"Sold at:   {records[j].date}: {sell_price} (profit: {profit})")
+                    list_profit.append(FynanceRecord(
+                        date=records[j].date,
+                        profit=profit,
+                        cash=cash,
+                        stock_value=0.0,  # Không còn giữ cổ phiếu
+                        stock_volume=0.0,  # Không còn giữ cổ phiếu
+                        stock_symbol=records[j].symbol,
+                        stock_price=sell_price
+                    ))
+                    
                     break
                     
                     # cash += records[j].priceAverage
@@ -105,11 +127,20 @@ def scenario_1_buy_sale_once(
         cash += profit
         sale_list[-1] = 1 if profit >= 0 else -1
         print(f"Sold at last: {records[-1].date}: {sell_price} (profit: {profit})")
+        list_profit.append(FynanceRecord(
+            date=records[-1].date,
+            profit=profit,
+            cash=cash,
+            stock_value=0.0,  # Không còn giữ cổ phiếu
+            stock_volume=0.0,  # Không còn giữ cổ phiếu
+            stock_symbol=records[-1].symbol,
+            stock_price=sell_price
+        ))
         # cash += records[-1].priceAverage
         # sale_list[-1] = True
     else:
         print(f"Not holding at last: {records[-1].date}")
-    return cash, sale_list, buy_list
+    return list_profit, sale_list, buy_list
 
 
 def trade_controller(
@@ -119,7 +150,7 @@ def trade_controller(
     script_num: int,
     max_buy_times: int = 1,
     cut_loss_pct: float = 5.0
-) -> Tuple[float, List[bool], List[bool]]:
+) -> Tuple[List[FynanceRecord], List[bool], List[bool]]:
     """
     Điều phối các kịch bản dựa vào script_num.
     - script_num=1: gọi scenario_1

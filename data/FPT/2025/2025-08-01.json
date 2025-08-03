@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "FPT",
+    "priceHigh": 107.4,
+    "priceLow": 101.5,
+    "priceOpen": 103.7,
+    "priceAverage": 103.4103365009411,
+    "priceClose": 107.0,
+    "priceBasic": 104.0,
+    "totalVolume": 11986500.0,
+    "dealVolume": 10891500.0,
+    "putthroughVolume": 1095000.0,
+    "totalValue": 1244437240000.0,
+    "putthroughValue": 118143560000.0,
+    "buyForeignQuantity": 1479667.0,
+    "buyForeignValue": 153012862379.338,
+    "sellForeignQuantity": 4256485.0,
+    "sellForeignValue": 440164546161.20825,
+    "buyCount": 27988.0,
+    "buyQuantity": 22336567.0,
+    "sellCount": 11978.0,
+    "sellQuantity": 14806854.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 128725548.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "MWG",
+    "priceHigh": 66.7,
+    "priceLow": 65.2,
+    "priceOpen": 65.4,
+    "priceAverage": 65.56485537190082,
+    "priceClose": 65.2,
+    "priceBasic": 65.3,
+    "totalVolume": 10480000.0,
+    "dealVolume": 8228000.0,
+    "putthroughVolume": 2252000.0,
+    "totalValue": 687224496000.0,
+    "putthroughValue": 147756866000.0,
+    "buyForeignQuantity": 1257400.0,
+    "buyForeignValue": 82441249144.6281,
+    "sellForeignQuantity": 1863300.0,
+    "sellForeignValue": 122166995014.46281,
+    "buyCount": 6207.0,
+    "buyQuantity": 17759464.0,
+    "sellCount": 4302.0,
+    "sellQuantity": 13774251.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 3131999.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

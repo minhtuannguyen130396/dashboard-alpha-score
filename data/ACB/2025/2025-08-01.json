@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "ACB",
+    "priceHigh": 23.05,
+    "priceLow": 22.8,
+    "priceOpen": 23.0,
+    "priceAverage": 22.909019216576006,
+    "priceClose": 23.0,
+    "priceBasic": 23.0,
+    "totalVolume": 12206600.0,
+    "dealVolume": 7316600.0,
+    "putthroughVolume": 4890000.0,
+    "totalValue": 274552130000.0,
+    "putthroughValue": 106936000000.0,
+    "buyForeignQuantity": 1187401.0,
+    "buyForeignValue": 27202192326.781563,
+    "sellForeignQuantity": 1316600.0,
+    "sellForeignValue": 30162014700.54397,
+    "buyCount": 5495.0,
+    "buyQuantity": 19921348.0,
+    "sellCount": 3684.0,
+    "sellQuantity": 19099240.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 0.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "SHB",
+    "priceHigh": 17.65,
+    "priceLow": 17.05,
+    "priceOpen": 17.5,
+    "priceAverage": 17.320905396394643,
+    "priceClose": 17.4,
+    "priceBasic": 17.2,
+    "totalVolume": 124426600.0,
+    "dealVolume": 120276600.0,
+    "putthroughVolume": 4150000.0,
+    "totalValue": 2155924610000.0,
+    "putthroughValue": 72625000000.0,
+    "buyForeignQuantity": 15488318.0,
+    "buyForeignValue": 268271690827.2763,
+    "sellForeignQuantity": 6678300.0,
+    "sellForeignValue": 115674202508.74234,
+    "buyCount": 23273.0,
+    "buyQuantity": 186768332.0,
+    "sellCount": 14095.0,
+    "sellQuantity": 192370003.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 988068637.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "CTG",
+    "priceHigh": 46.0,
+    "priceLow": 44.15,
+    "priceOpen": 46.0,
+    "priceAverage": 44.861321836246645,
+    "priceClose": 44.3,
+    "priceBasic": 45.9,
+    "totalVolume": 16339400.0,
+    "dealVolume": 16224400.0,
+    "putthroughVolume": 115000.0,
+    "totalValue": 733137780000.0,
+    "putthroughValue": 5289750000.0,
+    "buyForeignQuantity": 884000.0,
+    "buyForeignValue": 39657408503.24203,
+    "sellForeignQuantity": 9476843.0,
+    "sellForeignValue": 425143703814.5811,
+    "buyCount": 8741.0,
+    "buyQuantity": 20774659.0,
+    "sellCount": 3279.0,
+    "sellQuantity": 22166523.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 148516711.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

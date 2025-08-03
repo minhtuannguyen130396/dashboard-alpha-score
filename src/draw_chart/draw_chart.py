@@ -1,16 +1,16 @@
-import plotly.graph_objects as go
+import os
+import webbrowser
 from datetime import datetime
 from typing import List, Optional
 import pandas as pd
-import mplfinance as mpf
 from src.base.load_stock_data import StockRecord
-import numpy as np
-from datetime import datetime, timedelta
-from src.base.load_stock_data import StockRecord
-import webbrowser
-import os
-from src.detect_market_behavior.detect_market_behavior import MartketBehaviorDetector
+from datetime import datetime
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
 
+from src.base.load_stock_data import StockRecord
+from src.detect_market_behavior.detect_market_behavior import MartketBehaviorDetector
+from src.base.fynance import FynanceRecord
 def open_html_in_chrome(path_to_html: str):
     chrome_path = r'"C:\Program Files\Google\Chrome\Application\chrome.exe" %s'
     webbrowser.get(chrome_path).open('file://' + os.path.realpath(path_to_html))
@@ -20,8 +20,7 @@ def draw_candlestick_plotly(
     stock_records: List[StockRecord], 
     marketBehavior: MartketBehaviorDetector, 
     actual_sale_point: List[int],
-    actual_buy_point: List[int],
-    cash:float)    -> None:
+    actual_buy_point: List[int])-> go.Figure:
                              
     """Vẽ biểu đồ nến sử dụng Plotly cho dữ liệu cổ phiếu.  
     Thêm các điểm mua/bán và khối lượng giao dịch.
@@ -29,8 +28,6 @@ def draw_candlestick_plotly(
         stock_records (List[StockRecord]): Danh sách các bản ghi cổ phiếu.
         marketBehavior (MartketBehaviorDetector): Đối tượng chứa các điểm mua/bán và thông tin thị trường.
     """
-
-
     sale_point = marketBehavior.sale_point
     buy_point = marketBehavior.buy_point
     big_buyer = marketBehavior.big_buyer
@@ -62,14 +59,11 @@ def draw_candlestick_plotly(
         "AdjRatio": [r.adjRatio for r in stock_records],
     })
 
-
-
     # Tìm ngày điều chỉnh giá (khi AdjRatio thay đổi so với phiên trước)
     # adjustment_mask = [False]
     # for i in range(1, len(df)):
     #     prev_ratio = df["AdjRatio"].iloc[i - 1]
     #     curr_ratio = df["AdjRatio"].iloc[i]
-        
     #     if prev_ratio == 0:
     #         adjustment_mask.append(False)
     #     else:
@@ -79,7 +73,6 @@ def draw_candlestick_plotly(
     #             print(f"Adjustment at {df['Date'].iloc[i]}: {change_pct:+.2f}% (from {prev_ratio} to {curr_ratio})")
     #         else:
     #             adjustment_mask.append(False)
-
     # adjustment_mask = np.array(adjustment_mask)
 
     fig = go.Figure()
@@ -193,30 +186,98 @@ def draw_candlestick_plotly(
         yaxis='y2'
     ))
     symbol = stock_records[-1].symbol
-    current_date_str = datetime.now().strftime('%Y-%m-%d')
-    output_dir = os.path.join('chart', current_date_str)
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    # output_dir = os.path.join(output_dir, symbol)
-    # if not os.path.exists(output_dir):
-    #     os.makedirs(output_dir)
     
     fig.update_layout(title=f"[{symbol}] Từ {stock_records[0].date.strftime('%Y-%m-%d')} đến {stock_records[-1].date.strftime('%Y-%m-%d')}",
                       xaxis_title='Date', yaxis_title='Price',
                       xaxis_rangeslider_visible=False)
-    file_name = f"{stock_records[-1].symbol}_{stock_records[0].date.strftime('%Y-%m-%d')}_{stock_records[-1].date.strftime('%Y-%m-%d')}.html"
-    fig.add_annotation(
-        text=f"Số tiền dư: {cash:,.0f}",
-        xref="paper", yref="paper",
-        x=1, y=-0.18,
-        showarrow=False,
-        font=dict(size=16, color="black"),
-        align="right"
+    fig.update_xaxes(
+        rangeslider_visible=True,  # bật range slider
+        type="date"                # đảm bảo trục X là ngày tháng
     )
+    return fig
+
+
+def table_fynance(list_fynance: List[FynanceRecord]) -> go.Figure:
+    """
+    Vẽ bảng từ DataFrame table_df (mỗi cột là 1 trường, mỗi dòng 1 record)
+    Trả về fig chứa 1 trace Table
+    """
+    header = dict(
+        values=["Date", "Profit", "Cash", "Stock Value", "Stock Volume", "Symbol", "Price"],
+        fill_color="paleturquoise",
+        align="left"
+    )
+    # Chuyển đổi từng trường trong list thành một list song song
+    dates = [rec.date.strftime("%Y-%m-%d") for rec in list_fynance]
+    profits = [rec.profit for rec in list_fynance]
+    cashes = [rec.cash for rec in list_fynance]
+    stock_values = [rec.stock_value for rec in list_fynance]
+    stock_volumes = [rec.stock_volume for rec in list_fynance]
+    symbols = [rec.stock_symbol for rec in list_fynance]
+    prices = [rec.stock_price for rec in list_fynance]
+
+    cells = dict(
+        values=[dates, profits, cashes, stock_values, stock_volumes, symbols, prices],
+        fill_color="lavender",
+        align="left"
+    )
+
+    # Tạo figure dạng Table
+    fig = go.Figure(data=[go.Table(header=header, cells=cells)])
+    fig.update_layout(
+        margin=dict(l=10, r=10, t=10, b=10),
+        height=400 + 30 * len(list_fynance)  # tự điều chỉnh chiều cao theo số dòng
+    )
+    return fig
+
+def draw_chart(
+    stock_records: List[StockRecord], 
+    marketBehavior: MartketBehaviorDetector, 
+    actual_sale_point: List[int],
+    actual_buy_point: List[int],
+    list_fynance:List[FynanceRecord])    -> None:
+    """ Hàm vẽ biểu đồ tổng quan"""
+    
+    num_of_row = 2
+    # Tạo layout 2 hàng, 1 cột
+    fig = make_subplots (
+        rows=num_of_row, cols=1,
+        specs=[[{"type": "xy"}],
+               [{"type": "table"}]],
+        #row_heights= [0.7, 0.3],
+        vertical_spacing=0.02 )
+    fig.update_layout(
+        autosize=True,
+        margin=dict(l=10, r=10, t=10, b=10)
+    )
+    fig_candlestick = draw_candlestick_plotly(
+        stock_records,
+        marketBehavior,
+        actual_sale_point,
+        actual_buy_point,
+    )
+    for trace in fig_candlestick.data:
+        fig.add_trace(trace, row=1, col=1)
+    # fig.update_yaxes(title_text="Price", row=1, col=1)
+    # fig.update_xaxes(title_text="Date", row=1, col=1)
+    
+    # fig_table = table_fynance(list_fynance)
+    # for trace in fig_table.data:
+    #     fig.add_trace(trace, row=2, col=1)
+    
+    # fig.update_yaxes(title_text="Finance Records", row=2, col=1)
+    # fig.update_xaxes(title_text="Date", row=2, col=1)
+    
+    current_date_str = datetime.now().strftime('%Y-%m-%d')
+    output_dir = os.path.join('chart', current_date_str)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    #fig.update_layout(height=800)
+    
+    file_name = f"{stock_records[-1].symbol}_{stock_records[0].date.strftime('%Y-%m-%d')}_{stock_records[-1].date.strftime('%Y-%m-%d')}.html"
     fig.write_html(
         os.path.join(output_dir, file_name),  
         auto_open=False
     )
+    
     open_html_in_chrome(os.path.join(output_dir, file_name))
-
-  

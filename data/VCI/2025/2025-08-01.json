@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VCI",
+    "priceHigh": 46.05,
+    "priceLow": 42.55,
+    "priceOpen": 43.2,
+    "priceAverage": 44.696383050591656,
+    "priceClose": 44.45,
+    "priceBasic": 43.05,
+    "totalVolume": 27828700.0,
+    "dealVolume": 27828700.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 1243842235000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 1088900.0,
+    "buyForeignValue": 48669891503.78925,
+    "sellForeignQuantity": 2437200.0,
+    "sellForeignValue": 108934024770.902,
+    "buyCount": 11035.0,
+    "buyQuantity": 43269407.0,
+    "sellCount": 13598.0,
+    "sellQuantity": 39678025.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 508530282.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

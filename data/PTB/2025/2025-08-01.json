@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "PTB",
+    "priceHigh": 55.6,
+    "priceLow": 53.5,
+    "priceOpen": 55.6,
+    "priceAverage": 54.6798353909465,
+    "priceClose": 54.4,
+    "priceBasic": 55.6,
+    "totalVolume": 121500.0,
+    "dealVolume": 121500.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 6643600000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 27100.0,
+    "buyForeignValue": 1481823539.0946503,
+    "sellForeignQuantity": 62500.0,
+    "sellForeignValue": 3417489711.9341564,
+    "buyCount": 295.0,
+    "buyQuantity": 223455.0,
+    "sellCount": 263.0,
+    "sellQuantity": 309120.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 7642793.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

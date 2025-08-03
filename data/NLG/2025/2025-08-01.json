@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "NLG",
+    "priceHigh": 41.6,
+    "priceLow": 40.2,
+    "priceOpen": 41.6,
+    "priceAverage": 40.60009099308452,
+    "priceClose": 40.2,
+    "priceBasic": 41.5,
+    "totalVolume": 3571700.0,
+    "dealVolume": 3571700.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 145011345000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 1270800.0,
+    "buyForeignValue": 51594595634.01182,
+    "sellForeignQuantity": 94200.0,
+    "sellForeignValue": 3824528571.5485625,
+    "buyCount": 3064.0,
+    "buyQuantity": 6593108.0,
+    "sellCount": 1946.0,
+    "sellQuantity": 5693524.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 4438582.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

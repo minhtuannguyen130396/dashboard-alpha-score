@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "KDH",
+    "priceHigh": 28.15,
+    "priceLow": 27.15,
+    "priceOpen": 27.5,
+    "priceAverage": 27.72147522556734,
+    "priceClose": 27.7,
+    "priceBasic": 27.4,
+    "totalVolume": 3291700.0,
+    "dealVolume": 3291700.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 91250780000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 447900.0,
+    "buyForeignValue": 12416448753.53161,
+    "sellForeignQuantity": 365522.0,
+    "sellForeignValue": 10132809067.399824,
+    "buyCount": 2261.0,
+    "buyQuantity": 6102918.0,
+    "sellCount": 1977.0,
+    "sellQuantity": 4932986.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 164967507.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

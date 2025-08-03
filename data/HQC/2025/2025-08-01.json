@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "HQC",
+    "priceHigh": 3.87,
+    "priceLow": 3.76,
+    "priceOpen": 3.76,
+    "priceAverage": 3.8119997970893595,
+    "priceClose": 3.8,
+    "priceBasic": 3.79,
+    "totalVolume": 8870900.0,
+    "dealVolume": 8870900.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 33815869000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 950800.0,
+    "buyForeignValue": 3624449407.072563,
+    "sellForeignQuantity": 262300.0,
+    "sellForeignValue": 999887546.776539,
+    "buyCount": 2519.0,
+    "buyQuantity": 18870425.0,
+    "sellCount": 1776.0,
+    "sellQuantity": 17512867.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 277727593.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

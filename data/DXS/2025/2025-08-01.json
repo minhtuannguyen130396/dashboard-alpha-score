@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "DXS",
+    "priceHigh": 11.35,
+    "priceLow": 10.75,
+    "priceOpen": 11.15,
+    "priceAverage": 11.02659277434639,
+    "priceClose": 11.0,
+    "priceBasic": 10.95,
+    "totalVolume": 3545700.0,
+    "dealVolume": 3545700.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 39096990000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 122400.0,
+    "buyForeignValue": 1349654955.5799983,
+    "sellForeignQuantity": 490100.0,
+    "sellForeignValue": 5404133118.707167,
+    "buyCount": 1711.0,
+    "buyQuantity": 5997451.0,
+    "sellCount": 2043.0,
+    "sellQuantity": 8858501.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 165945215.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

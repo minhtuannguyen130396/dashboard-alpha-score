@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VSC",
+    "priceHigh": 27.9,
+    "priceLow": 24.85,
+    "priceOpen": 26.15,
+    "priceAverage": 26.57875052456207,
+    "priceClose": 25.75,
+    "priceBasic": 26.1,
+    "totalVolume": 39795100.0,
+    "dealVolume": 39795100.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 1057704035000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 1650700.0,
+    "buyForeignValue": 43873543490.89461,
+    "sellForeignQuantity": 4974700.0,
+    "sellForeignValue": 132221310234.53891,
+    "buyCount": 9472.0,
+    "buyQuantity": 56571394.0,
+    "sellCount": 9364.0,
+    "sellQuantity": 60541841.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 165175594.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

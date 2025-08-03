@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "SCR",
+    "priceHigh": 9.63,
+    "priceLow": 9.1,
+    "priceOpen": 9.63,
+    "priceAverage": 9.323944825487951,
+    "priceClose": 9.11,
+    "priceBasic": 9.7,
+    "totalVolume": 15119300.0,
+    "dealVolume": 15119300.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 140971519000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 780800.0,
+    "buyForeignValue": 7280136119.7409935,
+    "sellForeignQuantity": 582300.0,
+    "sellForeignValue": 5429333071.881635,
+    "buyCount": 5062.0,
+    "buyQuantity": 21275722.0,
+    "sellCount": 3101.0,
+    "sellQuantity": 25506835.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 209751204.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

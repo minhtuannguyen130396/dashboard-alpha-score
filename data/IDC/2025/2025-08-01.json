@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "IDC",
+    "priceHigh": 46.0,
+    "priceLow": 44.5,
+    "priceOpen": 46.0,
+    "priceAverage": 44.929552484051804,
+    "priceClose": 44.6,
+    "priceBasic": 45.5,
+    "totalVolume": 2069200.0,
+    "dealVolume": 2069200.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 92968230000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 340102.0,
+    "buyForeignValue": 15280630658.930988,
+    "sellForeignQuantity": 972800.0,
+    "sellForeignValue": 43707468656.485596,
+    "buyCount": 0.0,
+    "buyQuantity": 0.0,
+    "sellCount": 0.0,
+    "sellQuantity": 0.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 99065110.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VHM",
+    "priceHigh": 90.6,
+    "priceLow": 87.8,
+    "priceOpen": 90.0,
+    "priceAverage": 89.28247685240284,
+    "priceClose": 89.9,
+    "priceBasic": 90.0,
+    "totalVolume": 8402600.0,
+    "dealVolume": 8402600.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 750204940000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 1539550.0,
+    "buyForeignValue": 137454837238.11676,
+    "sellForeignQuantity": 3271320.0,
+    "sellForeignValue": 292071552176.80237,
+    "buyCount": 4331.0,
+    "buyQuantity": 12406084.0,
+    "sellCount": 2900.0,
+    "sellQuantity": 11452457.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 1621205349.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

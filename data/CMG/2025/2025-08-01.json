@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "CMG",
+    "priceHigh": 40.7,
+    "priceLow": 39.8,
+    "priceOpen": 40.6,
+    "priceAverage": 40.07949078412996,
+    "priceClose": 40.0,
+    "priceBasic": 40.6,
+    "totalVolume": 960300.0,
+    "dealVolume": 960300.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 38488335000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 17200.0,
+    "buyForeignValue": 689367241.4870353,
+    "sellForeignQuantity": 127353.0,
+    "sellForeignValue": 5104243389.831303,
+    "buyCount": 1704.0,
+    "buyQuantity": 1598284.0,
+    "sellCount": 993.0,
+    "sellQuantity": 1919868.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 28214923.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

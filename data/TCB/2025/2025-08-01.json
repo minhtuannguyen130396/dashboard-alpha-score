@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "TCB",
+    "priceHigh": 34.7,
+    "priceLow": 34.05,
+    "priceOpen": 34.15,
+    "priceAverage": 34.31102877345451,
+    "priceClose": 34.1,
+    "priceBasic": 34.0,
+    "totalVolume": 23025200.0,
+    "dealVolume": 20619700.0,
+    "putthroughVolume": 2405500.0,
+    "totalValue": 794241545000.0,
+    "putthroughValue": 86758425000.0,
+    "buyForeignQuantity": 2132100.0,
+    "buyForeignValue": 73154544447.88237,
+    "sellForeignQuantity": 2038100.0,
+    "sellForeignValue": 69929307743.17764,
+    "buyCount": 7532.0,
+    "buyQuantity": 38959297.0,
+    "sellCount": 6161.0,
+    "sellQuantity": 34642635.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 0.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "GEX",
+    "priceHigh": 59.8,
+    "priceLow": 55.9,
+    "priceOpen": 59.8,
+    "priceAverage": 57.322601525170555,
+    "priceClose": 55.9,
+    "priceBasic": 59.7,
+    "totalVolume": 17797900.0,
+    "dealVolume": 11447900.0,
+    "putthroughVolume": 6350000.0,
+    "totalValue": 1021723410000.0,
+    "putthroughValue": 365500000000.0,
+    "buyForeignQuantity": 465600.0,
+    "buyForeignValue": 26689403270.11941,
+    "sellForeignQuantity": 1801210.0,
+    "sellForeignValue": 103250043093.15245,
+    "buyCount": 4356.0,
+    "buyQuantity": 20047690.0,
+    "sellCount": 3638.0,
+    "sellQuantity": 27884149.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 379058584.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

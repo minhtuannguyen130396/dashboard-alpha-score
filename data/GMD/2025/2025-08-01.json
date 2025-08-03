@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "GMD",
+    "priceHigh": 58.0,
+    "priceLow": 55.7,
+    "priceOpen": 56.4,
+    "priceAverage": 56.59684482202387,
+    "priceClose": 56.0,
+    "priceBasic": 56.2,
+    "totalVolume": 5084000.0,
+    "dealVolume": 4649500.0,
+    "putthroughVolume": 434500.0,
+    "totalValue": 287738426500.0,
+    "putthroughValue": 24591396500.0,
+    "buyForeignQuantity": 899600.0,
+    "buyForeignValue": 50914521601.89268,
+    "sellForeignQuantity": 3059800.0,
+    "sellForeignValue": 173175025786.42865,
+    "buyCount": 4345.0,
+    "buyQuantity": 7831491.0,
+    "sellCount": 2685.0,
+    "sellQuantity": 8249753.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 40433034.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

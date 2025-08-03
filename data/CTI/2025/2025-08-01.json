@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "CTI",
+    "priceHigh": 26.1,
+    "priceLow": 24.9,
+    "priceOpen": 25.0,
+    "priceAverage": 25.85140612489992,
+    "priceClose": 25.7,
+    "priceBasic": 25.1,
+    "totalVolume": 2997600.0,
+    "dealVolume": 2997600.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 77492175000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 192500.0,
+    "buyForeignValue": 4976395679.043235,
+    "sellForeignQuantity": 150200.0,
+    "sellForeignValue": 3882881199.959968,
+    "buyCount": 2359.0,
+    "buyQuantity": 4499215.0,
+    "sellCount": 2012.0,
+    "sellQuantity": 4790384.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 29515658.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

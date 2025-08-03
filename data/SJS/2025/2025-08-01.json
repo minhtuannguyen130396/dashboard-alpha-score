@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "SJS",
+    "priceHigh": 76.0,
+    "priceLow": 73.0,
+    "priceOpen": 76.0,
+    "priceAverage": 75.89886401603742,
+    "priceClose": 76.0,
+    "priceBasic": 71.1,
+    "totalVolume": 299300.0,
+    "dealVolume": 299300.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 22716530000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 710.0,
+    "buyForeignValue": 53888193.45138657,
+    "sellForeignQuantity": 3501.0,
+    "sellForeignValue": 265721922.920147,
+    "buyCount": 528.0,
+    "buyQuantity": 497713.0,
+    "sellCount": 203.0,
+    "sellQuantity": 302663.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 56716997.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

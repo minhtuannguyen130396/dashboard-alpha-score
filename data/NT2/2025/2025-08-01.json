@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "NT2",
+    "priceHigh": 20.5,
+    "priceLow": 20.1,
+    "priceOpen": 20.25,
+    "priceAverage": 20.315541463414633,
+    "priceClose": 20.5,
+    "priceBasic": 20.2,
+    "totalVolume": 1537500.0,
+    "dealVolume": 1537500.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 31235145000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 68000.0,
+    "buyForeignValue": 1381456819.512195,
+    "sellForeignQuantity": 76900.0,
+    "sellForeignValue": 1562265138.5365853,
+    "buyCount": 924.0,
+    "buyQuantity": 3153831.0,
+    "sellCount": 914.0,
+    "sellQuantity": 2848283.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 111536434.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

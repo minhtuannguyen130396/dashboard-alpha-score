@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "PVD",
+    "priceHigh": 21.7,
+    "priceLow": 21.25,
+    "priceOpen": 21.25,
+    "priceAverage": 21.41817584464632,
+    "priceClose": 21.3,
+    "priceBasic": 21.15,
+    "totalVolume": 7837600.0,
+    "dealVolume": 7837600.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 167867095000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 215200.0,
+    "buyForeignValue": 4609191441.767888,
+    "sellForeignQuantity": 1167000.0,
+    "sellForeignValue": 24995011210.702255,
+    "buyCount": 2645.0,
+    "buyQuantity": 11824151.0,
+    "sellCount": 3981.0,
+    "sellQuantity": 16409444.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 249389936.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

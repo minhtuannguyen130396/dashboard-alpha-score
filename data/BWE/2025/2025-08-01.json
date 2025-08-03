@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "BWE",
+    "priceHigh": 50.0,
+    "priceLow": 48.9,
+    "priceOpen": 50.0,
+    "priceAverage": 49.34085097882541,
+    "priceClose": 49.3,
+    "priceBasic": 49.5,
+    "totalVolume": 250399.0,
+    "dealVolume": 250300.0,
+    "putthroughVolume": 99.0,
+    "totalValue": 12354915500.0,
+    "putthroughValue": 4900500.0,
+    "buyForeignQuantity": 63100.0,
+    "buyForeignValue": 3113407696.763883,
+    "sellForeignQuantity": 15300.0,
+    "sellForeignValue": 754915019.9760288,
+    "buyCount": 375.0,
+    "buyQuantity": 421575.0,
+    "sellCount": 410.0,
+    "sellQuantity": 587886.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 88202452.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

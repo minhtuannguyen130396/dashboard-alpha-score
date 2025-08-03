@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VNM",
+    "priceHigh": 61.4,
+    "priceLow": 60.0,
+    "priceOpen": 61.4,
+    "priceAverage": 60.384913129948586,
+    "priceClose": 60.0,
+    "priceBasic": 61.2,
+    "totalVolume": 5329800.0,
+    "dealVolume": 5329800.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 321839510000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 78141.0,
+    "buyForeignValue": 4718537496.887313,
+    "sellForeignQuantity": 633870.0,
+    "sellForeignValue": 38276184885.68051,
+    "buyCount": 7475.0,
+    "buyQuantity": 7979655.0,
+    "sellCount": 3034.0,
+    "sellQuantity": 8724841.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 1064366073.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

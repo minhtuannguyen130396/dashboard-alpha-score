@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VIC",
+    "priceHigh": 109.8,
+    "priceLow": 104.0,
+    "priceOpen": 106.0,
+    "priceAverage": 106.13379354021532,
+    "priceClose": 104.0,
+    "priceBasic": 105.5,
+    "totalVolume": 3947500.0,
+    "dealVolume": 3947500.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 418963150000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 963436.0,
+    "buyForeignValue": 102253117513.21089,
+    "sellForeignQuantity": 1036154.0,
+    "sellForeignValue": 109970954711.86829,
+    "buyCount": 6096.0,
+    "buyQuantity": 6603211.0,
+    "sellCount": 2792.0,
+    "sellQuantity": 5323906.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 1594908386.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

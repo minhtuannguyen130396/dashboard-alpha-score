@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-08-01T00:00:00",
+    "symbol": "VCB",
+    "priceHigh": 60.6,
+    "priceLow": 59.7,
+    "priceOpen": 60.3,
+    "priceAverage": 60.08483247748127,
+    "priceClose": 60.2,
+    "priceBasic": 60.2,
+    "totalVolume": 4928600.0,
+    "dealVolume": 4751600.0,
+    "putthroughVolume": 177000.0,
+    "totalValue": 296298490000.0,
+    "putthroughValue": 10799400000.0,
+    "buyForeignQuantity": 171550.0,
+    "buyForeignValue": 10307553011.511911,
+    "sellForeignQuantity": 797028.0,
+    "sellForeignValue": 47889293859.86194,
+    "buyCount": 6839.0,
+    "buyQuantity": 9491840.0,
+    "sellCount": 3753.0,
+    "sellQuantity": 7773509.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 669080906.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

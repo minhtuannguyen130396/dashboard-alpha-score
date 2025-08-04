@@ -3,7 +3,8 @@ import tkinter as tk
 from tkinter import ttk
 from tkcalendar import DateEntry
 import json
-from src.test_script.test_script import backtest
+from src.test_script.test_script import backtest_draw_chart ,back_test_write_csv
+from src.fetch_all.fetch_all_data import fetch_all_data
 LIST_VN_30 =        'Stock_List\stock_vn_30.txt'
 LIST_MID_CAB =      'Stock_List\stock_mid_cab.txt'
 LIST_LARGE_CAB =    'Stock_List\stock_large_cab.txt'
@@ -89,18 +90,36 @@ def create_app():
 
         # Define thread target
         def task():
-            backtest(symbol, start_date, end_date)
+            backtest_draw_chart(symbol, start_date, end_date)
             # Cleanup finished threads
             global threads
             threads = [t for t in threads if t.is_alive()]
 
-        # Start thread for backtest
         t = threading.Thread(target=task, daemon=True)
         threads.append(t)
         t.start()
     # Bind double-click to submit
     listbox.bind('<Double-Button-1>', on_submit)    
-    #submit_btn = ttk.Button(root, text="Submit", command=on_submit)
-    #submit_btn.pack(pady=(0, 10))
-
+    def report_all_stocks(event=None):
+        start_date = start_cal.get_date().strftime('%Y-%m-%d')
+        end_date = end_cal.get_date().strftime('%Y-%m-%d')
+        back_test_write_csv(
+            list_vn_30 + list_large_cap + list_medium_cap + list_other,
+            start_date,
+            end_date
+        )
+            
+    submit_btn = ttk.Button(
+        root,
+        text="Test All",
+        command=report_all_stocks
+    )
+    submit_btn.pack(pady=(0, 10))
+    
+    fetch_btn = ttk.Button(
+        root,
+        text="Fetch All Data",
+        command=fetch_all_data
+    )
+    fetch_btn.pack(pady=(0, 10))
     root.mainloop()

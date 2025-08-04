@@ -1,5 +1,34 @@
 [
   {
+    "date": "2025-08-04T00:00:00",
+    "symbol": "SAB",
+    "priceHigh": 48.1,
+    "priceLow": 47.65,
+    "priceOpen": 48.0,
+    "priceAverage": 47.96797340954274,
+    "priceClose": 48.1,
+    "priceBasic": 47.95,
+    "totalVolume": 877800.0,
+    "dealVolume": 804800.0,
+    "putthroughVolume": 73000.0,
+    "totalValue": 42105775000.0,
+    "putthroughValue": 3501150000.0,
+    "buyForeignQuantity": 209500.0,
+    "buyForeignValue": 10049290429.299204,
+    "sellForeignQuantity": 254940.0,
+    "sellForeignValue": 12228955141.028828,
+    "buyCount": 1764.0,
+    "buyQuantity": 1336170.0,
+    "sellCount": 1171.0,
+    "sellQuantity": 2089836.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 526016889.0,
+    "propTradingNetDealValue": 3436865000.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 3436865000.0,
+    "unit": 1000.0
+  },
+  {
     "date": "2025-08-01T00:00:00",
     "symbol": "SAB",
     "priceHigh": 48.05,
@@ -23,9 +52,9 @@
     "sellQuantity": 2168913.0,
     "adjRatio": 1.0,
     "currentForeignRoom": 525944029.0,
-    "propTradingNetDealValue": null,
-    "propTradingNetPTValue": null,
-    "propTradingNetValue": null,
+    "propTradingNetDealValue": -369940000.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": -369940000.0,
     "unit": 1000.0
   }
 ]

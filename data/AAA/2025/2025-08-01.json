@@ -1,5 +1,34 @@
 [
   {
+    "date": "2025-08-04T00:00:00",
+    "symbol": "AAA",
+    "priceHigh": 8.69,
+    "priceLow": 8.4,
+    "priceOpen": 8.55,
+    "priceAverage": 8.547747016956249,
+    "priceClose": 8.6,
+    "priceBasic": 8.51,
+    "totalVolume": 3821600.0,
+    "dealVolume": 3821600.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 32666070000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 274800.0,
+    "buyForeignValue": 2348920880.2595773,
+    "sellForeignQuantity": 153400.0,
+    "sellForeignValue": 1311224392.4010885,
+    "buyCount": 2229.0,
+    "buyQuantity": 7543332.0,
+    "sellCount": 1718.0,
+    "sellQuantity": 8752205.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 372702161.0,
+    "propTradingNetDealValue": 0.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 0.0,
+    "unit": 1000.0
+  },
+  {
     "date": "2025-08-01T00:00:00",
     "symbol": "AAA",
     "priceHigh": 8.9,
@@ -23,9 +52,9 @@
     "sellQuantity": 12803550.0,
     "adjRatio": 1.0,
     "currentForeignRoom": 372607061.0,
-    "propTradingNetDealValue": null,
-    "propTradingNetPTValue": null,
-    "propTradingNetValue": null,
+    "propTradingNetDealValue": 0.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 0.0,
     "unit": 1000.0
   }
 ]

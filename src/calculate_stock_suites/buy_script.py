@@ -1,7 +1,7 @@
 from src.base.load_stock_data import StockRecord
 from typing import List, Tuple
 from src.base.fynance import FynanceRecord
-
+from datetime import datetime
 
 def scenario_1_buy_sale_once(
     records: List[StockRecord],
@@ -25,6 +25,8 @@ def scenario_1_buy_sale_once(
     """
     cash = 0.0
     holding_price = 0.0
+    holding_position = 0
+    date_buy = None
     holding = False
     buy_times = 0
     buy_list = [0] * len(records)
@@ -32,89 +34,96 @@ def scenario_1_buy_sale_once(
     max_between_sale_points = max_between_two_sale_points*times_appear_sale_point
     max_between_buy_points = max_between_two_buy_points*times_appear_buy_point
     list_profit = []
+    count_sale_singnal = 0
+    
     # Chuyển đổi tín hiệu mua/bán thành danh sách
     
     i = 0
     while i < len(records):
-        # 1) Force sell nếu giá giảm quá mức cut-loss
-        if holding and records[i].priceAverage < holding_price * (1 - cut_loss_pct / 100):
-            print(f"Force selling at {records[i].date}: {records[i].priceAverage} (cut loss)")
+        # 2) Xác định vị trí để bắt đầu mua mới
+        
+        count_buy_signal = 0
+        while (not holding):
+            if signals[i] == 1:
+                count_buy_signal += 1
+            if count_buy_signal >= times_appear_buy_point:
+                count_buy_signal = 0
+                holding = True
+                holding_price = records[i].priceAverage
+                date_buy = records[i].date
+                holding_position = i
+                buy_list[i] = 1
+                buy_times += 1
+                i = i + 1
+                break
+            else:
+                i += 1
+            if i >= len(records):
+                break
             
-            # Nếu cắt lỗ, bán luôn ở giá hiện tại
-            sale_list[i] = -1  # Đánh dấu cắt lỗ
+        # 3) Bán khi holding và có đủ tín hiệu bán
+        while holding:
+            if i >= len(records):
+                break
+            if records[i].priceAverage < holding_price * (1 - cut_loss_pct / 100):
+                print(f"Force selling at {records[i].date}: {records[i].priceAverage} (cut loss)")
+                # Nếu cắt lỗ, bán luôn ở giá hiện tại
+                sale_list[i] = -1  # Đánh dấu cắt lỗ
+                sell_price = records[i].priceAverage
+                profit = sell_price - holding_price - 0.005 * sell_price
+                print(f"Profit from cut loss: {profit}")
+                # Cập nhật tiền mặt và đánh dấu bán
+                cash += profit
+                list_profit.append(FynanceRecord(
+                    date_buy=date_buy,
+                    date_sale=records[i].date,
+                    hoding_day=i - holding_position,
+                    profit=profit,
+                    profit_pct=(profit / holding_price) * 100 if holding_price else 0,
+                    cash=cash,
+                    buy_value=holding_price,
+                    buy_volume=1,  # Giả sử mua 1 cổ phiếu
+                    sale_value=sell_price,
+                    sale_volume=1,  # Giả sử bán 1 cổ phiếu
+                ))
+                
+                holding = False
+                buy_times = 0  # Reset buy times after selling
+                i += 1
+                continue
+            
+            #if i < (holding_position + max_between_sale_points):    
+            if signals[i] == -1:
+                #add confition max_between_sale_points
+                count_sale_singnal += 1
+            elif signals[i] == 1:
+                count_sale_singnal = 0
+                
+            if count_sale_singnal < times_appear_sale_point:
+                i+= 1
+                continue
+           
             sell_price = records[i].priceAverage
             profit = sell_price - holding_price - 0.005 * sell_price
-            
-            print(f"Profit from cut loss: {profit}")
-            # Cập nhật tiền mặt và đánh dấu bán
             cash += profit
-            list_profit.append(FynanceRecord(
-                date=records[i].date,
-                profit=profit,
-                cash=cash,
-                stock_value=0.0,  # Không còn giữ cổ phiếu
-                stock_volume=0.0,  # Không còn giữ cổ phiếu
-                stock_symbol=records[i].symbol,
-                stock_price=sell_price
-            ))
-            
+            sale_list[i] = 1 if profit >= 0 else -1
             holding = False
             buy_times = 0  # Reset buy times after selling
-            i += 1
-            continue
-
-        # 2) Mua nếu chưa holding và chưa vượt max_buy_times
-        if not holding and buy_times < max_buy_times:
-            count = 0
-            for j in range(i, min(i + max_between_buy_points, len(records))):
-                if signals[j] == 1:
-                    count += 1
-                if count >= times_appear_buy_point:
-                    holding = True
-                    holding_price = records[j].priceAverage
-                    buy_list[j] = 1
-                    buy_times += 1
-                    i = j + 1
-                    print(f"Bought at: {records[j].date}: {holding_price}")
-                    break
-            else:
-                i += 1
-            continue
-
-        # 3) Bán khi holding và có đủ tín hiệu bán
-        if holding:
-            count = 0
-            for j in range(i, min(i + max_between_sale_points, len(records))):
-                if signals[j] == -1:
-                    count += 1
-                if count >= times_appear_sale_point:
-                    sell_price = records[j].priceAverage
-                    profit = sell_price - holding_price - 0.005 * sell_price
-                    cash += profit
-                    sale_list[j] = 1 if profit >= 0 else -1
-                    holding = False
-                    buy_times = 0  # Reset buy times after selling
-                    i = j + 1
-                    print(f"Sold at:   {records[j].date}: {sell_price} (profit: {profit})")
-                    list_profit.append(FynanceRecord(
-                        date=records[j].date,
-                        profit=profit,
-                        cash=cash,
-                        stock_value=0.0,  # Không còn giữ cổ phiếu
-                        stock_volume=0.0,  # Không còn giữ cổ phiếu
-                        stock_symbol=records[j].symbol,
-                        stock_price=sell_price
-                    ))
-                    
-                    break
-                    
-                    # cash += records[j].priceAverage
-                    # holding = False
-                    # sale_list[j] = True
-                    # i = j + 1
-                    # break
-            else:
-                i += 1
+            count_sale_singnal = 0
+            print(f"Sold at:   {records[i].date.strftime('%d-%m-%Y')}: {sell_price} (profit: {profit})")
+            list_profit.append(FynanceRecord(
+                date_sale=records[i].date,
+                date_buy=date_buy,
+                hoding_day=i - holding_position,
+                profit=profit,
+                profit_pct=(profit / holding_price) * 100 if holding_price else 0,
+                cash=cash,
+                buy_value=holding_price,
+                buy_volume=1,  # Giả sử mua 1 cổ phiếu
+                sale_value=sell_price,
+                sale_volume=1,  # Giả sử bán 1 cổ phiếu
+            ))
+            i +=1
             continue
 
         i += 1
@@ -128,13 +137,16 @@ def scenario_1_buy_sale_once(
         sale_list[-1] = 1 if profit >= 0 else -1
         print(f"Sold at last: {records[-1].date}: {sell_price} (profit: {profit})")
         list_profit.append(FynanceRecord(
-            date=records[-1].date,
+            date_buy=records[-1].date,
+            date_sale=records[-1].date,
+            hoding_day=i - holding_position,
             profit=profit,
+            profit_pct=(profit / holding_price) * 100 if holding_price else 0,
             cash=cash,
-            stock_value=0.0,  # Không còn giữ cổ phiếu
-            stock_volume=0.0,  # Không còn giữ cổ phiếu
-            stock_symbol=records[-1].symbol,
-            stock_price=sell_price
+            buy_value=holding_price,
+            buy_volume=1,  # Giả sử mua 1 cổ phiếu
+            sale_value=sell_price,
+            sale_volume=1,  # Giả sử bán 1 cổ phiếu
         ))
         # cash += records[-1].priceAverage
         # sale_list[-1] = True

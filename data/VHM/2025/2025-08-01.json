@@ -1,5 +1,34 @@
 [
   {
+    "date": "2025-08-04T00:00:00",
+    "symbol": "VHM",
+    "priceHigh": 93.8,
+    "priceLow": 88.5,
+    "priceOpen": 89.8,
+    "priceAverage": 92.25561435949754,
+    "priceClose": 92.2,
+    "priceBasic": 89.9,
+    "totalVolume": 7052000.0,
+    "dealVolume": 4704900.0,
+    "putthroughVolume": 2347100.0,
+    "totalValue": 638588574900.0,
+    "putthroughValue": 204535134900.0,
+    "buyForeignQuantity": 917620.0,
+    "buyForeignValue": 84655596848.56213,
+    "sellForeignQuantity": 2663170.0,
+    "sellForeignValue": 245692384493.78308,
+    "buyCount": 3802.0,
+    "buyQuantity": 8808930.0,
+    "sellCount": 4378.0,
+    "sellQuantity": 9677278.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 1622480879.0,
+    "propTradingNetDealValue": 46484340000.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 46484340000.0,
+    "unit": 1000.0
+  },
+  {
     "date": "2025-08-01T00:00:00",
     "symbol": "VHM",
     "priceHigh": 90.6,
@@ -23,9 +52,9 @@
     "sellQuantity": 11452457.0,
     "adjRatio": 1.0,
     "currentForeignRoom": 1621205349.0,
-    "propTradingNetDealValue": null,
-    "propTradingNetPTValue": null,
-    "propTradingNetValue": null,
+    "propTradingNetDealValue": -7988620000.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": -7988620000.0,
     "unit": 1000.0
   }
 ]

@@ -1,5 +1,34 @@
 [
   {
+    "date": "2025-08-04T00:00:00",
+    "symbol": "NT2",
+    "priceHigh": 21.9,
+    "priceLow": 21.05,
+    "priceOpen": 21.05,
+    "priceAverage": 21.694153300398266,
+    "priceClose": 21.9,
+    "priceBasic": 20.5,
+    "totalVolume": 4594900.0,
+    "dealVolume": 4594900.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 99682465000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 346400.0,
+    "buyForeignValue": 7514854703.25796,
+    "sellForeignQuantity": 5800.0,
+    "sellForeignValue": 125826089.14230995,
+    "buyCount": 2486.0,
+    "buyQuantity": 11488354.0,
+    "sellCount": 1772.0,
+    "sellQuantity": 4752378.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 111364834.0,
+    "propTradingNetDealValue": -16239005000.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": -16239005000.0,
+    "unit": 1000.0
+  },
+  {
     "date": "2025-08-01T00:00:00",
     "symbol": "NT2",
     "priceHigh": 20.5,
@@ -23,9 +52,9 @@
     "sellQuantity": 2848283.0,
     "adjRatio": 1.0,
     "currentForeignRoom": 111536434.0,
-    "propTradingNetDealValue": null,
-    "propTradingNetPTValue": null,
-    "propTradingNetValue": null,
+    "propTradingNetDealValue": -410000000.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": -410000000.0,
     "unit": 1000.0
   }
 ]

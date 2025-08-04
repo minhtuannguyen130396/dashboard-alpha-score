@@ -57,6 +57,7 @@ def draw_candlestick_plotly(
         "Low": [r.priceLow for r in stock_records],
         "Close": [r.priceClose for r in stock_records],
         "AdjRatio": [r.adjRatio for r in stock_records],
+        "avgPrice": [r.priceAverage for r in stock_records]
     })
 
     # Tìm ngày điều chỉnh giá (khi AdjRatio thay đổi so với phiên trước)
@@ -107,7 +108,7 @@ def draw_candlestick_plotly(
     # Chấm mua thực tế (xanh lá)
     fig.add_trace(go.Scatter(
         x=df["Date"][actual_buy_point_converted],
-        y=df["Low"][actual_buy_point_converted] * 0.990,
+        y=df["avgPrice"][actual_buy_point_converted] ,
         mode='markers',
         marker=dict(color='blue', size=10, symbol='circle'),
         name='Mua Thực Tế'
@@ -124,9 +125,9 @@ def draw_candlestick_plotly(
             
     fig.add_trace(go.Scatter(
         x=df["Date"][actual_sale_point_converted],
-        y=df["High"][actual_sale_point_converted] * 1.015,
+        y=df["avgPrice"][actual_sale_point_converted],
         mode='markers',
-        marker=dict(color="#E78504", size=10, symbol='circle'),
+        marker=dict(color="#FF9900", size=10, symbol='circle'),
         name='Bán Thực Tế'
     ))
     
@@ -189,7 +190,8 @@ def draw_candlestick_plotly(
     
     fig.update_layout(title=f"[{symbol}] Từ {stock_records[0].date.strftime('%Y-%m-%d')} đến {stock_records[-1].date.strftime('%Y-%m-%d')}",
                       xaxis_title='Date', yaxis_title='Price',
-                      xaxis_rangeslider_visible=False)
+                      xaxis_rangeslider_visible=False
+                      )
     fig.update_xaxes(
         rangeslider_visible=True,  # bật range slider
         type="date"                # đảm bảo trục X là ngày tháng
@@ -238,46 +240,25 @@ def draw_chart(
     list_fynance:List[FynanceRecord])    -> None:
     """ Hàm vẽ biểu đồ tổng quan"""
     
-    num_of_row = 2
     # Tạo layout 2 hàng, 1 cột
-    fig = make_subplots (
-        rows=num_of_row, cols=1,
-        specs=[[{"type": "xy"}],
-               [{"type": "table"}]],
-        #row_heights= [0.7, 0.3],
-        vertical_spacing=0.02 )
-    fig.update_layout(
-        autosize=True,
-        margin=dict(l=10, r=10, t=10, b=10)
-    )
+
     fig_candlestick = draw_candlestick_plotly(
         stock_records,
         marketBehavior,
         actual_sale_point,
         actual_buy_point,
     )
-    for trace in fig_candlestick.data:
-        fig.add_trace(trace, row=1, col=1)
-    # fig.update_yaxes(title_text="Price", row=1, col=1)
-    # fig.update_xaxes(title_text="Date", row=1, col=1)
     
-    # fig_table = table_fynance(list_fynance)
-    # for trace in fig_table.data:
-    #     fig.add_trace(trace, row=2, col=1)
-    
-    # fig.update_yaxes(title_text="Finance Records", row=2, col=1)
-    # fig.update_xaxes(title_text="Date", row=2, col=1)
     
     current_date_str = datetime.now().strftime('%Y-%m-%d')
     output_dir = os.path.join('chart', current_date_str)
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    #fig.update_layout(height=800)
+    #fig.update_layout(height=3000)
     
     file_name = f"{stock_records[-1].symbol}_{stock_records[0].date.strftime('%Y-%m-%d')}_{stock_records[-1].date.strftime('%Y-%m-%d')}.html"
-    fig.write_html(
+    fig_candlestick.write_html(
         os.path.join(output_dir, file_name),  
         auto_open=False
     )
-    
     open_html_in_chrome(os.path.join(output_dir, file_name))

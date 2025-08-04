@@ -1,5 +1,34 @@
 [
   {
+    "date": "2025-08-04T00:00:00",
+    "symbol": "PMC",
+    "priceHigh": 108.0,
+    "priceLow": 108.0,
+    "priceOpen": 108.0,
+    "priceAverage": 108.0,
+    "priceClose": 108.0,
+    "priceBasic": 106.0,
+    "totalVolume": 100.0,
+    "dealVolume": 100.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 10800000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 0.0,
+    "buyForeignValue": 0.0,
+    "sellForeignQuantity": 0.0,
+    "sellForeignValue": 0.0,
+    "buyCount": 31.0,
+    "buyQuantity": 4217.0,
+    "sellCount": 32.0,
+    "sellQuantity": 8094.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 4219890.0,
+    "propTradingNetDealValue": 0.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 0.0,
+    "unit": 1000.0
+  },
+  {
     "date": "2025-08-01T00:00:00",
     "symbol": "PMC",
     "priceHigh": 106.0,
@@ -23,9 +52,9 @@
     "sellQuantity": 0.0,
     "adjRatio": 1.0,
     "currentForeignRoom": 4219790.0,
-    "propTradingNetDealValue": null,
-    "propTradingNetPTValue": null,
-    "propTradingNetValue": null,
+    "propTradingNetDealValue": 0.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 0.0,
     "unit": 1000.0
   }
 ]

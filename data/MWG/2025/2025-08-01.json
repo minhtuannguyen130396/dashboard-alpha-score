@@ -1,5 +1,34 @@
 [
   {
+    "date": "2025-08-04T00:00:00",
+    "symbol": "MWG",
+    "priceHigh": 67.0,
+    "priceLow": 65.2,
+    "priceOpen": 65.2,
+    "priceAverage": 65.89432137855447,
+    "priceClose": 67.0,
+    "priceBasic": 65.2,
+    "totalVolume": 10090500.0,
+    "dealVolume": 8211500.0,
+    "putthroughVolume": 1879000.0,
+    "totalValue": 664911403000.0,
+    "putthroughValue": 123820183000.0,
+    "buyForeignQuantity": 1728130.0,
+    "buyForeignValue": 113873953603.92133,
+    "sellForeignQuantity": 1419506.0,
+    "sellForeignValue": 93537384562.78633,
+    "buyCount": 5688.0,
+    "buyQuantity": 16195655.0,
+    "sellCount": 3974.0,
+    "sellQuantity": 12066277.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 3399569.0,
+    "propTradingNetDealValue": 30566660000.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 30566660000.0,
+    "unit": 1000.0
+  },
+  {
     "date": "2025-08-01T00:00:00",
     "symbol": "MWG",
     "priceHigh": 66.7,
@@ -23,9 +52,9 @@
     "sellQuantity": 13774251.0,
     "adjRatio": 1.0,
     "currentForeignRoom": 3131999.0,
-    "propTradingNetDealValue": null,
-    "propTradingNetPTValue": null,
-    "propTradingNetValue": null,
+    "propTradingNetDealValue": -28113500000.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": -28113500000.0,
     "unit": 1000.0
   }
 ]

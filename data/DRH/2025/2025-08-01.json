@@ -1,5 +1,34 @@
 [
   {
+    "date": "2025-08-04T00:00:00",
+    "symbol": "DRH",
+    "priceHigh": 3.44,
+    "priceLow": 3.34,
+    "priceOpen": 3.37,
+    "priceAverage": 3.4070875388198756,
+    "priceClose": 3.43,
+    "priceBasic": 3.39,
+    "totalVolume": 1030400.0,
+    "dealVolume": 1030400.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 3510663000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 62200.0,
+    "buyForeignValue": 211920844.91459626,
+    "sellForeignQuantity": 11300.0,
+    "sellForeignValue": 38500089.18866459,
+    "buyCount": 520.0,
+    "buyQuantity": 1753331.0,
+    "sellCount": 510.0,
+    "sellQuantity": 2328813.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 60270291.0,
+    "propTradingNetDealValue": 0.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 0.0,
+    "unit": 1000.0
+  },
+  {
     "date": "2025-08-01T00:00:00",
     "symbol": "DRH",
     "priceHigh": 3.5,
@@ -23,9 +52,9 @@
     "sellQuantity": 5154835.0,
     "adjRatio": 1.0,
     "currentForeignRoom": 60300591.0,
-    "propTradingNetDealValue": null,
-    "propTradingNetPTValue": null,
-    "propTradingNetValue": null,
+    "propTradingNetDealValue": 0.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 0.0,
     "unit": 1000.0
   }
 ]

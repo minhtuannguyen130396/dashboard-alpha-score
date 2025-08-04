@@ -29,7 +29,7 @@ class IndicatorGroup1:
                 result.append(None)
             else:
                 result.append(sum(closes[i+1-period:i+1]) / period)
-        print(f"[MATH][SMA] Last point: {result[-1]}")
+        #print(f"[MATH][SMA] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -48,7 +48,7 @@ class IndicatorGroup1:
             else:
                 ema_prev = price * k + ema_prev * (1 - k)  # type: ignore
                 result.append(ema_prev)
-        print(f"[MATH][EMA] Last point: {result[-1]}")
+        #print(f"[MATH][EMA] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -64,7 +64,7 @@ class IndicatorGroup1:
             else:
                 window = closes[i+1-period:i+1]
                 result.append(sum(v * w for v, w in zip(window, weights)) / wsum)
-        print(f"[MATH][WMA] Last point: {result[-1]}")
+        #print(f"[MATH][WMA] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -82,7 +82,7 @@ class IndicatorGroup1:
                 num = sum(ci * vi for ci, vi in zip(c, v))
                 den = sum(v)
                 result.append(num/den if den != 0 else None)
-        print(f"[MATH][VWMA] Last point: {result[-1]}")
+        #print(f"[MATH][VWMA] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -98,7 +98,7 @@ class IndicatorGroup1:
         diff_recs = [D() for _ in diff]
         for d, rec in zip(diff, diff_recs): rec.priceClose = d or 0
         result = IndicatorGroup1.ema(diff_recs, int(math.sqrt(period)))
-        print(f"[MATH][HMA] Last point: {result[-1]}")
+        #print(f"[MATH][HMA] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -115,7 +115,7 @@ class IndicatorGroup1:
             sc = (er*(2/(fast+1)-2/(slow+1))+2/(slow+1))**2
             ama = ama + sc*(closes[i] - ama)
             result.append(ama)
-        print(f"[MATH][KAMA] Last point: {result[-1]}")
+        #print(f"[MATH][KAMA] Last point: {result[-1]}")
         return result
 
 # =========================
@@ -131,7 +131,7 @@ class IndicatorGroup2:
                 result.append(None)
             else:
                 result.append(closes[i] - closes[i-period])
-        print(f"[MATH][Momentum] Last point: {result[-1]}")
+        #print(f"[MATH][Momentum] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -143,7 +143,7 @@ class IndicatorGroup2:
                 result.append(None)
             else:
                 result.append((closes[i]-closes[i-period])/closes[i-period]*100)
-        print(f"[MATH][ROC] Last point: {result[-1]}")
+        #print(f"[MATH][ROC] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -158,7 +158,7 @@ class IndicatorGroup2:
                 ma=sum(window)/period
                 md=sum(abs(x-ma) for x in window)/period
                 result.append((tp[i]-ma)/(0.015*md) if md else None)
-        print(f"[MATH][CCI] Last point: {result[-1]}")
+        #print(f"[MATH][CCI] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -172,7 +172,7 @@ class IndicatorGroup2:
                 low=min(r.priceLow for r in records[i+1-period:i+1])
                 close=records[i].priceClose
                 result.append((close-low)/(high-low)*100 if high!=low else None)
-        print(f"[MATH][Stoch%K] Last point: {result[-1]}")
+        #print(f"[MATH][Stoch%K] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -185,7 +185,7 @@ class IndicatorGroup2:
             else:
                 window=[x for x in k[i+1-period_d:i+1] if x is not None]
                 result.append(sum(window)/len(window) if window else None)
-        print(f"[MATH][Stoch%D] Last point: {result[-1]}")
+        #print(f"[MATH][Stoch%D] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -198,7 +198,7 @@ class IndicatorGroup2:
                 high=max(r.priceHigh for r in records[i+1-period:i+1])
                 low=min(r.priceLow for r in records[i+1-period:i+1])
                 result.append((high-records[i].priceClose)/(high-low)*-100 if high!=low else None)
-        print(f"[MATH][Williams%R] Last point: {result[-1]}")
+        #print(f"[MATH][Williams%R] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -218,7 +218,7 @@ class IndicatorGroup2:
                 avg2=sum(bp[i+1-p2:i+1])/sum(tr[i+1-p2:i+1]) if sum(tr[i+1-p2:i+1]) else 0
                 avg3=sum(bp[i+1-p3:i+1])/sum(tr[i+1-p3:i+1]) if sum(tr[i+1-p3:i+1]) else 0
                 result.append((4*avg1+2*avg2+avg3)/7*100)
-        print(f"[MATH][UltOsc] Last point: {result[-1]}")
+        #print(f"[MATH][UltOsc] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -231,7 +231,7 @@ class IndicatorGroup2:
         for v,r in zip(macd_line,recs): r.priceClose=v or 0
         sig=IndicatorGroup2.ema(recs, signal)
         hist=[(m-s) if m is not None and s is not None else None for m,s in zip(macd_line, sig)]
-        print(f"[MATH][MACD] Last MACD: {macd_line[-1]}, Signal: {sig[-1]}, Histogram: {hist[-1]}")
+        #print(f"[MATH][MACD] Last MACD: {macd_line[-1]}, Signal: {sig[-1]}, Histogram: {hist[-1]}")
         return macd_line, sig, hist
 
     @staticmethod
@@ -260,7 +260,7 @@ class IndicatorGroup2:
                 result.append(None)
             else:
                 result.append(closes[i] - closes[i-period])
-        print(f"[MATH][Momentum] Last point: {result[-1]}")
+        #print(f"[MATH][Momentum] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -273,7 +273,7 @@ class IndicatorGroup2:
                 result.append(None)
             else:
                 result.append((closes[i]-closes[i-period])/closes[i-period]*100)
-        print(f"[MATH][ROC] Last point: {result[-1]}")
+        #print(f"[MATH][ROC] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -289,7 +289,7 @@ class IndicatorGroup2:
                 ma=sum(window)/period
                 md=sum(abs(x-ma) for x in window)/period
                 result.append((tp[i]-ma)/(0.015*md) if md else None)
-        print(f"[MATH][CCI] Last point: {result[-1]}")
+        #print(f"[MATH][CCI] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -304,7 +304,7 @@ class IndicatorGroup2:
                 low=min(r.priceLow for r in records[i+1-period:i+1])
                 close=records[i].priceClose
                 result.append((close-low)/(high-low)*100 if high!=low else None)
-        print(f"[MATH][Stoch%K] Last point: {result[-1]}")
+        #print(f"[MATH][Stoch%K] Last point: {result[-1]}")
         return result
 
 
@@ -319,7 +319,7 @@ class IndicatorGroup2:
             else:
                 window=[x for x in k[i+1-period_d:i+1] if x is not None]
                 result.append(sum(window)/len(window) if window else None)
-        print(f"[MATH][Stoch%D] Last point: {result[-1]}")
+        #print(f"[MATH][Stoch%D] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -333,7 +333,7 @@ class IndicatorGroup2:
                 high=max(r.priceHigh for r in records[i+1-period:i+1])
                 low=min(r.priceLow for r in records[i+1-period:i+1])
                 result.append((high-records[i].priceClose)/(high-low)*-100 if high!=low else None)
-        print(f"[MATH][Williams%R] Last point: {result[-1]}")
+        #print(f"[MATH][Williams%R] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -354,7 +354,7 @@ class IndicatorGroup2:
                 avg2=sum(bp[i+1-p2:i+1])/sum(tr[i+1-p2:i+1]) if sum(tr[i+1-p2:i+1]) else 0
                 avg3=sum(bp[i+1-p3:i+1])/sum(tr[i+1-p3:i+1]) if sum(tr[i+1-p3:i+1]) else 0
                 result.append((4*avg1+2*avg2+avg3)/7*100)
-        print(f"[MATH][UltOsc] Last point: {result[-1]}")
+        #print(f"[MATH][UltOsc] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -367,7 +367,7 @@ class IndicatorGroup2:
         for v,r in zip(macd_line,recs): r.priceClose=v or 0
         sig=IndicatorGroup1.ema(recs, signal)
         hist=[(m-s) if m is not None and s is not None else None for m,s in zip(macd_line, sig)]
-        print(f"[MATH][MACD] Last MACD: {macd_line[-1]}, Signal: {sig[-1]}, Histogram: {hist[-1]}")
+        #print(f"[MATH][MACD] Last MACD: {macd_line[-1]}, Signal: {sig[-1]}, Histogram: {hist[-1]}")
         return macd_line, sig, hist
 
 # =========================
@@ -384,7 +384,7 @@ class IndicatorGroup3:
         for i in range(len(tr)):
             if i+1<period: result.append(None)
             else: result.append(sum(tr[i+1-period:i+1])/period)
-        print(f"[MATH][ATR] Last point: {result[-1]}")
+        #print(f"[MATH][ATR] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -399,7 +399,7 @@ class IndicatorGroup3:
                 sd=statistics.pstdev(window)
                 up.append(mid[i]+num_std*sd)  # type: ignore
                 down.append(mid[i]-num_std*sd)
-        print(f"[MATH][Bollinger] Last Upper: {up[-1]}, Middle: {mid[-1]}, Lower: {down[-1]}")
+        #print(f"[MATH][Bollinger] Last Upper: {up[-1]}, Middle: {mid[-1]}, Lower: {down[-1]}")
         return up, mid, down
 
     @staticmethod
@@ -411,7 +411,7 @@ class IndicatorGroup3:
         for m,a in zip(ema_mid, atr_):
             if m is None or a is None: up.append(None); down.append(None)
             else: up.append(m+factor*a); down.append(m-factor*a)
-        print(f"[MATH][Keltner] Last Upper: {up[-1]}, Middle: {mid[-1]}, Lower: {down[-1]}")
+        #print(f"[MATH][Keltner] Last Upper: {up[-1]}, Middle: {mid[-1]}, Lower: {down[-1]}")
         return up, mid, down
 
     @staticmethod
@@ -424,7 +424,7 @@ class IndicatorGroup3:
                 high=max(r.priceHigh for r in records[i+1-period:i+1])
                 low=min(r.priceLow for r in records[i+1-period:i+1])
                 up.append(high); down.append(low)
-        print(f"[MATH][Donchian] Last Upper: {up[-1]}, Lower: {down[-1]}")
+        #print(f"[MATH][Donchian] Last Upper: {up[-1]}, Lower: {down[-1]}")
         return up, down
 
     @staticmethod
@@ -435,7 +435,7 @@ class IndicatorGroup3:
         for i in range(len(closes)):
             if i+1<period: result.append(None)
             else: result.append(statistics.pstdev(closes[i+1-period:i+1]))
-        print(f"[MATH][StdDev] Last point: {result[-1]}")
+        #print(f"[MATH][StdDev] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -471,7 +471,7 @@ class IndicatorGroup3:
                     else:
                         window.append(0)
                 result.append(sum(window))
-        print(f"[MATH][MassIndex] Last point: {result[-1]}")
+        #print(f"[MATH][MassIndex] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -498,7 +498,7 @@ class IndicatorGroup3:
                 result.append(None)
             else:
                 result.append((short_val - long_val) / long_val * 100)
-        print(f"[MATH][ChaikinVolatility] Last point: {result[-1]}")
+        #print(f"[MATH][ChaikinVolatility] Last point: {result[-1]}")
         return result
 # =========================
 # Nhóm 4: Volume-Based Indicators (Chỉ báo khối lượng)
@@ -515,7 +515,7 @@ class IndicatorGroup4:
             elif records[i].priceClose < records[i-1].priceClose:
                 obv_val -= int(records[i].totalVolume)
             result.append(obv_val)
-        print(f"[MATH][OBV] Last point: {result[-1]}")
+        #print(f"[MATH][OBV] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -532,7 +532,7 @@ class IndicatorGroup4:
             mfv = mfm * volume
             ad_val += mfv
             result.append(ad_val)
-        print(f"[MATH][AccDistLine] Last point: {result[-1]}")
+        #print(f"[MATH][AccDistLine] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -557,7 +557,7 @@ class IndicatorGroup4:
                 window_mfv = sum(mfv[i+1-period:i+1])
                 window_vol = sum(vol[i+1-period:i+1])
                 result.append(window_mfv / window_vol if window_vol != 0 else None)
-        print(f"[MATH][CMF] Last point: {result[-1]}")
+        #print(f"[MATH][CMF] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -584,7 +584,7 @@ class IndicatorGroup4:
                     result.append(100 - 100 / (1 + mfr))
                 else:
                     result.append(None)
-        print(f"[MATH][MFI] Last point: {result[-1]}")
+        #print(f"[MATH][MFI] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -597,7 +597,7 @@ class IndicatorGroup4:
                 result.append(None)
             else:
                 result.append((volumes[i] - volumes[i-period]) / volumes[i-period] * 100)
-        print(f"[MATH][VROC] Last point: {result[-1]}")
+        #print(f"[MATH][VROC] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -611,7 +611,7 @@ class IndicatorGroup4:
             cum_vtp += tp * r.totalVolume
             cum_vol += r.totalVolume
             result.append(cum_vtp / cum_vol if cum_vol != 0 else None)
-        print(f"[MATH][VWAP] Last point: {result[-1]}")
+        #print(f"[MATH][VWAP] Last point: {result[-1]}")
         return result
     @staticmethod 
     def is_big_buyer(records: List[StockRecord],pretiod :int = 14) -> List[bool]:
@@ -678,7 +678,7 @@ class IndicatorGroup5:
         for a, d in zip(advances, declines):
             cum += (a - d)
             result.append(cum)
-        print(f"[MATH][AdvanceDeclineLine] Last point: {result[-1]}")
+        #print(f"[MATH][AdvanceDeclineLine] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -708,7 +708,7 @@ class IndicatorGroup5:
                 result.append(None)
             else:
                 result.append(s - l)
-        print(f"[MATH][McClellanOscillator] Last point: {result[-1]}")
+        #print(f"[MATH][McClellanOscillator] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -720,7 +720,7 @@ class IndicatorGroup5:
                 result.append(None)
             else:
                 result.append((a / d) / (va / vd))
-        print(f"[MATH][TRIN] Last point: {result[-1]}")
+        #print(f"[MATH][TRIN] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -732,7 +732,7 @@ class IndicatorGroup5:
                 result.append(None)
             else:
                 result.append(b / t * 100)
-        print(f"[MATH][BullishPercentIndex] Last point: {result[-1]}")
+        #print(f"[MATH][BullishPercentIndex] Last point: {result[-1]}")
         return result
 
 # =========================
@@ -761,7 +761,7 @@ class IndicatorGroup6:
                     'S2': S2, 'R2': R2,
                     'S3': S3, 'R3': R3
                 })
-        print(f"[MATH][PivotPoints] Last point: {result[-1]}")
+        #print(f"[MATH][PivotPoints] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -786,7 +786,7 @@ class IndicatorGroup6:
                     pts[f"R{lvl}"] = H + diff * lvl
                     pts[f"S{lvl}"] = L - diff * lvl
                 result.append(pts)
-        print(f"[MATH][Fibonacci] Last point: {result[-1]}")
+        #print(f"[MATH][Fibonacci] Last point: {result[-1]}")
         return result
 
     @staticmethod
@@ -812,6 +812,6 @@ class IndicatorGroup6:
                     result.append(cov / (std_x * std_y * period))
                 else:
                     result.append(None)
-        print(f"[MATH][Correlation] Last point: {result[-1]}")
+        #print(f"[MATH][Correlation] Last point: {result[-1]}")
         return result
     

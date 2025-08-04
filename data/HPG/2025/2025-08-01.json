@@ -1,5 +1,34 @@
 [
   {
+    "date": "2025-08-04T00:00:00",
+    "symbol": "HPG",
+    "priceHigh": 25.45,
+    "priceLow": 24.95,
+    "priceOpen": 25.1,
+    "priceAverage": 25.207972885819835,
+    "priceClose": 25.3,
+    "priceBasic": 25.15,
+    "totalVolume": 39243103.0,
+    "dealVolume": 37058100.0,
+    "putthroughVolume": 2185003.0,
+    "totalValue": 989269650200.0,
+    "putthroughValue": 55110070200.0,
+    "buyForeignQuantity": 484715.0,
+    "buyForeignValue": 12218682577.35016,
+    "sellForeignQuantity": 4692178.0,
+    "sellForeignValue": 118280295799.44034,
+    "buyCount": 21749.0,
+    "buyQuantity": 66773904.0,
+    "sellCount": 15363.0,
+    "sellQuantity": 67439988.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 2077057815.0,
+    "propTradingNetDealValue": 46495970000.0,
+    "propTradingNetPTValue": -50300070000.0,
+    "propTradingNetValue": -3804100000.0,
+    "unit": 1000.0
+  },
+  {
     "date": "2025-08-01T00:00:00",
     "symbol": "HPG",
     "priceHigh": 25.3,
@@ -23,9 +52,9 @@
     "sellQuantity": 76750992.0,
     "adjRatio": 1.0,
     "currentForeignRoom": 2074763317.0,
-    "propTradingNetDealValue": null,
-    "propTradingNetPTValue": null,
-    "propTradingNetValue": null,
+    "propTradingNetDealValue": 16285944000.0,
+    "propTradingNetPTValue": -116000.0,
+    "propTradingNetValue": 16285828000.0,
     "unit": 1000.0
   }
 ]

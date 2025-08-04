@@ -28,6 +28,5 @@
   { "share_code": "VHC", "ipo_date": "2016-01-01" },
   { "share_code": "PTB", "ipo_date": "2016-01-01" },
   { "share_code": "NDN", "ipo_date": "2016-01-01" },
-  { "share_code": "PPG", "ipo_date": "2016-01-01" },
   { "share_code": "PMC", "ipo_date": "2016-01-01" }
 ]

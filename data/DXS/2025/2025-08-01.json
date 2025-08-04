@@ -1,5 +1,34 @@
 [
   {
+    "date": "2025-08-04T00:00:00",
+    "symbol": "DXS",
+    "priceHigh": 11.45,
+    "priceLow": 10.85,
+    "priceOpen": 11.0,
+    "priceAverage": 11.197453167246042,
+    "priceClose": 11.3,
+    "priceBasic": 11.0,
+    "totalVolume": 4142400.0,
+    "dealVolume": 4142400.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 46384330000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 170500.0,
+    "buyForeignValue": 1909165765.01545,
+    "sellForeignQuantity": 431600.0,
+    "sellForeignValue": 4832820786.983391,
+    "buyCount": 1753.0,
+    "buyQuantity": 6622673.0,
+    "sellCount": 2239.0,
+    "sellQuantity": 7994413.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 165970315.0,
+    "propTradingNetDealValue": 0.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 0.0,
+    "unit": 1000.0
+  },
+  {
     "date": "2025-08-01T00:00:00",
     "symbol": "DXS",
     "priceHigh": 11.35,
@@ -23,9 +52,9 @@
     "sellQuantity": 8858501.0,
     "adjRatio": 1.0,
     "currentForeignRoom": 165945215.0,
-    "propTradingNetDealValue": null,
-    "propTradingNetPTValue": null,
-    "propTradingNetValue": null,
+    "propTradingNetDealValue": 0.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 0.0,
     "unit": 1000.0
   }
 ]

@@ -1,5 +1,34 @@
 [
   {
+    "date": "2025-08-04T00:00:00",
+    "symbol": "GVR",
+    "priceHigh": 30.25,
+    "priceLow": 29.6,
+    "priceOpen": 29.6,
+    "priceAverage": 29.887486097952795,
+    "priceClose": 29.9,
+    "priceBasic": 29.7,
+    "totalVolume": 2427700.0,
+    "dealVolume": 2427700.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 72557850000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 71605.0,
+    "buyForeignValue": 2140093442.0439098,
+    "sellForeignQuantity": 16600.0,
+    "sellForeignValue": 496132269.2260164,
+    "buyCount": 2396.0,
+    "buyQuantity": 4152336.0,
+    "sellCount": 1892.0,
+    "sellQuantity": 5041038.0,
+    "adjRatio": 1.0,
+    "currentForeignRoom": 492357163.0,
+    "propTradingNetDealValue": 1125620000.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 1125620000.0,
+    "unit": 1000.0
+  },
+  {
     "date": "2025-08-01T00:00:00",
     "symbol": "GVR",
     "priceHigh": 30.5,
@@ -23,9 +52,9 @@
     "sellQuantity": 7381683.0,
     "adjRatio": 1.0,
     "currentForeignRoom": 492345968.0,
-    "propTradingNetDealValue": null,
-    "propTradingNetPTValue": null,
-    "propTradingNetValue": null,
+    "propTradingNetDealValue": 511225000.0,
+    "propTradingNetPTValue": 0.0,
+    "propTradingNetValue": 511225000.0,
     "unit": 1000.0
   }
 ]

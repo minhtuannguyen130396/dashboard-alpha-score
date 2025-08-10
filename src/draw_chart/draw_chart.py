@@ -196,6 +196,10 @@ def draw_candlestick_plotly(
         rangeslider_visible=True,  # bật range slider
         type="date"                # đảm bảo trục X là ngày tháng
     )
+    fig.update_layout(
+        #xaxis_rangeslider_visible=False,
+        xaxis=dict(fixedrange=False)
+    )
     return fig
 
 

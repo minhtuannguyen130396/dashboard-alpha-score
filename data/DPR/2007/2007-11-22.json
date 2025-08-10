@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2007-11-30T00:00:00",
+    "symbol": "DPR",
+    "priceHigh": 104.0,
+    "priceLow": 98.0,
+    "priceOpen": 100.0,
+    "priceAverage": 99.0,
+    "priceClose": 99.0,
+    "priceBasic": 0.0,
+    "totalVolume": 456960.0,
+    "dealVolume": 456960.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 45239040000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 0.0,
+    "buyForeignValue": 0.0,
+    "sellForeignQuantity": 0.0,
+    "sellForeignValue": 0.0,
+    "buyCount": 898.0,
+    "buyQuantity": 1501270.0,
+    "sellCount": 369.0,
+    "sellQuantity": 1302170.0,
+    "adjRatio": 8.501187601541266,
+    "currentForeignRoom": 16598800.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

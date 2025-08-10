@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2010-09-30T00:00:00",
+    "symbol": "VMD",
+    "priceHigh": 33.1,
+    "priceLow": 32.0,
+    "priceOpen": 32.0,
+    "priceAverage": 32.0,
+    "priceClose": 32.0,
+    "priceBasic": 0.0,
+    "totalVolume": 205700.0,
+    "dealVolume": 205700.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 6582400000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 0.0,
+    "buyForeignValue": 0.0,
+    "sellForeignQuantity": 0.0,
+    "sellForeignValue": 0.0,
+    "buyCount": 0.0,
+    "buyQuantity": 0.0,
+    "sellCount": 0.0,
+    "sellQuantity": 0.0,
+    "adjRatio": 3.6777456224382075,
+    "currentForeignRoom": 0.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

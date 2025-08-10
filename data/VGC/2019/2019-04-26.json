@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2019-04-26T00:00:00",
+    "symbol": "VGC",
+    "priceHigh": 19.7,
+    "priceLow": 19.4,
+    "priceOpen": 19.4,
+    "priceAverage": 19.509475719810915,
+    "priceClose": 19.5,
+    "priceBasic": 19.4,
+    "totalVolume": 741700.0,
+    "dealVolume": 465400.0,
+    "putthroughVolume": 276300.0,
+    "totalValue": 13997850000.0,
+    "putthroughValue": 4918140000.0,
+    "buyForeignQuantity": 0.0,
+    "buyForeignValue": 0.0,
+    "sellForeignQuantity": 0.0,
+    "sellForeignValue": 0.0,
+    "buyCount": 0.0,
+    "buyQuantity": 923100.0,
+    "sellCount": 0.0,
+    "sellQuantity": 1223600.0,
+    "adjRatio": 1.3230035524402246,
+    "currentForeignRoom": 151151548.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

@@ -18,6 +18,7 @@ LIST_VN_30 = 'Stock_List\stock_vn_30.txt'
 LIST_MID_CAB = 'Stock_List\stock_mid_cab.txt'
 LIST_LARGE_CAB = 'Stock_List\stock_large_cab.txt'
 LIST_OTHER = 'Stock_List\stock_other.txt'
+LIST_ALL_STOCK = 'Stock_List\list_all_stock.json'
 #-----------------------------
 
 
@@ -63,7 +64,7 @@ def fetch_all_data():
                 list_stock_name.append(name)       
     else:
         # load danh sách cổ phiếu mới 
-        for name in load_stocks_from_txt(LIST_OTHER):
+        for name in load_stocks_from_txt(LIST_ALL_STOCK):
             list_stock_name.append(name)
             
     print(f"Total stocks to fetch: {len(list_stock_name)}")

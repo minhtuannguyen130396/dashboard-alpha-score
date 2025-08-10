@@ -9,11 +9,22 @@ LIST_VN_30 =        'Stock_List\stock_vn_30.txt'
 LIST_MID_CAB =      'Stock_List\stock_mid_cab.txt'
 LIST_LARGE_CAB =    'Stock_List\stock_large_cab.txt'
 LIST_OTHER =        'Stock_List\stock_other.txt'
+LIST_ALL =          'Stock_List\list_all_stock.json'
 # Sample lists
 list_vn_30 = []
 list_large_cap = []
 list_medium_cap = []
 list_other = []
+list_all = []
+def get_all_symbols():
+    def load_stocks_from_txt(path: str):
+        with open(path, 'r', encoding='utf-8') as f:
+            content = f.read().strip()
+        return json.loads(content)
+    # Convert to just share codes
+    list_symbols         = [r['share_code'] for r in load_stocks_from_txt(LIST_ALL)]
+    return list_symbols
+
 def get_list_symbols():
     def load_stocks_from_txt(path: str):
         with open(path, 'r', encoding='utf-8') as f:
@@ -49,13 +60,16 @@ def create_app():
             idx = listbox.size()
             listbox.insert('end', item)
             listbox.itemconfig(idx, bg=color)
-    list_vn_30, list_large_cap, list_medium_cap, list_other = get_list_symbols()
-    # Insert groups
-    insert_group(list_vn_30, '#FFC1C1')       # light red
-    insert_group(list_large_cap, '#C1FFC1')    # light green
-    insert_group(list_medium_cap, '#C1C1FF')   # light blue
-    insert_group(list_other, '#F0F0F0')        # light gray
-
+    #follow list data old
+    # list_vn_30, list_large_cap, list_medium_cap, list_other = get_list_symbols()
+    # insert_group(list_vn_30, '#FFC1C1')       # light red
+    # insert_group(list_large_cap, '#C1FFC1')    # light green
+    # insert_group(list_medium_cap, '#C1C1FF')   # light blue
+    # insert_group(list_other, '#F0F0F0')        # light gray
+    #follow list data new(all data)
+    list_all = get_all_symbols()
+    insert_group(list_all, '#FFC1C1') 
+    
     # Set default selection to first symbol
     if listbox.size() > 0:
         listbox.selection_set(0)
@@ -104,10 +118,15 @@ def create_app():
         start_date = start_cal.get_date().strftime('%Y-%m-%d')
         end_date = end_cal.get_date().strftime('%Y-%m-%d')
         back_test_write_csv(
-            list_vn_30 + list_large_cap + list_medium_cap + list_other,
+            list_all,
             start_date,
             end_date
         )
+        # back_test_write_csv(
+        #     list_vn_30 + list_large_cap + list_medium_cap + list_other,
+        #     start_date,
+        #     end_date
+        # )
             
     submit_btn = ttk.Button(
         root,

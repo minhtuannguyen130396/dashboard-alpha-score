@@ -1,6 +1,6 @@
 from typing import List, Tuple, Optional, Dict
-from dataclasses import dataclass
 from datetime import datetime
+import pandas as pd
 import math
 import statistics
 from src.base.load_stock_data import StockRecord
@@ -505,6 +505,7 @@ class IndicatorGroup3:
 # =========================
 class IndicatorGroup4:
     @staticmethod
+    #Tính giá đóng cửa của phiên hiện tại ntn với phiên trước đó
     def obv(records: List[StockRecord]) -> List[int]:
         """Tính On-Balance Volume"""
         result: List[int] = []
@@ -519,25 +520,57 @@ class IndicatorGroup4:
         return result
 
     @staticmethod
-    def ad_line(records: List[StockRecord]) -> List[float]:
-        """Tính Accumulation/Distribution Line"""
-        result: List[float] = []
-        ad_val = 0.0
-        for r in records:
-            high, low, close, volume = r.priceHigh, r.priceLow, r.priceClose, r.totalVolume
-            if high != low:
-                mfm = ((close - low) - (high - close)) / (high - low)
-            else:
-                mfm = 0.0
-            mfv = mfm * volume
-            ad_val += mfv
-            result.append(ad_val)
-        #print(f"[MATH][AccDistLine] Last point: {result[-1]}")
-        return result
-
+    
+    def ad_signals(records: List[StockRecord],window:int =10) -> List[int]: #tỷ lệ chính xác khoảng 60%
+        """
+        Sinh tín hiệu divergence dựa trên ADL:
+        +1: bullish divergence (giá tạo đáy thấp hơn, ADL tạo đáy cao hơn)
+        -1: bearish divergence (giá tạo đỉnh cao hơn, ADL tạo đỉnh thấp hơn)
+        0: không có divergence
+        """
+        def ad_line(records: List[StockRecord]) -> List[float]:
+            """Tính Accumulation/Distribution Line (ADL)."""
+            result: List[float] = []
+            ad_val = 0.0
+            for r in records:
+                high, low, close, vol = r.priceHigh, r.priceLow, r.priceClose, r.totalVolume
+                mfm = ((close - low) - (high - close)) / (high - low) if high != low else 0.0
+                mfv = mfm * vol
+                ad_val += mfv
+                result.append(ad_val)
+            return result
+        def ad_smoothed(records: List[StockRecord], window: int = 10) -> List[float]:
+            """Lấy ADL rồi trả về MA(window) của nó."""
+            ad_vals = ad_line(records)
+            # Dùng pandas để tính rolling mean, min_periods=1 để không bỏ trống đầu chuỗi
+            return pd.Series(ad_vals).rolling(window=window, min_periods=1).mean().tolist()
+        
+        """
+        Sinh tín hiệu divergence dựa trên ADL đã smooth:
+        +1: bullish divergence (low giảm nhưng ADL_smooth tăng)
+        -1: bearish divergence (high tăng nhưng ADL_smooth giảm)
+        0: không có tín hiệu
+        """
+        ad_ma = ad_smoothed(records, window)
+        signals = [0] * len(records)
+        for i in range(1, len(records)):
+            # bullish divergence
+            if (records[i].priceLow  < records[i-1].priceLow
+                and ad_ma[i]          > ad_ma[i-1]):
+                signals[i] = +1
+            # bearish divergence
+            elif (records[i].priceHigh > records[i-1].priceHigh
+                and ad_ma[i]           < ad_ma[i-1]):
+                signals[i] = -1
+        return signals
+    
     @staticmethod
-    def chaikin_money_flow(records: List[StockRecord], period: int = 20) -> List[Optional[float]]:
-        """Tính Chaikin Money Flow"""
+    def chaikin_money_flow(records: List[StockRecord], period: int = 15, thresh:float = 0.35) -> List[Optional[int]]:
+        
+        """Tính Chaikin Money Flow
+            Đã test. tỷ lệ chưa chính xác
+        """
+        
         mfv: List[float] = []
         vol: List[float] = []
         for r in records:
@@ -549,20 +582,32 @@ class IndicatorGroup4:
                 mfm = 0.0
             mfv.append(mfm * volume)
             vol.append(volume)
-        result: List[Optional[float]] = []
+        result: List[Optional[int]] = []
         for i in range(len(records)):
             if i + 1 < period:
-                result.append(None)
+                result.append(0)
             else:
                 window_mfv = sum(mfv[i+1-period:i+1])
                 window_vol = sum(vol[i+1-period:i+1])
-                result.append(window_mfv / window_vol if window_vol != 0 else None)
+                money_flow_value = window_mfv / window_vol if window_vol != 0 else None
+                #print(f"[ADD] flow: {money_flow_value}")
+                if(money_flow_value > thresh):
+                    result.append(1)
+                elif (money_flow_value < - thresh):
+                    result.append(-1)
+                else:
+                    result.append(0)
         #print(f"[MATH][CMF] Last point: {result[-1]}")
         return result
 
     @staticmethod
     def mfi(records: List[StockRecord], period: int = 14) -> List[Optional[float]]:
         """Tính Money Flow Index"""
+        """Đây là công chụ để xác định dòng tiền vào hay ra
+            càng lớn thì nó càng  thể hiện mua mạnh
+            Càng bé thì nó thể hiện càng bán manh
+            Dao động 0-100
+            Dây chỉ là chỉ báo cơ bản dùng để xác nhận tín hiệu"""
         tp: List[float] = []
         for r in records:
             tp.append((r.priceHigh + r.priceLow + r.priceClose) / 3)
@@ -588,16 +633,34 @@ class IndicatorGroup4:
         return result
 
     @staticmethod
-    def vroc(records: List[StockRecord], period: int = 12) -> List[Optional[float]]:
-        """Tính Volume Rate of Change"""
-        volumes = _extract(records, 'totalVolume')
-        result: List[Optional[float]] = []
+    def vroc_score(records: List[StockRecord], period: int = 14, threshold: float = 80.0) -> List[int]:
+        """
+        Tính điểm VROC:
+        - Nếu % thay đổi khối lượng phiên hiện tại so với phiên cách đây period > threshold : 1
+        - Ngược lại : 1
+        """
+        # 1. Lấy danh sách volumes
+        volumes: List[float] = _extract(records, 'totalVolume')
+        
+        # 2. Khởi tạo kết quả
+        result: List[int] = []
+        
+        # 3. Duyệt từng phiên
         for i in range(len(volumes)):
-            if i < period or volumes[i-period] == 0:
-                result.append(None)
+            if i < period or volumes[i - period] == 0:
+                # Chưa đủ dữ liệu hoặc tránh chia cho 0 → gán -1
+                result.append(-1)
             else:
-                result.append((volumes[i] - volumes[i-period]) / volumes[i-period] * 100)
-        #print(f"[MATH][VROC] Last point: {result[-1]}")
+                # Tính VROC phần trăm
+                vroc = (volumes[i] - volumes[i - period]) / volumes[i - period] * 100
+                # So sánh với threshold
+                if (vroc > threshold):
+                    result.append(1)
+                elif (vroc < -threshold):
+                    result.append(-1)
+                else:
+                     result.append(0)
+        
         return result
 
     @staticmethod

@@ -38,8 +38,6 @@ def back_test_write_csv(symbols: List[str], start_date: str, end_date: str = Non
             
         def log_fynance():
             print()
-            print()
-            print()
             print("-------------------------------------------------------------------")
             for record in list_fynance:
                 date_fmt = '%d-%m-%Y'
@@ -54,7 +52,6 @@ def back_test_write_csv(symbols: List[str], start_date: str, end_date: str = Non
             print("--------------------------------------------------------------------")
         log_fynance() 
         stock_csvs_prepared.append(StockCsvWriter(symbol, list_fynance)) 
-    
     write_csv(stock_csvs_prepared, start_date, end_date)
     
     

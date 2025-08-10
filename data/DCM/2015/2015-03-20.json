@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2015-03-31T00:00:00",
+    "symbol": "DCM",
+    "priceHigh": 14.0,
+    "priceLow": 13.0,
+    "priceOpen": 13.6,
+    "priceAverage": 13.500194527298666,
+    "priceClose": 13.6,
+    "priceBasic": 0.0,
+    "totalVolume": 3855500.0,
+    "dealVolume": 3855500.0,
+    "putthroughVolume": 0.0,
+    "totalValue": 52050000000.0,
+    "putthroughValue": 0.0,
+    "buyForeignQuantity": 15000.0,
+    "buyForeignValue": 199500000.0,
+    "sellForeignQuantity": 0.0,
+    "sellForeignValue": 0.0,
+    "buyCount": 1570.0,
+    "buyQuantity": 5461730.0,
+    "sellCount": 1529.0,
+    "sellQuantity": 14671570.0,
+    "adjRatio": 1.9831295607340353,
+    "currentForeignRoom": 251682013.0,
+    "propTradingNetDealValue": null,
+    "propTradingNetPTValue": null,
+    "propTradingNetValue": null,
+    "unit": 1000.0
+  }
+]

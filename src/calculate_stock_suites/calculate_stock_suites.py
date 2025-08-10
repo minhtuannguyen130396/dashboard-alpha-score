@@ -48,15 +48,16 @@ def calculate_stock_score(records: List[StockRecord]) -> float:
     ### 3. Mô hình nến
     bullish_score = 0
     bearish_score = 0
-
+    
     bullish_score += BullishPatterns.hammer(records[-5:])
     bullish_score += BullishPatterns.bullish_engulfing(records[-5:])
     bullish_score += BullishPatterns.three_white_soldiers(records[-5:])
-
+    
     bearish_score += BearishPatterns.shooting_star(records[-5:])
     bearish_score += BearishPatterns.bearish_engulfing(records[-5:])
     bearish_score += BearishPatterns.three_black_crows(records[-5:])
 
+    #return  IndicatorGroup4.vroc_score(records)[-1]
     score += bullish_score
     score -= bearish_score
 

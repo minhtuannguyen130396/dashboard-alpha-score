@@ -122,8 +122,9 @@ class IndicatorGroup1:
 # Nhóm 2: Đà (Momentum)
 # =========================
 class IndicatorGroup2:
-    @staticmethod
+    @staticmethod 
     def momentum(records: List[StockRecord], period: int) -> List[Optional[float]]:
+        """ Hàm xác định đà tăng dựa vào giá đóng cửa và giá trước đó thứ period"""
         closes = _extract(records, 'priceClose')
         result: List[Optional[float]] = []
         for i in range(len(closes)):
@@ -136,6 +137,7 @@ class IndicatorGroup2:
 
     @staticmethod
     def roc(records: List[StockRecord], period: int) -> List[Optional[float]]:
+        """Tương tự như momentum nhưng đây là %, có thể kết hợp cả 2 được """
         closes = _extract(records, 'priceClose')
         result: List[Optional[float]] = []
         for i in range(len(closes)):

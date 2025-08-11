@@ -38,12 +38,12 @@ def calculate_stock_score(records: List[StockRecord]) -> float:
     else:
         score -= 1
 
-    cmf = IndicatorGroup4.chaikin_money_flow(records, period=20)
-    if cmf[-1] is not None:
-        if cmf[-1] > 0.05:
-            score += 1
-        elif cmf[-1] < -0.05:
-            score -= 1
+    # cmf = IndicatorGroup4.chaikin_money_flow(records, period=20)
+    # if cmf[-1] is not None:
+    #     if cmf[-1] > 0.05:
+    #         score += 1
+    #     elif cmf[-1] < -0.05:
+    #         score -= 1
 
     ### 3. Mô hình nến
     bullish_score = 0

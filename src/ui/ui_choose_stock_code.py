@@ -61,14 +61,14 @@ def create_app():
             listbox.insert('end', item)
             listbox.itemconfig(idx, bg=color)
     #follow list data old
-    # list_vn_30, list_large_cap, list_medium_cap, list_other = get_list_symbols()
-    # insert_group(list_vn_30, '#FFC1C1')       # light red
-    # insert_group(list_large_cap, '#C1FFC1')    # light green
-    # insert_group(list_medium_cap, '#C1C1FF')   # light blue
-    # insert_group(list_other, '#F0F0F0')        # light gray
+    list_vn_30, list_large_cap, list_medium_cap, list_other = get_list_symbols()
+    insert_group(list_vn_30, '#FFC1C1')       # light red
+    insert_group(list_large_cap, '#C1FFC1')    # light green
+    insert_group(list_medium_cap, '#C1C1FF')   # light blue
+    insert_group(list_other, '#F0F0F0')        # light gray
     #follow list data new(all data)
-    list_all = get_all_symbols()
-    insert_group(list_all, '#FFC1C1') 
+    # list_all = get_all_symbols()
+    # insert_group(list_all, '#FFC1C1') 
     
     # Set default selection to first symbol
     if listbox.size() > 0:
@@ -117,16 +117,16 @@ def create_app():
     def report_all_stocks(event=None):
         start_date = start_cal.get_date().strftime('%Y-%m-%d')
         end_date = end_cal.get_date().strftime('%Y-%m-%d')
-        back_test_write_csv(
-            list_all,
-            start_date,
-            end_date
-        )
         # back_test_write_csv(
-        #     list_vn_30 + list_large_cap + list_medium_cap + list_other,
+        #     list_all,
         #     start_date,
         #     end_date
         # )
+        back_test_write_csv(
+            list_vn_30 + list_large_cap + list_medium_cap + list_other,
+            start_date,
+            end_date
+        )
             
     submit_btn = ttk.Button(
         root,

@@ -11,7 +11,7 @@ HEADERS           = {
     'Authorization': f'Bearer {BEARER_TOKEN}',
     'Accept'       : 'application/json'
 }
-IS_FETCH_ALL_DATA = True  # True: lấy tất cả dữ liệu, False: lấy dữ liệu mới
+IS_FETCH_ALL_DATA = True  # True: lấy tất cả dữ liệu trong vn30 mid_cab large cab, False: chỉ lấy dữ liệu theo list được định sẵn
 IS_WEEKLY_FETCH = True  # True: lấy dữ liệu hàng tháng, False: lấy dữ liệu hàng ngày
 DATE_START_FETCH = '2025-08-01'  # Ngày bắt đầu lấy dữ liệu
 LIST_VN_30 = 'Stock_List\stock_vn_30.txt'

@@ -1,0 +1,24 @@
+write code about take element of web site
+data input: symbol name
+how code work:
+	get list stock from list file  
+	use web socket to get data from server
+	How web socket work:
+		websocket api: 
+		websocket token:
+		websocket handseak: 
+			first message:
+			second message:
+			third message:
+			ping message:
+		decode messeage from base 64 to json:
+
+	
+the data struct has elements:
+	. timestampe
+	. price
+	. volume
+	and list or vector of price and volume
+
+it take price and volume every 1 second and add it into that vector
+and append it into a file struct data/order_price/<stock_code>/<current_year>/year_month_day.json

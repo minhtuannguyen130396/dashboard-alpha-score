@@ -22,5 +22,11 @@
   { "share_code": "SAB", "ipo_date": "2016-12-06" },
   { "share_code": "VRE", "ipo_date": "2017-11-06" },
   { "share_code": "VIB", "ipo_date": "2020-11-10" },
-  { "share_code": "SSI", "ipo_date": "2007-10-29" }
+  { "share_code": "SSI", "ipo_date": "2007-10-29" },
+  { "share_code": "SHB", "ipo_date": "2021-10-11" },
+  { "share_code": "SSB", "ipo_date": "2021-03-24" },
+  { "share_code": "TPB", "ipo_date": "2018-04-19" },
+  { "share_code": "PLX", "ipo_date": "2017-04-21" },
+  { "share_code": "VJC", "ipo_date": "2017-02-28" },
+  { "share_code": "DGC", "ipo_date": "2020-07-28" }
 ]

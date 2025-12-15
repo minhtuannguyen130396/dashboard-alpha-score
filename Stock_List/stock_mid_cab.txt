@@ -1,32 +1,90 @@
 [
-  { "share_code": "AAA", "ipo_date": "2016-01-01" },
-  { "share_code": "VSC", "ipo_date": "2016-01-01" },
-  { "share_code": "DIG", "ipo_date": "2016-01-01" },
-  { "share_code": "VCG", "ipo_date": "2016-01-01" },
-  { "share_code": "SJS", "ipo_date": "2016-01-01" },
-  { "share_code": "VIX", "ipo_date": "2016-01-01" },
-  { "share_code": "GMD", "ipo_date": "2016-01-01" },
-  { "share_code": "HDG", "ipo_date": "2016-01-01" },
-  { "share_code": "BMP", "ipo_date": "2016-01-01" },
-  { "share_code": "BCC", "ipo_date": "2016-01-01" },
-  { "share_code": "CTI", "ipo_date": "2016-01-01" },
-  { "share_code": "DRH", "ipo_date": "2016-01-01" },
-  { "share_code": "HLD", "ipo_date": "2016-01-01" },
-  { "share_code": "BWE", "ipo_date": "2016-01-01" },
-  { "share_code": "HQC", "ipo_date": "2016-01-01" },
-  { "share_code": "IDC", "ipo_date": "2016-01-01" },
-  { "share_code": "LDG", "ipo_date": "2016-01-01" },
-  { "share_code": "ITA", "ipo_date": "2016-01-01" },
-  { "share_code": "DXS", "ipo_date": "2016-01-01" },
-  { "share_code": "HAR", "ipo_date": "2016-01-01" },
-  { "share_code": "POW", "ipo_date": "2016-01-01" },
-  { "share_code": "PDR", "ipo_date": "2016-01-01" },
-  { "share_code": "SCR", "ipo_date": "2016-01-01" },
-  { "share_code": "NT2", "ipo_date": "2016-01-01" },
-  { "share_code": "PFL", "ipo_date": "2016-01-01" },
-  { "share_code": "VCP", "ipo_date": "2016-01-01" },
-  { "share_code": "VHC", "ipo_date": "2016-01-01" },
-  { "share_code": "PTB", "ipo_date": "2016-01-01" },
-  { "share_code": "NDN", "ipo_date": "2016-01-01" },
-  { "share_code": "PMC", "ipo_date": "2016-01-01" }
+  {
+    "share_code": "AAA",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "VSC",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "DIG",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "VCG",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "SJS",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "GMD",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "HDG",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "BMP",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "BCC",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "DRH",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "HLD",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "HQC",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "LDG",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "DXS",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "HAR",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "SCR",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "NT2",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "PFL",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "VHC",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "PTB",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "NDN",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "PMC",
+    "ipo_date": "2016-01-01"
+  }
 ]

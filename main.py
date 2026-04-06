@@ -1,8 +1,8 @@
-from src.ui.ui_choose_stock_code import create_app
+from src.app.stock_selector_app import create_stock_selector_app
 
 
 def main():
-    create_app()
+    create_stock_selector_app()
             
 if __name__ == '__main__':
     main()

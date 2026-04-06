@@ -116,8 +116,17 @@ def create_stock_selector_app():
     ttk.Button(root, text="Test All", command=report_all_stocks).pack(pady=(0, 10))
     ttk.Button(
         root,
-        text="Fetch All Data",
-        command=lambda: start_background_task(fetch_all_stock_history),
+        text="Update Data From Start",
+        command=lambda: start_background_task(
+            lambda: fetch_all_stock_history(update_mode="from_start")
+        ),
+    ).pack(pady=(0, 10))
+    ttk.Button(
+        root,
+        text="Update Previous Month",
+        command=lambda: start_background_task(
+            lambda: fetch_all_stock_history(update_mode="previous_month")
+        ),
     ).pack(pady=(0, 10))
     root.mainloop()
 

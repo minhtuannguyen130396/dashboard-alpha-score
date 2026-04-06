@@ -4,9 +4,9 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 
-chart/
-csv_files/
-data/
+/chart/
+/csv_files/
+/data/
 
 access_token.txt
 

@@ -96,8 +96,29 @@ body {
 
 /* ---- Charts ---- */
 #charts-container { margin-bottom: 18px; }
-#price-chart  { width: 100%; height: 520px; border-radius: 10px 10px 0 0; overflow: hidden; }
-#volume-chart { width: 100%; height: 170px; border-radius: 0 0 10px 10px; overflow: hidden; margin-top: 2px; }
+#price-chart  { width: 100%; height: 480px; border-radius: 10px 10px 0 0; overflow: hidden; }
+#volume-chart { width: 100%; height: 130px; overflow: hidden; margin-top: 2px; }
+#rsi-chart    { width: 100%; height: 100px; overflow: hidden; margin-top: 2px; }
+#macd-chart   { width: 100%; height: 100px; overflow: hidden; margin-top: 2px; }
+#adx-chart    { width: 100%; height: 100px; border-radius: 0 0 10px 10px; overflow: hidden; margin-top: 2px; }
+
+/* ---- Score heatmap strip ---- */
+#score-strip {
+  width: 100%;
+  height: 26px;
+  margin-top: 2px;
+  background: #0b0e14;
+  border: 1px solid #21262d;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+#score-strip canvas { display: block; width: 100%; height: 100%; }
+.score-strip-label {
+  position: absolute; top: 3px; left: 6px;
+  font-size: 10px; color: #6e7681; text-transform: uppercase; letter-spacing: .8px;
+  pointer-events: none;
+}
 
 /* ---- Finance table ---- */
 #finance-section {}
@@ -153,30 +174,60 @@ tfoot td {
 .pos { color: #3fb950; font-weight: 600; }
 .neg { color: #f85149; font-weight: 600; }
 
-/* ---- Hover panel ---- */
+/* ---- Hover panel ----
+ * Fixed frame: the panel never reflows the charts below when the hovered
+ * day has a long list of reasons or blockers. Column widths are tuned so
+ * the three sections fit their widest expected content; overflow inside
+ * any column scrolls vertically instead of pushing the frame open. */
 #hover-panel {
   display: none;
   margin-bottom: 10px;
-  padding: 10px 16px;
+  padding: 12px 18px;
   background: #161b22;
   border: 1px solid #30363d;
   border-radius: 8px;
   font-size: 12px;
-  gap: 20px;
+  gap: 22px;
+  /* Fixed outer frame — does NOT auto-grow */
+  box-sizing: border-box;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
 }
-#hover-panel.visible { display: grid; grid-template-columns: 160px 180px 1fr; }
-.hp-col { min-width: 0; }
+#hover-panel.visible {
+  display: grid;
+  /* Col1: OHLC + EMAs  Col2: indicators  Col3: scores + reasons + blockers.
+     Col3 is the widest because the reasons line is the long one. */
+  grid-template-columns: 180px 220px 1fr;
+}
+.hp-col {
+  min-width: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #30363d #161b22;
+}
+.hp-col::-webkit-scrollbar { width: 6px; }
+.hp-col::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+.hp-col::-webkit-scrollbar-track { background: transparent; }
 .hp-head {
   font-size: 10px; font-weight: 700; color: #6e7681;
   text-transform: uppercase; letter-spacing: .8px;
   border-bottom: 1px solid #21262d; padding-bottom: 4px; margin-bottom: 6px;
+  position: sticky; top: 0; background: #161b22; z-index: 1;
 }
 .hp-row { display: flex; justify-content: space-between; gap: 6px; padding: 1px 0; }
 .hp-k   { color: #6e7681; white-space: nowrap; }
-.hp-v   { color: #c9d1d9; font-weight: 600; text-align: right; }
+.hp-v   { color: #c9d1d9; font-weight: 600; text-align: right; white-space: nowrap; }
 .hp-bar { display: inline-block; height: 5px; border-radius: 2px; vertical-align: middle; margin-right: 3px; }
 .hp-sep { border-top: 1px solid #21262d; margin: 5px 0; }
-.hp-tag { font-size: 11px; line-height: 1.6; color: #8b949e; word-break: break-word; }
+.hp-tag {
+  font-size: 11px; line-height: 1.55; color: #8b949e;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
 """
 
 # ---------------------------------------------------------------------------
@@ -210,11 +261,9 @@ _JS = """
       horzLine: { color: '#3c4153', width: 1, style: LS.Dashed, labelBackgroundColor: '#2962ff' },
     };
   }
-  // Drag on chart body  = pan  (pressedMouseMove)
-  // Drag on axis        = disabled (axisPressedMouseMove: false)
-  // Scroll wheel        = zoom
-  function scrollOpts() { return { pressedMouseMove: true, mouseWheel: false, horzTouchDrag: true }; }
-  function scaleOpts()  { return { mouseWheel: true, pinch: true, axisPressedMouseMove: false }; }
+  // ALL built-in scroll/scale disabled — pan & zoom implemented manually below
+  function scrollOpts() { return { pressedMouseMove: false, mouseWheel: false, horzTouchDrag: false, vertTouchDrag: false }; }
+  function scaleOpts()  { return { mouseWheel: false, pinch: false, axisPressedMouseMove: { time: false, price: false } }; }
 
   const priceEl = document.getElementById('price-chart');
   const volEl   = document.getElementById('volume-chart');
@@ -286,10 +335,11 @@ _JS = """
     width:  volEl.offsetWidth,
   });
 
-  vc.addHistogramSeries({
+  const vcSeries = vc.addHistogramSeries({
     priceFormat: { type: 'volume' },
     priceScaleId: 'right',
-  }).setData(VOLUME_DATA);
+  });
+  vcSeries.setData(VOLUME_DATA);
 
   vc.addLineSeries({
     color: '#bc8cff', lineWidth: 2,
@@ -297,7 +347,74 @@ _JS = """
     priceLineVisible: false, lastValueVisible: false,
   }).setData(EMA_VOLUME_DATA);
 
-  // ── Sync via logical range (bar-index based, more stable than time range) ─
+  // ── RSI chart ────────────────────────────────────────────────────────────
+  const rsiEl  = document.getElementById('rsi-chart');
+  const macdEl = document.getElementById('macd-chart');
+  const adxEl  = document.getElementById('adx-chart');
+
+  function makeSub(el, h) {
+    return LightweightCharts.createChart(el, {
+      layout: layoutOpts(),
+      grid: gridOpts(),
+      crosshair: crosshairOpts(),
+      handleScroll: scrollOpts(),
+      handleScale: scaleOpts(),
+      rightPriceScale: { borderColor: BORDER, scaleMargins: { top: 0.15, bottom: 0.05 } },
+      timeScale: { borderColor: BORDER, timeVisible: false, visible: false },
+      height: h,
+      width: el.offsetWidth,
+    });
+  }
+
+  const rc = makeSub(rsiEl, 100);
+  const mc = makeSub(macdEl, 100);
+  const ac = makeSub(adxEl, 100);
+  ac.applyOptions({ timeScale: { visible: true, borderColor: BORDER, timeVisible: true } });
+
+  // Build sub-series from HOVER_DATA keeping full timeline.
+  // Null/undefined indicators become whitespace data points ({ time } only)
+  // so every subchart has the same bar count as the price chart.
+  function _ser(key) {
+    return (HOVER_DATA || []).map(d => {
+      const v = d.indicators && d.indicators[key];
+      if (v === null || v === undefined) return { time: d.date };
+      return { time: d.date, value: parseFloat(v) };
+    });
+  }
+
+  const rsiSer      = _ser('rsi14');
+  const macdLineSer = _ser('macd_line');
+  const macdSigSer  = _ser('macd_sig');
+  const macdHistSer = (HOVER_DATA || []).map(d => {
+    const v = d.indicators && d.indicators.macd_hist;
+    if (v === null || v === undefined) return { time: d.date };
+    const fv = parseFloat(v);
+    return { time: d.date, value: fv, color: fv >= 0 ? '#26a69a' : '#ef5350' };
+  });
+  const adxSer = _ser('adx');
+
+  const rsiSeries = rc.addLineSeries({ color: '#e3b341', lineWidth: 2, title: 'RSI14', priceLineVisible: false });
+  rsiSeries.setData(rsiSer);
+  // RSI reference lines span the full timeline (whitespace points carry through)
+  const rsi30 = rc.addLineSeries({ color: '#3fb950', lineWidth: 1, lineStyle: LS.Dotted, priceLineVisible: false, lastValueVisible: false });
+  const rsi70 = rc.addLineSeries({ color: '#f85149', lineWidth: 1, lineStyle: LS.Dotted, priceLineVisible: false, lastValueVisible: false });
+  if (rsiSer.some(p => p.value !== undefined)) {
+    rsi30.setData(rsiSer.map(p => p.value !== undefined ? { time: p.time, value: 30 } : { time: p.time }));
+    rsi70.setData(rsiSer.map(p => p.value !== undefined ? { time: p.time, value: 70 } : { time: p.time }));
+  }
+
+  mc.addHistogramSeries({ priceLineVisible: false, base: 0 }).setData(macdHistSer);
+  const macdSeries = mc.addLineSeries({ color: '#58a6ff', lineWidth: 1.5, title: 'MACD', priceLineVisible: false });
+  macdSeries.setData(macdLineSer);
+  mc.addLineSeries({ color: '#f0883e', lineWidth: 1.5, title: 'Signal', priceLineVisible: false }).setData(macdSigSer);
+
+  const adxSeries = ac.addLineSeries({ color: '#bc8cff', lineWidth: 2, title: 'ADX14', priceLineVisible: false });
+  adxSeries.setData(adxSer);
+  const adx20 = ac.addLineSeries({ color: '#6e7681', lineWidth: 1, lineStyle: LS.Dotted, priceLineVisible: false, lastValueVisible: false });
+  if (adxSer.some(p => p.value !== undefined)) adx20.setData(adxSer.map(p => p.value !== undefined ? { time: p.time, value: 20 } : { time: p.time }));
+
+  // ── Sync all charts via logical range ───────────────────────────────────────
+  const charts = [pc, vc, rc, mc, ac];
   let _lock = false;
   function syncRange(src, dst) {
     src.timeScale().subscribeVisibleLogicalRangeChange(r => {
@@ -307,8 +424,71 @@ _JS = """
       _lock = false;
     });
   }
-  syncRange(pc, vc);
-  syncRange(vc, pc);
+  for (const a of charts) for (const b of charts) if (a !== b) syncRange(a, b);
+
+  // ── Pan (drag) & Zoom (vertical wheel at cursor) — fully custom ──────────────
+  // Drag on chart body OR time axis → pan all charts left/right
+  // Vertical mouse wheel             → zoom around cursor position
+  // Horizontal wheel / trackpad swipe → ignored
+  const allChartEls = [priceEl, volEl, rsiEl, macdEl, adxEl];
+  let _drag = null;
+
+  allChartEls.forEach(el => {
+    el.style.cursor = 'grab';
+
+    el.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
+      _drag = { x: e.clientX };
+      document.body.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+
+    el.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      // Ignore horizontal component (trackpad side-swipe, tilt-wheel, etc.)
+      if (Math.abs(e.deltaX) >= Math.abs(e.deltaY)) return;
+      const range = pc.timeScale().getVisibleLogicalRange();
+      if (!range) return;
+      // Cursor logical position (zoom anchor) — relative to price chart left edge
+      const chartLeft  = priceEl.getBoundingClientRect().left;
+      const cursorX    = e.clientX - chartLeft;
+      const cursorBar  = pc.timeScale().coordinateToLogical(cursorX) ?? ((range.from + range.to) / 2);
+      // Scale the range around cursor bar
+      const factor  = 1 + (e.deltaY > 0 ? 0.1 : -0.1);
+      const newFrom = cursorBar - (cursorBar - range.from) * factor;
+      const newTo   = cursorBar + (range.to  - cursorBar) * factor;
+      if (newTo - newFrom < 4) return; // hard lower-bound on zoom
+      _lock = true;
+      charts.forEach(c => c.timeScale().setVisibleLogicalRange({ from: newFrom, to: newTo }));
+      _lock = false;
+    }, { passive: false });
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!_drag) return;
+    const dx = e.clientX - _drag.x;
+    _drag.x = e.clientX;
+    if (dx === 0) return;
+    const range = pc.timeScale().getVisibleLogicalRange();
+    if (!range) return;
+    // pixels → bars: visible_bars / chart_width (price chart width as reference)
+    const chartWidth  = priceEl.offsetWidth || 1;
+    const barsPerPixel = (range.to - range.from) / chartWidth;
+    const shift = -dx * barsPerPixel;
+    _lock = true;
+    charts.forEach(c => c.timeScale().setVisibleLogicalRange({
+      from: range.from + shift,
+      to:   range.to  + shift,
+    }));
+    _lock = false;
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!_drag) return;
+    _drag = null;
+    document.body.style.cursor = '';
+    allChartEls.forEach(el => { el.style.cursor = 'grab'; });
+  });
 
   // ── Info bar (always visible, updates on crosshair hover over signal) ──────
   const infoBar = document.getElementById('info-bar');
@@ -390,7 +570,7 @@ _JS = """
         <div class="hp-row"><span class="hp-k">High</span>  <span class="hp-v pos">${_n(p.high)}</span></div>
         <div class="hp-row"><span class="hp-k">Low</span>   <span class="hp-v neg">${_n(p.low)}</span></div>
         <div class="hp-row"><span class="hp-k">Close</span> <span class="hp-v">${_n(p.close)}</span></div>
-        <div class="hp-row"><span class="hp-k">Volume</span><span class="hp-v">${_vol(p.volume)}</span></div>
+        <div class="hp-row"><span class="hp-k">Deal Vol</span><span class="hp-v">${_vol(p.volume)}</span></div>
         <div class="hp-row"><span class="hp-k">RVOL</span>  <span class="hp-v" style="color:${rvolClr}">${_n(p.rvol)}</span></div>
         <div class="hp-sep"></div>
         <div class="hp-row"><span class="hp-k">EMA20</span> <span class="hp-v">${_n(ind.ema20)}</span></div>
@@ -439,20 +619,105 @@ _JS = """
   const dates = Object.keys(HOVER_MAP).sort();
   if (dates.length > 0) renderHoverPanel(HOVER_MAP[dates[dates.length - 1]]);
 
-  // Update panel on every crosshair move; keep last state when crosshair leaves
-  pc.subscribeCrosshairMove(param => {
-    if (!param.time) return;                          // hover end → keep last
-    const d = HOVER_MAP[param.time];
-    if (d) renderHoverPanel(d);
-    const info = MARKER_MAP[param.time + '_b'] || MARKER_MAP[param.time + '_s'];
-    if (info) renderInfoBar(info);
+  // ── Crosshair sync across all charts ────────────────────────────────────────
+  // O(1) time→value maps so setCrosshairPosition gets accurate price per subchart
+  const _chMap = new Map(CANDLE_DATA.map(p => [p.time, p.close]));
+  const _vMap  = new Map(VOLUME_DATA.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
+  const _rMap  = new Map(rsiSer.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
+  const _mMap  = new Map(macdLineSer.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
+  const _aMap  = new Map(adxSer.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
+
+  // Each entry: { chart, series (for setCrosshairPosition), priceMap }
+  const xhTargets = [
+    { chart: pc, series: cs,         map: _chMap },
+    { chart: vc, series: vcSeries,   map: _vMap  },
+    { chart: rc, series: rsiSeries,  map: _rMap  },
+    { chart: mc, series: macdSeries, map: _mMap  },
+    { chart: ac, series: adxSeries,  map: _aMap  },
+  ];
+
+  let _xhLock = false;
+
+  function onCrosshairMove(srcChart, param) {
+    // Update hover panel & info bar — fire regardless of source chart
+    if (param.time) {
+      const d = HOVER_MAP[param.time];
+      if (d) renderHoverPanel(d);
+      const info = MARKER_MAP[param.time + '_b'] || MARKER_MAP[param.time + '_s'];
+      if (info) renderInfoBar(info);
+    }
+
+    // Propagate crosshair position to every other chart; guard against recursion
+    if (_xhLock) return;
+    _xhLock = true;
+    xhTargets.forEach(({ chart, series, map }) => {
+      if (chart === srcChart) return;
+      if (!param.time) {
+        chart.clearCrosshairPosition();
+      } else {
+        // Use actual value from that chart's series; fall back to 0 if whitespace
+        const price = map.get(param.time) ?? 0;
+        chart.setCrosshairPosition(price, param.time, series);
+      }
+    });
+    _xhLock = false;
+  }
+
+  // Subscribe on every chart so hover on any row drives the sync
+  xhTargets.forEach(({ chart }) => {
+    chart.subscribeCrosshairMove(param => onCrosshairMove(chart, param));
   });
+
+  // ── Score strip heatmap ──────────────────────────────────────────────────
+  function drawScoreStrip() {
+    const canvas = document.getElementById('score-strip-canvas');
+    if (!canvas) return;
+    const W = canvas.parentElement.clientWidth;
+    const H = 26;
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#0b0e14';
+    ctx.fillRect(0, 0, W, H);
+
+    const data = HOVER_DATA || [];
+    if (!data.length) return;
+    const cw = Math.max(1, W / data.length);
+
+    for (let i = 0; i < data.length; i++) {
+      const sc = (data[i].scores || {}).final;
+      if (sc === undefined || sc === null) continue;
+      const v = Math.max(0, Math.min(1, sc));
+      // Grey → yellow → green gradient
+      let col;
+      if (v < 0.4)        col = `rgba(110,118,129,${0.25 + v})`;
+      else if (v < 0.65)  col = `rgba(227,179,65,${0.5 + (v - 0.4)})`;
+      else                col = `rgba(63,185,80,${0.6 + (v - 0.65)})`;
+      ctx.fillStyle = col;
+      ctx.fillRect(i * cw, 0, Math.ceil(cw), H);
+
+      // Mark buy/sale points with tiny tick
+      const sig = data[i].signals || {};
+      if (sig.is_buy) {
+        ctx.fillStyle = '#3fb950';
+        ctx.fillRect(i * cw, H - 4, Math.ceil(cw), 4);
+      } else if (sig.is_sale) {
+        ctx.fillStyle = '#f85149';
+        ctx.fillRect(i * cw, 0, Math.ceil(cw), 4);
+      }
+    }
+  }
+  drawScoreStrip();
 
   // ── Responsive resize ────────────────────────────────────────────────────
   new ResizeObserver(() => {
     const w = document.getElementById('charts-container').clientWidth;
-    pc.resize(w, 520);
-    vc.resize(w, 170);
+    pc.resize(w, 480);
+    vc.resize(w, 130);
+    rc.resize(w, 100);
+    mc.resize(w, 100);
+    ac.resize(w, 100);
+    drawScoreStrip();
   }).observe(document.getElementById('charts-container'));
 
   // ── Initial fit + sync ───────────────────────────────────────────────────
@@ -460,7 +725,12 @@ _JS = """
   pc.timeScale().applyOptions({ rightOffset: 12 });
   requestAnimationFrame(() => {
     const r = pc.timeScale().getVisibleLogicalRange();
-    if (r) vc.timeScale().setVisibleLogicalRange(r);
+    if (r) {
+      vc.timeScale().setVisibleLogicalRange(r);
+      rc.timeScale().setVisibleLogicalRange(r);
+      mc.timeScale().setVisibleLogicalRange(r);
+      ac.timeScale().setVisibleLogicalRange(r);
+    }
   });
 })();
 """
@@ -577,6 +847,11 @@ def _build_html(
         '<div id="charts-container">',
         '  <div id="price-chart"></div>',
         '  <div id="volume-chart"></div>',
+        '  <div id="score-strip"><span class="score-strip-label">Score</span>'
+        '<canvas id="score-strip-canvas"></canvas></div>',
+        '  <div id="rsi-chart"></div>',
+        '  <div id="macd-chart"></div>',
+        '  <div id="adx-chart"></div>',
         '</div>',
 
         # Finance table

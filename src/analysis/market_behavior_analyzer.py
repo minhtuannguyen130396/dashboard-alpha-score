@@ -4,6 +4,8 @@ import pandas as pd
 
 from src.data.stock_data_loader import StockRecord
 from src.analysis.signal_scoring import SignalScore, SignalScoreV2
+from src.analysis.signal_scoring_v3 import SignalScoreV3
+from src.analysis.score_config import DEFAULT_SCORE_CONFIG_V3
 from src.analysis.technical_indicators import IndicatorGroup1, IndicatorGroup2, IndicatorGroup3, IndicatorGroup4
 
 
@@ -29,7 +31,7 @@ class MarketBehaviorSnapshot:
 
 def _build_hover_payloads(
     stock_records: List[StockRecord],
-    signal_scores: List[Union[SignalScore, SignalScoreV2]],
+    signal_scores: List[Union[SignalScore, SignalScoreV2, SignalScoreV3]],
     buy_point: List[bool],
     sale_point: List[bool],
     ema20: list,
@@ -61,8 +63,8 @@ def _build_hover_payloads(
 
         # RVOL: today / avg(last 20 sessions, excluding today — no look-ahead)
         past = stock_records[max(0, i - 20):i]
-        avg_vol = (sum(rec.totalVolume for rec in past) / len(past)) if past else r.totalVolume
-        rvol = round(r.totalVolume / avg_vol, 2) if avg_vol else None
+        avg_vol = (sum(rec.priceImpactVolume for rec in past) / len(past)) if past else r.priceImpactVolume
+        rvol = round(r.priceImpactVolume / avg_vol, 2) if avg_vol else None
 
         # OBV slope over last 5 sessions
         obv_slope = None
@@ -83,7 +85,25 @@ def _build_hover_payloads(
         if score is not None:
             label = score.label
             reasons = list(score.reasons)
-            if isinstance(score, SignalScoreV2):
+            if isinstance(score, SignalScoreV3):
+                regime = score.regime
+                scores = {
+                    "final":        round(score.final_score, 4),
+                    "setup":        round(score.setup_score, 4),
+                    "trigger":      round(score.trigger_score, 4),
+                    "candle":       round(score.candle_score, 4),
+                    "trend":        round(score.trend_score, 4),
+                    "momentum":     round(score.momentum_score, 4),
+                    "volume":       round(score.volume_score, 4),
+                    "vol_setup":    round(score.volume_setup_score, 4),
+                    "vol_trigger":  round(score.volume_trigger_score, 4),
+                    "structure":    round(score.structure_score, 4),
+                    "confirmation": round(score.confirmation_score, 4),
+                    "divergence":   round(score.divergence_score, 4),
+                    "regime_align": round(score.regime_align_score, 4),
+                }
+                blockers = score.blockers_text
+            elif isinstance(score, SignalScoreV2):
                 regime = score.regime
                 scores = {
                     "final":        round(score.final_score, 4),
@@ -115,7 +135,7 @@ def _build_hover_payloads(
                 "low":    round(r.priceLow, 2),
                 "close":  round(r.priceClose, 2),
                 "avg":    round(r.priceAverage, 2),
-                "volume": int(r.totalVolume),
+                "volume": int(r.priceImpactVolume),
                 "rvol":   rvol,
             },
             "indicators": {
@@ -149,10 +169,21 @@ def _build_hover_payloads(
     return payloads
 
 
-def _is_buy_signal(score: Union[SignalScore, SignalScoreV2], threshold: float) -> bool:
+def _has_hard_blocker_v3(score: SignalScoreV3) -> bool:
+    return any(b.severity == "hard" for b in score.blockers)
+
+
+def _is_buy_signal(score, threshold: float) -> bool:
     """Return True if the score represents a valid buy signal above threshold."""
+    if isinstance(score, SignalScoreV3):
+        v3t = DEFAULT_SCORE_CONFIG_V3.thresholds
+        return (
+            score.label == "bullish"
+            and score.final_score >= v3t.final_signal
+            and score.trigger_score >= v3t.trigger
+            and not _has_hard_blocker_v3(score)
+        )
     if isinstance(score, SignalScoreV2):
-        # For v2, also require trigger_score above threshold and no critical blockers
         return (
             score.label == "bullish"
             and score.final_score >= threshold
@@ -162,8 +193,16 @@ def _is_buy_signal(score: Union[SignalScore, SignalScoreV2], threshold: float) -
     return score.label == "bullish" and score.final_score >= threshold
 
 
-def _is_sale_signal(score: Union[SignalScore, SignalScoreV2], threshold: float) -> bool:
+def _is_sale_signal(score, threshold: float) -> bool:
     """Return True if the score represents a valid sell signal above threshold."""
+    if isinstance(score, SignalScoreV3):
+        v3t = DEFAULT_SCORE_CONFIG_V3.thresholds
+        return (
+            score.label == "bearish"
+            and score.final_score >= v3t.final_signal
+            and score.trigger_score >= v3t.trigger
+            and not _has_hard_blocker_v3(score)
+        )
     if isinstance(score, SignalScoreV2):
         return (
             score.label == "bearish"
@@ -176,7 +215,7 @@ def _is_sale_signal(score: Union[SignalScore, SignalScoreV2], threshold: float) 
 
 def analyze_market_behavior(
     stock_records: List[StockRecord],
-    signal_scores: List[Union[SignalScore, SignalScoreV2]],
+    signal_scores: List[Union[SignalScore, SignalScoreV2, SignalScoreV3]],
     sale_threshold: float = 0.7,
     buy_threshold: float = 0.7,
     period: int = 14,
@@ -192,7 +231,7 @@ def analyze_market_behavior(
         _is_sale_signal(score, sale_threshold) for score in signal_scores
     ]
 
-    volume_series = [record.totalVolume for record in stock_records]
+    volume_series = [record.priceImpactVolume for record in stock_records]
     market_behavior.total_volume = volume_series
     market_behavior.ema_volume = (
         pd.Series(volume_series).ewm(span=period, adjust=False).mean().tolist()

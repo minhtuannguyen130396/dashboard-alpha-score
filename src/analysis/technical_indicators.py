@@ -8,9 +8,16 @@ from src.data.stock_data_loader import StockRecord
 # Helper to extract list of floats
 def _extract(records: List[StockRecord], attr: str) -> List[float]:
     return [getattr(r, attr) for r in records]
+
+
+def _impact_volumes(records: List[StockRecord]) -> List[float]:
+    """Use deal volume for any indicator intended to explain price movement."""
+    return [r.priceImpactVolume for r in records]
+
+
 def average_volume(records: List[StockRecord], period: int = 10) -> float:
     """Calculate average volume over the most recent N sessions."""
-    volumes = [r.totalVolume for r in records[-period:] if r.totalVolume is not None]
+    volumes = [r.priceImpactVolume for r in records[-period:] if r.priceImpactVolume is not None]
     if not volumes:
         return 0.0
     return sum(volumes) / len(volumes)
@@ -71,7 +78,7 @@ class IndicatorGroup1:
     def vwma(records: List[StockRecord], period: int) -> List[Optional[float]]:
         """Calculate the Volume Weighted Moving Average."""
         closes = _extract(records, 'priceClose')
-        volumes = _extract(records, 'totalVolume')
+        volumes = _impact_volumes(records)
         result: List[Optional[float]] = []
         for i in range(len(closes)):
             if i + 1 < period:
@@ -600,9 +607,9 @@ class IndicatorGroup4:
         obv_val = 0
         for i in range(1, len(records)):
             if records[i].priceClose > records[i-1].priceClose:
-                obv_val += int(records[i].totalVolume)
+                obv_val += int(records[i].priceImpactVolume)
             elif records[i].priceClose < records[i-1].priceClose:
-                obv_val -= int(records[i].totalVolume)
+                obv_val -= int(records[i].priceImpactVolume)
             result.append(obv_val)
         #print(f"[MATH][OBV] Last point: {result[-1]}")
         return result
@@ -621,7 +628,7 @@ class IndicatorGroup4:
             result: List[float] = []
             ad_val = 0.0
             for r in records:
-                high, low, close, vol = r.priceHigh, r.priceLow, r.priceClose, r.totalVolume
+                high, low, close, vol = r.priceHigh, r.priceLow, r.priceClose, r.priceImpactVolume
                 mfm = ((close - low) - (high - close)) / (high - low) if high != low else 0.0
                 mfv = mfm * vol
                 ad_val += mfv
@@ -663,7 +670,7 @@ class IndicatorGroup4:
         vol: List[float] = []
         for r in records:
             tp = (r.priceHigh + r.priceLow + r.priceClose) / 3
-            volume = r.totalVolume
+            volume = r.priceImpactVolume
             if r.priceHigh != r.priceLow:
                 mfm = ((r.priceClose - r.priceLow) - (r.priceHigh - r.priceClose)) / (r.priceHigh - r.priceLow)
             else:
@@ -702,9 +709,9 @@ class IndicatorGroup4:
         mf: List[float] = []
         for i in range(1, len(records)):
             if tp[i] > tp[i-1]:
-                mf.append(tp[i] * records[i].totalVolume)
+                mf.append(tp[i] * records[i].priceImpactVolume)
             else:
-                mf.append(-tp[i] * records[i].totalVolume)
+                mf.append(-tp[i] * records[i].priceImpactVolume)
         result: List[Optional[float]] = [None]
         for i in range(len(mf)):
             if i + 1 < period:
@@ -728,7 +735,7 @@ class IndicatorGroup4:
         - Return -1 if it is below the negative threshold
         """
         # 1. Extract the volume series.
-        volumes: List[float] = _extract(records, 'totalVolume')
+        volumes: List[float] = _impact_volumes(records)
         
         # 2. Initialize the result container.
         result: List[int] = []
@@ -759,8 +766,8 @@ class IndicatorGroup4:
         cum_vol = 0.0
         for r in records:
             tp = (r.priceHigh + r.priceLow + r.priceClose) / 3
-            cum_vtp += tp * r.totalVolume
-            cum_vol += r.totalVolume
+            cum_vtp += tp * r.priceImpactVolume
+            cum_vol += r.priceImpactVolume
             result.append(cum_vtp / cum_vol if cum_vol != 0 else None)
         #print(f"[MATH][VWAP] Last point: {result[-1]}")
         return result
@@ -808,7 +815,7 @@ class IndicatorGroup4:
             if index <= period:
                 result.append(False)
                 continue
-            if record.totalVolume > 2 * average_volume(records, period):
+            if record.priceImpactVolume > 2 * average_volume(records, period):
             # but without proprietary trading or foreign buying support
                 if (not record.propTradingNetValue or record.propTradingNetValue <= 0) and \
                     record.buyForeignQuantity <= record.sellForeignQuantity:
@@ -977,9 +984,9 @@ class IndicatorGroup4(_LegacyIndicatorGroup4):
         obv_val = 0
         for i in range(1, len(records)):
             if records[i].priceClose > records[i - 1].priceClose:
-                obv_val += int(records[i].totalVolume)
+                obv_val += int(records[i].priceImpactVolume)
             elif records[i].priceClose < records[i - 1].priceClose:
-                obv_val -= int(records[i].totalVolume)
+                obv_val -= int(records[i].priceImpactVolume)
             result.append(obv_val)
         return result
 
@@ -1036,7 +1043,7 @@ class IndicatorGroup4(_LegacyIndicatorGroup4):
                 result.append(False)
                 continue
 
-            if record.totalVolume > 2 * historical_avg_volume:
+            if record.priceImpactVolume > 2 * historical_avg_volume:
                 if (
                     (not record.propTradingNetValue or record.propTradingNetValue <= 0)
                     and record.buyForeignQuantity <= record.sellForeignQuantity

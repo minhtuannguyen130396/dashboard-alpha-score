@@ -36,6 +36,16 @@ class StockRecord:
     propTradingNetValue: Optional[float]
     unit: float
 
+    @property
+    def priceImpactVolume(self) -> float:
+        """Volume used for price-impact analysis.
+
+        Convention:
+        - Use ``dealVolume`` for indicators/signals tied to price movement.
+        - Keep ``totalVolume`` as the raw exchange total (deal + putthrough).
+        """
+        return self.dealVolume
+
 
 def load_stock_history(
     symbol: str,

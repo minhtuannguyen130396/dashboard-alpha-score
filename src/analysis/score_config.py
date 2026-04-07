@@ -74,3 +74,77 @@ class ScoreConfigV2:
 
 
 DEFAULT_SCORE_CONFIG_V2 = ScoreConfigV2()
+
+
+# =============================================================================
+# Score V3
+# =============================================================================
+
+@dataclass
+class ScoreWeightsV3:
+    # Setup: where the market is + precondition alignment
+    setup_candle:    float = 0.15
+    setup_trend:     float = 0.25
+    setup_momentum:  float = 0.15
+    setup_volume:    float = 0.15  # setup-volume = OBV/MFI trend
+    setup_structure: float = 0.20
+    setup_regime:    float = 0.10  # market regime alignment
+
+    # Trigger: what's happening today that should pull the trigger
+    trigger_confirmation: float = 0.35
+    trigger_volume:       float = 0.25  # trigger-volume = RVOL / range
+    trigger_candle:       float = 0.20
+    trigger_momentum:     float = 0.10
+    trigger_divergence:   float = 0.10
+
+    final_setup:   float = 0.55
+    final_trigger: float = 0.45
+
+
+@dataclass
+class ScoreThresholdsV3:
+    setup_watch: float = 0.55
+    setup_good:  float = 0.65
+    final_signal: float = 0.58
+    trigger:     float = 0.55
+    strong_signal: float = 0.80
+
+    # Hard blockers → rejection
+    hard_adx_min:  float = 15.0
+    hard_rvol_min: float = 0.5
+
+    # Soft blockers → score penalty only
+    soft_adx_min:       float = 20.0
+    soft_rvol_min:      float = 0.8
+    rsi_overbought:     float = 78.0
+    rsi_oversold:       float = 22.0
+    soft_penalty:       float = 0.08  # per soft blocker
+
+
+@dataclass
+class IndicatorPeriodsV3(IndicatorPeriodsV2):
+    zscore_window: int = 60
+    divergence_lookback: int = 14
+
+
+@dataclass
+class FeatureTogglesV3:
+    use_candle: bool = True
+    use_trend: bool = True
+    use_momentum: bool = True
+    use_volume: bool = True
+    use_structure: bool = True
+    use_confirmation: bool = True
+    use_divergence: bool = True
+    use_regime_align: bool = True
+
+
+@dataclass
+class ScoreConfigV3:
+    weights: ScoreWeightsV3 = field(default_factory=ScoreWeightsV3)
+    thresholds: ScoreThresholdsV3 = field(default_factory=ScoreThresholdsV3)
+    periods: IndicatorPeriodsV3 = field(default_factory=IndicatorPeriodsV3)
+    toggles: FeatureTogglesV3 = field(default_factory=FeatureTogglesV3)
+
+
+DEFAULT_SCORE_CONFIG_V3 = ScoreConfigV3()

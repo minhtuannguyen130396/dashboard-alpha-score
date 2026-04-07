@@ -247,6 +247,24 @@ def create_stock_selector_app():
             end_cal.get_date().strftime("%Y-%m-%d"),
         )
 
+    # Score version card
+    score_card = _card(right)
+    score_card.pack(fill="x", pady=(0, 8))
+    tk.Label(
+        score_card, text="Score Version",
+        font=("Segoe UI", 11, "bold"),
+        bg=CLR["surface"], fg=CLR["text"],
+    ).pack(anchor="w", padx=12, pady=(12, 4))
+    score_version_var = tk.StringVar(value="v3")
+    sv_row = tk.Frame(score_card, bg=CLR["surface"])
+    sv_row.pack(fill="x", padx=12, pady=(0, 10))
+    for val, lbl in [("v1", "V1 (legacy)"), ("v2", "V2"), ("v3", "V3 (new)")]:
+        tk.Radiobutton(
+            sv_row, text=lbl, value=val, variable=score_version_var,
+            bg=CLR["surface"], fg=CLR["text"], selectcolor=CLR["surface"],
+            activebackground=CLR["surface"], font=("Segoe UI", 9),
+        ).pack(side="left", padx=(0, 6))
+
     # Action card
     act_card = _card(right)
     act_card.pack(fill="x", pady=(0, 8))
@@ -265,18 +283,20 @@ def create_stock_selector_app():
         if not sym:
             return
         s, e = _dates()
-        _set_status(f"Running chart: {sym} …")
+        sv = score_version_var.get()
+        _set_status(f"Running chart: {sym} ({sv}) …")
         _run_in_thread(
-            lambda: run_backtest_chart(sym, s, e),
+            lambda: run_backtest_chart(sym, s, e, score_version=sv),
             on_done=lambda: _set_status("Ready"),
         )
 
     def _btn_test_all():
         s, e = _dates()
         combined = list_vn_30 + list_large_cap + list_medium_cap + list_other
-        _set_status(f"Testing {len(combined)} stocks …")
+        sv = score_version_var.get()
+        _set_status(f"Testing {len(combined)} stocks ({sv}) …")
         _run_in_thread(
-            lambda: run_backtest_report(combined, s, e),
+            lambda: run_backtest_report(combined, s, e, score_version=sv),
             on_done=lambda: _set_status("Ready"),
         )
 

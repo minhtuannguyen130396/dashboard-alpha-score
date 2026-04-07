@@ -61,9 +61,9 @@ def _score_candle(records: List[StockRecord]) -> Tuple[float, str, float, str]:
 
 
 def _score_volume(records: List[StockRecord]) -> Tuple[float, float, float]:
-    volumes = [record.totalVolume for record in records]
+    volumes = [record.priceImpactVolume for record in records]
     avg_volume = sum(volumes[-20:]) / min(20, len(volumes))
-    rvol = records[-1].totalVolume / avg_volume if avg_volume else 0.0
+    rvol = records[-1].priceImpactVolume / avg_volume if avg_volume else 0.0
 
     if rvol >= 1.5:
         score = 1.0
@@ -391,9 +391,9 @@ def _score_volume_v2(
     records: List[StockRecord], bullish: bool, cfg: ScoreConfigV2,
 ) -> Tuple[float, str]:
     p = cfg.periods
-    vols = [r.totalVolume for r in records]
+    vols = [r.priceImpactVolume for r in records]
     avg_vol = sum(vols[-p.rvol:]) / min(p.rvol, len(vols)) if vols else 1.0
-    rvol = records[-1].totalVolume / avg_vol if avg_vol else 0.0
+    rvol = records[-1].priceImpactVolume / avg_vol if avg_vol else 0.0
 
     atr = _safe_last(IndicatorGroup3.atr(records, p.atr))
     current_range = records[-1].priceHigh - records[-1].priceLow
@@ -522,9 +522,9 @@ def _score_confirmation_v2(
     prev3_highs = [r.priceHigh for r in records[-4:-1]]
     prev3_lows = [r.priceLow for r in records[-4:-1]]
 
-    vols = [r.totalVolume for r in records]
+    vols = [r.priceImpactVolume for r in records]
     avg_vol = sum(vols[-p.rvol:]) / min(p.rvol, len(vols)) if vols else 1.0
-    rvol = records[-1].totalVolume / avg_vol if avg_vol else 0.0
+    rvol = records[-1].priceImpactVolume / avg_vol if avg_vol else 0.0
 
     score = 0.0
     parts: List[str] = []
@@ -651,9 +651,9 @@ def _build_score_v2(
 
     # Collect values for blockers
     adx = _safe_last(IndicatorGroup3.adx(records, p.adx))
-    vols = [r.totalVolume for r in records]
+    vols = [r.priceImpactVolume for r in records]
     avg_vol = sum(vols[-p.rvol:]) / min(p.rvol, len(vols)) if vols else 1.0
-    rvol = records[-1].totalVolume / avg_vol if avg_vol else 0.0
+    rvol = records[-1].priceImpactVolume / avg_vol if avg_vol else 0.0
     rsi = _safe_last(IndicatorGroup2.rsi(records, p.rsi), 50.0)
     _, _, hist_s = IndicatorGroup2.macd(records, p.macd_fast, p.macd_slow, p.macd_signal)
     macd_hist = _safe_last(hist_s)

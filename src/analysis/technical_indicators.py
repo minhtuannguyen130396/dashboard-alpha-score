@@ -372,6 +372,38 @@ class IndicatorGroup2:
         #print(f"[MATH][MACD] Last MACD: {macd_line[-1]}, Signal: {sig[-1]}, Histogram: {hist[-1]}")
         return macd_line, sig, hist
 
+    @staticmethod
+    def rsi(records: List[StockRecord], period: int = 14) -> List[Optional[float]]:
+        """Calculate the Relative Strength Index (Wilder's smoothing)."""
+        closes = _extract(records, 'priceClose')
+        result: List[Optional[float]] = []
+        avg_gain = 0.0
+        avg_loss = 0.0
+        for i in range(len(closes)):
+            if i == 0:
+                result.append(None)
+                continue
+            delta = closes[i] - closes[i - 1]
+            gain = max(delta, 0.0)
+            loss = max(-delta, 0.0)
+            if i < period:
+                result.append(None)
+            elif i == period:
+                avg_gain = sum(max(closes[j] - closes[j - 1], 0.0) for j in range(1, period + 1)) / period
+                avg_loss = sum(max(closes[j - 1] - closes[j], 0.0) for j in range(1, period + 1)) / period
+                if avg_loss == 0:
+                    result.append(100.0)
+                else:
+                    result.append(100 - 100 / (1 + avg_gain / avg_loss))
+            else:
+                avg_gain = (avg_gain * (period - 1) + gain) / period
+                avg_loss = (avg_loss * (period - 1) + loss) / period
+                if avg_loss == 0:
+                    result.append(100.0)
+                else:
+                    result.append(100 - 100 / (1 + avg_gain / avg_loss))
+        return result
+
 # =========================
 # Group 3: Volatility
 # =========================
@@ -387,6 +419,60 @@ class IndicatorGroup3:
             if i+1<period: result.append(None)
             else: result.append(sum(tr[i+1-period:i+1])/period)
         #print(f"[MATH][ATR] Last point: {result[-1]}")
+        return result
+
+    @staticmethod
+    def adx(records: List[StockRecord], period: int = 14) -> List[Optional[float]]:
+        """Calculate the Average Directional Index (Wilder's method)."""
+        if len(records) < 2 * period:
+            return [None] * len(records)
+
+        tr_list: List[float] = []
+        plus_dm: List[float] = []
+        minus_dm: List[float] = []
+        for i in range(1, len(records)):
+            h = records[i].priceHigh
+            l = records[i].priceLow
+            pc = records[i - 1].priceClose
+            ph = records[i - 1].priceHigh
+            pl = records[i - 1].priceLow
+            tr_list.append(max(h - l, abs(h - pc), abs(l - pc)))
+            up = h - ph
+            down = pl - l
+            plus_dm.append(up if up > down and up > 0 else 0.0)
+            minus_dm.append(down if down > up and down > 0 else 0.0)
+
+        def _wilder(data: List[float], n: int) -> List[float]:
+            s = sum(data[:n])
+            out = [s]
+            for x in data[n:]:
+                s = s - s / n + x
+                out.append(s)
+            return out
+
+        atr_s = _wilder(tr_list, period)
+        pdm_s = _wilder(plus_dm, period)
+        mdm_s = _wilder(minus_dm, period)
+
+        pdi = [100 * p / a if a != 0 else 0.0 for p, a in zip(pdm_s, atr_s)]
+        mdi = [100 * m / a if a != 0 else 0.0 for m, a in zip(mdm_s, atr_s)]
+        dx = [100 * abs(p - m) / (p + m) if (p + m) != 0 else 0.0 for p, m in zip(pdi, mdi)]
+
+        if len(dx) < period:
+            return [None] * len(records)
+
+        adx_s = _wilder(dx, period)
+
+        # _wilder() accumulates a running sum ≈ period × average.
+        # +DI/-DI are fine because the period factor cancels in pdm_s/atr_s.
+        # DX is already 0..100, so dividing by period here restores the correct
+        # 0..100 ADX range (Wilder's average, not Wilder's sum).
+        result: List[Optional[float]] = [None] * len(records)
+        offset = 2 * period - 1
+        for i, v in enumerate(adx_s):
+            idx = offset + i
+            if idx < len(records):
+                result[idx] = v / period
         return result
 
     @staticmethod

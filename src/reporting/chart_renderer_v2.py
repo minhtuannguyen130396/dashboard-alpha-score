@@ -152,6 +152,31 @@ tfoot td {
 }
 .pos { color: #3fb950; font-weight: 600; }
 .neg { color: #f85149; font-weight: 600; }
+
+/* ---- Hover panel ---- */
+#hover-panel {
+  display: none;
+  margin-bottom: 10px;
+  padding: 10px 16px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  font-size: 12px;
+  gap: 20px;
+}
+#hover-panel.visible { display: grid; grid-template-columns: 160px 180px 1fr; }
+.hp-col { min-width: 0; }
+.hp-head {
+  font-size: 10px; font-weight: 700; color: #6e7681;
+  text-transform: uppercase; letter-spacing: .8px;
+  border-bottom: 1px solid #21262d; padding-bottom: 4px; margin-bottom: 6px;
+}
+.hp-row { display: flex; justify-content: space-between; gap: 6px; padding: 1px 0; }
+.hp-k   { color: #6e7681; white-space: nowrap; }
+.hp-v   { color: #c9d1d9; font-weight: 600; text-align: right; }
+.hp-bar { display: inline-block; height: 5px; border-radius: 2px; vertical-align: middle; margin-right: 3px; }
+.hp-sep { border-top: 1px solid #21262d; margin: 5px 0; }
+.hp-tag { font-size: 11px; line-height: 1.6; color: #8b949e; word-break: break-word; }
 """
 
 # ---------------------------------------------------------------------------
@@ -305,11 +330,122 @@ _JS = """
   ].sort((a, b) => (a.time < b.time ? -1 : a.time > b.time ? 1 : 0));
   if (allSignals.length > 0) renderInfoBar(allSignals[allSignals.length - 1].info);
 
+  // ── Hover panel ──────────────────────────────────────────────────────────
+  const hoverPanel = document.getElementById('hover-panel');
+
+  // Build O(1) lookup: date string → payload
+  const HOVER_MAP = {};
+  (HOVER_DATA || []).forEach(d => { HOVER_MAP[d.date] = d; });
+
+  // Format helpers — all safe against null/undefined
+  function _n(v, dec) {
+    if (v === null || v === undefined) return '<span style="color:#484f58">N/A</span>';
+    return parseFloat(v).toFixed(dec !== undefined ? dec : 2);
+  }
+  function _vol(v) {
+    if (!v) return 'N/A';
+    if (v >= 1e6) return (v / 1e6).toFixed(2) + 'M';
+    if (v >= 1e3) return (v / 1e3).toFixed(0) + 'K';
+    return String(v);
+  }
+  function _bar(v) {
+    if (v === null || v === undefined) return _n(v);
+    const pct = Math.min(Math.round(v * 100), 100);
+    const col  = pct >= 70 ? '#3fb950' : pct >= 55 ? '#e3b341' : '#6e7681';
+    return `<span class="hp-bar" style="width:${pct}px;background:${col}"></span>${pct}%`;
+  }
+  function _srow(label, v) {
+    if (v === undefined || v === null) return '';
+    return `<div class="hp-row"><span class="hp-k">${label}</span><span class="hp-v">${_bar(v)}</span></div>`;
+  }
+
+  function renderHoverPanel(d) {
+    const p   = d.price        || {};
+    const ind = d.indicators   || {};
+    const sc  = d.scores       || {};
+    const sig = d.signals      || {};
+
+    const isBuy  = sig.is_buy;
+    const isSale = sig.is_sale;
+    const sigClr = isBuy ? '#3fb950' : (isSale ? '#f85149' : '#8b949e');
+    const sigLbl = isBuy ? '▲ MUA'  : (isSale ? '▼ BÁN'  : '—');
+    const regime = (sig.regime || '').replace(/_/g, ' ');
+
+    const rvolClr = p.rvol >= 1.5 ? '#3fb950' : p.rvol >= 1.2 ? '#e3b341' : '#c9d1d9';
+    const rsiV    = ind.rsi14 !== null && ind.rsi14 !== undefined ? parseFloat(ind.rsi14) : null;
+    const rsiClr  = rsiV === null ? '#484f58' : rsiV < 30 ? '#3fb950' : rsiV > 70 ? '#f85149' : '#c9d1d9';
+    const adxV    = ind.adx !== null && ind.adx !== undefined ? parseFloat(ind.adx) : null;
+    const adxClr  = adxV === null ? '#484f58' : adxV >= 25 ? '#3fb950' : adxV >= 20 ? '#e3b341' : '#f85149';
+
+    const reasons  = (d.reasons  || []).join(' · ') || '—';
+    const blkHtml  = (d.blockers || []).length
+      ? `<span style="color:#f85149">${d.blockers.join('<br>')}</span>`
+      : '<span style="color:#3fb950">—</span>';
+
+    hoverPanel.className = 'visible';
+    hoverPanel.innerHTML = `
+      <div class="hp-col">
+        <div class="hp-head">${d.date} · ${d.symbol}</div>
+        <div class="hp-row"><span class="hp-k">Open</span>  <span class="hp-v">${_n(p.open)}</span></div>
+        <div class="hp-row"><span class="hp-k">High</span>  <span class="hp-v pos">${_n(p.high)}</span></div>
+        <div class="hp-row"><span class="hp-k">Low</span>   <span class="hp-v neg">${_n(p.low)}</span></div>
+        <div class="hp-row"><span class="hp-k">Close</span> <span class="hp-v">${_n(p.close)}</span></div>
+        <div class="hp-row"><span class="hp-k">Volume</span><span class="hp-v">${_vol(p.volume)}</span></div>
+        <div class="hp-row"><span class="hp-k">RVOL</span>  <span class="hp-v" style="color:${rvolClr}">${_n(p.rvol)}</span></div>
+        <div class="hp-sep"></div>
+        <div class="hp-row"><span class="hp-k">EMA20</span> <span class="hp-v">${_n(ind.ema20)}</span></div>
+        <div class="hp-row"><span class="hp-k">EMA50</span> <span class="hp-v">${_n(ind.ema50)}</span></div>
+        <div class="hp-row"><span class="hp-k">EMA100</span><span class="hp-v">${_n(ind.ema100)}</span></div>
+        <div class="hp-row"><span class="hp-k">ATR14</span> <span class="hp-v">${_n(ind.atr14)}</span></div>
+      </div>
+      <div class="hp-col">
+        <div class="hp-head">Chỉ báo</div>
+        <div class="hp-row"><span class="hp-k">RSI14</span>    <span class="hp-v" style="color:${rsiClr}">${_n(ind.rsi14,1)}</span></div>
+        <div class="hp-row"><span class="hp-k">MACD line</span><span class="hp-v">${_n(ind.macd_line,3)}</span></div>
+        <div class="hp-row"><span class="hp-k">MACD sig</span> <span class="hp-v">${_n(ind.macd_sig,3)}</span></div>
+        <div class="hp-row"><span class="hp-k">MACD hist</span><span class="hp-v">${_n(ind.macd_hist,3)}</span></div>
+        <div class="hp-row"><span class="hp-k">ADX</span>      <span class="hp-v" style="color:${adxClr}">${_n(ind.adx,1)}</span></div>
+        <div class="hp-row"><span class="hp-k">MFI</span>      <span class="hp-v">${_n(ind.mfi,1)}</span></div>
+        <div class="hp-row"><span class="hp-k">OBV slope</span><span class="hp-v">${_n(ind.obv_slope,0)}</span></div>
+        <div class="hp-sep"></div>
+        <div class="hp-row"><span class="hp-k">SW Hi 10d</span><span class="hp-v">${_n(ind.sw_hi10)}</span></div>
+        <div class="hp-row"><span class="hp-k">SW Lo 10d</span><span class="hp-v">${_n(ind.sw_lo10)}</span></div>
+        <div class="hp-row"><span class="hp-k">SW Hi 20d</span><span class="hp-v">${_n(ind.sw_hi20)}</span></div>
+        <div class="hp-row"><span class="hp-k">SW Lo 20d</span><span class="hp-v">${_n(ind.sw_lo20)}</span></div>
+      </div>
+      <div class="hp-col">
+        <div class="hp-head">Điểm số &amp; Tín hiệu</div>
+        ${_srow('Final',       sc.final)}
+        ${_srow('Setup',       sc.setup)}
+        ${_srow('Trigger',     sc.trigger)}
+        <div class="hp-sep"></div>
+        ${_srow('Candle',      sc.candle)}
+        ${_srow('Trend',       sc.trend)}
+        ${_srow('Momentum',    sc.momentum)}
+        ${_srow('Volume',      sc.volume)}
+        ${_srow('Structure',   sc.structure)}
+        ${_srow('Confirm',     sc.confirmation)}
+        ${_srow('Context',     sc.context)}
+        ${_srow('Pivot',       sc.pivot)}
+        <div class="hp-sep"></div>
+        <div style="color:${sigClr};font-weight:700;font-size:13px">${sigLbl}${regime ? ' · ' + regime : ''}</div>
+        <div class="hp-tag" style="margin-top:3px">${reasons}</div>
+        <div class="hp-sep"></div>
+        <div class="hp-tag">Blockers: ${blkHtml}</div>
+      </div>`;
+  }
+
+  // Show latest day on page load so the panel is never blank
+  const dates = Object.keys(HOVER_MAP).sort();
+  if (dates.length > 0) renderHoverPanel(HOVER_MAP[dates[dates.length - 1]]);
+
+  // Update panel on every crosshair move; keep last state when crosshair leaves
   pc.subscribeCrosshairMove(param => {
-    if (!param.time) return;
+    if (!param.time) return;                          // hover end → keep last
+    const d = HOVER_MAP[param.time];
+    if (d) renderHoverPanel(d);
     const info = MARKER_MAP[param.time + '_b'] || MARKER_MAP[param.time + '_s'];
     if (info) renderInfoBar(info);
-    // no else — keep showing last info when hovering over non-signal candles
   });
 
   // ── Responsive resize ────────────────────────────────────────────────────
@@ -393,6 +529,7 @@ def _build_html(
     sell_markers_json: str,
     actual_buy_markers_json: str,
     actual_sell_markers_json: str,
+    hover_data_json: str = "[]",
 ) -> str:
     sign = "+" if total_profit >= 0 else ""
     return "\n".join([
@@ -428,10 +565,13 @@ def _build_html(
         '  <span class="li"><span class="dot" style="background:#9c27b0"></span>Vol: Khác</span>',
         '</div>',
 
-        # Info bar (shown on marker hover)
+        # Compact signal info bar (latest/hovered signal)
         '<div id="info-bar" style="display:flex;align-items:center;gap:6px;padding:6px 14px;'
         'margin-bottom:8px;background:#1c2128;border-radius:6px;font-size:13px;'
         'border:1px solid #30363d;min-height:32px;"></div>',
+
+        # Full hover panel — hidden until first hover; shows all metrics for the hovered day
+        '<div id="hover-panel"></div>',
 
         # Charts
         '<div id="charts-container">',
@@ -465,6 +605,7 @@ def _build_html(
         f'const SELL_MARKERS         = {sell_markers_json};',
         f'const ACTUAL_BUY_MARKERS   = {actual_buy_markers_json};',
         f'const ACTUAL_SELL_MARKERS  = {actual_sell_markers_json};',
+        f'const HOVER_DATA           = {hover_data_json};',
         '</script>',
 
         # Chart logic (plain string — no brace escaping needed)
@@ -566,6 +707,7 @@ def render_backtest_chart(
         sell_markers_json=json.dumps(sell_markers),
         actual_buy_markers_json=json.dumps(actual_buy_markers),
         actual_sell_markers_json=json.dumps(actual_sell_markers),
+        hover_data_json=json.dumps(mb.hover_payloads),
     )
 
     current_date_str = datetime.now().strftime("%Y-%m-%d")

@@ -14,10 +14,10 @@ BASE_URL_TEMPLATE = "https://restv2.fireant.vn/symbols/{share_code}/historical-q
 IS_FETCH_ALL_DATA = True
 IS_WEEKLY_FETCH = True
 DATE_START_FETCH = "2010-01-01"
-LIST_VN_30 = "Stock_List\\stock_vn_30.txt"
-LIST_MID_CAB = "Stock_List\\stock_mid_cab.txt"
-LIST_LARGE_CAB = "Stock_List\\stock_large_cab.txt"
-LIST_OTHER = "Stock_List\\stock_other.txt"
+LIST_VN_30 = "Stock_List\\stock_vn_30.json"
+LIST_MID_CAB = "Stock_List\\stock_mid_cab.json"
+LIST_LARGE_CAB = "Stock_List\\stock_large_cab.json"
+LIST_OTHER = "Stock_List\\stock_other.json"
 LIST_ALL_STOCK = "Stock_List\\list_all_stock.json"
 
 JWT_PATTERN = re.compile(r"eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9._-]+\.[A-Za-z0-9._-]+")

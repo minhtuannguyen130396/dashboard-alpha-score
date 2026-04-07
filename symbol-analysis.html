@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpha Analysis</title>
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+<style>
+/* ===== BASE ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b0e15;--bg2:#10141e;--bg3:#161b28;--bg4:#1c2233;
+  --border:#232b3e;--border2:#2d3750;
+  --text:#cdd6f4;--muted:#566080;--dim:#2d3550;
+  --accent:#4f7cf6;--green:#27c97a;--red:#f04f59;
+  --yellow:#e8a330;--purple:#9b6dff;--orange:#f07a2a;
+  --up:#26a69a;--down:#ef5350;
+}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+/* ===== HEADER ===== */
+.hdr{background:var(--bg2);border-bottom:1px solid var(--border);padding:11px 20px;display:flex;align-items:center;gap:16px;flex-shrink:0;flex-wrap:wrap;min-height:56px}
+.sym{font-size:22px;font-weight:800;letter-spacing:-.5px;color:#fff}
+.sym-name{font-size:12px;color:var(--muted);background:var(--bg3);padding:3px 9px;border-radius:4px;font-weight:500}
+.sym-ind{font-size:10px;color:var(--muted);border:1px solid var(--border2);padding:2px 7px;border-radius:4px;letter-spacing:.3px}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:20px}
+.price{font-size:26px;font-weight:700;color:#fff}
+.chg-col{display:flex;flex-direction:column;align-items:flex-end}
+.chg-abs{font-size:13px;font-weight:700}
+.chg-pct{font-size:12px;font-weight:600;opacity:.85}
+.ts{font-size:10px;color:var(--muted);margin-top:1px}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--muted)}
+
+/* ===== SUMMARY STRIP ===== */
+.strip{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 20px;display:flex;overflow-x:auto;flex-shrink:0;height:44px;align-items:stretch}
+.sstat{display:flex;flex-direction:column;justify-content:center;padding:0 14px;border-right:1px solid var(--border);min-width:80px;white-space:nowrap}
+.sstat:first-child{padding-left:0}
+.sstat:last-child{border-right:none}
+.sl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:2px}
+.sv{font-size:12px;font-weight:600}
+.comp-val{font-size:16px;font-weight:800}
+
+/* ===== MAIN LAYOUT ===== */
+.main{display:grid;grid-template-columns:1fr 320px;flex:1;overflow:hidden;min-height:0}
+.charts-col{display:flex;flex-direction:column;overflow:hidden;border-right:1px solid var(--border)}
+.alpha-col{overflow-y:auto;background:var(--bg2);padding:14px 12px}
+
+/* ===== CHART PANELS ===== */
+.cp{display:flex;flex-direction:column;overflow:hidden;border-bottom:1px solid var(--border)}
+.cp:last-child{border-bottom:none}
+.cp-hdr{padding:5px 12px;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-shrink:0;height:28px}
+.cp-label{font-size:9px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}
+.cp-legend{display:flex;gap:10px;margin-left:8px}
+.ld{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:3px;vertical-align:middle}
+.li{font-size:10px;color:var(--muted)}
+.cp-values{margin-left:auto;font-size:10px;color:var(--text);display:flex;gap:10px}
+.cv b{font-weight:600}
+.ct{flex:1;min-height:0;position:relative}
+
+/* ===== ALPHA PANEL ===== */
+.a-title{font-size:9px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.comp-card{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 12px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+.comp-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.a-card{background:var(--bg3);border:1px solid var(--border);border-left:3px solid;border-radius:5px;padding:9px 10px;margin-bottom:7px;transition:border-color .12s}
+.a-card:hover{border-color:var(--border2)}
+.a-card.bull{border-left-color:var(--green)}.a-card.bear{border-left-color:var(--red)}.a-card.neut{border-left-color:var(--dim)}
+.a-row1{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.a-id{font-size:9px;color:var(--muted);font-weight:700;width:28px;flex-shrink:0}
+.a-score{font-size:17px;font-weight:800;min-width:42px}
+.a-tag{font-size:8px;font-weight:800;padding:2px 5px;border-radius:3px;text-transform:uppercase;letter-spacing:.4px}
+.tb{background:rgba(39,201,122,.12);color:var(--green)}.tr{background:rgba(240,79,89,.12);color:var(--red)}.tn{background:rgba(86,96,128,.12);color:var(--muted)}
+.a-conf{margin-left:auto;font-size:8px;color:var(--dim);border:1px solid var(--border2);padding:1px 5px;border-radius:3px}
+.a-name{font-size:10px;font-weight:600;color:var(--text);margin-left:34px;margin-bottom:2px}
+.a-text{font-size:10px;color:var(--muted);line-height:1.5;margin-left:34px}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:960px){
+  body{height:auto;overflow:auto}
+  .main{grid-template-columns:1fr;height:auto;overflow:visible}
+  .charts-col{height:70vh}
+  .alpha-col{max-height:none}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr" id="hdr"></div>
+<div class="strip" id="strip"></div>
+
+<div class="main">
+  <div class="charts-col" id="chartsCol">
+    <div class="cp" id="mainPanel" style="flex:5">
+      <div class="cp-hdr">
+        <span class="cp-label">Candlestick · Volume</span>
+        <div class="cp-values" id="candleVals">
+          <span class="cv li">hover for values</span>
+        </div>
+      </div>
+      <div class="ct" id="mainChart"></div>
+    </div>
+    <div class="cp" id="macdPanel" style="flex:2">
+      <div class="cp-hdr">
+        <span class="cp-label">MACD</span>
+        <div class="cp-legend">
+          <span class="li"><span class="ld" style="background:#4f7cf6"></span>MACD</span>
+          <span class="li"><span class="ld" style="background:#e8a330"></span>Signal</span>
+          <span class="li"><span class="ld" style="background:#3a4d3c;border:1px solid #27c97a"></span>Hist</span>
+        </div>
+        <div class="cp-values" id="macdVals"></div>
+      </div>
+      <div class="ct" id="macdChart"></div>
+    </div>
+    <div class="cp" id="rsiPanel" style="flex:2">
+      <div class="cp-hdr">
+        <span class="cp-label">RSI (14)</span>
+        <div class="cp-legend">
+          <span class="li"><span class="ld" style="background:#9b6dff"></span>RSI</span>
+          <span class="li" style="color:#f04f59">OB 70</span>
+          <span class="li" style="color:#27c97a">OS 30</span>
+        </div>
+        <div class="cp-values" id="rsiVals"></div>
+      </div>
+      <div class="ct" id="rsiChart"></div>
+    </div>
+  </div>
+  <div class="alpha-col" id="alphaCol"></div>
+</div>
+
+<script>
+/* ===== CONFIG ===== */
+const CFG = {
+  appTitle:    'Alpha Analysis',
+  symbol:      'NVDA',
+  company:     'NVIDIA Corporation',
+  industry:    'Semiconductors',
+  currency:    'USD',
+  dp:          2,
+
+  // Chart colors
+  candleUp:    '#26a69a', candleDown: '#ef5350',
+  volUp:       'rgba(38,166,154,.45)', volDown: 'rgba(239,83,80,.45)',
+  macdLine:    '#4f7cf6', signalLine: '#e8a330',
+  histUp:      'rgba(39,201,122,.7)',  histDown: 'rgba(240,79,89,.7)',
+  rsiLine:     '#9b6dff',
+
+  // Toggles
+  showMACD: true, showRSI: true,
+
+  // Indicator params
+  macdFast: 12, macdSlow: 26, macdSig: 9,
+  rsiPeriod: 14, rsiOB: 70, rsiOS: 30,
+
+  // Thresholds
+  posMin: 2, negMax: -2,
+
+  // Data
+  mockDays:   90,
+  alphaCount: 10,
+
+  // Panel titles
+  titleAlpha: 'Alpha Signals',
+};
+
+/* ===== MOCK DATA ===== */
+function genCandles(n) {
+  const out = []; let p = 820;
+  const d = new Date('2024-09-02');
+  while (out.length < n) {
+    if (d.getDay() !== 0 && d.getDay() !== 6) {
+      const drift = (Math.random() - 0.47) * 28;
+      const o = p + (Math.random() - .5) * 14;
+      const c = o + drift;
+      const h = Math.max(o, c) + Math.random() * 14;
+      const l = Math.min(o, c) - Math.random() * 10;
+      const v = Math.floor(28e6 + Math.random() * 55e6);
+      const t = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+      out.push({ time:t, open:+o.toFixed(2), high:+h.toFixed(2), low:+l.toFixed(2), close:+c.toFixed(2), volume:v });
+      p = c;
+    }
+    d.setDate(d.getDate() + 1);
+  }
+  return out;
+}
+
+const CANDLES = genCandles(CFG.mockDays);
+
+const SYMBOL_INFO = { symbol: CFG.symbol, name: CFG.company, industry: CFG.industry };
+
+const ALPHAS = [
+  {id:'α01',name:'Price Momentum',    score: 7.8, text:'Strong breakout above 20-day resistance. Momentum accelerating on elevated volume.',  tag:'bullish', conf:'High'},
+  {id:'α02',name:'Foreign Flow',      score:-3.2, text:'Net foreign outflow persists over 5 sessions. Institutional selling pressure visible.',  tag:'bearish', conf:'Medium'},
+  {id:'α03',name:'RSI Recovery',      score: 5.4, text:'RSI rebounding from oversold zone (31.5). Potential mean reversion setup forming.',     tag:'bullish', conf:'Medium'},
+  {id:'α04',name:'MACD Crossover',    score: 6.1, text:'Bullish MACD signal line crossover with expanding histogram. Trend confirmation.',      tag:'bullish', conf:'High'},
+  {id:'α05',name:'Volume Profile',    score: 2.3, text:'Above-average volume on up-days vs down-days. Quiet accumulation pattern detected.',    tag:'bullish', conf:'Low'},
+  {id:'α06',name:'Volatility Regime', score:-1.8, text:'ATR elevated. Erratic price action increases noise, reducing signal reliability.',      tag:'neutral', conf:'Low'},
+  {id:'α07',name:'Sector Relative',   score: 4.9, text:'Outperforming sector index by +3.4% over 20 days. Relative strength intact.',          tag:'bullish', conf:'High'},
+  {id:'α08',name:'Short Interest',    score:-4.5, text:'Short interest +12% week-over-week. Borrow cost elevated above 8% annualized.',        tag:'bearish', conf:'Medium'},
+  {id:'α09',name:'Earnings Quality',  score: 3.1, text:'Last beat +6.2%. Revenue growth accelerating. EPS revisions trending higher.',         tag:'bullish', conf:'Medium'},
+  {id:'α10',name:'Options Flow',      score:-0.9, text:'Put/call ratio at 1.1 — mildly elevated. Hedging activity increasing near expiry.',    tag:'neutral', conf:'Low'},
+];
+
+/* ===== STATE ===== */
+const S = { charts:{}, series:{}, syncing:false };
+
+/* ===== UTILS ===== */
+const U = {
+  f: (n, d) => Number(n).toLocaleString('en-US', { minimumFractionDigits: d ?? CFG.dp, maximumFractionDigits: d ?? CFG.dp }),
+  fv: v => v >= 1e9 ? (v/1e9).toFixed(2)+'B' : v >= 1e6 ? (v/1e6).toFixed(1)+'M' : (v/1e3).toFixed(0)+'K',
+  sign: n => n >= 0 ? '+' : '',
+
+  ema(arr, p) {
+    const k = 2 / (p + 1); let e = arr[0]; const r = [e];
+    for (let i = 1; i < arr.length; i++) { e = arr[i]*k + e*(1-k); r.push(e); }
+    return r;
+  },
+
+  macd(closes) {
+    const f = U.ema(closes, CFG.macdFast), s = U.ema(closes, CFG.macdSlow);
+    const m = f.map((v,i) => v - s[i]);
+    const sig = U.ema(m, CFG.macdSig);
+    return { m, sig, hist: m.map((v,i) => v - sig[i]) };
+  },
+
+  rsi(closes) {
+    const p = CFG.rsiPeriod, r = Array(p).fill(null);
+    let ag = 0, al = 0;
+    for (let i = 1; i <= p; i++) { const d = closes[i]-closes[i-1]; d>=0 ? ag+=d : al-=d; }
+    ag /= p; al /= p;
+    for (let i = p; i < closes.length; i++) {
+      if (i > p) {
+        const d = closes[i]-closes[i-1];
+        ag = (ag*(p-1) + Math.max(d,0)) / p;
+        al = (al*(p-1) + Math.max(-d,0)) / p;
+      }
+      r.push(al === 0 ? 100 : +(100 - 100/(1 + ag/al)).toFixed(2));
+    }
+    return r;
+  },
+
+  chartOpts() {
+    return {
+      layout: { background:{color:'transparent'}, textColor:'#566080', fontFamily:"'Segoe UI',system-ui,sans-serif", fontSize:11 },
+      grid: { vertLines:{color:'#141928'}, horzLines:{color:'#141928'} },
+      crosshair: { mode: LightweightCharts.CrosshairMode.Normal, vertLine:{color:'#2d3750',width:1,style:0}, horzLine:{color:'#2d3750',width:1,style:0} },
+      rightPriceScale: { borderColor:'#232b3e' },
+      timeScale: { borderColor:'#232b3e', fixLeftEdge:true, fixRightEdge:true },
+      handleScroll: true, handleScale: true,
+    };
+  },
+
+  scoreClass: s => s >= CFG.posMin ? 'bull' : s <= CFG.negMax ? 'bear' : 'neut',
+  scoreColor: s => s >= CFG.posMin ? 'var(--green)' : s <= CFG.negMax ? 'var(--red)' : 'var(--muted)',
+  tagCls: t => t === 'bullish' ? 'tb' : t === 'bearish' ? 'tr' : 'tn',
+  tagLabel: t => t === 'bullish' ? 'Bullish' : t === 'bearish' ? 'Bearish' : 'Neutral',
+};
+
+/* ===== CHART RENDERING ===== */
+const CHARTS = {
+  build() {
+    const closes = CANDLES.map(c => c.close);
+    const times  = CANDLES.map(c => c.time);
+    const md     = U.macd(closes);
+    const rd     = U.rsi(closes);
+
+    this.main();
+    if (CFG.showMACD) this.macd(times, md);
+    if (CFG.showRSI)  this.rsi(times, rd);
+    this.syncTime();
+    if (!CFG.showMACD) document.getElementById('macdPanel').style.display = 'none';
+    if (!CFG.showRSI)  document.getElementById('rsiPanel').style.display  = 'none';
+  },
+
+  main() {
+    const el = document.getElementById('mainChart');
+    const chart = LightweightCharts.createChart(el, U.chartOpts());
+
+    const cs = chart.addCandlestickSeries({
+      upColor: CFG.candleUp, downColor: CFG.candleDown,
+      borderUpColor: CFG.candleUp, borderDownColor: CFG.candleDown,
+      wickUpColor: CFG.candleUp, wickDownColor: CFG.candleDown,
+    });
+    cs.setData(CANDLES.map(c => ({ time:c.time, open:c.open, high:c.high, low:c.low, close:c.close })));
+
+    const vs = chart.addHistogramSeries({ priceScaleId:'vol', priceFormat:{type:'volume'}, lastValueVisible:false, priceLineVisible:false });
+    chart.priceScale('vol').applyOptions({ scaleMargins:{ top:0.82, bottom:0 } });
+    vs.setData(CANDLES.map(c => ({ time:c.time, value:c.volume, color: c.close>=c.open ? CFG.volUp : CFG.volDown })));
+
+    chart.timeScale().fitContent();
+    S.charts.main = chart; S.series.cs = cs;
+
+    new ResizeObserver(() => chart.resize(el.clientWidth, el.clientHeight)).observe(el);
+
+    chart.subscribeCrosshairMove(p => {
+      if (!p.seriesData.has(cs)) return;
+      const d = p.seriesData.get(cs);
+      const chg = d.close - d.open, cp = (chg/d.open*100).toFixed(2), cl = chg >= 0 ? 'up' : 'down';
+      document.getElementById('candleVals').innerHTML =
+        `<span class="cv li">O <b>${U.f(d.open)}</b></span>` +
+        `<span class="cv li">H <b class="up">${U.f(d.high)}</b></span>` +
+        `<span class="cv li">L <b class="down">${U.f(d.low)}</b></span>` +
+        `<span class="cv li">C <b>${U.f(d.close)}</b></span>` +
+        `<span class="cv li ${cl}"><b>${U.sign(chg)}${U.f(chg)} (${U.sign(chg)}${cp}%)</b></span>`;
+    });
+  },
+
+  macd(times, d) {
+    const el = document.getElementById('macdChart');
+    const chart = LightweightCharts.createChart(el, U.chartOpts());
+
+    const ms = chart.addLineSeries({ color:CFG.macdLine, lineWidth:1.5, priceLineVisible:false, lastValueVisible:false });
+    const ss = chart.addLineSeries({ color:CFG.signalLine, lineWidth:1.5, priceLineVisible:false, lastValueVisible:false });
+    const hs = chart.addHistogramSeries({ priceLineVisible:false, lastValueVisible:false });
+
+    ms.setData(times.map((t,i) => ({ time:t, value:+d.m[i].toFixed(4) })));
+    ss.setData(times.map((t,i) => ({ time:t, value:+d.sig[i].toFixed(4) })));
+    hs.setData(times.map((t,i) => ({ time:t, value:+d.hist[i].toFixed(4), color: d.hist[i]>=0 ? CFG.histUp : CFG.histDown })));
+
+    chart.timeScale().fitContent();
+    S.charts.macd = chart; S.series.ms = ms;
+    new ResizeObserver(() => chart.resize(el.clientWidth, el.clientHeight)).observe(el);
+
+    chart.subscribeCrosshairMove(p => {
+      if (!p.seriesData.has(ms)) return;
+      const mv = p.seriesData.get(ms)?.value ?? 0;
+      const sv = p.seriesData.get(ss)?.value ?? 0;
+      document.getElementById('macdVals').innerHTML =
+        `<span class="li" style="color:${CFG.macdLine}">M ${U.f(mv,4)}</span>` +
+        `<span class="li" style="color:${CFG.signalLine}">S ${U.f(sv,4)}</span>`;
+    });
+  },
+
+  rsi(times, d) {
+    const el = document.getElementById('rsiChart');
+    const chart = LightweightCharts.createChart(el, U.chartOpts());
+
+    const rs = chart.addLineSeries({ color:CFG.rsiLine, lineWidth:1.5, priceLineVisible:false, lastValueVisible:false });
+    rs.setData(times.map((t,i) => d[i] !== null ? { time:t, value:d[i] } : null).filter(Boolean));
+
+    const LS = LightweightCharts.LineStyle;
+    rs.createPriceLine({ price:CFG.rsiOB, color:'rgba(240,79,89,.5)',   lineWidth:1, lineStyle:LS.Dashed, axisLabelVisible:true, title:'OB' });
+    rs.createPriceLine({ price:CFG.rsiOS, color:'rgba(39,201,122,.5)',  lineWidth:1, lineStyle:LS.Dashed, axisLabelVisible:true, title:'OS' });
+
+    chart.timeScale().fitContent();
+    S.charts.rsi = chart; S.series.rs = rs;
+    new ResizeObserver(() => chart.resize(el.clientWidth, el.clientHeight)).observe(el);
+
+    chart.subscribeCrosshairMove(p => {
+      if (!p.seriesData.has(rs)) return;
+      const v = p.seriesData.get(rs)?.value;
+      if (v != null) {
+        const cl = v >= CFG.rsiOB ? 'down' : v <= CFG.rsiOS ? 'up' : '';
+        document.getElementById('rsiVals').innerHTML = `<span class="li ${cl}"><b>${U.f(v,1)}</b></span>`;
+      }
+    });
+  },
+
+  syncTime() {
+    const all = Object.values(S.charts);
+    all.forEach(src => {
+      src.timeScale().subscribeVisibleTimeRangeChange(range => {
+        if (S.syncing || !range) return;
+        S.syncing = true;
+        all.forEach(tgt => { if (tgt !== src) tgt.timeScale().setVisibleRange(range); });
+        S.syncing = false;
+      });
+    });
+  },
+};
+
+/* ===== ALPHA RENDERING ===== */
+const ALPHA = {
+  render() {
+    const sigs = ALPHAS.slice(0, CFG.alphaCount);
+    const comp = (sigs.reduce((a,b) => a+b.score, 0) / sigs.length).toFixed(2);
+    const compColor = U.scoreColor(+comp);
+
+    document.getElementById('alphaCol').innerHTML = `
+      <div class="a-title">${CFG.titleAlpha}</div>
+      <div class="comp-card">
+        <div>
+          <div class="comp-label">Composite Alpha Score</div>
+          <div style="font-size:9px;color:var(--dim);margin-top:2px">${sigs.length} signals averaged</div>
+        </div>
+        <div class="comp-val" style="color:${compColor}">${comp >= 0 ? '+' : ''}${comp}</div>
+      </div>
+      ${sigs.map(a => `
+        <div class="a-card ${U.scoreClass(a.score)}">
+          <div class="a-row1">
+            <span class="a-id">${a.id}</span>
+            <span class="a-score" style="color:${U.scoreColor(a.score)}">${a.score>=0?'+':''}${a.score}</span>
+            <span class="a-tag ${U.tagCls(a.tag)}">${U.tagLabel(a.tag)}</span>
+            <span class="a-conf">${a.conf}</span>
+          </div>
+          <div class="a-name">${a.name}</div>
+          <div class="a-text">${a.text}</div>
+        </div>
+      `).join('')}
+    `;
+  },
+};
+
+/* ===== SUMMARY RENDERING ===== */
+const SUMMARY = {
+  render() {
+    const last = CANDLES[CANDLES.length - 1];
+    const prev = CANDLES[CANDLES.length - 2];
+    const chg  = last.close - prev.close;
+    const chgP = (chg / prev.close * 100).toFixed(2);
+    const cl   = chg >= 0 ? 'up' : 'down';
+    const sign = chg >= 0 ? '+' : '';
+
+    const forBuy  = 76400000, forSell = 91200000;
+    const netFor  = forBuy - forSell;
+    const valTrd  = last.close * last.volume;
+    const ts = new Date().toLocaleString('en-US', { month:'short', day:'numeric', year:'numeric', hour:'2-digit', minute:'2-digit' });
+
+    // Header
+    document.getElementById('hdr').innerHTML = `
+      <span class="sym">${SYMBOL_INFO.symbol}</span>
+      <span class="sym-name">${SYMBOL_INFO.name}</span>
+      <span class="sym-ind">${SYMBOL_INFO.industry}</span>
+      <div class="hdr-right">
+        <span class="price">${CFG.currency} ${U.f(last.close)}</span>
+        <div class="chg-col">
+          <span class="chg-abs ${cl}">${sign}${U.f(chg)}</span>
+          <span class="chg-pct ${cl}">${sign}${chgP}%</span>
+          <span class="ts">${ts}</span>
+        </div>
+      </div>
+    `;
+
+    // Stats
+    const comp = (ALPHAS.slice(0, CFG.alphaCount).reduce((a,b)=>a+b.score,0)/CFG.alphaCount).toFixed(2);
+    const compColor = U.scoreColor(+comp);
+
+    const stats = [
+      {l:'Open',         v: U.f(last.open)},
+      {l:'High',         v:`<span class="up">${U.f(last.high)}</span>`},
+      {l:'Low',          v:`<span class="down">${U.f(last.low)}</span>`},
+      {l:'Close',        v: U.f(last.close)},
+      {l:'Volume',       v: U.fv(last.volume)},
+      {l:'Value Traded', v:'$'+U.fv(valTrd)},
+      {l:'For. Buy',     v:`<span class="up">+${U.fv(forBuy)}</span>`},
+      {l:'For. Sell',    v:`<span class="down">-${U.fv(forSell)}</span>`},
+      {l:'Net Foreign',  v:`<span class="${netFor>=0?'up':'down'}">${U.sign(netFor)}${U.fv(Math.abs(netFor))}</span>`},
+    ];
+
+    document.getElementById('strip').innerHTML =
+      stats.map(s => `<div class="sstat"><div class="sl">${s.l}</div><div class="sv">${s.v}</div></div>`).join('') +
+      `<div class="sstat" style="padding-left:16px;min-width:100px">
+        <div class="sl">Composite Score</div>
+        <div class="sv comp-val" style="color:${compColor}">${comp>=0?'+':''}${comp}</div>
+      </div>`;
+  },
+};
+
+/* ===== INIT ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  document.title = CFG.appTitle + ' · ' + CFG.symbol;
+  SUMMARY.render();
+  CHARTS.build();
+  ALPHA.render();
+});
+</script>
+</body>
+</html>

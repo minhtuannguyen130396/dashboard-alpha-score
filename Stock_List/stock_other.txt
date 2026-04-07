@@ -1,4 +1,0 @@
-[
-  { "share_code": "CTR", "ipo_date": "2016-01-01" },
-  { "share_code": "CMG", "ipo_date": "2016-01-01" }
-]

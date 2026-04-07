@@ -1,18 +1,62 @@
 [
-  { "share_code": "VND", "ipo_date": "2016-01-01" },
-  { "share_code": "VCI", "ipo_date": "2016-01-01" },
-  { "share_code": "SHB", "ipo_date": "2016-01-01" },
-  { "share_code": "HCM", "ipo_date": "2016-01-01" },
-  { "share_code": "GEX", "ipo_date": "2016-01-01" },
-  { "share_code": "DXG", "ipo_date": "2016-01-01" },
-  { "share_code": "PVD", "ipo_date": "2016-01-01" },
-  { "share_code": "KDH", "ipo_date": "2016-01-01" },
-  { "share_code": "NLG", "ipo_date": "2016-01-01" },
-  { "share_code": "NVL", "ipo_date": "2016-01-01" },
-  { "share_code": "VIX", "ipo_date": "2016-01-01" },
-  { "share_code": "VCP", "ipo_date": "2016-01-01" },
-  { "share_code": "IDC", "ipo_date": "2016-01-01" },
-  { "share_code": "BWE", "ipo_date": "2016-01-01" },
-  { "share_code": "CTI", "ipo_date": "2016-01-01" },
-  { "share_code": "PDR", "ipo_date": "2016-01-01" }
+  {
+    "share_code": "VND",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "VCI",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "HCM",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "GEX",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "DXG",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "PVD",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "KDH",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "NLG",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "NVL",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "VIX",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "VCP",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "IDC",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "BWE",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "CTI",
+    "ipo_date": "2016-01-01"
+  },
+  {
+    "share_code": "PDR",
+    "ipo_date": "2016-01-01"
+  }
 ]

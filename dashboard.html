@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Controller Dashboard</title>
+<style>
+/* ===== BASE ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d1117;--bg2:#161b22;--bg3:#21262d;--border:#30363d;
+  --text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#1f6feb;
+  --green:#3fb950;--red:#f85149;--yellow:#d29922;--purple:#bc8cff;
+  --orange:#ffa657;--card-r:8px;--trans:.15s ease;
+}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+/* ===== LAYOUT ===== */
+.topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:100}
+.topbar h1{font-size:16px;font-weight:700;color:var(--text);white-space:nowrap}
+.topbar .badge{background:var(--accent2);color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:600}
+.topbar .spacer{flex:1}
+.topbar .live{font-size:11px;color:var(--green);display:flex;align-items:center;gap:4px}
+.live::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.main{display:grid;grid-template-columns:240px 1fr;gap:0;height:calc(100vh - 49px)}
+.sidebar{background:var(--bg2);border-right:1px solid var(--border);overflow-y:auto;padding:12px}
+.content{overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:16px}
+/* ===== SIDEBAR ===== */
+.sidebar-label{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin:8px 4px 6px}
+.search-box{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:7px 10px;font-size:12px;outline:none;transition:border var(--trans)}
+.search-box:focus{border-color:var(--accent)}
+.stock-list{margin-top:8px;display:flex;flex-direction:column;gap:2px}
+.stock-item{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:6px;cursor:pointer;transition:background var(--trans);border:1px solid transparent}
+.stock-item:hover{background:var(--bg3)}
+.stock-item.active{background:var(--accent2);border-color:var(--accent)}
+.stock-item .code{font-weight:600;font-size:12px}
+.stock-item .name{font-size:10px;color:var(--muted);margin-top:1px}
+.stock-item .chg{font-size:11px;font-weight:600}
+.pos{color:var(--green)}.neg{color:var(--red)}.neu{color:var(--muted)}
+/* ===== CARDS ===== */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:14px}
+.card-title{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.card-title span{flex:1}
+/* ===== ROW GRIDS ===== */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+/* ===== STAT CARDS ===== */
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:14px}
+.stat-label{font-size:10px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.stat-value{font-size:22px;font-weight:700;margin:4px 0 2px;color:var(--text)}
+.stat-sub{font-size:11px;color:var(--muted)}
+/* ===== DETAIL PANEL ===== */
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.detail-item{background:var(--bg3);border-radius:6px;padding:10px 12px}
+.detail-item .dl{font-size:10px;color:var(--muted);margin-bottom:3px}
+.detail-item .dv{font-size:14px;font-weight:700}
+/* ===== TABLE ===== */
+table{width:100%;border-collapse:collapse}
+th{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;text-align:left;padding:6px 8px;border-bottom:1px solid var(--border)}
+td{padding:8px 8px;border-bottom:1px solid var(--border);font-size:12px}
+tr:last-child td{border-bottom:none}
+tbody tr{transition:background var(--trans)}
+tbody tr:hover{background:var(--bg3)}
+.rank{color:var(--muted);font-size:10px;width:24px}
+/* ===== HEATMAP ===== */
+.heatmap-grid{display:flex;flex-wrap:wrap;gap:4px}
+.hm-cell{border-radius:5px;padding:6px 8px;cursor:pointer;transition:opacity var(--trans);display:flex;flex-direction:column;justify-content:space-between;min-width:64px;flex:1}
+.hm-cell:hover{opacity:.8;outline:1.5px solid rgba(255,255,255,.3)}
+.hm-code{font-size:10px;font-weight:700;color:#fff}
+.hm-chg{font-size:11px;font-weight:600;color:rgba(255,255,255,.9)}
+/* ===== INDUSTRY BAR ===== */
+.ind-bar-wrap{display:flex;flex-direction:column;gap:8px}
+.ind-row{display:flex;align-items:center;gap:8px}
+.ind-name{width:100px;font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ind-bar{flex:1;height:14px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.ind-fill{height:100%;border-radius:3px;transition:width .4s ease}
+.ind-val{width:36px;text-align:right;font-size:11px;font-weight:600}
+/* ===== SCORE BADGE ===== */
+.score-pill{display:inline-block;padding:2px 7px;border-radius:12px;font-size:11px;font-weight:700}
+/* ===== JSON VIEW ===== */
+.json-block{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;font-family:'Cascadia Code',Consolas,monospace;font-size:11px;color:#8b949e;white-space:pre;overflow-x:auto;max-height:160px;overflow-y:auto}
+.json-key{color:var(--accent)}.json-str{color:var(--green)}.json-num{color:var(--orange)}.json-bool{color:var(--purple)}
+/* ===== PLACEHOLDER ===== */
+.placeholder{display:flex;align-items:center;justify-content:center;min-height:80px;color:var(--muted);font-size:12px;border:1px dashed var(--border);border-radius:6px}
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){.main{grid-template-columns:1fr}.sidebar{display:none}.grid-4{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}.grid-4{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- ===== CONFIG ===== -->
+<script>
+const CONFIG = {
+  title: 'StockCtrl Pro',
+  currency: 'USD',
+  scoreMax: 100,
+  scoreThresholds: { high: 70, mid: 40 },
+  heatmapSizeKey: 'volume',   // volume | marketCap
+  topN: 8,
+  refreshLabel: 'Simulated Live',
+};
+</script>
+
+<!-- ===== DATA ===== -->
+<script>
+const MOCK_STOCKS = [
+  {code:'AAPL',name:'Apple Inc.',industry:'Technology',open:172.3,close:175.8,high:176.5,low:171.9,volume:68400000,change:2.03,foreignerOrder:12400000,score:88,marketCap:2780},
+  {code:'MSFT',name:'Microsoft',industry:'Technology',open:380.1,close:388.6,high:390.2,low:379.5,volume:22100000,change:2.24,foreignerOrder:8900000,score:91,marketCap:2890},
+  {code:'GOOGL',name:'Alphabet',industry:'Technology',open:155.4,close:157.2,high:158.1,low:154.8,volume:19300000,change:1.16,foreignerOrder:5100000,score:82,marketCap:1960},
+  {code:'AMZN',name:'Amazon',industry:'Consumer',open:178.9,close:183.4,high:184.0,low:178.2,volume:31500000,change:2.51,foreignerOrder:9700000,score:85,marketCap:1910},
+  {code:'NVDA',name:'NVIDIA',industry:'Technology',open:865.0,close:902.5,high:910.3,low:862.1,volume:44800000,change:4.34,foreignerOrder:18600000,score:94,marketCap:2230},
+  {code:'META',name:'Meta Platforms',industry:'Technology',open:487.2,close:492.8,high:495.6,low:485.3,volume:14200000,change:1.15,foreignerOrder:4400000,score:79,marketCap:1260},
+  {code:'TSLA',name:'Tesla',industry:'Automotive',open:172.4,close:168.9,high:174.1,low:167.5,volume:91200000,change:-2.03,foreignerOrder:-3200000,score:52,marketCap:538},
+  {code:'JPM',name:'JPMorgan Chase',industry:'Finance',open:195.3,close:193.1,high:196.0,low:192.5,volume:11800000,change:-1.13,foreignerOrder:-1800000,score:65,marketCap:560},
+  {code:'JNJ',name:'Johnson & Johnson',industry:'Healthcare',open:156.8,close:155.2,high:157.3,low:154.9,volume:8600000,change:-1.02,foreignerOrder:-900000,score:61,marketCap:374},
+  {code:'XOM',name:'ExxonMobil',industry:'Energy',open:112.4,close:110.8,high:113.1,low:110.2,volume:16400000,change:-1.42,foreignerOrder:-2100000,score:55,marketCap:443},
+  {code:'WMT',name:'Walmart',industry:'Consumer',open:163.2,close:165.8,high:166.4,low:162.9,volume:9200000,change:1.59,foreignerOrder:2600000,score:72,marketCap:447},
+  {code:'UNH',name:'UnitedHealth',industry:'Healthcare',open:498.7,close:502.3,high:504.1,low:497.2,volume:4100000,change:0.72,foreignerOrder:1100000,score:77,marketCap:464},
+  {code:'BAC',name:'Bank of America',industry:'Finance',open:37.2,close:36.5,high:37.6,low:36.3,volume:52100000,change:-1.88,foreignerOrder:-4400000,score:48,marketCap:280},
+  {code:'CVX',name:'Chevron',industry:'Energy',open:154.3,close:153.1,high:155.0,low:152.8,volume:7800000,change:-0.78,foreignerOrder:-600000,score:59,marketCap:284},
+  {code:'PFE',name:'Pfizer',industry:'Healthcare',open:26.8,close:27.4,high:27.6,low:26.6,volume:31400000,change:2.24,foreignerOrder:3800000,score:63,marketCap:155},
+  {code:'INTC',name:'Intel',industry:'Technology',open:31.4,close:30.2,high:31.8,low:30.0,volume:42300000,change:-3.82,foreignerOrder:-7100000,score:34,marketCap:128},
+  {code:'DIS',name:'Disney',industry:'Media',open:111.5,close:112.9,high:113.4,low:111.1,volume:11600000,change:1.26,foreignerOrder:1900000,score:67,marketCap:206},
+  {code:'NFLX',name:'Netflix',industry:'Media',open:603.2,close:614.5,high:616.8,low:601.4,volume:6900000,change:1.87,foreignerOrder:2200000,score:75,marketCap:266},
+  {code:'AMD',name:'AMD',industry:'Technology',open:162.4,close:158.3,high:163.9,low:157.8,volume:38700000,change:-2.53,foreignerOrder:-5800000,score:69,marketCap:256},
+  {code:'CRM',name:'Salesforce',industry:'Technology',open:274.6,close:278.9,high:280.2,low:273.8,volume:7300000,change:1.57,foreignerOrder:2000000,score:74,marketCap:271},
+];
+</script>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <h1 id="appTitle"></h1>
+  <span class="badge">BETA</span>
+  <div class="spacer"></div>
+  <div class="live" id="liveLabel"></div>
+</div>
+
+<!-- ===== LAYOUT ===== -->
+<div class="main">
+  <!-- sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-label">Watchlist</div>
+    <input class="search-box" id="searchInput" placeholder="Search stocks..." />
+    <div class="stock-list" id="stockList"></div>
+  </aside>
+
+  <!-- main content -->
+  <main class="content">
+    <!-- summary stats -->
+    <div class="grid-4" id="summaryStats"></div>
+
+    <!-- selected stock detail -->
+    <div id="detailSection"></div>
+
+    <!-- heatmap + industry -->
+    <div class="grid-2">
+      <div class="card" id="heatmapCard">
+        <div class="card-title"><span>Market Heatmap</span><span style="color:var(--muted);font-size:10px">by change %</span></div>
+        <div class="heatmap-grid" id="heatmapGrid"></div>
+      </div>
+      <div class="card">
+        <div class="card-title"><span>Industry Allocation</span></div>
+        <div class="ind-bar-wrap" id="industryBars"></div>
+      </div>
+    </div>
+
+    <!-- gainers losers scores -->
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title"><span>Top Gainers</span></div>
+        <table><thead><tr><th>#</th><th>Stock</th><th>Chg%</th><th>Vol</th></tr></thead>
+        <tbody id="gainersBody"></tbody></table>
+      </div>
+      <div class="card">
+        <div class="card-title"><span>Top Losers</span></div>
+        <table><thead><tr><th>#</th><th>Stock</th><th>Chg%</th><th>Vol</th></tr></thead>
+        <tbody id="losersBody"></tbody></table>
+      </div>
+      <div class="card">
+        <div class="card-title"><span>High Score Stocks</span></div>
+        <table><thead><tr><th>#</th><th>Stock</th><th>Score</th><th>Chg%</th></tr></thead>
+        <tbody id="scoresBody"></tbody></table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ===== STATE ===== -->
+<script>
+const STATE = {
+  selected: null,
+  search: '',
+  stocks: [],
+};
+</script>
+
+<!-- ===== UTILS ===== -->
+<script>
+const UTILS = {
+  fmt: (n, dec=2) => Number(n).toLocaleString('en-US', {minimumFractionDigits:dec, maximumFractionDigits:dec}),
+  fmtVol: v => v >= 1e9 ? (v/1e9).toFixed(1)+'B' : v >= 1e6 ? (v/1e6).toFixed(1)+'M' : v >= 1e3 ? (v/1e3).toFixed(0)+'K' : v,
+  chgClass: c => c > 0 ? 'pos' : c < 0 ? 'neg' : 'neu',
+  chgSign: c => c > 0 ? '+' : '',
+  heatColor: chg => {
+    const v = Math.max(-6, Math.min(6, chg));
+    if (v > 0) {
+      const t = v/6;
+      const g = Math.round(50 + t*80);
+      return `rgb(0,${g},30)`;
+    } else {
+      const t = (-v)/6;
+      const r = Math.round(80 + t*100);
+      return `rgb(${r},0,20)`;
+    }
+  },
+  scoreColor: s => {
+    if (s >= CONFIG.scoreThresholds.high) return 'var(--green)';
+    if (s >= CONFIG.scoreThresholds.mid) return 'var(--yellow)';
+    return 'var(--red)';
+  },
+  scoreBg: s => {
+    if (s >= CONFIG.scoreThresholds.high) return 'rgba(63,185,80,.18)';
+    if (s >= CONFIG.scoreThresholds.mid) return 'rgba(210,153,34,.18)';
+    return 'rgba(248,81,73,.18)';
+  },
+  jsonHL: obj => {
+    const s = JSON.stringify(obj, null, 2);
+    return s.replace(/("(\w+)")\s*:/g, '<span class="json-key">"$2"</span>:')
+            .replace(/:\s*(".*?")/g, ': <span class="json-str">$1</span>')
+            .replace(/:\s*(\d+\.?\d*)/g, ': <span class="json-num">$1</span>')
+            .replace(/:\s*(true|false)/g, ': <span class="json-bool">$1</span>');
+  },
+  industryColor: (industry, idx) => {
+    const palette = ['#58a6ff','#3fb950','#ffa657','#d29922','#bc8cff','#f78166','#39d353','#79c0ff'];
+    const map = {};
+    [...new Set(MOCK_STOCKS.map(s=>s.industry))].forEach((ind,i) => map[ind]=palette[i%palette.length]);
+    return map[industry] || '#8b949e';
+  }
+};
+</script>
+
+<!-- ===== RENDER ===== -->
+<script>
+const RENDER = {
+
+  init() {
+    document.getElementById('appTitle').textContent = CONFIG.title;
+    document.getElementById('liveLabel').textContent = CONFIG.refreshLabel;
+    STATE.stocks = [...MOCK_STOCKS];
+    STATE.selected = STATE.stocks[0];
+    this.all();
+  },
+
+  all() {
+    this.sidebar();
+    this.summary();
+    this.detail();
+    this.heatmap();
+    this.industry();
+    this.gainersLosers();
+    this.scores();
+  },
+
+  sidebar() {
+    const q = STATE.search.toLowerCase();
+    const filtered = STATE.stocks.filter(s =>
+      s.code.toLowerCase().includes(q) || s.name.toLowerCase().includes(q)
+    );
+    const el = document.getElementById('stockList');
+    el.innerHTML = filtered.map(s => `
+      <div class="stock-item${STATE.selected?.code===s.code?' active':''}" data-code="${s.code}">
+        <div>
+          <div class="code">${s.code}</div>
+          <div class="name">${s.name}</div>
+        </div>
+        <div class="chg ${UTILS.chgClass(s.change)}">${UTILS.chgSign(s.change)}${UTILS.fmt(s.change)}%</div>
+      </div>
+    `).join('');
+    el.querySelectorAll('.stock-item').forEach(el => {
+      el.addEventListener('click', () => EVENTS.selectStock(el.dataset.code));
+    });
+  },
+
+  summary() {
+    const s = STATE.stocks;
+    const gainers = s.filter(x=>x.change>0).length;
+    const losers  = s.filter(x=>x.change<0).length;
+    const avgScore = (s.reduce((a,b)=>a+b.score,0)/s.length).toFixed(1);
+    const topVol  = s.reduce((a,b)=>b.volume>a.volume?b:a);
+    const cards = [
+      {label:'Total Stocks', value:s.length, sub:`${gainers} up · ${losers} down`},
+      {label:'Gainers / Losers', value:`${gainers} / ${losers}`, sub:'Today\'s session'},
+      {label:'Avg Score', value:avgScore, sub:`Max ${CONFIG.scoreMax}`},
+      {label:'Top Volume', value:topVol.code, sub:UTILS.fmtVol(topVol.volume)+' shares'},
+    ];
+    document.getElementById('summaryStats').innerHTML = cards.map(c=>`
+      <div class="stat-card">
+        <div class="stat-label">${c.label}</div>
+        <div class="stat-value">${c.value}</div>
+        <div class="stat-sub">${c.sub}</div>
+      </div>
+    `).join('');
+  },
+
+  detail() {
+    const s = STATE.selected;
+    const el = document.getElementById('detailSection');
+    if (!s) { el.innerHTML = '<div class="placeholder">Select a stock to view details</div>'; return; }
+    const fields = [
+      {l:'Open',v:UTILS.fmt(s.open)},
+      {l:'Close',v:UTILS.fmt(s.close)},
+      {l:'High',v:`<span class="pos">${UTILS.fmt(s.high)}</span>`},
+      {l:'Low',v:`<span class="neg">${UTILS.fmt(s.low)}</span>`},
+      {l:'Volume',v:UTILS.fmtVol(s.volume)},
+      {l:'Foreign Order',v:`<span class="${UTILS.chgClass(s.foreignerOrder)}">${UTILS.fmtVol(Math.abs(s.foreignerOrder))}</span>`},
+      {l:'Change %',v:`<span class="${UTILS.chgClass(s.change)}">${UTILS.chgSign(s.change)}${UTILS.fmt(s.change)}%</span>`},
+      {l:'Score',v:`<span class="score-pill" style="background:${UTILS.scoreBg(s.score)};color:${UTILS.scoreColor(s.score)}">${s.score}</span>`},
+      {l:'Industry',v:s.industry},
+      {l:'Market Cap',v:`$${s.marketCap}B`},
+    ];
+    el.innerHTML = `
+      <div class="card">
+        <div class="card-title">
+          <span>${s.code} — ${s.name}</span>
+          <span style="color:var(--muted);font-size:11px">${s.industry}</span>
+        </div>
+        <div class="detail-grid" style="margin-bottom:12px">
+          ${fields.map(f=>`<div class="detail-item"><div class="dl">${f.l}</div><div class="dv">${f.v}</div></div>`).join('')}
+        </div>
+        <div class="card-title" style="margin-top:8px"><span>Raw JSON</span></div>
+        <div class="json-block">${UTILS.jsonHL(s)}</div>
+      </div>
+    `;
+  },
+
+  heatmap() {
+    const sorted = [...STATE.stocks].sort((a,b)=>b[CONFIG.heatmapSizeKey]-a[CONFIG.heatmapSizeKey]);
+    document.getElementById('heatmapGrid').innerHTML = sorted.map(s=>`
+      <div class="hm-cell" data-code="${s.code}"
+           style="background:${UTILS.heatColor(s.change)};flex-basis:${Math.max(60,Math.min(120,s.volume/1e6))}px">
+        <div class="hm-code">${s.code}</div>
+        <div class="hm-chg">${UTILS.chgSign(s.change)}${UTILS.fmt(s.change)}%</div>
+      </div>
+    `).join('');
+    document.querySelectorAll('.hm-cell').forEach(el=>{
+      el.addEventListener('click',()=>EVENTS.selectStock(el.dataset.code));
+    });
+  },
+
+  industry() {
+    const groups = {};
+    STATE.stocks.forEach(s=>{
+      groups[s.industry] = (groups[s.industry]||0) + s.marketCap;
+    });
+    const total = Object.values(groups).reduce((a,b)=>a+b,0);
+    const sorted = Object.entries(groups).sort((a,b)=>b[1]-a[1]);
+    const max = sorted[0][1];
+    document.getElementById('industryBars').innerHTML = sorted.map(([ind,cap])=>`
+      <div class="ind-row">
+        <div class="ind-name" title="${ind}">${ind}</div>
+        <div class="ind-bar">
+          <div class="ind-fill" style="width:${(cap/max*100).toFixed(1)}%;background:${UTILS.industryColor(ind)}"></div>
+        </div>
+        <div class="ind-val" style="color:${UTILS.industryColor(ind)}">${((cap/total)*100).toFixed(1)}%</div>
+      </div>
+    `).join('');
+  },
+
+  gainersLosers() {
+    const gainers = [...STATE.stocks].sort((a,b)=>b.change-a.change).slice(0,CONFIG.topN);
+    const losers  = [...STATE.stocks].sort((a,b)=>a.change-b.change).slice(0,CONFIG.topN);
+
+    const row = (s,i,cls) => `
+      <tr style="cursor:pointer" data-code="${s.code}" class="gl-row">
+        <td class="rank">${i+1}</td>
+        <td><div style="font-weight:600">${s.code}</div><div style="color:var(--muted);font-size:10px">${s.name}</div></td>
+        <td class="${cls}">${UTILS.chgSign(s.change)}${UTILS.fmt(s.change)}%</td>
+        <td style="color:var(--muted)">${UTILS.fmtVol(s.volume)}</td>
+      </tr>`;
+
+    document.getElementById('gainersBody').innerHTML = gainers.map((s,i)=>row(s,i,'pos')).join('');
+    document.getElementById('losersBody').innerHTML  = losers.map((s,i)=>row(s,i,'neg')).join('');
+    document.querySelectorAll('.gl-row').forEach(el=>{
+      el.addEventListener('click',()=>EVENTS.selectStock(el.dataset.code));
+    });
+  },
+
+  scores() {
+    const top = [...STATE.stocks].sort((a,b)=>b.score-a.score).slice(0,CONFIG.topN);
+    document.getElementById('scoresBody').innerHTML = top.map((s,i)=>`
+      <tr style="cursor:pointer" data-code="${s.code}" class="gl-row">
+        <td class="rank">${i+1}</td>
+        <td><div style="font-weight:600">${s.code}</div><div style="color:var(--muted);font-size:10px">${s.name}</div></td>
+        <td><span class="score-pill" style="background:${UTILS.scoreBg(s.score)};color:${UTILS.scoreColor(s.score)}">${s.score}</span></td>
+        <td class="${UTILS.chgClass(s.change)}">${UTILS.chgSign(s.change)}${UTILS.fmt(s.change)}%</td>
+      </tr>
+    `).join('');
+    document.querySelectorAll('#scoresBody .gl-row').forEach(el=>{
+      el.addEventListener('click',()=>EVENTS.selectStock(el.dataset.code));
+    });
+  },
+};
+</script>
+
+<!-- ===== EVENTS ===== -->
+<script>
+const EVENTS = {
+  selectStock(code) {
+    STATE.selected = STATE.stocks.find(s=>s.code===code) || STATE.selected;
+    RENDER.detail();
+    RENDER.sidebar();
+    window.scrollTo({top:0,behavior:'smooth'});
+  },
+
+  onSearch(val) {
+    STATE.search = val;
+    RENDER.sidebar();
+  },
+
+  bindAll() {
+    document.getElementById('searchInput').addEventListener('input', e => EVENTS.onSearch(e.target.value));
+  }
+};
+
+// ===== BOOT =====
+document.addEventListener('DOMContentLoaded', () => {
+  RENDER.init();
+  EVENTS.bindAll();
+});
+</script>
+
+</body>
+</html>

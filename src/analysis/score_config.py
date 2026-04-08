@@ -38,11 +38,11 @@ class ScoreWeightsV4:
 @dataclass
 class ScoreThresholdsV4:
     setup_watch: float = 0.55
-    setup_good:  float = 0.65
+    setup_good:  float = 0.62
 
     # Entry gates (buy)
-    final_signal:  float = 0.55
-    trigger:       float = 0.50
+    final_signal:  float = 0.48
+    trigger:       float = 0.43
     strong_signal: float = 0.78
 
     # Exit gates (sell) — intentionally looser than entry; trade

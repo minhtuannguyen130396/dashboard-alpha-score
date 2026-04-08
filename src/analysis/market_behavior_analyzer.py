@@ -18,7 +18,7 @@ _BULL_REGIMES = {"bull_trend", "mild_bull"}
 # counter-trend bucket — excluding it removes most losers on basket
 # tests. `bullish_reversal` is the labelled "first bullish bar after a
 # confirmed bear_trend" state and is allowed.
-_BUY_OK_REGIMES = {"bull_trend", "bullish_reversal"}
+_BUY_OK_REGIMES = {"bull_trend", "mild_bull", "bullish_reversal"}
 
 
 class MarketBehaviorSnapshot:

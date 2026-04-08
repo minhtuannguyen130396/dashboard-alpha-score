@@ -37,6 +37,13 @@ class MarketBehaviorSnapshot:
         self.signal_scores: List[float] = []
         self.signal_labels: List[str] = []
         self.signal_reasons: List[str] = []
+        # Smart money series — populated from V5 scores (V4 leaves them at 0 / "neutral").
+        # Two composites are kept distinct so the chart can plot both lines, while
+        # ``smart_money_label`` drives the background-shading strip per bar.
+        self.smart_money_setup_composite: List[float] = []
+        self.smart_money_trigger_composite: List[float] = []
+        self.smart_money_confidence: List[float] = []
+        self.smart_money_label: List[str] = []
         # One payload per trading day — built once, consumed by the chart renderer.
         self.hover_payloads: List[dict] = []
 
@@ -88,10 +95,29 @@ def _build_hover_payloads(
         label = "none"
         regime = None
 
+        sm_block: dict = {
+            "setup_composite":   0.0,
+            "trigger_composite": 0.0,
+            "setup_score":       0.0,
+            "trigger_score":     0.0,
+            "confidence":        0.0,
+            "label":             "neutral",
+            "narrative":         "",
+        }
+
         if score is not None:
             label = getattr(score, "label", "none")
             reasons = list(getattr(score, "reasons", []))
             regime = getattr(score, "regime", None)
+            sm_block = {
+                "setup_composite":   round(float(getattr(score, "smart_money_setup_composite", 0.0) or 0.0), 4),
+                "trigger_composite": round(float(getattr(score, "smart_money_trigger_composite", 0.0) or 0.0), 4),
+                "setup_score":       round(float(getattr(score, "smart_money_setup_score", 0.0) or 0.0), 4),
+                "trigger_score":     round(float(getattr(score, "smart_money_trigger_score", 0.0) or 0.0), 4),
+                "confidence":        round(float(getattr(score, "smart_money_confidence", 0.0) or 0.0), 4),
+                "label":             getattr(score, "smart_money_label", "neutral") or "neutral",
+                "narrative":         getattr(score, "smart_money_narrative", "") or "",
+            }
             scores = {
                 "final":        round(getattr(score, "final_score", 0.0), 4),
                 "setup":        round(getattr(score, "setup_score", 0.0), 4),
@@ -145,6 +171,7 @@ def _build_hover_payloads(
                 "is_buy":  bool(buy_point[i]),
                 "is_sale": bool(sale_point[i]),
             },
+            "smart_money": sm_block,
             "reasons":  reasons,
             "blockers": blockers,
         })
@@ -226,6 +253,20 @@ def analyze_market_behavior(
     market_behavior.signal_scores = [score.final_score for score in signal_scores]
     market_behavior.signal_labels = [score.label for score in signal_scores]
     market_behavior.signal_reasons = [score.reason_text for score in signal_scores]
+
+    # Smart money series — getattr defaults keep V4 working (all-zero series + neutral labels)
+    market_behavior.smart_money_setup_composite = [
+        float(getattr(s, "smart_money_setup_composite", 0.0) or 0.0) for s in signal_scores
+    ]
+    market_behavior.smart_money_trigger_composite = [
+        float(getattr(s, "smart_money_trigger_composite", 0.0) or 0.0) for s in signal_scores
+    ]
+    market_behavior.smart_money_confidence = [
+        float(getattr(s, "smart_money_confidence", 0.0) or 0.0) for s in signal_scores
+    ]
+    market_behavior.smart_money_label = [
+        getattr(s, "smart_money_label", "neutral") or "neutral" for s in signal_scores
+    ]
 
     market_behavior.hover_payloads = _build_hover_payloads(
         stock_records, signal_scores,

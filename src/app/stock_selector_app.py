@@ -326,30 +326,6 @@ def create_stock_selector_app():
             end_cal.get_date().strftime("%Y-%m-%d"),
         )
 
-    # ── Score Version card ────────────────────────────────────────────────────
-    score_card = _card(right, accent=CLR["accent"])
-    score_card.pack(fill="x", pady=(0, 8))
-
-    _section_header(score_card, "⚙️  Score Version")
-
-    score_version_var = tk.StringVar(value="v3")
-    sv_row = tk.Frame(score_card, bg=CLR["surface"])
-    sv_row.pack(fill="x", padx=12, pady=(0, 12))
-    for val, lbl in [("v1", "V1  Legacy"), ("v2", "V2"), ("v3", "V3  New")]:
-        rb = tk.Radiobutton(
-            sv_row,
-            text=lbl,
-            value=val,
-            variable=score_version_var,
-            bg=CLR["surface"],
-            fg=CLR["text"],
-            selectcolor=CLR["bg"],
-            activebackground=CLR["surface"],
-            activeforeground=CLR["text"],
-            font=("Segoe UI", 9),
-        )
-        rb.pack(side="left", padx=(0, 10))
-
     # ── Actions card ──────────────────────────────────────────────────────────
     act_card = _card(right, accent=CLR["success"])
     act_card.pack(fill="x", pady=(0, 8))
@@ -365,20 +341,18 @@ def create_stock_selector_app():
         if not sym:
             return
         start_date, end_date = _dates()
-        score_version = score_version_var.get()
-        _set_status(f"⏳ Charting {sym} ({score_version}) ...", CLR["warning"])
+        _set_status(f"⏳ Charting {sym} (V4) ...", CLR["warning"])
         _run_in_thread(
-            lambda: run_backtest_chart(sym, start_date, end_date, score_version=score_version),
+            lambda: run_backtest_chart(sym, start_date, end_date),
             on_done=lambda: _set_status("● Ready"),
         )
 
     def _btn_test_all():
         pool = _get_pool()
         start_date, end_date = _dates()
-        score_version = score_version_var.get()
-        _set_status(f"⏳ Testing {len(pool)} stocks ({score_version}) ...", CLR["warning"])
+        _set_status(f"⏳ Testing {len(pool)} stocks (V4) ...", CLR["warning"])
         _run_in_thread(
-            lambda: run_backtest_report(pool, start_date, end_date, score_version=score_version),
+            lambda: run_backtest_report(pool, start_date, end_date),
             on_done=lambda: _set_status("● Ready"),
         )
 

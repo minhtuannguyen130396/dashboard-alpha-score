@@ -1,14 +1,18 @@
-"""Signal Score V3.
+"""Signal Score V4 — sole supported scoring engine.
 
-Improvements over V2:
-1. Dedicated candle scoring with body/wick/gap quality (no V1 helper reuse).
-2. Rolling z-score / percentile ranking for RSI, RVOL, ADX → adaptive thresholds.
-3. Price-vs-indicator divergence detection (RSI, MACD, OBV).
-4. Separate volume_setup (trend) from volume_trigger (today) — fixes V2
-   cross-contamination between setup and trigger weights.
-5. Blocker severity (hard vs soft). Hard rejects, soft applies score penalty.
-6. Optional market-regime alignment score.
-7. Soft warm-up: partial score instead of hard refusal below 50 bars.
+Carries forward V3's dedicated candle scoring, rolling-rank momentum,
+divergence detection, split volume_setup/volume_trigger, hard/soft
+blockers and regime alignment. Tuning vs V3:
+
+- Wider rolling-rank window (60 → 120) so trending names produce
+  meaningful momentum scores instead of stuck-at-mid ranks.
+- Looser entry gates (final 0.58 → 0.52, trigger 0.55 → 0.45) and
+  lower hard blocker thresholds (ADX 15 → 10, RVOL 0.5 → 0.3) so
+  decent setups actually trade.
+- Smaller per-soft-blocker penalty (0.08 → 0.04) to avoid double
+  punishment when several minor flags coexist.
+- Dedicated sell thresholds in market_behavior_analyzer; the
+  simulator's ATR stop/trailing already handles in-trend exits.
 """
 from dataclasses import dataclass, field
 from typing import List, Optional, Tuple
@@ -19,7 +23,7 @@ from src.analysis.technical_indicators import (
     IndicatorGroup1, IndicatorGroup2, IndicatorGroup3, IndicatorGroup4,
 )
 from src.analysis.score_config import (
-    ScoreConfigV3, DEFAULT_SCORE_CONFIG_V3,
+    ScoreConfigV4, DEFAULT_SCORE_CONFIG_V4,
 )
 
 
@@ -38,7 +42,7 @@ class Blocker:
 
 
 @dataclass
-class SignalScoreV3:
+class SignalScoreV4:
     label: str = "none"
     regime: str = "unknown"
     setup_score: float = 0.0
@@ -53,6 +57,7 @@ class SignalScoreV3:
     confirmation_score: float = 0.0
     divergence_score: float = 0.0
     regime_align_score: float = 0.0
+    prop_score: float = 0.0
     blockers: List[Blocker] = field(default_factory=list)
     reasons: List[str] = field(default_factory=list)
 
@@ -60,8 +65,7 @@ class SignalScoreV3:
     def reason_text(self) -> str:
         return " | ".join(self.reasons)
 
-    # V2-compatible flat fields so chart/hover and analyzers that test for
-    # SignalScoreV2 can still read v3 values.
+    # Flat aliases consumed by hover/chart payloads.
     @property
     def volume_score(self) -> float:
         return round((self.volume_setup_score + self.volume_trigger_score) / 2, 4)
@@ -122,8 +126,8 @@ def _candle_quality(record: StockRecord, atr: float) -> dict:
     }
 
 
-def _score_candle_v3(
-    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV3,
+def _score_candle_v4(
+    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV4,
 ) -> Tuple[float, str]:
     if len(records) < 5:
         return 0.0, "Insufficient data"
@@ -197,8 +201,8 @@ def _score_candle_v3(
 # Trend scoring V3
 # =============================================================================
 
-def _score_trend_v3(
-    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV3,
+def _score_trend_v4(
+    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV4,
 ) -> Tuple[float, str]:
     p = cfg.periods
     ema20 = _safe_last(IndicatorGroup1.ema(records, p.ema_fast))
@@ -264,8 +268,8 @@ def _score_trend_v3(
 # Momentum V3 — rolling RSI rank + MACD + ROC
 # =============================================================================
 
-def _score_momentum_v3(
-    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV3,
+def _score_momentum_v4(
+    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV4,
 ) -> Tuple[float, str]:
     p = cfg.periods
     rsi_series = IndicatorGroup2.rsi(records, p.rsi)
@@ -321,8 +325,8 @@ def _score_momentum_v3(
 # Volume — split into setup and trigger
 # =============================================================================
 
-def _score_volume_setup_v3(
-    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV3,
+def _score_volume_setup_v4(
+    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV4,
 ) -> Tuple[float, str]:
     """Slow-moving accumulation/distribution view."""
     p = cfg.periods
@@ -355,8 +359,8 @@ def _score_volume_setup_v3(
     return min(1.0, score), ", ".join(parts)
 
 
-def _score_volume_trigger_v3(
-    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV3,
+def _score_volume_trigger_v4(
+    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV4,
 ) -> Tuple[float, str]:
     """Intraday-only trigger: RVOL, wide range, close position."""
     p = cfg.periods
@@ -395,8 +399,8 @@ def _score_volume_trigger_v3(
 # Structure — swing S/R with ATR-normalized distance
 # =============================================================================
 
-def _score_structure_v3(
-    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV3,
+def _score_structure_v4(
+    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV4,
 ) -> Tuple[float, str]:
     p = cfg.periods
     n_short = min(p.swing_short, len(records))
@@ -446,8 +450,8 @@ def _score_structure_v3(
 # Confirmation — breakout today
 # =============================================================================
 
-def _score_confirmation_v3(
-    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV3,
+def _score_confirmation_v4(
+    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV4,
 ) -> Tuple[float, str]:
     if len(records) < 4:
         return 0.0, ""
@@ -534,8 +538,8 @@ def _detect_divergence(
         return p_now > p_prev and i_now < prior_high
 
 
-def _score_divergence_v3(
-    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV3,
+def _score_divergence_v4(
+    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV4,
 ) -> Tuple[float, str]:
     p = cfg.periods
     lookback = p.divergence_lookback
@@ -563,21 +567,102 @@ def _score_divergence_v3(
 
 
 # =============================================================================
+# Proprietary trading (tự doanh) flow
+# =============================================================================
+
+def _score_prop_trading_v4(
+    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV4,
+) -> Tuple[float, str]:
+    """Score domestic proprietary trading (tự doanh) net flow.
+
+    Positive ``propTradingNetValue`` means prop desks are net buyers (accumulating);
+    negative means net sellers (distributing). Bullish setups benefit from recent
+    accumulation, bearish setups from distribution.
+    """
+    p = cfg.periods
+    short_n = min(p.prop_short, len(records))
+    long_n = min(p.prop_long, len(records))
+    if short_n <= 0:
+        return 0.0, ""
+
+    short_window = records[-short_n:]
+    long_window = records[-long_n:]
+
+    def _net(r: StockRecord) -> float:
+        v = r.propTradingNetValue
+        return float(v) if v is not None else 0.0
+
+    short_sum = sum(_net(r) for r in short_window)
+    long_sum = sum(_net(r) for r in long_window)
+    today = _net(records[-1])
+
+    # Normalise today against recent absolute magnitudes so large/small caps
+    # get comparable scores. Use average abs of prop flow over the long window.
+    abs_vals = [abs(_net(r)) for r in long_window if _net(r) != 0.0]
+    avg_abs = sum(abs_vals) / len(abs_vals) if abs_vals else 0.0
+    today_ratio = (today / avg_abs) if avg_abs > 0 else 0.0
+
+    score = 0.0
+    parts: List[str] = []
+
+    if bullish:
+        if short_sum > 0:
+            score += 0.40
+            parts.append("prop accumulating 10d")
+        if long_sum > 0:
+            score += 0.20
+            parts.append("prop accumulating 20d")
+        if today > 0:
+            score += 0.20
+            parts.append("prop buying today")
+        if today_ratio >= 1.5:
+            score += 0.20
+            parts.append(f"prop surge {today_ratio:.1f}x")
+        elif today_ratio >= 0.8:
+            score += 0.10
+    else:
+        if short_sum < 0:
+            score += 0.40
+            parts.append("prop distributing 10d")
+        if long_sum < 0:
+            score += 0.20
+            parts.append("prop distributing 20d")
+        if today < 0:
+            score += 0.20
+            parts.append("prop selling today")
+        if today_ratio <= -1.5:
+            score += 0.20
+            parts.append(f"prop dump {today_ratio:.1f}x")
+        elif today_ratio <= -0.8:
+            score += 0.10
+
+    return min(1.0, score), ", ".join(parts)
+
+
+# =============================================================================
 # Regime alignment
 # =============================================================================
 
-def _score_regime_align_v3(
-    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV3,
+def _score_regime_align_v4(
+    records: List[StockRecord], bullish: bool, cfg: ScoreConfigV4,
 ) -> Tuple[float, str, str]:
     p = cfg.periods
     close = records[-1].priceClose
     ema20 = _safe_last(IndicatorGroup1.ema(records, p.ema_fast))
     ema50 = _safe_last(IndicatorGroup1.ema(records, p.ema_mid))
+    ema100 = _safe_last(IndicatorGroup1.ema(records, p.ema_slow))
 
-    if ema20 and ema50 and close > ema20 > ema50:
+    # bull_trend now requires the long-term stack EMA50 > EMA100 too —
+    # otherwise a counter-trend bounce that pushes close > ema20 > ema50
+    # falsely registers as a major uptrend and produces losing entries.
+    if ema20 and ema50 and ema100 and close > ema20 > ema50 > ema100:
         regime = "bull_trend"
-    elif ema20 and ema50 and close < ema20 < ema50:
+    elif ema20 and ema50 and ema100 and close < ema20 < ema50 < ema100:
         regime = "bear_trend"
+    elif ema20 and ema50 and close > ema20 > ema50:
+        regime = "mild_bull"
+    elif ema20 and ema50 and close < ema20 < ema50:
+        regime = "mild_bear"
     elif ema20 and close > ema20:
         regime = "mild_bull"
     elif ema20 and close < ema20:
@@ -604,13 +689,13 @@ def _score_regime_align_v3(
 # Blockers
 # =============================================================================
 
-def _detect_blockers_v3(
+def _detect_blockers_v4(
     records: List[StockRecord],
     bullish: bool,
     adx: float, rvol: float, rsi: float,
     macd_hist: float, macd_hist_prev: float,
     close: float, swing_high: float, swing_low: float, atr: float,
-    cfg: ScoreConfigV3,
+    cfg: ScoreConfigV4,
 ) -> List[Blocker]:
     t = cfg.thresholds
     out: List[Blocker] = []
@@ -649,24 +734,25 @@ def _detect_blockers_v3(
 # Main build
 # =============================================================================
 
-def _build_score_v3(
+def _build_score_v4(
     records: List[StockRecord],
     bullish: bool,
-    cfg: ScoreConfigV3,
-) -> SignalScoreV3:
+    cfg: ScoreConfigV4,
+) -> SignalScoreV4:
     w = cfg.weights
     p = cfg.periods
     t = cfg.toggles
 
-    candle_score, candle_r = _score_candle_v3(records, bullish, cfg) if t.use_candle else (0.5, "")
-    trend_score, trend_r = _score_trend_v3(records, bullish, cfg) if t.use_trend else (0.5, "")
-    momentum_score, momentum_r = _score_momentum_v3(records, bullish, cfg) if t.use_momentum else (0.5, "")
-    vol_setup, vs_r = _score_volume_setup_v3(records, bullish, cfg) if t.use_volume else (0.5, "")
-    vol_trig, vt_r = _score_volume_trigger_v3(records, bullish, cfg) if t.use_volume else (0.5, "")
-    structure_score, structure_r = _score_structure_v3(records, bullish, cfg) if t.use_structure else (0.5, "")
-    confirmation_score, conf_r = _score_confirmation_v3(records, bullish, cfg) if t.use_confirmation else (0.5, "")
-    divergence_score, div_r = _score_divergence_v3(records, bullish, cfg) if t.use_divergence else (0.0, "")
-    regime_align, reg_r, regime = _score_regime_align_v3(records, bullish, cfg) if t.use_regime_align else (0.5, "", "unknown")
+    candle_score, candle_r = _score_candle_v4(records, bullish, cfg) if t.use_candle else (0.5, "")
+    trend_score, trend_r = _score_trend_v4(records, bullish, cfg) if t.use_trend else (0.5, "")
+    momentum_score, momentum_r = _score_momentum_v4(records, bullish, cfg) if t.use_momentum else (0.5, "")
+    vol_setup, vs_r = _score_volume_setup_v4(records, bullish, cfg) if t.use_volume else (0.5, "")
+    vol_trig, vt_r = _score_volume_trigger_v4(records, bullish, cfg) if t.use_volume else (0.5, "")
+    structure_score, structure_r = _score_structure_v4(records, bullish, cfg) if t.use_structure else (0.5, "")
+    confirmation_score, conf_r = _score_confirmation_v4(records, bullish, cfg) if t.use_confirmation else (0.5, "")
+    divergence_score, div_r = _score_divergence_v4(records, bullish, cfg) if t.use_divergence else (0.0, "")
+    regime_align, reg_r, regime = _score_regime_align_v4(records, bullish, cfg) if t.use_regime_align else (0.5, "", "unknown")
+    prop_score, prop_r = _score_prop_trading_v4(records, bullish, cfg) if t.use_prop else (0.5, "")
 
     setup_score = (
         w.setup_candle    * candle_score
@@ -675,6 +761,7 @@ def _build_score_v3(
         + w.setup_volume    * vol_setup
         + w.setup_structure * structure_score
         + w.setup_regime    * regime_align
+        + w.setup_prop      * prop_score
     )
     trigger_score = (
         w.trigger_confirmation * confirmation_score
@@ -700,7 +787,7 @@ def _build_score_v3(
     swing_high = max(r.priceHigh for r in records[-n:])
     swing_low = min(r.priceLow for r in records[-n:])
 
-    blockers = _detect_blockers_v3(
+    blockers = _detect_blockers_v4(
         records, bullish, adx, rvol, rsi,
         macd_hist, macd_hist_prev, close,
         swing_high, swing_low, atr, cfg,
@@ -710,9 +797,9 @@ def _build_score_v3(
     soft_count = sum(1 for b in blockers if b.severity == "soft")
     final_score = max(0.0, final_score - soft_count * cfg.thresholds.soft_penalty)
 
-    reasons = [r for r in [candle_r, trend_r, momentum_r, vs_r, vt_r, structure_r, conf_r, div_r, reg_r] if r]
+    reasons = [r for r in [candle_r, trend_r, momentum_r, vs_r, vt_r, structure_r, conf_r, div_r, reg_r, prop_r] if r]
 
-    return SignalScoreV3(
+    return SignalScoreV4(
         label="bullish" if bullish else "bearish",
         regime=regime,
         setup_score=round(setup_score, 4),
@@ -727,25 +814,26 @@ def _build_score_v3(
         confirmation_score=round(confirmation_score, 4),
         divergence_score=round(divergence_score, 4),
         regime_align_score=round(regime_align, 4),
+        prop_score=round(prop_score, 4),
         blockers=blockers,
         reasons=reasons,
     )
 
 
-def calculate_signal_score_v3(
+def calculate_signal_score_v4(
     records: List[StockRecord],
-    cfg: Optional[ScoreConfigV3] = None,
-) -> SignalScoreV3:
+    cfg: Optional[ScoreConfigV4] = None,
+) -> SignalScoreV4:
     if cfg is None:
-        cfg = DEFAULT_SCORE_CONFIG_V3
+        cfg = DEFAULT_SCORE_CONFIG_V4
 
     # Soft warm-up: under 30 bars return neutral, 30-60 return half-strength,
     # 60+ return full score.
     if len(records) < 30:
-        return SignalScoreV3(reasons=["Warm-up<30"])
+        return SignalScoreV4(reasons=["Warm-up<30"])
 
-    bull = _build_score_v3(records, True, cfg)
-    bear = _build_score_v3(records, False, cfg)
+    bull = _build_score_v4(records, True, cfg)
+    bear = _build_score_v4(records, False, cfg)
 
     winner = bull if bull.final_score >= bear.final_score else bear
     if len(records) < 60:

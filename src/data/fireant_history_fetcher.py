@@ -1,6 +1,7 @@
 import json
 import os
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Literal
@@ -11,14 +12,10 @@ from dateutil.relativedelta import relativedelta
 TOKEN_ENV_VAR = "FIREANT_BEARER_TOKEN"
 TOKEN_FILE = Path("access_token.txt")
 BASE_URL_TEMPLATE = "https://restv2.fireant.vn/symbols/{share_code}/historical-quotes"
-IS_FETCH_ALL_DATA = True
 IS_WEEKLY_FETCH = True
 DATE_START_FETCH = "2010-01-01"
-LIST_VN_30 = "Stock_List\\stock_vn_30.txt"
-LIST_MID_CAB = "Stock_List\\stock_mid_cab.txt"
-LIST_LARGE_CAB = "Stock_List\\stock_large_cab.txt"
-LIST_OTHER = "Stock_List\\stock_other.txt"
 LIST_ALL_STOCK = "Stock_List\\list_all_stock.json"
+MAX_FETCH_WORKERS = 50
 
 JWT_PATTERN = re.compile(r"eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9._-]+\.[A-Za-z0-9._-]+")
 
@@ -50,7 +47,7 @@ def build_headers():
     }
 
 
-def load_stocks_from_txt(path=LIST_MID_CAB):
+def load_stocks_from_txt(path=LIST_ALL_STOCK):
     with open(path, "r", encoding="utf-8") as handle:
         content = handle.read().strip()
     try:
@@ -85,61 +82,78 @@ def _resolve_fetch_start_date(
     raise ValueError(f"Unsupported update_mode: {update_mode}")
 
 
-def fetch_all_stock_history(update_mode: Literal["from_start", "previous_month"] = "from_start"):
-    list_stock_name = []
+def _fetch_single_stock_history(
+    stock: dict,
+    update_mode: Literal["from_start", "previous_month"],
+    today: date,
+    headers: dict,
+):
+    symbol = stock["share_code"]
+    ipo = datetime.strptime(stock["ipo_date"], "%Y-%m-%d").date()
+    current = _resolve_fetch_start_date(ipo, update_mode)
 
-    if IS_FETCH_ALL_DATA:
-        for file_stock_name in [LIST_VN_30, LIST_MID_CAB, LIST_LARGE_CAB, LIST_OTHER]:
-            for name in load_stocks_from_txt(file_stock_name):
-                list_stock_name.append(name)
-    else:
-        for name in load_stocks_from_txt(LIST_ALL_STOCK):
-            list_stock_name.append(name)
+    base_dir = os.path.join(os.getcwd(), "data", symbol)
+    os.makedirs(base_dir, exist_ok=True)
+
+    while current <= today:
+        eom = end_of_month(current)
+        end_date = eom if eom <= today else today
+        print(f"Fetching data for {symbol} from {current} to {end_date}")
+        if current > end_date:
+            break
+
+        days_count = (end_date - current).days + 1
+        params = {
+            "startDate": current.isoformat(),
+            "endDate": end_date.isoformat(),
+            "offset": 0,
+            "limit": days_count,
+        }
+
+        url = BASE_URL_TEMPLATE.format(share_code=symbol)
+        response = requests.get(
+            url,
+            headers=headers,
+            params=params,
+            timeout=30,
+        )
+        response.raise_for_status()
+        data = response.json()
+
+        year_dir = os.path.join(base_dir, str(current.year))
+        os.makedirs(year_dir, exist_ok=True)
+        filepath = os.path.join(year_dir, f"{current.isoformat()}.json")
+        with open(filepath, "w", encoding="utf-8") as handle:
+            json.dump(data, handle, ensure_ascii=False, indent=2)
+
+        print(f"{symbol} done get data at {end_date}")
+        current = current.replace(day=1) + relativedelta(months=1)
+
+    return symbol
+
+
+def fetch_all_stock_history(update_mode: Literal["from_start", "previous_month"] = "from_start"):
+    list_stock_name = load_stocks_from_txt(LIST_ALL_STOCK)
 
     print(f"Total stocks to fetch: {len(list_stock_name)}")
     today = date.today()
+    headers = build_headers()
+    max_workers = min(MAX_FETCH_WORKERS, len(list_stock_name)) or 1
 
-    for stock in list_stock_name:
-        symbol = stock["share_code"]
-        ipo = datetime.strptime(stock["ipo_date"], "%Y-%m-%d").date()
-        current = _resolve_fetch_start_date(ipo, update_mode)
-
-        base_dir = os.path.join(os.getcwd(), "data", symbol)
-        os.makedirs(base_dir, exist_ok=True)
-
-        while current <= today:
-            eom = end_of_month(current)
-            end_date = eom if eom <= today else today
-            print(f"Fetching data for {symbol} from {current} to {end_date}")
-            if current > end_date:
-                break
-
-            days_count = (end_date - current).days + 1
-            params = {
-                "startDate": current.isoformat(),
-                "endDate": end_date.isoformat(),
-                "offset": 0,
-                "limit": days_count,
-            }
-
-            url = BASE_URL_TEMPLATE.format(share_code=symbol)
-            response = requests.get(
-                url,
-                headers=build_headers(),
-                params=params,
-                timeout=30,
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = [
+            executor.submit(
+                _fetch_single_stock_history,
+                stock,
+                update_mode,
+                today,
+                headers,
             )
-            response.raise_for_status()
-            data = response.json()
-
-            year_dir = os.path.join(base_dir, str(current.year))
-            os.makedirs(year_dir, exist_ok=True)
-            filepath = os.path.join(year_dir, f"{current.isoformat()}.json")
-            with open(filepath, "w", encoding="utf-8") as handle:
-                json.dump(data, handle, ensure_ascii=False, indent=2)
-
-            print(f"{symbol} done get data at {end_date}")
-            current = current.replace(day=1) + relativedelta(months=1)
+            for stock in list_stock_name
+        ]
+        for future in as_completed(futures):
+            symbol = future.result()
+            print(f"Completed fetch for {symbol}")
 
     print("All data fetched successfully.")
 

@@ -1,12 +1,24 @@
-from typing import List, Union
+from typing import List
 
 import pandas as pd
 
 from src.data.stock_data_loader import StockRecord
-from src.analysis.signal_scoring import SignalScore, SignalScoreV2
-from src.analysis.signal_scoring_v3 import SignalScoreV3
-from src.analysis.score_config import DEFAULT_SCORE_CONFIG_V3
+from src.analysis.signal_scoring_v4 import SignalScoreV4
+from src.analysis.score_config import DEFAULT_SCORE_CONFIG_V4
 from src.analysis.technical_indicators import IndicatorGroup1, IndicatorGroup2, IndicatorGroup3, IndicatorGroup4
+
+
+# Regimes in which a bearish score should NOT trigger an exit on its own.
+# In a clearly bullish regime the trade simulator's ATR/trailing stop is
+# the right exit mechanism — a single bearish bar should not cut a winner.
+_BULL_REGIMES = {"bull_trend", "mild_bull"}
+
+# Only these regimes allow a bullish entry. After tightening
+# `bull_trend` to require EMA50>EMA100, `mild_bull` becomes the
+# counter-trend bucket — excluding it removes most losers on basket
+# tests. `bullish_reversal` is the labelled "first bullish bar after a
+# confirmed bear_trend" state and is allowed.
+_BUY_OK_REGIMES = {"bull_trend", "bullish_reversal"}
 
 
 class MarketBehaviorSnapshot:
@@ -31,7 +43,7 @@ class MarketBehaviorSnapshot:
 
 def _build_hover_payloads(
     stock_records: List[StockRecord],
-    signal_scores: List[Union[SignalScore, SignalScoreV2, SignalScoreV3]],
+    signal_scores: List[SignalScoreV4],
     buy_point: List[bool],
     sale_point: List[bool],
     ema20: list,
@@ -42,17 +54,15 @@ def _build_hover_payloads(
     All indicators are calculated once on the full series here — the frontend
     never recomputes anything, it only reads from the pre-built dict.
     """
-    # Full-series indicator pass (O(N) each, done once)
     ema100_s    = IndicatorGroup1.ema(stock_records, 100)
     atr14_s     = IndicatorGroup3.atr(stock_records, 14)
     rsi14_s     = IndicatorGroup2.rsi(stock_records, 14)
     macd_l, macd_sig, macd_h = IndicatorGroup2.macd(stock_records)
     adx14_s     = IndicatorGroup3.adx(stock_records, 14)
     mfi14_s     = IndicatorGroup4.mfi(stock_records, 14)
-    obv_s       = IndicatorGroup4.obv(stock_records)   # length == N
+    obv_s       = IndicatorGroup4.obv(stock_records)
 
     def _v(series, i):
-        """Safe float lookup — returns None when value is missing."""
         if series and i < len(series) and series[i] is not None:
             return round(float(series[i]), 4)
         return None
@@ -61,21 +71,17 @@ def _build_hover_payloads(
     for i, r in enumerate(stock_records):
         score = signal_scores[i] if i < len(signal_scores) else None
 
-        # RVOL: today / avg(last 20 sessions, excluding today — no look-ahead)
         past = stock_records[max(0, i - 20):i]
         avg_vol = (sum(rec.priceImpactVolume for rec in past) / len(past)) if past else r.priceImpactVolume
         rvol = round(r.priceImpactVolume / avg_vol, 2) if avg_vol else None
 
-        # OBV slope over last 5 sessions
         obv_slope = None
         if i >= 5 and len(obv_s) > i:
             obv_slope = round((obv_s[i] - obv_s[i - 5]) / 5, 0)
 
-        # Swing levels with true lookback (no future data)
         w10 = stock_records[max(0, i - 9):i + 1]
         w20 = stock_records[max(0, i - 19):i + 1]
 
-        # Score decomposition — works for both v1 and v2
         scores: dict = {}
         reasons: List[str] = []
         blockers: List[str] = []
@@ -83,48 +89,25 @@ def _build_hover_payloads(
         regime = None
 
         if score is not None:
-            label = score.label
-            reasons = list(score.reasons)
-            if isinstance(score, SignalScoreV3):
-                regime = score.regime
-                scores = {
-                    "final":        round(score.final_score, 4),
-                    "setup":        round(score.setup_score, 4),
-                    "trigger":      round(score.trigger_score, 4),
-                    "candle":       round(score.candle_score, 4),
-                    "trend":        round(score.trend_score, 4),
-                    "momentum":     round(score.momentum_score, 4),
-                    "volume":       round(score.volume_score, 4),
-                    "vol_setup":    round(score.volume_setup_score, 4),
-                    "vol_trigger":  round(score.volume_trigger_score, 4),
-                    "structure":    round(score.structure_score, 4),
-                    "confirmation": round(score.confirmation_score, 4),
-                    "divergence":   round(score.divergence_score, 4),
-                    "regime_align": round(score.regime_align_score, 4),
-                }
-                blockers = score.blockers_text
-            elif isinstance(score, SignalScoreV2):
-                regime = score.regime
-                scores = {
-                    "final":        round(score.final_score, 4),
-                    "setup":        round(score.setup_score, 4),
-                    "trigger":      round(score.trigger_score, 4),
-                    "candle":       round(score.candle_score, 4),
-                    "trend":        round(score.trend_score, 4),
-                    "momentum":     round(score.momentum_score, 4),
-                    "volume":       round(score.volume_score, 4),
-                    "structure":    round(score.structure_score, 4),
-                    "confirmation": round(score.confirmation_score, 4),
-                }
-                blockers = list(score.blockers)
-            else:
-                scores = {
-                    "final":   round(score.final_score, 4),
-                    "candle":  round(score.candle_score, 4),
-                    "volume":  round(score.volume_score, 4),
-                    "context": round(score.context_score, 4),
-                    "pivot":   round(score.pivot_score, 4),
-                }
+            label = getattr(score, "label", "none")
+            reasons = list(getattr(score, "reasons", []))
+            regime = getattr(score, "regime", None)
+            scores = {
+                "final":        round(getattr(score, "final_score", 0.0), 4),
+                "setup":        round(getattr(score, "setup_score", 0.0), 4),
+                "trigger":      round(getattr(score, "trigger_score", 0.0), 4),
+                "candle":       round(getattr(score, "candle_score", 0.0), 4),
+                "trend":        round(getattr(score, "trend_score", 0.0), 4),
+                "momentum":     round(getattr(score, "momentum_score", 0.0), 4),
+                "volume":       round(getattr(score, "volume_score", 0.0), 4),
+                "vol_setup":    round(getattr(score, "volume_setup_score", 0.0), 4),
+                "vol_trigger":  round(getattr(score, "volume_trigger_score", 0.0), 4),
+                "structure":    round(getattr(score, "structure_score", 0.0), 4),
+                "confirmation": round(getattr(score, "confirmation_score", 0.0), 4),
+                "divergence":   round(getattr(score, "divergence_score", 0.0), 4),
+                "regime_align": round(getattr(score, "regime_align_score", 0.0), 4),
+            }
+            blockers = list(getattr(score, "blockers_text", []))
 
         payloads.append({
             "date":   r.date.strftime("%Y-%m-%d"),
@@ -169,67 +152,68 @@ def _build_hover_payloads(
     return payloads
 
 
-def _has_hard_blocker_v3(score: SignalScoreV3) -> bool:
+def _has_hard_blocker(score: SignalScoreV4) -> bool:
     return any(b.severity == "hard" for b in score.blockers)
 
 
-def _is_buy_signal(score, threshold: float) -> bool:
-    """Return True if the score represents a valid buy signal above threshold."""
-    if isinstance(score, SignalScoreV3):
-        v3t = DEFAULT_SCORE_CONFIG_V3.thresholds
-        return (
-            score.label == "bullish"
-            and score.final_score >= v3t.final_signal
-            and score.trigger_score >= v3t.trigger
-            and not _has_hard_blocker_v3(score)
-        )
-    if isinstance(score, SignalScoreV2):
-        return (
-            score.label == "bullish"
-            and score.final_score >= threshold
-            and score.trigger_score >= threshold
-            and len(score.blockers) == 0
-        )
-    return score.label == "bullish" and score.final_score >= threshold
+def _is_buy_signal(score: SignalScoreV4) -> bool:
+    """Buy when setup is solid, both gates clear and no hard blocker.
+
+    Three-stage filter:
+    1. Regime gate — buy only in bull_trend / mild_bull / bullish_reversal.
+       Anywhere else (sideway, mild_bear, bear_trend) the win-rate
+       collapses on basket tests.
+    2. Setup gate — require setup_score >= setup_good. Setup represents
+       *context*, so a weak setup (below 0.65) means we are entering on
+       a confirmation/breakout without underlying support.
+    3. Trigger + final gate — the today-action confirmation.
+    """
+    t = DEFAULT_SCORE_CONFIG_V4.thresholds
+    if score.label != "bullish":
+        return False
+    if score.regime not in _BUY_OK_REGIMES:
+        return False
+    if score.setup_score < t.setup_good:
+        return False
+    return (
+        score.final_score >= t.final_signal
+        and score.trigger_score >= t.trigger
+        and not _has_hard_blocker(score)
+    )
 
 
-def _is_sale_signal(score, threshold: float) -> bool:
-    """Return True if the score represents a valid sell signal above threshold."""
-    if isinstance(score, SignalScoreV3):
-        v3t = DEFAULT_SCORE_CONFIG_V3.thresholds
-        return (
-            score.label == "bearish"
-            and score.final_score >= v3t.final_signal
-            and score.trigger_score >= v3t.trigger
-            and not _has_hard_blocker_v3(score)
-        )
-    if isinstance(score, SignalScoreV2):
-        return (
-            score.label == "bearish"
-            and score.final_score >= threshold
-            and score.trigger_score >= threshold
-            and len(score.blockers) == 0
-        )
-    return score.label == "bearish" and score.final_score >= threshold
+def _is_sale_signal(score: SignalScoreV4) -> bool:
+    """Asymmetric sell: looser thresholds, but suppressed in bull regimes.
+
+    Rationale: when we're in a clearly bullish regime, the trade
+    simulator's ATR / trailing stop should manage the exit. Letting a
+    single bearish bar fire a sell signal cuts winners prematurely.
+    Sells are only meaningful when the regime has flipped (or is
+    drifting bearish), or as a counter-trend warning during reversals.
+    """
+    t = DEFAULT_SCORE_CONFIG_V4.thresholds
+    if score.label != "bearish":
+        return False
+    if score.regime in _BULL_REGIMES:
+        return False
+    return (
+        score.final_score >= t.sell_final
+        and score.trigger_score >= t.sell_trigger
+        and not _has_hard_blocker(score)
+    )
 
 
 def analyze_market_behavior(
     stock_records: List[StockRecord],
-    signal_scores: List[Union[SignalScore, SignalScoreV2, SignalScoreV3]],
-    sale_threshold: float = 0.7,
-    buy_threshold: float = 0.7,
+    signal_scores: List[SignalScoreV4],
     period: int = 14,
 ) -> MarketBehaviorSnapshot:
     market_behavior = MarketBehaviorSnapshot()
 
     market_behavior.big_buyer = IndicatorGroup4.is_big_buyer(stock_records, period)
     market_behavior.fomo_retail = IndicatorGroup4.is_fomo_by_retail(stock_records, period)
-    market_behavior.buy_point = [
-        _is_buy_signal(score, buy_threshold) for score in signal_scores
-    ]
-    market_behavior.sale_point = [
-        _is_sale_signal(score, sale_threshold) for score in signal_scores
-    ]
+    market_behavior.buy_point = [_is_buy_signal(score) for score in signal_scores]
+    market_behavior.sale_point = [_is_sale_signal(score) for score in signal_scores]
 
     volume_series = [record.priceImpactVolume for record in stock_records]
     market_behavior.total_volume = volume_series

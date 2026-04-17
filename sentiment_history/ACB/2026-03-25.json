@@ -1,0 +1,676 @@
+{
+  "symbol": "ACB",
+  "date": "2026-03-25",
+  "computed_at": "2026-04-13T22:03:32.704697",
+  "session": "full",
+  "metrics": {
+    "symbol": "ACB",
+    "date": "2026-03-25",
+    "session": "full",
+    "price": {
+      "open": 23.2,
+      "last": 23.8,
+      "high": 23.8,
+      "low": 23.2
+    },
+    "aggression": {
+      "buy_vol": 5701600,
+      "sell_vol": 4646700,
+      "neutral_vol": 1838400,
+      "ratio_vol": 1.227,
+      "buy_count": 728,
+      "sell_count": 1579,
+      "ratio_count": 0.461
+    },
+    "whale": {
+      "threshold": 16000,
+      "buy_vol": 3846400,
+      "sell_vol": 1838100,
+      "net": 2008300,
+      "buy_vwap": 23.37,
+      "sell_vwap": 23.29,
+      "buy_count": 76,
+      "sell_count": 44
+    },
+    "bot": {
+      "pct": 84.8,
+      "top_repeated": [
+        {
+          "vol": 1000,
+          "count": 446
+        },
+        {
+          "vol": 600,
+          "count": 241
+        },
+        {
+          "vol": 100,
+          "count": 228
+        },
+        {
+          "vol": 500,
+          "count": 160
+        },
+        {
+          "vol": 200,
+          "count": 113
+        }
+      ]
+    },
+    "hourly_flow": [
+      {
+        "hour": 9,
+        "buy": 938400,
+        "sell": 337300,
+        "net": 601100
+      },
+      {
+        "hour": 10,
+        "buy": 1838800,
+        "sell": 890200,
+        "net": 948600
+      },
+      {
+        "hour": 11,
+        "buy": 328800,
+        "sell": 319500,
+        "net": 9300
+      },
+      {
+        "hour": 13,
+        "buy": 812000,
+        "sell": 1809900,
+        "net": -997900
+      },
+      {
+        "hour": 14,
+        "buy": 1783600,
+        "sell": 1289800,
+        "net": 493800
+      }
+    ],
+    "flow_5m": [
+      {
+        "time": "09:15",
+        "ticks": 64,
+        "vol": 479500,
+        "buy": 287000,
+        "sell": 47900,
+        "net": 239100
+      },
+      {
+        "time": "09:20",
+        "ticks": 52,
+        "vol": 208900,
+        "buy": 193200,
+        "sell": 15700,
+        "net": 177500
+      },
+      {
+        "time": "09:25",
+        "ticks": 55,
+        "vol": 112800,
+        "buy": 76500,
+        "sell": 36300,
+        "net": 40200
+      },
+      {
+        "time": "09:30",
+        "ticks": 30,
+        "vol": 63900,
+        "buy": 12900,
+        "sell": 51000,
+        "net": -38100
+      },
+      {
+        "time": "09:35",
+        "ticks": 52,
+        "vol": 151200,
+        "buy": 145500,
+        "sell": 5700,
+        "net": 139800
+      },
+      {
+        "time": "09:40",
+        "ticks": 29,
+        "vol": 25500,
+        "buy": 22800,
+        "sell": 2700,
+        "net": 20100
+      },
+      {
+        "time": "09:45",
+        "ticks": 35,
+        "vol": 163800,
+        "buy": 148500,
+        "sell": 15300,
+        "net": 133200
+      },
+      {
+        "time": "09:50",
+        "ticks": 26,
+        "vol": 52000,
+        "buy": 33900,
+        "sell": 18100,
+        "net": 15800
+      },
+      {
+        "time": "09:55",
+        "ticks": 36,
+        "vol": 162700,
+        "buy": 18100,
+        "sell": 144600,
+        "net": -126500
+      },
+      {
+        "time": "10:00",
+        "ticks": 31,
+        "vol": 112900,
+        "buy": 89300,
+        "sell": 23600,
+        "net": 65700
+      },
+      {
+        "time": "10:05",
+        "ticks": 36,
+        "vol": 284200,
+        "buy": 125600,
+        "sell": 158600,
+        "net": -33000
+      },
+      {
+        "time": "10:10",
+        "ticks": 37,
+        "vol": 114700,
+        "buy": 29200,
+        "sell": 85500,
+        "net": -56300
+      },
+      {
+        "time": "10:15",
+        "ticks": 21,
+        "vol": 146300,
+        "buy": 139200,
+        "sell": 7100,
+        "net": 132100
+      },
+      {
+        "time": "10:20",
+        "ticks": 28,
+        "vol": 261600,
+        "buy": 169900,
+        "sell": 91700,
+        "net": 78200
+      },
+      {
+        "time": "10:25",
+        "ticks": 38,
+        "vol": 874600,
+        "buy": 791600,
+        "sell": 83000,
+        "net": 708600
+      },
+      {
+        "time": "10:30",
+        "ticks": 68,
+        "vol": 647900,
+        "buy": 474200,
+        "sell": 173700,
+        "net": 300500
+      },
+      {
+        "time": "10:35",
+        "ticks": 40,
+        "vol": 79100,
+        "buy": 1100,
+        "sell": 78000,
+        "net": -76900
+      },
+      {
+        "time": "10:40",
+        "ticks": 45,
+        "vol": 56900,
+        "buy": 1700,
+        "sell": 55200,
+        "net": -53500
+      },
+      {
+        "time": "10:45",
+        "ticks": 55,
+        "vol": 101800,
+        "buy": 13600,
+        "sell": 88200,
+        "net": -74600
+      },
+      {
+        "time": "10:50",
+        "ticks": 13,
+        "vol": 13400,
+        "buy": 2000,
+        "sell": 11400,
+        "net": -9400
+      },
+      {
+        "time": "10:55",
+        "ticks": 44,
+        "vol": 35600,
+        "buy": 1400,
+        "sell": 34200,
+        "net": -32800
+      },
+      {
+        "time": "11:00",
+        "ticks": 61,
+        "vol": 125600,
+        "buy": 50400,
+        "sell": 75200,
+        "net": -24800
+      },
+      {
+        "time": "11:05",
+        "ticks": 56,
+        "vol": 92000,
+        "buy": 31500,
+        "sell": 60500,
+        "net": -29000
+      },
+      {
+        "time": "11:10",
+        "ticks": 53,
+        "vol": 115100,
+        "buy": 69700,
+        "sell": 45400,
+        "net": 24300
+      },
+      {
+        "time": "11:15",
+        "ticks": 44,
+        "vol": 127500,
+        "buy": 48000,
+        "sell": 79500,
+        "net": -31500
+      },
+      {
+        "time": "11:20",
+        "ticks": 22,
+        "vol": 52900,
+        "buy": 18600,
+        "sell": 34300,
+        "net": -15700
+      },
+      {
+        "time": "11:25",
+        "ticks": 27,
+        "vol": 135200,
+        "buy": 110600,
+        "sell": 24600,
+        "net": 86000
+      },
+      {
+        "time": "13:00",
+        "ticks": 46,
+        "vol": 117000,
+        "buy": 56200,
+        "sell": 60800,
+        "net": -4600
+      },
+      {
+        "time": "13:05",
+        "ticks": 25,
+        "vol": 96000,
+        "buy": 42900,
+        "sell": 53100,
+        "net": -10200
+      },
+      {
+        "time": "13:10",
+        "ticks": 24,
+        "vol": 103300,
+        "buy": 87000,
+        "sell": 16300,
+        "net": 70700
+      },
+      {
+        "time": "13:15",
+        "ticks": 52,
+        "vol": 86600,
+        "buy": 55100,
+        "sell": 31500,
+        "net": 23600
+      },
+      {
+        "time": "13:20",
+        "ticks": 63,
+        "vol": 382100,
+        "buy": 153600,
+        "sell": 228500,
+        "net": -74900
+      },
+      {
+        "time": "13:25",
+        "ticks": 46,
+        "vol": 131900,
+        "buy": 41700,
+        "sell": 90200,
+        "net": -48500
+      },
+      {
+        "time": "13:30",
+        "ticks": 58,
+        "vol": 119900,
+        "buy": 61800,
+        "sell": 58100,
+        "net": 3700
+      },
+      {
+        "time": "13:35",
+        "ticks": 101,
+        "vol": 355600,
+        "buy": 89800,
+        "sell": 265800,
+        "net": -176000
+      },
+      {
+        "time": "13:40",
+        "ticks": 131,
+        "vol": 467300,
+        "buy": 35700,
+        "sell": 431600,
+        "net": -395900
+      },
+      {
+        "time": "13:45",
+        "ticks": 89,
+        "vol": 260400,
+        "buy": 48500,
+        "sell": 211900,
+        "net": -163400
+      },
+      {
+        "time": "13:50",
+        "ticks": 73,
+        "vol": 183300,
+        "buy": 12800,
+        "sell": 170500,
+        "net": -157700
+      },
+      {
+        "time": "13:55",
+        "ticks": 74,
+        "vol": 318500,
+        "buy": 126900,
+        "sell": 191600,
+        "net": -64700
+      },
+      {
+        "time": "14:00",
+        "ticks": 55,
+        "vol": 203000,
+        "buy": 44000,
+        "sell": 159000,
+        "net": -115000
+      },
+      {
+        "time": "14:05",
+        "ticks": 91,
+        "vol": 540200,
+        "buy": 140600,
+        "sell": 399600,
+        "net": -259000
+      },
+      {
+        "time": "14:10",
+        "ticks": 89,
+        "vol": 558800,
+        "buy": 149900,
+        "sell": 408900,
+        "net": -259000
+      },
+      {
+        "time": "14:15",
+        "ticks": 58,
+        "vol": 892200,
+        "buy": 732400,
+        "sell": 159800,
+        "net": 572600
+      },
+      {
+        "time": "14:20",
+        "ticks": 56,
+        "vol": 317000,
+        "buy": 230600,
+        "sell": 86400,
+        "net": 144200
+      },
+      {
+        "time": "14:25",
+        "ticks": 85,
+        "vol": 562200,
+        "buy": 486100,
+        "sell": 76100,
+        "net": 410000
+      },
+      {
+        "time": "14:45",
+        "ticks": 1,
+        "vol": 1693800,
+        "buy": 0,
+        "sell": 0,
+        "net": 0
+      }
+    ],
+    "order_distribution": {
+      "<1K": {
+        "count": 937,
+        "pct_count": 40.5,
+        "vol": 357400,
+        "pct_vol": 2.9
+      },
+      "1-5K": {
+        "count": 907,
+        "pct_count": 39.2,
+        "vol": 1537800,
+        "pct_vol": 12.6
+      },
+      "5-10K": {
+        "count": 273,
+        "pct_count": 11.8,
+        "vol": 1855900,
+        "pct_vol": 15.2
+      },
+      "10-50K": {
+        "count": 162,
+        "pct_count": 7.0,
+        "vol": 2956100,
+        "pct_vol": 24.3
+      },
+      "50-100K": {
+        "count": 24,
+        "pct_count": 1.0,
+        "vol": 1661100,
+        "pct_vol": 13.6
+      },
+      ">100K": {
+        "count": 12,
+        "pct_count": 0.5,
+        "vol": 3818400,
+        "pct_vol": 31.3
+      }
+    },
+    "momentum": {
+      "parts": [
+        {
+          "net": 1596900,
+          "buy": 2773600,
+          "sell": 1176700,
+          "price_start": 23.2,
+          "price_end": 23.35
+        },
+        {
+          "net": -399300,
+          "buy": 922500,
+          "sell": 1321800,
+          "price_start": 23.35,
+          "price_end": 23.35
+        },
+        {
+          "net": -142700,
+          "buy": 2005500,
+          "sell": 2148200,
+          "price_start": 23.35,
+          "price_end": 23.8
+        }
+      ],
+      "direction": "decreasing"
+    },
+    "price_sensitivity": {
+      "avg_up_dong": 52.9,
+      "avg_down_dong": -51.4,
+      "up_count": 223,
+      "down_count": 218,
+      "asymmetry": 0.97,
+      "interpretation": "balanced"
+    },
+    "fear_greed": {
+      "score": 1,
+      "max_score": 7,
+      "label": "SLIGHT_GREED",
+      "factors": [
+        {
+          "name": "aggression",
+          "score": 2,
+          "detail": "Buyers aggressive (ratio=1.23)"
+        },
+        {
+          "name": "price_impact",
+          "score": 0,
+          "detail": "Balanced (0.97x)"
+        },
+        {
+          "name": "momentum",
+          "score": -1,
+          "detail": "Decreasing momentum"
+        },
+        {
+          "name": "volume_intensity",
+          "score": 0,
+          "detail": "Normal activity (2315 ticks)"
+        }
+      ]
+    },
+    "large_orders": [
+      {
+        "time": "14:45:26",
+        "price": 23.8,
+        "vol": 1693800,
+        "side": "N"
+      },
+      {
+        "time": "10:29:50",
+        "price": 23.4,
+        "vol": 425300,
+        "side": "B"
+      },
+      {
+        "time": "10:29:59",
+        "price": 23.45,
+        "vol": 329600,
+        "side": "B"
+      },
+      {
+        "time": "14:19:08",
+        "price": 23.3,
+        "vol": 321400,
+        "side": "B"
+      },
+      {
+        "time": "10:31:49",
+        "price": 23.5,
+        "vol": 231200,
+        "side": "B"
+      },
+      {
+        "time": "10:20:35",
+        "price": 23.35,
+        "vol": 157800,
+        "side": "B"
+      },
+      {
+        "time": "10:19:50",
+        "price": 23.35,
+        "vol": 126000,
+        "side": "B"
+      },
+      {
+        "time": "14:19:07",
+        "price": 23.3,
+        "vol": 115900,
+        "side": "B"
+      },
+      {
+        "time": "09:16:03",
+        "price": 23.25,
+        "vol": 108800,
+        "side": "B"
+      },
+      {
+        "time": "10:31:30",
+        "price": 23.5,
+        "vol": 107200,
+        "side": "B"
+      },
+      {
+        "time": "14:19:07",
+        "price": 23.25,
+        "vol": 101400,
+        "side": "B"
+      },
+      {
+        "time": "09:47:30",
+        "price": 23.35,
+        "vol": 100000,
+        "side": "B"
+      },
+      {
+        "time": "09:58:58",
+        "price": 23.3,
+        "vol": 98900,
+        "side": "S"
+      },
+      {
+        "time": "10:07:59",
+        "price": 23.35,
+        "vol": 96400,
+        "side": "B"
+      },
+      {
+        "time": "14:09:34",
+        "price": 23.2,
+        "vol": 90000,
+        "side": "S"
+      }
+    ],
+    "summary": {
+      "total_ticks": 2315,
+      "total_volume": 12186700,
+      "net_buy_sell": 1054900
+    },
+    "daily_ref": {
+      "close": 23.8,
+      "open": 23.2,
+      "high": 23.8,
+      "low": 23.15,
+      "total_volume": 14449400.0,
+      "foreign_buy": 4372605.0,
+      "foreign_sell": 2072339.0,
+      "foreign_net": 2300266.0,
+      "prop_net_value": -16882990000.0
+    }
+  },
+  "ai_analysis": {
+    "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3-flash\nPlease retry in 28.653030362s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-3-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 28\n}\n]",
+    "sentiment_label": "ERROR",
+    "score": 0,
+    "summary": "Lỗi khi gọi Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3-flash\nPlease retry in 28.653030362s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-3-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 28\n}\n]"
+  }
+}

@@ -1,0 +1,426 @@
+{
+  "nodes": [
+    {
+      "id": "graphify_workspace_rules",
+      "label": "Graphify Workspace Rules",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "score_v2_implementation_notes",
+      "label": "Score V2 Implementation Notes",
+      "file_type": "document",
+      "source_file": "src/analysis/README_score_v2.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "setup_trigger_scoring_split",
+      "label": "Setup / Trigger Scoring Split",
+      "file_type": "document",
+      "source_file": "src/analysis/README_score_v2.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "volume_convention_for_price_impact_analysis",
+      "label": "Volume Convention",
+      "file_type": "document",
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "price_impact_volume_concept",
+      "label": "Price Impact Volume",
+      "file_type": "document",
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "deal_volume_price_movement_source",
+      "label": "Deal Volume as Price-Movement Source",
+      "file_type": "document",
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "total_volume_raw_reference",
+      "label": "Total Volume Raw Reference",
+      "file_type": "document",
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "score_v2_validation_checklist",
+      "label": "Score V2 Validation Checklist",
+      "file_type": "document",
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ab_backtest_comparison",
+      "label": "A/B Backtest Comparison",
+      "file_type": "document",
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "regime_based_validation",
+      "label": "Regime-Based Validation",
+      "file_type": "document",
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "hover_score_details_prompt",
+      "label": "Hover Score Details Prompt",
+      "file_type": "document",
+      "source_file": "src/reporting/README_hover_score_details.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "precomputed_hover_payload_pipeline",
+      "label": "Precomputed Hover Payload Pipeline",
+      "file_type": "document",
+      "source_file": "src/reporting/README_hover_score_details.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "score_v2_implementation_notes",
+      "target": "setup_trigger_scoring_split",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/analysis/README_score_v2.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "setup_trigger_scoring_split",
+      "target": "ScoreWeightsV4",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.92,
+      "source_file": "src/analysis/README_score_v2.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "setup_trigger_scoring_split",
+      "target": "ScoreThresholdsV4",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.92,
+      "source_file": "src/analysis/README_score_v2.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "setup_trigger_scoring_split",
+      "target": "SignalScoreV4",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/analysis/README_score_v2.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "volume_convention_for_price_impact_analysis",
+      "target": "price_impact_volume_concept",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "price_impact_volume_concept",
+      "target": "deal_volume_price_movement_source",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "price_impact_volume_concept",
+      "target": "total_volume_raw_reference",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.88,
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "price_impact_volume_concept",
+      "target": "StockRecord",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "price_impact_volume_concept",
+      "target": "IndicatorGroup4",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "price_impact_volume_concept",
+      "target": "SignalScoreV4",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.92,
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "price_impact_volume_concept",
+      "target": "MarketBehaviorSnapshot",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.92,
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "price_impact_volume_concept",
+      "target": "_build_hover_payloads()",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.93,
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "price_impact_volume_concept",
+      "target": "render_backtest_chart()",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "deal_volume_price_movement_source",
+      "target": "IndicatorGroup4",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/analysis/README_volume_convention.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "score_v2_validation_checklist",
+      "target": "ab_backtest_comparison",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "score_v2_validation_checklist",
+      "target": "regime_based_validation",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ab_backtest_comparison",
+      "target": "run_backtest_chart()",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ab_backtest_comparison",
+      "target": "run_trade_simulation()",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.92,
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ab_backtest_comparison",
+      "target": "compute_stats()",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.92,
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "regime_based_validation",
+      "target": "MarketBehaviorSnapshot",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "regime_based_validation",
+      "target": "calculate_signal_score_v4()",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.88,
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "regime_based_validation",
+      "target": "calculate_signal_score_v5()",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.88,
+      "source_file": "src/backtesting/README_score_v2_validation.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "hover_score_details_prompt",
+      "target": "precomputed_hover_payload_pipeline",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/reporting/README_hover_score_details.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "precomputed_hover_payload_pipeline",
+      "target": "_build_hover_payloads()",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/reporting/README_hover_score_details.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "precomputed_hover_payload_pipeline",
+      "target": "render_backtest_chart()",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/reporting/README_hover_score_details.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "precomputed_hover_payload_pipeline",
+      "target": "MarketBehaviorSnapshot",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.92,
+      "source_file": "src/reporting/README_hover_score_details.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "score_configuration_stack",
+      "label": "Score Configuration Stack",
+      "nodes": [
+        "ScoreWeightsV4",
+        "ScoreThresholdsV4",
+        "ScoreConfigV4"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src/analysis/README_score_v2.md"
+    },
+    {
+      "id": "hover_payload_delivery_stack",
+      "label": "Hover Payload Delivery Stack",
+      "nodes": [
+        "MarketBehaviorSnapshot",
+        "_build_hover_payloads()",
+        "render_backtest_chart()"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.92,
+      "source_file": "src/reporting/README_hover_score_details.md"
+    }
+  ]
+}

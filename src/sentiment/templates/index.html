@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tick Sentiment Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        body { background: #1a1a2e; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; }
+        .card { background: #16213e; border: 1px solid #0f3460; }
+        .card-header { background: #0f3460; color: #e94560; font-weight: 600; }
+        .table { color: #e0e0e0; }
+        .table thead th { border-color: #0f3460; color: #e94560; }
+        .table td { border-color: #1a1a40; }
+        .badge-greed { background: #00c853; color: #000; }
+        .badge-fear { background: #ff1744; color: #fff; }
+        .badge-neutral { background: #ffab00; color: #000; }
+        .badge-extreme { font-size: 1rem; padding: 6px 12px; }
+        .score-box { font-size: 3rem; font-weight: 700; text-align: center; padding: 20px; border-radius: 12px; }
+        .score-positive { background: linear-gradient(135deg, #004d40, #00c853); color: #fff; }
+        .score-negative { background: linear-gradient(135deg, #b71c1c, #ff1744); color: #fff; }
+        .score-neutral { background: linear-gradient(135deg, #e65100, #ffab00); color: #000; }
+        .metric-value { font-size: 1.4rem; font-weight: 600; }
+        .metric-label { font-size: 0.8rem; color: #888; text-transform: uppercase; }
+        .ai-box { background: #1a1a40; border: 1px solid #e94560; border-radius: 8px; padding: 20px; }
+        .signal-tag { display: inline-block; background: #0f3460; border: 1px solid #e94560; border-radius: 20px; padding: 4px 12px; margin: 4px; font-size: 0.85rem; }
+        #loading { display: none; }
+        .spinner-border { width: 3rem; height: 3rem; }
+        select, input { background: #16213e !important; color: #e0e0e0 !important; border-color: #0f3460 !important; }
+        .btn-primary { background: #e94560; border-color: #e94560; }
+        .btn-primary:hover { background: #c81e45; border-color: #c81e45; }
+        .btn-outline-secondary { color: #e94560; border-color: #e94560; }
+        .btn-outline-secondary:hover { background: #e94560; color: #fff; }
+        .whale-buy { color: #00c853; }
+        .whale-sell { color: #ff1744; }
+        .flow-positive { color: #00e676; }
+        .flow-negative { color: #ff5252; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-3">
+        <!-- Header -->
+        <div class="row mb-3">
+            <div class="col">
+                <h3 class="text-center" style="color: #e94560;">Tick Sentiment Analyzer</h3>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label class="form-label">Symbol</label>
+                <select id="symbolSelect" class="form-select" onchange="loadDates()">
+                    <option value="">-- Chọn mã --</option>
+                    {% for sym in symbols %}
+                    <option value="{{ sym }}">{{ sym }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Date</label>
+                <select id="dateSelect" class="form-select">
+                    <option value="">-- Chọn ngày --</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label" title="Lệnh có giá trị (price × volume) lớn hơn ngưỡng này được tính là tổ chức">Inst. threshold (VND)</label>
+                <input type="number" id="instThreshold" class="form-control" value="2000000000" step="500000000" min="0" title="Ngưỡng giá trị lệnh tổ chức (mặc định 2 tỷ)">
+            </div>
+            <div class="col-md-1">
+                <label class="form-label">AI</label>
+                <div class="form-check form-switch mt-1">
+                    <input class="form-check-input" type="checkbox" id="useAI" checked>
+                    <label class="form-check-label" for="useAI">Gemini</label>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex align-items-end gap-1">
+                <button class="btn btn-primary flex-grow-1" onclick="runAnalysis(false)">Phân Tích</button>
+                <button class="btn btn-outline-danger" onclick="runAnalysis(true)" title="Chạy lại, bỏ qua cache">↺</button>
+            </div>
+            <div class="col-md-2 d-flex align-items-end gap-1">
+                <button class="btn btn-outline-secondary flex-grow-1" onclick="runBatchAnalysis(false)">Batch All</button>
+                <button class="btn btn-outline-danger" onclick="runBatchAnalysis(true)" title="Chạy lại tất cả, bỏ qua cache">↺</button>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="text-center py-5">
+            <div class="spinner-border text-danger" role="status"></div>
+            <p class="mt-2">Đang phân tích...</p>
+        </div>
+
+        <!-- Results -->
+        <div id="results" style="display:none;">
+            <!-- Row 1: Score + AI Summary -->
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <div id="scoreBox" class="score-box score-neutral">
+                        <div id="scoreValue">0</div>
+                        <div style="font-size:1rem;" id="scoreLabel">NEUTRAL</div>
+                        <div id="cacheBadge" style="display:none;font-size:0.7rem;opacity:0.8;">📦 Từ cache</div>
+                    </div>
+                    <div class="card mt-2">
+                        <div class="card-body p-2">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <div class="metric-label">Whale Net</div>
+                                    <div class="metric-value" id="whaleNet">0</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="metric-label">Aggression</div>
+                                    <div class="metric-value" id="aggrRatio">0</div>
+                                </div>
+                            </div>
+                            <div class="row text-center mt-2">
+                                <div class="col-6">
+                                    <div class="metric-label">Bot %</div>
+                                    <div class="metric-value" id="botPct">0</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="metric-label">Session</div>
+                                    <div class="metric-value" id="sessionLabel">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="ai-box h-100">
+                        <h5 style="color:#e94560;">AI Analysis</h5>
+                        <p id="aiSummary" class="mb-2"></p>
+                        <div id="aiSignals" class="mb-2"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong style="color:#e94560;">Whale:</strong>
+                                <p id="aiWhale" class="small mb-1"></p>
+                                <strong style="color:#e94560;">So với lịch sử:</strong>
+                                <p id="aiHistory" class="small mb-1"></p>
+                            </div>
+                            <div class="col-md-6">
+                                <strong style="color:#e94560;">Outlook:</strong>
+                                <p id="aiOutlook" class="small mb-1"></p>
+                                <strong style="color:#e94560;">Risk:</strong>
+                                <span id="aiRisk" class="badge"></span>
+                                <p id="aiRecommendation" class="small mt-2 mb-0"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Charts -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">Dòng Tiền Theo Giờ</div>
+                        <div class="card-body"><canvas id="hourlyChart"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">Fear & Greed History</div>
+                        <div class="card-body"><canvas id="historyChart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Tables -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">Phân Bố Lệnh</div>
+                        <div class="card-body p-0">
+                            <table class="table table-sm mb-0">
+                                <thead><tr><th>Loại</th><th class="text-end">Lệnh</th><th class="text-end">%KL</th></tr></thead>
+                                <tbody id="orderDistBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">Whale VWAP</div>
+                        <div class="card-body p-0">
+                            <table class="table table-sm mb-0">
+                                <thead><tr><th></th><th class="text-end">Volume</th><th class="text-end">VWAP</th><th class="text-end">Count</th></tr></thead>
+                                <tbody id="whaleBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card mt-2">
+                        <div class="card-header">Momentum</div>
+                        <div class="card-body p-0">
+                            <table class="table table-sm mb-0">
+                                <thead><tr><th>Phase</th><th class="text-end">Net</th><th class="text-end">Price</th></tr></thead>
+                                <tbody id="momentumBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">Lệnh Lớn (Top 15)</div>
+                        <div class="card-body p-0" style="max-height:300px;overflow-y:auto;">
+                            <table class="table table-sm mb-0">
+                                <thead><tr><th>Time</th><th class="text-end">Price</th><th class="text-end">Vol</th><th>Side</th></tr></thead>
+                                <tbody id="largeOrdersBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4: Fear & Greed Factors -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">Fear & Greed Factors</div>
+                        <div class="card-body p-0">
+                            <table class="table table-sm mb-0">
+                                <thead><tr><th>Factor</th><th class="text-end">Score</th><th>Detail</th></tr></thead>
+                                <tbody id="fgFactorsBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">Lịch Sử Phân Tích</div>
+                        <div class="card-body p-0" style="max-height:250px;overflow-y:auto;">
+                            <table class="table table-sm mb-0">
+                                <thead><tr><th>Date</th><th class="text-end">F&G</th><th class="text-end">Whale</th><th class="text-end">Aggr</th><th>AI</th></tr></thead>
+                                <tbody id="historyBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    let hourlyChart = null;
+    let historyChartObj = null;
+
+    async function loadDates() {
+        const sym = document.getElementById('symbolSelect').value;
+        const dateSelect = document.getElementById('dateSelect');
+        dateSelect.innerHTML = '<option value="">-- Chọn ngày --</option>';
+        if (!sym) return;
+        const resp = await fetch(`/api/dates/${sym}`);
+        const data = await resp.json();
+        data.dates.forEach(d => {
+            const opt = document.createElement('option');
+            opt.value = d;
+            opt.textContent = d + (data.history_dates.includes(d) ? ' *' : '');
+            dateSelect.appendChild(opt);
+        });
+        // Select last date by default
+        if (data.dates.length > 0) {
+            dateSelect.value = data.dates[data.dates.length - 1];
+        }
+    }
+
+    async function runAnalysis(force = false) {
+        const symbol = document.getElementById('symbolSelect').value;
+        const date = document.getElementById('dateSelect').value;
+        const useAI = document.getElementById('useAI').checked;
+        if (!symbol || !date) { alert('Chọn mã và ngày!'); return; }
+
+        document.getElementById('loading').style.display = 'block';
+        document.getElementById('results').style.display = 'none';
+
+        try {
+            const resp = await fetch('/api/analyze', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({symbol, date, use_ai: useAI, force, inst_value_threshold: parseInt(document.getElementById('instThreshold').value) || 2000000000})
+            });
+            const data = await resp.json();
+            if (data.error) { alert(data.error); return; }
+            renderResults(data);
+        } catch(e) {
+            alert('Error: ' + e.message);
+        } finally {
+            document.getElementById('loading').style.display = 'none';
+        }
+    }
+
+    async function runBatchAnalysis(force = false) {
+        const symbol = document.getElementById('symbolSelect').value;
+        const useAI = document.getElementById('useAI').checked;
+        if (!symbol) { alert('Chọn mã!'); return; }
+
+        const dateSelect = document.getElementById('dateSelect');
+        const dates = Array.from(dateSelect.options).filter(o => o.value).map(o => o.value);
+        if (dates.length === 0) { alert('Không có ngày nào!'); return; }
+
+        document.getElementById('loading').style.display = 'block';
+        try {
+            const resp = await fetch('/api/batch_analyze', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({symbol, dates, use_ai: useAI, force, inst_value_threshold: parseInt(document.getElementById('instThreshold').value) || 2000000000})
+            });
+            const data = await resp.json();
+            const cached = data.results.filter(r => r.from_cache).length;
+            const newRun = data.results.filter(r => !r.from_cache && !r.error).length;
+            alert(`${symbol}: ${newRun} ngày mới phân tích, ${cached} ngày load từ cache.`);
+            // Reload last date
+            dateSelect.value = dates[dates.length - 1];
+            await runAnalysis(false);
+        } catch(e) {
+            alert('Error: ' + e.message);
+        } finally {
+            document.getElementById('loading').style.display = 'none';
+        }
+    }
+
+    function fmt(n) {
+        if (n === undefined || n === null) return '-';
+        return Number(n).toLocaleString('en-US');
+    }
+
+    function renderResults(data) {
+        const m = data.metrics;
+        const ai = data.ai_analysis;
+        const hist = data.history_summary || [];
+
+        document.getElementById('results').style.display = 'block';
+
+        // Score box
+        const fg = m.fear_greed;
+        const scoreBox = document.getElementById('scoreBox');
+        document.getElementById('scoreValue').textContent = (fg.score > 0 ? '+' : '') + fg.score;
+        document.getElementById('scoreLabel').textContent = fg.label;
+        scoreBox.className = 'score-box ' + (fg.score > 0 ? 'score-positive' : fg.score < 0 ? 'score-negative' : 'score-neutral');
+        document.getElementById('cacheBadge').style.display = data.from_cache ? 'block' : 'none';
+
+        // Quick metrics
+        const wn = m.whale.net;
+        document.getElementById('whaleNet').innerHTML = `<span class="${wn >= 0 ? 'whale-buy' : 'whale-sell'}">${wn >= 0 ? '+' : ''}${fmt(wn)}</span>`;
+        const ar = m.aggression.ratio_vol;
+        document.getElementById('aggrRatio').innerHTML = `<span class="${ar > 1 ? 'flow-positive' : 'flow-negative'}">${ar.toFixed(2)}</span>`;
+        document.getElementById('botPct').textContent = m.bot.pct + '%';
+        document.getElementById('sessionLabel').textContent = m.session;
+
+        // AI
+        document.getElementById('aiSummary').textContent = ai.summary || '';
+        const signalsDiv = document.getElementById('aiSignals');
+        signalsDiv.innerHTML = '';
+        (ai.key_signals || []).forEach(s => {
+            signalsDiv.innerHTML += `<span class="signal-tag">${s}</span>`;
+        });
+        document.getElementById('aiWhale').textContent = ai.whale_interpretation || '';
+        document.getElementById('aiHistory').textContent = ai.vs_history || '';
+        document.getElementById('aiOutlook').textContent = ai.outlook || '';
+        const riskBadge = document.getElementById('aiRisk');
+        riskBadge.textContent = ai.risk_level || 'N/A';
+        riskBadge.className = 'badge ' + (ai.risk_level === 'HIGH' ? 'badge-fear' : ai.risk_level === 'LOW' ? 'badge-greed' : 'badge-neutral');
+        document.getElementById('aiRecommendation').textContent = ai.recommendation || '';
+
+        // Order distribution - fixed order
+        const odBody = document.getElementById('orderDistBody');
+        odBody.innerHTML = '';
+        const odOrder = ['<1K', '1-5K', '5-10K', '10-50K', '50-100K', '>100K'];
+        odOrder.forEach(k => {
+            const v = m.order_distribution[k];
+            if (!v) return;
+            odBody.innerHTML += `<tr><td>${k}</td><td class="text-end">${fmt(v.count)}</td><td class="text-end">${v.pct_vol}%</td></tr>`;
+        });
+
+        // Whale table
+        const wb = document.getElementById('whaleBody');
+        wb.innerHTML = `
+            <tr class="whale-buy"><td>Buy</td><td class="text-end">${fmt(m.whale.buy_vol)}</td><td class="text-end">${m.whale.buy_vwap}</td><td class="text-end">${m.whale.buy_count}</td></tr>
+            <tr class="whale-sell"><td>Sell</td><td class="text-end">${fmt(m.whale.sell_vol)}</td><td class="text-end">${m.whale.sell_vwap}</td><td class="text-end">${m.whale.sell_count}</td></tr>
+            <tr><td><strong>Net</strong></td><td class="text-end ${wn >= 0 ? 'whale-buy' : 'whale-sell'}"><strong>${wn >= 0 ? '+' : ''}${fmt(wn)}</strong></td><td></td><td></td></tr>
+        `;
+
+        // Momentum
+        const mb = document.getElementById('momentumBody');
+        mb.innerHTML = '';
+        const partNames = ['Đầu phiên', 'Giữa phiên', 'Cuối phiên'];
+        (m.momentum.parts || []).forEach((p, i) => {
+            const cls = p.net >= 0 ? 'flow-positive' : 'flow-negative';
+            mb.innerHTML += `<tr><td>${partNames[i]}</td><td class="text-end ${cls}">${p.net >= 0 ? '+' : ''}${fmt(p.net)}</td><td class="text-end">${p.price_start}->${p.price_end}</td></tr>`;
+        });
+        mb.innerHTML += `<tr><td colspan="3"><em>Direction: ${m.momentum.direction}</em></td></tr>`;
+
+        // Large orders
+        const lb = document.getElementById('largeOrdersBody');
+        lb.innerHTML = '';
+        (m.large_orders || []).forEach(o => {
+            const cls = o.side === 'B' ? 'whale-buy' : o.side === 'S' ? 'whale-sell' : '';
+            const sideLabel = o.side === 'B' ? 'MUA' : o.side === 'S' ? 'BAN' : 'ATO';
+            lb.innerHTML += `<tr class="${cls}"><td>${o.time}</td><td class="text-end">${o.price}</td><td class="text-end">${fmt(o.vol)}</td><td>${sideLabel}</td></tr>`;
+        });
+
+        // F&G Factors
+        const ffb = document.getElementById('fgFactorsBody');
+        ffb.innerHTML = '';
+        (fg.factors || []).forEach(f => {
+            const cls = f.score > 0 ? 'flow-positive' : f.score < 0 ? 'flow-negative' : '';
+            ffb.innerHTML += `<tr><td>${f.name}</td><td class="text-end ${cls}">${f.score > 0 ? '+' : ''}${f.score}</td><td>${f.detail}</td></tr>`;
+        });
+
+        // History table
+        const hb = document.getElementById('historyBody');
+        hb.innerHTML = '';
+        // Add current as last row
+        const allRows = [...hist, {date: m.date, fear_greed_score: fg.score, fear_greed_label: fg.label, whale_net: m.whale.net, aggression_ratio: m.aggression.ratio_vol, ai_label: ai.sentiment_label}];
+        allRows.forEach(h => {
+            const cls = h.fear_greed_score > 0 ? 'flow-positive' : h.fear_greed_score < 0 ? 'flow-negative' : '';
+            hb.innerHTML += `<tr><td>${h.date}</td><td class="text-end ${cls}">${h.fear_greed_score !== undefined ? (h.fear_greed_score > 0 ? '+' : '') + h.fear_greed_score : '-'}</td><td class="text-end">${fmt(h.whale_net)}</td><td class="text-end">${h.aggression_ratio !== undefined ? h.aggression_ratio.toFixed(2) : '-'}</td><td>${h.ai_label || '-'}</td></tr>`;
+        });
+
+        // Hourly chart
+        renderHourlyChart(m.hourly_flow);
+        // History chart
+        renderHistoryChart(allRows);
+    }
+
+    function renderHourlyChart(hourlyFlow) {
+        const ctx = document.getElementById('hourlyChart').getContext('2d');
+        if (hourlyChart) hourlyChart.destroy();
+        const labels = hourlyFlow.map(h => h.hour + ':00');
+        hourlyChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels,
+                datasets: [
+                    { label: 'Buy', data: hourlyFlow.map(h => h.buy), backgroundColor: 'rgba(0,200,83,0.7)' },
+                    { label: 'Sell', data: hourlyFlow.map(h => -h.sell), backgroundColor: 'rgba(255,23,68,0.7)' },
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { stacked: true, ticks: { color: '#888' }, grid: { color: '#1a1a40' } },
+                    y: { stacked: true, ticks: { color: '#888', callback: v => fmt(Math.abs(v)) }, grid: { color: '#1a1a40' } }
+                },
+                plugins: { legend: { labels: { color: '#e0e0e0' } } }
+            }
+        });
+    }
+
+    function renderHistoryChart(rows) {
+        const ctx = document.getElementById('historyChart').getContext('2d');
+        if (historyChartObj) historyChartObj.destroy();
+        const labels = rows.map(r => r.date);
+        const scores = rows.map(r => r.fear_greed_score || 0);
+        const colors = scores.map(s => s > 0 ? 'rgba(0,200,83,0.8)' : s < 0 ? 'rgba(255,23,68,0.8)' : 'rgba(255,171,0,0.8)');
+        historyChartObj = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels,
+                datasets: [{
+                    label: 'Fear & Greed Score',
+                    data: scores,
+                    backgroundColor: colors,
+                    borderColor: colors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { ticks: { color: '#888' }, grid: { color: '#1a1a40' } },
+                    y: { min: -7, max: 7, ticks: { color: '#888' }, grid: { color: '#1a1a40' } }
+                },
+                plugins: { legend: { labels: { color: '#e0e0e0' } } }
+            }
+        });
+    }
+    </script>
+</body>
+</html>

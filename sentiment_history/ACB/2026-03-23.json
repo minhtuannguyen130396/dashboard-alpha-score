@@ -1,0 +1,687 @@
+{
+  "symbol": "ACB",
+  "date": "2026-03-23",
+  "computed_at": "2026-04-13T22:03:32.036017",
+  "session": "full",
+  "metrics": {
+    "symbol": "ACB",
+    "date": "2026-03-23",
+    "session": "full",
+    "price": {
+      "open": 22.95,
+      "last": 22.5,
+      "high": 22.95,
+      "low": 22.45
+    },
+    "aggression": {
+      "buy_vol": 8314700,
+      "sell_vol": 4474900,
+      "neutral_vol": 2851100,
+      "ratio_vol": 1.858,
+      "buy_count": 2034,
+      "sell_count": 866,
+      "ratio_count": 2.349
+    },
+    "whale": {
+      "threshold": 20000,
+      "buy_vol": 3125900,
+      "sell_vol": 2409500,
+      "net": 716400,
+      "buy_vwap": 22.68,
+      "sell_vwap": 22.65,
+      "buy_count": 88,
+      "sell_count": 59
+    },
+    "bot": {
+      "pct": 85.2,
+      "top_repeated": [
+        {
+          "vol": 100,
+          "count": 384
+        },
+        {
+          "vol": 600,
+          "count": 347
+        },
+        {
+          "vol": 200,
+          "count": 192
+        },
+        {
+          "vol": 500,
+          "count": 181
+        },
+        {
+          "vol": 1000,
+          "count": 138
+        }
+      ]
+    },
+    "hourly_flow": [
+      {
+        "hour": 9,
+        "buy": 985400,
+        "sell": 1295400,
+        "net": -310000
+      },
+      {
+        "hour": 10,
+        "buy": 1969600,
+        "sell": 633600,
+        "net": 1336000
+      },
+      {
+        "hour": 11,
+        "buy": 728300,
+        "sell": 97100,
+        "net": 631200
+      },
+      {
+        "hour": 13,
+        "buy": 2310200,
+        "sell": 1274400,
+        "net": 1035800
+      },
+      {
+        "hour": 14,
+        "buy": 2321200,
+        "sell": 1174400,
+        "net": 1146800
+      }
+    ],
+    "flow_5m": [
+      {
+        "time": "09:15",
+        "ticks": 73,
+        "vol": 396600,
+        "buy": 145400,
+        "sell": 56800,
+        "net": 88600
+      },
+      {
+        "time": "09:20",
+        "ticks": 57,
+        "vol": 251900,
+        "buy": 112300,
+        "sell": 139600,
+        "net": -27300
+      },
+      {
+        "time": "09:25",
+        "ticks": 57,
+        "vol": 411200,
+        "buy": 73000,
+        "sell": 338200,
+        "net": -265200
+      },
+      {
+        "time": "09:30",
+        "ticks": 62,
+        "vol": 138000,
+        "buy": 101800,
+        "sell": 36200,
+        "net": 65600
+      },
+      {
+        "time": "09:35",
+        "ticks": 41,
+        "vol": 275500,
+        "buy": 93700,
+        "sell": 181800,
+        "net": -88100
+      },
+      {
+        "time": "09:40",
+        "ticks": 68,
+        "vol": 237500,
+        "buy": 66100,
+        "sell": 171400,
+        "net": -105300
+      },
+      {
+        "time": "09:45",
+        "ticks": 109,
+        "vol": 361800,
+        "buy": 212500,
+        "sell": 149300,
+        "net": 63200
+      },
+      {
+        "time": "09:50",
+        "ticks": 50,
+        "vol": 219800,
+        "buy": 93000,
+        "sell": 126800,
+        "net": -33800
+      },
+      {
+        "time": "09:55",
+        "ticks": 45,
+        "vol": 182900,
+        "buy": 87600,
+        "sell": 95300,
+        "net": -7700
+      },
+      {
+        "time": "10:00",
+        "ticks": 118,
+        "vol": 604800,
+        "buy": 432800,
+        "sell": 172000,
+        "net": 260800
+      },
+      {
+        "time": "10:05",
+        "ticks": 123,
+        "vol": 250000,
+        "buy": 162700,
+        "sell": 87200,
+        "net": 75500
+      },
+      {
+        "time": "10:10",
+        "ticks": 82,
+        "vol": 143100,
+        "buy": 126100,
+        "sell": 17000,
+        "net": 109100
+      },
+      {
+        "time": "10:15",
+        "ticks": 33,
+        "vol": 203000,
+        "buy": 44900,
+        "sell": 158100,
+        "net": -113200
+      },
+      {
+        "time": "10:20",
+        "ticks": 56,
+        "vol": 73900,
+        "buy": 36300,
+        "sell": 37600,
+        "net": -1300
+      },
+      {
+        "time": "10:25",
+        "ticks": 43,
+        "vol": 415500,
+        "buy": 396700,
+        "sell": 18800,
+        "net": 377900
+      },
+      {
+        "time": "10:30",
+        "ticks": 40,
+        "vol": 410200,
+        "buy": 405600,
+        "sell": 4600,
+        "net": 401000
+      },
+      {
+        "time": "10:35",
+        "ticks": 42,
+        "vol": 71300,
+        "buy": 55900,
+        "sell": 15400,
+        "net": 40500
+      },
+      {
+        "time": "10:40",
+        "ticks": 35,
+        "vol": 103800,
+        "buy": 74400,
+        "sell": 29400,
+        "net": 45000
+      },
+      {
+        "time": "10:45",
+        "ticks": 19,
+        "vol": 67700,
+        "buy": 55000,
+        "sell": 12700,
+        "net": 42300
+      },
+      {
+        "time": "10:50",
+        "ticks": 26,
+        "vol": 85400,
+        "buy": 82500,
+        "sell": 2900,
+        "net": 79600
+      },
+      {
+        "time": "10:55",
+        "ticks": 37,
+        "vol": 174600,
+        "buy": 96700,
+        "sell": 77900,
+        "net": 18800
+      },
+      {
+        "time": "11:00",
+        "ticks": 41,
+        "vol": 155000,
+        "buy": 117300,
+        "sell": 37700,
+        "net": 79600
+      },
+      {
+        "time": "11:05",
+        "ticks": 55,
+        "vol": 119000,
+        "buy": 119000,
+        "sell": 0,
+        "net": 119000
+      },
+      {
+        "time": "11:10",
+        "ticks": 43,
+        "vol": 131300,
+        "buy": 125300,
+        "sell": 6000,
+        "net": 119300
+      },
+      {
+        "time": "11:15",
+        "ticks": 38,
+        "vol": 175900,
+        "buy": 154500,
+        "sell": 21400,
+        "net": 133100
+      },
+      {
+        "time": "11:20",
+        "ticks": 37,
+        "vol": 141300,
+        "buy": 111600,
+        "sell": 29700,
+        "net": 81900
+      },
+      {
+        "time": "11:25",
+        "ticks": 25,
+        "vol": 102900,
+        "buy": 100600,
+        "sell": 2300,
+        "net": 98300
+      },
+      {
+        "time": "13:00",
+        "ticks": 70,
+        "vol": 162400,
+        "buy": 135300,
+        "sell": 27100,
+        "net": 108200
+      },
+      {
+        "time": "13:05",
+        "ticks": 72,
+        "vol": 298000,
+        "buy": 216900,
+        "sell": 81100,
+        "net": 135800
+      },
+      {
+        "time": "13:10",
+        "ticks": 59,
+        "vol": 180000,
+        "buy": 133900,
+        "sell": 46100,
+        "net": 87800
+      },
+      {
+        "time": "13:15",
+        "ticks": 51,
+        "vol": 49300,
+        "buy": 28700,
+        "sell": 20600,
+        "net": 8100
+      },
+      {
+        "time": "13:20",
+        "ticks": 43,
+        "vol": 57000,
+        "buy": 49700,
+        "sell": 7300,
+        "net": 42400
+      },
+      {
+        "time": "13:25",
+        "ticks": 72,
+        "vol": 401700,
+        "buy": 166300,
+        "sell": 235400,
+        "net": -69100
+      },
+      {
+        "time": "13:30",
+        "ticks": 82,
+        "vol": 294300,
+        "buy": 167100,
+        "sell": 127200,
+        "net": 39900
+      },
+      {
+        "time": "13:35",
+        "ticks": 90,
+        "vol": 403500,
+        "buy": 334800,
+        "sell": 68700,
+        "net": 266100
+      },
+      {
+        "time": "13:40",
+        "ticks": 91,
+        "vol": 363400,
+        "buy": 276700,
+        "sell": 86700,
+        "net": 190000
+      },
+      {
+        "time": "13:45",
+        "ticks": 105,
+        "vol": 630900,
+        "buy": 264200,
+        "sell": 366700,
+        "net": -102500
+      },
+      {
+        "time": "13:50",
+        "ticks": 142,
+        "vol": 457900,
+        "buy": 334200,
+        "sell": 123700,
+        "net": 210500
+      },
+      {
+        "time": "13:55",
+        "ticks": 68,
+        "vol": 286200,
+        "buy": 202400,
+        "sell": 83800,
+        "net": 118600
+      },
+      {
+        "time": "14:00",
+        "ticks": 79,
+        "vol": 490100,
+        "buy": 345900,
+        "sell": 144200,
+        "net": 201700
+      },
+      {
+        "time": "14:05",
+        "ticks": 69,
+        "vol": 379500,
+        "buy": 343100,
+        "sell": 36400,
+        "net": 306700
+      },
+      {
+        "time": "14:10",
+        "ticks": 92,
+        "vol": 742300,
+        "buy": 572400,
+        "sell": 169900,
+        "net": 402500
+      },
+      {
+        "time": "14:15",
+        "ticks": 78,
+        "vol": 500900,
+        "buy": 340700,
+        "sell": 160200,
+        "net": 180500
+      },
+      {
+        "time": "14:20",
+        "ticks": 81,
+        "vol": 617000,
+        "buy": 348300,
+        "sell": 268700,
+        "net": 79600
+      },
+      {
+        "time": "14:25",
+        "ticks": 107,
+        "vol": 765800,
+        "buy": 370800,
+        "sell": 395000,
+        "net": -24200
+      },
+      {
+        "time": "14:45",
+        "ticks": 2,
+        "vol": 2656600,
+        "buy": 0,
+        "sell": 0,
+        "net": 0
+      }
+    ],
+    "order_distribution": {
+      "<1K": {
+        "count": 1345,
+        "pct_count": 46.3,
+        "vol": 499800,
+        "pct_vol": 3.2
+      },
+      "1-5K": {
+        "count": 895,
+        "pct_count": 30.8,
+        "vol": 2110300,
+        "pct_vol": 13.5
+      },
+      "5-10K": {
+        "count": 297,
+        "pct_count": 10.2,
+        "vol": 1896700,
+        "pct_vol": 12.1
+      },
+      "10-50K": {
+        "count": 338,
+        "pct_count": 11.6,
+        "vol": 5773600,
+        "pct_vol": 36.9
+      },
+      "50-100K": {
+        "count": 24,
+        "pct_count": 0.8,
+        "vol": 1542100,
+        "pct_vol": 9.9
+      },
+      ">100K": {
+        "count": 9,
+        "pct_count": 0.3,
+        "vol": 3818200,
+        "pct_vol": 24.4
+      }
+    },
+    "momentum": {
+      "parts": [
+        {
+          "net": 18600,
+          "buy": 1785900,
+          "sell": 1767300,
+          "price_start": 22.95,
+          "price_end": 22.55
+        },
+        {
+          "net": 2082200,
+          "buy": 2885900,
+          "sell": 803700,
+          "price_start": 22.55,
+          "price_end": 22.75
+        },
+        {
+          "net": 1739000,
+          "buy": 3642900,
+          "sell": 1903900,
+          "price_start": 22.75,
+          "price_end": 22.5
+        }
+      ],
+      "direction": "increasing"
+    },
+    "price_sensitivity": {
+      "avg_up_dong": 53.3,
+      "avg_down_dong": -53.3,
+      "up_count": 420,
+      "down_count": 429,
+      "asymmetry": 1.0,
+      "interpretation": "balanced"
+    },
+    "fear_greed": {
+      "score": 4,
+      "max_score": 7,
+      "label": "EXTREME_GREED",
+      "factors": [
+        {
+          "name": "aggression",
+          "score": 2,
+          "detail": "Buyers aggressive (ratio=1.86)"
+        },
+        {
+          "name": "price_impact",
+          "score": 0,
+          "detail": "Balanced (1.00x)"
+        },
+        {
+          "name": "momentum",
+          "score": 1,
+          "detail": "Increasing momentum"
+        },
+        {
+          "name": "volume_intensity",
+          "score": 1,
+          "detail": "High activity (2908 ticks)"
+        }
+      ]
+    },
+    "large_orders": [
+      {
+        "time": "14:45:15",
+        "price": 22.5,
+        "vol": 2655200,
+        "side": "N"
+      },
+      {
+        "time": "09:27:13",
+        "price": 22.7,
+        "vol": 266500,
+        "side": "S"
+      },
+      {
+        "time": "10:29:42",
+        "price": 22.55,
+        "vol": 194900,
+        "side": "B"
+      },
+      {
+        "time": "10:02:53",
+        "price": 22.55,
+        "vol": 163400,
+        "side": "B"
+      },
+      {
+        "time": "09:15:07",
+        "price": 22.95,
+        "vol": 126600,
+        "side": "N"
+      },
+      {
+        "time": "13:48:14",
+        "price": 22.75,
+        "vol": 109400,
+        "side": "S"
+      },
+      {
+        "time": "14:27:17",
+        "price": 22.65,
+        "vol": 102100,
+        "side": "S"
+      },
+      {
+        "time": "14:11:34",
+        "price": 22.8,
+        "vol": 100100,
+        "side": "B"
+      },
+      {
+        "time": "14:27:19",
+        "price": 22.7,
+        "vol": 100000,
+        "side": "B"
+      },
+      {
+        "time": "10:33:21",
+        "price": 22.65,
+        "vol": 94900,
+        "side": "B"
+      },
+      {
+        "time": "14:24:45",
+        "price": 22.65,
+        "vol": 87400,
+        "side": "S"
+      },
+      {
+        "time": "13:26:53",
+        "price": 22.75,
+        "vol": 86700,
+        "side": "S"
+      },
+      {
+        "time": "10:32:29",
+        "price": 22.6,
+        "vol": 79600,
+        "side": "B"
+      },
+      {
+        "time": "10:04:54",
+        "price": 22.5,
+        "vol": 78400,
+        "side": "B"
+      },
+      {
+        "time": "10:32:01",
+        "price": 22.6,
+        "vol": 76200,
+        "side": "B"
+      }
+    ],
+    "summary": {
+      "total_ticks": 2908,
+      "total_volume": 15640700,
+      "net_buy_sell": 3839800
+    },
+    "daily_ref": {
+      "close": 22.5,
+      "open": 22.95,
+      "high": 22.95,
+      "low": 22.45,
+      "total_volume": 17218400.0,
+      "foreign_buy": 6429310.0,
+      "foreign_sell": 5125300.0,
+      "foreign_net": 1304010.0,
+      "prop_net_value": -27022655000.0
+    }
+  },
+  "ai_analysis": {
+    "sentiment_label": "EXTREME_GREED",
+    "score": 4.0,
+    "summary": "Tâm lý thị trường đối với ACB đang ở trạng thái cực kỳ hưng phấn bất chấp giá có sự điều chỉnh giảm từ đầu phiên. Lực mua chủ động áp đảo hoàn toàn với tỷ lệ khối lượng mua/bán lên tới 1.86, cho thấy phe mua đang rất hung hãn gom hàng. Mặc dù giá đóng cửa ở mức thấp nhất ngày (22.5) do áp lực bán từ tự doanh và lệnh ATC lớn, nhưng dòng tiền từ cá mập và khối ngoại đã bắt đầu quay trở lại mạnh mẽ để hấp thụ lực cung này.",
+    "key_signals": [
+      "Chỉ số hung hãn (Aggression Ratio) vọt lên 1.858, mức cao nhất trong chuỗi 4 phiên gần đây.",
+      "Cá mập (Whale) đảo chiều từ bán ròng sang mua ròng 716,400 đơn vị với mức giá mua (VWAP 22.68) cao hơn giá bán.",
+      "Khối ngoại đồng thuận mua ròng hơn 1.3 triệu cổ phiếu, hỗ trợ đà tăng tâm lý.",
+      "Dòng tiền mua chủ động duy trì mạnh xuyên suốt từ 10h sáng đến cuối phiên chiều.",
+      "Xuất hiện lệnh thỏa thuận/ATC cực lớn 2.65 triệu cổ phiếu tại mức giá 22.5."
+    ],
+    "vs_history": "So với giai đoạn từ 17/03 đến 19/03, tâm lý đã có bước ngoặt lớn. Điểm số Fear & Greed tăng từ 3 lên 4. Quan trọng nhất, dòng tiền cá mập (Whale Net) đã chấm dứt chuỗi 3 phiên bán ròng liên tiếp (trung bình -300k/phiên) để chuyển sang mua ròng mạnh +716k. Tỷ lệ hung hãn cũng tăng đáng kể từ mức 1.53 lên 1.86, cho thấy phe mua không còn kiên nhẫn chờ đợi mà đã chủ động ăn hàng vào dư bán.",
+    "whale_interpretation": "Cá mập đang chuyển sang trạng thái TÍCH LŨY mạnh mẽ. Việc Whale chấp nhận mua với VWAP 22.68 (cao hơn giá đóng cửa 22.5) cho thấy họ đánh giá vùng giá này là vùng hấp dẫn để gom hàng dài hạn. Hành vi này trái ngược hoàn toàn với áp lực thoát hàng của nhóm Tự doanh (-27 tỷ VND).",
+    "risk_level": "MEDIUM",
+    "outlook": "Dự kiến trong phiên tiếp theo, ACB sẽ kiểm định lại vùng hỗ trợ 22.4-22.5. Với lực cầu chủ động mạnh như hiện tại, khả năng cao cổ phiếu sẽ sớm hồi phục khi áp lực bán từ nhóm tự doanh suy giảm. Tuy nhiên, tỷ lệ Bot cao (85.2%) có thể gây ra những biến động nhiễu trong ngắn hạn.",
+    "recommendation": "Theo dõi sát vùng giá 22.5. Nếu giá giữ vững trên vùng này với sự duy trì của Whale Net dương, đây là tín hiệu củng cố cho một nhịp tăng mới. Cần thận trọng nếu giá thủng 22.4 với khối lượng lớn từ phe bán."
+  }
+}

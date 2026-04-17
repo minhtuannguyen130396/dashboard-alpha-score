@@ -38,11 +38,11 @@ class ScoreWeightsV4:
 @dataclass
 class ScoreThresholdsV4:
     setup_watch: float = 0.55
-    setup_good:  float = 0.65
+    setup_good:  float = 0.62
 
     # Entry gates (buy)
-    final_signal:  float = 0.55
-    trigger:       float = 0.50
+    final_signal:  float = 0.48
+    trigger:       float = 0.43
     strong_signal: float = 0.78
 
     # Exit gates (sell) — intentionally looser than entry; trade
@@ -107,3 +107,101 @@ class ScoreConfigV4:
 
 
 DEFAULT_SCORE_CONFIG_V4 = ScoreConfigV4()
+
+
+# =============================================================================
+# V5 — V4 + smart money module (prop + foreign in Phase 1)
+# =============================================================================
+from src.analysis.smart_money.config import (
+    DEFAULT_SMART_MONEY_CONFIG,
+    SmartMoneyConfig,
+)
+
+
+@dataclass
+class ScoreWeightsV5:
+    # Setup bucket
+    setup_candle:     float = 0.15
+    setup_trend:      float = 0.22
+    setup_momentum:   float = 0.13
+    setup_volume:     float = 0.13
+    setup_structure:  float = 0.17
+    setup_regime:     float = 0.10
+    setup_smartmoney: float = 0.10    # prop + foreign (Phase 1)
+
+    # Trigger bucket — Phase 2 rebalance to make room for trigger_smartmoney
+    trigger_confirmation: float = 0.30   # 0.35 → 0.30
+    trigger_volume:       float = 0.22   # 0.25 → 0.22
+    trigger_candle:       float = 0.18   # 0.20 → 0.18
+    trigger_momentum:     float = 0.08   # 0.10 → 0.08
+    trigger_divergence:   float = 0.10   # V4 price/indicator div, kept
+    trigger_smartmoney:   float = 0.12   # Phase 2: divergence + concentration
+
+    final_setup:   float = 0.55
+    final_trigger: float = 0.45
+
+
+@dataclass
+class FeatureTogglesV5:
+    use_candle: bool = True
+    use_trend: bool = True
+    use_momentum: bool = True
+    use_volume: bool = True
+    use_structure: bool = True
+    use_confirmation: bool = True
+    use_divergence: bool = True
+    use_regime_align: bool = True
+    use_smart_money: bool = True
+
+
+@dataclass
+class ScoreConfigV5:
+    weights: ScoreWeightsV5 = field(default_factory=ScoreWeightsV5)
+    thresholds: ScoreThresholdsV4 = field(default_factory=ScoreThresholdsV4)
+    periods: IndicatorPeriodsV4 = field(default_factory=IndicatorPeriodsV4)
+    toggles: FeatureTogglesV5 = field(default_factory=FeatureTogglesV5)
+    smart_money: SmartMoneyConfig = field(default_factory=SmartMoneyConfig)
+
+    def v4_compat(self) -> ScoreConfigV4:
+        """Build a V4 config view that V4 helper functions can consume.
+
+        V5 reuses V4's candle/trend/momentum/volume/structure/blocker helpers
+        unchanged. Those helpers expect a ``ScoreConfigV4`` so we project the
+        V5 thresholds + periods (the only fields they actually read) into one.
+        """
+        v4_weights = ScoreWeightsV4(
+            setup_candle=self.weights.setup_candle,
+            setup_trend=self.weights.setup_trend,
+            setup_momentum=self.weights.setup_momentum,
+            setup_volume=self.weights.setup_volume,
+            setup_structure=self.weights.setup_structure,
+            setup_regime=self.weights.setup_regime,
+            setup_prop=0.0,
+            trigger_confirmation=self.weights.trigger_confirmation,
+            trigger_volume=self.weights.trigger_volume,
+            trigger_candle=self.weights.trigger_candle,
+            trigger_momentum=self.weights.trigger_momentum,
+            trigger_divergence=self.weights.trigger_divergence,
+            final_setup=self.weights.final_setup,
+            final_trigger=self.weights.final_trigger,
+        )
+        v4_toggles = FeatureTogglesV4(
+            use_candle=self.toggles.use_candle,
+            use_trend=self.toggles.use_trend,
+            use_momentum=self.toggles.use_momentum,
+            use_volume=self.toggles.use_volume,
+            use_structure=self.toggles.use_structure,
+            use_confirmation=self.toggles.use_confirmation,
+            use_divergence=self.toggles.use_divergence,
+            use_regime_align=self.toggles.use_regime_align,
+            use_prop=False,    # V5 handles flow via smart_money
+        )
+        return ScoreConfigV4(
+            weights=v4_weights,
+            thresholds=self.thresholds,
+            periods=self.periods,
+            toggles=v4_toggles,
+        )
+
+
+DEFAULT_SCORE_CONFIG_V5 = ScoreConfigV5()

@@ -1,0 +1,1 @@
+{"nodes": [], "edges": [{"source": "ScoreConfigV4", "target": "ScoreConfigV5", "relation": "semantically_similar_to", "confidence": "INFERRED", "confidence_score": 0.9, "source_file": "src/analysis/score_config.py", "source_location": null, "weight": 1.0}], "hyperedges": []}

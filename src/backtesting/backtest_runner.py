@@ -5,6 +5,7 @@ from src.data.stock_data_loader import load_stock_history
 from src.backtesting.trade_simulator import run_trade_simulation
 from src.backtesting.metrics import compute_stats, format_stats
 from src.analysis.signal_scoring_v4 import calculate_signal_score_v4
+from src.analysis.signal_scoring_v5 import calculate_signal_score_v5
 from src.analysis.market_behavior_analyzer import analyze_market_behavior
 from src.reporting.chart_renderer_v2 import render_backtest_chart
 from src.reporting.performance_report_writer import BacktestReportRow, write_backtest_report
@@ -17,6 +18,18 @@ from src.reporting.performance_report_writer import BacktestReportRow, write_bac
 # of `index`, hence the -1 to include the current bar.
 _LOOKBACK = 219
 
+_SCORERS = {
+    "v4": calculate_signal_score_v4,
+    "v5": calculate_signal_score_v5,
+}
+
+
+def _resolve_scorer(version: str):
+    key = (version or "v4").lower()
+    if key not in _SCORERS:
+        raise ValueError(f"Unknown scoring version: {version!r}. Use one of {list(_SCORERS)}")
+    return key, _SCORERS[key]
+
 
 def _fmt_trade_volume(value: float) -> str:
     """Render integer-like volumes without decimals, partials with up to 2 decimals."""
@@ -25,12 +38,12 @@ def _fmt_trade_volume(value: float) -> str:
     return f"{value:.2f}".rstrip("0").rstrip(".")
 
 
-def _build_signal_scores(stock_records):
+def _build_signal_scores(stock_records, scorer=calculate_signal_score_v4):
     signal_scores = []
     for index in range(len(stock_records)):
         window_start = max(0, index - _LOOKBACK)
         window = stock_records[window_start:index + 1]
-        signal_scores.append(calculate_signal_score_v4(window))
+        signal_scores.append(scorer(window))
     return signal_scores
 
 
@@ -51,18 +64,19 @@ def _print_trade_log(symbol: str, list_fynance) -> None:
     print(f"[{symbol}] {format_stats(compute_stats(list_fynance))}")
 
 
-def run_backtest_report(symbols: List[str], start_date: str, end_date: str = None):
+def run_backtest_report(symbols: List[str], start_date: str, end_date: str = None, version: str = "v4"):
+    version_key, scorer = _resolve_scorer(version)
     start = datetime.strptime(start_date, "%Y-%m-%d")
     end = datetime.strptime(end_date, "%Y-%m-%d") if end_date else datetime.now()
     stock_csvs_prepared = []
     for symbol in symbols:
-        print(f"Processing symbol: {symbol} (V4)")
+        print(f"Processing symbol: {symbol} ({version_key.upper()})")
         stock_records = load_stock_history(symbol, start, end)
         if len(stock_records) < 50:
             print(f"No data found for {symbol}. Skipping...")
             continue
 
-        signal_scores = _build_signal_scores(stock_records)
+        signal_scores = _build_signal_scores(stock_records, scorer=scorer)
         market_behavior = analyze_market_behavior(stock_records, signal_scores)
         list_fynance, _, _ = run_trade_simulation(
             stock_records,
@@ -75,11 +89,12 @@ def run_backtest_report(symbols: List[str], start_date: str, end_date: str = Non
     write_backtest_report(stock_csvs_prepared, start_date, end_date)
 
 
-def run_backtest_chart(symbol: str, start_date: str, end_date: str = None):
+def run_backtest_chart(symbol: str, start_date: str, end_date: str = None, version: str = "v4"):
+    _, scorer = _resolve_scorer(version)
     start = datetime.strptime(start_date, "%Y-%m-%d")
     end = datetime.strptime(end_date, "%Y-%m-%d") if end_date else datetime.now()
     stock_records = load_stock_history(symbol, start, end)
-    signal_scores = _build_signal_scores(stock_records)
+    signal_scores = _build_signal_scores(stock_records, scorer=scorer)
     market_behavior = analyze_market_behavior(stock_records, signal_scores)
     list_fynance, actual_sale_point, actual_buy_point = run_trade_simulation(
         stock_records,

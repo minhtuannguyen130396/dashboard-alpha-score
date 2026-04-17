@@ -1,0 +1,16 @@
+.git/
+__pycache__/
+.pytest_cache/
+graphify-out/
+data/
+csv_files/
+data_tick_features/
+chart/
+stock_list/
+Documents/*
+!Documents/smart_money/
+!Documents/smart_money/**
+access_token.txt
+dashboard.html
+symbol-analysis.html
+test.py

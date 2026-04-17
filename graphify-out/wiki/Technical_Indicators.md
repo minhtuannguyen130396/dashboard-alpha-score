@@ -2,6 +2,22 @@
 
 > 46 nodes · cohesion 0.06
 
+## Summary
+
+Thư viện tính toán ~30+ chỉ báo kỹ thuật thuần túy — không có logic quyết định, chỉ transform dữ liệu giá/khối lượng thành số. Kết quả được đóng gói vào 4 nhóm `IndicatorGroup1-4` dùng cho các mục đích khác nhau trong scoring engine.
+
+**Phân nhóm chỉ báo:**
+- **Trend/MA:** SMA, EMA, WMA, VWMA, HMA, KAMA — xác định xu hướng và dynamic support
+- **Momentum:** RSI, MACD, Stochastic %K/%D, ROC, CCI, Williams %R, Ultimate Oscillator — đo sức mạnh và quá mua/bán
+- **Volatility:** ATR, Bollinger Bands, Keltner Channel, Donchian Channel, Chaikin Volatility, StdDev, Mass Index — đo biên độ dao động
+- **Volume:** OBV, ADL, CMF, MFI, VROC, VWAP, average_volume — xác nhận xu hướng bằng dòng tiền
+- **Breadth:** ADL, McClellan Oscillator, TRIN, Bullish Percent Index — đo sức rộng thị trường
+- **Pattern signals:** `is_large_buyer_accumulation()`, `is_fomo_by_retail()` — tín hiệu hành vi thị trường
+
+**Lưu ý về volume:** VN sử dụng "deal volume" (khối lượng khớp lệnh) thay vì total volume cho các chỉ báo liên quan đến price movement. Xem [[Volume Convention]].
+
+*Các file đơn lẻ SMA/EMA/RSI... trong index là artifact fragmentation — tất cả đều nằm trong `technical_indicators.py` và được community này bao phủ.*
+
 ## Key Concepts
 
 - **technical_indicators.py** (47 connections) — `src\analysis\technical_indicators.py`

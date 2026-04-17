@@ -2,6 +2,14 @@
 
 > 23 nodes · cohesion 0.13
 
+## Summary
+
+Thư viện nhận dạng mẫu nến Nhật. Mỗi hàm nhận danh sách `StockRecord` và trả về boolean array đánh dấu các bar khớp pattern. Kết quả được `SignalScoreV4` dùng để tính thành phần candle_score.
+
+`_candle_features()` trích xuất đặc điểm hình học của từng candle (body size, upper/lower shadow, tỷ lệ body/range). `_is_uptrend()` / `_is_downtrend()` kiểm tra ngữ cảnh xu hướng trước đó — nhiều mẫu chỉ có ý nghĩa khi xuất hiện ở đúng bối cảnh (ví dụ: hammer chỉ có giá trị sau downtrend).
+
+**Phân loại:** `BullishPatterns` (hammer, bullish_engulfing, morning_star, piercing_pattern, inverted_hammer, three_white_soldiers, rising_three_methods, doji_dragonfly) · `BearishPatterns` (hanging_man, bearish_engulfing, dark_cloud_cover, evening_star, shooting_star, three_black_crows, doji_gravestone) · `NeutralPatterns` (doji, spinning_top).
+
 ## Key Concepts
 
 - **candle_patterns.py** (24 connections) — `src\analysis\candle_patterns.py`

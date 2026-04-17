@@ -2,6 +2,12 @@
 
 > 13 nodes · cohesion 0.24
 
+## Summary
+
+Orchestrator chạy toàn bộ backtest pipeline từ đầu đến cuối. `run_backtest_chart()` và `run_backtest_report()` là hai entry points được Stock Selector App gọi từ UI thread.
+
+**Pipeline:** load stock history → `_build_signal_scores()` (chọn V4 hoặc V5 qua `_resolve_scorer()`) → `run_trade_simulation()` → tính metrics → render chart hoặc xuất CSV. `_print_trade_log()` in trade log ra console. `BacktestReportRow` + `write_backtest_report()` xử lý output CSV cho multi-symbol comparison.
+
 ## Key Concepts
 
 - **backtest_runner.py** (6 connections) — `src\backtesting\backtest_runner.py`

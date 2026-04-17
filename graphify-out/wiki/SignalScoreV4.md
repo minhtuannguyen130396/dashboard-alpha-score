@@ -2,6 +2,19 @@
 
 > God node · 15 connections · `src\analysis\signal_scoring_v4.py`
 
+## What It Is
+
+Dataclass kết quả của engine chấm điểm. Được `calculate_signal_score_v4()` tạo ra và `MarketBehaviorAnalyzer` tiêu thụ để ra quyết định BUY/SELL.
+
+**Các trường chính:**
+- `setup_score` / `trigger_score` — điểm hai cổng, [0..1], scoring engine tính độc lập
+- `final_score` — weighted combination của hai cổng
+- `regime` — chế độ thị trường hiện tại: `bull_trend`, `mild_bull`, `bullish_reversal`, `bear_trend`...
+- `label` — tóm tắt: `"buy"`, `"sell"`, `"hold"`, `"none"`
+- `blockers` — danh sách `Blocker` (hard/soft) giải thích lý do không trade
+
+**Tại sao là god node:** `SignalScoreV4` kết nối scoring engine với analyzer (IndicatorGroup1-4, BullishPatterns, BearishPatterns, ScoreConfigV4) và với output layer (MarketBehaviorSnapshot, hover_payloads). Nó là interface contract giữa tầng tính điểm và tầng quyết định.
+
 ## Connections by Relation
 
 ### calls

@@ -29,7 +29,9 @@
   src\reporting\chart_renderer_v2.py → src\analysis\market_behavior_analyzer.py
 - `TradeConfigV4` --uses--> `IndicatorGroup3`  [INFERRED]
   src\backtesting\trade_simulator.py → src\analysis\technical_indicators.py
-- `Trade simulator V4.  Single-position long-only simulator with realistic VN mar` --uses--> `IndicatorGroup3`  [INFERRED]
+- `Trade simulator V4.
+ 
+ Single-position long-only simulator with realistic VN mar` --uses--> `IndicatorGroup3`  [INFERRED]
   src\backtesting\trade_simulator.py → src\analysis\technical_indicators.py
 
 ## Hyperedges (group relationships)
@@ -68,7 +70,11 @@ Nodes (26): BearishPatterns, BullishPatterns, _LegacyIndicatorGroup4, analyze_ma
 
 ### Community 7 - "Backtest Engine"
 Cohesion: 0.1
-Nodes (13): compute_stats(), PerformanceStats, Performance metrics for backtest trade lists.  Computes the set called out in, _std(), BacktestReportRow, TradeRecord, _build_trade_record(), Trade simulator V4.  Single-position long-only simulator with realistic VN mar (+5 more)
+Nodes (13): compute_stats(), PerformanceStats, Performance metrics for backtest trade lists.
+ 
+ Computes the set called out in, _std(), BacktestReportRow, TradeRecord, _build_trade_record(), Trade simulator V4.
+ 
+ Single-position long-only simulator with realistic VN mar (+5 more)
 
 ### Community 8 - "Candlestick Patterns"
 Cohesion: 0.13
@@ -228,11 +234,13 @@ Nodes (1): Calculate On-Balance Volume.
 
 ### Community 47 - "ADL Divergence Signals"
 Cohesion: 1.0
-Nodes (1): Generate divergence signals from the ADL:         +1: bullish divergence (price
+Nodes (1): Generate divergence signals from the ADL:
+         +1: bullish divergence (price
 
 ### Community 48 - "Chaikin Money Flow"
 Cohesion: 1.0
-Nodes (1): Calculate Chaikin Money Flow             This has been tested, but the hit rate
+Nodes (1): Calculate Chaikin Money Flow
+             This has been tested, but the hit rate
 
 ### Community 49 - "Money Flow Index"
 Cohesion: 1.0
@@ -240,7 +248,8 @@ Nodes (1): Calculate the Money Flow Index.
 
 ### Community 50 - "VROC Score"
 Cohesion: 1.0
-Nodes (1): Calculate the VROC score:         - Return 1 if current volume change versus N
+Nodes (1): Calculate the VROC score:
+         - Return 1 if current volume change versus N
 
 ### Community 51 - "VWAP"
 Cohesion: 1.0
@@ -287,94 +296,14 @@ Cohesion: 1.0
 Nodes (1): Graphify Workspace Rules
 
 ## Knowledge Gaps
-- **79 isolated node(s):** `NeutralPatterns`, `IndicatorGroup5`, `IndicatorGroup6`, `Use deal volume for any indicator intended to explain price movement.`, `Calculate average volume over the most recent N sessions.` (+74 more)
-  These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `CLI Entry Point`** (2 nodes): `main.py`, `main()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Score V2 Notes`** (2 nodes): `Score V2 Implementation Notes`, `Setup / Trigger Scoring Split`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Hover Payload Pipeline`** (2 nodes): `Hover Score Details Prompt`, `Precomputed Hover Payload Pipeline`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Simple Moving Average`** (1 nodes): `Calculate the Simple Moving Average.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Exponential Moving Average`** (1 nodes): `Calculate the Exponential Moving Average.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Weighted Moving Average`** (1 nodes): `Calculate the Weighted Moving Average.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Volume Weighted MA`** (1 nodes): `Calculate the Volume Weighted Moving Average.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Hull Moving Average`** (1 nodes): `Calculate the Hull Moving Average.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Kaufman Adaptive MA`** (1 nodes): `Calculate the Kaufman Adaptive Moving Average.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Price Momentum`** (1 nodes): `Measure momentum using the close versus the close N periods ago.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Percent Momentum`** (1 nodes): `Measure momentum as a percentage change instead of an absolute delta.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Rate of Change`** (1 nodes): `Calculate the Rate of Change.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Commodity Channel Index`** (1 nodes): `Calculate the Commodity Channel Index.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Stochastic %K`** (1 nodes): `Calculate Stochastic %K.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Stochastic %D`** (1 nodes): `Calculate Stochastic %D.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Williams %R`** (1 nodes): `Calculate Williams %R.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Ultimate Oscillator`** (1 nodes): `Calculate the Ultimate Oscillator.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `MACD Histogram`** (1 nodes): `Calculate MACD, the signal line, and the histogram.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Relative Strength Index`** (1 nodes): `Calculate the Relative Strength Index (Wilder's smoothing).`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Average True Range`** (1 nodes): `Calculate the Average True Range.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Average Directional Index`** (1 nodes): `Calculate the Average Directional Index (Wilder's method).`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Bollinger Bands`** (1 nodes): `Calculate Bollinger Bands.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Keltner Channel`** (1 nodes): `Calculate the Keltner Channel.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Donchian Channel`** (1 nodes): `Calculate the Donchian Channel.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Standard Deviation`** (1 nodes): `Calculate standard deviation.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Mass Index`** (1 nodes): `Calculate the Mass Index.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Chaikin Volatility`** (1 nodes): `Calculate Chaikin Volatility.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `On Balance Volume`** (1 nodes): `Calculate On-Balance Volume.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `ADL Divergence Signals`** (1 nodes): `Generate divergence signals from the ADL:         +1: bullish divergence (price`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Chaikin Money Flow`** (1 nodes): `Calculate Chaikin Money Flow             This has been tested, but the hit rate`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Money Flow Index`** (1 nodes): `Calculate the Money Flow Index.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `VROC Score`** (1 nodes): `Calculate the VROC score:         - Return 1 if current volume change versus N`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `VWAP`** (1 nodes): `Calculate the Volume-Weighted Average Price.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Large Buyer Signals`** (1 nodes): `Check whether there is evidence of large-buyer accumulation.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Retail FOMO Signals`** (1 nodes): `Check whether retail FOMO behavior is likely present.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Advance Decline Line`** (1 nodes): `Calculate the Advance/Decline Line as the cumulative net advances.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `McClellan Oscillator`** (1 nodes): `Calculate the McClellan Oscillator as short EMA minus long EMA of net advances.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `TRIN Index`** (1 nodes): `Calculate TRIN (Arms Index): (adv/dec) / (vol_adv/vol_dec).`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Bullish Percent Index`** (1 nodes): `Calculate the Bullish Percent Index as the percentage of bullish stocks.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Pivot Support Levels`** (1 nodes): `Calculate pivot points and support/resistance levels (S1-S3, R1-R3).`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Fibonacci Levels`** (1 nodes): `Calculate Fibonacci retracement and extension levels.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Rolling Correlation`** (1 nodes): `Calculate the rolling Pearson correlation coefficient.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Workspace Rules`** (1 nodes): `Graphify Workspace Rules`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **79 isolated node(s):** Các node có ≤1 connection — chủ yếu là utility functions đơn lẻ. Phần lớn là missing cross-references trong source, không phải khoảng trống kiến trúc thực sự.
+
+- **Indicator fragmentation (Communities 22–61):** 40 single-node communities (SMA, EMA, RSI, ATR, Bollinger, MACD, Stochastic, VWAP, OBV, CMF...) bị tách ra thay vì nằm trong Community 2 "Technical Indicators". Đây là artifact của graph clustering — tất cả các hàm này đều nằm trong `src/analysis/technical_indicators.py`. Bỏ qua các wiki files đơn lẻ này, đọc [[Technical Indicators]] thay thế.
+
+- **Thin communities:** "CLI Entry Point" (0 nodes thực tế — lỗi extraction), "Score V2 Notes" (2 nodes), "Hover Payload Pipeline" (2 nodes) — quá nhỏ để có ý nghĩa kiến trúc.
+
+- **High INFERRED rate trên god nodes:** `FlowPrimitive` (34/35 edges INFERRED) và `SmartMoneyConfig` (31/32 edges INFERRED) — model suy luận hầu hết connections. Danh sách relationships là xấp xỉ, không exhaustive.
+
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_

@@ -2,6 +2,12 @@
 
 > 38 nodes · cohesion 0.08
 
+## Summary
+
+Test suite cho Smart Money Phase 1-2 (`tests/test_smart_money.py`). `_mk_record()` là factory tạo synthetic `StockRecord` dùng chung trong tất cả test cases — node kết nối nhiều nhất vì mọi test đều gọi nó.
+
+**Bao phủ:** PropPrimitiveTest (prop flow direction), ForeignPrimitiveTest (zero confidence khi no foreign activity), NormalizeTest (normalize helpers), CompositeTest (bucket aggregation, opposing signals cancel, disabled phase2 = no trigger), Phase2Test (divergence, concentration, persistence multiplier, toxic flow detection), IntegrationV5Test (end-to-end V5 run + warmup). Test suite cho Phase 3-5 (intraday, calibration) nằm trong community [[Intraday Flow Primitives]].
+
 ## Key Concepts
 
 - **_mk_record()** (22 connections) — `tests\test_smart_money.py`

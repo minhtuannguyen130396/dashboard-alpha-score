@@ -2,6 +2,14 @@
 
 > 26 nodes · cohesion 0.10
 
+## Summary
+
+Mô phỏng và đánh giá hiệu suất giao dịch. `TradeSimulatorV4` là single-position long-only simulator theo luật thị trường VN (T+3, giá trần/sàn, không short). Entry dựa trên buy signal từ `MarketBehaviorAnalyzer`; exit theo ATR stop hoặc trailing stop.
+
+`TradeRecord` lưu thông tin mỗi lệnh: entry/exit date, giá, lý do exit. `PerformanceStats` tổng hợp metrics trên danh sách trades: win rate, profit factor, Sharpe ratio, max drawdown, average hold time. `BacktestReportRow` / `write_backtest_report()` xuất kết quả ra CSV để so sánh nhiều mã.
+
+Xem thêm backtest runner tại `src/backtesting/backtest_runner.py` — điều phối toàn bộ pipeline từ dữ liệu thô đến báo cáo.
+
 ## Key Concepts
 
 - **TradeRecord** (9 connections) — `src\models\trade_record.py`

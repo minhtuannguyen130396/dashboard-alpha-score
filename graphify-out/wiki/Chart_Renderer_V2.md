@@ -2,6 +2,12 @@
 
 > 30 nodes · cohesion 0.12
 
+## Summary
+
+Tạo báo cáo HTML tương tác dùng TradingView Lightweight Charts. `render_backtest_chart()` nhận `MarketBehaviorSnapshot` và xuất một file HTML tự chứa, mở trực tiếp trên Chrome. Python side (`chart_renderer_v2.py`) build data JSON + khung HTML; JavaScript side (`chart_renderer_v2.js`) xử lý render và tương tác.
+
+**Layout chart:** Candlestick chính + volume bars + score strip (màu gradient theo signal_score) + smart money strip (setup_composite và trigger_composite). Crosshair hover kích hoạt `renderHoverPanel()` hiển thị chi tiết điểm số từng thành phần, được tính sẵn trong `hover_payloads` (precomputed — không tính lại khi hover). `redrawStrips()` và `visibleWindow()` đồng bộ scroll giữa các panel.
+
 ## Key Concepts
 
 - **chart_renderer_v2.py** (29 connections) — `src\reporting\chart_renderer_v2.py`

@@ -2,6 +2,10 @@
 
 > 5 nodes · cohesion 0.60
 
+## Summary
+
+Chart renderer thế hệ cũ (v1) dùng Plotly. Vẫn còn trong codebase nhưng đã được thay thế bởi [[Chart Renderer V2]] (TradingView Lightweight Charts). `draw_candlestick_plotly()` render candlestick cơ bản; `open_html_in_chrome()` mở file kết quả. Không dùng cho production — chỉ tham khảo khi cần debug nhanh.
+
 ## Key Concepts
 
 - **chart_renderer.py** (4 connections) — `src\reporting\chart_renderer.py`

@@ -72,6 +72,15 @@
 - [[Rolling Correlation]] — 1 nodes
 - [[Workspace Rules]] — 1 nodes
 
+## Manually Added (not in graph — missing source coverage)
+
+- [[Signal Scoring V5]] — `signal_scoring_v5.py` — V4 + Smart Money integration layer
+- [[Score Config]] — `score_config.py` — weights, thresholds, penalties cho scoring engine
+- [[Data Layer]] — `src/data/` — StockRecord, FireAnt fetcher, flow records, tick storage, feature cache
+- [[Sentiment Analysis]] — `src/sentiment/` — Flask app phân tích tâm lý từ tick, Gemini AI commentary
+
+---
+
 ## God Nodes
 (most connected concepts — the load-bearing abstractions)
 

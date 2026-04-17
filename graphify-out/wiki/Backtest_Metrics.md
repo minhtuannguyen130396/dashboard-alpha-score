@@ -2,6 +2,10 @@
 
 > 21 nodes · cohesion 0.14
 
+## Summary
+
+Tính toán performance metrics từ danh sách `TradeRecord`. `compute_stats()` trả về `PerformanceStats`: win rate, profit factor, Sharpe ratio (annualized), max drawdown, average hold days, total return. `format_stats()` format thành string để print/log. `TradeRecord` lưu thông tin mỗi lệnh: symbol, entry/exit date, price, profit, exit reason (ATR stop / trailing stop / sell signal). `TradeConfigV4` chứa các tham số của simulator (ATR multiplier, trailing stop %, max hold days).
+
 ## Key Concepts
 
 - **TradeRecord** (9 connections) — `src\models\trade_record.py`

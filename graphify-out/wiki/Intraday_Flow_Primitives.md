@@ -2,6 +2,12 @@
 
 > 69 nodes · cohesion 0.06
 
+## Summary
+
+Các primitive intraday cho Smart Money (Phase 3+), tất cả xếp vào bucket="trigger". Gồm 5 primitive chính: **OrderFlowImbalance** (OFI — chênh lệch buy vs sell volume trong bar, composite 30min + 15min cuối ngày), **BlockTrade** (lô lớn ≥ 30× average tick — dấu hiệu tổ chức), **VWAPRelationship** (giá đóng cửa so với VWAP — vị thế xu hướng trong ngày), **AuctionFlow** (áp lực bên mua/bán trong phiên ATO/ATC), **IntradayDivergence** (giá và OFI diverge).
+
+`TradeClassifier` phân loại từng tick thành buyer/seller-initiated theo 3 phương pháp: tick_rule (so sánh giá vs tick trước — mặc định cho VN vì hiếm có bid/ask), Lee-Ready (quote-rule + tick-rule fallback), BVC (Bulk Volume Classification — chia volume bar theo phân phối chuẩn). Community này chiếm phần lớn test coverage (Phase 3-5 tests).
+
 ## Key Concepts
 
 - **CalibrationTest** (17 connections) — `tests\test_smart_money_phases345.py`

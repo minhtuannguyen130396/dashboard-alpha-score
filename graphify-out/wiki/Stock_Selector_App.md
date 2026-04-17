@@ -2,6 +2,16 @@
 
 > 14 nodes · cohesion 0.23
 
+## Summary
+
+UI desktop tkinter — entry point của toàn bộ ứng dụng (`main.py` → `create_stock_selector_app()`). Dark theme (#0F172A base). Cho phép user chọn mã cổ phiếu từ danh sách JSON, đặt date range, rồi trigger 3 action chính:
+
+1. **Fetch history** — gọi FireAnt API để tải OHLCV về local
+2. **Backtest report** — chạy toàn bộ pipeline (indicators → scoring → simulation) và xuất CSV
+3. **Backtest chart** — tương tự nhưng mở HTML chart trong Chrome
+
+Tất cả action chạy trong daemon thread (`_run_in_thread`) để không block UI. `get_all_stock_records()` load metadata cổ phiếu (tên, nhóm ngành) để hỗ trợ filter sau này.
+
 ## Key Concepts
 
 - **stock_selector_app.py** (11 connections) — `src\app\stock_selector_app.py`

@@ -2,6 +2,12 @@
 
 > God node · 22 connections · `tests\test_smart_money.py`
 
+## What It Is
+
+Factory function tạo synthetic `StockRecord` dùng trong test suite Smart Money. Là god node vì **mọi test case đều gọi nó** — không phải vì nó có logic phức tạp, mà vì nó là điểm tập trung dữ liệu test.
+
+Cho phép test setup linh hoạt: tạo records với các giá trị prop flow, foreign flow, volume, giá tuỳ chỉnh để kiểm tra các edge cases (no data → zero confidence, opposing signals cancel, persistence pattern, toxic flow detection...). Xem [[Smart Money Tests]] cho danh sách đầy đủ các test cases.
+
 ## Connections by Relation
 
 ### calls

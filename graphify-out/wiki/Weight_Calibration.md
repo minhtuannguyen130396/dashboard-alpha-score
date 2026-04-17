@@ -2,6 +2,14 @@
 
 > 31 nodes · cohesion 0.08
 
+## Summary
+
+Hiệu chỉnh trọng số Smart Money bằng logistic regression (Phase 5). Thay vì dùng trọng số cố định trong config, `WeightCalibrator` huấn luyện offline trên `TrainingSignal` lịch sử (primitive values + label hit/miss), rồi chuyển đổi coefficients thành bucket weights qua `_fit_logistic()`.
+
+Hỗ trợ 4 chế độ weights: default (toàn thị trường), per-regime, per-symbol-class, và regime×class cross. `DriftMonitor` theo dõi xem signal distribution có drift sau khi deploy không — cảnh báo khi cần retrain. `ExpectedReturnBins` lưu forward return trung bình theo bin để UI hiển thị kỳ vọng lợi nhuận.
+
+Chỉ kích hoạt khi `SmartMoneyConfig.use_calibrated_weights=True`. Khi tắt, hệ thống dùng trọng số tĩnh trong config.
+
 ## Key Concepts
 
 - **weight_calibrator.py** (14 connections) — `src\analysis\smart_money\calibration\weight_calibrator.py`

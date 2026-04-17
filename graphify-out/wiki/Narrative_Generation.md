@@ -2,6 +2,10 @@
 
 > 4 nodes · cohesion 0.67
 
+## Summary
+
+Sinh text giải thích tín hiệu Smart Money bằng tiếng Anh — deterministic, không dùng LLM. `generate_narrative()` nhận `SmartMoneySignal` và trả về string mô tả label, composite score, confidence, và lý do từ các primitives. `_fmt_billion()` format số tiền VND thành dạng đọc được (B/M). Output được lưu vào `SmartMoneySignal.narrative` để hover panel hiển thị.
+
 ## Key Concepts
 
 - **narrative.py** (3 connections) — `src\analysis\smart_money\narrative.py`

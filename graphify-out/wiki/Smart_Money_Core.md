@@ -2,6 +2,12 @@
 
 > 66 nodes · cohesion 0.06
 
+## Summary
+
+Hệ thống phân tích dòng tiền tổ chức (Smart Money). Mỗi primitive (PropFlow, ForeignFlow, Divergence, Concentration, ToxicFlow) chạy độc lập và trả về một `FlowPrimitive` với value [-1..+1] và confidence [0..1]. Composite aggregator tổng hợp kết quả theo 2 bucket riêng biệt: **setup** (xu hướng dài hạn: prop + foreign flow) và **trigger** (xác nhận vào lệnh: divergence, concentration, intraday OFI/block). Scoring engine đọc trực tiếp `setup_composite` / `trigger_composite` từ `SmartMoneySignal` — không dùng merged composite (UI-only).
+
+`SmartMoneyConfig` điều phối toàn bộ: bật/tắt từng primitive theo phase, thiết lập bucket weights, cấu hình intraday timeframe, và kích hoạt calibration (Phase 5). Khi intraday=False, các intraday primitive vắng mặt và `_aggregate_bucket` tự rebalance trọng số.
+
 ## Key Concepts
 
 - **FlowPrimitive** (35 connections) — `src\analysis\smart_money\types.py`

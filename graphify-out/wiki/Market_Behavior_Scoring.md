@@ -2,6 +2,12 @@
 
 > 29 nodes · cohesion 0.24
 
+## Summary
+
+Tầng quyết định cuối cùng — kết hợp `SignalScoreV4` + `SmartMoneySignal` + candle patterns để xác định BUY/SELL tại mỗi bar. `MarketBehaviorSnapshot` lưu toàn bộ chuỗi dữ liệu theo ngày (buy/sell points, scores, smart money composites, hover payloads) để chart renderer tiêu thụ mà không cần tính lại.
+
+Logic mua (`_is_buy_signal`) chỉ kích hoạt trong các regime được phép (`bull_trend`, `mild_bull`, `bullish_reversal`) và yêu cầu cả hai gate (setup + trigger) đủ điểm, không có hard blocker. Logic bán (`_is_sale_signal`) dùng ngưỡng thấp hơn nhưng bị tắt trong bull regime — exit trong xu hướng mạnh nên để ATR/trailing stop xử lý, không phải tín hiệu bán.
+
 ## Key Concepts
 
 - **IndicatorGroup3** (19 connections) — `src\analysis\technical_indicators.py`

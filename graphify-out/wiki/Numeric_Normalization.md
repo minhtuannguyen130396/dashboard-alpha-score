@@ -2,6 +2,18 @@
 
 > 13 nodes · cohesion 0.18
 
+## Summary
+
+Bộ hàm tiện ích chuẩn hóa số dùng chung cho tất cả smart money primitives (`src/analysis/smart_money/normalize.py`). Đảm bảo mọi primitive output nằm trong miền chuẩn trước khi đưa vào composite aggregator.
+
+**Các hàm chính:**
+- `winsorize(arr, p)` — cắt p% outlier ở hai đuôi, giảm ảnh hưởng của spike bất thường
+- `rolling_zscore(arr, window)` — z-score cửa sổ trượt, có winsorize trước khi tính
+- `rank_to_signed(rank)` — ánh xạ [0..1] percentile rank → [-1..+1] tuyến tính
+- `tanh_scale(x)` — ánh xạ smooth [-1..+1] qua tanh, tránh saturation đột ngột
+- `clamp(x, lo, hi)` — giới hạn cứng
+- `safe_ratio(a, b)` — tránh chia cho zero
+
 ## Key Concepts
 
 - **normalize.py** (8 connections) — `src\analysis\smart_money\normalize.py`

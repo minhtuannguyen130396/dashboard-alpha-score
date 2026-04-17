@@ -2,6 +2,12 @@
 
 > 72 nodes · cohesion 0.05
 
+## Summary
+
+Community lớn nhất (72 nodes, cohesion thấp 0.05 — nhiều file kết hợp). Đây là view tổng thể của toàn bộ Smart Money module: primitives + composite + config + types + score_config — bao gồm cả `score_config.py` mà Smart_Money_Core.md không có.
+
+Điểm khác biệt với [[Smart Money Core]]: Smart_Money_Primitives còn bao gồm `score_config.py` (`ScoreConfigV5`, `.v4_compat()`) và nhiều intraday primitives hơn. Cohesion thấp vì graphify cluster này gom nhiều file không liên quan chặt chẽ. Đọc [[Smart Money Core]] để hiểu kiến trúc cốt lõi, đọc [[Score Config]] cho cấu hình weights/thresholds.
+
 ## Key Concepts
 
 - **SmartMoneyConfig** (42 connections) — `src\analysis\smart_money\config.py`

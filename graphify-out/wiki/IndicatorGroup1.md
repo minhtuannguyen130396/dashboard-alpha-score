@@ -2,6 +2,12 @@
 
 > God node · 15 connections · `src\analysis\technical_indicators.py`
 
+## What It Is
+
+Dataclass gom nhóm các chỉ báo kỹ thuật cho scoring engine. `IndicatorGroup1-4` là 4 bundle khác nhau, mỗi bundle phục vụ một tập sub-scorers trong `_build_score_v4()`. Cách tách nhóm này tránh tính toán lại cùng một chỉ báo nhiều lần và truyền rõ ràng chỉ những indicators mà mỗi scorer cần.
+
+Tất cả 4 group đều được `_extract()` trong `technical_indicators.py` populate từ danh sách `StockRecord`. Xem [[Technical Indicators]] để biết toàn bộ danh sách chỉ báo có trong từng group, và [[Signal Scoring V4]] để biết chúng được dùng ở bước nào.
+
 ## Connections by Relation
 
 ### contains

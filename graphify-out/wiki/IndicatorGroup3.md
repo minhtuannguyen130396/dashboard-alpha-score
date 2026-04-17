@@ -2,6 +2,10 @@
 
 > God node · 19 connections · `src\analysis\technical_indicators.py`
 
+## What It Is
+
+Xem [[IndicatorGroup1]] — cùng pattern, khác tập indicators. IndicatorGroup3 có nhiều connections nhất (19) vì nó được dùng trong cả `market_behavior_analyzer.py` lẫn `trade_simulator.py`, không chỉ trong scoring engine. Đây là bundle có scope rộng nhất trong 4 group.
+
 ## Connections by Relation
 
 ### contains

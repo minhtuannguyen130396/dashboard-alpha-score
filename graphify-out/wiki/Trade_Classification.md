@@ -2,6 +2,17 @@
 
 > 13 nodes · cohesion 0.21
 
+## Summary
+
+Phân loại từng tick hoặc bar thành buyer-initiated (+1) / seller-initiated (-1) / neutral (0). Kết quả dùng để tính OFI và các intraday primitive khác trong Smart Money.
+
+Ba phương pháp, chọn qua `SmartMoneyConfig.trade_classification_method`:
+- **tick_rule** — so sánh giá trade với giá trade trước đó (+1 nếu tăng, -1 nếu giảm, 0 nếu bằng). Đơn giản nhất, phù hợp VN vì tick feed hiếm có bid/ask.
+- **Lee-Ready** (1991) — ưu tiên quote rule (so giá vs midpoint) khi có bid/ask, fallback về tick rule. Chính xác hơn nhưng cần bid/ask.
+- **BVC** (Bulk Volume Classification) — chia volume cả bar thành buy/sell theo xác suất dựa trên price change vs std, không cần tick level. Dùng khi chỉ có bar data.
+
+`TradeClassifier` bọc cả 3 method, expose `.classify_ticks()` và `.classify_bars()`.
+
 ## Key Concepts
 
 - **trade_classifier.py** (8 connections) — `src\analysis\smart_money\tick\trade_classifier.py`

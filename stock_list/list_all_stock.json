@@ -1,0 +1,1200 @@
+[
+  {
+    "share_code": "FRT",
+    "ipo_date": "2018-04-17",
+    "name": "Cong ty Co phan Ban le Ky thuat so FPT",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung"
+    ]
+  },
+  {
+    "share_code": "MWG",
+    "ipo_date": "2014-07-07",
+    "name": "Cong ty Co phan Đau tu The Gioi Di Đong",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tieu_dung"
+    ]
+  },
+  {
+    "share_code": "PAC",
+    "ipo_date": "2006-09-11",
+    "name": "Cong ty Co phan Pin Ac quy mien Nam",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "PNJ",
+    "ipo_date": "2008-12-26",
+    "name": "Cong ty Co phan Vang bac Đa quy Phu Nhuan",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung"
+    ]
+  },
+  {
+    "share_code": "TCM",
+    "ipo_date": "2007-05-10",
+    "name": "Cong ty Co phan Det may - Đau tu - Thuong mai Thanh Cong",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "VPL",
+    "ipo_date": "2025-04-29",
+    "name": "Cong ty Co phan Vinpearl",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung"
+    ]
+  },
+  {
+    "share_code": "ANV",
+    "ipo_date": "2007-11-28",
+    "name": "Cong ty Co phan Nam Viet",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung_thiet_yeu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "BAF",
+    "ipo_date": "2021-11-24",
+    "name": "Cong ty Co phan Nong nghiep BAF Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung_thiet_yeu"
+    ]
+  },
+  {
+    "share_code": "DBC",
+    "ipo_date": "2019-08-07",
+    "name": "Cong ty Co phan Tap đoan DABACO Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung_thiet_yeu"
+    ]
+  },
+  {
+    "share_code": "HAG",
+    "ipo_date": "2008-12-15",
+    "name": "Cong ty Co phan Hoang Anh Gia Lai",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung_thiet_yeu"
+    ]
+  },
+  {
+    "share_code": "KDC",
+    "ipo_date": "2005-11-18",
+    "name": "Cong ty Co phan Tap đoan Kido",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung_thiet_yeu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "MSN",
+    "ipo_date": "2009-10-30",
+    "name": "Cong ty Co phan Tap đoan MaSan",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tieu_dung_thiet_yeu"
+    ]
+  },
+  {
+    "share_code": "NAF",
+    "ipo_date": "2015-09-28",
+    "name": "Cong ty Co phan Nafoods Group",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung_thiet_yeu"
+    ]
+  },
+  {
+    "share_code": "PAN",
+    "ipo_date": "2010-11-18",
+    "name": "Cong ty Co phan Tap đoan PAN",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung_thiet_yeu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "SAB",
+    "ipo_date": "2016-11-25",
+    "name": "Tong Cong ty Co phan Bia – Ruou – Nuoc giai khat Sai Gon",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tieu_dung_thiet_yeu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "SBT",
+    "ipo_date": "2008-02-25",
+    "name": "Cong ty Co phan Thanh Thanh Cong - Bien Hoa",
+    "san": "hose",
+    "stock_groups": [
+      "tieu_dung_thiet_yeu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "VHC",
+    "ipo_date": "2007-07-12",
+    "name": "Cong ty Co phan Vinh Hoan",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "tieu_dung_thiet_yeu"
+    ]
+  },
+  {
+    "share_code": "VNM",
+    "ipo_date": "2005-12-28",
+    "name": "Cong ty Co phan Sua Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tieu_dung_thiet_yeu"
+    ]
+  },
+  {
+    "share_code": "DCL",
+    "ipo_date": "2008-03-09",
+    "name": "Cong ty Co phan Duoc pham Cuu Long",
+    "san": "hose",
+    "stock_groups": [
+      "cham_soc_sk"
+    ]
+  },
+  {
+    "share_code": "ACB",
+    "ipo_date": "2020-11-20",
+    "name": "Ngan hang Thuong mai Co phan A Chau",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "BID",
+    "ipo_date": "2014-01-16",
+    "name": "Ngan hang Thuong mai Co phan Đau tu va Phat trien Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "BMI",
+    "ipo_date": "2008-11-04",
+    "name": "Tong Cong ty Co phan Bao Minh",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "BSI",
+    "ipo_date": "2011-07-13",
+    "name": "Cong ty Co phan Chung khoan BIDV",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "BVH",
+    "ipo_date": "2009-06-16",
+    "name": "Tap đoan Bao Viet",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "CTG",
+    "ipo_date": "2009-09-07",
+    "name": "Ngan hang Thuong mai Co phan Cong Thuong Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "CTS",
+    "ipo_date": "2017-06-13",
+    "name": "Cong ty Co phan Chung khoan Ngan hang Cong Thuong Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "EIB",
+    "ipo_date": "2009-10-20",
+    "name": "Ngan hang Thuong mai Co phan Xuat Nhap khau Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "EVF",
+    "ipo_date": "2021-12-21",
+    "name": "Cong ty Tai chinh Co phan Đien luc",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "FTS",
+    "ipo_date": "2017-05-01",
+    "name": "Cong ty Co phan Chung khoan FPT",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "HCM",
+    "ipo_date": "2009-04-20",
+    "name": "Cong ty Co phan Chung khoan Thanh pho Ho Chi Minh",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "HDB",
+    "ipo_date": "2017-12-25",
+    "name": "Ngan hang Thuong mai Co phan Phat trien Thanh pho Ho Chi Minh",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "LPB",
+    "ipo_date": "2020-10-14",
+    "name": "Ngan hang Thuong mai Co phan Loc Phat Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "MBB",
+    "ipo_date": "2011-10-18",
+    "name": "Ngan hang Thuong mai Co phan Quan Đoi",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "MSB",
+    "ipo_date": "2020-12-14",
+    "name": "Ngan hang Thuong mai Co phan Hang Hai Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "NAB",
+    "ipo_date": "2023-12-21",
+    "name": "Ngan hang Thuong mai Co phan Nam A",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "OCB",
+    "ipo_date": "2020-12-29",
+    "name": "Ngan hang Thuong mai Co phan Phuong Đong",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "ORS",
+    "ipo_date": "2021-07-10",
+    "name": "Cong ty Co phan Chung khoan Tien Phong",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "SHB",
+    "ipo_date": "2021-09-20",
+    "name": "Ngan hang Thuong mai Co phan Sai Gon – Ha Noi",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "SSB",
+    "ipo_date": "2020-12-30",
+    "name": "Ngan hang Thuong mai Co phan Đong Nam A",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "SSI",
+    "ipo_date": "2007-10-18",
+    "name": "Cong ty Co phan Chung khoan SSI",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "STB",
+    "ipo_date": "2006-02-06",
+    "name": "Ngan hang Thuong mai Co phan Sai Gon Thuong Tin",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "TCB",
+    "ipo_date": "2018-05-22",
+    "name": "Ngan hang Thuong mai Co phan Ky Thuong Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "TPB",
+    "ipo_date": "2018-03-22",
+    "name": "Ngan hang Thuong mai Co phan Tien Phong",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "VAB",
+    "ipo_date": "2025-06-26",
+    "name": "Ngan hang Thuong mai Co phan Viet A",
+    "san": "hose",
+    "stock_groups": [
+      "tai_chinh",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "VCB",
+    "ipo_date": "2009-12-06",
+    "name": "Ngan hang Thuong mai Co phan Ngoai Thuong Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "VCI",
+    "ipo_date": "2017-06-30",
+    "name": "Cong ty Co phan Chung khoan Vietcap",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "VIB",
+    "ipo_date": "2020-10-16",
+    "name": "Ngan hang Thuong mai Co phan Quoc te Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "VIX",
+    "ipo_date": "2020-12-23",
+    "name": "Cong ty Co phan Chung khoan VIX",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "VND",
+    "ipo_date": "2017-10-08",
+    "name": "Cong ty Co phan Chung khoan VNDIRECT",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "VPB",
+    "ipo_date": "2017-08-08",
+    "name": "Ngan hang Thuong mai Co phan Viet Nam Thinh Vuong",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "tai_chinh"
+    ]
+  },
+  {
+    "share_code": "CRC",
+    "ipo_date": "2018-07-08",
+    "name": "Cong ty Co phan Create Capital Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "nguyen_vat_lieu"
+    ]
+  },
+  {
+    "share_code": "CSV",
+    "ipo_date": "2015-02-24",
+    "name": "Cong ty Co phan Hoa chat co ban mien Nam",
+    "san": "hose",
+    "stock_groups": [
+      "nguyen_vat_lieu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "CTI",
+    "ipo_date": "2010-10-02",
+    "name": "Cong ty Co phan Đau tu Phat trien Cuong Thuan IDICO",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "nguyen_vat_lieu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "DCM",
+    "ipo_date": "2015-03-20",
+    "name": "Cong ty Co phan Phan bon Dau khi Ca Mau",
+    "san": "hose",
+    "stock_groups": [
+      "nguyen_vat_lieu"
+    ]
+  },
+  {
+    "share_code": "DGC",
+    "ipo_date": "2020-07-07",
+    "name": "Cong ty Co phan Tap đoan Hoa chat Đuc Giang",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "nguyen_vat_lieu"
+    ]
+  },
+  {
+    "share_code": "DPM",
+    "ipo_date": "2007-10-29",
+    "name": "Tong Cong ty Phan bon va Hoa chat Dau khi - Cong ty Co phan",
+    "san": "hose",
+    "stock_groups": [
+      "nguyen_vat_lieu"
+    ]
+  },
+  {
+    "share_code": "DPR",
+    "ipo_date": "2007-11-22",
+    "name": "Cong ty Co phan Cao su Đong Phu",
+    "san": "hose",
+    "stock_groups": [
+      "nguyen_vat_lieu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "GVR",
+    "ipo_date": "2019-12-30",
+    "name": "Tap đoan Cong nghiep Cao su Viet Nam - Cong ty Co phan",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "nguyen_vat_lieu"
+    ]
+  },
+  {
+    "share_code": "HPG",
+    "ipo_date": "2007-10-31",
+    "name": "Cong ty Co phan Tap đoan Hoa Phat",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "nguyen_vat_lieu"
+    ]
+  },
+  {
+    "share_code": "HSG",
+    "ipo_date": "2008-05-11",
+    "name": "Cong ty Co phan Tap đoan Hoa Sen",
+    "san": "hose",
+    "stock_groups": [
+      "nguyen_vat_lieu"
+    ]
+  },
+  {
+    "share_code": "KSB",
+    "ipo_date": "2009-12-17",
+    "name": "Cong ty Co phan Khoang san va Xay dung Binh Duong",
+    "san": "hose",
+    "stock_groups": [
+      "nguyen_vat_lieu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "NKG",
+    "ipo_date": "2011-10-01",
+    "name": "Cong ty Co phan Thep Nam Kim",
+    "san": "hose",
+    "stock_groups": [
+      "nguyen_vat_lieu"
+    ]
+  },
+  {
+    "share_code": "PHR",
+    "ipo_date": "2009-04-08",
+    "name": "Cong ty Co phan Cao su Phuoc Hoa",
+    "san": "hose",
+    "stock_groups": [
+      "nguyen_vat_lieu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "SMC",
+    "ipo_date": "2006-09-29",
+    "name": "Cong ty Co phan Đau tu Thuong mai SMC",
+    "san": "hose",
+    "stock_groups": [
+      "nguyen_vat_lieu",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "GAS",
+    "ipo_date": "2012-04-27",
+    "name": "Tong Cong ty Khi Viet Nam - Cong ty Co phan",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "dich_vu_tien_ich"
+    ]
+  },
+  {
+    "share_code": "GEG",
+    "ipo_date": "2019-08-28",
+    "name": "Cong ty Co phan Đien Gia Lai",
+    "san": "hose",
+    "stock_groups": [
+      "dich_vu_tien_ich"
+    ]
+  },
+  {
+    "share_code": "NT2",
+    "ipo_date": "2015-02-06",
+    "name": "Cong ty Co phan Đien luc Dau khi Nhon Trach 2",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "dich_vu_tien_ich",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "POW",
+    "ipo_date": "2018-12-17",
+    "name": "Tong Cong ty Đien luc Dau khi Viet Nam - CTCP",
+    "san": "hose",
+    "stock_groups": [
+      "dich_vu_tien_ich"
+    ]
+  },
+  {
+    "share_code": "TTA",
+    "ipo_date": "2020-08-18",
+    "name": "Cong ty Co phan Đau tu Xay dung va Phat trien Truong Thanh",
+    "san": "hose",
+    "stock_groups": [
+      "dich_vu_tien_ich",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "BSR",
+    "ipo_date": "2024-12-12",
+    "name": "Cong ty Co phan Loc hoa dau Binh Son",
+    "san": "hose",
+    "stock_groups": [
+      "nang_luong"
+    ]
+  },
+  {
+    "share_code": "PLX",
+    "ipo_date": "2017-04-14",
+    "name": "Tap đoan Xang dau Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "nang_luong"
+    ]
+  },
+  {
+    "share_code": "PVD",
+    "ipo_date": "2006-11-15",
+    "name": "Tong Cong ty Co phan Khoan va Dich vu Khoan Dau khi",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "nang_luong"
+    ]
+  },
+  {
+    "share_code": "PVT",
+    "ipo_date": "2007-11-27",
+    "name": "Tong Cong ty Co phan Van tai Dau khi",
+    "san": "hose",
+    "stock_groups": [
+      "nang_luong"
+    ]
+  },
+  {
+    "share_code": "BMP",
+    "ipo_date": "2006-12-06",
+    "name": "Cong ty Co phan Nhua Binh Minh",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "CII",
+    "ipo_date": "2006-02-24",
+    "name": "Cong ty Co phan Đau tu Ha tang Ky thuat TP.HCM",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "CTD",
+    "ipo_date": "2009-09-12",
+    "name": "Cong ty Co phan Xay dung COTECCONS",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "CTR",
+    "ipo_date": "2021-12-27",
+    "name": "Tong Cong ty Co phan Cong trinh Viettel",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "DIG",
+    "ipo_date": "2009-12-08",
+    "name": "Tong Cong ty Co phan Đau tu Phat trien Xay dung",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "DPG",
+    "ipo_date": "2018-09-05",
+    "name": "Cong ty Co phan Tap đoan Đat Phuong",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "GEE",
+    "ipo_date": "2024-02-07",
+    "name": "Cong ty Co phan Đien luc Gelex",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "GEX",
+    "ipo_date": "2017-12-28",
+    "name": "Cong ty Co phan Tap đoan GELEX",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "GMD",
+    "ipo_date": "2002-08-03",
+    "name": "Cong ty Co phan GEMADEPT",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "HAH",
+    "ipo_date": "2015-01-21",
+    "name": "Cong ty Co phan Van tai va Xep do Hai An",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "HDG",
+    "ipo_date": "2010-01-19",
+    "name": "Cong ty Co phan Tap đoan Ha Đo",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "HHS",
+    "ipo_date": "2011-12-13",
+    "name": "Cong ty Co phan Đau tu Dich vu Hoang Huy",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "HHV",
+    "ipo_date": "2021-12-23",
+    "name": "Cong ty Co phan Đau tu Ha tang Giao thong Đeo Ca",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "HVN",
+    "ipo_date": "2019-11-04",
+    "name": "Tong Cong ty Hang khong Viet Nam - CTCP",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "IJC",
+    "ipo_date": "2010-05-04",
+    "name": "Cong ty Co phan Phat trien Ha tang Ky thuat",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "LCG",
+    "ipo_date": "2008-10-17",
+    "name": "Cong ty Co phan Lizen",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "PC1",
+    "ipo_date": "2016-09-11",
+    "name": "Cong ty Co phan Tap đoan PC1",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "PET",
+    "ipo_date": "2007-08-13",
+    "name": "Tong Cong ty Co phan Dich vu Tong hop Dau khi",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "REE",
+    "ipo_date": "2000-07-18",
+    "name": "Cong ty Co phan Co Đien Lanh",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "SHI",
+    "ipo_date": "2009-12-23",
+    "name": "Cong ty Co phan Quoc te Son Ha",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "SZC",
+    "ipo_date": "2018-12-18",
+    "name": "Cong ty Co phan Sonadezi Chau Đuc",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "TCH",
+    "ipo_date": "2016-09-15",
+    "name": "Cong ty Co phan Đau tu Dich vu Tai chinh Hoang Huy",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "TV2",
+    "ipo_date": "2019-04-22",
+    "name": "Cong ty Co phan Tu van Xay dung Đien 2",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "VCG",
+    "ipo_date": "2020-12-16",
+    "name": "Tong Cong ty Co phan Xuat nhap khau va Xay dung Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "VGC",
+    "ipo_date": "2019-04-26",
+    "name": "Tong Cong ty Viglacera - CTCP",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "VJC",
+    "ipo_date": "2017-06-02",
+    "name": "Cong ty Co phan Hang khong VietJet",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "VOS",
+    "ipo_date": "2010-08-30",
+    "name": "Cong ty Co phan Van tai Bien Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "VSC",
+    "ipo_date": "2007-12-12",
+    "name": "Cong ty Co phan Container Viet Nam",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "VTP",
+    "ipo_date": "2023-12-21",
+    "name": "Tong Cong ty Co phan Buu chinh Viettel",
+    "san": "hose",
+    "stock_groups": [
+      "cong_nghiep"
+    ]
+  },
+  {
+    "share_code": "DGW",
+    "ipo_date": "2015-07-24",
+    "name": "Cong ty Co phan The Gioi So",
+    "san": "hose",
+    "stock_groups": [
+      "cntt"
+    ]
+  },
+  {
+    "share_code": "FPT",
+    "ipo_date": "2006-11-21",
+    "name": "Cong ty Co phan FPT",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "cntt"
+    ]
+  },
+  {
+    "share_code": "AGG",
+    "ipo_date": "2019-12-17",
+    "name": "Cong ty Co phan Đau tu va Phat trien Bat đong san An Gia",
+    "san": "hose",
+    "stock_groups": [
+      "bds",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "BCM",
+    "ipo_date": "2020-07-31",
+    "name": "Tong Cong ty Đau tu va Phat trien Cong nghiep - CTCP",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "bds",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "DXG",
+    "ipo_date": "2009-12-14",
+    "name": "Cong ty Co phan Tap đoan Đat Xanh",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "bds"
+    ]
+  },
+  {
+    "share_code": "DXS",
+    "ipo_date": "2021-06-25",
+    "name": "Cong ty Co phan Dich vu Bat đong san Đat Xanh",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "bds",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "HDC",
+    "ipo_date": "2007-09-25",
+    "name": "Cong ty Co phan Phat trien nha Ba Ria – Vung Tau",
+    "san": "hose",
+    "stock_groups": [
+      "bds"
+    ]
+  },
+  {
+    "share_code": "KBC",
+    "ipo_date": "2009-07-12",
+    "name": "Tong Cong ty Phat trien Đo Thi Kinh Bac – Cong ty Co phan",
+    "san": "hose",
+    "stock_groups": [
+      "bds"
+    ]
+  },
+  {
+    "share_code": "KDH",
+    "ipo_date": "2010-01-21",
+    "name": "Cong ty Co phan Đau tu va Kinh doanh nha Khang Đien",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "bds"
+    ]
+  },
+  {
+    "share_code": "KHG",
+    "ipo_date": "2021-06-30",
+    "name": "Cong ty Co phan Tap đoan Khai Hoan Land",
+    "san": "hose",
+    "stock_groups": [
+      "bds"
+    ]
+  },
+  {
+    "share_code": "KOS",
+    "ipo_date": "2019-08-07",
+    "name": "Cong ty Co phan KOSY",
+    "san": "hose",
+    "stock_groups": [
+      "bds",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "NLG",
+    "ipo_date": "2013-01-25",
+    "name": "Cong ty Co phan Đau tu Nam Long",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "bds"
+    ]
+  },
+  {
+    "share_code": "NVL",
+    "ipo_date": "2016-12-19",
+    "name": "Cong ty Co phan Tap đoan Đau tu Đia oc No Va",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "bds"
+    ]
+  },
+  {
+    "share_code": "PDR",
+    "ipo_date": "2010-07-22",
+    "name": "Cong ty Co phan Phat trien Bat đong san Phat Đat",
+    "san": "hose",
+    "stock_groups": [
+      "large_cap",
+      "bds"
+    ]
+  },
+  {
+    "share_code": "SCR",
+    "ipo_date": "2016-06-10",
+    "name": "Cong ty Co phan Đia oc Sai Gon Thuong Tin",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "bds",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "SIP",
+    "ipo_date": "2023-06-29",
+    "name": "Cong ty Co phan Đau tu Sai Gon VRG",
+    "san": "hose",
+    "stock_groups": [
+      "bds",
+      "small_cap"
+    ]
+  },
+  {
+    "share_code": "SJS",
+    "ipo_date": "2006-11-05",
+    "name": "Cong ty Co phan SJ Group",
+    "san": "hose",
+    "stock_groups": [
+      "mid_cap",
+      "bds"
+    ]
+  },
+  {
+    "share_code": "VHM",
+    "ipo_date": "2018-07-05",
+    "name": "Cong ty Co phan Vinhomes",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "bds"
+    ]
+  },
+  {
+    "share_code": "VIC",
+    "ipo_date": "2007-07-09",
+    "name": "Tap đoan Vingroup - Cong ty Co phan",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "bds"
+    ]
+  },
+  {
+    "share_code": "VPI",
+    "ipo_date": "2018-05-31",
+    "name": "Cong ty Co phan Phat trien Bat đong san Van Phu",
+    "san": "hose",
+    "stock_groups": [
+      "bds"
+    ]
+  },
+  {
+    "share_code": "VRE",
+    "ipo_date": "2017-10-25",
+    "name": "Cong ty Co phan Vincom Retail",
+    "san": "hose",
+    "stock_groups": [
+      "vn30",
+      "bds"
+    ]
+  }
+]

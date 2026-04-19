@@ -1,0 +1,51 @@
+# Backtest Metrics
+
+> 21 nodes · cohesion 0.14
+
+## Summary
+
+Tính toán performance metrics từ danh sách `TradeRecord`. `compute_stats()` trả về `PerformanceStats`: win rate, profit factor, Sharpe ratio (annualized), max drawdown, average hold days, total return. `format_stats()` format thành string để print/log. `TradeRecord` lưu thông tin mỗi lệnh: symbol, entry/exit date, price, profit, exit reason (ATR stop / trailing stop / sell signal). `TradeConfigV4` chứa các tham số của simulator (ATR multiplier, trailing stop %, max hold days).
+
+## Key Concepts
+
+- **TradeRecord** (9 connections) — `src\models\trade_record.py`
+- **metrics.py** (5 connections) — `src\backtesting\metrics.py`
+- **trade_record.py** (5 connections) — `src\models\trade_record.py`
+- **trade_simulator.py** (5 connections) — `src\backtesting\trade_simulator.py`
+- **run_trade_simulation()** (5 connections) — `src\backtesting\trade_simulator.py`
+- **PerformanceStats** (4 connections) — `src\backtesting\metrics.py`
+- **TradeConfigV4** (4 connections) — `src\backtesting\trade_simulator.py`
+- **compute_stats()** (3 connections) — `src\backtesting\metrics.py`
+- **_build_trade_record()** (3 connections) — `src\backtesting\trade_simulator.py`
+- **Trade simulator V4.  Single-position long-only simulator with realistic VN mar** (3 connections) — `src\backtesting\trade_simulator.py`
+- **Emit a TradeRecord for ``fraction`` of a unit position.      ``profit`` is sca** (3 connections) — `src\backtesting\trade_simulator.py`
+- **Single-position simulator. Returns trades, sale-marker list, buy-marker list.** (3 connections) — `src\backtesting\trade_simulator.py`
+- **Performance metrics for backtest trade lists.  Computes the set called out in** (2 connections) — `src\backtesting\metrics.py`
+- **_std()** (2 connections) — `src\backtesting\metrics.py`
+- **_trail_k()** (2 connections) — `src\backtesting\trade_simulator.py`
+- **format_stats()** (1 connections) — `src\backtesting\metrics.py`
+- **.as_dict()** (1 connections) — `src\backtesting\metrics.py`
+- **stock_price()** (1 connections) — `src\models\trade_record.py`
+- **stock_symbol()** (1 connections) — `src\models\trade_record.py`
+- **stock_value()** (1 connections) — `src\models\trade_record.py`
+- **stock_volume()** (1 connections) — `src\models\trade_record.py`
+
+## Relationships
+
+- No strong cross-community connections detected
+
+## Source Files
+
+- `src\backtesting\metrics.py`
+- `src\backtesting\trade_simulator.py`
+- `src\models\trade_record.py`
+
+## Audit Trail
+
+- EXTRACTED: 46 (72%)
+- INFERRED: 18 (28%)
+- AMBIGUOUS: 0 (0%)
+
+---
+
+*Part of the graphify knowledge wiki. See [[index]] to navigate.*

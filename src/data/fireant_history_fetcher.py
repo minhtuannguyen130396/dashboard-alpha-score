@@ -14,7 +14,7 @@ TOKEN_FILE = Path("access_token.txt")
 BASE_URL_TEMPLATE = "https://restv2.fireant.vn/symbols/{share_code}/historical-quotes"
 IS_WEEKLY_FETCH = True
 DATE_START_FETCH = "2010-01-01"
-LIST_ALL_STOCK = "trung gian\\list_all_stock.json"
+LIST_ALL_STOCK = "stock_list\\list_all_stock.json"
 MAX_FETCH_WORKERS = 8
 
 JWT_PATTERN = re.compile(r"eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9._-]+\.[A-Za-z0-9._-]+")

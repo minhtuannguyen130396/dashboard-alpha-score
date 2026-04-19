@@ -5,13 +5,23 @@ import os
 from pathlib import Path
 from typing import List, Optional
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent  # project root
+if os.name == "nt":
+    BASE_DIR = Path(__file__).resolve().parent.parent.parent  # project root
+else:
+    BASE_DIR = Path("/home/tuan/alpha_score/data_ingestion/data")
+
+
+def _data_root(base_dir: Path) -> Path:
+    """Resolve the actual data directory across OS-specific base paths."""
+    if os.name == "nt":
+        return base_dir / "data"
+    return base_dir
 
 
 def load_ticks(symbol: str, date_str: str, base_dir: Path = BASE_DIR) -> List[dict]:
     """Load tick JSONL from data/<SYMBOL>/updatetrades/<YEAR>/<date>.json"""
     year = date_str[:4]
-    filepath = base_dir / "data" / symbol / "updatetrades" / year / f"{date_str}.json"
+    filepath = _data_root(base_dir) / symbol / "updatetrades" / year / f"{date_str}.json"
     ticks = []
     if not filepath.exists():
         return ticks
@@ -30,7 +40,7 @@ def load_daily_ref(symbol: str, year_month: str, base_dir: Path = BASE_DIR) -> L
     """
     year = year_month[:4]
     filename = f"{year_month}-01.json"
-    filepath = base_dir / "data" / symbol / year / filename
+    filepath = _data_root(base_dir) / symbol / year / filename
     if not filepath.exists():
         return []
     with open(filepath, "r", encoding="utf-8") as f:
@@ -68,7 +78,7 @@ def detect_session(ticks: List[dict]) -> str:
 
 def list_available_dates(symbol: str, base_dir: Path = BASE_DIR) -> List[str]:
     """Return sorted list of dates that have tick data for a symbol."""
-    tick_dir = base_dir / "data" / symbol / "updatetrades"
+    tick_dir = _data_root(base_dir) / symbol / "updatetrades"
     dates = []
     if not tick_dir.exists():
         return dates
@@ -82,7 +92,7 @@ def list_available_dates(symbol: str, base_dir: Path = BASE_DIR) -> List[str]:
 
 def list_symbols_with_ticks(base_dir: Path = BASE_DIR) -> List[str]:
     """Return sorted list of symbols that have updatetrades data."""
-    data_dir = base_dir / "data"
+    data_dir = _data_root(base_dir)
     symbols = []
     if not data_dir.exists():
         return symbols

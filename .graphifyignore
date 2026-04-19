@@ -6,7 +6,7 @@ data/
 csv_files/
 data_tick_features/
 chart/
-stock_list/
+trung gian/
 Documents/*
 !Documents/smart_money/
 !Documents/smart_money/**

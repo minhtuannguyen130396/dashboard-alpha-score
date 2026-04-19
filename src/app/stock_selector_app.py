@@ -14,7 +14,7 @@ from tkcalendar import DateEntry
 from src.backtesting.backtest_runner import run_backtest_chart, run_backtest_report
 from src.data.fireant_history_fetcher import fetch_all_stock_history
 
-LIST_ALL = "stock_list\\list_all_stock.json"
+LIST_ALL = "trung gian\\list_all_stock.json"
 
 CLR = {
     "bg": "#0F172A",

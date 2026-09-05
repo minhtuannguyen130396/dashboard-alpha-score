@@ -1,6 +1,6 @@
 """
 Stock Selector App - v2
-Modern tkinter UI for backtesting and data management.
+Modern tkinter UI for charting and data management.
 Backward-compatible: `create_app` alias kept at module level.
 """
 
@@ -11,7 +11,7 @@ from tkinter import ttk
 
 from tkcalendar import DateEntry
 
-from src.backtesting.backtest_runner import run_backtest_chart, run_backtest_report
+from src.reporting.chart_runner import run_chart
 from src.data.fireant_history_fetcher import fetch_all_stock_history
 
 LIST_ALL = "stock_list\\list_all_stock.json"
@@ -326,30 +326,6 @@ def create_stock_selector_app():
             end_cal.get_date().strftime("%Y-%m-%d"),
         )
 
-    # ── Strategy card ─────────────────────────────────────────────────────────
-    strat_card = _card(right, accent=CLR["primary"])
-    strat_card.pack(fill="x", pady=(0, 8))
-
-    _section_header(strat_card, "⚙  Scoring Engine")
-
-    version_var = tk.StringVar(value="v4")
-    strat_row = tk.Frame(strat_card, bg=CLR["surface"])
-    strat_row.pack(fill="x", padx=12, pady=(0, 12))
-    for label, val in (("V4 (legacy)", "v4"), ("V5 (smart-money)", "v5")):
-        tk.Radiobutton(
-            strat_row,
-            text=label,
-            variable=version_var,
-            value=val,
-            bg=CLR["surface"],
-            activebackground=CLR["surface"],
-            font=("Segoe UI", 10),
-            anchor="w",
-        ).pack(side="left", padx=(0, 12))
-
-    def _version() -> str:
-        return version_var.get()
-
     # ── Actions card ──────────────────────────────────────────────────────────
     act_card = _card(right, accent=CLR["success"])
     act_card.pack(fill="x", pady=(0, 8))
@@ -365,20 +341,9 @@ def create_stock_selector_app():
         if not sym:
             return
         start_date, end_date = _dates()
-        ver = _version()
-        _set_status(f"⏳ Charting {sym} ({ver.upper()}) ...", CLR["warning"])
+        _set_status(f"⏳ Charting {sym} ...", CLR["warning"])
         _run_in_thread(
-            lambda: run_backtest_chart(sym, start_date, end_date, version=ver),
-            on_done=lambda: _set_status("● Ready"),
-        )
-
-    def _btn_test_all():
-        pool = _get_pool()
-        start_date, end_date = _dates()
-        ver = _version()
-        _set_status(f"⏳ Testing {len(pool)} stocks ({ver.upper()}) ...", CLR["warning"])
-        _run_in_thread(
-            lambda: run_backtest_report(pool, start_date, end_date, version=ver),
+            lambda: run_chart(sym, start_date, end_date),
             on_done=lambda: _set_status("● Ready"),
         )
 
@@ -397,7 +362,6 @@ def create_stock_selector_app():
         )
 
     _action_btn(act_card, "📊  Chart Selected", CLR["primary"], CLR["primary_dk"], _btn_run_chart)
-    _action_btn(act_card, "🧪  Test All Stocks", CLR["success"], CLR["success_dk"], _btn_test_all)
 
     # Divider with label
     sep_frame = tk.Frame(act_card, bg=CLR["surface"])

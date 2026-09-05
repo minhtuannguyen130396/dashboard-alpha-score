@@ -5,8 +5,12 @@ __pycache__/
 .mypy_cache/
 
 /chart/
+/reports/
+/forecasts/
 /csv_files/
 /data/
+/news/
+/news_raw/
 
 access_token.txt
 

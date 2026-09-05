@@ -1,0 +1,794 @@
+[
+  {
+    "ticker": "VIC",
+    "avg_deal_value": 996676363000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VHM",
+    "avg_deal_value": 634213082666.6666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VIX",
+    "avg_deal_value": 630089524166.6666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SHB",
+    "avg_deal_value": 614307141833.3334,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HPG",
+    "avg_deal_value": 534201261666.6667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SSI",
+    "avg_deal_value": 526028276833.3333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "FPT",
+    "avg_deal_value": 465529046666.6667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "TCB",
+    "avg_deal_value": 427891284333.3333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VPB",
+    "avg_deal_value": 371500009166.6667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "ACB",
+    "avg_deal_value": 316231000833.3333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "MWG",
+    "avg_deal_value": 315681395333.3333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PNJ",
+    "avg_deal_value": 308308686333.3333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "GEX",
+    "avg_deal_value": 303102610000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "MBB",
+    "avg_deal_value": 302300806500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VNM",
+    "avg_deal_value": 302136160000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "MSN",
+    "avg_deal_value": 289384062666.6667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HDB",
+    "avg_deal_value": 279520420666.6667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VCB",
+    "avg_deal_value": 274979278000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "STB",
+    "avg_deal_value": 272195008333.33334,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "CTG",
+    "avg_deal_value": 253547750833.33334,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "BSR",
+    "avg_deal_value": 244157434000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VCI",
+    "avg_deal_value": 211949288333.33334,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "NVL",
+    "avg_deal_value": 211776249500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VND",
+    "avg_deal_value": 198917137166.66666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "LPB",
+    "avg_deal_value": 176270280166.66666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VJC",
+    "avg_deal_value": 158313353000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "BID",
+    "avg_deal_value": 154810700166.66666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VSC",
+    "avg_deal_value": 151046205166.66666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VRE",
+    "avg_deal_value": 142318135500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HCM",
+    "avg_deal_value": 137516669666.66666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "CII",
+    "avg_deal_value": 133012064166.66667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "TPB",
+    "avg_deal_value": 124586804500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DXG",
+    "avg_deal_value": 120778948966.66667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VPI",
+    "avg_deal_value": 119118743333.33333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "GAS",
+    "avg_deal_value": 116626254666.66667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "GMD",
+    "avg_deal_value": 110526567666.66667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "EIB",
+    "avg_deal_value": 106255313000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "MSB",
+    "avg_deal_value": 100894295166.66667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PLX",
+    "avg_deal_value": 99347871166.66667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "KDH",
+    "avg_deal_value": 98360803833.33333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "GEE",
+    "avg_deal_value": 98297388333.33333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DIG",
+    "avg_deal_value": 97715187766.66667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "POW",
+    "avg_deal_value": 92118623333.33333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PDR",
+    "avg_deal_value": 87206750500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VIB",
+    "avg_deal_value": 83876676000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "FRT",
+    "avg_deal_value": 75814500000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PVT",
+    "avg_deal_value": 75499456333.33333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "TCX",
+    "avg_deal_value": 67575035666.666664,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DCM",
+    "avg_deal_value": 67447519833.333336,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "TCH",
+    "avg_deal_value": 67066726333.333336,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "GVR",
+    "avg_deal_value": 64821931666.666664,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PVD",
+    "avg_deal_value": 64360126500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "ORS",
+    "avg_deal_value": 64163365666.666664,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "BAF",
+    "avg_deal_value": 60145324833.333336,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DPM",
+    "avg_deal_value": 59355330666.666664,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "MCH",
+    "avg_deal_value": 53355190333.333336,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "NLG",
+    "avg_deal_value": 52728379166.666664,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "CTS",
+    "avg_deal_value": 49379308000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VPL",
+    "avg_deal_value": 47759201666.666664,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DGW",
+    "avg_deal_value": 46708792833.333336,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VCG",
+    "avg_deal_value": 46530670333.333336,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PC1",
+    "avg_deal_value": 37930213666.666664,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "IDC",
+    "avg_deal_value": 37820461666.666664,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "KBC",
+    "avg_deal_value": 37415103833.333336,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "BCM",
+    "avg_deal_value": 37179135333.333336,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VTP",
+    "avg_deal_value": 35156206666.666664,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SAB",
+    "avg_deal_value": 34650762000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SSB",
+    "avg_deal_value": 33419751500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DBC",
+    "avg_deal_value": 32531116500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DCL",
+    "avg_deal_value": 31143252333.333332,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HAH",
+    "avg_deal_value": 30289932833.333332,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HAG",
+    "avg_deal_value": 29294238166.666668,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DGC",
+    "avg_deal_value": 28713049833.333332,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "BVH",
+    "avg_deal_value": 28659833000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HHV",
+    "avg_deal_value": 27209417400.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "OCB",
+    "avg_deal_value": 26045907200.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "FTS",
+    "avg_deal_value": 25585994333.333332,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HSG",
+    "avg_deal_value": 25455139300.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "CTD",
+    "avg_deal_value": 22696012666.666668,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "CTR",
+    "avg_deal_value": 22499594333.333332,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HDG",
+    "avg_deal_value": 21658969500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HVN",
+    "avg_deal_value": 21459895000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "NAB",
+    "avg_deal_value": 21129628333.333332,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "REE",
+    "avg_deal_value": 20767169000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PHR",
+    "avg_deal_value": 20496195000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "NAF",
+    "avg_deal_value": 20034356500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "EVF",
+    "avg_deal_value": 19279328833.333332,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "NKG",
+    "avg_deal_value": 19208561166.666668,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "TCM",
+    "avg_deal_value": 18992832000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VHC",
+    "avg_deal_value": 18272782000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SBT",
+    "avg_deal_value": 18132523833.333332,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "BMP",
+    "avg_deal_value": 17694901666.666668,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "IJC",
+    "avg_deal_value": 16436789933.333334,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VGC",
+    "avg_deal_value": 16365398500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HDC",
+    "avg_deal_value": 15573272333.333334,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PET",
+    "avg_deal_value": 15264410500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "KHG",
+    "avg_deal_value": 13279648266.666666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "KSB",
+    "avg_deal_value": 12882316666.666666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "BSI",
+    "avg_deal_value": 12501016166.666666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DPG",
+    "avg_deal_value": 12150254833.333334,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "NT2",
+    "avg_deal_value": 11743492000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DXS",
+    "avg_deal_value": 11510669166.666666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HHS",
+    "avg_deal_value": 11032523600.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "ANV",
+    "avg_deal_value": 9972979666.666666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SZC",
+    "avg_deal_value": 8787498666.666666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "CSV",
+    "avg_deal_value": 8723742000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PAN",
+    "avg_deal_value": 8527685833.333333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "DPR",
+    "avg_deal_value": 7203125666.666667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "KOS",
+    "avg_deal_value": 7095940000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "LCG",
+    "avg_deal_value": 6265703800.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "KDC",
+    "avg_deal_value": 6108640500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VAB",
+    "avg_deal_value": 5540296700.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SCR",
+    "avg_deal_value": 5536346133.333333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VOS",
+    "avg_deal_value": 4544206833.333333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SIP",
+    "avg_deal_value": 4369668833.333333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "CTI",
+    "avg_deal_value": 3655620166.6666665,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "TTA",
+    "avg_deal_value": 3653396166.6666665,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "TV2",
+    "avg_deal_value": 3164617500.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "AGG",
+    "avg_deal_value": 3161952666.6666665,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SHI",
+    "avg_deal_value": 2778562333.3333335,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SJS",
+    "avg_deal_value": 2614929833.3333335,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "GEG",
+    "avg_deal_value": 2600908833.3333335,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "CRC",
+    "avg_deal_value": 2498150400.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PAC",
+    "avg_deal_value": 2267506666.6666665,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "SMC",
+    "avg_deal_value": 1449426933.3333333,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "NDN",
+    "avg_deal_value": 1376247000.0,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "BMI",
+    "avg_deal_value": 929121833.3333334,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "HLD",
+    "avg_deal_value": 534941666.6666667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "VCP",
+    "avg_deal_value": 319106666.6666667,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "BCC",
+    "avg_deal_value": 203811666.66666666,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PFL",
+    "avg_deal_value": 60838666.666666664,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  },
+  {
+    "ticker": "PMC",
+    "avg_deal_value": 54089333.333333336,
+    "sessions": 30,
+    "last_date": "2026-08-25T00:00:00"
+  }
+]

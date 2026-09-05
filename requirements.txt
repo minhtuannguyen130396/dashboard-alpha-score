@@ -1,0 +1,22 @@
+# Local desktop app + Claude Code plugin (vn-ta MCP server).
+# The Linux data-ingestion box uses requirements.server.txt instead.
+
+# data + math
+pandas
+python-dateutil
+requests
+
+# charting
+matplotlib          # PNG charts for src/ta/render.py
+plotly
+
+# desktop UI
+tkcalendar
+
+# web apps
+flask
+XlsxWriter
+google-generativeai # src/sentiment/ai_analyst.py
+
+# Claude Code plugin — MCP server (needs the 2.x API: MCPServer, not FastMCP)
+mcp>=2.0.0

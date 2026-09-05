@@ -31,6 +31,22 @@
 
   const priceEl = document.getElementById('price-chart');
   const volEl   = document.getElementById('volume-chart');
+  const rsiEl   = document.getElementById('rsi-chart');
+  const macdEl  = document.getElementById('macd-chart');
+  const adxEl   = document.getElementById('adx-chart');
+
+  // ── Pane geometry ────────────────────────────────────────────────────────
+  // The heights live here, not in the stylesheet, and are written onto the
+  // elements. Lightweight Charts draws the time axis *inside* the height it is
+  // given, so a chart created taller than its box — 520 in a 480 box, which is
+  // what this was — loses exactly its date row to `overflow: hidden`.
+  // Only the price pane and the bottom pane carry an axis: the panes scroll
+  // together, so a date row under each of them is the same row three times.
+  const PANE_H = { price: 500, volume: 132, rsi: 100, macd: 100, adx: 128 };
+  const PANE_EL = { price: priceEl, volume: volEl, rsi: rsiEl, macd: macdEl, adx: adxEl };
+  Object.keys(PANE_H).forEach(function (key) {
+    PANE_EL[key].style.height = PANE_H[key] + 'px';
+  });
 
   // ── Price chart ──────────────────────────────────────────────────────────
   const pc = LightweightCharts.createChart(priceEl, {
@@ -41,7 +57,7 @@
     handleScale:     scaleOpts(),
     rightPriceScale: { borderColor: BORDER },
     timeScale:       { borderColor: BORDER, timeVisible: false },
-    height: 520,
+    height: PANE_H.price,
     width:  priceEl.offsetWidth,
   });
 
@@ -65,26 +81,158 @@
     priceLineVisible: false, lastValueVisible: true, title: 'EMA50',
   }).setData(EMA50_DATA);
 
-  // Markers (all types merged and sorted by time)
-  const markers = [
-    ...BUY_MARKERS.map(m => ({
-      time: m.time, position: 'belowBar', color: '#3fb950',
-      shape: 'arrowUp', size: 1, text: m.score.toFixed(1),
-    })),
-    ...SELL_MARKERS.map(m => ({
-      time: m.time, position: 'aboveBar', color: '#f85149',
-      shape: 'arrowDown', size: 1, text: m.score.toFixed(1),
-    })),
-    ...ACTUAL_BUY_MARKERS.map(m => ({
-      time: m.time, position: 'belowBar', color: '#2962ff',
-      shape: 'circle', size: 0.8, text: '',
-    })),
-    ...ACTUAL_SELL_MARKERS.map(m => ({
-      time: m.time, position: 'aboveBar', color: '#e3b341',
-      shape: 'circle', size: 0.8, text: '',
-    })),
-  ].sort((a, b) => (a.time < b.time ? -1 : a.time > b.time ? 1 : 0));
-  cs.setMarkers(markers);
+  // ── Structure overlays: trendlines, box edges, measured target ───────────
+  // Each entry is a two-point line; Lightweight Charts joins them straight
+  // through, which is exactly a projected trendline.
+  const OVERLAYS = (typeof OVERLAY_DATA !== 'undefined' && OVERLAY_DATA && OVERLAY_DATA.lines) || [];
+  OVERLAYS.forEach(function (ov) {
+      pc.addLineSeries({
+        color: ov.color,
+        lineWidth: 2,
+        lineStyle: ov.dashed ? LS.Dashed : LS.Solid,
+        // The price axis has room for a handle ("#2", "L1"), not a sentence —
+        // a dozen full titles bury the right quarter of the chart. The name and
+        // the reasoning both live in the hover tooltip below.
+        title: ov.label || ov.title,
+        priceLineVisible: false,
+        lastValueVisible: true,
+        crosshairMarkerVisible: false,
+      }).setData(ov.points);
+    });
+
+  // ── Bounding box as a real rectangle ─────────────────────────────────────
+  // The box covers a span of bars, not the whole timeline: drawing only its two
+  // edges (as the dashed projections below do) says where the levels are but
+  // not when the range formed. Lightweight Charts has no rectangle series, so
+  // the shape is painted by a series primitive — the supported way to draw into
+  // the pane — anchored on logical indices so it survives being scrolled off.
+  const BOXES = (typeof OVERLAY_DATA !== 'undefined' && OVERLAY_DATA && OVERLAY_DATA.boxes) || [];
+
+  function boxPrimitive(box) {
+    function xAt(index, time) {
+      const ts = pc.timeScale();
+      const byIndex = ts.logicalToCoordinate(index);
+      if (byIndex !== null && byIndex !== undefined) return byIndex;
+      return ts.timeToCoordinate(time);
+    }
+
+    const paneView = {
+      zOrder: function () { return 'bottom'; },   // candles stay readable on top
+      renderer: function () {
+        return {
+          draw: function (target) {
+            const x0 = xAt(box.start_index, box.start);
+            const x1 = xAt(box.end_index, box.end);
+            const yTop = cs.priceToCoordinate(box.top);
+            const yBot = cs.priceToCoordinate(box.bottom);
+            if (x0 === null || x1 === null || yTop === null || yBot === null) return;
+            if (x0 === undefined || x1 === undefined || yTop === undefined || yBot === undefined) return;
+            target.useBitmapCoordinateSpace(function (scope) {
+              const ctx = scope.context;
+              const hr = scope.horizontalPixelRatio;
+              const vr = scope.verticalPixelRatio;
+              const left   = Math.round(Math.min(x0, x1) * hr);
+              const right  = Math.round(Math.max(x0, x1) * hr);
+              const top    = Math.round(Math.min(yTop, yBot) * vr);
+              const bottom = Math.round(Math.max(yTop, yBot) * vr);
+              ctx.save();
+              ctx.fillStyle = box.fill || 'rgba(227, 179, 65, 0.14)';
+              ctx.fillRect(left, top, right - left, bottom - top);
+              ctx.strokeStyle = box.color || '#e3b341';
+              ctx.lineWidth = Math.max(1, Math.round(1.4 * hr));
+              ctx.strokeRect(left, top, right - left, bottom - top);
+              if (box.id) {
+                ctx.fillStyle = box.color || '#e3b341';
+                ctx.font = 'bold ' + Math.round(11 * vr) + 'px -apple-system, Segoe UI, sans-serif';
+                ctx.textBaseline = 'bottom';
+                ctx.fillText(box.id, left + 4 * hr, top - 3 * vr);
+              }
+              ctx.restore();
+            });
+          },
+        };
+      },
+    };
+
+    return {
+      updateAllViews: function () {},          // coords are read at draw time
+      paneViews: function () { return [paneView]; },
+    };
+  }
+
+  if (BOXES.length && typeof cs.attachPrimitive === 'function') {
+    BOXES.forEach(function (b) { cs.attachPrimitive(boxPrimitive(b)); });
+  }
+
+  // ── Structure read-out — the same notes as the chart overlays, in prose ──
+  (function renderStructurePanel() {
+    const panel = document.getElementById('structure-panel');
+    const data = typeof OVERLAY_DATA !== 'undefined' ? OVERLAY_DATA : null;
+    const brief = (data && data.brief) || [];
+    if (!panel || !brief.length) return;
+
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+    // The notes come through as markdown; **bold** is the only markup used.
+    function fmt(s) {
+      return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    }
+
+    let html = '';
+    if (data.pattern) html += '<div class="sp-pattern">' + esc(data.pattern) + '</div>';
+    html += '<ul class="sp-list">';
+    brief.forEach(function (b) { html += '<li>' + fmt(b) + '</li>'; });
+    html += '</ul>';
+    panel.innerHTML = html;
+    panel.classList.add('visible');
+  })();
+
+  // ── Overlay hover tooltip — why this trendline / box edge is drawn ───────
+  // Hit-tested in pixel space (endpoint coords via timeToCoordinate /
+  // priceToCoordinate, interpolated at the cursor's x) so it matches exactly
+  // what Lightweight Charts renders, regardless of business-day gaps.
+  const overlayTooltip = document.getElementById('overlay-tooltip');
+  const OVERLAY_HIT_PX = 6;
+
+  function handleOverlayHover(param) {
+    if (!param.point || !OVERLAYS.length) { overlayTooltip.style.display = 'none'; return; }
+    const cursorX = param.point.x;
+    const cursorY = param.point.y;
+    let best = null;
+    let bestDist = OVERLAY_HIT_PX;
+    OVERLAYS.forEach(function (ov) {
+      if (!ov.note || !ov.points || ov.points.length < 2) return;
+      const p0 = ov.points[0], p1 = ov.points[1];
+      const x0 = pc.timeScale().timeToCoordinate(p0.time);
+      const x1 = pc.timeScale().timeToCoordinate(p1.time);
+      const y0 = cs.priceToCoordinate(p0.value);
+      const y1 = cs.priceToCoordinate(p1.value);
+      if (x0 === null || x1 === null || y0 === null || y1 === null) return;
+      const lo = Math.min(x0, x1) - 2, hi = Math.max(x0, x1) + 2;
+      if (cursorX < lo || cursorX > hi) return;
+      const t = x1 === x0 ? 0 : (cursorX - x0) / (x1 - x0);
+      const yAt = y0 + t * (y1 - y0);
+      const dist = Math.abs(yAt - cursorY);
+      if (dist < bestDist) { bestDist = dist; best = ov; }
+    });
+    if (!best) { overlayTooltip.style.display = 'none'; return; }
+    overlayTooltip.innerHTML = '<div class="ot-title">' + best.title + '</div>' + best.note;
+    overlayTooltip.style.borderLeftColor = best.color;
+    overlayTooltip.style.display = 'block';
+    const rect = priceEl.getBoundingClientRect();
+    let left = rect.left + cursorX + 14;
+    let top = rect.top + cursorY + 14;
+    const tw = overlayTooltip.offsetWidth, th = overlayTooltip.offsetHeight;
+    if (left + tw > window.innerWidth - 8) left = rect.left + cursorX - tw - 14;
+    if (top + th > window.innerHeight - 8) top = rect.top + cursorY - th - 14;
+    overlayTooltip.style.left = left + 'px';
+    overlayTooltip.style.top = top + 'px';
+  }
+
+  pc.subscribeCrosshairMove(handleOverlayHover);
 
   // ── Volume chart ─────────────────────────────────────────────────────────
   const vc = LightweightCharts.createChart(volEl, {
@@ -93,9 +241,12 @@
     crosshair:       crosshairOpts(),
     handleScroll:    scrollOpts(),
     handleScale:     scaleOpts(),
-    rightPriceScale: { borderColor: BORDER, scaleMargins: { top: 0.05, bottom: 0 } },
-    timeScale:       { borderColor: BORDER, timeVisible: true },
-    height: 170,
+    // A little room under the bars: with the baseline flush to the bottom edge
+    // the last-value tag (which sits at the latest bar's height, usually low)
+    // hangs over the edge and gets clipped.
+    rightPriceScale: { borderColor: BORDER, scaleMargins: { top: 0.05, bottom: 0.08 } },
+    timeScale:       { borderColor: BORDER, timeVisible: false, visible: false },
+    height: PANE_H.volume,
     width:  volEl.offsetWidth,
   });
 
@@ -111,11 +262,7 @@
     priceLineVisible: false, lastValueVisible: false,
   }).setData(EMA_VOLUME_DATA);
 
-  // ── RSI chart ────────────────────────────────────────────────────────────
-  const rsiEl  = document.getElementById('rsi-chart');
-  const macdEl = document.getElementById('macd-chart');
-  const adxEl  = document.getElementById('adx-chart');
-
+  // ── Indicator subcharts ──────────────────────────────────────────────────
   function makeSub(el, h) {
     return LightweightCharts.createChart(el, {
       layout: layoutOpts(),
@@ -130,12 +277,12 @@
     });
   }
 
-  const smEl = document.getElementById('smartmoney-chart');
-  const smc  = makeSub(smEl, 110);
-  const rc = makeSub(rsiEl, 100);
-  const mc = makeSub(macdEl, 100);
-  const ac = makeSub(adxEl, 100);
-  ac.applyOptions({ timeScale: { visible: true, borderColor: BORDER, timeVisible: true } });
+  const rc = makeSub(rsiEl, PANE_H.rsi);
+  const mc = makeSub(macdEl, PANE_H.macd);
+  const ac = makeSub(adxEl, PANE_H.adx);
+  // The bottom pane is the one that closes the stack, so it keeps a date row —
+  // and is built taller than the others to pay for it out of its own height.
+  ac.applyOptions({ timeScale: { visible: true, borderColor: BORDER, timeVisible: false } });
 
   // Build sub-series from HOVER_DATA keeping full timeline.
   // Null/undefined indicators become whitespace data points ({ time } only)
@@ -148,17 +295,6 @@
     });
   }
 
-  // Smart-money series come out of d.smart_money rather than d.indicators
-  function _smSer(key) {
-    return (HOVER_DATA || []).map(d => {
-      const v = d.smart_money && d.smart_money[key];
-      if (v === null || v === undefined) return { time: d.date };
-      return { time: d.date, value: parseFloat(v) };
-    });
-  }
-  const smSetupSer   = _smSer('setup_composite');
-  const smTriggerSer = _smSer('trigger_composite');
-
   const rsiSer      = _ser('rsi14');
   const macdLineSer = _ser('macd_line');
   const macdSigSer  = _ser('macd_sig');
@@ -169,30 +305,6 @@
     return { time: d.date, value: fv, color: fv >= 0 ? '#26a69a' : '#ef5350' };
   });
   const adxSer = _ser('adx');
-
-  // Smart money composite lines + 0 reference
-  const smSetupSeries = smc.addLineSeries({
-    color: '#26a69a', lineWidth: 2, title: 'SM Setup',
-    priceLineVisible: false, lastValueVisible: true,
-  });
-  smSetupSeries.setData(smSetupSer);
-  const smTriggerSeries = smc.addLineSeries({
-    color: '#bc8cff', lineWidth: 2, title: 'SM Trigger',
-    priceLineVisible: false, lastValueVisible: true,
-  });
-  smTriggerSeries.setData(smTriggerSer);
-  const smZero = smc.addLineSeries({
-    color: '#6e7681', lineWidth: 1, lineStyle: LS.Dotted,
-    priceLineVisible: false, lastValueVisible: false,
-  });
-  if (smSetupSer.length > 0) {
-    smZero.setData(smSetupSer.map(p => ({ time: p.time, value: 0 })));
-  }
-  // Lock the visible range to ±1 so an all-zero series still shows the zero line
-  smc.priceScale('right').applyOptions({ autoScale: false });
-  smSetupSeries.applyOptions({
-    autoscaleInfoProvider: () => ({ priceRange: { minValue: -1, maxValue: 1 } }),
-  });
 
   const rsiSeries = rc.addLineSeries({ color: '#e3b341', lineWidth: 2, title: 'RSI14', priceLineVisible: false });
   rsiSeries.setData(rsiSer);
@@ -215,7 +327,7 @@
   if (adxSer.some(p => p.value !== undefined)) adx20.setData(adxSer.map(p => p.value !== undefined ? { time: p.time, value: 20 } : { time: p.time }));
 
   // ── Sync all charts via logical range ───────────────────────────────────────
-  const charts = [pc, vc, smc, rc, mc, ac];
+  const charts = [pc, vc, rc, mc, ac];
   let _lock = false;
   function syncRange(src, dst) {
     src.timeScale().subscribeVisibleLogicalRangeChange(r => {
@@ -231,7 +343,7 @@
   // Drag on chart body OR time axis → pan all charts left/right
   // Vertical mouse wheel             → zoom around cursor position
   // Horizontal wheel / trackpad swipe → ignored
-  const allChartEls = [priceEl, volEl, smEl, rsiEl, macdEl, adxEl];
+  const allChartEls = [priceEl, volEl, rsiEl, macdEl, adxEl];
   let _drag = null;
 
   allChartEls.forEach(el => {
@@ -291,26 +403,6 @@
     allChartEls.forEach(el => { el.style.cursor = 'grab'; });
   });
 
-  // ── Info bar (always visible, updates on crosshair hover over signal) ──────
-  const infoBar = document.getElementById('info-bar');
-  const MARKER_MAP = {};
-  BUY_MARKERS.forEach(m  => { MARKER_MAP[m.time + '_b'] = { label: '▲ Mua',  score: m.score, reason: m.reason, cls: 'pos' }; });
-  SELL_MARKERS.forEach(m => { MARKER_MAP[m.time + '_s'] = { label: '▼ Bán',  score: m.score, reason: m.reason, cls: 'neg' }; });
-
-  function renderInfoBar(info) {
-    infoBar.innerHTML =
-      '<span class="' + info.cls + '">' + info.label + '</span>' +
-      '&nbsp;&nbsp;Score: <b>' + info.score.toFixed(2) + '</b>' +
-      (info.reason ? '&nbsp;&nbsp;·&nbsp;&nbsp;<span style="color:#8b949e">' + info.reason + '</span>' : '');
-  }
-
-  // Default: last signal (buy or sell) by time
-  const allSignals = [
-    ...BUY_MARKERS.map(m  => ({ time: m.time, info: MARKER_MAP[m.time + '_b'] })),
-    ...SELL_MARKERS.map(m => ({ time: m.time, info: MARKER_MAP[m.time + '_s'] })),
-  ].sort((a, b) => (a.time < b.time ? -1 : a.time > b.time ? 1 : 0));
-  if (allSignals.length > 0) renderInfoBar(allSignals[allSignals.length - 1].info);
-
   // ── Hover panel ──────────────────────────────────────────────────────────
   const hoverPanel = document.getElementById('hover-panel');
 
@@ -329,54 +421,16 @@
     if (v >= 1e3) return (v / 1e3).toFixed(0) + 'K';
     return String(v);
   }
-  function _bar(v) {
-    if (v === null || v === undefined) return _n(v);
-    const pct = Math.min(Math.round(v * 100), 100);
-    const col  = pct >= 70 ? '#3fb950' : pct >= 55 ? '#e3b341' : '#6e7681';
-    return `<span class="hp-bar" style="width:${pct}px;background:${col}"></span>${pct}%`;
-  }
-  function _srow(label, v) {
-    if (v === undefined || v === null) return '';
-    return `<div class="hp-row"><span class="hp-k">${label}</span><span class="hp-v">${_bar(v)}</span></div>`;
-  }
 
   function renderHoverPanel(d) {
-    const p   = d.price        || {};
-    const ind = d.indicators   || {};
-    const sc  = d.scores       || {};
-    const sig = d.signals      || {};
-
-    const isBuy  = sig.is_buy;
-    const isSale = sig.is_sale;
-    const sigClr = isBuy ? '#3fb950' : (isSale ? '#f85149' : '#8b949e');
-    const sigLbl = isBuy ? '▲ MUA'  : (isSale ? '▼ BÁN'  : '—');
-    const regime = (sig.regime || '').replace(/_/g, ' ');
+    const p   = d.price      || {};
+    const ind = d.indicators || {};
 
     const rvolClr = p.rvol >= 1.5 ? '#3fb950' : p.rvol >= 1.2 ? '#e3b341' : '#c9d1d9';
     const rsiV    = ind.rsi14 !== null && ind.rsi14 !== undefined ? parseFloat(ind.rsi14) : null;
     const rsiClr  = rsiV === null ? '#484f58' : rsiV < 30 ? '#3fb950' : rsiV > 70 ? '#f85149' : '#c9d1d9';
     const adxV    = ind.adx !== null && ind.adx !== undefined ? parseFloat(ind.adx) : null;
     const adxClr  = adxV === null ? '#484f58' : adxV >= 25 ? '#3fb950' : adxV >= 20 ? '#e3b341' : '#f85149';
-
-    const sm = d.smart_money || {};
-    const smLabel = (sm.label || 'neutral');
-    const SM_TXT_COLOR = {
-      strong_bull: '#3fb950', bull: '#26a69a', neutral: '#8b949e',
-      bear: '#ef5350', strong_bear: '#b02a37', toxic: '#d63384',
-    };
-    const smClr = SM_TXT_COLOR[smLabel] || '#8b949e';
-    function _smRow(label, v) {
-      if (v === undefined || v === null) return '';
-      const num = parseFloat(v);
-      const col = num > 0 ? '#3fb950' : num < 0 ? '#f85149' : '#8b949e';
-      return `<div class="hp-row"><span class="hp-k">${label}</span>` +
-             `<span class="hp-v" style="color:${col}">${num.toFixed(3)}</span></div>`;
-    }
-
-    const reasons  = (d.reasons  || []).join(' · ') || '—';
-    const blkHtml  = (d.blockers || []).length
-      ? `<span style="color:#f85149">${d.blockers.join('<br>')}</span>`
-      : '<span style="color:#3fb950">—</span>';
 
     hoverPanel.className = 'visible';
     hoverPanel.innerHTML = `
@@ -408,32 +462,6 @@
         <div class="hp-row"><span class="hp-k">SW Lo 10d</span><span class="hp-v">${_n(ind.sw_lo10)}</span></div>
         <div class="hp-row"><span class="hp-k">SW Hi 20d</span><span class="hp-v">${_n(ind.sw_hi20)}</span></div>
         <div class="hp-row"><span class="hp-k">SW Lo 20d</span><span class="hp-v">${_n(ind.sw_lo20)}</span></div>
-      </div>
-      <div class="hp-col">
-        <div class="hp-head">Điểm số &amp; Tín hiệu</div>
-        ${_srow('Final',       sc.final)}
-        ${_srow('Setup',       sc.setup)}
-        ${_srow('Trigger',     sc.trigger)}
-        <div class="hp-sep"></div>
-        ${_srow('Candle',      sc.candle)}
-        ${_srow('Trend',       sc.trend)}
-        ${_srow('Momentum',    sc.momentum)}
-        ${_srow('Volume',      sc.volume)}
-        ${_srow('Structure',   sc.structure)}
-        ${_srow('Confirm',     sc.confirmation)}
-        ${_srow('Context',     sc.context)}
-        ${_srow('Pivot',       sc.pivot)}
-        <div class="hp-sep"></div>
-        <div style="color:${smClr};font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase">Smart money · ${smLabel.replace(/_/g,' ')}</div>
-        ${_smRow('SM Setup',   sm.setup_composite)}
-        ${_smRow('SM Trigger', sm.trigger_composite)}
-        ${_srow('SM Conf',     sm.confidence)}
-        ${sm.narrative ? `<div class="hp-tag" style="margin-top:3px">${sm.narrative}</div>` : ''}
-        <div class="hp-sep"></div>
-        <div style="color:${sigClr};font-weight:700;font-size:13px">${sigLbl}${regime ? ' · ' + regime : ''}</div>
-        <div class="hp-tag" style="margin-top:3px">${reasons}</div>
-        <div class="hp-sep"></div>
-        <div class="hp-tag">Blockers: ${blkHtml}</div>
       </div>`;
   }
 
@@ -445,27 +473,23 @@
     if (!time) return;
     const d = HOVER_MAP[time];
     if (d) renderHoverPanel(d);
-    const info = MARKER_MAP[time + '_b'] || MARKER_MAP[time + '_s'];
-    if (info) renderInfoBar(info);
   }
 
   // ── Crosshair sync across all charts ────────────────────────────────────────
   // O(1) time→value maps so setCrosshairPosition gets accurate price per subchart
   const _chMap = new Map(CANDLE_DATA.map(p => [p.time, p.close]));
   const _vMap  = new Map(VOLUME_DATA.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
-  const _smMap = new Map(smSetupSer.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
   const _rMap  = new Map(rsiSer.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
   const _mMap  = new Map(macdLineSer.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
   const _aMap  = new Map(adxSer.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
 
   // Each entry: { chart, series (for setCrosshairPosition), priceMap }
   const xhTargets = [
-    { chart: pc,  series: cs,            map: _chMap },
-    { chart: vc,  series: vcSeries,      map: _vMap  },
-    { chart: smc, series: smSetupSeries, map: _smMap },
-    { chart: rc,  series: rsiSeries,     map: _rMap  },
-    { chart: mc,  series: macdSeries,    map: _mMap  },
-    { chart: ac,  series: adxSeries,     map: _aMap  },
+    { chart: pc, series: cs,         map: _chMap },
+    { chart: vc, series: vcSeries,   map: _vMap  },
+    { chart: rc, series: rsiSeries,  map: _rMap  },
+    { chart: mc, series: macdSeries, map: _mMap  },
+    { chart: ac, series: adxSeries,  map: _aMap  },
   ];
 
   let _xhLock = false;
@@ -493,131 +517,32 @@
     chart.subscribeClick(param => updateSelectedDay(param.time));
   });
 
-  // ── Visible-range helper ─────────────────────────────────────────────────
-  // Both heatmap strips use the price chart's logical range so they pan/zoom
-  // in lockstep with the candle/volume/indicator subcharts. Returns the
-  // float window {from, to} clamped against the actual data bounds.
-  function visibleWindow() {
-    const data = HOVER_DATA || [];
-    const n = data.length;
-    if (!n) return null;
-    const r = pc.timeScale().getVisibleLogicalRange();
-    let from = r ? r.from : 0;
-    let to   = r ? r.to   : n - 1;
-    if (from < 0) from = 0;
-    if (to > n - 1) to = n - 1;
-    if (to <= from) return null;
-    return { from, to, n };
-  }
-
-  // ── Score strip heatmap ──────────────────────────────────────────────────
-  function drawScoreStrip() {
-    const canvas = document.getElementById('score-strip-canvas');
-    if (!canvas) return;
-    const W = canvas.parentElement.clientWidth;
-    const H = 26;
-    canvas.width = W;
-    canvas.height = H;
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#0b0e14';
-    ctx.fillRect(0, 0, W, H);
-
-    const data = HOVER_DATA || [];
-    const win = visibleWindow();
-    if (!win) return;
-    const cw = W / (win.to - win.from);
-    const i0 = Math.max(0, Math.floor(win.from));
-    const i1 = Math.min(data.length - 1, Math.ceil(win.to));
-
-    for (let i = i0; i <= i1; i++) {
-      const x = (i - win.from) * cw;
-      const sc = (data[i].scores || {}).final;
-      if (sc !== undefined && sc !== null) {
-        const v = Math.max(0, Math.min(1, sc));
-        let col;
-        if (v < 0.4)        col = `rgba(110,118,129,${0.25 + v})`;
-        else if (v < 0.65)  col = `rgba(227,179,65,${0.5 + (v - 0.4)})`;
-        else                col = `rgba(63,185,80,${0.6 + (v - 0.65)})`;
-        ctx.fillStyle = col;
-        ctx.fillRect(x, 0, Math.ceil(cw), H);
-      }
-      const sig = data[i].signals || {};
-      if (sig.is_buy) {
-        ctx.fillStyle = '#3fb950';
-        ctx.fillRect(x, H - 4, Math.ceil(cw), 4);
-      } else if (sig.is_sale) {
-        ctx.fillStyle = '#f85149';
-        ctx.fillRect(x, 0, Math.ceil(cw), 4);
-      }
-    }
-  }
-
-  // ── Smart-money label strip ──────────────────────────────────────────────
-  const SM_COLOR = {
-    strong_bull: '#1e8449',
-    bull:        '#3fb950',
-    neutral:     '#30363d',
-    bear:        '#ef5350',
-    strong_bear: '#b02a37',
-    toxic:       '#d63384',
-  };
-  function drawSmStrip() {
-    const canvas = document.getElementById('smartmoney-strip-canvas');
-    if (!canvas) return;
-    const W = canvas.parentElement.clientWidth;
-    const H = 22;
-    canvas.width = W;
-    canvas.height = H;
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#0b0e14';
-    ctx.fillRect(0, 0, W, H);
-
-    const data = HOVER_DATA || [];
-    const win = visibleWindow();
-    if (!win) return;
-    const cw = W / (win.to - win.from);
-    const i0 = Math.max(0, Math.floor(win.from));
-    const i1 = Math.min(data.length - 1, Math.ceil(win.to));
-
-    for (let i = i0; i <= i1; i++) {
-      const x = (i - win.from) * cw;
-      const sm = data[i].smart_money || {};
-      const lbl = sm.label || 'neutral';
-      const conf = Math.max(0, Math.min(1, parseFloat(sm.confidence) || 0));
-      const baseCol = SM_COLOR[lbl] || SM_COLOR.neutral;
-      const alpha = lbl === 'neutral' ? 0.35 : (0.35 + 0.65 * conf);
-      ctx.fillStyle = _hexToRgba(baseCol, alpha);
-      ctx.fillRect(x, 0, Math.ceil(cw), H);
-    }
-  }
-
-  // Redraw both strips whenever the price chart's visible range changes
-  // (pan, zoom, sync from another subchart). We only need to subscribe on
-  // the price chart because every other chart pushes its range back into pc
-  // through syncRange().
-  function redrawStrips() { drawScoreStrip(); drawSmStrip(); }
-  pc.timeScale().subscribeVisibleLogicalRangeChange(redrawStrips);
-  drawScoreStrip();
-  function _hexToRgba(hex, a) {
-    const h = hex.replace('#', '');
-    const r = parseInt(h.substring(0, 2), 16);
-    const g = parseInt(h.substring(2, 4), 16);
-    const b = parseInt(h.substring(4, 6), 16);
-    return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
-  }
-  drawSmStrip();
+  // ── Keep each box exactly as tall as the chart inside it ─────────────────
+  // Lightweight Charts lays its panes out in a <table> that ends up a few
+  // pixels taller than the height it was handed (one border per row), and the
+  // boxes clip with `overflow: hidden` for their rounded corners — so those few
+  // pixels came off the bottom of the time axis and cut the dates in half.
+  // The table is observed rather than measured once: the axis row gets its
+  // height on a later render pass, so a single reading taken right after
+  // createChart is still the old, too-short number.
+  Object.keys(PANE_EL).forEach(function (key) {
+    const el = PANE_EL[key];
+    const table = el.querySelector('table');
+    if (!table) return;
+    new ResizeObserver(function () {
+      const real = Math.ceil(table.getBoundingClientRect().height);
+      if (real && real !== el.clientHeight) el.style.height = real + 'px';
+    }).observe(table);
+  });
 
   // ── Responsive resize ────────────────────────────────────────────────────
   new ResizeObserver(() => {
     const w = document.getElementById('charts-container').clientWidth;
-    pc.resize(w, 480);
-    vc.resize(w, 130);
-    smc.resize(w, 110);
-    rc.resize(w, 100);
-    mc.resize(w, 100);
-    ac.resize(w, 100);
-    drawScoreStrip();
-    drawSmStrip();
+    pc.resize(w, PANE_H.price);
+    vc.resize(w, PANE_H.volume);
+    rc.resize(w, PANE_H.rsi);
+    mc.resize(w, PANE_H.macd);
+    ac.resize(w, PANE_H.adx);
   }).observe(document.getElementById('charts-container'));
 
   // ── Initial fit + sync ───────────────────────────────────────────────────
@@ -627,7 +552,6 @@
     const r = pc.timeScale().getVisibleLogicalRange();
     if (r) {
       vc.timeScale().setVisibleLogicalRange(r);
-      smc.timeScale().setVisibleLogicalRange(r);
       rc.timeScale().setVisibleLogicalRange(r);
       mc.timeScale().setVisibleLogicalRange(r);
       ac.timeScale().setVisibleLogicalRange(r);

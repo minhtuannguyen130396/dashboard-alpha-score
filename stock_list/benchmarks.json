@@ -1,0 +1,20 @@
+[
+  {
+    "share_code": "VNINDEX",
+    "ipo_date": "2000-07-28",
+    "name": "VN-Index — chi so chung san HOSE",
+    "san": "hose",
+    "kind": "index",
+    "role": "market_benchmark",
+    "note": "KHONG PHAI MOT MA CO PHIEU. Day la thi truong chung, dung lam moc do mot ma manh hay yeu hon thi truong bao nhieu (relative strength, beta, abnormal return). Khong bao gio dua vao ro quet/xep hang: khong ai mua duoc chi so, va tron vao la lech moi thong ke ca ro."
+  },
+  {
+    "share_code": "VN30",
+    "ipo_date": "2012-02-06",
+    "name": "VN30 — ro 30 co phieu von hoa/thanh khoan lon nhat HOSE",
+    "san": "hose",
+    "kind": "index",
+    "role": "futures_underlying",
+    "note": "KHONG PHAI MOT MA CO PHIEU. Day la TAI SAN CO SO cua hop dong tuong lai VN30F1M: gia thanh toan phien dao han tinh theo chinh chi so nay. Moi phep do phai sinh (basis, beta, suc manh tuong doi cua mot ma truoc dong tien phai sinh) deu lay VN30 lam moc — KHONG phai VNINDEX. Hai chi so nay lech nhau vi VNINDEX co ca tram ma nho khong nam trong ro phai sinh."
+  }
+]

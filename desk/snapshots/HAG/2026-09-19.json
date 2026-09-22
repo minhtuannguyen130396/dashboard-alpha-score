@@ -1,0 +1,39 @@
+{
+ "symbol": "HAG",
+ "snapshot_date": "2026-09-19",
+ "composed": 16953.808780265023,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 12844.549103639198,
+   "weight_pct": 50.7913784936551
+  },
+  {
+   "name": "P/E",
+   "price": 38751.42164035163,
+   "weight_pct": 2.804123545883576
+  },
+  {
+   "name": "P/B",
+   "price": 15886.076706341757,
+   "weight_pct": 40.83160585024481
+  },
+  {
+   "name": "Graham 1",
+   "price": 356055.5686974869,
+   "weight_pct": 0.20138685986287896
+  },
+  {
+   "name": "Graham 2",
+   "price": 388711.4175190222,
+   "weight_pct": 0.18382675743958804
+  },
+  {
+   "name": "Graham 3",
+   "price": 27470.910986612373,
+   "weight_pct": 5.187678492914035
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 2217.0
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "GEE",
+ "snapshot_date": "2026-09-19",
+ "composed": 66400.79500931656,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 58148.627591535565,
+   "weight_pct": 68.56464530770378
+  },
+  {
+   "name": "P/E",
+   "price": 111418.7712073375,
+   "weight_pct": 8.92630016950242
+  },
+  {
+   "name": "P/B",
+   "price": 14971.028193277878,
+   "weight_pct": 4.241023552236613
+  },
+  {
+   "name": "Graham 1",
+   "price": 626593.0208300805,
+   "weight_pct": 0.7482216497659541
+  },
+  {
+   "name": "Graham 2",
+   "price": 681400.2298133527,
+   "weight_pct": 0.6817706346613172
+  },
+  {
+   "name": "Graham 3",
+   "price": 39297.95369428013,
+   "weight_pct": 16.83803868612992
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 1003.6
+}

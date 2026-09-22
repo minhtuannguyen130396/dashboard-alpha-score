@@ -1,0 +1,39 @@
+{
+ "symbol": "BCM",
+ "snapshot_date": "2026-09-19",
+ "composed": 43350.0,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 39212.05659456051,
+   "weight_pct": 31.82412865446026
+  },
+  {
+   "name": "P/E",
+   "price": 40784.67413067493,
+   "weight_pct": 51.33322236922208
+  },
+  {
+   "name": "P/B",
+   "price": 75263.18576285848,
+   "weight_pct": 4.126396038243298
+  },
+  {
+   "name": "Graham 1",
+   "price": 185910.2380785699,
+   "weight_pct": 0.923724911479207
+  },
+  {
+   "name": "Graham 2",
+   "price": 200649.40846926,
+   "weight_pct": 0.8371706199093323
+  },
+  {
+   "name": "Graham 3",
+   "price": 31329.72184648068,
+   "weight_pct": 10.955357406685822
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 390.6
+}

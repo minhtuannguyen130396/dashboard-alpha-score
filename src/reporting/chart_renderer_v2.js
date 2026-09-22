@@ -34,6 +34,21 @@
   const rsiEl   = document.getElementById('rsi-chart');
   const macdEl  = document.getElementById('macd-chart');
   const adxEl   = document.getElementById('adx-chart');
+  const basisEl = document.getElementById('basis-chart');
+
+  // ── Basis phái sinh: có hay không có ─────────────────────────────────────
+  // Pane này sống nhờ dữ liệu VN30 + VN30F1M, mà chart còn được dựng cho những
+  // trang không nạp phái sinh (và cho file HTML viết ra trước khi có tầng này).
+  // Nên nó là *tuỳ chọn*: không có số thì gỡ hẳn khỏi DOM, chứ để lại một ô đen
+  // rỗng thì người đọc tưởng basis bằng 0.
+  const BASIS_ALL = (typeof BASIS_DATA !== 'undefined' && Array.isArray(BASIS_DATA))
+    ? BASIS_DATA : [];
+  const HAS_BASIS = !!basisEl && BASIS_ALL.some(p => p.value !== undefined && p.value !== null);
+  if (basisEl && !HAS_BASIS) basisEl.remove();
+  ['legend-basis', 'legend-basis-sep'].forEach(function (id) {
+    const el = document.getElementById(id);
+    if (el && !HAS_BASIS) el.remove();
+  });
 
   // ── Pane geometry ────────────────────────────────────────────────────────
   // The heights live here, not in the stylesheet, and are written onto the
@@ -44,6 +59,9 @@
   // together, so a date row under each of them is the same row three times.
   const PANE_H = { price: 500, volume: 132, rsi: 100, macd: 100, adx: 128 };
   const PANE_EL = { price: priceEl, volume: volEl, rsi: rsiEl, macd: macdEl, adx: adxEl };
+  // Pane đáy trả hàng ngày tháng bằng chính chiều cao của nó. Thêm basis vào là
+  // ADX hết làm đáy, nên 28px đó chuyển xuống theo hàng ngày tháng.
+  if (HAS_BASIS) { PANE_H.adx = 100; PANE_H.basis = 128; PANE_EL.basis = basisEl; }
   Object.keys(PANE_H).forEach(function (key) {
     PANE_EL[key].style.height = PANE_H[key] + 'px';
   });
@@ -169,7 +187,8 @@
     const panel = document.getElementById('structure-panel');
     const data = typeof OVERLAY_DATA !== 'undefined' ? OVERLAY_DATA : null;
     const brief = (data && data.brief) || [];
-    if (!panel || !brief.length) return;
+    const thesis = data && data.thesis;
+    if (!panel || (!brief.length && !thesis)) return;
 
     function esc(s) {
       return String(s).replace(/[&<>"]/g, function (c) {
@@ -181,11 +200,36 @@
       return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
     }
 
+    // Có kết luận thì thẻ này chỉ mang kết luận — bốn dòng quyết định, không
+    // phải cả danh sách ghi chú cấu trúc. Danh sách đó vẫn còn nguyên ở phần
+    // DIỄN GIẢI cuối trang; lặp lại nó ngay đây là dựng lại đúng thứ vừa bỏ:
+    // một đống nhận xét rời bắt người đọc tự kết luận, ở đúng chỗ mắt rơi vào
+    // đầu tiên sau biểu đồ.
     let html = '';
-    if (data.pattern) html += '<div class="sp-pattern">' + esc(data.pattern) + '</div>';
-    html += '<ul class="sp-list">';
-    brief.forEach(function (b) { html += '<li>' + fmt(b) + '</li>'; });
-    html += '</ul>';
+    if (thesis) {
+      html += '<div class="sp-stance tone-' + esc(thesis.tone || 'flat') + '">'
+            + esc(thesis.stance_label) + '</div>';
+      if (thesis.headline) {
+        html += '<div class="sp-pattern">' + esc(thesis.headline) + '</div>';
+      }
+      const rows = thesis.rows || [];
+      if (rows.length) {
+        html += '<div class="sp-rows">';
+        rows.forEach(function (r) {
+          html += '<div class="sp-row"><span class="k">' + esc(r.label)
+                + '</span><span class="v">' + esc(r.value) + '</span></div>';
+        });
+        html += '</div>';
+      }
+      html += '<div class="sp-by">Nhận định của <b>' + esc(thesis.source || 'không rõ')
+            + '</b>' + (thesis.written_at ? ' · ' + esc(thesis.written_at) : '')
+            + ' — số đo gốc ở phần DIỄN GIẢI cuối trang.</div>';
+    } else {
+      if (data.pattern) html += '<div class="sp-pattern">' + esc(data.pattern) + '</div>';
+      html += '<ul class="sp-list">';
+      brief.forEach(function (b) { html += '<li>' + fmt(b) + '</li>'; });
+      html += '</ul>';
+    }
     panel.innerHTML = html;
     panel.classList.add('visible');
   })();
@@ -280,9 +324,10 @@
   const rc = makeSub(rsiEl, PANE_H.rsi);
   const mc = makeSub(macdEl, PANE_H.macd);
   const ac = makeSub(adxEl, PANE_H.adx);
+  const bc = HAS_BASIS ? makeSub(basisEl, PANE_H.basis) : null;
   // The bottom pane is the one that closes the stack, so it keeps a date row —
   // and is built taller than the others to pay for it out of its own height.
-  ac.applyOptions({ timeScale: { visible: true, borderColor: BORDER, timeVisible: false } });
+  (bc || ac).applyOptions({ timeScale: { visible: true, borderColor: BORDER, timeVisible: false } });
 
   // Build sub-series from HOVER_DATA keeping full timeline.
   // Null/undefined indicators become whitespace data points ({ time } only)
@@ -326,8 +371,41 @@
   const adx20 = ac.addLineSeries({ color: '#6e7681', lineWidth: 1, lineStyle: LS.Dotted, priceLineVisible: false, lastValueVisible: false });
   if (adxSer.some(p => p.value !== undefined)) adx20.setData(adxSer.map(p => p.value !== undefined ? { time: p.time, value: 20 } : { time: p.time }));
 
+  // ── Basis phái sinh (VN30F1M − VN30, tính theo %) ────────────────────────
+  // Dấu của basis là cả nội dung: trên 0 là hợp đồng đắt hơn cơ sở (premium),
+  // dưới 0 là chiết khấu. Một đường một màu bắt người đọc dò xem nó đang nằm
+  // phía nào của mốc 0; baseline series đổi màu ngay tại 0 nên đọc được bằng
+  // liếc mắt. Các điểm ĐÁO HẠN được đánh dấu vì basis *buộc* phải hội tụ về 0 ở
+  // đó — không nhìn thấy mốc ấy thì đoạn thu hẹp cuối chu kỳ dễ bị đọc thành
+  // "áp lực bán đang rút", trong khi nó chỉ là cơ chế của hợp đồng.
+  const basisSer = BASIS_ALL.map(p => (p.value === undefined || p.value === null)
+    ? { time: p.time } : { time: p.time, value: p.value });
+  let basisSeries = null;
+  if (bc) {
+    basisSeries = bc.addBaselineSeries({
+      baseValue: { type: 'price', price: 0 },
+      topLineColor: '#3fb950',
+      topFillColor1: 'rgba(63,185,80,0.28)',
+      topFillColor2: 'rgba(63,185,80,0.02)',
+      bottomLineColor: '#f85149',
+      bottomFillColor1: 'rgba(248,81,73,0.02)',
+      bottomFillColor2: 'rgba(248,81,73,0.28)',
+      lineWidth: 2,
+      title: 'Basis %',
+      priceLineVisible: false,
+      priceFormat: { type: 'price', precision: 2, minMove: 0.01 },
+    });
+    basisSeries.setData(basisSer);
+    const zeroLine = bc.addLineSeries({ color: '#6e7681', lineWidth: 1, lineStyle: LS.Dotted, priceLineVisible: false, lastValueVisible: false });
+    zeroLine.setData(basisSer.map(p => p.value !== undefined ? { time: p.time, value: 0 } : { time: p.time }));
+    const expiryMarks = BASIS_ALL
+      .filter(p => p.expiry && p.value !== undefined && p.value !== null)
+      .map(p => ({ time: p.time, position: 'belowBar', color: '#e3b341', shape: 'circle' }));
+    if (expiryMarks.length) basisSeries.setMarkers(expiryMarks);
+  }
+
   // ── Sync all charts via logical range ───────────────────────────────────────
-  const charts = [pc, vc, rc, mc, ac];
+  const charts = bc ? [pc, vc, rc, mc, ac, bc] : [pc, vc, rc, mc, ac];
   let _lock = false;
   function syncRange(src, dst) {
     src.timeScale().subscribeVisibleLogicalRangeChange(r => {
@@ -343,7 +421,8 @@
   // Drag on chart body OR time axis → pan all charts left/right
   // Vertical mouse wheel             → zoom around cursor position
   // Horizontal wheel / trackpad swipe → ignored
-  const allChartEls = [priceEl, volEl, rsiEl, macdEl, adxEl];
+  const allChartEls = bc ? [priceEl, volEl, rsiEl, macdEl, adxEl, basisEl]
+                        : [priceEl, volEl, rsiEl, macdEl, adxEl];
   let _drag = null;
 
   allChartEls.forEach(el => {
@@ -410,6 +489,13 @@
   const HOVER_MAP = {};
   (HOVER_DATA || []).forEach(d => { HOVER_MAP[d.date] = d; });
 
+  // Basis tra theo ngày, không theo chỉ số: pane phái sinh có những phiên trắng
+  // (mã có, VN30F1M không) nên hai mảng không đi cùng bước.
+  const BASIS_MAP = {};
+  BASIS_ALL.forEach(p => {
+    if (p.value !== undefined && p.value !== null) BASIS_MAP[p.time] = p;
+  });
+
   // Format helpers — all safe against null/undefined
   function _n(v, dec) {
     if (v === null || v === undefined) return '<span style="color:#484f58">N/A</span>';
@@ -431,6 +517,15 @@
     const rsiClr  = rsiV === null ? '#484f58' : rsiV < 30 ? '#3fb950' : rsiV > 70 ? '#f85149' : '#c9d1d9';
     const adxV    = ind.adx !== null && ind.adx !== undefined ? parseFloat(ind.adx) : null;
     const adxClr  = adxV === null ? '#484f58' : adxV >= 25 ? '#3fb950' : adxV >= 20 ? '#e3b341' : '#f85149';
+
+    // Basis là lực nền của cả thị trường, không phải chỉ báo của mã này — nên
+    // nó đứng riêng dưới một đường kẻ, và luôn đi kèm quãng đường tới đáo hạn:
+    // −0,5% khi còn 18 phiên và −0,5% khi còn 1 phiên là hai chuyện khác nhau.
+    const bp = BASIS_MAP[d.date];
+    const basisRows = !bp ? '' : `
+        <div class="hp-sep"></div>
+        <div class="hp-row"><span class="hp-k">Basis %</span><span class="hp-v" style="color:${bp.value >= 0 ? '#3fb950' : '#f85149'}">${bp.value >= 0 ? '+' : ''}${_n(bp.value, 2)}%</span></div>
+        <div class="hp-row"><span class="hp-k">Tới đáo hạn</span><span class="hp-v">${bp.sessions === null || bp.sessions === undefined ? 'N/A' : bp.sessions + ' phiên'}</span></div>`;
 
     hoverPanel.className = 'visible';
     hoverPanel.innerHTML = `
@@ -462,6 +557,7 @@
         <div class="hp-row"><span class="hp-k">SW Lo 10d</span><span class="hp-v">${_n(ind.sw_lo10)}</span></div>
         <div class="hp-row"><span class="hp-k">SW Hi 20d</span><span class="hp-v">${_n(ind.sw_hi20)}</span></div>
         <div class="hp-row"><span class="hp-k">SW Lo 20d</span><span class="hp-v">${_n(ind.sw_lo20)}</span></div>
+        ${basisRows}
       </div>`;
   }
 
@@ -483,6 +579,8 @@
   const _mMap  = new Map(macdLineSer.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
   const _aMap  = new Map(adxSer.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
 
+  const _bMap  = new Map(basisSer.filter(p => p.value !== undefined).map(p => [p.time, p.value]));
+
   // Each entry: { chart, series (for setCrosshairPosition), priceMap }
   const xhTargets = [
     { chart: pc, series: cs,         map: _chMap },
@@ -491,6 +589,7 @@
     { chart: mc, series: macdSeries, map: _mMap  },
     { chart: ac, series: adxSeries,  map: _aMap  },
   ];
+  if (bc) xhTargets.push({ chart: bc, series: basisSeries, map: _bMap });
 
   let _xhLock = false;
 
@@ -543,6 +642,7 @@
     rc.resize(w, PANE_H.rsi);
     mc.resize(w, PANE_H.macd);
     ac.resize(w, PANE_H.adx);
+    if (bc) bc.resize(w, PANE_H.basis);
   }).observe(document.getElementById('charts-container'));
 
   // ── Initial fit + sync ───────────────────────────────────────────────────
@@ -555,6 +655,7 @@
       rc.timeScale().setVisibleLogicalRange(r);
       mc.timeScale().setVisibleLogicalRange(r);
       ac.timeScale().setVisibleLogicalRange(r);
+      if (bc) bc.timeScale().setVisibleLogicalRange(r);
     }
   });
 })();

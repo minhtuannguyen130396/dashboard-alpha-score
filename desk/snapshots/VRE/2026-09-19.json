@@ -1,0 +1,39 @@
+{
+ "symbol": "VRE",
+ "snapshot_date": "2026-09-19",
+ "composed": 33639.898018442094,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 23608.643070773454,
+   "weight_pct": 75.66055600052957
+  },
+  {
+   "name": "P/E",
+   "price": 62976.16959376185,
+   "weight_pct": 5.111633136998576
+  },
+  {
+   "name": "P/B",
+   "price": 77360.01210100559,
+   "weight_pct": 3.677280646942231
+  },
+  {
+   "name": "Graham 1",
+   "price": 275549.3544658143,
+   "weight_pct": 0.7556541922696576
+  },
+  {
+   "name": "Graham 2",
+   "price": 296947.1876002805,
+   "weight_pct": 0.6959549852857958
+  },
+  {
+   "name": "Graham 3",
+   "price": 39469.63658093774,
+   "weight_pct": 14.098921037974192
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 812.5
+}

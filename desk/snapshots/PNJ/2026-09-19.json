@@ -1,0 +1,39 @@
+{
+ "symbol": "PNJ",
+ "snapshot_date": "2026-09-19",
+ "composed": 47691.05679031836,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 38081.37445515565,
+   "weight_pct": 51.2926191486635
+  },
+  {
+   "name": "P/E",
+   "price": 48388.74169445824,
+   "weight_pct": 32.77695914183177
+  },
+  {
+   "name": "P/B",
+   "price": 13344.84116843457,
+   "weight_pct": 2.061258295727915
+  },
+  {
+   "name": "Graham 1",
+   "price": 300320.500250605,
+   "weight_pct": 0.7982550935063047
+  },
+  {
+   "name": "Graham 2",
+   "price": 315983.85954881465,
+   "weight_pct": 0.7526030555884343
+  },
+  {
+   "name": "Graham 3",
+   "price": 58833.29448684607,
+   "weight_pct": 12.318305264682076
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 634.6
+}

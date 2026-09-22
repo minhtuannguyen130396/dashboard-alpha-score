@@ -135,11 +135,44 @@ def test_bai_ngoai_cua_so_thoi_gian_khong_duoc_ghep():
     assert find_announcement(tx, posts) is None
 
 
-def test_bai_sau_start_date_qua_xa_khong_duoc_ghep():
-    """Báo cáo kết quả ra sau khi giao dịch xong — không phải ngày công bố."""
+def test_bao_cao_ket_qua_khong_duoc_coi_la_thong_bao():
+    """Báo cáo kết quả ra sau khi xong — không phải ngày công bố ý định."""
     tx = _tx(start="2026-06-11")
     posts = [_post(title="HPG: Báo cáo kết quả giao dịch cổ phiếu của người nội bộ Nguyễn Ngọc Quang",
                    when="2026-07-09", kind=KIND_RESULT)]
+    assert find_announcement(tx, posts, allow_result_fallback=False) is None
+
+
+def test_khong_co_thong_bao_thi_lui_ve_bao_cao_ket_qua_nhung_danh_dau_khac():
+    """Nhiều bản ghi cũ chưa từng có thông báo trước (``registeredVolume=None``),
+    nên bản tin kết quả là lần đầu thị trường biết. Vẫn dùng được làm mốc, nhưng
+    phải mang nhãn khác vì nó đo *sự kiện khác*: xác nhận đã xong, không phải ý định."""
+    tx = _tx(start="2026-06-11")
+    posts = [_post(title="HPG: Báo cáo kết quả giao dịch cổ phiếu của người nội bộ Nguyễn Ngọc Quang",
+                   when="2026-07-09", kind=KIND_RESULT)]
+    m = find_announcement(tx, posts)
+    assert m is not None and m.kind == KIND_RESULT
+    t0, src = effective_t0(tx, m)
+    assert t0 == "2026-07-09"
+    assert src == "post_result_date"
+
+
+def test_ten_khop_thi_ghep_du_bai_khong_duoc_gan_nhan_cbtt():
+    """Ca thật của FPT: 'Lão tướng FPT Bùi Quang Ngọc bán xong 2 triệu cổ phiếu'
+    không có từ chỉ chức vụ nên ``disclosure_kind`` bỏ qua — nhưng tên khớp."""
+    tx = _tx(name="Bùi Quang Ngọc", reg=2_000_000.0, start="2025-02-06")
+    posts = [_post(title='FPT: "Lão tướng" FPT Bùi Quang Ngọc bán xong 2 triệu cổ phiếu',
+                   when="2025-02-17", kind=None, disc=True)]
+    m = find_announcement(tx, posts)
+    assert m is not None
+    assert "tên người khớp" in m.reasons
+
+
+def test_chi_khoi_luong_khop_ma_bai_khong_phai_tin_noi_bo_thi_khong_ghep():
+    """'2 triệu' xuất hiện đầy trong tin thường ngày — một mình nó không đủ tin."""
+    tx = _tx(name="Bùi Quang Ngọc", reg=2_000_000.0, start="2025-02-06")
+    posts = [_post(title="Khối ngoại mua ròng 2 triệu cổ phiếu phiên hôm nay",
+                   when="2025-02-05", kind=None, disc=False)]
     assert find_announcement(tx, posts) is None
 
 
@@ -200,7 +233,22 @@ def test_stats_dem_rieng_ca_ghep_duoc_va_ca_dung_moc_thay_the():
     b.car_immediate = Distribution.of([0.01] * 40)
     text = format_stats({b.label: b})
     assert "30/40" in text
-    assert "ngày công bố thật" in text
+    assert "thông báo" in text
+
+
+def test_ngay_bao_cao_ket_qua_khong_bi_dem_thanh_moc_thay_the():
+    """Ba nguồn mốc, ba ý nghĩa. Xếp ngày báo cáo kết quả chung với `startDate`
+    là nói sai về chất lượng số liệu, và giấu mất chuyện một phần đang đo
+    *xác nhận đã xong* chứ không phải *ý định*."""
+    from src.news.stats import BucketStats, Distribution, format_stats
+    b = BucketStats(label="nội bộ · mua · thực hiện đủ", n_events=40,
+                    n_matched_t0=25, n_result_t0=15, n_proxy_t0=0)
+    b.car_immediate = Distribution.of([0.01] * 40)
+    text = format_stats({b.label: b})
+    assert "25/40" in text
+    assert "15 ngày **báo cáo kết quả**" in text
+    assert "0 lùi về" in text
+    assert "sự kiện khác" in text
 
 
 def test_canh_bao_khi_phan_lon_van_la_moc_thay_the():
@@ -210,3 +258,39 @@ def test_canh_bao_khi_phan_lon_van_la_moc_thay_the():
     b.car_immediate = Distribution.of([0.01] * 40)
     text = format_stats({b.label: b})
     assert "⚠️" in text and "trung vị 6 ngày" in text
+
+
+# --- Tên tổ chức: phần phân biệt được, không phải hình thức pháp lý --------
+
+def test_ten_to_chuc_rut_duoc_tu_viet_tat():
+    """Bản ghi ghi 'Công ty TNHH MTV Đầu tư SCIC', báo viết 'Thành viên SCIC'."""
+    from src.news.match import name_variants
+    assert "scic" in name_variants("Công ty TNHH MTV Đầu tư SCIC")
+
+
+def test_to_chuc_khop_duoc_voi_tieu_de_that():
+    assert name_matches(
+        "Công ty TNHH MTV Đầu tư SCIC",
+        "Thành viên SCIC không mua hết lượng cổ phiếu FPT đã đăng ký") is True
+
+
+def test_bo_hinh_thuc_phap_ly_giu_phan_loi():
+    from src.news.match import name_variants
+    assert "platinum victory" in name_variants("Platinum Victory PTE.Ltd")
+
+
+def test_viet_tat_qua_pho_thong_khong_dung_lam_khoa():
+    """'TNHH', 'MTV', 'PTE' có ở hàng nghìn tên — khớp bằng chúng là khớp bừa."""
+    from src.news.match import name_variants
+    v = name_variants("Công ty TNHH MTV Đầu tư SCIC")
+    assert "tnhh" not in v and "mtv" not in v
+
+
+def test_ten_nguoi_khong_bi_anh_huong_boi_luat_to_chuc():
+    assert name_matches("Nguyễn Ngọc Quang",
+                        "HPG: ... của người nội bộ Nguyễn Ngọc Quang") is True
+
+
+def test_to_chuc_khong_khop_bai_khong_lien_quan():
+    assert name_matches("Công ty TNHH MTV Đầu tư SCIC",
+                        "Hòa Phát ký hợp đồng cung cấp vỏ container") is False

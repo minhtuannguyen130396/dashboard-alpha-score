@@ -394,6 +394,39 @@ class ArtefactTest(unittest.TestCase):
             R.load_ranking()
         self.assertIn("build_ranking", str(ctx.exception))
 
+    def test_a_sector_board_never_touches_the_stock_pointer(self):
+        """Con trỏ mang đúng một nghĩa: bảng của **rổ cổ phiếu**.
+
+        ``market.Breadth`` đọc nó để đếm bao nhiêu phần trăm *mã* trên EMA20.
+        Để một bảng 31 chỉ số ngành làm mới con trỏ thì độ rộng thị trường
+        trong mọi hồ sơ 1 mã lặng lẽ chuyển sang đếm ngành — và không có gì
+        báo, vì cả hai đều là danh sách symbol có ``vs_ema20``.
+        """
+        R.save_json(self._board())                       # bảng cổ phiếu trước
+        before = R.LATEST_JSON.read_text(encoding="utf-8")
+
+        sectors = R.Ranking(
+            as_of="2026-08-25", generated="2026-08-26 10:00", universe="sectors",
+            rows=[make_row("_ICB_60", 78.6, R.UP), make_row("_ICB_35", 77.5, R.UP)])
+        path = R.save_json(sectors)
+
+        self.assertTrue(Path(path).is_file(), "bản có ngày tháng vẫn phải ghi")
+        self.assertEqual(R.LATEST_JSON.read_text(encoding="utf-8"), before)
+
+    def test_is_stock_board_rejects_every_kind_of_non_stock(self):
+        def board(*syms):
+            return R.Ranking(as_of="2026-08-25", generated="x", universe="u",
+                             rows=[make_row(s, 1.0, R.UP) for s in syms])
+
+        self.assertTrue(R.is_stock_board(board("AAA", "BBB")))
+        self.assertFalse(R.is_stock_board(board("_ICB_60")))
+        self.assertFalse(R.is_stock_board(board("VNINDEX")))
+        self.assertFalse(R.is_stock_board(board("VN30F1M")))
+        # Trộn cũng không phải rổ cổ phiếu — một dòng lạ là đủ làm hỏng độ rộng.
+        self.assertFalse(R.is_stock_board(board("FPT", "_ICB_60")))
+        # Bảng rỗng không nói được gì, nên không được làm mới con trỏ.
+        self.assertFalse(R.is_stock_board(board()))
+
     def test_html_is_self_contained_and_needs_no_network(self):
         path = R.write_html(self._board())
         html = Path(path).read_text(encoding="utf-8")

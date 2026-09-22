@@ -1,0 +1,39 @@
+{
+ "symbol": "VCG",
+ "snapshot_date": "2026-09-19",
+ "composed": 18062.26371916148,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 14472.731384382196,
+   "weight_pct": 67.51476780419735
+  },
+  {
+   "name": "P/E",
+   "price": 68893.35239435185,
+   "weight_pct": 1.9494545399448873
+  },
+  {
+   "name": "P/B",
+   "price": 11206.68946988309,
+   "weight_pct": 21.511893567129068
+  },
+  {
+   "name": "Graham 1",
+   "price": 59523.78099857683,
+   "weight_pct": 2.369122893101719
+  },
+  {
+   "name": "Graham 2",
+   "price": 44372.27310803,
+   "weight_pct": 3.6342941422233315
+  },
+  {
+   "name": "Graham 3",
+   "price": 50138.15947499894,
+   "weight_pct": 3.0204670534036517
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 319.4
+}

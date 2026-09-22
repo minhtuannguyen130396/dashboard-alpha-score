@@ -1,0 +1,39 @@
+{
+ "symbol": "HHV",
+ "snapshot_date": "2026-09-19",
+ "composed": 13112.156502670106,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 10936.621188526493,
+   "weight_pct": 57.56228519192831
+  },
+  {
+   "name": "P/E",
+   "price": 12622.705521837359,
+   "weight_pct": 19.837459545202783
+  },
+  {
+   "name": "P/B",
+   "price": 13267.707699493743,
+   "weight_pct": 15.860962672028334
+  },
+  {
+   "name": "Graham 1",
+   "price": 44623.58760769748,
+   "weight_pct": 1.476154059864061
+  },
+  {
+   "name": "Graham 2",
+   "price": 45832.31929343082,
+   "weight_pct": 1.4262893719283862
+  },
+  {
+   "name": "Graham 3",
+   "price": 23351.52414014361,
+   "weight_pct": 3.8368491590481306
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 266.1
+}

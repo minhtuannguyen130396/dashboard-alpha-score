@@ -61,10 +61,20 @@ KIND_ANNOUNCE = "thong_bao_giao_dich"
 #: Báo cáo *sau*: đã giao dịch xong, bao nhiêu. Đến sau ``endDate``.
 KIND_RESULT = "bao_cao_ket_qua"
 
-_RE_ANNOUNCE = re.compile(r"thông báo giao dịch|đăng ký (mua|bán)|muốn (mua|bán)|"
-                          r"sắp (mua|bán)|dự kiến (mua|bán)", re.I)
-_RE_RESULT = re.compile(r"báo cáo kết quả|kết quả giao dịch|đã (mua|bán)|"
-                        r"không mua (đủ|hết)|không bán (đủ|hết)|mua bất thành", re.I)
+_RE_ANNOUNCE = re.compile(
+    r"thông báo giao dịch|đăng ký (mua|bán)|muốn (mua|bán)|"
+    r"sắp (mua|bán)|dự kiến (mua|bán)|đề nghị (mua|bán)|"
+    r"chi tiền|sẽ (mua|bán)", re.I)
+# Cách nói "đã xong" trong tiếng Việt nhiều hơn hẳn dự đoán ban đầu. Bản đầu chỉ
+# có "đã bán" nên trượt hết loạt tiêu đề kiểu *"Bùi Quang Ngọc bán xong 2 triệu cổ
+# phiếu"* và *"Phó Chủ tịch bán thành công 2 triệu"* — hai bài đúng, tên khớp, khối
+# lượng khớp, nhưng bị loại khỏi tập ứng viên ngay từ vòng gắn nhãn.
+_RE_RESULT = re.compile(
+    r"báo cáo kết quả|kết quả giao dịch|"
+    r"(đã|xong|hoàn tất|thành công)\s*(mua|bán)|"
+    r"(mua|bán)\s*(xong|thành công|sạch|hết|ra|vào)|"
+    r"không (mua|bán) (đủ|hết|được)|(mua|bán) bất thành|"
+    r"thu về|dự thu", re.I)
 
 # Hai điều kiện lọc thêm, cả hai đều **bắt buộc**. Một mình động từ giao dịch
 # thì bắt nhầm rất nhiều, và mấy ca dưới đây là bắt được từ dữ liệu thật:
@@ -194,23 +204,54 @@ def parse_posts(rows: Sequence[dict], symbol: str) -> List[Post]:
     return [p for p in out if p is not None]
 
 
-def fetch_posts(symbol: str, kind: int = 1, max_pages: int = MAX_PAGES,
-                since: Optional[str] = None) -> List[Post]:
+@dataclass
+class PostFetch:
+    """Một lượt phân trang: bài lấy được, và **vì sao dừng**.
+
+    Lý do dừng không suy ra được từ danh sách bài. Dừng vì đã lùi qua ``since``
+    nghĩa là phần còn thiếu đã lấy hết; dừng vì hết ngân sách trang nghĩa là
+    **vẫn còn bài chưa nạp** — cùng một danh sách trả về, hai kết luận ngược
+    nhau. Không mang cờ này lên tầng trên thì một lượt nạp bị cắt cụt trông y
+    hệt một lượt nạp đủ, và kho thủng đúng ở quãng không ai nhìn.
+    """
+    posts: List[Post] = field(default_factory=list)
+    pages: int = 0
+    hit_page_cap: bool = False
+
+    @property
+    def oldest(self) -> Optional[str]:
+        """Ngày của bài cũ nhất lấy được, ``YYYY-MM-DD``."""
+        return min((p.date[:10] for p in self.posts), default=None)
+
+
+def fetch_posts_paged(symbol: str, kind: int = 1, max_pages: int = MAX_PAGES,
+                      since: Optional[str] = None) -> PostFetch:
     """Nạp bài của một mã, phân trang cho tới khi hết kho hoặc chạm ``since``.
 
     ``since`` (ISO ``YYYY-MM-DD``) dừng sớm khi đã lùi đủ xa — lượt nạp hằng ngày
     chỉ cần vài trang đầu, không phải quét lại 3,5 năm mỗi lần.
     """
-    out: List[Post] = []
+    out = PostFetch()
     for page in range(max_pages):
         rows = fireant.posts(symbol, kind=kind, offset=page * PAGE, limit=PAGE)
+        out.pages = page + 1
         if not rows:
-            break
+            return out                       # hết kho
         batch = parse_posts(rows, symbol)
-        out += batch
+        out.posts += batch
         if since and batch and batch[-1].date[:10] < since:
-            break
+            return out                       # đã lùi qua mốc cần
+        if len(rows) < PAGE:
+            return out                       # trang cuối của kho
+    out.hit_page_cap = True
     return out
+
+
+def fetch_posts(symbol: str, kind: int = 1, max_pages: int = MAX_PAGES,
+                since: Optional[str] = None) -> List[Post]:
+    """Chỉ danh sách bài — cho chỗ không cần biết lượt nạp dừng vì lý do gì."""
+    return fetch_posts_paged(symbol, kind=kind,
+                             max_pages=max_pages, since=since).posts
 
 
 def fetch_body(post_id: int) -> Optional[str]:

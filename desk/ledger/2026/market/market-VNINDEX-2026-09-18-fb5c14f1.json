@@ -1,0 +1,22 @@
+{
+ "entry_id": "market-VNINDEX-2026-09-18-fb5c14f1",
+ "kind": "market",
+ "subject": "VNINDEX",
+ "session": "2026-09-18",
+ "author": "Claude Sonnet 5",
+ "stance": "trung_lap",
+ "headline": "Trung lập, giữ 50% tiền mặt — chỉ số tăng nhưng độ rộng chỉ 33% (26/79 trên EMA20) và 4 phiên phân phối/25 phiên cho thấy nội lực yếu hơn giá thể hiện",
+ "trigger": "Độ rộng phục hồi lên tối thiểu 45% rổ trên EMA20 (≥36/79) trong vòng 10 phiên tới, không phát sinh thêm phiên phân phối mới — xác nhận dòng tiền lan toả trở lại, khi đó chuyển tang_cho và hạ tiền mặt về 30%",
+ "invalidation": "Phát sinh thêm phiên phân phối thứ 5 trong cùng cửa sổ 25 phiên (hiện đã có 4), hoặc độ rộng tụt xuống dưới 25% rổ trên EMA20 (dưới 20/79), trong vòng 10 phiên tới — xác nhận suy yếu nội tại vượt mức hiện tại, khi đó chuyển giam và nâng tiền mặt lên tối thiểu 70%",
+ "horizon_sessions": 10,
+ "confidence": "vua",
+ "target": null,
+ "weight_pct": null,
+ "evidence_hash": "1c559b4efce65740",
+ "supersedes": null,
+ "created_at": "2026-09-20T20:21:23",
+ "note": "Chỉ số +độ rộng lệch nhau: VNINDEX 1,815.66 (-0.39% phiên, nhãn hệ thống \"đang tăng\") nhưng chỉ 32.9% rổ trên EMA20 — rổ hẹp đang kéo chỉ số, không phải dòng tiền lan toả. ADX14 22.99 là xu hướng yếu, RSI14 54.36 trung tính, không nói được điều gì thêm. Dòng tiền khối ngoại dương (+1,168.7 tỷ phiên, +2,558.1 tỷ 5 phiên) và tự doanh âm (-114.6 tỷ) được NÊU RA nhưng không dùng làm lý do chính — hiệu chuẩn D1/D2 đã chạy trên 16 năm và không giả thuyết nào đạt, đây là mô tả trạng thái chứ không phải tín hiệu. Cơ cấu ngành: Hàng tiêu dùng + Tài chính hút ròng, Bất động sản xả ròng mạnh nhất (-252 tỷ phiên, -1,931.7 tỷ 5 phiên) — đáng theo dõi nhưng chưa đủ để thành lý do cho quan điểm chỉ số chung. Phái sinh: premium VN30F1M +5.83 điểm, phân vị 88-90% so với các phiên cùng quãng đường tới đáo hạn (19 phiên tới 15/10) — premium cao nhưng đòn bẩy danh nghĩa/cơ sở chỉ 2.19× (TB20 4.37×), tức tham gia bằng đòn bẩy thấp hơn thường lệ dù giá phái sinh neo cao — tín hiệu lẫn lộn, không đủ rõ để làm căn cứ. Không đặt price target vì gói bằng chứng không có cấu trúc hỗ trợ/kháng cự của VNINDEX (không có box/swing) — trigger và invalidation dùng độ rộng + số phiên phân phối, hai số đo có thật trong gói. Đây là entry đầu tiên của sổ — chưa có lịch sử để bàn tự chấm.",
+ "trigger_level": null,
+ "invalidation_level": null,
+ "target_level": null
+}

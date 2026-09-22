@@ -64,6 +64,24 @@ BENCHMARK_GROUP_KEYS = ("benchmark", "benchmarks", "index", "chi_so")
 DERIVATIVE_FILE = "derivatives.json"
 DERIVATIVE_GROUP_KEYS = ("futures", "derivative", "derivatives", "phai_sinh", "phaisinh")
 
+#: Sector indices — the ICB industry indices, **not** tradable symbols either.
+#:
+#: Same trap as VNINDEX, one notch worse only because there are 31 of them
+#: rather than one. FireAnt computes each ICB index over *every* listed member
+#: of the industry across all three exchanges, and ``src/macro/icb.py`` writes
+#: them to ``data/_ICB_<code>/`` in the identical raw schema so the whole of
+#: ``src/ta/`` runs on a sector for free. That is exactly why they have to be
+#: fenced off: nobody buys an industry, and an index bar is an average, so its
+#: ADX, RSI and swing structure all read smoother than any constituent. Thirty
+#: one extra rows would not shift the percentiles in ``ranking.py`` quietly —
+#: they would dominate them.
+#:
+#: The ``_ICB_`` prefix is the second line of defence: a directory that can
+#: never be mistaken for a ticker, same convention as ``_PROXY_EW``.
+SECTOR_FILE = "sectors.json"
+SECTOR_GROUP_KEYS = ("sector", "sectors", "nganh", "icb")
+SECTOR_PREFIX = "_ICB_"
+
 
 def available_symbols() -> List[str]:
     """Symbols that actually have daily price files on disk."""
@@ -121,9 +139,89 @@ def is_derivative(symbol: str) -> bool:
     return symbol.strip().upper() in derivative_symbols()
 
 
+@lru_cache(maxsize=1)
+def duplicate_sector_symbols() -> frozenset:
+    """Chỉ số ngành **trùng khít** một ngành cấp 1 — bỏ khỏi câu trả lời nhóm.
+
+    Sáu ngành cấp 1 có đúng một con cấp 2, và FireAnt trả hai chuỗi giống hệt
+    nhau từng phiên. Để cả hai trong nhóm ``sectors`` thì mọi bảng xếp hạng
+    hiện *Năng lượng* hai lần dưới hai cái tên khác nhau, ăn hai suất bằng đúng
+    một thông tin — và người đọc không có cách nào phát hiện.
+
+    Gọi **đích danh** ``_ICB_6010`` vẫn ra: hỏi đúng tên một chuỗi là câu hỏi
+    khác với hỏi "cho tôi danh sách ngành".
+    """
+    path = STOCK_LIST_DIR / SECTOR_FILE
+    if not path.is_file():
+        return frozenset()
+    try:
+        items = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return frozenset()
+    return frozenset(it["share_code"].upper() for it in items
+                     if it.get("share_code") and it.get("duplicate_of"))
+
+
+@lru_cache(maxsize=1)
+def sector_symbols() -> Tuple[str, ...]:
+    """ICB index codes from ``stock_list/sectors.json`` — never stock symbols.
+
+    Falls back to whatever ``_ICB_*`` directories exist on disk when the
+    registry is missing. The prefix is the invariant; the registry only adds
+    names and levels. A sector index that slipped into a scan because nobody
+    regenerated the registry would be the exact failure this guard exists to
+    prevent, so the guard must not depend on the file being there.
+    """
+    path = STOCK_LIST_DIR / SECTOR_FILE
+    codes = set()
+    if path.is_file():
+        try:
+            items = json.loads(path.read_text(encoding="utf-8"))
+            codes = {it["share_code"].upper() for it in items
+                     if it.get("share_code")}
+        except (json.JSONDecodeError, OSError, AttributeError):
+            codes = set()
+    codes |= {s for s in _symbols_on_disk() if s.upper().startswith(SECTOR_PREFIX)}
+    return tuple(sorted(codes))
+
+
+def is_sector_index(symbol: str) -> bool:
+    """True for ``_ICB_60`` and friends — an industry, not a stock."""
+    return symbol.strip().upper().startswith(SECTOR_PREFIX)
+
+
+#: Series whose bars are an **average of many instruments**, not the trading
+#: record of one. Sector indices, VNINDEX, VN30, and the equal-weight proxy.
+#:
+#: ``VN30F1M`` is deliberately absent: a futures contract is a real instrument
+#: with real order flow, so its bar shape means what a bar shape normally means.
+AVERAGED_SERIES = frozenset({"VNINDEX", "VN30", "HNXINDEX", "_PROXY_EW"})
+
+
+def is_averaged_series(symbol: str) -> bool:
+    """Bars here are an average — candle shapes do not carry their usual meaning.
+
+    A "shooting star" on a sector index says the constituents were out of phase
+    intraday, not that sellers beat buyers at the highs: nobody traded this bar.
+    Same argument ``candles.py`` already makes for ceiling/floor sessions, where
+    a limit-up close looks exactly like a bullish marubozu and means the
+    opposite. Different cause, identical failure — a shape read out of a series
+    that cannot produce that shape's meaning.
+    """
+    sym = symbol.strip().upper()
+    return sym in AVERAGED_SERIES or is_sector_index(sym)
+
+
 def non_tradable_symbols() -> frozenset:
-    """Everything that must stay out of a scan/ranking basket: indices + futures."""
-    return frozenset(benchmark_symbols()) | frozenset(derivative_symbols())
+    """Everything that must stay out of a scan/ranking basket.
+
+    Indices, futures contracts **and** sector indices. Three different reasons
+    to be here, one shared consequence: none of them is something a reader
+    could buy, and each of them distorts a percentile computed over stocks.
+    """
+    return (frozenset(benchmark_symbols())
+            | frozenset(derivative_symbols())
+            | frozenset(sector_symbols()))
 
 
 def _group_symbols(group: str) -> List[str]:
@@ -131,6 +229,9 @@ def _group_symbols(group: str) -> List[str]:
         return list(benchmark_symbols())
     if group in DERIVATIVE_GROUP_KEYS:
         return list(derivative_symbols())
+    if group in SECTOR_GROUP_KEYS:
+        dup = duplicate_sector_symbols()
+        return [s for s in sector_symbols() if s not in dup]
     filename = GROUP_FILES[group]
     path = STOCK_LIST_DIR / filename
     if not path.is_file():
@@ -146,22 +247,24 @@ def resolve_universe(spec: Optional[str] = None) -> List[str]:
     Symbols without data on disk are dropped, so callers never have to guard
     against ``FileNotFoundError`` mid-scan.
 
-    Benchmarks **and futures contracts** are dropped from every *group*
-    answer — ``None``, ``disk``, ``all``, ``vn30``. A scan of "the whole
-    basket" means the stocks; VNINDEX, VN30 and VN30F1M are not among them.
-    Naming one explicitly still works (``"VNINDEX"``, ``"FPT,VN30F1M"``, or
-    the ``benchmarks`` / ``futures`` groups), because asking for the index or
-    the contract by name is a different question from asking for the basket
-    that happens to sit next to it on disk.
+    Benchmarks, futures contracts **and sector indices** are dropped from
+    every *group* answer — ``None``, ``disk``, ``all``, ``vn30``. A scan of
+    "the whole basket" means the stocks; VNINDEX, VN30, VN30F1M and ``_ICB_60``
+    are not among them. Naming one explicitly still works (``"VNINDEX"``,
+    ``"FPT,VN30F1M"``, ``"_ICB_60"``, or the ``benchmarks`` / ``futures`` /
+    ``sectors`` groups), because asking for the index or the contract by name
+    is a different question from asking for the basket that happens to sit
+    next to it on disk.
     """
     on_disk = _symbols_on_disk()
-    marks = set(benchmark_symbols()) | set(derivative_symbols())
+    marks = non_tradable_symbols()
 
     if not spec or spec.strip().lower() in ("disk", "available"):
         return sorted(on_disk - marks)
 
     key = spec.strip().lower()
-    if key in GROUP_FILES or key in BENCHMARK_GROUP_KEYS or key in DERIVATIVE_GROUP_KEYS:
+    if (key in GROUP_FILES or key in BENCHMARK_GROUP_KEYS
+            or key in DERIVATIVE_GROUP_KEYS or key in SECTOR_GROUP_KEYS):
         wanted = _group_symbols(key)
         # A stock group never smuggles in an index or a contract; the
         # benchmark/futures groups are nothing but those.
@@ -183,7 +286,7 @@ def missing_symbols(spec: str) -> List[str]:
     on_disk = _symbols_on_disk()
     key = spec.strip().lower()
     is_group = (key in GROUP_FILES or key in BENCHMARK_GROUP_KEYS
-                or key in DERIVATIVE_GROUP_KEYS)
+                or key in DERIVATIVE_GROUP_KEYS or key in SECTOR_GROUP_KEYS)
     wanted = _group_symbols(key) if is_group else [
         s.strip().upper() for s in spec.replace(";", ",").split(",") if s.strip()
     ]

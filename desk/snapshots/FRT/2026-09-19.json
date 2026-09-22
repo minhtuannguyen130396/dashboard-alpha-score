@@ -1,0 +1,39 @@
+{
+ "symbol": "FRT",
+ "snapshot_date": "2026-09-19",
+ "composed": 98233.83364448679,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 131973.21931133515,
+   "weight_pct": 56.647189696932706
+  },
+  {
+   "name": "P/E",
+   "price": 79021.94478658444,
+   "weight_pct": 11.796290801532203
+  },
+  {
+   "name": "P/B",
+   "price": 13197.483092159038,
+   "weight_pct": 7.889129875383769
+  },
+  {
+   "name": "Graham 1",
+   "price": 59712.59212943414,
+   "weight_pct": 7.889129875383769
+  },
+  {
+   "name": "Graham 2",
+   "price": 44513.02322376,
+   "weight_pct": 7.889129875383769
+  },
+  {
+   "name": "Graham 3",
+   "price": 61976.34828140677,
+   "weight_pct": 7.889129875383769
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 120.9
+}

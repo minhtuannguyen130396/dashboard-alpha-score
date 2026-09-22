@@ -659,12 +659,35 @@ def _clip(text: str, limit: int = 150) -> str:
     return text if len(text) <= limit else text[:limit].rstrip(" ,.;—-") + "…"
 
 
+def _futures_why(row) -> str:
+    """Vì sao mã này phơi nhiễm tới mức đó — kênh trước, rồi mới tới các số.
+
+    Kênh đứng đầu câu vì nó không phải một mức độ mà là một *loại*: mã trong rổ
+    VN30 nhận lệnh chênh lệch giá thẳng vào, mã ngoài rổ thì không — cùng một
+    con số beta ở hai bên không có cùng nghĩa.
+    """
+    e = getattr(row, "futures", None)
+    if e is None or e.beta is None:
+        return _clip((e.note if e else "") or row.headline)
+    # Câu kênh đầy đủ nằm ở dòng `explain` ngay trên bảng; lặp lại nguyên văn ở
+    # mỗi dòng chỉ đẩy các con số ra khỏi tầm mắt.
+    bits = ["trong rổ VN30" if e.in_vn30 else "ngoài rổ VN30",
+            f"β {e.beta:.2f}" + (f" (R² {e.r2:.2f})" if e.r2 is not None else "")]
+    if e.liquidity_share_pct is not None:
+        bits.append(f"{e.liquidity_share_pct:.2f}% thanh khoản rổ")
+    if e.expiry_move_ratio is not None:
+        bits.append(f"biên độ phiên đáo hạn {e.expiry_move_ratio:.2f}× phiên thường")
+    return _clip(" · ".join(bits), 190)
+
+
 def _rank_why(row, criterion_key: str) -> str:
     """The sentence that explains this row's number, not a restatement of it."""
     if criterion_key in ("trend", "trend_abs", "adx", "vs_ema20", "vs_ema50"):
         return _clip(row.trend.note, 190)
     if criterion_key in ("pattern", "confidence", "target_pct", "risk_reward"):
         return _clip(row.pattern.note or row.headline)
+    if criterion_key in ("futures", "beta"):
+        return _futures_why(row)
     return _clip(row.headline)
 
 
@@ -754,6 +777,22 @@ def _rank_block(title: str, rows, kind: str) -> List[str]:
                 f"{_n(r.trend.adx, 1)} | {_n(r.close)} | {_signed(r.change_pct)} | "
                 f"{r.trend.note}{warn} |"
             )
+    elif kind == "futures":
+        lines += ["| # | Mã | Kênh | β VN30 | % thanh khoản rổ | Biên độ đáo hạn | "
+                  "RS 20p | Điểm |",
+                  "|--:|----|------|-------:|-----------------:|----------------:|"
+                  "-------:|-----:|"]
+        for i, r in enumerate(rows, 1):
+            e = r.futures
+            if e is None or e.beta is None:
+                continue
+            lines.append(
+                f"| {i} | **{r.symbol}** | {'trong rổ' if e.in_vn30 else 'ngoài rổ'} | "
+                f"{_n(e.beta)} | "
+                f"{_n(e.liquidity_share_pct) if e.liquidity_share_pct is not None else '—'} | "
+                f"{_n(e.expiry_move_ratio)}× | {_signed(e.rs_20)} | **{e.score:.0f}** |"
+            )
+        return lines + [""]
     else:
         lines += ["| # | Mã | Mẫu hình | Độ tin cậy | Mốc | Mục tiêu | Huỷ nếu |",
                   "|--:|----|----------|-----------|----:|--------:|--------:|"]
@@ -796,6 +835,10 @@ def format_ranking(ranking, top: int = 8) -> str:
                  else "gọi `rank_list` để xếp lại theo tiêu chí khác, không phải dựng lại từ đầu")
         lines.append(f"🗂 Dữ liệu xếp hạng: `{ranking.json_path}` — {again}.")
     lines.append("")
+    # Lực nền chung của cả bảng, đứng trước các danh sách xếp hạng: đọc "mã nào
+    # mạnh nhất" mà không biết phái sinh đang ở tư thế nào là đọc thiếu một vế.
+    lines += format_futures_brief(getattr(ranking, "futures", None), None,
+                                  ref_date=ranking.as_of)
 
     up_rows, _ = sort_rows(ranking.rows, "trend", True, side=UP, limit=top)
     down_rows, _ = sort_rows(ranking.rows, "trend", False, side=DOWN, limit=top)
@@ -808,6 +851,11 @@ def format_ranking(ranking, top: int = 8) -> str:
     lines += ["## Mẫu hình — xếp theo độ tin cậy", ""]
     lines += _rank_block("▲ Mẫu hình tăng", bull, "pattern")
     lines += _rank_block("▼ Mẫu hình giảm", bear, "pattern")
+
+    fut_rows, _ = sort_rows(ranking.rows, "futures", True, limit=top)
+    if any(getattr(r, "futures", None) and r.futures.beta is not None for r in fut_rows):
+        lines += ["## Phái sinh — mã nào nằm gần dòng tiền hợp đồng nhất", ""]
+        lines += _rank_block(f"⚙️ Phơi nhiễm cao nhất ({top} mã đầu)", fut_rows, "futures")
 
     sides = Counter(r.trend.side for r in ranking.rows)
     states = Counter(r.pattern.state for r in ranking.rows)
@@ -1029,7 +1077,7 @@ def format_futures_stats(buckets, note: str) -> str:
     return "\n".join(lines)
 
 
-def format_futures_brief(fsnap, exposure) -> List[str]:
+def format_futures_brief(fsnap, exposure, ref_date: str = "") -> List[str]:
     """Bối cảnh phái sinh gói gọn cho hồ sơ **một mã**.
 
     Bản đầy đủ (``format_futures``) là bức tranh cả thị trường; nhét nguyên nó
@@ -1050,7 +1098,7 @@ def format_futures_brief(fsnap, exposure) -> List[str]:
         pct, scope = b.get("percentile"), "phiên gần nhất"
 
     lines = [
-        "## Bối cảnh phái sinh",
+        f"## Bối cảnh phái sinh — {fsnap.as_of}",
         "",
         f"- Basis **{b['points']:+.2f} điểm** ({b['pct']:+.3f}%) — phân vị "
         f"`{_n(pct, 0)}%` so với {scope}. Đáo hạn `{e.get('date')}`, còn "
@@ -1061,6 +1109,15 @@ def format_futures_brief(fsnap, exposure) -> List[str]:
         f"5 phiên `{(fl.get('prop_net_5d_bn') or 0):+,.0f}` tỷ · khối ngoại 5 phiên "
         f"`{(fl.get('foreign_net_contracts_5d') or 0):+,}` HĐ",
     ]
+
+    # Phái sinh và cổ phiếu được nạp bằng hai lượt khác nhau, nên hai bên có thể
+    # dừng ở hai phiên khác nhau. Im lặng ở đây là để người đọc ghép một tư thế
+    # phái sinh của hôm nay vào một bảng giá của tuần trước mà không hay biết.
+    if ref_date and fsnap.as_of != ref_date:
+        lines.append(
+            f"- ⚠️ Phái sinh đã có phiên **{fsnap.as_of}**, phần còn lại của báo cáo "
+            f"dừng ở **{ref_date}** — chạy `/update` để hai bên khớp nhau."
+        )
 
     if exposure is not None and exposure.beta is not None:
         where = ("**trong rổ VN30** — lệnh arbitrage rơi thẳng vào"
@@ -1099,7 +1156,9 @@ def format_futures_brief(fsnap, exposure) -> List[str]:
 #: (slash command, tool, what it answers). Kept next to the tools it names so a
 #: renamed tool shows up here as an obviously wrong row, not silent rot.
 _COMMAND_MAP = [
-    ("/update", "update_prices_tool", "Tải giá mới nhất từ FireAnt về `data/`"),
+    ("/update", "update_prices_tool + update_news",
+     "Tải giá mới nhất về `data/` **và** nạp tin tức về `news/index.db` — "
+     "cùng một `universe` + `mode` cho cả hai bước"),
     ("/scan", "scan_signals", "Quét cả rổ tìm tín hiệu RSI14 / ADX14"),
     ("/structure", "analyze_structure",
      "Trendline + hộp tích luỹ + hình mẫu + mô hình đảo chiều, kèm ảnh biểu đồ"),
@@ -1115,6 +1174,20 @@ _COMMAND_MAP = [
      "ra file HTML sắp xếp được và file JSON tổng hợp"),
     ("/rank <tiêu chí>", "rank_list",
      "Đọc lại bảng vừa dựng và sắp xếp theo tiêu chí khác, cao→thấp hoặc ngược lại"),
+    ("/prospect", "build_prospect",
+     "Danh sách **triển vọng cao**: lọc cả rổ xuống ứng viên có tư thế tăng giá rồi "
+     "chấm điểm = phần đo được (mẫu hình 30 + breakout/volume 25 + RSI 15 + sức mạnh "
+     "tương đối 12 + định giá so ngành 12 + nội bộ 6) cộng phần tin (−25…+25)"),
+    ("—", "prospect_evidence",
+     "Gói bằng chứng để chính model đọc: tin của mã theo phiên kèm phản ứng đã đo, "
+     "tin ngành, chỉ số cơ bản so trung bình ngành, giao dịch nội bộ"),
+    ("—", "prospect_score_news",
+     "Nộp điểm tin vừa chấm, ghi vào kho nhận định rồi trộn vào bảng triển vọng"),
+    ("—", "score_news_gemini",
+     "Chấm điểm tin cả loạt bằng Gemini (chạy nền, cần GEMINI_API_KEY)"),
+    ("—", "update_fundamentals",
+     "Nạp và **đóng băng** chỉ số cơ bản theo ngày — FireAnt chỉ trả trạng thái hôm "
+     "nay, ngày nào không chạy là ngày đó mất vĩnh viễn"),
     ("/watch", "check_forecasts", "Forecast nào đổi trạng thái từ lần kiểm tra trước"),
     ("/futures", "futures_snapshot",
      "Thị trường phái sinh VN30: basis, đòn bẩy, tự doanh/khối ngoại trên hợp đồng, "
@@ -1124,6 +1197,20 @@ _COMMAND_MAP = [
      "beta, tỷ trọng thanh khoản rổ, hành vi phiên đáo hạn"),
     ("—", "futures_stats",
      "Base rate: sau mỗi mức basis thì VN30 thật sự đi đâu trong 1/3/5 phiên"),
+    ("/news <MÃ>", "news_digest",
+     "Đầu mục tin tức 20 phiên gần nhất, gom theo phiên, mỗi phiên kèm trạng thái "
+     "đo được: đã vào giá / giá chạy trước tin / còn trôi tiếp / chưa phản ứng"),
+    ("—", "news_transactions",
+     "Giao dịch của người nội bộ và cổ đông lớn: chiều mua/bán, khối lượng đăng ký "
+     "so với khối lượng thực hiện"),
+    ("—", "news_impact",
+     "Event study đầy đủ quanh vài giao dịch nội bộ gần nhất — ba cửa sổ tách rời"),
+    ("—", "news_stats",
+     "Base rate: loại giao dịch nội bộ này thường đi kèm mức giá chạy bao nhiêu"),
+    ("—", "update_news",
+     "Riêng phần tin: đầu mục tin, giao dịch nội bộ, mốc BCTC/cổ tức về "
+     "`news/index.db`. Mốc lùi nối tiếp chỗ kho đang dừng nên `latest` vẫn lấp "
+     "kín quãng bỏ bê"),
     ("<lệnh> + ngày", "tham số `as_of`",
      "Mọi lệnh báo cáo nhận thêm một mốc thời gian: `/deep-dive FPT 01/01/2025` "
      "chạy như thể hôm nay là ngày đó"),
@@ -1161,7 +1248,8 @@ def format_usage_guide() -> str:
         "## Nhịp dùng hàng ngày",
         "",
         "```",
-        "/update              # nạp phiên mới nhất (80 mã + VNINDEX, ~15s)",
+        "/update              # phiên mới nhất (80 mã + VNINDEX) + tin cả rổ",
+        "/update no-news      # chỉ giá, ~15s",
         "/watch               # forecast nào đổi trạng thái",
         "/scan                # tín hiệu mới trong 5 phiên gần nhất",
         "/structure ANV       # xem kỹ mã đáng chú ý",
@@ -1213,4 +1301,164 @@ def format_usage_guide() -> str:
         "",
         DISCLAIMER,
     ]
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
+# triển vọng cao
+# ---------------------------------------------------------------------------
+def _prospect_score_cell(row) -> str:
+    """Tổng điểm, **luôn kèm hai vế đã tạo ra nó**.
+
+    Không bao giờ in một mình: ``72`` không nói gì, ``72 (đo 61 + tin +11)``
+    nói rằng một phần ba số đó là nhận định của một model chứ không phải phép
+    đo. Đó là điều kiện để cột này không thành cái "điểm cổ phiếu" mà
+    ``CLAUDE.md`` cấm.
+    """
+    if row.news is None:
+        return f"**{row.base_score:.0f}** (đo, chưa chấm tin)"
+    return f"**{row.total:.0f}** (đo {row.base_score:.0f} · tin {row.news.score:+.0f})"
+
+
+def format_prospect(board, top: int = 12, show_excluded: bool = True) -> str:
+    """Bảng triển vọng cao — danh sách ứng viên, kèm mọi thành phần điểm."""
+    from src.ta.prospect import EXCLUDE_VN, MAX_NEWS
+
+    if not board.rows and not board.excluded:
+        return ("## Triển vọng cao\n\n"
+                + "\n".join(f"⚠️ {n}" for n in board.notes)
+                + "\n\nChưa có bảng xếp hạng nào để lọc — chạy `build_ranking` trước.")
+
+    lines = [
+        f"# Triển vọng cao — {board.as_of}",
+        "",
+        *_asof_lines(getattr(board, "as_of_requested", ""), board.as_of),
+        f"{len(board.rows)} ứng viên trên {len(board.rows) + len(board.excluded)} mã "
+        f"· nhóm `{board.universe}` · dựng lúc {board.generated}",
+        "",
+    ]
+    if board.html_path:
+        lines.append(f"📄 Bảng HTML: `{board.html_path}`")
+    if board.json_path:
+        lines.append(f"🗂 Dữ liệu: `{board.json_path}`")
+    lines.append("")
+
+    scored = board.scored_rows[:max(1, top)]
+    lines += [
+        "## Danh sách",
+        "",
+        "| # | Mã | Ngành | Điểm | 🚩 Cờ đỏ | Mẫu hình | Break | RSI | RS | Định giá | Nội bộ | Tin |",
+        "|--:|----|-------|-----:|--------:|--------:|------:|----:|---:|--------:|------:|----:|",
+    ]
+    for i, r in enumerate(scored, 1):
+        def pts(key):
+            c = r.component(key)
+            return f"{c.points:+.0f}" if c else "—"
+        news = f"{r.news.score:+.0f}" if r.news else "·"
+        # Ba trạng thái, ba ký hiệu khác nhau: `?` là chưa quét được, `—` là đã
+        # quét và sạch, một con số âm là có cờ. Gộp hai cái đầu thành một ô
+        # trống là đúng lỗi mà quy ước "chưa đo được ≠ đã đo và thấy phẳng" cấm.
+        rf = r.redflags
+        flag = "?" if rf is None else ("—" if rf.is_empty else f"**{-rf.penalty:.0f}**")
+        lines.append(
+            f"| {i} | **{r.symbol}** | {r.sector_label} | {_prospect_score_cell(r)} | "
+            f"{flag} | "
+            f"{pts('pattern')} | {pts('breakout')} | {pts('rsi')} | {pts('rs')} | "
+            f"{pts('value')} | {pts('insider')} | {news} |"
+        )
+    lines.append("")
+
+    lines += ["## Vì sao từng mã vào danh sách", ""]
+    for i, r in enumerate(scored, 1):
+        lines.append(f"### {i}. {r.symbol} — {_prospect_score_cell(r)}")
+        lines.append("")
+        lines.append(
+            f"Giá {_n(r.close)} · RSI {_n(r.rsi, 1)} · RVOL {_n(r.rvol)}× · "
+            f"thanh khoản {_n(r.liquidity_bn, 0)} tỷ/phiên · 20 phiên {_signed(r.change_20d)}"
+        )
+        lines.append("")
+        # Cờ đỏ in **trước** mọi thành phần khác, kể cả khi nó bằng 0: thứ tự
+        # đọc là thứ tự ưu tiên, và một điểm trừ 50 nằm lẫn giữa sáu dòng điểm
+        # cộng thì không còn là cảnh báo nữa.
+        rf_comp = r.component("redflag")
+        if rf_comp is not None:
+            lines.append(f"- **🚩 {rf_comp.label} {rf_comp.points:+.1f}/"
+                         f"−{rf_comp.max_points:.0f}** — {rf_comp.note}")
+        if r.redflags is not None and not r.redflags.is_empty:
+            for f in r.redflags.flags[:4]:
+                lines.append(f"  - [{f.label}] {f.title.strip()} "
+                             f"_({f.published[:10]} · −{f.score:.0f})_")
+        for c in r.components:
+            if c.key == "redflag":
+                continue
+            if abs(c.points) < 0.05 and not c.note:
+                continue
+            lines.append(f"- **{c.label} {c.points:+.1f}/{c.max_points:.0f}** — {c.note}")
+        if r.trigger or r.target or r.invalidation:
+            lines.append(
+                f"- **Mốc giá** — kích hoạt {_n(r.trigger)} · mục tiêu {_n(r.target)} "
+                f"· huỷ nếu mất {_n(r.invalidation)}"
+            )
+        if r.sector is not None and r.sector.comparable:
+            v = r.sector
+            lines.append(
+                f"- **Ngành {v.label}** — {v.n_rows} mã, {v.breadth_up:.0f}% đang tăng, "
+                f"trung vị 20 phiên {_signed(v.median_change_20d)}"
+                + (f", mã này đứng thứ {v.rank_in_sector}/{v.n_rows}"
+                   if v.rank_in_sector else "")
+                + (f", dẫn đầu {v.leader}" if v.leader else "")
+            )
+        if r.news is not None:
+            n = r.news
+            lines.append(
+                f"- **Tin {n.score:+.0f}/{MAX_NEWS:.0f}** ({n.label or 'không nhãn'}, "
+                f"độ chắc chắn {n.confidence or '—'}, chấm bởi `{n.source or '?'}`) — "
+                f"{n.summary}"
+            )
+            for good in n.good[:3]:
+                lines.append(f"  - ✅ {good}")
+            for bad in n.bad[:3]:
+                lines.append(f"  - ⚠️ {bad}")
+            if n.sector_outlook:
+                lines.append(f"  - 🔭 Triển vọng ngành: {n.sector_outlook}")
+        else:
+            lines.append("- **Tin** — chưa chấm. Gọi `prospect_evidence` để đọc "
+                         "gói bằng chứng, rồi `prospect_score_news` để nộp điểm.")
+        for w in r.warnings:
+            lines.append(f"- ⚠️ {w}")
+        lines.append("")
+
+    if show_excluded and board.excluded:
+        from itertools import groupby
+        lines += ["## Bị loại khỏi danh sách", ""]
+        keyed = sorted(board.excluded, key=lambda r: r.excluded)
+        for reason, group in groupby(keyed, key=lambda r: r.excluded):
+            items = list(group)
+            lines.append(f"**{EXCLUDE_VN.get(reason, reason)}** ({len(items)} mã): "
+                         + ", ".join(f"{r.symbol} ({r.excluded_note})"
+                                     for r in items[:6])
+                         + (" …" if len(items) > 6 else ""))
+        lines.append("")
+
+    n_news = board.n_news_scored
+    lines += [
+        "## Cách đọc bảng này",
+        "",
+        f"- Cột **Điểm** là hai vế cộng lại và **luôn in cả hai**: phần *đo được* "
+        f"(0–100, từ giá và sổ sách) cộng phần *tin* (−{MAX_NEWS:.0f}…+{MAX_NEWS:.0f}, "
+        f"nhận định của model ngôn ngữ). Đã chấm tin: {n_news}/{len(board.rows)} mã.",
+        "- Ba cột điểm của `/rank` (cường độ xu hướng, độ tin cậy mẫu hình, phơi nhiễm "
+        "phái sinh) **không** nằm trong con số này và không bị nó thay thế — bảng xếp "
+        "hạng vẫn là bảng xếp hạng.",
+        f"- Thanh khoản là **cửa vào**, không phải điểm: dưới "
+        f"{board.min_liquidity_bn:.0f} tỷ/phiên thì loại thẳng, vì một mẫu hình đẹp "
+        "trên mã không giao dịch được là mẫu hình không dùng được.",
+        "- RSI đủ điểm ở **40–60** như yêu cầu, rồi giảm dần chứ không cắt phựt: một mã "
+        "vừa breakout bằng volume gần như luôn có RSI 62–72, cắt cứng ở 60 là loại đúng "
+        "những mã hai tiêu chí đầu vừa chọn ra. Trên 75 thành điểm âm.",
+        "",
+    ]
+    if board.notes:
+        lines += ["**Khoảng trống trong bảng này:**"] + [f"- {n}" for n in board.notes] + [""]
+    lines.append(DISCLAIMER)
     return "\n".join(lines)

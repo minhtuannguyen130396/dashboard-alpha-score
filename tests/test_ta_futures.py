@@ -16,6 +16,8 @@ from unittest import mock
 
 from src.ta import futures as fut
 from src.ta import loader
+from src.ta import ranking
+from src.ta.format import format_futures_brief
 
 
 def _quote(symbol: str, day: str, close: float, volume: float = 1000.0,
@@ -273,6 +275,159 @@ class UniverseIsolationTest(unittest.TestCase):
     def test_futures_group_holds_only_derivatives(self):
         self.assertTrue(
             set(loader.resolve_universe("futures")) <= set(loader.derivative_symbols()))
+
+
+# ---------------------------------------------------------------------------
+# Nối vào /report và /rank
+# ---------------------------------------------------------------------------
+def _row(symbol="TEST", **kw) -> ranking.SymbolRank:
+    """Một dòng xếp hạng tối thiểu — dựng bằng tay, không đọc đĩa.
+
+    Cố ý không mượn helper của ``test_ta_ranking``: cái đang kiểm ở đây là vòng
+    JSON của **trục phái sinh**, nó phải đứng vững kể cả khi hai trục kia đổi
+    hình dạng.
+    """
+    body = dict(
+        symbol=symbol, as_of="2026-08-25", bars=300, close=100.0, change_pct=1.0,
+        change_5d=2.0, change_20d=10.0, rsi=55.0, rsi_state="neutral", rvol=1.2,
+        atr_pct=2.0, vs_ema20=5.0, vs_ema50=11.0, box_position=50.0,
+        box_top=105.0, box_bottom=95.0,
+        trend=ranking.TrendRank(
+            side=ranking.UP, score=50.0, ema_side=ranking.UP, ema_label="EMA",
+            structure_side=ranking.UP, structure_label="cấu trúc", conflict=False,
+            adx=30.0, adx_direction="up", adx_regime="strong",
+            components={}, reasons=["vì sao"]),
+        pattern=ranking.PatternRank(
+            source=ranking.FORMATION_SRC, name="Hai đáy", bias="bullish",
+            state=ranking.PARTIAL, confidence=60.0, trigger=100.0, target=110.0,
+            invalidation=90.0, note="ghi chú"),
+        brief=["dòng lý giải"],
+    )
+    body.update(kw)
+    return ranking.SymbolRank(**body)
+
+
+def _exposure(symbol="TEST", **kw) -> fut.SymbolExposure:
+    body = dict(symbol=symbol, in_vn30=True, beta=1.30, r2=0.42, n_bars=120,
+                rs_20=3.5, rs_60=-1.2, liquidity_share_pct=6.4,
+                expiry_move_ratio=1.15, expiry_vol_ratio=1.08, n_expiries=60,
+                score=71.0, channel="Cơ học", note="")
+    body.update(kw)
+    return fut.SymbolExposure(**body)
+
+
+class RankingIntegrationTest(unittest.TestCase):
+    """Trục phái sinh phải đi trọn vòng JSON, và phải **đứng riêng**.
+
+    Bảng xếp hạng được đọc lại từ file chứ không dựng lại (``rank_list``), nên
+    một trường không round-trip được sẽ im lặng biến mất ở đúng lúc người dùng
+    xoay bảng — không lỗi, chỉ là cột trống.
+    """
+
+    def test_exposure_survives_the_json_round_trip(self):
+        row = _row(symbol="ABC", futures=_exposure("ABC"))
+        back = ranking.SymbolRank.from_dict(row.to_dict())
+        self.assertIsNotNone(back.futures)
+        self.assertEqual(back.futures.beta, 1.30)
+        self.assertEqual(back.futures.liquidity_share_pct, 6.4)
+        self.assertTrue(back.futures.in_vn30)
+        self.assertEqual(back.futures_score, 71.0)
+
+    def test_a_row_without_exposure_round_trips_as_none(self):
+        """Mã chưa đo được vẫn phải đi qua được — cột trống, không phải nổ."""
+        back = ranking.SymbolRank.from_dict(_row(symbol="XYZ").to_dict())
+        self.assertIsNone(back.futures)
+        self.assertIsNone(back.futures_score)
+        self.assertIsNone(back.beta_vn30)
+
+    def test_market_context_survives_the_json_round_trip(self):
+        """`rank_list` đọc lại bảng cũ phải nói đúng tư thế phái sinh *hôm đó*.
+
+        Nếu ảnh chụp này không đi theo file thì lần xoay bảng sau sẽ ghép bối
+        cảnh của hôm nay vào một bảng của tuần trước.
+        """
+        snap = fut.FuturesSnapshot(
+            as_of="2026-08-20", bars=500,
+            basis={"points": -8.0, "pct": -0.42},
+            expiry={"sessions_left": 0, "date": "2026-08-20"},
+        )
+        board = ranking.Ranking(as_of="2026-08-20", generated="x", universe="vn30",
+                                futures=snap)
+        back = ranking.Ranking.from_dict(board.to_dict())
+        self.assertEqual(back.futures.as_of, "2026-08-20")
+        self.assertEqual(back.futures.basis["points"], -8.0)
+        self.assertEqual(back.futures.expiry["sessions_left"], 0)
+
+    def test_exposure_never_leaks_into_the_other_two_axes(self):
+        """Ba cột, ba câu hỏi. Cộng chúng vào nhau là xoá đúng chỗ khác nhau.
+
+        Một mã cường độ +50 ngoài rổ VN30 và một mã cường độ +50 beta 1,6 nằm
+        trong rổ là hai tình huống khác hẳn — nhưng *cường độ* của chúng vẫn
+        phải bằng nhau, vì đó là câu trả lời cho một câu hỏi khác.
+        """
+        bare = _row(symbol="A")
+        loaded = _row(symbol="B", futures=_exposure("B", score=95.0, beta=1.9))
+        self.assertEqual(bare.trend.score, loaded.trend.score)
+        self.assertEqual(bare.pattern.confidence, loaded.pattern.confidence)
+        self.assertIsNone(bare.futures_score)
+        self.assertEqual(loaded.futures_score, 95.0)
+
+    def test_criterion_answers_to_vietnamese(self):
+        for name in ("futures", "phái sinh", "phơi nhiễm", "ảnh hưởng phái sinh"):
+            with self.subTest(name=name):
+                self.assertEqual(ranking.resolve_criterion(name).key, "futures")
+        self.assertEqual(ranking.resolve_criterion("beta").key, "beta")
+        self.assertEqual(ranking.resolve_criterion("beta VN30").key, "beta")
+
+    def test_sorting_by_exposure_puts_unmeasured_symbols_last(self):
+        """Mã không đo được không phải mã điểm 0 — nó phải rơi xuống cuối bảng."""
+        rows = [
+            _row(symbol="LOW", futures=_exposure("LOW", score=12.0)),
+            _row(symbol="NONE"),
+            _row(symbol="HIGH", futures=_exposure("HIGH", score=88.0)),
+        ]
+        ordered, crit = ranking.sort_rows(rows, "phái sinh", True)
+        self.assertEqual([r.symbol for r in ordered], ["HIGH", "LOW", "NONE"])
+        self.assertEqual(crit.key, "futures")
+
+
+class BriefRenderingTest(unittest.TestCase):
+    """Khối bối cảnh dùng chung cho `/report`, `/rank` và hồ sơ một mã."""
+
+    def _snap(self, as_of="2026-09-04") -> fut.FuturesSnapshot:
+        return fut.FuturesSnapshot(
+            as_of=as_of, bars=500,
+            spot={"close": 1900.0},
+            front={"symbol": "VN30F1M", "close": 1898.0, "contracts": 200000,
+                   "rvol": 1.1},
+            basis={"points": -2.0, "pct": -0.105, "percentile_same_maturity": 12.0},
+            expiry={"date": "2026-09-17", "sessions_left": 9, "estimated": True},
+            flow={"leverage_ratio": 3.8, "prop_net_5d_bn": -120.0,
+                  "foreign_net_contracts_5d": -2400},
+        )
+
+    def test_heading_carries_the_futures_session(self):
+        lines = format_futures_brief(self._snap(), None)
+        self.assertIn("2026-09-04", lines[0])
+
+    def test_a_date_gap_against_the_rest_of_the_report_is_stated(self):
+        """Giá và phái sinh nạp bằng hai lượt khác nhau nên có thể lệch phiên.
+
+        Im lặng ở đây là để người đọc ghép tư thế phái sinh của hôm nay vào một
+        bảng giá của tuần trước mà không hay biết.
+        """
+        lines = format_futures_brief(self._snap(), None, ref_date="2026-08-28")
+        self.assertTrue(any("2026-08-28" in ln and "⚠️" in ln for ln in lines))
+
+    def test_no_warning_when_both_sides_stop_on_the_same_session(self):
+        lines = format_futures_brief(self._snap(), None, ref_date="2026-09-04")
+        self.assertFalse(any("⚠️" in ln for ln in lines))
+
+    def test_missing_futures_data_renders_nothing_at_all(self):
+        """Chưa nạp VN30/VN30F1M thì báo cáo phải dựng được y hệt như trước."""
+        self.assertEqual(format_futures_brief(None, None), [])
+        self.assertEqual(
+            format_futures_brief(fut.FuturesSnapshot(as_of="-", bars=0), None), [])
 
 
 if __name__ == "__main__":

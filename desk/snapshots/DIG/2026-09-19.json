@@ -1,0 +1,39 @@
+{
+ "symbol": "DIG",
+ "snapshot_date": "2026-09-19",
+ "composed": 11703.727326684435,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 11703.50901616465,
+   "weight_pct": 50.01150465601133
+  },
+  {
+   "name": "P/E",
+   "price": 17945.819534487815,
+   "weight_pct": 6.598503765667367
+  },
+  {
+   "name": "P/B",
+   "price": 42678.99330944543,
+   "weight_pct": 1.4863459014585283
+  },
+  {
+   "name": "Graham 1",
+   "price": 8537.602313709158,
+   "weight_pct": 21.401922947346964
+  },
+  {
+   "name": "Graham 2",
+   "price": 6364.394452037735,
+   "weight_pct": 10.807979815416076
+  },
+  {
+   "name": "Graham 3",
+   "price": 15649.680433133717,
+   "weight_pct": 9.69374291409973
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 310.3
+}

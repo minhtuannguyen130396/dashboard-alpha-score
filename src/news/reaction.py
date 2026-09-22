@@ -176,12 +176,20 @@ def _align(sym_recs: Sequence[StockRecord],
 # --- Phép đo chính --------------------------------------------------------
 
 def measure(symbol: str, t0: str, benchmark: str = DEFAULT_BENCHMARK,
-            band_pct: float = LIMIT_BAND) -> Reaction:
+            band_pct: float = LIMIT_BAND,
+            as_of: Optional[datetime] = None) -> Reaction:
     """Đo phản ứng quanh ``t0``.
 
     ``t0`` là ngày sự kiện dạng ISO hoặc dd/mm/yyyy. Phiên thật dùng làm mốc là
     phiên tại hoặc trước ``t0``; hai ngày này lệch nhau mỗi khi sự kiện rơi vào
     ngày nghỉ, nên cả hai đều được trả về.
+
+    ``as_of`` cắt **phần đuôi** của chuỗi giá. Không có nó thì cửa sổ sau sự kiện
+    luôn chạy tới ``t0 + 40 ngày`` bất kể mốc hồi tưởng, nên một báo cáo đứng ở
+    01/01/2025 vẫn đọc được giá tháng 2/2025 để kết luận "tin đã vào giá" — đúng
+    kiểu nhìn trước mà ``as_of`` sinh ra để chặn. Cắt ở đây thay vì ở tầng gọi
+    vì ``incomplete`` phải phản ánh *thiếu phiên tại thời điểm đó*, không phải
+    thiếu phiên hôm nay.
     """
     target = _parse_date(t0)
     if target is None:
@@ -192,6 +200,8 @@ def measure(symbol: str, t0: str, benchmark: str = DEFAULT_BENCHMARK,
     # Nạp rộng hơn cửa sổ cần dùng: 130 phiên ~ 190 ngày lịch, cộng đệm.
     start = target - timedelta(days=400)
     end = target + timedelta(days=40)
+    if as_of is not None and as_of < end:
+        end = as_of
     sym_recs = load_prices(symbol, start, end)
     bench_recs = load_prices(benchmark, start, end)
     if not sym_recs:

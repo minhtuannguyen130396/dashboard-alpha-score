@@ -860,6 +860,53 @@ sửa, số sự kiện đo được tăng từ 3.701 lên **4.027**. Hình dạ
 
 ---
 
+## 8c. Proxy equal-weight — và một giả thuyết bị bác bỏ
+
+Nền placebo là **−0,29%**, không phải 0. Giả thuyết ban đầu: do VNINDEX là chỉ số
+**trọng số vốn hoá**, nên nó gần với "vài mã lớn nhất đang làm gì" hơn là "một cổ
+phiếu trung bình đang làm gì", trong khi rổ đang đo là 79 mã đều tay.
+
+Đã dựng `_PROXY_EW` (`src/news/benchmark.py`): trung bình cộng lợi suất 79 mã mỗi
+phiên, mọi mã trọng số bằng nhau, 4.152 phiên 2010→2026, ghi ra `data/_PROXY_EW/`
+đúng schema nên `loader` đọc được không cần sửa gì. Đăng ký ở
+`stock_list/benchmarks.json` để không lọt vào rổ quét/xếp hạng.
+
+**Kết quả bác bỏ giả thuyết:**
+
+| Benchmark | Trung vị | p25 | p75 | % dương |
+|---|---|---|---|---|
+| VNINDEX | −0,33% | −1,48% | +1,02% | 45% |
+| `_PROXY_EW` | −0,34% | −1,44% | +0,98% | 42% |
+
+Gần như y hệt. Nền âm **không do trọng số vốn hoá**.
+
+### Nguyên nhân thật: lệch phải của phân phối lợi suất
+
+Đo tiếp trên ngày ngẫu nhiên: **mean −0,20%, median −0,32%**, độ lệch chuẩn 2,36%.
+Với n≈400–500, sai số chuẩn của mean là ~0,11% — nên **mean không phân biệt được
+với 0**, chỉ median mới âm rõ.
+
+Bỏ `α` (dùng market-adjusted return, β=1) cũng gần như không đổi: mean −0,157% →
+−0,117%. Nên `α` cũng không phải thủ phạm.
+
+Đó là chữ ký của **phân phối lệch phải**: lợi suất cổ phiếu có đuôi phải dày, nên
+một phân phối có mean = 0 vẫn có median âm. Nền âm là **tính chất của thước đo**
+(dùng trung vị trên phân phối lệch), không phải sai lệch của phép đo.
+
+### Hệ quả cho cách đọc số
+
+1. **Đừng so trung vị với 0. So với nền placebo.** Đó là điều `format_with_placebo`
+   đã làm — và giờ thì biết vì sao nó cần thiết, chứ không phải chỉ cho chắc.
+2. **Proxy vẫn giữ**, nhưng với vai khác vai đã nghĩ: nó trả lời *"so với một cổ
+   phiếu trung bình"*, VNINDEX trả lời *"so với thị trường"*. Khi hai bên lệch
+   nhau nhiều thì chỗ lệch là thông tin — nhóm vốn hoá lớn đang chạy khác phần
+   còn lại.
+3. ⚠️ `_PROXY_EW` **có survivorship bias**: `data/` chỉ chứa mã còn trong rổ hôm
+   nay. Mã huỷ niêm yết không có mặt ở bất kỳ phiên quá khứ nào, nên chỉ số này
+   hơi lạc quan. "Đúng hơn cho việc này" không phải "sạch".
+
+---
+
 ## 9. Quy ước phải giữ (như mục cùng tên trong `CLAUDE.md`)
 
 **9.1 Giờ đăng ≠ phiên tác động.** Tin lúc 14:20 kịp vào ATC hôm nay; tin lúc 15:10

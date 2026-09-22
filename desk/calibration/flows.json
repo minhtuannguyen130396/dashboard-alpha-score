@@ -1,0 +1,855 @@
+{
+ "generated": "2026-09-19 01:31",
+ "universe": "all",
+ "n_symbols": 80,
+ "hypotheses": [
+  {
+   "name": "D1-5p",
+   "question": "khối ngoại mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 5 phiên sau (cả rổ; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-10120% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 9082,
+     "median_rel": -0.173,
+     "mean_rel": 0.157,
+     "hit_rate": 47.8,
+     "placebo_median": -0.196,
+     "edge": 0.023,
+     "p_value": 0.5475,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-36% → +2%]",
+     "n_overlapping": 0,
+     "n_independent": 9070,
+     "median_rel": -0.23,
+     "mean_rel": 0.064,
+     "hit_rate": 46.9,
+     "placebo_median": -0.196,
+     "edge": -0.034,
+     "p_value": 0.375,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-8% → +6%]",
+     "n_overlapping": 0,
+     "n_independent": 9066,
+     "median_rel": -0.075,
+     "mean_rel": 0.199,
+     "hit_rate": 48.9,
+     "placebo_median": -0.196,
+     "edge": 0.121,
+     "p_value": 0.005,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [-3% → +38%]",
+     "n_overlapping": 0,
+     "n_independent": 9110,
+     "median_rel": -0.239,
+     "mean_rel": 0.091,
+     "hit_rate": 47.3,
+     "placebo_median": -0.194,
+     "edge": -0.045,
+     "p_value": 0.24,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +8555%]",
+     "n_overlapping": 0,
+     "n_independent": 9083,
+     "median_rel": -0.284,
+     "mean_rel": 0.161,
+     "hit_rate": 46.6,
+     "placebo_median": -0.197,
+     "edge": -0.087,
+     "p_value": 0.03,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.196,
+   "pool_n": 45411,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  },
+  {
+   "name": "D1-10p",
+   "question": "khối ngoại mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 10 phiên sau (cả rổ; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-7977% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 4538,
+     "median_rel": -0.287,
+     "mean_rel": 0.26,
+     "hit_rate": 47.8,
+     "placebo_median": -0.284,
+     "edge": -0.003,
+     "p_value": 0.97,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-35% → +2%]",
+     "n_overlapping": 0,
+     "n_independent": 4536,
+     "median_rel": -0.332,
+     "mean_rel": 0.168,
+     "hit_rate": 47.0,
+     "placebo_median": -0.279,
+     "edge": -0.054,
+     "p_value": 0.5125,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-8% → +6%]",
+     "n_overlapping": 0,
+     "n_independent": 4535,
+     "median_rel": -0.037,
+     "mean_rel": 0.449,
+     "hit_rate": 49.6,
+     "placebo_median": -0.283,
+     "edge": 0.246,
+     "p_value": 0.0075,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [-2% → +35%]",
+     "n_overlapping": 0,
+     "n_independent": 4544,
+     "median_rel": -0.396,
+     "mean_rel": 0.254,
+     "hit_rate": 46.6,
+     "placebo_median": -0.287,
+     "edge": -0.109,
+     "p_value": 0.1825,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +6031%]",
+     "n_overlapping": 0,
+     "n_independent": 4539,
+     "median_rel": -0.42,
+     "mean_rel": 0.245,
+     "hit_rate": 46.3,
+     "placebo_median": -0.283,
+     "edge": -0.137,
+     "p_value": 0.09,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.28,
+   "pool_n": 22692,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  },
+  {
+   "name": "D1-20p",
+   "question": "khối ngoại mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 20 phiên sau (cả rổ; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-7977% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 2266,
+     "median_rel": -0.269,
+     "mean_rel": 0.562,
+     "hit_rate": 48.6,
+     "placebo_median": -0.376,
+     "edge": 0.108,
+     "p_value": 0.55,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-36% → +2%]",
+     "n_overlapping": 0,
+     "n_independent": 2265,
+     "median_rel": -0.528,
+     "mean_rel": 0.571,
+     "hit_rate": 46.3,
+     "placebo_median": -0.387,
+     "edge": -0.141,
+     "p_value": 0.4175,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-8% → +6%]",
+     "n_overlapping": 0,
+     "n_independent": 2269,
+     "median_rel": 0.105,
+     "mean_rel": 0.951,
+     "hit_rate": 50.6,
+     "placebo_median": -0.378,
+     "edge": 0.483,
+     "p_value": 0.005,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [-2% → +34%]",
+     "n_overlapping": 0,
+     "n_independent": 2267,
+     "median_rel": -0.538,
+     "mean_rel": 0.313,
+     "hit_rate": 47.5,
+     "placebo_median": -0.382,
+     "edge": -0.156,
+     "p_value": 0.3925,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +2208%]",
+     "n_overlapping": 0,
+     "n_independent": 2267,
+     "median_rel": -0.515,
+     "mean_rel": 0.464,
+     "hit_rate": 46.8,
+     "placebo_median": -0.382,
+     "edge": -0.133,
+     "p_value": 0.4575,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.356,
+   "pool_n": 11334,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  },
+  {
+   "name": "D2-5p",
+   "question": "tự doanh mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 5 phiên sau (cả rổ; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-9518% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 4366,
+     "median_rel": -0.244,
+     "mean_rel": 0.164,
+     "hit_rate": 47.0,
+     "placebo_median": -0.217,
+     "edge": -0.027,
+     "p_value": 0.635,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-6% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 4300,
+     "median_rel": -0.206,
+     "mean_rel": 0.117,
+     "hit_rate": 47.1,
+     "placebo_median": -0.214,
+     "edge": 0.009,
+     "p_value": 0.89,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-0% → +1%]",
+     "n_overlapping": 0,
+     "n_independent": 4307,
+     "median_rel": 0.014,
+     "mean_rel": 0.382,
+     "hit_rate": 50.1,
+     "placebo_median": -0.219,
+     "edge": 0.232,
+     "p_value": 0.0,
+     "verdict": "tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [-0% → +7%]",
+     "n_overlapping": 0,
+     "n_independent": 4494,
+     "median_rel": -0.306,
+     "mean_rel": -0.04,
+     "hit_rate": 45.9,
+     "placebo_median": -0.216,
+     "edge": -0.09,
+     "p_value": 0.1325,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +4394%]",
+     "n_overlapping": 0,
+     "n_independent": 4374,
+     "median_rel": -0.272,
+     "mean_rel": 0.186,
+     "hit_rate": 46.3,
+     "placebo_median": -0.214,
+     "edge": -0.059,
+     "p_value": 0.315,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.212,
+   "pool_n": 21841,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  },
+  {
+   "name": "D2-10p",
+   "question": "tự doanh mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 10 phiên sau (cả rổ; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-9518% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 2177,
+     "median_rel": -0.171,
+     "mean_rel": 0.458,
+     "hit_rate": 48.7,
+     "placebo_median": -0.34,
+     "edge": 0.168,
+     "p_value": 0.1625,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-6% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 2178,
+     "median_rel": -0.436,
+     "mean_rel": 0.088,
+     "hit_rate": 45.6,
+     "placebo_median": -0.336,
+     "edge": -0.1,
+     "p_value": 0.415,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-0% → +1%]",
+     "n_overlapping": 0,
+     "n_independent": 2075,
+     "median_rel": -0.058,
+     "mean_rel": 0.754,
+     "hit_rate": 49.9,
+     "placebo_median": -0.338,
+     "edge": 0.28,
+     "p_value": 0.0375,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [-0% → +7%]",
+     "n_overlapping": 0,
+     "n_independent": 2288,
+     "median_rel": -0.483,
+     "mean_rel": 0.042,
+     "hit_rate": 46.5,
+     "placebo_median": -0.341,
+     "edge": -0.141,
+     "p_value": 0.2775,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +4394%]",
+     "n_overlapping": 0,
+     "n_independent": 2185,
+     "median_rel": -0.398,
+     "mean_rel": 0.277,
+     "hit_rate": 46.2,
+     "placebo_median": -0.342,
+     "edge": -0.056,
+     "p_value": 0.655,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.333,
+   "pool_n": 10903,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  },
+  {
+   "name": "D2-20p",
+   "question": "tự doanh mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 20 phiên sau (cả rổ; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-1308% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 1086,
+     "median_rel": -0.35,
+     "mean_rel": 0.554,
+     "hit_rate": 47.7,
+     "placebo_median": -0.522,
+     "edge": 0.172,
+     "p_value": 0.5175,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-5% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 1056,
+     "median_rel": -0.85,
+     "mean_rel": 0.259,
+     "hit_rate": 45.3,
+     "placebo_median": -0.492,
+     "edge": -0.357,
+     "p_value": 0.1625,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-0% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 1060,
+     "median_rel": 0.058,
+     "mean_rel": 1.765,
+     "hit_rate": 50.8,
+     "placebo_median": -0.5,
+     "edge": 0.558,
+     "p_value": 0.03,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [-0% → +7%]",
+     "n_overlapping": 0,
+     "n_independent": 1143,
+     "median_rel": -0.754,
+     "mean_rel": 0.497,
+     "hit_rate": 45.9,
+     "placebo_median": -0.501,
+     "edge": -0.252,
+     "p_value": 0.365,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +126%]",
+     "n_overlapping": 0,
+     "n_independent": 1087,
+     "median_rel": -0.676,
+     "mean_rel": 0.453,
+     "hit_rate": 46.6,
+     "placebo_median": -0.518,
+     "edge": -0.158,
+     "p_value": 0.6175,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.524,
+   "pool_n": 5432,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  }
+ ],
+ "robustness": [
+  {
+   "name": "D1-5p-sach",
+   "question": "khối ngoại mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 5 phiên sau (đã loại phiên kín room / tuần ETF; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-10120% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 6737,
+     "median_rel": -0.217,
+     "mean_rel": 0.1,
+     "hit_rate": 47.1,
+     "placebo_median": -0.23,
+     "edge": 0.013,
+     "p_value": 0.8075,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-40% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 6700,
+     "median_rel": -0.208,
+     "mean_rel": 0.095,
+     "hit_rate": 47.1,
+     "placebo_median": -0.235,
+     "edge": 0.027,
+     "p_value": 0.5925,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-12% → +11%]",
+     "n_overlapping": 0,
+     "n_independent": 6783,
+     "median_rel": -0.264,
+     "mean_rel": 0.037,
+     "hit_rate": 47.0,
+     "placebo_median": -0.229,
+     "edge": -0.035,
+     "p_value": 0.4875,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [+0% → +46%]",
+     "n_overlapping": 0,
+     "n_independent": 6740,
+     "median_rel": -0.197,
+     "mean_rel": 0.172,
+     "hit_rate": 47.8,
+     "placebo_median": -0.231,
+     "edge": 0.034,
+     "p_value": 0.5025,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +8555%]",
+     "n_overlapping": 0,
+     "n_independent": 6740,
+     "median_rel": -0.291,
+     "mean_rel": 0.219,
+     "hit_rate": 46.6,
+     "placebo_median": -0.231,
+     "edge": -0.059,
+     "p_value": 0.2475,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.232,
+   "pool_n": 33700,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  },
+  {
+   "name": "D1-10p-sach",
+   "question": "khối ngoại mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 10 phiên sau (đã loại phiên kín room / tuần ETF; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-7977% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 3347,
+     "median_rel": -0.329,
+     "mean_rel": 0.176,
+     "hit_rate": 47.5,
+     "placebo_median": -0.327,
+     "edge": -0.002,
+     "p_value": 0.965,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-39% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 3349,
+     "median_rel": -0.28,
+     "mean_rel": 0.267,
+     "hit_rate": 47.7,
+     "placebo_median": -0.328,
+     "edge": 0.047,
+     "p_value": 0.6075,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-11% → +11%]",
+     "n_overlapping": 0,
+     "n_independent": 3348,
+     "median_rel": -0.339,
+     "mean_rel": 0.237,
+     "hit_rate": 46.7,
+     "placebo_median": -0.327,
+     "edge": -0.011,
+     "p_value": 0.8875,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [+0% → +45%]",
+     "n_overlapping": 0,
+     "n_independent": 3349,
+     "median_rel": -0.397,
+     "mean_rel": 0.303,
+     "hit_rate": 46.4,
+     "placebo_median": -0.328,
+     "edge": -0.07,
+     "p_value": 0.44,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +2208%]",
+     "n_overlapping": 0,
+     "n_independent": 3349,
+     "median_rel": -0.313,
+     "mean_rel": 0.333,
+     "hit_rate": 47.2,
+     "placebo_median": -0.328,
+     "edge": 0.014,
+     "p_value": 0.8675,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.331,
+   "pool_n": 16742,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  },
+  {
+   "name": "D1-20p-sach",
+   "question": "khối ngoại mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 20 phiên sau (đã loại phiên kín room / tuần ETF; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-7977% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 1671,
+     "median_rel": -0.373,
+     "mean_rel": 0.382,
+     "hit_rate": 48.1,
+     "placebo_median": -0.416,
+     "edge": 0.043,
+     "p_value": 0.825,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-40% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 1671,
+     "median_rel": -0.409,
+     "mean_rel": 0.604,
+     "hit_rate": 47.0,
+     "placebo_median": -0.416,
+     "edge": 0.007,
+     "p_value": 0.9675,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-11% → +11%]",
+     "n_overlapping": 0,
+     "n_independent": 1671,
+     "median_rel": -0.352,
+     "mean_rel": 0.68,
+     "hit_rate": 48.8,
+     "placebo_median": -0.416,
+     "edge": 0.064,
+     "p_value": 0.6925,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [+0% → +45%]",
+     "n_overlapping": 0,
+     "n_independent": 1671,
+     "median_rel": -0.488,
+     "mean_rel": 0.592,
+     "hit_rate": 47.3,
+     "placebo_median": -0.416,
+     "edge": -0.072,
+     "p_value": 0.6775,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +2208%]",
+     "n_overlapping": 0,
+     "n_independent": 1671,
+     "median_rel": -0.399,
+     "mean_rel": 0.444,
+     "hit_rate": 47.3,
+     "placebo_median": -0.416,
+     "edge": 0.017,
+     "p_value": 0.945,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.397,
+   "pool_n": 8355,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  },
+  {
+   "name": "D2-5p-sach",
+   "question": "tự doanh mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 5 phiên sau (đã loại phiên kín room / tuần ETF; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-9518% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 3433,
+     "median_rel": -0.298,
+     "mean_rel": 0.196,
+     "hit_rate": 46.3,
+     "placebo_median": -0.22,
+     "edge": -0.078,
+     "p_value": 0.2175,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-6% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 3437,
+     "median_rel": -0.235,
+     "mean_rel": 0.132,
+     "hit_rate": 46.7,
+     "placebo_median": -0.22,
+     "edge": -0.015,
+     "p_value": 0.855,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-0% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 3421,
+     "median_rel": 0.036,
+     "mean_rel": 0.448,
+     "hit_rate": 50.5,
+     "placebo_median": -0.218,
+     "edge": 0.254,
+     "p_value": 0.0,
+     "verdict": "tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [-0% → +7%]",
+     "n_overlapping": 0,
+     "n_independent": 3446,
+     "median_rel": -0.279,
+     "mean_rel": 0.042,
+     "hit_rate": 46.3,
+     "placebo_median": -0.218,
+     "edge": -0.061,
+     "p_value": 0.3475,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +4394%]",
+     "n_overlapping": 0,
+     "n_independent": 3439,
+     "median_rel": -0.296,
+     "mean_rel": 0.166,
+     "hit_rate": 46.0,
+     "placebo_median": -0.218,
+     "edge": -0.078,
+     "p_value": 0.225,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.222,
+   "pool_n": 17176,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  },
+  {
+   "name": "D2-10p-sach",
+   "question": "tự doanh mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 10 phiên sau (đã loại phiên kín room / tuần ETF; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-9518% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 1715,
+     "median_rel": -0.176,
+     "mean_rel": 0.484,
+     "hit_rate": 48.9,
+     "placebo_median": -0.338,
+     "edge": 0.162,
+     "p_value": 0.3175,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-6% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 1692,
+     "median_rel": -0.486,
+     "mean_rel": 0.123,
+     "hit_rate": 45.7,
+     "placebo_median": -0.337,
+     "edge": -0.148,
+     "p_value": 0.39,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-0% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 1723,
+     "median_rel": 0.193,
+     "mean_rel": 0.823,
+     "hit_rate": 51.2,
+     "placebo_median": -0.347,
+     "edge": 0.54,
+     "p_value": 0.0,
+     "verdict": "tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [-0% → +6%]",
+     "n_overlapping": 0,
+     "n_independent": 1734,
+     "median_rel": -0.549,
+     "mean_rel": 0.118,
+     "hit_rate": 46.0,
+     "placebo_median": -0.341,
+     "edge": -0.208,
+     "p_value": 0.1975,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +4394%]",
+     "n_overlapping": 0,
+     "n_independent": 1718,
+     "median_rel": -0.503,
+     "mean_rel": 0.246,
+     "hit_rate": 45.5,
+     "placebo_median": -0.336,
+     "edge": -0.167,
+     "p_value": 0.3125,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.336,
+   "pool_n": 8582,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  },
+  {
+   "name": "D2-20p-sach",
+   "question": "tự doanh mua ròng (chuẩn hoá theo thanh khoản của chính mã) tại t → lợi suất tương đối 20 phiên sau (đã loại phiên kín room / tuần ETF; nhóm chia theo phân vị trong chính mã)",
+   "buckets": [
+    {
+     "name": "nhóm 1 — bán ròng mạnh nhất [-358% → -0%]",
+     "n_overlapping": 0,
+     "n_independent": 848,
+     "median_rel": -0.271,
+     "mean_rel": 0.739,
+     "hit_rate": 48.1,
+     "placebo_median": -0.428,
+     "edge": 0.156,
+     "p_value": 0.625,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [-5% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 848,
+     "median_rel": -0.598,
+     "mean_rel": 0.424,
+     "hit_rate": 46.0,
+     "placebo_median": -0.428,
+     "edge": -0.171,
+     "p_value": 0.585,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [-0% → +0%]",
+     "n_overlapping": 0,
+     "n_independent": 837,
+     "median_rel": 0.474,
+     "mean_rel": 1.713,
+     "hit_rate": 52.0,
+     "placebo_median": -0.436,
+     "edge": 0.91,
+     "p_value": 0.01,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [-0% → +6%]",
+     "n_overlapping": 0,
+     "n_independent": 863,
+     "median_rel": -0.831,
+     "mean_rel": 0.811,
+     "hit_rate": 45.8,
+     "placebo_median": -0.417,
+     "edge": -0.414,
+     "p_value": 0.2325,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — mua ròng mạnh nhất [+0% → +126%]",
+     "n_overlapping": 0,
+     "n_independent": 849,
+     "median_rel": -0.748,
+     "mean_rel": 0.521,
+     "hit_rate": 46.8,
+     "placebo_median": -0.417,
+     "edge": -0.331,
+     "p_value": 0.325,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -0.432,
+   "pool_n": 4245,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00417"
+  }
+ ],
+ "n_tests": 12,
+ "alpha": 0.004166666666666667,
+ "prop_first_session": "2013-03-15",
+ "note": "Lợi suất là **tương đối so với VNINDEX**. Bản 'sạch' (đã loại phiên kín room và tuần ETF cơ cấu) là kiểm tra bền vững, **không** đếm thêm vào số phép kiểm. ⚠️ Mẫu hết chồng lấn **trong từng mã**, không hết tương quan **giữa các mã**: 80 mã cùng một phiên chịu chung một thị trường, nên số quan sát thật sự độc lập còn thấp hơn `n` in ra — đọc p-value kèm điều đó. Số tự doanh chỉ có từ 2013-03-15 trở đi, nên D2 chạy trên một quãng ngắn hơn D1.",
+ "postscript": "⚠️ **Quan sát hậu nghiệm, chưa phải kết quả:** nhóm *giữa* (dòng tiền gần bằng 0) qua ngưỡng ở 1 chỗ — D2-5p/nhóm 3. Giả thuyết đăng ký trước chỉ nói về hai đuôi, nên con số này không được đọc như một phát hiện: muốn dùng thì phải đăng ký thành giả thuyết riêng rồi kiểm trên một quãng thời gian khác.",
+ "any_passed": false
+}

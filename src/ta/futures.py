@@ -556,6 +556,17 @@ def _vn30_liquidity(as_of_key: str) -> Dict[str, float]:
     return {k: round(v / total * 100, 2) for k, v in values.items()}
 
 
+def vn30_liquidity_share(as_of: Optional[datetime] = None) -> Dict[str, float]:
+    """Bản công khai của ``_vn30_liquidity``, và là chỗ để **hâm nóng cache**.
+
+    ``ranking.build()`` chấm điểm cả rổ bằng 8 luồng. Nếu để mỗi luồng tự chạm
+    vào cache lần đầu thì cả 8 cùng thấy cache trống và cùng đi nạp 30 mã —
+    `lru_cache` không có khoá, nó chỉ bảo đảm *kết quả* dùng lại được, không
+    bảo đảm chỉ tính một lần. Gọi hàm này một lần trước khi mở pool là xong.
+    """
+    return _vn30_liquidity(as_of.strftime("%Y-%m-%d") if as_of else "")
+
+
 def symbol_exposure(symbol: str, as_of: Optional[datetime] = None,
                     window: int = BETA_WINDOW) -> SymbolExposure:
     """Mã này chịu ảnh hưởng của dòng tiền phái sinh qua đường nào, và bao nhiêu.
@@ -601,8 +612,7 @@ def symbol_exposure(symbol: str, as_of: Optional[datetime] = None,
                 (a[-1].priceClose / a[-n - 1].priceClose
                  - b[-1].priceClose / b[-n - 1].priceClose) * 100, 2))
 
-    key = as_of.strftime("%Y-%m-%d") if as_of else ""
-    out.liquidity_share_pct = _vn30_liquidity(key).get(sym)
+    out.liquidity_share_pct = vn30_liquidity_share(as_of).get(sym)
 
     # Hành vi phiên đáo hạn, đo bằng trung vị để một phiên sốc không kéo lệch.
     # Mẫu nền là **toàn bộ** cửa sổ 5 năm, không phải 120 phiên của beta: so một

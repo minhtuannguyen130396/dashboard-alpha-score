@@ -1,0 +1,39 @@
+{
+ "symbol": "HPG",
+ "snapshot_date": "2026-09-19",
+ "composed": 25270.034399278178,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 19990.460224677907,
+   "weight_pct": 52.10007055540764
+  },
+  {
+   "name": "P/E",
+   "price": 25608.99516282004,
+   "weight_pct": 31.321551052065804
+  },
+  {
+   "name": "P/B",
+   "price": 10528.349722632991,
+   "weight_pct": 1.0990717113371984
+  },
+  {
+   "name": "Graham 1",
+   "price": 71357.96182969716,
+   "weight_pct": 2.231256979606855
+  },
+  {
+   "name": "Graham 2",
+   "price": 70167.75793167953,
+   "weight_pct": 2.2865050475192734
+  },
+  {
+   "name": "Graham 3",
+   "price": 32126.613456615312,
+   "weight_pct": 10.961544654063212
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 240.7
+}

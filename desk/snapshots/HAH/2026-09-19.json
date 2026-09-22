@@ -1,0 +1,39 @@
+{
+ "symbol": "HAH",
+ "snapshot_date": "2026-09-19",
+ "composed": 56170.08247179114,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 43418.194153146585,
+   "weight_pct": 44.57894302418991
+  },
+  {
+   "name": "P/E",
+   "price": 84617.14448800101,
+   "weight_pct": 5.578044510317004
+  },
+  {
+   "name": "P/B",
+   "price": 53580.966538963236,
+   "weight_pct": 36.597972836569284
+  },
+  {
+   "name": "Graham 1",
+   "price": 493365.9687027114,
+   "weight_pct": 0.45861623057939555
+  },
+  {
+   "name": "Graham 2",
+   "price": 527816.2171843819,
+   "weight_pct": 0.42568811657378686
+  },
+  {
+   "name": "Graham 3",
+   "price": 64524.26470907486,
+   "weight_pct": 12.360735281770612
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 862.4
+}

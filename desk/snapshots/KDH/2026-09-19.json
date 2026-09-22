@@ -1,0 +1,39 @@
+{
+ "symbol": "KDH",
+ "snapshot_date": "2026-09-19",
+ "composed": 18199.999999999996,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 16462.731949734745,
+   "weight_pct": 45.1709873129626
+  },
+  {
+   "name": "P/E",
+   "price": 31038.86043662662,
+   "weight_pct": 6.1122335152017575
+  },
+  {
+   "name": "P/B",
+   "price": 59110.90994635272,
+   "weight_pct": 1.9181708048208104
+  },
+  {
+   "name": "Graham 1",
+   "price": 14766.528002210975,
+   "weight_pct": 22.855614697973444
+  },
+  {
+   "name": "Graham 2",
+   "price": 11007.775419829999,
+   "weight_pct": 10.910965332494142
+  },
+  {
+   "name": "Graham 3",
+   "price": 24221.634624417828,
+   "weight_pct": 13.032028336547235
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 264.3
+}

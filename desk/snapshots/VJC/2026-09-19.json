@@ -1,0 +1,39 @@
+{
+ "symbol": "VJC",
+ "snapshot_date": "2026-09-19",
+ "composed": 89040.5876654698,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 113068.2139404859,
+   "weight_pct": 53.63754319418725
+  },
+  {
+   "name": "P/E",
+   "price": 94176.02524433567,
+   "weight_pct": 20.76278919977319
+  },
+  {
+   "name": "P/B",
+   "price": 45042.83738832233,
+   "weight_pct": 6.399916901509887
+  },
+  {
+   "name": "Graham 1",
+   "price": 26578.97055152927,
+   "weight_pct": 6.399916901509887
+  },
+  {
+   "name": "Graham 2",
+   "price": 19813.414411140002,
+   "weight_pct": 6.399916901509887
+  },
+  {
+   "name": "Graham 3",
+   "price": 46691.66448332734,
+   "weight_pct": 6.399916901509887
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 104.7
+}

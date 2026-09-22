@@ -70,8 +70,9 @@ class BucketStats:
     label: str
     n_events: int = 0
     n_limit_excluded: int = 0
-    n_matched_t0: int = 0        # số ca dùng ngày công bố THẬT
-    n_proxy_t0: int = 0          # số ca phải lùi về startDate
+    n_matched_t0: int = 0        # ngày THÔNG BÁO thật (ý định)
+    n_result_t0: int = 0         # ngày BÁO CÁO KẾT QUẢ (xác nhận đã xong)
+    n_proxy_t0: int = 0          # phải lùi về startDate
     car_pre: Distribution = field(default_factory=Distribution)
     car_immediate: Distribution = field(default_factory=Distribution)
     car_post: Distribution = field(default_factory=Distribution)
@@ -150,7 +151,11 @@ def collect(symbols: Sequence[str], db_path=None,
             rows = store.load_holder_transactions(conn, sym)
             matches: Dict[int, Any] = {}
             if use_matched_t0 and rows:
-                posts = store.load_posts(conn, sym, insider_only=True, limit=2000)
+                # Tập ứng viên là **toàn bộ** bài, không lọc trước theo
+                # ``disclosure_kind``: luật từ khoá đó bỏ sót những tiêu đề chỉ
+                # nêu tên người mà không có từ chỉ chức vụ. Việc siết bằng chứng
+                # do ``match.is_credible`` lo.
+                posts = store.load_posts(conn, sym, limit=6000)
                 if posts:
                     matches = match_mod.match_symbol(rows, posts)
             for row in rows:
@@ -179,6 +184,8 @@ def collect(symbols: Sequence[str], db_path=None,
                 b.n_events += 1
                 if t0_source == "post_date":
                     b.n_matched_t0 += 1
+                elif t0_source == "post_result_date":
+                    b.n_result_t0 += 1
                 else:
                     b.n_proxy_t0 += 1
                 slot = acc.setdefault(label, {"pre": [], "imm": [], "post": [], "vol": []})
@@ -253,12 +260,20 @@ def format_stats(buckets: Dict[str, BucketStats]) -> str:
             out.append(f"- {b.label}: n={b.n_events}")
 
     matched = sum(b.n_matched_t0 for b in buckets.values())
+    result = sum(b.n_result_t0 for b in buckets.values())
     proxy = sum(b.n_proxy_t0 for b in buckets.values())
-    if matched or proxy:
-        total = matched + proxy
-        out += ["", f"**Mốc `t0`:** {matched}/{total} ca ({matched / total * 100:.0f}%) "
-                    f"dùng **ngày công bố thật** ghép từ bài viết; "
-                    f"{proxy} ca lùi về `startDate` làm mốc thay thế."]
+    total = matched + result + proxy
+    if total:
+        # Ba nguồn mốc, ba ý nghĩa khác nhau — gộp lại là giấu mất chuyện
+        # một phần số liệu đang đo *xác nhận đã xong* chứ không phải *ý định*.
+        out += ["", f"**Mốc `t0`:** {matched}/{total} ({matched / total * 100:.0f}%) "
+                    f"ngày **thông báo** (ý định giao dịch); "
+                    f"{result} ngày **báo cáo kết quả** (xác nhận đã xong); "
+                    f"{proxy} lùi về `startDate` làm mốc thay thế."]
+        if result:
+            out.append(f"_Lưu ý: {result} ca dùng ngày báo cáo kết quả đang đo một "
+                       "**sự kiện khác** — thị trường biết giao dịch *đã xong*, không "
+                       "phải biết ai đó *sắp* giao dịch._")
         if proxy > matched:
             out.append("⚠️ Phần lớn vẫn là mốc thay thế — công bố đi trước `startDate` "
                        "trung vị 6 ngày, nên những ca đó có phản ứng thật nằm lệch vào "

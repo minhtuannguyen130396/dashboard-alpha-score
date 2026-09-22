@@ -1,0 +1,39 @@
+{
+ "symbol": "VPL",
+ "snapshot_date": "2026-09-19",
+ "composed": 58823.92020889174,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 70192.74721425364,
+   "weight_pct": 60.6266092590841
+  },
+  {
+   "name": "P/E",
+   "price": 56625.231944791136,
+   "weight_pct": 21.410325927927634
+  },
+  {
+   "name": "P/B",
+   "price": 33280.36614324565,
+   "weight_pct": 4.490766203247067
+  },
+  {
+   "name": "Graham 1",
+   "price": 15981.141361926826,
+   "weight_pct": 4.490766203247067
+  },
+  {
+   "name": "Graham 2",
+   "price": 11913.2144698,
+   "weight_pct": 4.490766203247067
+  },
+  {
+   "name": "Graham 3",
+   "price": 31121.129616407627,
+   "weight_pct": 4.490766203247067
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 99.1
+}

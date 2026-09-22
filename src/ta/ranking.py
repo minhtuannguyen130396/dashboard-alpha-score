@@ -49,11 +49,14 @@ from src.ta.formations import BEARISH, BULLISH
 from src.ta.formations import CONFIRMED as F_CONFIRMED
 from src.ta.formations import FAILED as F_FAILED
 from src.ta.formations import FORMING as F_FORMING
+from src.ta import loader
 from src.ta.loader import PROJECT_ROOT, resolve_universe
 from src.ta.patterns import NONE as PATTERN_NONE
 from src.ta.patterns import Pattern
 from src.ta import asof as asof_mod
 from src.ta.report import REPORT_CSS, _asof_html
+from src.ta import futures as futures_mod
+from src.ta.futures import FuturesSnapshot, SymbolExposure
 from src.ta.snapshot import Snapshot, build_snapshot
 from src.ta.structure import Structure, build_structure
 from src.ta.swings import BOS, DOWNTREND, HH, HL, LH, LL, UPTREND, MarketStructure
@@ -489,6 +492,26 @@ class SymbolRank:
     trend: TrendRank
     pattern: PatternRank
     brief: List[str] = field(default_factory=list)
+    #: Sự kiện của hộp, tách khỏi ``pattern`` vì hai câu hỏi khác nhau: mẫu
+    #: hình hỏi "bằng chứng đã đủ chưa", mấy trường này hỏi "cú phá xảy ra
+    #: lúc nào và volume có đỡ không". Mang sẵn ở đây để tầng trên
+    #: (``prospect.py``) khỏi phải dựng lại ``Structure`` cho cả 79 mã.
+    box_state: str = ""
+    box_breakout_volume_x: Optional[float] = None
+    box_bars_since_breakout: Optional[int] = None
+    box_retest_held: Optional[bool] = None
+    #: Giá trị khớp lệnh trung bình 20 phiên, **tỷ đồng/phiên**. Giá trong
+    #: ``data/`` tính bằng nghìn đồng nên nhân 1e3 rồi chia 1e9.
+    avg_value_bn: Optional[float] = None
+    #: Trục thứ ba, **đứng riêng**: mã này chịu dòng tiền phái sinh tới đâu.
+    #:
+    #: Cố ý không cộng vào ``trend`` hay ``pattern``, cùng lý do hai cột kia
+    #: không cộng vào nhau. Một mã trend +80 nằm ngoài rổ VN30 và một mã trend
+    #: +80 beta 1,6 sát ngày đáo hạn là hai tình huống khác hẳn; gộp điểm lại
+    #: là xoá mất đúng chỗ khác nhau đó. Và khác hai cột kia ở một điểm nữa:
+    #: đây gần như là **đặc tính dài hạn** của mã, không phải trạng thái phiên —
+    #: nó gần như không đổi giữa hai lần dựng bảng.
+    futures: Optional[SymbolExposure] = None
 
     @property
     def target_pct(self) -> Optional[float]:
@@ -517,6 +540,14 @@ class SymbolRank:
             return self.trend.structure_label
         return self.pattern.note or self.trend.ema_label
 
+    @property
+    def futures_score(self) -> Optional[float]:
+        return self.futures.score if self.futures else None
+
+    @property
+    def beta_vn30(self) -> Optional[float]:
+        return self.futures.beta if self.futures else None
+
     def to_dict(self) -> dict:
         data = asdict(self)
         data["trend"]["note"] = self.trend.note
@@ -531,9 +562,13 @@ class SymbolRank:
         """Rebuild from ``to_dict`` output, dropping the derived keys it added."""
         trend = {k: v for k, v in data["trend"].items() if k != "note"}
         pattern = {k: v for k, v in data["pattern"].items() if k != "signed"}
-        derived = ("trend", "pattern", "target_pct", "risk_reward", "headline")
+        derived = ("trend", "pattern", "futures", "target_pct", "risk_reward",
+                   "headline", "futures_score", "beta_vn30")
         fields = {k: v for k, v in data.items() if k not in derived}
-        return cls(trend=TrendRank(**trend), pattern=PatternRank(**pattern), **fields)
+        exposure = data.get("futures")
+        return cls(trend=TrendRank(**trend), pattern=PatternRank(**pattern),
+                   futures=SymbolExposure(**exposure) if exposure else None,
+                   **fields)
 
 
 @dataclass
@@ -549,6 +584,10 @@ class Ranking:
     skipped: List[str] = field(default_factory=list)
     html_path: Optional[str] = None
     json_path: Optional[str] = None
+    #: Bối cảnh phái sinh của phiên — một bản cho cả bảng. Đi theo file JSON để
+    #: ``rank_list`` đọc lại vẫn nói được "hôm đó còn 2 phiên tới đáo hạn", thay
+    #: vì phải tính lại từ dữ liệu hôm nay và nói sai về một bảng của quá khứ.
+    futures: Optional[FuturesSnapshot] = None
 
     def to_dict(self) -> dict:
         return {
@@ -560,6 +599,7 @@ class Ranking:
             "skipped": self.skipped,
             "html_path": self.html_path,
             "json_path": self.json_path,
+            "futures": self.futures.to_dict() if self.futures else None,
         }
 
     @classmethod
@@ -573,6 +613,8 @@ class Ranking:
             skipped=list(data.get("skipped", [])),
             html_path=data.get("html_path"),
             json_path=data.get("json_path"),
+            futures=(FuturesSnapshot(**data["futures"])
+                     if data.get("futures") else None),
         )
 
 
@@ -589,6 +631,10 @@ def _build_row(symbol: str, lookback_days: int, profile: str,
         return None
     structure = build_structure(symbol, lookback_days=lookback_days, as_of=as_of)
     box = structure.box
+    close = snap.price.get("close")
+    avg_vol = snap.volume.get("avg20")
+    avg_value_bn = (round(close * avg_vol * 1e3 / 1e9, 1)
+                    if close and avg_vol else None)
     return SymbolRank(
         symbol=symbol,
         as_of=snap.as_of,
@@ -609,6 +655,12 @@ def _build_row(symbol: str, lookback_days: int, profile: str,
         trend=build_trend_rank(snap, structure),
         pattern=build_pattern_rank(structure),
         brief=list(structure.brief),
+        box_state=box.state if box else "",
+        box_breakout_volume_x=box.breakout_volume_x if box else None,
+        box_bars_since_breakout=box.bars_since_breakout if box else None,
+        box_retest_held=(box.retest.held if box and box.retest else None),
+        avg_value_bn=avg_value_bn,
+        futures=futures_mod.symbol_exposure(symbol, as_of),
     )
 
 
@@ -633,6 +685,13 @@ def build(
     if not symbols:
         ranking.skipped.append(f"Không tìm thấy dữ liệu cho {universe!r}")
         return ranking
+
+    # Bối cảnh phái sinh dựng một lần, và `vn30_liquidity_share` được gọi ở đây
+    # để **hâm cache trước khi mở pool**: 8 luồng cùng chạm vào một `lru_cache`
+    # trống thì cả 8 cùng đi nạp 30 mã, vì lru_cache dùng lại *kết quả* chứ
+    # không khoá lượt tính.
+    ranking.futures = futures_mod.build_futures_snapshot(as_of)
+    futures_mod.vn30_liquidity_share(as_of)
 
     def _work(sym: str):
         try:
@@ -725,12 +784,27 @@ CRITERIA: Dict[str, Criterion] = {
                   "0% = sát cạnh dưới hộp tích luỹ, 100% = sát cạnh trên.", digits=0),
         Criterion("close", "Giá đóng cửa", "", lambda r: r.close, "Giá đóng cửa phiên gần nhất.",
                   digits=2),
+        Criterion("liquidity", "Thanh khoản", "tỷ/phiên", lambda r: r.avg_value_bn,
+                  "Giá trị khớp lệnh trung bình 20 phiên, tính bằng tỷ đồng "
+                  "(giá đóng cửa × volume trung bình, dùng dealVolume). Một mẫu hình "
+                  "đẹp trên mã không ai giao dịch được là mẫu hình không dùng được.",
+                  digits=0),
         Criterion("target_pct", "Khoảng tới mục tiêu", "%", lambda r: r.target_pct,
                   "Từ giá hiện tại tới mục tiêu đo được của mẫu hình, tính bằng phần trăm.",
                   digits=2),
         Criterion("risk_reward", "Mục tiêu / khoảng huỷ", "×", lambda r: r.risk_reward,
                   "Quãng đường tới mục tiêu chia quãng đường tới mức huỷ mẫu hình.",
                   digits=2),
+        Criterion("futures", "Phơi nhiễm phái sinh", "điểm", lambda r: r.futures_score,
+                  "0–100, chỉ để sắp thứ tự: nằm trong rổ VN30 (40) + beta so với VN30 (30) "
+                  "+ tỷ trọng thanh khoản trong rổ (20) + biên độ phiên đáo hạn so với "
+                  "phiên thường (10). Mã trong rổ chịu ảnh hưởng CƠ HỌC — lệnh chênh lệch "
+                  "giá rơi thẳng vào 30 mã đó; mã ngoài rổ chỉ chịu qua tâm lý chung.",
+                  digits=0),
+        Criterion("beta", "Beta so với VN30", "×", lambda r: r.beta_vn30,
+                  "Mã đi bao nhiêu khi rổ cơ sở VN30 đi 1%, ước lượng trên 120 phiên. "
+                  "Mốc là VN30 chứ không phải VNINDEX, vì hợp đồng tương lai thanh toán "
+                  "theo VN30.", digits=2),
     )
 }
 
@@ -759,6 +833,10 @@ _CRITERION_ALIASES = {
     "gia": "close",
     "muc_tieu": "target_pct", "target": "target_pct",
     "rr": "risk_reward", "risk_reward_ratio": "risk_reward", "loi_nhuan_rui_ro": "risk_reward",
+    "phai_sinh": "futures", "phoi_nhiem": "futures", "phoi_nhiem_phai_sinh": "futures",
+    "futures_exposure": "futures", "anh_huong_phai_sinh": "futures",
+    "derivative": "futures", "derivatives": "futures",
+    "beta_vn30": "beta", "he_so_beta": "beta",
 }
 
 _SIDE_ALIASES = {
@@ -851,21 +929,50 @@ def _stem(ranking: Ranking) -> str:
     return f"xep_hang_{tag[:24]}_{asof_mod.file_tag(asof_mod.parse(ranking.as_of_requested))}"
 
 
+def is_stock_board(ranking: Ranking) -> bool:
+    """Bảng này có phải bảng của **rổ cổ phiếu** không.
+
+    Con trỏ ``xep_hang_moi_nhat.json`` mang đúng một nghĩa: *bảng của rổ cổ
+    phiếu, phiên mới nhất*. Hai chỗ đọc nó đều dựa vào nghĩa đó — ``rank_list``
+    xoay lại bảng người dùng đang mở, và ``market.Breadth`` đếm bao nhiêu phần
+    trăm **mã** đang trên EMA20.
+
+    Từ khi ``resolve_universe`` nhận nhóm ``sectors``, ``build_ranking`` chạy
+    được trên 31 chỉ số ngành — và nếu nó cũng làm mới con trỏ thì độ rộng thị
+    trường trong mọi hồ sơ 1 mã lặng lẽ chuyển sang đếm *chỉ số ngành* thay vì
+    *cổ phiếu*. Không có gì báo, vì cả hai đều là một danh sách symbol có
+    ``vs_ema20``. Đúng loại lỗi mà quy ước "bảng hồi tưởng không đụng con trỏ"
+    đã chặn một lần, chỉ khác đường vào.
+    """
+    marks = loader.non_tradable_symbols()
+    return bool(ranking.rows) and not any(
+        r.symbol.strip().upper() in marks for r in ranking.rows)
+
+
 def save_json(ranking: Ranking, out_dir: Optional[str] = None) -> str:
     """Write the dated copy and refresh the stable `mới nhất` pointer.
 
-    Bảng hồi tưởng **không** làm mới con trỏ ``xep_hang_moi_nhat.json``: nhịp
-    dùng hàng ngày (`/rank` rồi xoay bảng vài lần) đọc đúng con trỏ đó, và một
-    lần thử "giả sử hôm nay là 01/01/2025" không được phép biến bảng của phiên
-    thật thành bảng của một năm trước mà không ai nhận ra. Bản hồi tưởng nằm ở
-    ``reports/asof_<ngày>/`` và ``board_path(as_of)`` tìm lại được nó.
+    Con trỏ chỉ được làm mới bởi **bảng của rổ cổ phiếu, không có mốc hồi
+    tưởng**. Hai loại bảng bị loại, vì hai lý do khác nhau nhưng cùng một hậu
+    quả — con trỏ nói một đằng, nội dung một nẻo:
+
+    * **Bảng hồi tưởng.** Nhịp dùng hàng ngày (`/rank` rồi xoay bảng vài lần)
+      đọc đúng con trỏ đó, và một lần thử "giả sử hôm nay là 01/01/2025" không
+      được phép biến bảng của phiên thật thành bảng của một năm trước mà không
+      ai nhận ra. Bản hồi tưởng nằm ở ``reports/asof_<ngày>/`` và
+      ``board_path(as_of)`` tìm lại được nó.
+    * **Bảng không phải cổ phiếu** — chỉ số ngành, benchmark, phái sinh. Xem
+      ``is_stock_board``.
+
+    Bảng bị loại vẫn ghi bản có ngày tháng bình thường; chỉ con trỏ là không
+    đụng tới.
     """
     path = _out_root(out_dir, ranking) / f"{_stem(ranking)}.json"
     payload = ranking.to_dict()
     payload["json_path"] = str(path)
     text = json.dumps(payload, ensure_ascii=False, indent=1)
     path.write_text(text, encoding="utf-8")
-    if not ranking.as_of_requested:
+    if not ranking.as_of_requested and is_stock_board(ranking):
         LATEST_JSON.parent.mkdir(parents=True, exist_ok=True)
         LATEST_JSON.write_text(text, encoding="utf-8")
     return str(path)
@@ -1037,6 +1144,29 @@ def _rank_table(rows: Sequence[SymbolRank], kind: str) -> List[str]:
                 f"<td>{_esc(r.trend.ema_label)}{warn}</td>"
                 f'<td class="why">{_esc(r.trend.note)}</td></tr>'
             )
+    elif kind == "futures":
+        out.append("<tr><th>#</th><th>Mã</th><th>Kênh lan truyền</th>"
+                   "<th class='num'>β VN30</th><th class='num'>R²</th>"
+                   "<th class='num'>% thanh khoản rổ</th>"
+                   "<th class='num'>Biên độ phiên đáo hạn</th>"
+                   "<th class='num'>RS 20p</th><th class='num'>Điểm</th></tr>")
+        for i, r in enumerate(rows, 1):
+            e = r.futures
+            if e is None:
+                continue
+            share = "—" if e.liquidity_share_pct is None else f"{e.liquidity_share_pct:.2f}"
+            out.append(
+                f"<tr><td>{i}</td><td><b>{_esc(r.symbol)}</b></td>"
+                f"<td>{_esc(e.channel)}</td>"
+                f"<td class='num'>{_num(e.beta, 2)}</td>"
+                f"<td class='num'>{_num(e.r2, 2)}</td>"
+                f"<td class='num'>{_esc(share)}</td>"
+                f"<td class='num'>{_num(e.expiry_move_ratio, 2)}×</td>"
+                f"<td class='num'>{_signed_html(e.rs_20)}</td>"
+                f"<td class='num'><b>{e.score:.0f}</b></td></tr>"
+            )
+        out += ["</table>", "</div>"]
+        return out
     else:
         out.append("<tr><th>#</th><th>Mã</th><th>Mẫu hình</th><th>Độ tin cậy</th>"
                    "<th class='num'>Mốc</th><th class='num'>Mục tiêu</th>"
@@ -1060,6 +1190,23 @@ def _signed_html(value: Optional[float]) -> str:
     if value is None:
         return "—"
     return f'<span class="{"pos" if value >= 0 else "neg"}">{value:+.2f}%</span>'
+
+
+def _futures_context_html(fsnap, ref_date: str = "") -> str:
+    """Bối cảnh phái sinh của phiên, dựng từ **cùng** câu chữ bản terminal in.
+
+    Không viết lại câu ở đây — ``format_futures_brief`` là nguồn duy nhất, nên
+    sửa một chữ ở đó là cả bảng HTML lẫn terminal đổi theo.
+    """
+    from src.ta.format import format_futures_brief
+
+    items = [ln[2:] for ln in format_futures_brief(fsnap, None, ref_date=ref_date)
+             if ln.startswith("- ")]
+    if not items:
+        return ""
+    body = "".join(f"<li>{_esc_md(i)}</li>" for i in items)
+    return ('<div class="card"><b>Bối cảnh phái sinh</b>'
+            f"<ul>{body}</ul></div>")
 
 
 def write_html(ranking: Ranking, out_dir: Optional[str] = None,
@@ -1088,10 +1235,17 @@ def write_html(ranking: Ranking, out_dir: Optional[str] = None,
         f"Dưới |{TREND_SIDE_MIN:.0f}| điểm coi như đi ngang.<br>"
         "<b>Độ tin cậy mẫu hình</b> (0…100) = lượng bằng chứng đã có, không phải kích thước "
         "kỳ vọng: đã phá mốc chưa · nến tại vùng quyết định · volume xác nhận · retest giữ hay "
-        "mất. Hai cột này cố ý không cộng vào nhau — mẫu hình đảo chiều đáng chú ý nhất luôn "
-        "là mẫu hình đi ngược xu hướng đang chạy.<br>"
+        "mất.<br>"
+        "<b>Phơi nhiễm phái sinh</b> (0…100) = trong rổ VN30 (40) + beta so với VN30 (30) + "
+        "tỷ trọng thanh khoản trong rổ (20) + biên độ phiên đáo hạn (10). Đây là đặc tính "
+        "dài hạn của mã, không phải trạng thái phiên.<br>"
+        "Ba cột này cố ý <b>không cộng vào nhau</b>. Mẫu hình đảo chiều đáng chú ý nhất luôn "
+        "là mẫu hình đi ngược xu hướng đang chạy; và một mã cường độ +80 nằm ngoài rổ VN30 "
+        "khác hẳn một mã cường độ +80 beta 1,6 sát ngày đáo hạn — gộp lại là xoá đúng chỗ "
+        "khác nhau đó.<br>"
         "⚠️ = EMA và cấu trúc swing đang đọc ngược nhau. Bấm vào tiêu đề cột để sắp xếp lại."
         "</div>",
+        _futures_context_html(ranking.futures, ranking.as_of),
         f"<h2>▲ Xu hướng tăng — {len(by_trend_up)} mã mạnh nhất</h2>",
     ]
     parts += _rank_table(by_trend_up, "trend")
@@ -1101,6 +1255,10 @@ def write_html(ranking: Ranking, out_dir: Optional[str] = None,
     parts += _rank_table(by_bull, "pattern")
     parts.append("<h2>▼ Mẫu hình giảm — theo độ tin cậy</h2>")
     parts += _rank_table(by_bear, "pattern")
+    by_futures, _ = sort_rows(ranking.rows, "futures", True, limit=top)
+    if any(r.futures and r.futures.beta is not None for r in by_futures):
+        parts.append("<h2>⚙️ Chịu dòng tiền phái sinh nhiều nhất</h2>")
+        parts += _rank_table(by_futures, "futures")
 
     parts += [
         f"<h2>Toàn bộ {len(ranking.rows)} mã</h2>",
@@ -1115,7 +1273,9 @@ def write_html(ranking: Ranking, out_dir: Optional[str] = None,
         "<tr><th>Mã</th><th class='num'>Giá</th><th class='num'>+/-</th>"
         "<th class='num'>5 phiên</th><th class='num'>20 phiên</th>"
         "<th class='num'>Cường độ</th><th class='num'>ADX</th><th class='num'>RSI</th>"
-        "<th class='num'>RVOL</th><th>Mẫu hình</th><th class='num'>Tin cậy</th>"
+        "<th class='num'>RVOL</th>"
+        "<th class='num'>β VN30</th><th class='num'>Phái sinh</th>"
+        "<th>Mẫu hình</th><th class='num'>Tin cậy</th>"
         "<th>Trạng thái</th><th class='num'>Mục tiêu</th><th class='num'>Huỷ</th>"
         "<th>Hộp</th></tr>", "</thead>", "<tbody>",
     ]
@@ -1142,6 +1302,10 @@ def write_html(ranking: Ranking, out_dir: Optional[str] = None,
             f"{_num(r.rsi, 1)}</td>"
             f'<td class="num" data-v="{r.rvol if r.rvol is not None else ""}">'
             f"{_num(r.rvol, 2)}</td>"
+            f'<td class="num" data-v="{r.beta_vn30 if r.beta_vn30 is not None else ""}">'
+            f'{"★ " if (r.futures and r.futures.in_vn30) else ""}{_num(r.beta_vn30, 2)}</td>'
+            f'<td class="num" data-v="{r.futures_score if r.futures_score is not None else ""}">'
+            f"{_num(r.futures_score, 0)}</td>"
             f'<td data-v="{_esc(p.name)}">{BIAS_MARK.get(p.bias, "•")} {_esc(p.name)}</td>'
             f'<td class="num" data-v="{p.confidence}">{p.confidence:.0f}</td>'
             f'<td data-v="{p.rank}"><span class="pill {p.state}">'
@@ -1176,6 +1340,15 @@ def write_html(ranking: Ranking, out_dir: Optional[str] = None,
             parts.append(f"<li>Còn thiếu: {_esc(', '.join(p.missing))}</li>")
         for item in r.brief:
             parts.append(f"<li>{_esc_md(item)}</li>")
+        if r.futures is not None and r.futures.beta is not None:
+            e = r.futures
+            share = ("" if e.liquidity_share_pct is None
+                     else f" · {e.liquidity_share_pct:.2f}% thanh khoản rổ")
+            parts.append(
+                f"<li><b>Phái sinh:</b> {_esc(e.channel)} · β {_num(e.beta, 2)} "
+                f"(R² {_num(e.r2, 2)}){_esc(share)} · biên độ phiên đáo hạn "
+                f"{_num(e.expiry_move_ratio, 2)}× phiên thường</li>"
+            )
         parts.append("</ul></div>")
     parts.append("</div>")
 

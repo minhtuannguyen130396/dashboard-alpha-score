@@ -1,0 +1,39 @@
+{
+ "symbol": "GAS",
+ "snapshot_date": "2026-09-19",
+ "composed": 80604.98847000604,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 76162.7489103113,
+   "weight_pct": 28.73589237563251
+  },
+  {
+   "name": "P/E",
+   "price": 72960.49476827812,
+   "weight_pct": 20.54873213256622
+  },
+  {
+   "name": "P/B",
+   "price": 28543.2125479821,
+   "weight_pct": 2.3095758230922954
+  },
+  {
+   "name": "Graham 1",
+   "price": 100061.1005158973,
+   "weight_pct": 14.561258348860779
+  },
+  {
+   "name": "Graham 2",
+   "price": 93443.4495720997,
+   "weight_pct": 24.9860812792606
+  },
+  {
+   "name": "Graham 3",
+   "price": 58128.021207858874,
+   "weight_pct": 8.8584600405876
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 88.7
+}

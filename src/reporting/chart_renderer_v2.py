@@ -66,6 +66,11 @@ def chart_body_html() -> str:
         '  <span class="li"><span class="dot dot-vol-fomo-retail"></span>Vol: Fomo Retail</span>',
         '  <span class="li"><span class="dot dot-vol-both"></span>Vol: Cả hai</span>',
         '  <span class="li"><span class="dot dot-vol-other"></span>Vol: Khác</span>',
+        # Chỉ có nghĩa khi hồ sơ nạp được dữ liệu phái sinh — JS gỡ mục này
+        # (và cả pane bên dưới) khi BASIS_DATA rỗng.
+        '  <span class="legend-separator" id="legend-basis-sep">│</span>',
+        '  <span class="li" id="legend-basis"><span class="line line-basis"></span>'
+        'Basis % (VN30F1M − VN30) · ● phiên đáo hạn</span>',
         '</div>',
 
         # Structure read-out — pattern name + why each overlay is drawn
@@ -84,6 +89,7 @@ def chart_body_html() -> str:
         '  <div id="rsi-chart"></div>',
         '  <div id="macd-chart"></div>',
         '  <div id="adx-chart"></div>',
+        '  <div id="basis-chart"></div>',
         '</div>',
     ])
 
@@ -100,6 +106,7 @@ def chart_data_script(series: Dict[str, List[Any]],
         f'const EMA_VOLUME_DATA      = {json.dumps(series["ema_volume"])};',
         f'const HOVER_DATA           = {json.dumps(series["hover"])};',
         f'const OVERLAY_DATA         = {json.dumps(overlays or {}, ensure_ascii=False)};',
+        f'const BASIS_DATA           = {json.dumps(series.get("basis") or [])};',
         '</script>',
     ])
 
@@ -154,17 +161,54 @@ _VOLUME_COLOR = {
 }
 
 
+def _basis_points(stock_records: List[StockRecord],
+                  basis: Optional[Dict[str, Dict[str, Any]]]) -> List[Any]:
+    """Basis phái sinh, đặt lại lên **đúng trục thời gian của mã**.
+
+    Các pane đồng bộ nhau bằng *logical range*, tức là bằng chỉ số cây nến chứ
+    không phải bằng ngày: một pane thiếu vài phiên là cả chồng biểu đồ lệch nhau
+    ngày một xa khi kéo về quá khứ. Nên phiên nào mã có mà phái sinh không có —
+    trước khi VN30F1M ra đời, hay một phiên chỉ một bên nghỉ — vẫn phải chiếm
+    một chỗ, dưới dạng điểm trắng ``{"time": ...}`` không giá trị.
+
+    ``sessions``/``expiry`` đi kèm để bảng chỉ báo đọc được, không phải để vẽ:
+    JS lọc chúng ra trước khi ``setData``.
+    """
+    if not basis:
+        return []
+    out: List[Any] = []
+    for r in stock_records:
+        day = _fmt_date(r.date)
+        hit = basis.get(day)
+        if hit is None or hit.get("pct") is None:
+            out.append({"time": day})
+            continue
+        out.append({
+            "time": day,
+            "value": hit["pct"],
+            "sessions": hit.get("sessions"),
+            "expiry": bool(hit.get("expiry")),
+        })
+    return out
+
+
 def build_series(
     stock_records: List[StockRecord],
     market_behavior: MarketBehaviorSnapshot,
+    basis: Optional[Dict[str, Dict[str, Any]]] = None,
 ) -> Dict[str, List[Any]]:
     """The data the chart JS reads, built once.
 
     Both the standalone chart file and the report dossier inject these under the
     same global names, so a change in how a series is shaped lands on both.
+
+    ``basis`` là ánh xạ ngày → ``{"pct", "sessions", "expiry"}`` (xem
+    ``src.ta.futures.basis_series``). Bỏ trống thì không có pane phái sinh —
+    biểu đồ dựng y hệt như trước khi có tầng này.
     """
     mb = market_behavior
     return {
+        "basis": _basis_points(stock_records, basis),
         "candles": [
             {
                 "time": _fmt_date(r.date),
@@ -206,8 +250,9 @@ def render_chart(
     overlays: Optional[dict] = None,
     open_browser: bool = True,
     out_dir: Optional[str] = None,
+    basis: Optional[Dict[str, Dict[str, Any]]] = None,
 ) -> str:
-    series = build_series(stock_records, market_behavior)
+    series = build_series(stock_records, market_behavior, basis)
 
     symbol      = stock_records[-1].symbol
     date_from   = _fmt_date(stock_records[0].date)

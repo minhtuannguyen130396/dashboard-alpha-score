@@ -1,0 +1,39 @@
+{
+ "symbol": "TCH",
+ "snapshot_date": "2026-09-19",
+ "composed": 11132.728652017304,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 11019.011394927351,
+   "weight_pct": 70.28027041462191
+  },
+  {
+   "name": "P/E",
+   "price": 5874.375592109644,
+   "weight_pct": 0.8989461296490965
+  },
+  {
+   "name": "P/B",
+   "price": 41291.74601568337,
+   "weight_pct": 2.807371282026092
+  },
+  {
+   "name": "Graham 1",
+   "price": 2794.6944719024386,
+   "weight_pct": 0.8989461296490965
+  },
+  {
+   "name": "Graham 2",
+   "price": 2083.317697236363,
+   "weight_pct": 0.8989461296490965
+  },
+  {
+   "name": "Graham 3",
+   "price": 8807.024838065432,
+   "weight_pct": 24.215519914404705
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 352.2
+}

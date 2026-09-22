@@ -15,7 +15,7 @@ from src.ta import asof as asof_mod
 from src.ta import candles, vsa
 from src.ta.config import ScanConfig, get_profile
 from src.ta.swings import RANGE, TREND_NAMES, build_market_structure
-from src.ta.loader import load_recent
+from src.ta.loader import is_averaged_series, load_recent
 from src.ta.signals import (
     AdxState, RsiEvent, RsiZoneState, adx_state, detect_rsi_events, rsi_zone_state,
 )
@@ -89,7 +89,13 @@ def build_snapshot(
         )
 
     last = recs[-1]
+    averaged = is_averaged_series(symbol)
     warnings: List[str] = []
+    if averaged:
+        warnings.append(
+            "Chuỗi bình quân (chỉ số ngành / thị trường) — không đọc hình nến "
+            "và không đọc VSA: mỗi cây nến ở đây là trung bình của nhiều mã, "
+            "không phải một phiên giao dịch có người mua người bán.")
     if len(recs) < 2 * cfg.adx.period:
         warnings.append(
             f"Chỉ có {len(recs)} phiên — cần ≥ {2 * cfg.adx.period} phiên để ADX có giá trị"
@@ -118,8 +124,21 @@ def build_snapshot(
     market = build_market_structure(recs, atr=atr)
     shapes = candles.shapes(recs, atr)
     last_shape = shapes[-1]
-    bar_signals = candles.detect(recs, -1, measured=shapes)
-    vsa_signals = vsa.detect(recs, -1, measured=shapes)
+
+    # Nến của một chuỗi bình quân không đọc được như nến của một mã.
+    #
+    # `_ICB_60` là trung bình của 33 mã, VNINDEX của hơn 300. "Sao băng" ở đó
+    # nghĩa là các mã thành phần lệch pha nhau trong phiên — **không** phải
+    # "bị đánh xuống từ vùng cao", vì không ai giao dịch cây nến ấy. Đây đúng
+    # lập luận `candles.py` đã dùng để loại phiên trần/sàn (đóng cửa giá trần
+    # trông y hệt marubozu tăng nhưng nghĩa ngược lại): một hình dạng đọc ra từ
+    # chuỗi không thể sinh ra cái nghĩa của hình dạng đó.
+    #
+    # Số đo hình dạng (`close_pos`, `body_pct`, râu nến) vẫn giữ — chúng là
+    # phép đo biên độ, đúng ở mọi chuỗi. Chỉ phần *phân loại thành tên gọi* bị
+    # tắt, vì chính cái tên mới mang theo câu chuyện sai.
+    bar_signals = [] if averaged else candles.detect(recs, -1, measured=shapes)
+    vsa_signals = [] if averaged else vsa.detect(recs, -1, measured=shapes)
 
     zone: RsiZoneState = rsi_zone_state(recs, cfg.rsi, rsi)
     adx: AdxState = adx_state(recs, cfg.adx)

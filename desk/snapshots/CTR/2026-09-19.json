@@ -1,0 +1,39 @@
+{
+ "symbol": "CTR",
+ "snapshot_date": "2026-09-19",
+ "composed": 78206.01314914817,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 83793.01806134726,
+   "weight_pct": 50.06472402767004
+  },
+  {
+   "name": "P/E",
+   "price": 62207.31907250833,
+   "weight_pct": 22.990462393079987
+  },
+  {
+   "name": "P/B",
+   "price": 12461.528174413352,
+   "weight_pct": 3.4009057455632883
+  },
+  {
+   "name": "Graham 1",
+   "price": 141475.88655815582,
+   "weight_pct": 5.2746940400668185
+  },
+  {
+   "name": "Graham 2",
+   "price": 138162.77063461835,
+   "weight_pct": 5.560418061961311
+  },
+  {
+   "name": "Graham 3",
+   "price": 50239.74814473271,
+   "weight_pct": 12.708795731658551
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 165.0
+}

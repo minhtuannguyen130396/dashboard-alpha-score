@@ -1,7 +1,7 @@
 ---
-description: Xếp hạng cả rổ theo cường độ xu hướng + độ tin cậy mẫu hình, hoặc sắp xếp lại bảng đã dựng
+description: Xếp hạng cả rổ theo cường độ xu hướng + độ tin cậy mẫu hình + phơi nhiễm phái sinh, hoặc sắp xếp lại bảng đã dựng
 argument-hint: "để trống = dựng bảng cho all · hoặc 'vn30' · hoặc tiêu chí muốn sắp xếp [+ ngày]"
-allowed-tools: mcp__vn-ta__build_ranking, mcp__vn-ta__rank_list, mcp__vn-ta__list_presets
+allowed-tools: mcp__vn-ta__build_ranking, mcp__vn-ta__rank_list, mcp__vn-ta__list_presets, mcp__vn-ta__build_prospect
 ---
 
 Xếp hạng cổ phiếu: `$ARGUMENTS`
@@ -39,7 +39,10 @@ phải truyền **lại cùng `as_of`** cho `rank_list` — bỏ quên là đọ
 | "mẫu hình tăng đáng tin nhất" | `confidence` | true | `bias=tăng` |
 | "mã nào đã xác nhận rồi" | `confidence` | true | `min_confidence=đã xác nhận` |
 | "sắp xếp ngược lại" | giữ nguyên | đảo | giữ nguyên |
-| "RSI thấp nhất", "thanh khoản cao nhất" | `rsi` / `rvol` | tuỳ | — |
+| "RSI thấp nhất", "RVOL cao nhất" | `rsi` / `rvol` | tuỳ | — |
+| "thanh khoản cao nhất", "mã nào giao dịch nhiều nhất" | `liquidity` | true | — |
+| "mã nào chịu ảnh hưởng phái sinh nhất" | `futures` | true | — |
+| "beta cao nhất so với VN30" | `beta` | true | — |
 
 **Trình bày trong chat:** in bảng tool trả về, rồi **diễn giải bằng lời** — không để người
 dùng tự đọc số. Nêu rõ:
@@ -51,8 +54,21 @@ dùng tự đọc số. Nêu rõ:
    — nói rõ mã nào, lệch ra sao.
 4. Mốc giá quyết định của các mã đầu bảng (mốc kích hoạt / mục tiêu / mức huỷ).
 
-Hai cột điểm cố ý không cộng vào nhau: cường độ xu hướng là *đang chạy mạnh cỡ nào*,
-độ tin cậy mẫu hình là *bằng chứng đã đủ tới đâu*. Mã đáng chú ý nhất thường là mã
-hai cột đó nói ngược nhau — nêu ra chứ đừng gộp lại thành một nhãn.
+**Muốn một danh sách ứng viên chứ không phải cả bảng?** Nếu người dùng hỏi "mã nào
+đáng nhìn", "triển vọng cao", "lọc mã đang có mẫu hình tăng", "có cả tin tức và chỉ số
+cơ bản" — đó là `/prospect` → `mcp__vn-ta__build_prospect`, không phải tool ở đây.
+Bảng xếp hạng trả lời *cả rổ đang ở đâu*; danh sách triển vọng trả lời *nên nhìn kỹ mã
+nào*, và nó gộp thêm định giá so với ngành, giao dịch nội bộ và nhận định tin tức.
+
+Ba cột điểm cố ý không cộng vào nhau, vì chúng trả lời ba câu hỏi khác nhau: cường độ
+xu hướng là *đang chạy mạnh cỡ nào*, độ tin cậy mẫu hình là *bằng chứng đã đủ tới đâu*,
+phơi nhiễm phái sinh là *mã này nằm gần dòng tiền hợp đồng tới đâu*. Mã đáng chú ý nhất
+thường là mã có hai cột nói ngược nhau — nêu ra chứ đừng gộp lại thành một nhãn.
+
+**Bối cảnh phái sinh ở đầu bảng là lực nền chung**, không phải số của riêng mã nào. Khi
+khối đó báo còn ≤ 3 phiên tới đáo hạn, hoặc basis đang ở phân vị cực trị, thì nói rõ ở
+phần diễn giải rằng các mã đầu bảng có beta cao và nằm trong rổ VN30 đang chịu thêm một
+lực không đến từ chính chúng. Nếu khối đó kèm cảnh báo lệch phiên (phái sinh mới hơn phần
+còn lại), nhắc người dùng chạy `/update` thay vì đọc lướt qua.
 
 Chỉ mô tả trạng thái kỹ thuật, không đưa khuyến nghị mua/bán.

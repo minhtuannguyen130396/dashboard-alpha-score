@@ -1,0 +1,39 @@
+{
+ "symbol": "MSN",
+ "snapshot_date": "2026-09-19",
+ "composed": 67485.32194832129,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 63499.10894897688,
+   "weight_pct": 8.589000012894182
+  },
+  {
+   "name": "P/E",
+   "price": 69517.00122357374,
+   "weight_pct": 84.26655407025274
+  },
+  {
+   "name": "P/B",
+   "price": 34914.81970536249,
+   "weight_pct": 0.5755395332364011
+  },
+  {
+   "name": "Graham 1",
+   "price": 45354.66347156586,
+   "weight_pct": 2.3164891833029797
+  },
+  {
+   "name": "Graham 2",
+   "price": 33809.84004244,
+   "weight_pct": 0.5755395332364011
+  },
+  {
+   "name": "Graham 3",
+   "price": 54547.05787495259,
+   "weight_pct": 3.6768776670772856
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 52.9
+}

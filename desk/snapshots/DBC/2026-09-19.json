@@ -1,0 +1,39 @@
+{
+ "symbol": "DBC",
+ "snapshot_date": "2026-09-19",
+ "composed": 22134.547501820045,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 15739.095380515637,
+   "weight_pct": 71.2645904869888
+  },
+  {
+   "name": "P/E",
+   "price": 38555.73151138945,
+   "weight_pct": 5.594875671483093
+  },
+  {
+   "name": "P/B",
+   "price": 25206.92952302367,
+   "weight_pct": 15.161362376390214
+  },
+  {
+   "name": "Graham 1",
+   "price": 231282.34981237925,
+   "weight_pct": 0.5534055879287443
+  },
+  {
+   "name": "Graham 2",
+   "price": 249239.8600597295,
+   "weight_pct": 0.510540713382965
+  },
+  {
+   "name": "Graham 3",
+   "price": 34516.3895233182,
+   "weight_pct": 6.915225163826197
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 1054.9
+}

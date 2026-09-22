@@ -81,19 +81,58 @@ def volume_variants(volume: Optional[float]) -> List[str]:
     return sorted(out)
 
 
+#: Các cụm chỉ *hình thức pháp lý*, không phải danh tính. Bỏ đi thì còn lại phần
+#: thật sự phân biệt được tổ chức này với tổ chức khác.
+_LEGAL_FORMS = re.compile(
+    r"\b(cong ty|cty|ctcp|tnhh|mtv|co phan|tap doan|tong cong ty|"
+    r"quy dau tu|quy|dau tu|chung khoan|pte|ltd|limited|inc|corp|"
+    r"fund|trust|investment|capital|holdings?|group|co\.|jsc)\b", re.I)
+
+#: Từ viết tắt quá ngắn hoặc quá phổ thông thì không dùng làm khoá khớp.
+_GENERIC_ACRONYMS = {"mtv", "tnhh", "ctcp", "pte", "ltd", "jsc", "inc", "llc", "vn"}
+
+
+def name_variants(name: str) -> List[str]:
+    """Các khoá có thể dùng để nhận ra chủ thể này trong một tiêu đề.
+
+    Người thì dễ: tiêu đề nêu nguyên tên. Tổ chức thì không — bản ghi ghi
+    *"Công ty TNHH MTV Đầu tư SCIC"* trong khi báo viết *"Thành viên SCIC không
+    mua hết lượng cổ phiếu FPT đã đăng ký"*. So nguyên chuỗi là trượt sạch nhóm
+    tổ chức, mà nhóm đó chiếm phần đáng kể các giao dịch cổ đông lớn.
+
+    Nên ngoài tên đầy đủ, còn lấy **phần phân biệt được**: bỏ các cụm chỉ hình
+    thức pháp lý ("Công ty TNHH MTV Đầu tư", "PTE.Ltd", "Fund") rồi giữ phần lõi,
+    cộng thêm các từ viết tắt in hoa (SCIC, PYN) nếu có.
+    """
+    if not name:
+        return []
+    full = _strip_accents(name).strip()
+    out = {full} if len(full) >= 6 else set()
+
+    # Viết tắt in hoa lấy từ bản gốc (trước khi hạ chữ thường)
+    for tok in re.findall(r"\b[A-Z]{3,}\b", name):
+        low = tok.lower()
+        if low not in _GENERIC_ACRONYMS:
+            out.add(low)
+
+    core = _LEGAL_FORMS.sub(" ", full)
+    core = re.sub(r"[^a-z0-9\s]", " ", core)
+    core = re.sub(r"\s+", " ", core).strip()
+    if len(core) >= 4 and core != full:
+        out.add(core)
+    return sorted(out)
+
+
 def name_matches(name: str, text: str) -> bool:
-    """Tên người có xuất hiện trong đoạn văn bản không.
+    """Chủ thể có được nhận ra trong đoạn văn bản không.
 
     So sau khi bỏ dấu, vì tiêu đề báo hay viết thiếu dấu hoặc khác kiểu hoa
-    thường. Tên tổ chức dài ("Công ty TNHH MTV Đầu tư SCIC") hiếm khi lọt nguyên
-    văn vào tiêu đề, nên với tổ chức thì phần lớn phải trông vào khối lượng.
+    thường.
     """
     if not name or not text:
         return False
-    n = _strip_accents(name).strip()
-    if len(n) < 6:
-        return False
-    return n in _strip_accents(text)
+    hay = _strip_accents(text)
+    return any(v in hay for v in name_variants(name))
 
 
 def volume_matches(volume: Optional[float], text: str) -> bool:
@@ -113,6 +152,7 @@ class Match:
     score: int
     reasons: List[str] = field(default_factory=list)
     days_before_start: Optional[int] = None
+    kind: str = KIND_ANNOUNCE   # thông báo trước hay báo cáo kết quả
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -120,6 +160,7 @@ class Match:
             "post_date": self.post_date, "post_title": self.post_title,
             "score": self.score, "reasons": self.reasons,
             "days_before_start": self.days_before_start,
+            "kind": self.kind,
         }
 
 
@@ -154,38 +195,83 @@ def score_pair(tx: Dict[str, Any], post: Dict[str, Any],
     return score, reasons
 
 
-def find_announcement(tx: Dict[str, Any], posts: Sequence[Dict[str, Any]],
-                      lookback: int = LOOKBACK_DAYS,
-                      lookahead: int = LOOKAHEAD_DAYS,
-                      min_score: int = MIN_SCORE) -> Optional[Match]:
-    """Bài công bố khớp nhất cho một giao dịch, hoặc ``None`` nếu không đủ tin.
+def is_credible(post: Dict[str, Any], reasons: Sequence[str]) -> bool:
+    """Cặp này có đủ tin để ghép không, khi tập ứng viên là **toàn bộ** bài viết.
 
-    Khi hai bài cùng điểm, chọn bài **sớm hơn**: cùng một tin thường ra CBTT
-    trước rồi báo chí viết lại sau, và ngày thị trường biết là ngày đầu tiên.
+    Đây là chỗ dễ sai nhất của cả module. Bản đầu chỉ đưa vào tập ứng viên những
+    bài đã được ``disclosure_kind`` gắn nhãn — tức dùng luật từ khoá làm **cổng**.
+    Hệ quả: tiêu đề *"Lão tướng FPT Bùi Quang Ngọc bán xong 2 triệu cổ phiếu"* bị
+    loại ngay từ vòng gắn nhãn (không có từ chỉ chức vụ nào), dù nó nêu **đúng
+    tên** và **đúng khối lượng** của giao dịch đang cần ghép.
+
+    Sửa đúng là hạ ``disclosure_kind`` xuống thành *điểm cộng* và mở tập ứng viên
+    ra toàn bộ. Nhưng mở tập ra thì phải siết bằng chứng, vì tập lớn hơn ~100 lần:
+
+    * **Tên người khớp thì nhận.** Một bài chứa "Bùi Quang Ngọc" gần như chắc
+      chắn nói về người đó.
+    * **Chỉ khối lượng khớp thì chưa.** Chuỗi "2 triệu" xuất hiện đầy trong tin
+      thị trường thường ngày; nó chỉ đủ tin khi bài đã được nhận là tin giao dịch
+      nội bộ.
     """
-    start = _parse_day(tx.get("start_date")) or _parse_day(tx.get("execution_date"))
-    if start is None:
-        return None
-    lo = start - timedelta(days=lookback)
-    hi = start + timedelta(days=lookahead)
+    has_name = "tên người khớp" in reasons
+    has_volume = "khối lượng khớp" in reasons
+    if has_name:
+        return True
+    return has_volume and bool(post.get("disclosure_kind"))
 
+
+def _best_in_window(tx: Dict[str, Any], posts: Sequence[Dict[str, Any]],
+                    start: datetime, lo_days: int, hi_days: int,
+                    want_kind: str, min_score: int) -> Optional[Match]:
+    lo = start - timedelta(days=lo_days)
+    hi = start + timedelta(days=hi_days)
     best: Optional[Match] = None
     for post in posts:
         when = _parse_day(post.get("date"))
         if when is None or not (lo <= when <= hi):
             continue
-        score, reasons = score_pair(tx, post, want_kind=KIND_ANNOUNCE)
-        if score < min_score:
+        score, reasons = score_pair(tx, post, want_kind=want_kind)
+        if score < min_score or not is_credible(post, reasons):
             continue
         cand = Match(
             transaction_id=tx["transaction_id"], post_id=post["post_id"],
             post_date=str(post.get("date"))[:10],
             post_title=post.get("title") or "", score=score, reasons=reasons,
             days_before_start=(start - when).days,
+            kind=want_kind,
         )
         if best is None or (cand.score, -_day_key(cand)) > (best.score, -_day_key(best)):
             best = cand
     return best
+
+
+def find_announcement(tx: Dict[str, Any], posts: Sequence[Dict[str, Any]],
+                      lookback: int = LOOKBACK_DAYS,
+                      lookahead: int = LOOKAHEAD_DAYS,
+                      min_score: int = MIN_SCORE,
+                      allow_result_fallback: bool = True) -> Optional[Match]:
+    """Bài công bố khớp nhất cho một giao dịch, hoặc ``None`` nếu không đủ tin.
+
+    Khi hai bài cùng điểm, chọn bài **sớm hơn**: cùng một tin thường ra CBTT
+    trước rồi báo chí viết lại sau, và ngày thị trường biết là ngày đầu tiên.
+
+    ``allow_result_fallback`` mở một lượt tìm thứ hai cho **báo cáo kết quả** khi
+    không có thông báo trước. Cần thiết vì một phần đáng kể bản ghi có
+    ``registeredVolume = None`` — thời chưa bắt buộc đăng ký trước, nên **chưa
+    từng có** thông báo để mà tìm, và bản tin kết quả là lần đầu thị trường biết.
+    Hai loại này được đánh dấu khác nhau ở ``Match.kind`` vì chúng đo **hai sự
+    kiện khác nhau**: một cái là *ý định*, một cái là *xác nhận đã xong*.
+    """
+    start = _parse_day(tx.get("start_date")) or _parse_day(tx.get("execution_date"))
+    if start is None:
+        return None
+
+    hit = _best_in_window(tx, posts, start, lookback, lookahead,
+                          KIND_ANNOUNCE, min_score)
+    if hit is not None or not allow_result_fallback:
+        return hit
+    # Lượt hai: bản tin kết quả, cửa sổ dời về sau vì nó ra sau khi giao dịch xong.
+    return _best_in_window(tx, posts, start, 10, 60, KIND_RESULT, min_score)
 
 
 def _day_key(m: Match) -> int:
@@ -213,6 +299,9 @@ def effective_t0(tx: Dict[str, Any], match: Optional[Match]) -> tuple:
     đứng trên ngày thật và con số nào đứng trên phỏng đoán.
     """
     if match is not None:
-        return match.post_date, "post_date"
+        # Phân biệt hai nguồn: ngày thông báo là mốc thị trường biết *ý định*;
+        # ngày báo cáo kết quả là mốc biết *đã xong*. Gộp nhãn là mất phân biệt.
+        src = "post_date" if match.kind == KIND_ANNOUNCE else "post_result_date"
+        return match.post_date, src
     return (str(tx.get("start_date") or tx.get("execution_date") or "")[:10],
             "start_date_proxy")

@@ -55,6 +55,9 @@ body {
 
 .line-ema20 { background: #58a6ff; }
 .line-ema50 { background: #f0883e; }
+/* Basis đổi màu theo dấu (xanh = premium, đỏ = discount), nên ô legend
+   phải mang cả hai chứ không phải một màu đại diện. */
+.line-basis { background: linear-gradient(90deg, #3fb950 0 50%, #f85149 50% 100%); }
 .dot-vol-big-buyer { background: #26a69a; }
 .dot-vol-fomo-retail { background: #ef5350; }
 .dot-vol-both { background: #2962ff; }
@@ -81,7 +84,14 @@ body {
 #volume-chart { width: 100%; height: 132px; overflow: hidden; margin-top: 2px; }
 #rsi-chart { width: 100%; height: 100px; overflow: hidden; margin-top: 2px; }
 #macd-chart { width: 100%; height: 100px; overflow: hidden; margin-top: 2px; }
-#adx-chart { width: 100%; height: 128px; border-radius: 0 0 10px 10px; overflow: hidden; margin-top: 2px; }
+#adx-chart { width: 100%; height: 100px; overflow: hidden; margin-top: 2px; }
+#basis-chart { width: 100%; height: 128px; overflow: hidden; margin-top: 2px; }
+/* Pane cuối là pane đóng chồng biểu đồ: nó bo góc dưới và giữ hàng ngày tháng,
+   nên nó cao hơn các pane giữa đúng phần chiều cao trả cho hàng đó. Ai là pane
+   cuối thì tuỳ dữ liệu — không nạp phái sinh thì JS gỡ hẳn #basis-chart và ADX
+   lùi về làm đáy — nên quy tắc bám vào vị trí chứ không bám vào id, và nhờ thế
+   khớp với PANE_H trong JS ở cả hai trường hợp. */
+#charts-container > div:last-child { height: 128px; border-radius: 0 0 10px 10px; }
 
 .pos { color: #3fb950; font-weight: 600; }
 .neg { color: #f85149; font-weight: 600; }
@@ -110,6 +120,24 @@ body {
 .sp-list { margin: 0; padding-left: 18px; }
 .sp-list li { margin: 3px 0; color: #c9d1d9; }
 .sp-list strong { color: #f0f6fc; }
+
+/* Thẻ kết luận — cùng khung với thẻ cấu trúc, khác ở chỗ nó nói nghiêng về
+   đâu thay vì liệt kê đã thấy gì. Nhãn tư thế đổi màu theo chiều để nhận ra
+   được trước khi đọc chữ. */
+.sp-stance { font-size: 12px; font-weight: 700; letter-spacing: .06em;
+             display: inline-block; padding: 2px 10px; border-radius: 999px;
+             border: 1px solid currentColor; margin-bottom: 8px; }
+.sp-stance.tone-up { color: #3fb950; }
+.sp-stance.tone-down { color: #f85149; }
+.sp-stance.tone-warn { color: #e3b341; }
+.sp-stance.tone-flat { color: #8b949e; }
+.sp-rows { display: flex; flex-wrap: wrap; gap: 6px 26px; margin-top: 8px; }
+.sp-row { font-size: 13px; }
+.sp-row .k { color: #6e7681; margin-right: 7px; }
+.sp-row .v { color: #f0f6fc; font-weight: 600; }
+.sp-by { margin-top: 10px; padding-top: 8px; border-top: 1px solid #21262d;
+         color: #6e7681; font-size: 12px; }
+.sp-by b { color: #8b949e; font-weight: 600; }
 
 #hover-panel {
   display: none;

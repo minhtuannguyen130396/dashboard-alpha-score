@@ -19,7 +19,10 @@ from src.ta.formations import CONFIRMED as FORMATION_CONFIRMED
 from src.ta.formations import PIVOT_ROLES
 from src.ta.formations import STATE_LABELS as FORMATION_STATE_VN
 from src.ta.forecast import BASIS_VN, STATUS_VN, Forecast, check_all, load_all
-from src.ta.format import BOX_STATE_VN, DISCLAIMER, _n, _signed, asof_note
+from src.ta.format import (
+    BOX_STATE_VN, DISCLAIMER, _n, _signed, asof_note, format_futures_brief,
+)
+from src.ta import futures as futures_mod
 from src.ta.loader import PROJECT_ROOT, resolve_universe
 from src.ta.render import render_structure_chart
 from src.ta.snapshot import Snapshot, build_snapshot
@@ -37,6 +40,10 @@ class SymbolSection:
     structure: Structure
     chart_path: Optional[str] = None
     forecasts: List[Forecast] = field(default_factory=list)
+    #: Mã này nằm ở đâu trên đường lan truyền phái sinh — đặc tính dài hạn của
+    #: mã, gần như không đổi giữa hai phiên, nên nó thuộc về *mã* chứ không
+    #: thuộc về ảnh chụp thị trường ở trên.
+    exposure: Optional[Any] = None
 
     @property
     def headline(self) -> str:
@@ -70,6 +77,10 @@ class Report:
     forecast_changes: List[Dict[str, Any]] = field(default_factory=list)
     html_path: Optional[str] = None
     skipped: List[str] = field(default_factory=list)
+    #: Bối cảnh phái sinh — **một** bản cho cả báo cáo, không phải mỗi mã một bản.
+    #: Basis và ngày đáo hạn là lực nền chung: lặp lại nó dưới từng mã chỉ làm
+    #: người đọc tưởng đó là số của riêng mã đó.
+    futures: Optional[Any] = None
 
 
 # ---------------------------------------------------------------------------
@@ -99,6 +110,11 @@ def build(
         check = check_all(wanted, open_only=True, as_of=as_of)
         report.forecast_changes = check.changes
 
+    # Một lần cho cả báo cáo. Rỗng khi chưa nạp VN30/VN30F1M — báo cáo vẫn dựng
+    # được y hệt như trước khi có tầng phái sinh.
+    report.futures = futures_mod.build_futures_snapshot(as_of)
+    futures_mod.vn30_liquidity_share(as_of)     # hâm cache trước vòng lặp
+
     for sym in wanted[:MAX_SYMBOLS]:
         try:
             snapshot = build_snapshot(sym, as_of=as_of, lookback_days=max(lookback_days, 260),
@@ -110,6 +126,7 @@ def build(
             report.sections.append(SymbolSection(
                 symbol=sym, snapshot=snapshot, structure=structure, chart_path=chart,
                 forecasts=load_all([sym], as_of=as_of) if with_forecasts else [],
+                exposure=futures_mod.symbol_exposure(sym, as_of),
             ))
         except Exception as exc:
             report.skipped.append(f"{sym}: {type(exc).__name__}: {exc}")
@@ -123,6 +140,19 @@ def build(
 
     report.html_path = write_html(report, out_dir=out_dir)
     return report
+
+
+def _exposure_cells(exposure) -> tuple:
+    """``(ô beta, ô sức mạnh tương đối)`` cho bảng tổng quan.
+
+    Dấu ★ đứng cạnh beta chứ không thành một cột riêng: nó không phải một phép
+    đo mà là *kênh* — mã trong rổ VN30 nhận lệnh arbitrage thẳng vào, mã ngoài
+    rổ thì không, và beta của hai bên vì thế không cùng nghĩa dù cùng con số.
+    """
+    if exposure is None or exposure.beta is None:
+        return "—", "—"
+    star = "★ " if exposure.in_vn30 else ""
+    return f"{star}{_n(exposure.beta)}", _signed(exposure.rs_20)
 
 
 # ---------------------------------------------------------------------------
@@ -139,10 +169,13 @@ def to_markdown(report: Report, detail: bool = True) -> str:
         *([f"> {note}", ""] if note else []),
         f"{len(report.sections)} mã · dựng lúc {report.generated}",
         "",
+    ]
+    lines += format_futures_brief(report.futures, None, ref_date=report.as_of)
+    lines += [
         "## Tổng quan",
         "",
-        "| Mã | Giá | +/- | Xu hướng | RSI | ADX | Hộp | Nổi bật |",
-        "|----|----:|----:|----------|----:|----:|-----|---------|",
+        "| Mã | Giá | +/- | Xu hướng | RSI | ADX | β VN30 | RS 20p | Hộp | Nổi bật |",
+        "|----|----:|----:|----------|----:|----:|-------:|-------:|-----|---------|",
     ]
     for s in report.sections:
         snap, box = s.snapshot, s.structure.box
@@ -151,12 +184,17 @@ def to_markdown(report: Report, detail: bool = True) -> str:
         adx = snap.adx
         arrow = {"up": "↑", "down": "↓"}.get(adx.get("direction", ""), "→")
         box_cell = f"{_n(box.bottom)}–{_n(box.top)}" if box else "—"
+        beta, rs20 = _exposure_cells(s.exposure)
         lines.append(
             f"| **{s.symbol}** | {_n(snap.price['close'])} | {_signed(snap.price['change_pct'])} | "
             f"{snap.trend['label'].split('—')[0].strip()} | {_n(snap.momentum['rsi14'], 1)} | "
-            f"{_n(adx.get('adx'), 1)} {arrow} | {box_cell} | {s.headline} |"
+            f"{_n(adx.get('adx'), 1)} {arrow} | {beta} | {rs20} | {box_cell} | {s.headline} |"
         )
-    lines.append("")
+    lines += ["",
+              "_β VN30 = mã đi bao nhiêu khi rổ cơ sở đi 1% (★ = nằm trong rổ VN30, tức là "
+              "chịu ảnh hưởng **cơ học** chứ không chỉ qua tâm lý). RS 20p = lợi suất 20 "
+              "phiên trừ đi lợi suất VN30 cùng kỳ._",
+              ""]
 
     if report.forecast_changes:
         lines += ["## 🔔 Forecast đổi trạng thái", ""]
@@ -266,8 +304,26 @@ def _asof_html(as_of_requested: str, data_date: str = "") -> str:
 
 
 def _esc_md(text: Any) -> str:
-    """Structure notes carry markdown; **bold** is the only markup used."""
-    return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", _esc(text))
+    """Ghi chú từ ``format.py`` mang markdown: **đậm** và `mã`, không có gì khác."""
+    out = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", _esc(text))
+    out = re.sub(r"\*([^*]+)\*", r"<em>\1</em>", out)
+    return re.sub(r"`([^`]+)`", r"<code>\1</code>", out)
+
+
+def _futures_html(fsnap, ref_date: str = "") -> str:
+    """Bối cảnh phái sinh dựng lại từ **cùng** các dòng markdown bản terminal in.
+
+    Không viết lại câu ở đây: sửa một chữ trong ``format_futures_brief`` là cả
+    hai bản đổi theo, đúng như phần còn lại của báo cáo.
+    """
+    lines = format_futures_brief(fsnap, None, ref_date=ref_date)
+    if not lines:
+        return ""
+    items = [ln[2:] for ln in lines if ln.startswith("- ")]
+    if not items:
+        return ""
+    body = "".join(f"<li>{_esc_md(i)}</li>" for i in items)
+    return f'<h2>Bối cảnh phái sinh</h2><div class="card"><ul>{body}</ul></div>' 
 
 
 def _img_tag(path: Optional[str]) -> str:
@@ -297,9 +353,12 @@ def write_html(report: Report, out_dir: Optional[str] = None) -> Optional[str]:
         f"<h1>Báo cáo kỹ thuật — {_esc(report.as_of)}</h1>",
         f'<div class="sub">{len(report.sections)} mã · dựng lúc {_esc(report.generated)}</div>',
         _asof_html(report.as_of_requested, report.as_of),
+        _futures_html(report.futures, report.as_of),
         "<h2>Tổng quan</h2>", '<div class="scroll">', "<table>",
         "<tr><th>Mã</th><th class='num'>Giá</th><th class='num'>+/-</th><th>Xu hướng</th>"
-        "<th class='num'>RSI14</th><th class='num'>ADX14</th><th>Hộp</th><th>Nổi bật</th></tr>",
+        "<th class='num'>RSI14</th><th class='num'>ADX14</th>"
+        "<th class='num'>β VN30</th><th class='num'>RS 20p</th>"
+        "<th>Hộp</th><th>Nổi bật</th></tr>",
     ]
     for s in report.sections:
         snap, box = s.snapshot, s.structure.box
@@ -307,6 +366,7 @@ def write_html(report: Report, out_dir: Optional[str] = None) -> Optional[str]:
             continue
         arrow = {"up": "↑", "down": "↓"}.get(snap.adx.get("direction", ""), "→")
         box_cell = f"{box.bottom}–{box.top}" if box else "—"
+        beta, _ = _exposure_cells(s.exposure)
         parts.append(
             f"<tr><td><b>{_esc(s.symbol)}</b></td>"
             f"<td class='num'>{_n(snap.price['close'])}</td>"
@@ -314,6 +374,8 @@ def write_html(report: Report, out_dir: Optional[str] = None) -> Optional[str]:
             f"<td>{_esc(snap.trend['label'])}</td>"
             f"<td class='num'>{_n(snap.momentum['rsi14'], 1)}</td>"
             f"<td class='num'>{_n(snap.adx.get('adx'), 1)} {arrow}</td>"
+            f"<td class='num'>{_esc(beta)}</td>"
+            f"<td class='num'>{_signed_html(s.exposure.rs_20 if s.exposure else None)}</td>"
             f"<td>{_esc(box_cell)}</td><td>{_esc(s.headline)}</td></tr>"
         )
     parts += ["</table>", "</div>"]

@@ -1,0 +1,6360 @@
+[
+ {
+  "id": 99,
+  "type": "InterestRate",
+  "name": "Interbank Rate Overnight",
+  "name_vn": "Lãi suất liên ngân hàng qua đêm",
+  "unit": "%",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 3.96
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 4.47
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 4.56
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 4.6
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 4.2
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 5.38
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 8.05
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 6.86
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 4.53
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 4.63
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 11.42
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 9.57
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 8.81
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 8.69
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 6.29
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 8.58
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 5.57
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 4.67
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 5.79
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 5.94
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 6.03
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 4.83
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 3.84
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 3.88
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 3.98
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 4.28
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 5.82
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 5.79
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 4.38
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 4.38
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 3.88
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 3.88
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 6.62
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 7.05
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 6.18
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 5.72
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 4.99
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 5.15
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 6.33
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 6.32
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 6.05
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 5.25
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 5.72
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 6.2
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 6.01
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 5.52
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 6.57
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 6.97
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 7.68
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 7.8
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 6.96
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 6.97
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 10.66
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 6.54
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 5.48
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 5.27
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 6.13
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 9.35
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 5.78
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 4.85
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 4.34
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 3.51
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 3.52
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 3.85
+   }
+  ],
+  "label": "Lãi suất liên ngân hàng qua đêm"
+ },
+ {
+  "id": 100,
+  "type": "InterestRate",
+  "name": "Interbank Loan Revenue Overnight",
+  "name_vn": "Doanh số lãi suất liên ngân hàng qua đêm",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 770090.0
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 790920.0
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 799645.0
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 778905.0
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 780509.0
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 781165.0
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 794597.0
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 739407.0
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 749500.0
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 736110.0
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 826561.0
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 1159047.0
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 800145.0
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 767505.0
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 779551.0
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 789811.0
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 795355.0
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 764085.0
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 783433.0
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 787509.0
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 740436.0
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 760735.0
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 714747.0
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 730495.0
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 761792.0
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 770152.0
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 755965.0
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 740628.0
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 552233.0
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 552233.0
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 746810.0
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 746810.0
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 776573.0
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 792976.0
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 784843.0
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 814273.0
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 795609.0
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 808376.0
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 775180.0
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 795900.0
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 777565.0
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 776014.0
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 802227.0
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 785965.0
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 736711.0
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 771390.0
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 777625.0
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 814125.0
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 816140.0
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 802385.0
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 813258.0
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 1090599.0
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 809334.0
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 809966.0
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 829424.0
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 780707.0
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 800065.0
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 802845.0
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 794861.0
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 791035.0
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 773920.0
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 800148.0
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 799914.0
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 806064.0
+   }
+  ],
+  "label": "Doanh số lãi suất liên ngân hàng qua đêm"
+ },
+ {
+  "id": 101,
+  "type": "InterestRate",
+  "name": "Interbank Rate 1 Week",
+  "name_vn": "Lãi suất liên ngân hàng kỳ hạn 1 tuần",
+  "unit": "%",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 4.48
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 5.28
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 5.45
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 5.64
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 5.01
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 6.47
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 8.66
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 7.87
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 6.58
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 6.61
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 11.27
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 8.74
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 8.56
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 8.58
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 6.16
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 8.21
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 6.29
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 5.82
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 6.27
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 6.49
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 6.53
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 5.75
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 4.83
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 4.69
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 4.94
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 5.22
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 6.52
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 6.15
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 4.72
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 4.0
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 5.9
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 6.23
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 6.81
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 6.93
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 6.55
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 5.9
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 5.37
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 5.38
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 6.4
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 6.49
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 6.2
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 5.55
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 5.8
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 6.4
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 6.27
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 5.97
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 6.7
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 7.23
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 7.48
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 7.56
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 7.38
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 7.14
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 9.77
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 7.11
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 6.14
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 6.08
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 6.57
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 7.99
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 6.43
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 5.88
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 5.17
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 4.31
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 4.82
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 5.2
+   }
+  ],
+  "label": "Lãi suất liên ngân hàng kỳ hạn 1 tuần"
+ },
+ {
+  "id": 102,
+  "type": "InterestRate",
+  "name": "Interbank Loan Revenue 1 Week",
+  "name_vn": "Doanh số lãi suất liên ngân hàng kỳ hạn 1 tuần",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 22045.0
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 15048.0
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 15318.0
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 11161.0
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 18320.0
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 25010.0
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 22186.0
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 36418.0
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 79992.0
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 66263.0
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 52465.0
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 23925.0
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 27780.0
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 18592.0
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 15695.0
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 6300.0
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 18590.0
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 13798.0
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 15815.0
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 12580.0
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 10055.0
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 6750.0
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 19075.0
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 8780.0
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 11194.0
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 11395.0
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 13550.0
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 4620.0
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 4100.0
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 760180.0
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 87261.0
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 1012640.0
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 28440.0
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 20350.0
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 16700.0
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 17585.0
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 23925.0
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 23555.0
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 19835.0
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 17830.0
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 14020.0
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 24220.0
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 25760.0
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 17840.0
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 5565.0
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 9520.0
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 19869.0
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 52111.0
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 78364.0
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 86504.0
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 59845.0
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 32440.0
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 2320.0
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 18560.0
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 20130.0
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 13227.0
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 21690.0
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 3710.0
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 12400.0
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 13340.0
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 12600.0
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 10230.0
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 10910.0
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 12928.0
+   }
+  ],
+  "label": "Doanh số lãi suất liên ngân hàng kỳ hạn 1 tuần"
+ },
+ {
+  "id": 103,
+  "type": "InterestRate",
+  "name": "Interbank Rate 2 Weeks",
+  "name_vn": "Lãi suất liên ngân hàng kỳ hạn 2 tuần",
+  "unit": "%",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 5.34
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 5.58
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 6.58
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 7.15
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 6.97
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 7.45
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 8.92
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 8.96
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 8.11
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 7.85
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 8.94
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 7.87
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 7.95
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 7.14
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 6.56
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 7.91
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 6.49
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 6.06
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 6.43
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 6.56
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 6.66
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 5.81
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 5.28
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 5.12
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 6.45
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 6.93
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 7.01
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 6.98
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 6.43
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 6.07
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 6.42
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 6.48
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 6.86
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 6.99
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 6.12
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 6.48
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 5.9
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 5.93
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 6.62
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 6.62
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 6.47
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 6.03
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 6.25
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 6.78
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 6.54
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 6.65
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 7.02
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 7.17
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 7.48
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 7.59
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 7.35
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 7.34
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 8.09
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 7.18
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 6.22
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 6.42
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 6.91
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 7.12
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 6.42
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 6.29
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 6.18
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 5.74
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 5.95
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 6.44
+   }
+  ],
+  "label": "Lãi suất liên ngân hàng kỳ hạn 2 tuần"
+ },
+ {
+  "id": 104,
+  "type": "InterestRate",
+  "name": "Interbank Loan Revenue 2 Weeks",
+  "name_vn": "Doanh số lãi suất liên ngân hàng kỳ hạn 2 tuần",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 6150.0
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 10920.0
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 10432.0
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 18706.0
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 29700.0
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 19400.0
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 30550.0
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 8500.0
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 6445.0
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 9000.0
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 1951.0
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 1675.0
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 1550.0
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 2049.0
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 9040.0
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 5430.0
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 5090.0
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 10338.0
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 6744.0
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 8430.0
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 2260.0
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 110.0
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 1090.0
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 1300.0
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 5839.0
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 40690.0
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 51380.0
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 54073.0
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 60175.0
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 61894.0
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 2840.0
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 2680.0
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 2260.0
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 5580.0
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 940.0
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 10550.0
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 4590.0
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 4560.0
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 10345.0
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 2200.0
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 3882.0
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 4090.0
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 6229.0
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 14825.0
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 14060.0
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 24850.0
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 18200.0
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 10258.0
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 14150.0
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 8010.0
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 2371.0
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 5452.0
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 2725.0
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 2910.0
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 9492.0
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 6250.0
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 9150.0
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 360.0
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 4260.0
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 5271.0
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 4360.0
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 3850.0
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 4432.0
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 6551.0
+   }
+  ],
+  "label": "Doanh số lãi suất liên ngân hàng kỳ hạn 2 tuần"
+ },
+ {
+  "id": 105,
+  "type": "InterestRate",
+  "name": "Interbank Rate 1 Month",
+  "name_vn": "Lãi suất liên ngân hàng kỳ hạn 1 tháng",
+  "unit": "%",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 7.61
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 7.69
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 7.43
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 7.2
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 7.48
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 7.83
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 7.8
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 7.56
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 7.15
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 7.5
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 7.4
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 7.06
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 7.98
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 7.95
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 7.77
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 7.63
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 7.25
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 7.08
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 7.49
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 7.56
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 7.2
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 7.14
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 6.61
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 6.46
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 7.26
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 7.19
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 7.61
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 7.17
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 7.33
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 7.28
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 7.22
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 6.71
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 7.19
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 7.19
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 7.19
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 6.82
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 5.94
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 6.08
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 6.54
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 6.89
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 6.69
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 6.7
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 6.98
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 7.01
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 6.66
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 7.07
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 6.98
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 7.17
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 7.49
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 7.52
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 7.32
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 7.16
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 7.53
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 7.48
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 7.14
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 7.02
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 7.33
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 7.65
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 7.31
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 7.72
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 7.61
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 6.76
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 7.56
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 8.09
+   }
+  ],
+  "label": "Lãi suất liên ngân hàng kỳ hạn 1 tháng"
+ },
+ {
+  "id": 106,
+  "type": "InterestRate",
+  "name": "Interbank Loan Revenue 1 Month",
+  "name_vn": "Doanh số lãi suất liên ngân hàng kỳ hạn 1 tháng",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 5458.0
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 3726.0
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 1526.0
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 7588.0
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 3850.0
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 2291.0
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 2482.0
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 2764.0
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 3237.0
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 2200.0
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 200.0
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 1600.0
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 1990.0
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 2678.0
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 5318.0
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 6527.0
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 12810.0
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 6393.0
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 5677.0
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 8902.0
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 7503.0
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 8930.0
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 4045.0
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 5760.0
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 1530.0
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 3223.0
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 1177.0
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 10100.0
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 6856.0
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 3410.0
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 1470.0
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 3956.0
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 4849.0
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 5975.0
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 11002.0
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 11567.0
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 8025.0
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 9461.0
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 3457.0
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 3482.0
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 7743.0
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 4155.0
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 3864.0
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 5014.0
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 2260.0
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 8254.0
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 2065.0
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 5860.0
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 2946.0
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 5042.0
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 1780.0
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 1400.0
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 1725.0
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 2580.0
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 5000.0
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 3916.0
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 8253.0
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 1465.0
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 15808.0
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 4720.0
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 12255.0
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 6392.0
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 3663.0
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 4520.0
+   }
+  ],
+  "label": "Doanh số lãi suất liên ngân hàng kỳ hạn 1 tháng"
+ },
+ {
+  "id": 107,
+  "type": "InterestRate",
+  "name": "Interbank Rate 3 Months",
+  "name_vn": "Lãi suất liên ngân hàng kỳ hạn 3 tháng",
+  "unit": "%",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 7.36
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 8.05
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 7.86
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 7.89
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 7.87
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 7.59
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 8.13
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 7.93
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 7.96
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 7.69
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 7.6
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 8.39
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 7.63
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 7.71
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 7.8
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 8.01
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 7.81
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 7.85
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 7.83
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 7.86
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 7.98
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 7.56
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 7.58
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 7.57
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 7.89
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 8.06
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 7.62
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 7.9
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 7.43
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 7.52
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 7.08
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 7.41
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 7.55
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 7.62
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 7.5
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 7.53
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 6.44
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 6.77
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 6.9
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 7.34
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 7.26
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 7.25
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 7.37
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 7.48
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 7.49
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 7.2
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 7.69
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 7.75
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 7.68
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 7.69
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 7.45
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 7.86
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 7.68
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 7.75
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 7.49
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 7.43
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 7.51
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 7.89
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 7.83
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 7.69
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 7.38
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 8.04
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 7.8
+   }
+  ],
+  "label": "Lãi suất liên ngân hàng kỳ hạn 3 tháng"
+ },
+ {
+  "id": 108,
+  "type": "InterestRate",
+  "name": "Interbank Loan Revenue 3 Months",
+  "name_vn": "Doanh số lãi suất liên ngân hàng kỳ hạn 3 tháng",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 8146.0
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 4750.0
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 8775.0
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 8193.0
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 7935.0
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 3278.0
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 5110.0
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 6562.0
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 7009.0
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 1893.0
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 2897.0
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 8406.0
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 4190.0
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 2365.0
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 8993.0
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 6319.0
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 20758.0
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 17001.0
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 9598.0
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 5352.0
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 5281.0
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 7298.0
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 5101.0
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 6924.0
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 5707.0
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 12262.0
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 10784.0
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 3403.0
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 3950.0
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 6554.0
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 2820.0
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 2281.0
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 2663.0
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 5135.0
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 6400.0
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 3185.0
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 1936.0
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 7780.0
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 3835.0
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 2637.0
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 5210.0
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 7515.0
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 5139.0
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 3852.0
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 3139.0
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 1733.0
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 2396.0
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 1919.0
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 5320.0
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 6944.0
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 3937.0
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 3555.0
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 797.0
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 1745.0
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 1015.0
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 1570.0
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 1610.0
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 7804.0
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 9348.0
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 10818.0
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 8826.0
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 11277.0
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 2902.0
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 8751.0
+   }
+  ],
+  "label": "Doanh số lãi suất liên ngân hàng kỳ hạn 3 tháng"
+ },
+ {
+  "id": 109,
+  "type": "InterestRate",
+  "name": "Interbank Rate 6 Months",
+  "name_vn": "Lãi suất liên ngân hàng kỳ hạn 6 tháng",
+  "unit": "%",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 7.74
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 8.11
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 8.11
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 7.72
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 8.1
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 7.59
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 7.8
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 7.4
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 8.37
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 7.75
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 7.75
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 8.25
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 7.2
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 7.42
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 8.63
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 8.42
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 8.16
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 7.98
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 8.26
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 7.35
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 8.22
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 8.19
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 7.95
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 7.24
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 7.83
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 8.28
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 7.79
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 7.79
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 7.44
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 7.35
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 8.0
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 8.5
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 8.12
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 8.4
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 6.7
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 7.8
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 7.8
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 8.5
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 7.8
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 8.18
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 7.66
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 7.66
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 7.85
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 7.84
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 7.84
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 7.2
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 7.9
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 8.55
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 8.13
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 8.34
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 7.53
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 7.53
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 7.98
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 8.1
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 8.1
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 8.1
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 8.1
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 8.1
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 8.24
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 8.55
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 8.38
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 7.92
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 8.0
+   }
+  ],
+  "label": "Lãi suất liên ngân hàng kỳ hạn 6 tháng"
+ },
+ {
+  "id": 110,
+  "type": "InterestRate",
+  "name": "Interbank Loan Revenue 6 Months",
+  "name_vn": "Doanh số lãi suất liên ngân hàng kỳ hạn 6 tháng",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 756.0
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 581.0
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 581.0
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 2715.0
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 56.0
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 640.0
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 351.0
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 1001.0
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 701.0
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 701.0
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 1461.0
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 51.0
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 261.0
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 77.0
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 501.0
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 571.0
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 541.0
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 1519.0
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 2500.0
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 3400.0
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 2.0
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 2005.0
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 506.0
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 421.0
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 733.0
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 420.0
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 453.0
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 9.0
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 9.0
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 385.0
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 30.0
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 2.0
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 500.0
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 801.0
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 500.0
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 270.0
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 1000.0
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 1000.0
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 500.0
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 2000.0
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 791.0
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 450.0
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 450.0
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 1318.0
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 1333.0
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 1333.0
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 900.0
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 200.0
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 2.0
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 50.0
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 730.0
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 200.0
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 200.0
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 2607.0
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 120.0
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 120.0
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 120.0
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 120.0
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 120.0
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 500.0
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 500.0
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 1000.0
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 180.0
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 320.0
+   }
+  ],
+  "label": "Doanh số lãi suất liên ngân hàng kỳ hạn 6 tháng"
+ },
+ {
+  "id": 111,
+  "type": "InterestRate",
+  "name": "Interbank Rate 9 Months",
+  "name_vn": "Lãi suất liên ngân hàng kỳ hạn 9 tháng",
+  "unit": "%",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 7.82
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 7.82
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 7.82
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 7.82
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 8.3
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 8.3
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 8.5
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 8.5
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 8.5
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 8.5
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 8.5
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 6.65
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 6.65
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 6.65
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 6.65
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 8.23
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 8.23
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 8.23
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 8.23
+   }
+  ],
+  "label": "Lãi suất liên ngân hàng kỳ hạn 9 tháng"
+ },
+ {
+  "id": 112,
+  "type": "InterestRate",
+  "name": "Interbank Loan Revenue 9 Months",
+  "name_vn": "Doanh số lãi suất liên ngân hàng kỳ hạn 9 tháng",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2026-03-16",
+    "period_end": "2026-03-16",
+    "observed_at": "2026-03-17",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-17",
+    "period_end": "2026-03-17",
+    "observed_at": "2026-03-18",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-18",
+    "period_end": "2026-03-18",
+    "observed_at": "2026-03-19",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-19",
+    "period_end": "2026-03-19",
+    "observed_at": "2026-03-20",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-20",
+    "period_end": "2026-03-20",
+    "observed_at": "2026-03-21",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-23",
+    "period_end": "2026-03-23",
+    "observed_at": "2026-03-24",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-24",
+    "period_end": "2026-03-24",
+    "observed_at": "2026-03-25",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-25",
+    "period_end": "2026-03-25",
+    "observed_at": "2026-03-26",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-26",
+    "period_end": "2026-03-26",
+    "observed_at": "2026-03-27",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-27",
+    "period_end": "2026-03-27",
+    "observed_at": "2026-03-28",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-30",
+    "period_end": "2026-03-30",
+    "observed_at": "2026-03-31",
+    "value": 160.0
+   },
+   {
+    "period": "2026-03-31",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-01",
+    "value": 160.0
+   },
+   {
+    "period": "2026-04-01",
+    "period_end": "2026-04-01",
+    "observed_at": "2026-04-02",
+    "value": 160.0
+   },
+   {
+    "period": "2026-04-02",
+    "period_end": "2026-04-02",
+    "observed_at": "2026-04-03",
+    "value": 160.0
+   },
+   {
+    "period": "2026-04-03",
+    "period_end": "2026-04-03",
+    "observed_at": "2026-04-04",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-06",
+    "period_end": "2026-04-06",
+    "observed_at": "2026-04-07",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-07",
+    "period_end": "2026-04-07",
+    "observed_at": "2026-04-08",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-08",
+    "period_end": "2026-04-08",
+    "observed_at": "2026-04-09",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-09",
+    "period_end": "2026-04-09",
+    "observed_at": "2026-04-10",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-10",
+    "period_end": "2026-04-10",
+    "observed_at": "2026-04-11",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-13",
+    "period_end": "2026-04-13",
+    "observed_at": "2026-04-14",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-14",
+    "period_end": "2026-04-14",
+    "observed_at": "2026-04-15",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-15",
+    "period_end": "2026-04-15",
+    "observed_at": "2026-04-16",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-16",
+    "period_end": "2026-04-16",
+    "observed_at": "2026-04-17",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-17",
+    "period_end": "2026-04-17",
+    "observed_at": "2026-04-18",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-20",
+    "period_end": "2026-04-20",
+    "observed_at": "2026-04-21",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-21",
+    "period_end": "2026-04-21",
+    "observed_at": "2026-04-22",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-22",
+    "period_end": "2026-04-22",
+    "observed_at": "2026-04-23",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-23",
+    "period_end": "2026-04-23",
+    "observed_at": "2026-04-24",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-24",
+    "period_end": "2026-04-24",
+    "observed_at": "2026-04-25",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-28",
+    "period_end": "2026-04-28",
+    "observed_at": "2026-04-29",
+    "value": 80.0
+   },
+   {
+    "period": "2026-04-29",
+    "period_end": "2026-04-29",
+    "observed_at": "2026-04-30",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-04",
+    "period_end": "2026-05-04",
+    "observed_at": "2026-05-05",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-05",
+    "period_end": "2026-05-05",
+    "observed_at": "2026-05-06",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-06",
+    "period_end": "2026-05-06",
+    "observed_at": "2026-05-07",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-07",
+    "period_end": "2026-05-07",
+    "observed_at": "2026-05-08",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-08",
+    "period_end": "2026-05-08",
+    "observed_at": "2026-05-09",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-11",
+    "period_end": "2026-05-11",
+    "observed_at": "2026-05-12",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-12",
+    "period_end": "2026-05-12",
+    "observed_at": "2026-05-13",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-13",
+    "period_end": "2026-05-13",
+    "observed_at": "2026-05-14",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-14",
+    "period_end": "2026-05-14",
+    "observed_at": "2026-05-15",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-15",
+    "period_end": "2026-05-15",
+    "observed_at": "2026-05-16",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-18",
+    "period_end": "2026-05-18",
+    "observed_at": "2026-05-19",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-19",
+    "period_end": "2026-05-19",
+    "observed_at": "2026-05-20",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-20",
+    "period_end": "2026-05-20",
+    "observed_at": "2026-05-21",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-21",
+    "period_end": "2026-05-21",
+    "observed_at": "2026-05-22",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-22",
+    "period_end": "2026-05-22",
+    "observed_at": "2026-05-23",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-25",
+    "period_end": "2026-05-25",
+    "observed_at": "2026-05-26",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-26",
+    "period_end": "2026-05-26",
+    "observed_at": "2026-05-27",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-27",
+    "period_end": "2026-05-27",
+    "observed_at": "2026-05-28",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-28",
+    "period_end": "2026-05-28",
+    "observed_at": "2026-05-29",
+    "value": 80.0
+   },
+   {
+    "period": "2026-05-29",
+    "period_end": "2026-05-29",
+    "observed_at": "2026-05-30",
+    "value": 1000.0
+   },
+   {
+    "period": "2026-06-01",
+    "period_end": "2026-06-01",
+    "observed_at": "2026-06-02",
+    "value": 1000.0
+   },
+   {
+    "period": "2026-06-02",
+    "period_end": "2026-06-02",
+    "observed_at": "2026-06-03",
+    "value": 1000.0
+   },
+   {
+    "period": "2026-06-03",
+    "period_end": "2026-06-03",
+    "observed_at": "2026-06-04",
+    "value": 1000.0
+   },
+   {
+    "period": "2026-06-04",
+    "period_end": "2026-06-04",
+    "observed_at": "2026-06-05",
+    "value": 1000.0
+   },
+   {
+    "period": "2026-06-05",
+    "period_end": "2026-06-05",
+    "observed_at": "2026-06-06",
+    "value": 130.0
+   },
+   {
+    "period": "2026-06-08",
+    "period_end": "2026-06-08",
+    "observed_at": "2026-06-09",
+    "value": 130.0
+   },
+   {
+    "period": "2026-06-09",
+    "period_end": "2026-06-09",
+    "observed_at": "2026-06-10",
+    "value": 130.0
+   },
+   {
+    "period": "2026-06-10",
+    "period_end": "2026-06-10",
+    "observed_at": "2026-06-11",
+    "value": 130.0
+   },
+   {
+    "period": "2026-06-11",
+    "period_end": "2026-06-11",
+    "observed_at": "2026-06-12",
+    "value": 60.0
+   },
+   {
+    "period": "2026-06-12",
+    "period_end": "2026-06-12",
+    "observed_at": "2026-06-13",
+    "value": 60.0
+   },
+   {
+    "period": "2026-06-15",
+    "period_end": "2026-06-15",
+    "observed_at": "2026-06-16",
+    "value": 60.0
+   },
+   {
+    "period": "2026-06-16",
+    "period_end": "2026-06-16",
+    "observed_at": "2026-06-17",
+    "value": 60.0
+   }
+  ],
+  "label": "Doanh số lãi suất liên ngân hàng kỳ hạn 9 tháng"
+ },
+ {
+  "id": 113,
+  "type": "InterestRate",
+  "name": "Interbank Rate 12 Months",
+  "name_vn": "Lãi suất liên ngân hàng kỳ hạn 12 tháng",
+  "unit": "%",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2004-08-19",
+    "period_end": "2004-08-19",
+    "observed_at": "2004-08-20",
+    "value": 7.76
+   },
+   {
+    "period": "2004-08-20",
+    "period_end": "2004-08-20",
+    "observed_at": "2004-08-21",
+    "value": 7.76
+   },
+   {
+    "period": "2004-08-23",
+    "period_end": "2004-08-23",
+    "observed_at": "2004-08-24",
+    "value": 7.61
+   },
+   {
+    "period": "2004-08-24",
+    "period_end": "2004-08-24",
+    "observed_at": "2004-08-25",
+    "value": 7.61
+   },
+   {
+    "period": "2004-08-25",
+    "period_end": "2004-08-25",
+    "observed_at": "2004-08-26",
+    "value": 7.54
+   },
+   {
+    "period": "2004-08-26",
+    "period_end": "2004-08-26",
+    "observed_at": "2004-08-27",
+    "value": 7.54
+   },
+   {
+    "period": "2004-08-27",
+    "period_end": "2004-08-27",
+    "observed_at": "2004-08-28",
+    "value": 7.54
+   },
+   {
+    "period": "2004-08-30",
+    "period_end": "2004-08-30",
+    "observed_at": "2004-08-31",
+    "value": 7.54
+   },
+   {
+    "period": "2004-08-31",
+    "period_end": "2004-08-31",
+    "observed_at": "2004-09-01",
+    "value": 7.54
+   },
+   {
+    "period": "2004-09-01",
+    "period_end": "2004-09-01",
+    "observed_at": "2004-09-02",
+    "value": 7.54
+   },
+   {
+    "period": "2004-09-06",
+    "period_end": "2004-09-06",
+    "observed_at": "2004-09-07",
+    "value": 7.54
+   },
+   {
+    "period": "2004-09-07",
+    "period_end": "2004-09-07",
+    "observed_at": "2004-09-08",
+    "value": 7.54
+   },
+   {
+    "period": "2004-09-08",
+    "period_end": "2004-09-08",
+    "observed_at": "2004-09-09",
+    "value": 7.54
+   },
+   {
+    "period": "2004-09-09",
+    "period_end": "2004-09-09",
+    "observed_at": "2004-09-10",
+    "value": 7.54
+   },
+   {
+    "period": "2004-09-10",
+    "period_end": "2004-09-10",
+    "observed_at": "2004-09-11",
+    "value": 7.54
+   },
+   {
+    "period": "2004-09-13",
+    "period_end": "2004-09-13",
+    "observed_at": "2004-09-14",
+    "value": 7.53
+   },
+   {
+    "period": "2004-09-14",
+    "period_end": "2004-09-14",
+    "observed_at": "2004-09-15",
+    "value": 7.53
+   },
+   {
+    "period": "2004-09-15",
+    "period_end": "2004-09-15",
+    "observed_at": "2004-09-16",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-16",
+    "period_end": "2004-09-16",
+    "observed_at": "2004-09-17",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-17",
+    "period_end": "2004-09-17",
+    "observed_at": "2004-09-18",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-20",
+    "period_end": "2004-09-20",
+    "observed_at": "2004-09-21",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-21",
+    "period_end": "2004-09-21",
+    "observed_at": "2004-09-22",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-22",
+    "period_end": "2004-09-22",
+    "observed_at": "2004-09-23",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-23",
+    "period_end": "2004-09-23",
+    "observed_at": "2004-09-24",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-24",
+    "period_end": "2004-09-24",
+    "observed_at": "2004-09-25",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-27",
+    "period_end": "2004-09-27",
+    "observed_at": "2004-09-28",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-28",
+    "period_end": "2004-09-28",
+    "observed_at": "2004-09-29",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-29",
+    "period_end": "2004-09-29",
+    "observed_at": "2004-09-30",
+    "value": 7.52
+   },
+   {
+    "period": "2004-09-30",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-10-01",
+    "value": 7.52
+   },
+   {
+    "period": "2004-10-01",
+    "period_end": "2004-10-01",
+    "observed_at": "2004-10-02",
+    "value": 7.52
+   },
+   {
+    "period": "2004-10-04",
+    "period_end": "2004-10-04",
+    "observed_at": "2004-10-05",
+    "value": 7.54
+   },
+   {
+    "period": "2004-10-05",
+    "period_end": "2004-10-05",
+    "observed_at": "2004-10-06",
+    "value": 7.54
+   },
+   {
+    "period": "2004-10-06",
+    "period_end": "2004-10-06",
+    "observed_at": "2004-10-07",
+    "value": 7.54
+   },
+   {
+    "period": "2004-10-07",
+    "period_end": "2004-10-07",
+    "observed_at": "2004-10-08",
+    "value": 7.54
+   },
+   {
+    "period": "2004-10-08",
+    "period_end": "2004-10-08",
+    "observed_at": "2004-10-09",
+    "value": 7.54
+   },
+   {
+    "period": "2004-10-11",
+    "period_end": "2004-10-11",
+    "observed_at": "2004-10-12",
+    "value": 7.55
+   },
+   {
+    "period": "2004-10-12",
+    "period_end": "2004-10-12",
+    "observed_at": "2004-10-13",
+    "value": 7.55
+   },
+   {
+    "period": "2004-10-13",
+    "period_end": "2004-10-13",
+    "observed_at": "2004-10-14",
+    "value": 7.58
+   },
+   {
+    "period": "2004-10-14",
+    "period_end": "2004-10-14",
+    "observed_at": "2004-10-15",
+    "value": 7.59
+   },
+   {
+    "period": "2004-10-15",
+    "period_end": "2004-10-15",
+    "observed_at": "2004-10-16",
+    "value": 7.59
+   },
+   {
+    "period": "2004-10-18",
+    "period_end": "2004-10-18",
+    "observed_at": "2004-10-19",
+    "value": 7.57
+   },
+   {
+    "period": "2004-10-19",
+    "period_end": "2004-10-19",
+    "observed_at": "2004-10-20",
+    "value": 7.57
+   },
+   {
+    "period": "2004-10-20",
+    "period_end": "2004-10-20",
+    "observed_at": "2004-10-21",
+    "value": 7.55
+   },
+   {
+    "period": "2004-10-21",
+    "period_end": "2004-10-21",
+    "observed_at": "2004-10-22",
+    "value": 7.55
+   },
+   {
+    "period": "2004-10-22",
+    "period_end": "2004-10-22",
+    "observed_at": "2004-10-23",
+    "value": 7.55
+   },
+   {
+    "period": "2004-10-25",
+    "period_end": "2004-10-25",
+    "observed_at": "2004-10-26",
+    "value": 7.55
+   },
+   {
+    "period": "2004-10-26",
+    "period_end": "2004-10-26",
+    "observed_at": "2004-10-27",
+    "value": 7.56
+   },
+   {
+    "period": "2004-10-27",
+    "period_end": "2004-10-27",
+    "observed_at": "2004-10-28",
+    "value": 7.57
+   },
+   {
+    "period": "2004-10-28",
+    "period_end": "2004-10-28",
+    "observed_at": "2004-10-29",
+    "value": 7.61
+   },
+   {
+    "period": "2004-10-29",
+    "period_end": "2004-10-29",
+    "observed_at": "2004-10-30",
+    "value": 7.65
+   },
+   {
+    "period": "2004-11-01",
+    "period_end": "2004-11-01",
+    "observed_at": "2004-11-02",
+    "value": 7.65
+   },
+   {
+    "period": "2004-11-02",
+    "period_end": "2004-11-02",
+    "observed_at": "2004-11-03",
+    "value": 7.66
+   },
+   {
+    "period": "2004-11-03",
+    "period_end": "2004-11-03",
+    "observed_at": "2004-11-04",
+    "value": 7.66
+   },
+   {
+    "period": "2004-11-04",
+    "period_end": "2004-11-04",
+    "observed_at": "2004-11-05",
+    "value": 7.58
+   },
+   {
+    "period": "2004-11-05",
+    "period_end": "2004-11-05",
+    "observed_at": "2004-11-06",
+    "value": 7.58
+   },
+   {
+    "period": "2004-11-08",
+    "period_end": "2004-11-08",
+    "observed_at": "2004-11-09",
+    "value": 7.58
+   },
+   {
+    "period": "2004-11-09",
+    "period_end": "2004-11-09",
+    "observed_at": "2004-11-10",
+    "value": 7.57
+   },
+   {
+    "period": "2004-11-10",
+    "period_end": "2004-11-10",
+    "observed_at": "2004-11-11",
+    "value": 7.56
+   },
+   {
+    "period": "2004-11-11",
+    "period_end": "2004-11-11",
+    "observed_at": "2004-11-12",
+    "value": 7.54
+   },
+   {
+    "period": "2004-11-12",
+    "period_end": "2004-11-12",
+    "observed_at": "2004-11-13",
+    "value": 7.54
+   },
+   {
+    "period": "2004-11-15",
+    "period_end": "2004-11-15",
+    "observed_at": "2004-11-16",
+    "value": 7.53
+   },
+   {
+    "period": "2004-11-16",
+    "period_end": "2004-11-16",
+    "observed_at": "2004-11-17",
+    "value": 7.53
+   },
+   {
+    "period": "2004-11-17",
+    "period_end": "2004-11-17",
+    "observed_at": "2004-11-18",
+    "value": 7.53
+   },
+   {
+    "period": "2004-11-18",
+    "period_end": "2004-11-18",
+    "observed_at": "2004-11-19",
+    "value": 7.53
+   },
+   {
+    "period": "2004-11-19",
+    "period_end": "2004-11-19",
+    "observed_at": "2004-11-20",
+    "value": 7.53
+   }
+  ],
+  "label": "Lãi suất liên ngân hàng kỳ hạn 12 tháng"
+ },
+ {
+  "id": 114,
+  "type": "InterestRate",
+  "name": "Interbank Loan Revenue 12 Months",
+  "name_vn": "Doanh số lãi suất liên ngân hàng kỳ hạn 12 tháng",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng ngày",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 1,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2004-07-12",
+    "period_end": "2004-07-12",
+    "observed_at": "2004-07-13",
+    "value": 184000.0
+   },
+   {
+    "period": "2004-07-13",
+    "period_end": "2004-07-13",
+    "observed_at": "2004-07-14",
+    "value": 184000.0
+   },
+   {
+    "period": "2004-07-14",
+    "period_end": "2004-07-14",
+    "observed_at": "2004-07-15",
+    "value": 186000.0
+   },
+   {
+    "period": "2004-07-15",
+    "period_end": "2004-07-15",
+    "observed_at": "2004-07-16",
+    "value": 186000.0
+   },
+   {
+    "period": "2004-07-16",
+    "period_end": "2004-07-16",
+    "observed_at": "2004-07-17",
+    "value": 186000.0
+   },
+   {
+    "period": "2004-07-19",
+    "period_end": "2004-07-19",
+    "observed_at": "2004-07-20",
+    "value": 189125.0
+   },
+   {
+    "period": "2004-07-20",
+    "period_end": "2004-07-20",
+    "observed_at": "2004-07-21",
+    "value": 189125.0
+   },
+   {
+    "period": "2004-07-21",
+    "period_end": "2004-07-21",
+    "observed_at": "2004-07-22",
+    "value": 187000.0
+   },
+   {
+    "period": "2004-07-22",
+    "period_end": "2004-07-22",
+    "observed_at": "2004-07-23",
+    "value": 187000.0
+   },
+   {
+    "period": "2004-07-23",
+    "period_end": "2004-07-23",
+    "observed_at": "2004-07-24",
+    "value": 187000.0
+   },
+   {
+    "period": "2004-07-26",
+    "period_end": "2004-07-26",
+    "observed_at": "2004-07-27",
+    "value": 193000.0
+   },
+   {
+    "period": "2004-07-27",
+    "period_end": "2004-07-27",
+    "observed_at": "2004-07-28",
+    "value": 193000.0
+   },
+   {
+    "period": "2004-07-28",
+    "period_end": "2004-07-28",
+    "observed_at": "2004-07-29",
+    "value": 196000.0
+   },
+   {
+    "period": "2004-07-29",
+    "period_end": "2004-07-29",
+    "observed_at": "2004-07-30",
+    "value": 196000.0
+   },
+   {
+    "period": "2004-07-30",
+    "period_end": "2004-07-30",
+    "observed_at": "2004-07-31",
+    "value": 196000.0
+   },
+   {
+    "period": "2004-08-02",
+    "period_end": "2004-08-02",
+    "observed_at": "2004-08-03",
+    "value": 198000.0
+   },
+   {
+    "period": "2004-08-03",
+    "period_end": "2004-08-03",
+    "observed_at": "2004-08-04",
+    "value": 198000.0
+   },
+   {
+    "period": "2004-08-04",
+    "period_end": "2004-08-04",
+    "observed_at": "2004-08-05",
+    "value": 195500.0
+   },
+   {
+    "period": "2004-08-05",
+    "period_end": "2004-08-05",
+    "observed_at": "2004-08-06",
+    "value": 195500.0
+   },
+   {
+    "period": "2004-08-06",
+    "period_end": "2004-08-06",
+    "observed_at": "2004-08-07",
+    "value": 195500.0
+   },
+   {
+    "period": "2004-08-09",
+    "period_end": "2004-08-09",
+    "observed_at": "2004-08-10",
+    "value": 194125.0
+   },
+   {
+    "period": "2004-08-10",
+    "period_end": "2004-08-10",
+    "observed_at": "2004-08-11",
+    "value": 194125.0
+   },
+   {
+    "period": "2004-08-11",
+    "period_end": "2004-08-11",
+    "observed_at": "2004-08-12",
+    "value": 188000.0
+   },
+   {
+    "period": "2004-08-12",
+    "period_end": "2004-08-12",
+    "observed_at": "2004-08-13",
+    "value": 188000.0
+   },
+   {
+    "period": "2004-08-13",
+    "period_end": "2004-08-13",
+    "observed_at": "2004-08-14",
+    "value": 188000.0
+   },
+   {
+    "period": "2004-08-16",
+    "period_end": "2004-08-16",
+    "observed_at": "2004-08-17",
+    "value": 192125.0
+   },
+   {
+    "period": "2004-08-17",
+    "period_end": "2004-08-17",
+    "observed_at": "2004-08-18",
+    "value": 192125.0
+   },
+   {
+    "period": "2004-08-18",
+    "period_end": "2004-08-18",
+    "observed_at": "2004-08-19",
+    "value": 194000.0
+   },
+   {
+    "period": "2004-08-19",
+    "period_end": "2004-08-19",
+    "observed_at": "2004-08-20",
+    "value": 194000.0
+   },
+   {
+    "period": "2004-08-20",
+    "period_end": "2004-08-20",
+    "observed_at": "2004-08-21",
+    "value": 194000.0
+   },
+   {
+    "period": "2004-08-23",
+    "period_end": "2004-08-23",
+    "observed_at": "2004-08-24",
+    "value": 193000.0
+   },
+   {
+    "period": "2004-08-24",
+    "period_end": "2004-08-24",
+    "observed_at": "2004-08-25",
+    "value": 193000.0
+   },
+   {
+    "period": "2004-08-25",
+    "period_end": "2004-08-25",
+    "observed_at": "2004-08-26",
+    "value": 198000.0
+   },
+   {
+    "period": "2004-08-26",
+    "period_end": "2004-08-26",
+    "observed_at": "2004-08-27",
+    "value": 198000.0
+   },
+   {
+    "period": "2004-08-27",
+    "period_end": "2004-08-27",
+    "observed_at": "2004-08-28",
+    "value": 198000.0
+   },
+   {
+    "period": "2004-08-30",
+    "period_end": "2004-08-30",
+    "observed_at": "2004-08-31",
+    "value": 198000.0
+   },
+   {
+    "period": "2004-08-31",
+    "period_end": "2004-08-31",
+    "observed_at": "2004-09-01",
+    "value": 198000.0
+   },
+   {
+    "period": "2004-09-01",
+    "period_end": "2004-09-01",
+    "observed_at": "2004-09-02",
+    "value": 198000.0
+   },
+   {
+    "period": "2004-09-06",
+    "period_end": "2004-09-06",
+    "observed_at": "2004-09-07",
+    "value": 201000.0
+   },
+   {
+    "period": "2004-09-07",
+    "period_end": "2004-09-07",
+    "observed_at": "2004-09-08",
+    "value": 201000.0
+   },
+   {
+    "period": "2004-09-08",
+    "period_end": "2004-09-08",
+    "observed_at": "2004-09-09",
+    "value": 208000.0
+   },
+   {
+    "period": "2004-09-09",
+    "period_end": "2004-09-09",
+    "observed_at": "2004-09-10",
+    "value": 208000.0
+   },
+   {
+    "period": "2004-09-10",
+    "period_end": "2004-09-10",
+    "observed_at": "2004-09-11",
+    "value": 208000.0
+   },
+   {
+    "period": "2004-09-13",
+    "period_end": "2004-09-13",
+    "observed_at": "2004-09-14",
+    "value": 207000.0
+   },
+   {
+    "period": "2004-09-14",
+    "period_end": "2004-09-14",
+    "observed_at": "2004-09-15",
+    "value": 207000.0
+   },
+   {
+    "period": "2004-09-15",
+    "period_end": "2004-09-15",
+    "observed_at": "2004-09-16",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-16",
+    "period_end": "2004-09-16",
+    "observed_at": "2004-09-17",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-17",
+    "period_end": "2004-09-17",
+    "observed_at": "2004-09-18",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-20",
+    "period_end": "2004-09-20",
+    "observed_at": "2004-09-21",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-21",
+    "period_end": "2004-09-21",
+    "observed_at": "2004-09-22",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-22",
+    "period_end": "2004-09-22",
+    "observed_at": "2004-09-23",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-23",
+    "period_end": "2004-09-23",
+    "observed_at": "2004-09-24",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-24",
+    "period_end": "2004-09-24",
+    "observed_at": "2004-09-25",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-27",
+    "period_end": "2004-09-27",
+    "observed_at": "2004-09-28",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-28",
+    "period_end": "2004-09-28",
+    "observed_at": "2004-09-29",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-29",
+    "period_end": "2004-09-29",
+    "observed_at": "2004-09-30",
+    "value": 206000.0
+   },
+   {
+    "period": "2004-09-30",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-10-01",
+    "value": 206000.0
+   }
+  ],
+  "label": "Doanh số lãi suất liên ngân hàng kỳ hạn 12 tháng"
+ },
+ {
+  "id": 115,
+  "type": "InterestRate",
+  "name": "Refinancing Rate",
+  "name_vn": "Lãi suất tái cấp vốn",
+  "unit": "%",
+  "frequency": "Không định kỳ",
+  "source": "Ngân hàng nhà nước Việt Nam",
+  "lag_days": 30,
+  "next_release": "",
+  "history": [
+   {
+    "period": "2023-06-19",
+    "period_end": "2023-06-19",
+    "observed_at": "2023-07-19",
+    "value": 4.5
+   },
+   {
+    "period": "2023-09-13",
+    "period_end": "2023-09-13",
+    "observed_at": "2023-10-13",
+    "value": 4.5
+   }
+  ],
+  "label": "Lãi suất tái cấp vốn"
+ }
+]

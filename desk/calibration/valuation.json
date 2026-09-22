@@ -1,0 +1,291 @@
+{
+ "generated": "2026-09-20 09:35",
+ "universe": "all",
+ "n_symbols": 80,
+ "hypotheses": [
+  {
+   "name": "V1-60p",
+   "question": "P/E thấp so với chính lịch sử của mã (phân vị tính tại t) tại t → lợi suất tương đối 60 phiên sau",
+   "buckets": [
+    {
+     "name": "nhóm 1 — rẻ nhất so với chính mình [2.3x → 45.0x]",
+     "n_overlapping": 0,
+     "n_independent": 439,
+     "median_rel": -1.525,
+     "mean_rel": 0.217,
+     "hit_rate": 44.6,
+     "placebo_median": -2.226,
+     "edge": 0.701,
+     "p_value": 0.293,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [3.6x → 70.4x]",
+     "n_overlapping": 0,
+     "n_independent": 440,
+     "median_rel": -1.684,
+     "mean_rel": -0.582,
+     "hit_rate": 42.7,
+     "placebo_median": -2.223,
+     "edge": 0.538,
+     "p_value": 0.404,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [4.3x → 106.5x]",
+     "n_overlapping": 0,
+     "n_independent": 440,
+     "median_rel": -3.035,
+     "mean_rel": -1.701,
+     "hit_rate": 39.5,
+     "placebo_median": -2.223,
+     "edge": -0.812,
+     "p_value": 0.225,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [5.3x → 510.3x]",
+     "n_overlapping": 0,
+     "n_independent": 440,
+     "median_rel": -2.832,
+     "mean_rel": -0.988,
+     "hit_rate": 41.6,
+     "placebo_median": -2.223,
+     "edge": -0.609,
+     "p_value": 0.3575,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — đắt nhất so với chính mình [7.6x → 14023.9x]",
+     "n_overlapping": 0,
+     "n_independent": 440,
+     "median_rel": -1.166,
+     "mean_rel": 0.681,
+     "hit_rate": 47.5,
+     "placebo_median": -2.223,
+     "edge": 1.056,
+     "p_value": 0.1155,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -2.237,
+   "pool_n": 2199,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00625"
+  },
+  {
+   "name": "V1-120p",
+   "question": "P/E thấp so với chính lịch sử của mã (phân vị tính tại t) tại t → lợi suất tương đối 120 phiên sau",
+   "buckets": [
+    {
+     "name": "nhóm 1 — rẻ nhất so với chính mình [2.3x → 45.0x]",
+     "n_overlapping": 0,
+     "n_independent": 214,
+     "median_rel": -2.467,
+     "mean_rel": 0.933,
+     "hit_rate": 44.4,
+     "placebo_median": -4.127,
+     "edge": 1.66,
+     "p_value": 0.524,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [3.5x → 59.6x]",
+     "n_overlapping": 0,
+     "n_independent": 214,
+     "median_rel": -2.351,
+     "mean_rel": -0.092,
+     "hit_rate": 46.3,
+     "placebo_median": -4.127,
+     "edge": 1.776,
+     "p_value": 0.492,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [4.5x → 106.5x]",
+     "n_overlapping": 0,
+     "n_independent": 215,
+     "median_rel": -5.876,
+     "mean_rel": -1.055,
+     "hit_rate": 37.7,
+     "placebo_median": -4.091,
+     "edge": -1.786,
+     "p_value": 0.4935,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [6.3x → 510.3x]",
+     "n_overlapping": 0,
+     "n_independent": 214,
+     "median_rel": -5.3,
+     "mean_rel": -1.747,
+     "hit_rate": 41.1,
+     "placebo_median": -4.127,
+     "edge": -1.173,
+     "p_value": 0.647,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — đắt nhất so với chính mình [7.6x → 1021.4x]",
+     "n_overlapping": 0,
+     "n_independent": 215,
+     "median_rel": -2.312,
+     "mean_rel": 1.377,
+     "hit_rate": 45.6,
+     "placebo_median": -4.091,
+     "edge": 1.779,
+     "p_value": 0.502,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -4.06,
+   "pool_n": 1072,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00625"
+  },
+  {
+   "name": "V2-60p",
+   "question": "P/B thấp so với chính lịch sử của mã (phân vị tính tại t) tại t → lợi suất tương đối 60 phiên sau",
+   "buckets": [
+    {
+     "name": "nhóm 1 — rẻ nhất so với chính mình [0.2x → 7.8x]",
+     "n_overlapping": 0,
+     "n_independent": 451,
+     "median_rel": -1.116,
+     "mean_rel": 2.308,
+     "hit_rate": 46.8,
+     "placebo_median": -2.133,
+     "edge": 1.017,
+     "p_value": 0.1125,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [0.3x → 8.9x]",
+     "n_overlapping": 0,
+     "n_independent": 452,
+     "median_rel": -1.527,
+     "mean_rel": -0.325,
+     "hit_rate": 44.7,
+     "placebo_median": -2.156,
+     "edge": 0.629,
+     "p_value": 0.296,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [0.3x → 9.6x]",
+     "n_overlapping": 0,
+     "n_independent": 452,
+     "median_rel": -2.405,
+     "mean_rel": -1.824,
+     "hit_rate": 40.9,
+     "placebo_median": -2.156,
+     "edge": -0.248,
+     "p_value": 0.6725,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [0.3x → 10.3x]",
+     "n_overlapping": 0,
+     "n_independent": 452,
+     "median_rel": -2.879,
+     "mean_rel": -1.575,
+     "hit_rate": 39.6,
+     "placebo_median": -2.156,
+     "edge": -0.723,
+     "p_value": 0.2435,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — đắt nhất so với chính mình [0.5x → 14.4x]",
+     "n_overlapping": 0,
+     "n_independent": 452,
+     "median_rel": -2.729,
+     "mean_rel": -0.121,
+     "hit_rate": 43.6,
+     "placebo_median": -2.156,
+     "edge": -0.573,
+     "p_value": 0.3395,
+     "verdict": "không tách khỏi nền"
+    }
+   ],
+   "pool_median": -2.157,
+   "pool_n": 2259,
+   "passed": false,
+   "note": "không đuôi nào qua ngưỡng Bonferroni 0.00625"
+  },
+  {
+   "name": "V2-120p",
+   "question": "P/B thấp so với chính lịch sử của mã (phân vị tính tại t) tại t → lợi suất tương đối 120 phiên sau",
+   "buckets": [
+    {
+     "name": "nhóm 1 — rẻ nhất so với chính mình [0.2x → 7.8x]",
+     "n_overlapping": 0,
+     "n_independent": 219,
+     "median_rel": -1.554,
+     "mean_rel": 4.756,
+     "hit_rate": 47.5,
+     "placebo_median": -3.686,
+     "edge": 2.132,
+     "p_value": 0.3785,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 2 [0.3x → 8.5x]",
+     "n_overlapping": 0,
+     "n_independent": 218,
+     "median_rel": -0.83,
+     "mean_rel": 1.875,
+     "hit_rate": 48.2,
+     "placebo_median": -3.556,
+     "edge": 2.726,
+     "p_value": 0.186,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 3 [0.3x → 9.1x]",
+     "n_overlapping": 0,
+     "n_independent": 220,
+     "median_rel": -6.292,
+     "mean_rel": -2.248,
+     "hit_rate": 38.6,
+     "placebo_median": -3.644,
+     "edge": -2.648,
+     "p_value": 0.213,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 4 [0.3x → 10.3x]",
+     "n_overlapping": 0,
+     "n_independent": 219,
+     "median_rel": -4.509,
+     "mean_rel": -0.976,
+     "hit_rate": 40.6,
+     "placebo_median": -3.686,
+     "edge": -0.823,
+     "p_value": 0.802,
+     "verdict": "không tách khỏi nền"
+    },
+    {
+     "name": "nhóm 5 — đắt nhất so với chính mình [0.7x → 12.9x]",
+     "n_overlapping": 0,
+     "n_independent": 220,
+     "median_rel": -8.861,
+     "mean_rel": -1.866,
+     "hit_rate": 41.4,
+     "placebo_median": -3.644,
+     "edge": -5.217,
+     "p_value": 0.002,
+     "verdict": "tách khỏi nền"
+    }
+   ],
+   "pool_median": -3.737,
+   "pool_n": 1096,
+   "passed": true,
+   "note": "nhóm đắt nhất so với chính mình thua nền"
+  }
+ ],
+ "n_tests": 8,
+ "alpha": 0.00625,
+ "note": "Phân vị tính **tại thời điểm t** bằng chính lịch sử trước đó (tối thiểu 250 phiên), không dùng cả chuỗi — xếp hạng bằng toàn bộ lịch sử là dùng giá của tương lai để gọi một mức định giá là 'rẻ'. Nhóm 1 = **rẻ nhất**, nên chiều đăng ký trước là *rẻ vượt nền / đắt thua nền* (`expect=-1`) — ngược chiều với dòng tiền, và dùng nhầm chiều là đọc một kết quả đúng thành 'không đạt'. Ngưỡng Bonferroni áp cho cả hai đuôi. ⚠️ Mẫu hết chồng lấn trong từng mã, không hết tương quan giữa các mã.",
+ "any_passed": true
+}

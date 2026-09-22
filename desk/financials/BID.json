@@ -1,0 +1,367 @@
+{
+ "symbol": "BID",
+ "fetched_at": "2026-09-20 09:25",
+ "notes": [],
+ "quarters": [
+  {
+   "year": 2016,
+   "quarter": 3,
+   "npat": 1989405000000.0,
+   "equity": 45913054000000.0,
+   "shares": 3418715300.0,
+   "published": "2016-10-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2016,
+   "quarter": 4,
+   "npat": 1564293000000.0,
+   "equity": 44217404000000.0,
+   "shares": 3418715300.0,
+   "published": "2017-01-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2017,
+   "quarter": 1,
+   "npat": 1848920000000.0,
+   "equity": 45750969000000.0,
+   "shares": 3418715300.0,
+   "published": "2017-04-25",
+   "published_source": "mark"
+  },
+  {
+   "year": 2017,
+   "quarter": 2,
+   "npat": 977645000000.0,
+   "equity": 48139737000000.0,
+   "shares": 3418715300.0,
+   "published": "2017-07-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2017,
+   "quarter": 3,
+   "npat": 1482992000000.0,
+   "equity": 46536106000000.0,
+   "shares": 3418715300.0,
+   "published": "2017-10-25",
+   "published_source": "mark"
+  },
+  {
+   "year": 2017,
+   "quarter": 4,
+   "npat": 2750127000000.0,
+   "equity": 48985628000000.0,
+   "shares": 3418715300.0,
+   "published": "2018-02-04",
+   "published_source": "mark"
+  },
+  {
+   "year": 2018,
+   "quarter": 1,
+   "npat": 2021109000000.0,
+   "equity": 50803246000000.0,
+   "shares": 3418715300.0,
+   "published": "2018-04-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2018,
+   "quarter": 2,
+   "npat": 1985288000000.0,
+   "equity": 53199898000000.0,
+   "shares": 3418715300.0,
+   "published": "2018-07-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2018,
+   "quarter": 3,
+   "npat": 1810329000000.0,
+   "equity": 53719928000000.0,
+   "shares": 3418715300.0,
+   "published": "2018-10-27",
+   "published_source": "mark"
+  },
+  {
+   "year": 2018,
+   "quarter": 4,
+   "npat": 1725107000000.0,
+   "equity": 54693106000000.0,
+   "shares": 3418715300.0,
+   "published": "2019-02-04",
+   "published_source": "mark"
+  },
+  {
+   "year": 2019,
+   "quarter": 1,
+   "npat": 2024729000000.0,
+   "equity": 56652302000000.0,
+   "shares": 3418715300.0,
+   "published": "2019-04-27",
+   "published_source": "mark"
+  },
+  {
+   "year": 2019,
+   "quarter": 2,
+   "npat": 1746245000000.0,
+   "equity": 57528475000000.0,
+   "shares": 3418715300.0,
+   "published": "2019-07-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2019,
+   "quarter": 3,
+   "npat": 1874173000000.0,
+   "equity": 59377000000000.0,
+   "shares": 3418715300.0,
+   "published": "2019-10-24",
+   "published_source": "mark"
+  },
+  {
+   "year": 2019,
+   "quarter": 4,
+   "npat": 3019746000000.0,
+   "equity": 77766282000000.0,
+   "shares": 4022018000.0,
+   "published": "2020-02-04",
+   "published_source": "mark"
+  },
+  {
+   "year": 2020,
+   "quarter": 1,
+   "npat": 1444453000000.0,
+   "equity": 79269318000000.0,
+   "shares": 4022018000.0,
+   "published": "2020-04-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2020,
+   "quarter": 2,
+   "npat": 2048283000000.0,
+   "equity": 79646142000000.0,
+   "shares": 4022018000.0,
+   "published": "2020-07-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2020,
+   "quarter": 3,
+   "npat": 2174065000000.0,
+   "equity": 81440725000000.0,
+   "shares": 4022018000.0,
+   "published": "2020-10-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2020,
+   "quarter": 4,
+   "npat": 1695842000000.0,
+   "equity": 79788457000000.0,
+   "shares": 4022018000.0,
+   "published": "2021-01-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2021,
+   "quarter": 1,
+   "npat": 2721539000000.0,
+   "equity": 82263294000000.0,
+   "shares": 4022018000.0,
+   "published": "2021-04-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2021,
+   "quarter": 2,
+   "npat": 3739175000000.0,
+   "equity": 84548510000000.0,
+   "shares": 4022018000.0,
+   "published": "2021-07-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2021,
+   "quarter": 3,
+   "npat": 2122316000000.0,
+   "equity": 86018243000000.0,
+   "shares": 4022018000.0,
+   "published": "2021-10-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2021,
+   "quarter": 4,
+   "npat": 2295616000000.0,
+   "equity": 86366645000000.0,
+   "shares": 5058523900.0,
+   "published": "2022-01-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2022,
+   "quarter": 1,
+   "npat": 3637665000000.0,
+   "equity": 89837725000000.0,
+   "shares": 5058523900.0,
+   "published": "2022-04-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2022,
+   "quarter": 2,
+   "npat": 5199635000000.0,
+   "equity": 93917539000000.0,
+   "shares": 5058523900.0,
+   "published": "2022-07-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2022,
+   "quarter": 3,
+   "npat": 5354232000000.0,
+   "equity": 100925060000000.0,
+   "shares": 5058523900.0,
+   "published": "2022-10-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2022,
+   "quarter": 4,
+   "npat": 4261784000000.0,
+   "equity": 104205565000000.0,
+   "shares": 5058523900.0,
+   "published": "2023-02-04",
+   "published_source": "mark"
+  },
+  {
+   "year": 2023,
+   "quarter": 1,
+   "npat": 5559041000000.0,
+   "equity": 109848462000000.0,
+   "shares": 5058523900.0,
+   "published": "2023-04-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2023,
+   "quarter": 2,
+   "npat": 5549837000000.0,
+   "equity": 114151644000000.0,
+   "shares": 5058523900.0,
+   "published": "2023-07-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2023,
+   "quarter": 3,
+   "npat": 4727935000000.0,
+   "equity": 119087838000000.0,
+   "shares": 5058523900.0,
+   "published": "2023-10-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2023,
+   "quarter": 4,
+   "npat": 6190625000000.0,
+   "equity": 122917044000000.0,
+   "shares": 5700435900.0,
+   "published": "2024-01-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2024,
+   "quarter": 1,
+   "npat": 5915579000000.0,
+   "equity": 129017835000000.0,
+   "shares": 5700435900.0,
+   "published": "2024-04-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2024,
+   "quarter": 2,
+   "npat": 6528169000000.0,
+   "equity": 134717273000000.0,
+   "shares": 5700435900.0,
+   "published": "2024-07-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2024,
+   "quarter": 3,
+   "npat": 5213866000000.0,
+   "equity": 138439656000000.0,
+   "shares": 5700435900.0,
+   "published": "2024-10-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2024,
+   "quarter": 4,
+   "npat": 8019504000000.0,
+   "equity": 144984194000000.0,
+   "shares": 6897515300.0,
+   "published": "2025-01-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2025,
+   "quarter": 1,
+   "npat": 5955262000000.0,
+   "equity": 155906310000000.0,
+   "shares": 7021361900.0,
+   "published": "2025-04-28",
+   "published_source": "mark"
+  },
+  {
+   "year": 2025,
+   "quarter": 2,
+   "npat": 6898187000000.0,
+   "equity": 162737310000000.0,
+   "shares": 7021361900.0,
+   "published": "2025-07-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2025,
+   "quarter": 3,
+   "npat": 6086910000000.0,
+   "equity": 167986701000000.0,
+   "shares": 7021361900.0,
+   "published": "2025-10-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2025,
+   "quarter": 4,
+   "npat": 11542620000000.0,
+   "equity": 173611305000000.0,
+   "shares": 7021361900.0,
+   "published": "2026-02-04",
+   "published_source": "mark"
+  },
+  {
+   "year": 2026,
+   "quarter": 1,
+   "npat": 6878794000000.0,
+   "equity": 190623160000000.0,
+   "shares": 7280065200.0,
+   "published": "2026-04-25",
+   "published_source": "mark"
+  },
+  {
+   "year": 2026,
+   "quarter": 2,
+   "npat": 8294916000000.0,
+   "equity": 198783286000000.0,
+   "shares": 7280065200.0,
+   "published": "2026-07-30",
+   "published_source": "mark"
+  }
+ ]
+}

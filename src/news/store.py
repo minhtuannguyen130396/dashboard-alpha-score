@@ -25,7 +25,7 @@ import sqlite3
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, Iterable, List, Optional, Set
 
 from src.news.models import HolderTransaction, TimescaleMark
 from src.ta.loader import PROJECT_ROOT
@@ -109,12 +109,20 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+#: Chờ bao lâu khi kho đang bị một tiến trình khác khoá. Mặc định của Python là
+#: 5 giây, quá ngắn từ khi `/update` nạp tin **hằng ngày**: nó hoàn toàn có thể
+#: chạy trùng lúc `weekly_macro.bat` đang ghi, và một lượt ghi của lớp vĩ mô dài
+#: hơn 5 giây là chuyện bình thường. Hết giờ thì lỗi rơi xuống từng mã và hiện ra
+#: thành "N mã lỗi: database is locked" — một lỗi *lịch chạy* đội lốt lỗi dữ liệu.
+BUSY_TIMEOUT_S = 30.0
+
+
 @contextmanager
 def connect(db_path: Optional[Path] = None):
     """Mở kết nối, tạo schema nếu chưa có. Đóng và commit khi thoát."""
     path = Path(db_path) if db_path else DB_PATH
     path.parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(str(path))
+    conn = sqlite3.connect(str(path), timeout=BUSY_TIMEOUT_S)
     conn.row_factory = sqlite3.Row
     try:
         conn.executescript(SCHEMA)
@@ -288,6 +296,44 @@ def upsert_posts(conn: sqlite3.Connection, items) -> int:
     return rows
 
 
+def latest_post_date(conn: sqlite3.Connection, symbol: str) -> Optional[str]:
+    """Ngày ``YYYY-MM-DD`` của bài mới nhất đang lưu cho mã, hoặc ``None``.
+
+    Đây là mốc để lượt nạp hằng ngày *nối tiếp* chỗ lần trước dừng, thay vì quét
+    lại cả kho mỗi phiên. Phải đọc từ chính bảng ``posts``, không phải từ
+    ``ingest_log``: log ghi *lượt chạy*, còn câu hỏi ở đây là kho **đang** có
+    tới đâu — hai thứ lệch nhau ngay khi một lượt chạy xong mà API không trả
+    bài nào, và lệch theo đúng chiều nguy hiểm (log mới hơn kho).
+    """
+    row = conn.execute(
+        "SELECT MAX(substr(date,1,10)) FROM posts WHERE symbol = ?", (symbol,)
+    ).fetchone()
+    return row[0] if row and row[0] else None
+
+
+def known_post_ids(conn: sqlite3.Connection, ids: Iterable[int]) -> Set[int]:
+    """Những ``post_id`` đã có sẵn trong kho — để đếm được bài THẬT SỰ mới.
+
+    ``upsert_posts`` trả về số dòng *ghi*, mà lượt nạp nối tiếp cố ý chồng lấn
+    vài ngày nên phần lớn số đó là ghi đè bản cũ. In thẳng con số ấy ra là báo
+    "nạp 150 bài" cho một lượt thêm đúng 2 bài — và người đọc không có cách nào
+    biết mình vừa đọc cái gì.
+
+    Hỏi theo ``post_id`` chứ không theo ``symbol``: một bài gắn nhiều mã chỉ nằm
+    dưới mã nạp trước (xem ``load_posts_mentioning``), nên đếm theo mã sẽ tính
+    nó là mới thêm một lần nữa dưới mã thứ hai.
+    """
+    out: Set[int] = set()
+    wanted = [int(i) for i in ids]
+    for i in range(0, len(wanted), 400):        # dưới trần biến của SQLite
+        chunk = wanted[i:i + 400]
+        marks = ",".join("?" * len(chunk))
+        rows = conn.execute(
+            f"SELECT post_id FROM posts WHERE post_id IN ({marks})", chunk)
+        out.update(r[0] for r in rows)
+    return out
+
+
 def load_posts(conn: sqlite3.Connection, symbol: str,
                as_of: Optional[str] = None, insider_only: bool = False,
                limit: int = 200) -> List[Dict[str, Any]]:
@@ -313,5 +359,48 @@ def load_posts(conn: sqlite3.Connection, symbol: str,
             d["tagged_symbols"] = json.loads(d.get("tagged_symbols") or "[]")
         except json.JSONDecodeError:
             d["tagged_symbols"] = []
+        out.append(d)
+    return out
+
+
+def load_posts_mentioning(conn: sqlite3.Connection, symbol: str,
+                          since: Optional[str] = None,
+                          as_of: Optional[str] = None,
+                          limit: int = 1200) -> List[Dict[str, Any]]:
+    """Bài **nhắc tới** mã — gồm cả bài đang lưu dưới một mã khác.
+
+    ``load_posts`` lọc ``symbol = ?``, mà bảng ``posts`` có ``post_id`` làm khoá
+    chính và **một** cột ``symbol``: một bài gắn nhiều mã chỉ được lưu dưới mã
+    nào nạp trước. Đo trên kho hiện tại: **4.725 bài tin doanh nghiệp** (gắn ≤ 3
+    mã) vô hình với mã liên quan vì lý do đó — riêng VIC mất 551 bài, VCB 325.
+
+    Với việc đếm đầu mục thì mất vài bài là chuyện nhỏ. Với việc **quét cờ đỏ**
+    thì không: bỏ sót đúng một tiêu đề khởi tố là hỏng cả mục đích của lớp đó,
+    nên ở đây phải quét cả hai đường. ``tagged_symbols`` là JSON nên lọc thô
+    bằng ``LIKE '%"MÃ"%'`` rồi **parse lại để xác nhận** — chuỗi con có thể
+    khớp nhầm, danh sách đã parse thì không.
+    """
+    sym = symbol.strip().upper()
+    sql = "SELECT * FROM posts WHERE (symbol = ? OR tagged_symbols LIKE ?)"
+    params: List[Any] = [sym, f'%"{sym}"%']
+    if since:
+        sql += " AND date(substr(date,1,10)) >= date(?)"
+        params.append(since)
+    if as_of:
+        sql += " AND date(substr(date,1,10)) <= date(?)"
+        params.append(as_of)
+    sql += " ORDER BY date DESC LIMIT ?"
+    params.append(max(1, limit))
+
+    out: List[Dict[str, Any]] = []
+    for r in conn.execute(sql, params).fetchall():
+        d = dict(r)
+        try:
+            tags = json.loads(d.get("tagged_symbols") or "[]")
+        except json.JSONDecodeError:
+            tags = []
+        d["tagged_symbols"] = tags
+        if d.get("symbol") != sym and sym not in tags:
+            continue                    # LIKE khớp nhầm chuỗi con
         out.append(d)
     return out

@@ -1,0 +1,39 @@
+{
+ "symbol": "PVT",
+ "snapshot_date": "2026-09-19",
+ "composed": 21176.136988204304,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 18271.82337278252,
+   "weight_pct": 25.312437004615816
+  },
+  {
+   "name": "P/E",
+   "price": 34279.49849929239,
+   "weight_pct": 3.4665190249970887
+  },
+  {
+   "name": "P/B",
+   "price": 36201.845205626385,
+   "weight_pct": 3.0500763370123174
+  },
+  {
+   "name": "Graham 1",
+   "price": 25929.502045539026,
+   "weight_pct": 8.518515051096966
+  },
+  {
+   "name": "Graham 2",
+   "price": 19329.26516122,
+   "weight_pct": 56.052482611812124
+  },
+  {
+   "name": "Graham 3",
+   "price": 33757.57126049065,
+   "weight_pct": 3.599969970465692
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 84.7
+}

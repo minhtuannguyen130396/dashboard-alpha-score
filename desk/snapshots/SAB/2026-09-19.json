@@ -1,0 +1,39 @@
+{
+ "symbol": "SAB",
+ "snapshot_date": "2026-09-19",
+ "composed": 45277.50180676921,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 41247.284445489255,
+   "weight_pct": 2.2925359929169606
+  },
+  {
+   "name": "P/E",
+   "price": 45083.943501949994,
+   "weight_pct": 19.336559297967508
+  },
+  {
+   "name": "P/B",
+   "price": 22415.267887514594,
+   "weight_pct": 0.09978757075645392
+  },
+  {
+   "name": "Graham 1",
+   "price": 45731.42608626746,
+   "weight_pct": 75.92676126213095
+  },
+  {
+   "name": "Graham 2",
+   "price": 38106.72162862498,
+   "weight_pct": 1.3316944308068306
+  },
+  {
+   "name": "Graham 3",
+   "price": 35746.00869741428,
+   "weight_pct": 1.012661445421302
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 51.5
+}

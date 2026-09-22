@@ -1,0 +1,39 @@
+{
+ "symbol": "NLG",
+ "snapshot_date": "2026-09-19",
+ "composed": 26218.82352048369,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 21980.460790030458,
+   "weight_pct": 20.681085193951983
+  },
+  {
+   "name": "P/E",
+   "price": 25109.69346298883,
+   "weight_pct": 59.24536902523305
+  },
+  {
+   "name": "P/B",
+   "price": 91845.66733246515,
+   "weight_pct": 0.7101948934189534
+  },
+  {
+   "name": "Graham 1",
+   "price": 60377.22854731664,
+   "weight_pct": 1.3296638889314059
+  },
+  {
+   "name": "Graham 2",
+   "price": 63060.206076177696,
+   "weight_pct": 1.2376246895543532
+  },
+  {
+   "name": "Graham 3",
+   "price": 27156.061565492284,
+   "weight_pct": 16.796062308910255
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 266.5
+}

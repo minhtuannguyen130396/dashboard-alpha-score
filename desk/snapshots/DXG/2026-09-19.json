@@ -1,0 +1,39 @@
+{
+ "symbol": "DXG",
+ "snapshot_date": "2026-09-19",
+ "composed": 10910.022219412385,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 10945.003109439034,
+   "weight_pct": 78.71562806770785
+  },
+  {
+   "name": "P/E",
+   "price": 2957.2041792303608,
+   "weight_pct": 0.9091630565675605
+  },
+  {
+   "name": "P/B",
+   "price": 40216.74878799063,
+   "weight_pct": 3.233528397692577
+  },
+  {
+   "name": "Graham 1",
+   "price": 1406.8698949182926,
+   "weight_pct": 0.9091630565675605
+  },
+  {
+   "name": "Graham 2",
+   "price": 1048.75755803,
+   "weight_pct": 0.9091630565675605
+  },
+  {
+   "name": "Graham 3",
+   "price": 6166.814387257832,
+   "weight_pct": 15.323354364896877
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 359.0
+}

@@ -1,0 +1,6764 @@
+[
+ {
+  "id": 1,
+  "type": "GDP",
+  "name": "GDP",
+  "name_vn": "GDP",
+  "unit": "Tỷ USD",
+  "frequency": "Hàng năm",
+  "source": "Ngân hàng thế giới",
+  "lag_days": 90,
+  "next_release": "2023-12-31",
+  "history": [
+   {
+    "period": "1986",
+    "period_end": "1986-12-31",
+    "observed_at": "1987-03-31",
+    "value": 26.34
+   },
+   {
+    "period": "1987",
+    "period_end": "1987-12-31",
+    "observed_at": "1988-03-30",
+    "value": 36.66
+   },
+   {
+    "period": "1988",
+    "period_end": "1988-12-31",
+    "observed_at": "1989-03-31",
+    "value": 25.42
+   },
+   {
+    "period": "1989",
+    "period_end": "1989-12-31",
+    "observed_at": "1990-03-31",
+    "value": 6.29
+   },
+   {
+    "period": "1990",
+    "period_end": "1990-12-31",
+    "observed_at": "1991-03-31",
+    "value": 6.47
+   },
+   {
+    "period": "1991",
+    "period_end": "1991-12-31",
+    "observed_at": "1992-03-30",
+    "value": 9.61
+   },
+   {
+    "period": "1992",
+    "period_end": "1992-12-31",
+    "observed_at": "1993-03-31",
+    "value": 9.87
+   },
+   {
+    "period": "1993",
+    "period_end": "1993-12-31",
+    "observed_at": "1994-03-31",
+    "value": 13.18
+   },
+   {
+    "period": "1994",
+    "period_end": "1994-12-31",
+    "observed_at": "1995-03-31",
+    "value": 16.29
+   },
+   {
+    "period": "1995",
+    "period_end": "1995-12-31",
+    "observed_at": "1996-03-30",
+    "value": 29.74
+   },
+   {
+    "period": "1996",
+    "period_end": "1996-12-31",
+    "observed_at": "1997-03-31",
+    "value": 24.66
+   },
+   {
+    "period": "1997",
+    "period_end": "1997-12-31",
+    "observed_at": "1998-03-31",
+    "value": 26.84
+   },
+   {
+    "period": "1998",
+    "period_end": "1998-12-31",
+    "observed_at": "1999-03-31",
+    "value": 27.21
+   },
+   {
+    "period": "1999",
+    "period_end": "1999-12-31",
+    "observed_at": "2000-03-30",
+    "value": 28.68
+   },
+   {
+    "period": "2000",
+    "period_end": "2000-12-31",
+    "observed_at": "2001-03-31",
+    "value": 31.17
+   },
+   {
+    "period": "2001",
+    "period_end": "2001-12-31",
+    "observed_at": "2002-03-31",
+    "value": 32.69
+   },
+   {
+    "period": "2002",
+    "period_end": "2002-12-31",
+    "observed_at": "2003-03-31",
+    "value": 35.06
+   },
+   {
+    "period": "2003",
+    "period_end": "2003-12-31",
+    "observed_at": "2004-03-30",
+    "value": 39.55
+   },
+   {
+    "period": "2004",
+    "period_end": "2004-12-31",
+    "observed_at": "2005-03-31",
+    "value": 45.43
+   },
+   {
+    "period": "2005",
+    "period_end": "2005-12-31",
+    "observed_at": "2006-03-31",
+    "value": 57.63
+   },
+   {
+    "period": "2006",
+    "period_end": "2006-12-31",
+    "observed_at": "2007-03-31",
+    "value": 66.37
+   },
+   {
+    "period": "2007",
+    "period_end": "2007-12-31",
+    "observed_at": "2008-03-30",
+    "value": 77.41
+   },
+   {
+    "period": "2008",
+    "period_end": "2008-12-31",
+    "observed_at": "2009-03-31",
+    "value": 99.13
+   },
+   {
+    "period": "2009",
+    "period_end": "2009-12-31",
+    "observed_at": "2010-03-31",
+    "value": 106.01
+   },
+   {
+    "period": "2010",
+    "period_end": "2010-12-31",
+    "observed_at": "2011-03-31",
+    "value": 115.93
+   },
+   {
+    "period": "2011",
+    "period_end": "2011-12-31",
+    "observed_at": "2012-03-30",
+    "value": 135.54
+   },
+   {
+    "period": "2012",
+    "period_end": "2012-12-31",
+    "observed_at": "2013-03-31",
+    "value": 155.82
+   },
+   {
+    "period": "2013",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-03-31",
+    "value": 171.22
+   },
+   {
+    "period": "2014",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-03-31",
+    "value": 186.2
+   },
+   {
+    "period": "2015",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-03-30",
+    "value": 193.24
+   },
+   {
+    "period": "2016",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-03-31",
+    "value": 205.28
+   },
+   {
+    "period": "2017",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-03-31",
+    "value": 223.78
+   },
+   {
+    "period": "2018",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-03-31",
+    "value": 245.21
+   },
+   {
+    "period": "2019",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-03-30",
+    "value": 261.92
+   },
+   {
+    "period": "2020",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-03-31",
+    "value": 343.24
+   },
+   {
+    "period": "2021",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-03-31",
+    "value": 366.14
+   },
+   {
+    "period": "2022",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-03-31",
+    "value": 408.8
+   },
+   {
+    "period": "2023",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-03-30",
+    "value": 429.44
+   },
+   {
+    "period": "2024",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-03-31",
+    "value": 476.3
+   },
+   {
+    "period": "2025",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-03-31",
+    "value": 514.38
+   }
+  ],
+  "label": "GDP"
+ },
+ {
+  "id": 2,
+  "type": "GDP",
+  "name": "GDP Annual Growth Rate",
+  "name_vn": "Tốc độ Tăng trưởng GDP hàng năm",
+  "unit": "%",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q1/00",
+    "period_end": "2000-03-31",
+    "observed_at": "2000-05-15",
+    "value": 5.6
+   },
+   {
+    "period": "Q2/00",
+    "period_end": "2000-06-30",
+    "observed_at": "2000-08-14",
+    "value": 6.7
+   },
+   {
+    "period": "Q3/00",
+    "period_end": "2000-09-30",
+    "observed_at": "2000-11-14",
+    "value": 6.8
+   },
+   {
+    "period": "Q4/00",
+    "period_end": "2000-12-31",
+    "observed_at": "2001-02-14",
+    "value": 7.0
+   },
+   {
+    "period": "Q3/04",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-11-14",
+    "value": 7.4
+   },
+   {
+    "period": "Q1/08",
+    "period_end": "2008-03-31",
+    "observed_at": "2008-05-15",
+    "value": 7.49
+   },
+   {
+    "period": "Q2/08",
+    "period_end": "2008-06-30",
+    "observed_at": "2008-08-14",
+    "value": 5.72
+   },
+   {
+    "period": "Q3/08",
+    "period_end": "2008-09-30",
+    "observed_at": "2008-11-14",
+    "value": 5.98
+   },
+   {
+    "period": "Q4/08",
+    "period_end": "2008-12-31",
+    "observed_at": "2009-02-14",
+    "value": 5.89
+   },
+   {
+    "period": "Q1/09",
+    "period_end": "2009-03-31",
+    "observed_at": "2009-05-15",
+    "value": 3.14
+   },
+   {
+    "period": "Q2/09",
+    "period_end": "2009-06-30",
+    "observed_at": "2009-08-14",
+    "value": 4.46
+   },
+   {
+    "period": "Q3/09",
+    "period_end": "2009-09-30",
+    "observed_at": "2009-11-14",
+    "value": 6.04
+   },
+   {
+    "period": "Q4/09",
+    "period_end": "2009-12-31",
+    "observed_at": "2010-02-14",
+    "value": 6.9
+   },
+   {
+    "period": "Q1/10",
+    "period_end": "2010-03-31",
+    "observed_at": "2010-05-15",
+    "value": 5.84
+   },
+   {
+    "period": "Q2/10",
+    "period_end": "2010-06-30",
+    "observed_at": "2010-08-14",
+    "value": 6.44
+   },
+   {
+    "period": "Q3/10",
+    "period_end": "2010-09-30",
+    "observed_at": "2010-11-14",
+    "value": 7.18
+   },
+   {
+    "period": "Q4/10",
+    "period_end": "2010-12-31",
+    "observed_at": "2011-02-14",
+    "value": 7.34
+   },
+   {
+    "period": "Q1/11",
+    "period_end": "2011-03-31",
+    "observed_at": "2011-05-15",
+    "value": 5.57
+   },
+   {
+    "period": "Q2/11",
+    "period_end": "2011-06-30",
+    "observed_at": "2011-08-14",
+    "value": 5.68
+   },
+   {
+    "period": "Q3/11",
+    "period_end": "2011-09-30",
+    "observed_at": "2011-11-14",
+    "value": 6.07
+   },
+   {
+    "period": "Q4/11",
+    "period_end": "2011-12-31",
+    "observed_at": "2012-02-14",
+    "value": 6.1
+   },
+   {
+    "period": "Q1/12",
+    "period_end": "2012-03-31",
+    "observed_at": "2012-05-15",
+    "value": 4.75
+   },
+   {
+    "period": "Q2/12",
+    "period_end": "2012-06-30",
+    "observed_at": "2012-08-14",
+    "value": 4.8
+   },
+   {
+    "period": "Q3/12",
+    "period_end": "2012-09-30",
+    "observed_at": "2012-11-14",
+    "value": 5.05
+   },
+   {
+    "period": "Q4/12",
+    "period_end": "2012-12-31",
+    "observed_at": "2013-02-14",
+    "value": 5.44
+   },
+   {
+    "period": "Q1/13",
+    "period_end": "2013-03-31",
+    "observed_at": "2013-05-15",
+    "value": 4.76
+   },
+   {
+    "period": "Q2/13",
+    "period_end": "2013-06-30",
+    "observed_at": "2013-08-14",
+    "value": 5.0
+   },
+   {
+    "period": "Q3/13",
+    "period_end": "2013-09-30",
+    "observed_at": "2013-11-14",
+    "value": 5.54
+   },
+   {
+    "period": "Q4/13",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-02-14",
+    "value": 6.04
+   },
+   {
+    "period": "Q1/14",
+    "period_end": "2014-03-31",
+    "observed_at": "2014-05-15",
+    "value": 5.06
+   },
+   {
+    "period": "Q2/14",
+    "period_end": "2014-06-30",
+    "observed_at": "2014-08-14",
+    "value": 5.34
+   },
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 6.07
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 6.96
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 6.12
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 6.47
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 6.87
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 7.01
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 5.48
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 5.78
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 6.56
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 6.68
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 5.15
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 6.28
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 7.46
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 7.65
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 7.45
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 6.73
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 6.82
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 7.31
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 6.82
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 6.73
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 7.31
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 6.97
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 3.68
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 0.39
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 2.69
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 4.48
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 4.72
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 6.73
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": -6.02
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 5.22
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 5.05
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 7.83
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 13.71
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 5.92
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 3.32
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 4.14
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 5.47
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 6.72
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 5.98
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 7.25
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 7.43
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 7.55
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 6.93
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 7.96
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 8.23
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 8.46
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 7.83
+   }
+  ],
+  "label": "Tốc độ Tăng trưởng GDP hàng năm"
+ },
+ {
+  "id": 3,
+  "type": "GDP",
+  "name": "GDP Constant Prices",
+  "name_vn": "GDP theo giá cố định năm 2010",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/04",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-11-14",
+    "value": 1561963.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 859164.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 534573.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 690305.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 729625.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 921353.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 564255.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 728713.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 777912.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 983590.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 593170.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 775495.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 836270.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 1057613.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 637244.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 829716.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 891983.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 1134456.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 681010.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 884694.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 957274.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 1215568.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 707223.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 886917.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 983968.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 1269074.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 1189216.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 1253971.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 1200615.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 1472003.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 1255312.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 1347070.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 1403807.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 1539527.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 1320755.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 1406293.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 1450322.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 1653355.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 1396660.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 1510735.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 1561963.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 1773652.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 1502806.64
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 1643317.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 1696892.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 1922776.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 2589918.34
+   }
+  ],
+  "label": "GDP theo giá cố định năm 2010"
+ },
+ {
+  "id": 4,
+  "type": "GDP",
+  "name": "GDP Constant Prices Cumulative",
+  "name_vn": "GDP theo giá cố định năm 2010 (lũy kế)",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 1836632.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 2695796.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 534573.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 1224878.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 1954503.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 2875856.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 564255.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 1292968.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 2070880.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 3054470.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 593170.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 1368665.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 2204935.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 3262548.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 637244.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 1466960.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 2358943.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 3493399.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 681010.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 1565704.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 2522978.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 3738546.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 707223.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 1594140.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 2578108.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 3847182.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 1189216.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 2443187.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 3643802.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 5115805.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 1255312.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 2602382.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 4006189.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 5545716.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 1320755.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 2727048.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 4177370.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 5830725.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 1396660.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 2907395.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 4469358.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 6243010.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 1502806.64
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 3146124.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 4843016.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 6765792.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 9355710.0
+   }
+  ],
+  "label": "GDP theo giá cố định năm 2010 (lũy kế)"
+ },
+ {
+  "id": 5,
+  "type": "GDP",
+  "name": "GDP from Agriculture",
+  "name_vn": "GDP từ Nông nghiệp",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/04",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-11-14",
+    "value": 162421.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 128622.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 66940.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 143003.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 112054.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 140539.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 66186.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 143095.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 114837.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 144695.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 67473.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 147362.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 118218.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 149364.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 70244.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 153238.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 122079.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 155006.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 72261.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 156179.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 124258.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 157934.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 72406.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 158514.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 128855.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 164551.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 125510.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 139498.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 155879.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 157470.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 130990.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 141251.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 152260.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 179611.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 140836.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 144094.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 154316.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 191489.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 145600.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 151741.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 162421.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 192991.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 153000.91
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 156992.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 167814.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 200733.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 280313.98
+   }
+  ],
+  "label": "GDP từ Nông nghiệp"
+ },
+ {
+  "id": 6,
+  "type": "GDP",
+  "name": "GDP from Agriculture Cumulative",
+  "name_vn": "GDP từ Nông nghiệp\r\n (lũy kế)",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 323037.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 451659.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 66940.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 209943.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 321997.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 462536.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 66186.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 209281.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 324118.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 468813.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 67473.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 214835.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 333053.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 482417.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 70244.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 223482.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 345561.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 500567.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 72261.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 228440.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 352698.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 510632.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 72406.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 230920.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 359775.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 524326.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 125510.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 265008.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 420887.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 578357.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 130990.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 272241.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 424501.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 604112.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 140836.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 284930.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 439186.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 630675.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 145600.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 297341.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 459762.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 652753.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 153000.91
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 309993.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 477807.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 678540.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 958854.0
+   }
+  ],
+  "label": "GDP từ Nông nghiệp\r\n (lũy kế)"
+ },
+ {
+  "id": 7,
+  "type": "GDP",
+  "name": "GDP from Construction",
+  "name_vn": "GDP từ Xây dựng",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/04",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-11-14",
+    "value": 110442.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 53254.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 25497.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 36044.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 45414.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 65018.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 28354.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 39268.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 49065.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 72483.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 29717.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 43991.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 52664.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 79256.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 32385.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 47168.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 57511.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 87400.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 34336.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 51462.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 63094.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 95998.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 35837.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 53822.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 66707.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 105079.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 65949.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 80698.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 81931.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 110537.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 68401.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 84950.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 94565.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 115415.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 70550.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 92124.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 101348.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 124177.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 75468.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 98032.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 110442.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 131772.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 82753.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 106557.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 117475.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 143601.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 930262.76
+   }
+  ],
+  "label": "GDP từ Xây dựng"
+ },
+ {
+  "id": 8,
+  "type": "GDP",
+  "name": "GDP from Construction Cumulative",
+  "name_vn": "GDP từ Xây dựng (lũy kế)",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 101929.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 155183.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 25497.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 61541.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 106955.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 171973.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 28354.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 67622.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 116687.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 189170.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 29717.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 73708.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 126372.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 205628.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 32385.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 79553.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 137064.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 224464.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 34336.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 85798.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 148892.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 244890.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 35837.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 89659.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 156366.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 261445.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 65949.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 146647.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 228578.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 339115.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 68401.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 153351.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 247916.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 363331.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 70550.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 162674.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 264022.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 388199.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 75468.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 173500.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 283942.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 415714.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 82753.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 189310.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 306785.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 450386.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 1380649.0
+   }
+  ],
+  "label": "GDP từ Xây dựng (lũy kế)"
+ },
+ {
+  "id": 9,
+  "type": "GDP",
+  "name": "GDP from Manufacturing",
+  "name_vn": "GDP từ Sản xuất",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/04",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-11-14",
+    "value": 378618.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 20812.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 90932.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 108750.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 114540.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 128390.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 98286.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 121664.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 129528.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 145805.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 107473.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 136498.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 150065.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 172568.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 122380.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 153357.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 168156.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 196279.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 138396.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 167761.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 189513.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 216777.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 147153.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 174190.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 197624.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 234973.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 280485.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 310597.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 281716.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 344956.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 304815.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 341953.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 297186.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 355912.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 297173.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 320127.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 341434.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 380616.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 316856.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 346823.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 378618.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 430667.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 82753.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 388838.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 419519.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 476534.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 633977.14
+   }
+  ],
+  "label": "GDP từ Sản xuất"
+ },
+ {
+  "id": 10,
+  "type": "GDP",
+  "name": "GDP from Manufacturing Cumulative",
+  "name_vn": "GDP từ Sản xuất (lũy kế)",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 379380.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 400192.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 90932.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 199682.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 314222.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 442612.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 98286.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 219950.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 349478.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 495283.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 107473.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 243971.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 394036.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 566604.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 122380.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 275737.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 443893.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 640172.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 138396.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 306157.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 495670.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 712447.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 147153.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 321343.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 518967.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 753940.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 280485.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 591082.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 872798.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 1217754.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 304815.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 646768.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 943954.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 1299866.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 297173.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 617300.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 958734.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 1339350.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 316856.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 663679.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 1042297.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 1472964.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 348005.73
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 736844.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 1156363.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 1632897.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 2266874.0
+   }
+  ],
+  "label": "GDP từ Sản xuất (lũy kế)"
+ },
+ {
+  "id": 11,
+  "type": "GDP",
+  "name": "GDP from Mining",
+  "name_vn": "GDP từ Khai khoáng",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/04",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-11-14",
+    "value": 32225.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 82158.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 42897.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 55376.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 51325.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 90864.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 42525.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 53852.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 48698.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 85768.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 38660.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 49769.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 46404.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 79620.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 38814.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 48846.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 44517.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 75607.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 38180.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 51022.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 45440.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 75822.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 37786.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 46599.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 42930.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 71321.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 41016.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 33780.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 38261.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 41926.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 37038.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 39464.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 43662.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 36407.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 39266.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 41414.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 35182.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 38585.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 38184.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 38114.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 32225.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 35161.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 35624.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 36987.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 34669.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 35354.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 47476.28
+   }
+  ],
+  "label": "GDP từ Khai khoáng"
+ },
+ {
+  "id": 12,
+  "type": "GDP",
+  "name": "GDP from Mining Cumulative",
+  "name_vn": "GDP từ Khai khoáng (lũy kế)",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 143627.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 225785.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 42897.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 98273.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 149598.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 240462.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 42525.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 96377.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 145075.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 230843.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 38660.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 88429.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 134833.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 214453.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 38814.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 87660.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 132177.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 207784.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 38180.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 89202.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 134642.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 210464.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 37786.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 84385.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 127315.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 198636.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 41016.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 74796.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 113057.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 154983.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 37038.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 76502.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 120164.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 156571.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 39266.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 80680.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 115862.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 154447.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 38184.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 76298.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 108523.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 143684.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 35809.08
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 72611.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 107280.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 142634.0
+   }
+  ],
+  "label": "GDP từ Khai khoáng (lũy kế)"
+ },
+ {
+  "id": 13,
+  "type": "GDP",
+  "name": "GDP from Public Administration",
+  "name_vn": "GDP từ Hành chính công",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/04",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-11-14",
+    "value": 29404.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 23673.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 15380.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 19291.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 18335.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 25351.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 16449.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 20649.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 19671.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 27159.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 17539.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 22119.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 21176.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 29238.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 18700.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 23472.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 22428.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 29615.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 18753.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 24000.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 23160.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 32203.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 19670.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 25639.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 24551.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 34417.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 20470.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 26768.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 25455.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 35265.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 21067.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 27475.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 25396.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 37130.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 21787.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 28444.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 27893.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 38806.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 23120.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 30155.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 29404.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 42357.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 25501.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 35080.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 26797.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 45508.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 56833.31
+   }
+  ],
+  "label": "GDP từ Hành chính công"
+ },
+ {
+  "id": 14,
+  "type": "GDP",
+  "name": "GDP from Public Administration Cumulative",
+  "name_vn": "GDP từ Hành chính công (lũy kế)",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 49613.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 73286.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 15380.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 34671.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 53006.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 78357.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 16449.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 37098.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 56769.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 83928.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 17539.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 39658.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 60834.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 90072.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 18700.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 42172.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 64600.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 94215.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 18753.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 42753.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 65913.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 98116.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 19670.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 45309.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 69860.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 104277.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 20470.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 47238.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 72693.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 107958.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 21067.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 48542.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 73938.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 111068.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 21787.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 50231.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 78124.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 116930.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 23120.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 53275.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 82679.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 125036.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 25501.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 60581.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 87378.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 132886.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 189.72
+   }
+  ],
+  "label": "GDP từ Hành chính công (lũy kế)"
+ },
+ {
+  "id": 15,
+  "type": "GDP",
+  "name": "GDP from Services",
+  "name_vn": "GDP từ Dịch vụ",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/04",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-11-14",
+    "value": 675595.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 229223.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 216604.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 242717.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 290347.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 351568.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 229578.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 258729.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 310749.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 379087.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 244194.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 278136.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 334750.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 408740.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 260157.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 298451.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 357127.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 439061.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 276919.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 318984.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 381358.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 476416.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 285964.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 313351.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 391913.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 496398.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 508697.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 518832.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 480992.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 638411.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 535754.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 559226.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 633282.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 669257.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 590817.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 623612.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 626848.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 728799.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 627420.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 677316.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 675595.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 776143.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 681966.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 742776.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 738714.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 844425.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 1150827.26
+   }
+  ],
+  "label": "GDP từ Dịch vụ"
+ },
+ {
+  "id": 16,
+  "type": "GDP",
+  "name": "GDP from Services Cumulative",
+  "name_vn": "GDP từ Dịch vụ (lũy kế)",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 806503.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 1035726.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 216604.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 459321.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 749668.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 1101236.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 229578.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 488307.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 799056.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 1178143.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 244194.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 522330.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 857080.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 1265820.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 260157.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 558608.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 915735.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 1354796.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 276919.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 595903.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 977261.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 1453677.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 285964.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 599315.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 991228.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 1487626.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 508697.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 1027529.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 1508521.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 2146932.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 535754.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 1094980.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 1728262.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 2397519.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 590817.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 1212811.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 1839659.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 2568458.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 627420.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 1304736.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 1980331.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 2756474.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 681966.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 1424742.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 2163456.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 3007881.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 4158708.0
+   }
+  ],
+  "label": "GDP từ Dịch vụ (lũy kế)"
+ },
+ {
+  "id": 17,
+  "type": "GDP",
+  "name": "GDP from Transport",
+  "name_vn": "GDP từ Giao thông vận tải",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/04",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-11-14",
+    "value": 86685.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 22165.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 16598.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 18621.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 21766.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 25746.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 17521.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 19608.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 23167.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 27647.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 18576.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 21598.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 24831.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 29894.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 20093.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 23126.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 26694.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 32436.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 21656.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 25027.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 28787.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 36213.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 21475.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 23808.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 27504.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 36796.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 67264.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 57722.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 55038.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 76062.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 69373.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 65771.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 87738.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 76383.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 77665.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 84217.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 79539.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 87165.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 84257.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 97930.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 86685.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 95108.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 94833.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 110532.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 96915.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 105406.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 146231.76
+   }
+  ],
+  "label": "GDP từ Giao thông vận tải"
+ },
+ {
+  "id": 18,
+  "type": "GDP",
+  "name": "GDP from Transport Cumulative",
+  "name_vn": "GDP từ Giao thông vận tải (lũy kế)",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 56611.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 78776.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 16598.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 35219.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 56985.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 82731.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 17521.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 37129.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 60296.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 87943.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 18576.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 40174.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 65005.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 94899.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 20093.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 43219.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 69913.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 102349.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 21656.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 46683.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 75470.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 111683.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 21475.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 45283.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 72787.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 109583.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 67264.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 124986.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 180024.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 256086.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 69373.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 135144.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 222882.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 299265.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 77665.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 161882.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 241421.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 328586.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 84257.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 182187.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 268872.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 363980.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 94833.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 205365.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 302280.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 407686.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 553918.0
+   }
+  ],
+  "label": "GDP từ Giao thông vận tải (lũy kế)"
+ },
+ {
+  "id": 19,
+  "type": "GDP",
+  "name": "GDP from Utilities",
+  "name_vn": "GDP từ tiện ích",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/04",
+    "period_end": "2004-09-30",
+    "observed_at": "2004-11-14",
+    "value": 56689.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 3948.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 3318.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 4127.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 4393.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 4665.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 3623.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 4480.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 4553.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 5135.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 3873.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 4781.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 5027.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 5652.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 4099.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 5083.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 5380.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 6012.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 4385.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 5452.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 5957.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 6369.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 4688.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 5519.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 6282.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 6895.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 6288.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 7433.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 7067.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 7727.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 7527.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 7060.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 7293.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 8275.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 7120.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 7810.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 8054.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 9023.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 7448.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 8636.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 9216.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 25294.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 9988.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 5552.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 7583.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 10406.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 106531.31
+   }
+  ],
+  "label": "GDP từ tiện ích"
+ },
+ {
+  "id": 20,
+  "type": "GDP",
+  "name": "GDP from Utilities Cumulative",
+  "name_vn": "GDP từ tiện ích (lũy kế)",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 11418.0
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 15366.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 3318.0
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 7445.0
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 11838.0
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 16503.0
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 3623.0
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 8103.0
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 12656.0
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 17791.0
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 3873.0
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 8654.0
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 13681.0
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 19333.0
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 4099.0
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 9182.0
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 14562.0
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 20574.0
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 4385.0
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 9837.0
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 15794.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 22163.0
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 4688.0
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 10207.0
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 16489.0
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 23384.0
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 6288.0
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 13721.0
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 20788.0
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 28515.0
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 7527.0
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 14587.0
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 21880.0
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 30155.0
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 7120.0
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 14852.0
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 22906.0
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 31929.0
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 7448.0
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 16084.0
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 25300.0
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 50594.0
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 9988.0
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 15540.0
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 23123.0
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 31929.0
+   },
+   {
+    "period": "Q1/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-05-15",
+    "value": 138460.0
+   }
+  ],
+  "label": "GDP từ tiện ích (lũy kế)"
+ },
+ {
+  "id": 22,
+  "type": "GDP",
+  "name": "GDP per Capita",
+  "name_vn": "GDP bình quân đầu người",
+  "unit": "USD",
+  "frequency": "Hàng năm",
+  "source": "Ngân hàng thế giới",
+  "lag_days": 90,
+  "next_release": "2023-12-31",
+  "history": [
+   {
+    "period": "1986",
+    "period_end": "1986-12-31",
+    "observed_at": "1987-03-31",
+    "value": 481.29
+   },
+   {
+    "period": "1987",
+    "period_end": "1987-12-31",
+    "observed_at": "1988-03-30",
+    "value": 487.52
+   },
+   {
+    "period": "1988",
+    "period_end": "1988-12-31",
+    "observed_at": "1989-03-31",
+    "value": 501.39
+   },
+   {
+    "period": "1989",
+    "period_end": "1989-12-31",
+    "observed_at": "1990-03-31",
+    "value": 526.75
+   },
+   {
+    "period": "1990",
+    "period_end": "1990-12-31",
+    "observed_at": "1991-03-31",
+    "value": 541.9
+   },
+   {
+    "period": "1991",
+    "period_end": "1991-12-31",
+    "observed_at": "1992-03-30",
+    "value": 562.23
+   },
+   {
+    "period": "1992",
+    "period_end": "1992-12-31",
+    "observed_at": "1993-03-31",
+    "value": 598.37
+   },
+   {
+    "period": "1993",
+    "period_end": "1993-12-31",
+    "observed_at": "1994-03-31",
+    "value": 634.0
+   },
+   {
+    "period": "1994",
+    "period_end": "1994-12-31",
+    "observed_at": "1995-03-31",
+    "value": 677.39
+   },
+   {
+    "period": "1995",
+    "period_end": "1995-12-31",
+    "observed_at": "1996-03-30",
+    "value": 729.54
+   },
+   {
+    "period": "1996",
+    "period_end": "1996-12-31",
+    "observed_at": "1997-03-31",
+    "value": 785.53
+   },
+   {
+    "period": "1997",
+    "period_end": "1997-12-31",
+    "observed_at": "1998-03-31",
+    "value": 837.85
+   },
+   {
+    "period": "1998",
+    "period_end": "1998-12-31",
+    "observed_at": "1999-03-31",
+    "value": 875.0
+   },
+   {
+    "period": "1999",
+    "period_end": "1999-12-31",
+    "observed_at": "2000-03-30",
+    "value": 906.09
+   },
+   {
+    "period": "2000",
+    "period_end": "2000-12-31",
+    "observed_at": "2001-03-31",
+    "value": 957.0
+   },
+   {
+    "period": "2001",
+    "period_end": "2001-12-31",
+    "observed_at": "2002-03-31",
+    "value": 1005.8
+   },
+   {
+    "period": "2002",
+    "period_end": "2002-12-31",
+    "observed_at": "2003-03-31",
+    "value": 1058.99
+   },
+   {
+    "period": "2003",
+    "period_end": "2003-12-31",
+    "observed_at": "2004-03-30",
+    "value": 1121.49
+   },
+   {
+    "period": "2004",
+    "period_end": "2004-12-31",
+    "observed_at": "2005-03-31",
+    "value": 1194.96
+   },
+   {
+    "period": "2005",
+    "period_end": "2005-12-31",
+    "observed_at": "2006-03-31",
+    "value": 1273.35
+   },
+   {
+    "period": "2006",
+    "period_end": "2006-12-31",
+    "observed_at": "2007-03-31",
+    "value": 1349.56
+   },
+   {
+    "period": "2007",
+    "period_end": "2007-12-31",
+    "observed_at": "2008-03-30",
+    "value": 1432.21
+   },
+   {
+    "period": "2008",
+    "period_end": "2008-12-31",
+    "observed_at": "2009-03-31",
+    "value": 1498.84
+   },
+   {
+    "period": "2009",
+    "period_end": "2009-12-31",
+    "observed_at": "2010-03-31",
+    "value": 1564.35
+   },
+   {
+    "period": "2010",
+    "period_end": "2010-12-31",
+    "observed_at": "2011-03-31",
+    "value": 1648.26
+   },
+   {
+    "period": "2011",
+    "period_end": "2011-12-31",
+    "observed_at": "2012-03-30",
+    "value": 1733.31
+   },
+   {
+    "period": "2012",
+    "period_end": "2012-12-31",
+    "observed_at": "2013-03-31",
+    "value": 1805.36
+   },
+   {
+    "period": "2013",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-03-31",
+    "value": 1883.31
+   },
+   {
+    "period": "2014",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-03-31",
+    "value": 1975.08
+   },
+   {
+    "period": "2015",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-03-30",
+    "value": 2085.1
+   },
+   {
+    "period": "2016",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-03-31",
+    "value": 2191.82
+   },
+   {
+    "period": "2017",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-03-31",
+    "value": 2317.37
+   },
+   {
+    "period": "2018",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-03-31",
+    "value": 2456.79
+   },
+   {
+    "period": "2019",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-03-30",
+    "value": 2604.22
+   },
+   {
+    "period": "2020",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-03-31",
+    "value": 3316.0
+   },
+   {
+    "period": "2021",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-03-31",
+    "value": 3409.02
+   },
+   {
+    "period": "2022",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-03-31",
+    "value": 3655.46
+   },
+   {
+    "period": "2023",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-03-30",
+    "value": 3817.0
+   },
+   {
+    "period": "2024",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-03-31",
+    "value": 4700.0
+   },
+   {
+    "period": "2025",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-03-31",
+    "value": 5026.0
+   }
+  ],
+  "label": "GDP bình quân đầu người"
+ },
+ {
+  "id": 23,
+  "type": "GDP",
+  "name": "GDP per Capita PPP",
+  "name_vn": "GDP bình quân đầu người theo sức mua tương đương",
+  "unit": "USD",
+  "frequency": "Hàng năm",
+  "source": "Ngân hàng thế giới",
+  "lag_days": 90,
+  "next_release": "2023-12-31",
+  "history": [
+   {
+    "period": "1998",
+    "period_end": "1998-12-31",
+    "observed_at": "1999-03-31",
+    "value": 2701.77
+   },
+   {
+    "period": "1999",
+    "period_end": "1999-12-31",
+    "observed_at": "2000-03-30",
+    "value": 2797.79
+   },
+   {
+    "period": "2000",
+    "period_end": "2000-12-31",
+    "observed_at": "2001-03-31",
+    "value": 2954.98
+   },
+   {
+    "period": "2001",
+    "period_end": "2001-12-31",
+    "observed_at": "2002-03-31",
+    "value": 3105.64
+   },
+   {
+    "period": "2002",
+    "period_end": "2002-12-31",
+    "observed_at": "2003-03-31",
+    "value": 3269.88
+   },
+   {
+    "period": "2003",
+    "period_end": "2003-12-31",
+    "observed_at": "2004-03-30",
+    "value": 3462.88
+   },
+   {
+    "period": "2004",
+    "period_end": "2004-12-31",
+    "observed_at": "2005-03-31",
+    "value": 3689.73
+   },
+   {
+    "period": "2005",
+    "period_end": "2005-12-31",
+    "observed_at": "2006-03-31",
+    "value": 3931.77
+   },
+   {
+    "period": "2006",
+    "period_end": "2006-12-31",
+    "observed_at": "2007-03-31",
+    "value": 4167.11
+   },
+   {
+    "period": "2007",
+    "period_end": "2007-12-31",
+    "observed_at": "2008-03-30",
+    "value": 4422.29
+   },
+   {
+    "period": "2008",
+    "period_end": "2008-12-31",
+    "observed_at": "2009-03-31",
+    "value": 4628.03
+   },
+   {
+    "period": "2009",
+    "period_end": "2009-12-31",
+    "observed_at": "2010-03-31",
+    "value": 4830.31
+   },
+   {
+    "period": "2010",
+    "period_end": "2010-12-31",
+    "observed_at": "2011-03-31",
+    "value": 5089.41
+   },
+   {
+    "period": "2011",
+    "period_end": "2011-12-31",
+    "observed_at": "2012-03-30",
+    "value": 5352.02
+   },
+   {
+    "period": "2012",
+    "period_end": "2012-12-31",
+    "observed_at": "2013-03-31",
+    "value": 5574.49
+   },
+   {
+    "period": "2013",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-03-31",
+    "value": 5815.18
+   },
+   {
+    "period": "2014",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-03-31",
+    "value": 6098.54
+   },
+   {
+    "period": "2015",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-03-30",
+    "value": 6438.26
+   },
+   {
+    "period": "2016",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-03-31",
+    "value": 6767.78
+   },
+   {
+    "period": "2017",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-03-31",
+    "value": 7155.44
+   },
+   {
+    "period": "2018",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-03-31",
+    "value": 7585.94
+   },
+   {
+    "period": "2019",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-03-30",
+    "value": 8041.18
+   },
+   {
+    "period": "2020",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-03-31",
+    "value": 10338.27
+   },
+   {
+    "period": "2021",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-03-31",
+    "value": 10628.22
+   },
+   {
+    "period": "2022",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-03-31",
+    "value": 13127.0
+   },
+   {
+    "period": "2023",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-03-30",
+    "value": 13696.0
+   },
+   {
+    "period": "2024",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-03-31",
+    "value": 14415.22
+   },
+   {
+    "period": "2025",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-03-31",
+    "value": 15415.0
+   }
+  ],
+  "label": "GDP bình quân đầu người theo sức mua tương đương"
+ },
+ {
+  "id": 24,
+  "type": "GDP",
+  "name": "Gross Fixed Capital Formation",
+  "name_vn": "Tổng vốn đầu tư cố định",
+  "unit": "Tỷ VNĐ",
+  "frequency": "Hàng năm",
+  "source": "Ngân hàng thế giới",
+  "lag_days": 90,
+  "next_release": "2023-12-31",
+  "history": [
+   {
+    "period": "1998",
+    "period_end": "1998-12-31",
+    "observed_at": "1999-03-31",
+    "value": 97551.0
+   },
+   {
+    "period": "1999",
+    "period_end": "1999-12-31",
+    "observed_at": "2000-03-30",
+    "value": 102799.0
+   },
+   {
+    "period": "2000",
+    "period_end": "2000-12-31",
+    "observed_at": "2001-03-31",
+    "value": 122101.0
+   },
+   {
+    "period": "2001",
+    "period_end": "2001-12-31",
+    "observed_at": "2002-03-31",
+    "value": 140301.0
+   },
+   {
+    "period": "2002",
+    "period_end": "2002-12-31",
+    "observed_at": "2003-03-31",
+    "value": 166827.91
+   },
+   {
+    "period": "2003",
+    "period_end": "2003-12-31",
+    "observed_at": "2004-03-30",
+    "value": 204608.0
+   },
+   {
+    "period": "2004",
+    "period_end": "2004-12-31",
+    "observed_at": "2005-03-31",
+    "value": 237868.0
+   },
+   {
+    "period": "2005",
+    "period_end": "2005-12-31",
+    "observed_at": "2006-03-31",
+    "value": 285841.0
+   },
+   {
+    "period": "2006",
+    "period_end": "2006-12-31",
+    "observed_at": "2007-03-31",
+    "value": 332949.0
+   },
+   {
+    "period": "2007",
+    "period_end": "2007-12-31",
+    "observed_at": "2008-03-30",
+    "value": 437702.0
+   },
+   {
+    "period": "2008",
+    "period_end": "2008-12-31",
+    "observed_at": "2009-03-31",
+    "value": 513987.0
+   },
+   {
+    "period": "2009",
+    "period_end": "2009-12-31",
+    "observed_at": "2010-03-31",
+    "value": 612526.0
+   },
+   {
+    "period": "2010",
+    "period_end": "2010-12-31",
+    "observed_at": "2011-03-31",
+    "value": 704401.0
+   },
+   {
+    "period": "2011",
+    "period_end": "2011-12-31",
+    "observed_at": "2012-03-30",
+    "value": 745494.0
+   },
+   {
+    "period": "2012",
+    "period_end": "2012-12-31",
+    "observed_at": "2013-03-31",
+    "value": 785337.0
+   },
+   {
+    "period": "2013",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-03-31",
+    "value": 847475.0
+   },
+   {
+    "period": "2014",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-03-31",
+    "value": 938452.0
+   },
+   {
+    "period": "2015",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-03-30",
+    "value": 1033780.0
+   },
+   {
+    "period": "2016",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-03-31",
+    "value": 1066160.3
+   },
+   {
+    "period": "2017",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-03-31",
+    "value": 1190474.59
+   },
+   {
+    "period": "2018",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-03-31",
+    "value": 1321905.9
+   },
+   {
+    "period": "2019",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-03-30",
+    "value": 1462993.64
+   },
+   {
+    "period": "2020",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-03-31",
+    "value": 1533217.0
+   },
+   {
+    "period": "2021",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-03-31",
+    "value": 2655168.8
+   },
+   {
+    "period": "2022",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-03-31",
+    "value": 2940000.0
+   },
+   {
+    "period": "2023",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-03-30",
+    "value": 3110000.0
+   },
+   {
+    "period": "2024",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-03-31",
+    "value": 3340935.0
+   }
+  ],
+  "label": "Tổng vốn đầu tư cố định"
+ },
+ {
+  "id": 26,
+  "type": "GDP",
+  "name": "Full Year GDP Growth",
+  "name_vn": "Tăng trưởng GDP cả năm",
+  "unit": "%",
+  "frequency": "Hàng năm",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 90,
+  "next_release": "2023-12-31",
+  "history": [
+   {
+    "period": "2013",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-03-31",
+    "value": 5.42
+   },
+   {
+    "period": "2014",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-03-31",
+    "value": 5.98
+   },
+   {
+    "period": "2015",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-03-30",
+    "value": 6.68
+   },
+   {
+    "period": "2016",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-03-31",
+    "value": 6.21
+   },
+   {
+    "period": "2017",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-03-31",
+    "value": 6.81
+   },
+   {
+    "period": "2018",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-03-31",
+    "value": 7.08
+   },
+   {
+    "period": "2019",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-03-30",
+    "value": 7.02
+   },
+   {
+    "period": "2020",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-03-31",
+    "value": 2.91
+   },
+   {
+    "period": "2021",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-03-31",
+    "value": 2.58
+   },
+   {
+    "period": "2022",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-03-31",
+    "value": 8.02
+   },
+   {
+    "period": "2023",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-03-30",
+    "value": 5.05
+   },
+   {
+    "period": "2024",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-03-31",
+    "value": 7.09
+   },
+   {
+    "period": "2025",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-03-31",
+    "value": 8.02
+   }
+  ],
+  "label": "Tăng trưởng GDP cả năm"
+ }
+]

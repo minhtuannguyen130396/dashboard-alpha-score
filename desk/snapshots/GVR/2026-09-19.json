@@ -1,0 +1,39 @@
+{
+ "symbol": "GVR",
+ "snapshot_date": "2026-09-19",
+ "composed": 32349.999999999996,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 35203.94979590369,
+   "weight_pct": 52.07833317334679
+  },
+  {
+   "name": "P/E",
+   "price": 20679.542069750663,
+   "weight_pct": 12.735485549871816
+  },
+  {
+   "name": "P/B",
+   "price": 18619.812861812457,
+   "weight_pct": 10.824976151832495
+  },
+  {
+   "name": "Graham 1",
+   "price": 98924.04972384553,
+   "weight_pct": 2.2325357845527214
+  },
+  {
+   "name": "Graham 2",
+   "price": 104216.89949657318,
+   "weight_pct": 2.06811410221147
+  },
+  {
+   "name": "Graham 3",
+   "price": 24940.985315891638,
+   "weight_pct": 20.060555238184698
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 264.6
+}

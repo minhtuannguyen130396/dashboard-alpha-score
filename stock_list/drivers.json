@@ -1,0 +1,606 @@
+{
+  "10": {
+    "code": "10",
+    "name": "Công nghệ",
+    "drivers": [],
+    "groups": [
+      5,
+      4
+    ],
+    "keywords": [
+      "chuyển đổi số",
+      "bán dẫn",
+      "ai",
+      "trung tâm dữ liệu",
+      "phần mềm",
+      "xuất khẩu phần mềm",
+      "viễn thông"
+    ]
+  },
+  "15": {
+    "code": "15",
+    "name": "Viễn thông",
+    "drivers": [],
+    "groups": [
+      4,
+      5
+    ],
+    "keywords": [
+      "viễn thông",
+      "5g",
+      "tần số",
+      "hạ tầng số"
+    ]
+  },
+  "20": {
+    "code": "20",
+    "name": "Chăm sóc sức khỏe",
+    "drivers": [],
+    "groups": [
+      4
+    ],
+    "keywords": [
+      "dược",
+      "đấu thầu thuốc",
+      "bảo hiểm y tế",
+      "bệnh viện"
+    ]
+  },
+  "30": {
+    "code": "30",
+    "name": "Tài chính",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "99",
+        "direction": "khong_ro",
+        "reason": "Xem ghi chú ở ngành `3010`.",
+        "direction_vn": "chưa rõ chiều"
+      }
+    ],
+    "groups": [
+      2,
+      4,
+      1
+    ],
+    "keywords": [
+      "lãi suất",
+      "tín dụng",
+      "chứng khoán",
+      "bảo hiểm",
+      "trái phiếu"
+    ]
+  },
+  "3010": {
+    "code": "3010",
+    "name": "Ngân hàng",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "99",
+        "direction": "khong_ro",
+        "reason": "Lãi suất liên ngân hàng: lãi lên thì NIM có thể giãn, nhưng chi phí vốn và nợ xấu cũng lên. Hai chiều đều có lập luận nên để chưa rõ — §7 đo.",
+        "direction_vn": "chưa rõ chiều"
+      }
+    ],
+    "groups": [
+      2,
+      4,
+      1
+    ],
+    "keywords": [
+      "lãi suất",
+      "tín dụng",
+      "room tín dụng",
+      "nợ xấu",
+      "ngân hàng",
+      "ngân hàng nhà nước",
+      "tỷ giá",
+      "trái phiếu"
+    ]
+  },
+  "3020": {
+    "code": "3020",
+    "name": "Dịch vụ tài chính",
+    "drivers": [],
+    "groups": [
+      1,
+      2
+    ],
+    "keywords": [
+      "thanh khoản",
+      "margin",
+      "nâng hạng",
+      "ftse",
+      "msci",
+      "công ty chứng khoán",
+      "krx"
+    ]
+  },
+  "3030": {
+    "code": "3030",
+    "name": "Bảo hiểm",
+    "drivers": [],
+    "groups": [
+      2,
+      4
+    ],
+    "keywords": [
+      "bảo hiểm",
+      "lãi suất",
+      "trái phiếu chính phủ"
+    ]
+  },
+  "35": {
+    "code": "35",
+    "name": "Bất động sản",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "99",
+        "direction": "nguoc",
+        "reason": "Lãi suất lên thì chi phí vốn và sức mua nhà cùng giảm.",
+        "direction_vn": "ngược chiều"
+      }
+    ],
+    "groups": [
+      6,
+      4,
+      2
+    ],
+    "keywords": [
+      "bất động sản",
+      "pháp lý dự án",
+      "luật đất đai",
+      "tín dụng bđs",
+      "nhà ở xã hội",
+      "quy hoạch",
+      "giải ngân đầu tư công"
+    ]
+  },
+  "40": {
+    "code": "40",
+    "name": "Hàng tiêu dùng không thiết yếu",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "92",
+        "direction": "cung",
+        "reason": "Doanh số bán lẻ — cầu cuối của ngành. Thay cho Niềm tin tiêu dùng (id 88), chuỗi đó đã chết 4,5 năm.",
+        "direction_vn": "cùng chiều"
+      },
+      {
+        "source": "macro",
+        "ref": "39",
+        "direction": "cung",
+        "reason": "Số xe đăng ký mới — chỉ báo chi tiêu lớn của hộ gia đình.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      4
+    ],
+    "keywords": [
+      "sức mua",
+      "bán lẻ",
+      "doanh số",
+      "du lịch",
+      "ô tô"
+    ]
+  },
+  "4010": {
+    "code": "4010",
+    "name": "Ôtô và linh kiện",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "39",
+        "direction": "cung",
+        "reason": "Số xe đăng ký mới — doanh số thật của ngành.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      4
+    ],
+    "keywords": [
+      "ô tô",
+      "xe điện",
+      "đăng ký xe",
+      "thuế trước bạ"
+    ]
+  },
+  "4020": {
+    "code": "4020",
+    "name": "Hàng tiêu dùng cá nhân và gia đình",
+    "drivers": [],
+    "groups": [
+      4
+    ],
+    "keywords": [
+      "sức mua",
+      "tiêu dùng",
+      "xuất khẩu"
+    ]
+  },
+  "4030": {
+    "code": "4030",
+    "name": "Truyền thông",
+    "drivers": [],
+    "groups": [
+      4
+    ],
+    "keywords": [
+      "quảng cáo",
+      "truyền thông",
+      "giải trí"
+    ]
+  },
+  "4040": {
+    "code": "4040",
+    "name": "Bán lẻ",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "92",
+        "direction": "cung",
+        "reason": "Doanh số bán lẻ — chính là doanh thu của ngành.",
+        "direction_vn": "cùng chiều"
+      },
+      {
+        "source": "macro",
+        "ref": "99",
+        "direction": "khong_ro",
+        "reason": "Lãi suất tác động qua cả sức mua lẫn chi phí vốn — chưa rõ chiều. ⚠️ chuỗi này đang quá hạn 91 ngày.",
+        "direction_vn": "chưa rõ chiều"
+      }
+    ],
+    "groups": [
+      4
+    ],
+    "keywords": [
+      "bán lẻ",
+      "sức mua",
+      "doanh số",
+      "điện máy",
+      "trang sức"
+    ]
+  },
+  "4050": {
+    "code": "4050",
+    "name": "Du lịch và giải trí",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "65",
+        "direction": "cung",
+        "reason": "Lượng khách du lịch — cầu trực tiếp của ngành.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      4,
+      5
+    ],
+    "keywords": [
+      "khách quốc tế",
+      "du lịch",
+      "hàng không",
+      "visa",
+      "giá nhiên liệu bay"
+    ]
+  },
+  "45": {
+    "code": "45",
+    "name": "Hàng tiêu dùng cơ bản",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "92",
+        "direction": "cung",
+        "reason": "Doanh số bán lẻ — cầu cuối, 78 ngày.",
+        "direction_vn": "cùng chiều"
+      },
+      {
+        "source": "macro",
+        "ref": "34",
+        "direction": "khong_ro",
+        "reason": "Lạm phát: giá bán tăng theo nhưng sức mua giảm — hai chiều đều có lập luận.",
+        "direction_vn": "chưa rõ chiều"
+      },
+      {
+        "source": "macro",
+        "ref": "89",
+        "direction": "cung",
+        "reason": "Chi tiêu tiêu dùng — chỉ hàng năm, trễ 169 ngày.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      4,
+      9
+    ],
+    "keywords": [
+      "giá heo",
+      "giá gạo",
+      "thực phẩm",
+      "bán lẻ",
+      "cpi",
+      "sức mua",
+      "xuất khẩu nông sản"
+    ]
+  },
+  "4510": {
+    "code": "4510",
+    "name": "Thực phẩm và đồ uống",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "89",
+        "direction": "cung",
+        "reason": "Cầu cuối.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      4,
+      9
+    ],
+    "keywords": [
+      "giá heo",
+      "giá sữa",
+      "giá đường",
+      "bia",
+      "thực phẩm",
+      "cpi"
+    ]
+  },
+  "4520": {
+    "code": "4520",
+    "name": "Cửa hàng tiện lợi",
+    "drivers": [],
+    "groups": [
+      4
+    ],
+    "keywords": [
+      "bán lẻ",
+      "sức mua",
+      "cpi"
+    ]
+  },
+  "50": {
+    "code": "50",
+    "name": "Công nghiệp",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "51",
+        "direction": "cung",
+        "reason": "PMI sản xuất — đơn hàng mới của ngành.",
+        "direction_vn": "cùng chiều"
+      },
+      {
+        "source": "macro",
+        "ref": "49",
+        "direction": "cung",
+        "reason": "Chỉ số sản xuất công nghiệp.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      4,
+      5
+    ],
+    "keywords": [
+      "pmi",
+      "đầu tư công",
+      "xuất khẩu",
+      "logistics",
+      "cảng biển",
+      "cước vận tải",
+      "khu công nghiệp"
+    ]
+  },
+  "5010": {
+    "code": "5010",
+    "name": "Xây dựng và vật liệu xây dựng",
+    "drivers": [],
+    "groups": [
+      4,
+      6
+    ],
+    "keywords": [
+      "đầu tư công",
+      "giải ngân",
+      "cao tốc",
+      "sân bay",
+      "xi măng",
+      "giá thép",
+      "quy hoạch"
+    ]
+  },
+  "5020": {
+    "code": "5020",
+    "name": "Sản phẩm & dịch vụ công nghiệp",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "51",
+        "direction": "cung",
+        "reason": "PMI sản xuất.",
+        "direction_vn": "cùng chiều"
+      },
+      {
+        "source": "macro",
+        "ref": "59",
+        "direction": "cung",
+        "reason": "Tổng xuất khẩu — cầu của logistics và cảng biển.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      4,
+      5
+    ],
+    "keywords": [
+      "pmi",
+      "logistics",
+      "cảng",
+      "cước vận tải",
+      "xuất khẩu"
+    ]
+  },
+  "55": {
+    "code": "55",
+    "name": "Vật liệu cơ bản",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "49",
+        "direction": "cung",
+        "reason": "Sản xuất công nghiệp — cầu của vật liệu cơ bản.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      9,
+      5,
+      4
+    ],
+    "keywords": [
+      "giá thép",
+      "quặng",
+      "hrc",
+      "thép",
+      "than",
+      "nhôm",
+      "đồng",
+      "hoá chất",
+      "phân bón",
+      "urê",
+      "cao su"
+    ]
+  },
+  "5510": {
+    "code": "5510",
+    "name": "Tài nguyên cơ bản",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "49",
+        "direction": "cung",
+        "reason": "Sản xuất công nghiệp — cầu của thép và than.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      9,
+      5,
+      4
+    ],
+    "keywords": [
+      "giá thép",
+      "quặng sắt",
+      "hrc",
+      "thép",
+      "than",
+      "nhôm"
+    ]
+  },
+  "5520": {
+    "code": "5520",
+    "name": "Hóa chất",
+    "drivers": [
+      {
+        "source": "commodity",
+        "ref": "BZ=F",
+        "direction": "nguoc",
+        "reason": "Dầu là **đầu vào** của hoá dầu và phân đạm — dầu lên thì biên co lại. Ngược chiều với ngành Năng lượng, và chính sự ngược đó là lý do hai ngành không được gộp.",
+        "direction_vn": "ngược chiều"
+      }
+    ],
+    "groups": [
+      9,
+      4
+    ],
+    "keywords": [
+      "phân bón",
+      "urê",
+      "dap",
+      "hoá chất",
+      "photpho",
+      "giá khí"
+    ]
+  },
+  "60": {
+    "code": "60",
+    "name": "Năng lượng",
+    "drivers": [
+      {
+        "source": "commodity",
+        "ref": "BZ=F",
+        "direction": "cung",
+        "reason": "Dầu Brent — đầu ra của thăm dò/khai thác, và là mỏ neo giá bán của lọc dầu. Khai báo cùng chiều vì phần khai thác lớn hơn phần chịu chi phí đầu vào trong rổ niêm yết.",
+        "direction_vn": "cùng chiều"
+      },
+      {
+        "source": "commodity",
+        "ref": "CL=F",
+        "direction": "cung",
+        "reason": "Dầu WTI — biến đi gần như song song Brent.",
+        "direction_vn": "cùng chiều"
+      },
+      {
+        "source": "macro",
+        "ref": "90",
+        "direction": "cung",
+        "reason": "Giá xăng dầu bán lẻ trong nước — theo tháng, đã điều tiết, nên trễ và mượt hơn giá thế giới.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      9,
+      5,
+      4
+    ],
+    "keywords": [
+      "giá dầu",
+      "dầu thô",
+      "brent",
+      "opec",
+      "lọc dầu",
+      "xăng dầu",
+      "khí đốt",
+      "dầu khí",
+      "trung đông"
+    ]
+  },
+  "65": {
+    "code": "65",
+    "name": "Các dịch vụ hạ tầng",
+    "drivers": [
+      {
+        "source": "macro",
+        "ref": "46",
+        "direction": "cung",
+        "reason": "Sản lượng điện — sản lượng thật của ngành. Thay cho `NG=F` (khí tự nhiên): kho tin không có điểm nào cho ticker đó.",
+        "direction_vn": "cùng chiều"
+      }
+    ],
+    "groups": [
+      4,
+      9
+    ],
+    "keywords": [
+      "giá điện",
+      "evn",
+      "quy hoạch điện",
+      "thuỷ điện",
+      "nhiệt điện",
+      "điện gió",
+      "el niño",
+      "la nina",
+      "nước về"
+    ]
+  }
+}

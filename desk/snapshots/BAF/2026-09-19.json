@@ -1,0 +1,39 @@
+{
+ "symbol": "BAF",
+ "snapshot_date": "2026-09-19",
+ "composed": 26264.086973485348,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 29488.190195678722,
+   "weight_pct": 86.53584539390134
+  },
+  {
+   "name": "P/E",
+   "price": 2572.098015067126,
+   "weight_pct": 2.6928309212197252
+  },
+  {
+   "name": "P/B",
+   "price": 15271.521815948294,
+   "weight_pct": 2.6928309212197252
+  },
+  {
+   "name": "Graham 1",
+   "price": 1678.1023035512192,
+   "weight_pct": 2.6928309212197252
+  },
+  {
+   "name": "Graham 2",
+   "price": 1250.9489899199998,
+   "weight_pct": 2.6928309212197252
+  },
+  {
+   "name": "Graham 3",
+   "price": 6939.142878125389,
+   "weight_pct": 2.6928309212197252
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 107.5
+}

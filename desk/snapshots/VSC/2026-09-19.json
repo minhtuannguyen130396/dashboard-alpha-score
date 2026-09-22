@@ -1,0 +1,39 @@
+{
+ "symbol": "VSC",
+ "snapshot_date": "2026-09-19",
+ "composed": 14026.488997696079,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 13296.821959401143,
+   "weight_pct": 44.327744840708725
+  },
+  {
+   "name": "P/E",
+   "price": 11382.002423928849,
+   "weight_pct": 18.746161419262585
+  },
+  {
+   "name": "P/B",
+   "price": 29446.97823153789,
+   "weight_pct": 4.21779412522163
+  },
+  {
+   "name": "Graham 1",
+   "price": 8609.509125102439,
+   "weight_pct": 10.212595245173556
+  },
+  {
+   "name": "Graham 2",
+   "price": 6417.99771144,
+   "weight_pct": 0.6219971814975178
+  },
+  {
+   "name": "Graham 3",
+   "price": 17543.583742562307,
+   "weight_pct": 21.873707188135995
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 164.2
+}

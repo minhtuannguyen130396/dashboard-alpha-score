@@ -1,0 +1,39 @@
+{
+ "symbol": "VIC",
+ "snapshot_date": "2026-09-19",
+ "composed": 125206.22668739817,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 213472.78791963737,
+   "weight_pct": 47.02871178624757
+  },
+  {
+   "name": "P/E",
+   "price": 63233.311771659384,
+   "weight_pct": 10.594257642750486
+  },
+  {
+   "name": "P/B",
+   "price": 78601.46152025256,
+   "weight_pct": 10.594257642750486
+  },
+  {
+   "name": "Graham 1",
+   "price": 30082.820561508535,
+   "weight_pct": 10.594257642750486
+  },
+  {
+   "name": "Graham 2",
+   "price": 22425.37532767,
+   "weight_pct": 10.594257642750486
+  },
+  {
+   "name": "Graham 3",
+   "price": 39866.21612773981,
+   "weight_pct": 10.594257642750486
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 152.6
+}

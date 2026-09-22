@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "vn-ta": {
+      "command": "python",
+      "args": [
+        "-m",
+        "src.mcp_server"
+      ],
+      "cwd": "D:/Trader/dashboard-alpha-score",
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUTF8": "1"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+ "symbol": "KBC",
+ "snapshot_date": "2026-09-19",
+ "composed": 27353.729012272568,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 24784.55249575451,
+   "weight_pct": 3.532291471704031
+  },
+  {
+   "name": "P/E",
+   "price": 24943.23726414662,
+   "weight_pct": 3.7604457195280805
+  },
+  {
+   "name": "P/B",
+   "price": 94705.1638373834,
+   "weight_pct": 0.1372632111297911
+  },
+  {
+   "name": "Graham 1",
+   "price": 11866.576489779269,
+   "weight_pct": 0.09238522913935938
+  },
+  {
+   "name": "Graham 2",
+   "price": 8845.99338329,
+   "weight_pct": 0.09238522913935938
+  },
+  {
+   "name": "Graham 3",
+   "price": 27484.00259713092,
+   "weight_pct": 92.38522913935937
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 313.9
+}

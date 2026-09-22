@@ -1,0 +1,39 @@
+{
+ "symbol": "GMD",
+ "snapshot_date": "2026-09-19",
+ "composed": 66725.20133570376,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 71911.38406614902,
+   "weight_pct": 28.056935932394378
+  },
+  {
+   "name": "P/E",
+   "price": 72391.17071912618,
+   "weight_pct": 29.950544971510773
+  },
+  {
+   "name": "P/B",
+   "price": 63441.675338301495,
+   "weight_pct": 13.258749935442138
+  },
+  {
+   "name": "Graham 1",
+   "price": 54757.71500214024,
+   "weight_pct": 8.605240425046484
+  },
+  {
+   "name": "Graham 2",
+   "price": 40819.38754705,
+   "weight_pct": 5.504393482150409
+  },
+  {
+   "name": "Graham 3",
+   "price": 64940.96403776829,
+   "weight_pct": 14.624135253455824
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 47.3
+}

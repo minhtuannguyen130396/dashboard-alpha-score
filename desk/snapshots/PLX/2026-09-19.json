@@ -1,0 +1,39 @@
+{
+ "symbol": "PLX",
+ "snapshot_date": "2026-09-19",
+ "composed": 31342.224374902093,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 32789.78204274091,
+   "weight_pct": 31.51392594539313
+  },
+  {
+   "name": "P/E",
+   "price": 19477.995347679585,
+   "weight_pct": 6.501611150274515
+  },
+  {
+   "name": "P/B",
+   "price": 4619.643024057228,
+   "weight_pct": 1.0904505245998246
+  },
+  {
+   "name": "Graham 1",
+   "price": 23893.793842774394,
+   "weight_pct": 8.825124077119382
+  },
+  {
+   "name": "Graham 2",
+   "price": 17811.73722825,
+   "weight_pct": 1.0904505245998246
+  },
+  {
+   "name": "Graham 3",
+   "price": 34110.95735348303,
+   "weight_pct": 50.978437778013316
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 94.1
+}

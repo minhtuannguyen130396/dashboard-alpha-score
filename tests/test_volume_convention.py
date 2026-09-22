@@ -52,20 +52,7 @@ class VolumeConventionTest(unittest.TestCase):
             _record(2, deal_volume=300.0, total_volume=5000.0),
         ]
 
-        neutral_scores = []
-        for _ in records:
-            neutral_scores.append(type("Score", (), {
-                "label": "none",
-                "final_score": 0.0,
-                "reason_text": "",
-                "reasons": [],
-                "candle_score": 0.0,
-                "volume_score": 0.0,
-                "context_score": 0.0,
-                "pivot_score": 0.0,
-            })())
-
-        snapshot = analyze_market_behavior(records, neutral_scores)
+        snapshot = analyze_market_behavior(records)
 
         self.assertEqual(snapshot.total_volume, [100.0, 300.0])
         self.assertEqual(snapshot.hover_payloads[-1]["price"]["volume"], 300)

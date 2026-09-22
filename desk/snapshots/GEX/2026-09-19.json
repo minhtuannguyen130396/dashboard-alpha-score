@@ -1,0 +1,39 @@
+{
+ "symbol": "GEX",
+ "snapshot_date": "2026-09-19",
+ "composed": 21632.144507736397,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 23925.234069806815,
+   "weight_pct": 43.861487662280425
+  },
+  {
+   "name": "P/E",
+   "price": 22055.735544490042,
+   "weight_pct": 25.201029846635137
+  },
+  {
+   "name": "P/B",
+   "price": 18148.835239460597,
+   "weight_pct": 13.340295355144663
+  },
+  {
+   "name": "Graham 1",
+   "price": 10220.755704915853,
+   "weight_pct": 1.1073998969731438
+  },
+  {
+   "name": "Graham 2",
+   "price": 7619.10879821,
+   "weight_pct": 1.1073998969731438
+  },
+  {
+   "name": "Graham 3",
+   "price": 19250.858069995593,
+   "weight_pct": 15.382387341993486
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 75.4
+}

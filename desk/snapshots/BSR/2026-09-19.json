@@ -1,0 +1,39 @@
+{
+ "symbol": "BSR",
+ "snapshot_date": "2026-09-19",
+ "composed": 28225.843483605517,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 24007.30653577721,
+   "weight_pct": 22.656222091868322
+  },
+  {
+   "name": "P/E",
+   "price": 30379.582856123496,
+   "weight_pct": 15.541566669559383
+  },
+  {
+   "name": "P/B",
+   "price": 3383.418243517052,
+   "weight_pct": 0.5874063894156698
+  },
+  {
+   "name": "Graham 1",
+   "price": 37266.84788843903,
+   "weight_pct": 5.506841342064268
+  },
+  {
+   "name": "Graham 2",
+   "price": 27780.7411532,
+   "weight_pct": 49.7489553763501
+  },
+  {
+   "name": "Graham 3",
+   "price": 36457.452390193386,
+   "weight_pct": 5.959008130742246
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 120.0
+}

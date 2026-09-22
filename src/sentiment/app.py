@@ -220,7 +220,7 @@ def api_batch_analyze():
 
 
 def main():
-    port = int(os.environ.get("PORT", 8688))
+    port = int(os.environ.get("PORT", 5000))
     print(f"\n  Tick Sentiment Analyzer")
     print(f"  http://localhost:{port}")
     print(f"  GOOGLE_API_KEY: {'SET' if os.environ.get('GOOGLE_API_KEY') else 'NOT SET (will use rule-based fallback)'}\n")

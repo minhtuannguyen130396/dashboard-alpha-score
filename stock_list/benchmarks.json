@@ -1,0 +1,29 @@
+[
+  {
+    "share_code": "VNINDEX",
+    "ipo_date": "2000-07-28",
+    "name": "VN-Index — chi so chung san HOSE",
+    "san": "hose",
+    "kind": "index",
+    "role": "market_benchmark",
+    "note": "KHONG PHAI MOT MA CO PHIEU. Day la thi truong chung, dung lam moc do mot ma manh hay yeu hon thi truong bao nhieu (relative strength, beta, abnormal return). Khong bao gio dua vao ro quet/xep hang: khong ai mua duoc chi so, va tron vao la lech moi thong ke ca ro."
+  },
+  {
+    "share_code": "VN30",
+    "ipo_date": "2012-02-06",
+    "name": "VN30 — ro 30 co phieu von hoa/thanh khoan lon nhat HOSE",
+    "san": "hose",
+    "kind": "index",
+    "role": "futures_underlying",
+    "note": "KHONG PHAI MOT MA CO PHIEU. Day la TAI SAN CO SO cua hop dong tuong lai VN30F1M: gia thanh toan phien dao han tinh theo chinh chi so nay. Moi phep do phai sinh (basis, beta, suc manh tuong doi cua mot ma truoc dong tien phai sinh) deu lay VN30 lam moc — KHONG phai VNINDEX. Hai chi so nay lech nhau vi VNINDEX co ca tram ma nho khong nam trong ro phai sinh."
+  },
+  {
+    "share_code": "_PROXY_EW",
+    "ipo_date": "2010-01-05",
+    "name": "Proxy equal-weight — chi so deu tay dung tu 79 ma trong data/",
+    "san": "tong hop",
+    "kind": "index",
+    "role": "market_benchmark",
+    "note": "KHONG PHAI MOT MA CO PHIEU, va cung khong phai chi so that. Day la chi so TU DUNG: trung binh cong loi suat 79 ma moi phien, moi ma trong so bang nhau. Dung lam mau so cho event study, vi VNINDEX la chi so trong so von hoa nen no tra loi cau 'thi truong di dau' chu khong phai 'mot co phieu trung binh di dau'. CO SURVIVORSHIP BIAS: data/ chi co ma con trong ro hom nay. Dung lai bang src/news/benchmark.py build()."
+  }
+]

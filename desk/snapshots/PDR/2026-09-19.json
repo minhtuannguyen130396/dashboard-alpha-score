@@ -1,0 +1,39 @@
+{
+ "symbol": "PDR",
+ "snapshot_date": "2026-09-19",
+ "composed": 12374.042961783896,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 11216.366822896201,
+   "weight_pct": 14.878823058579988
+  },
+  {
+   "name": "P/E",
+   "price": 12115.962392763011,
+   "weight_pct": 62.00259458494294
+  },
+  {
+   "name": "P/B",
+   "price": 44921.735190599065,
+   "weight_pct": 0.5415168811005833
+  },
+  {
+   "name": "Graham 1",
+   "price": 5764.087193592682,
+   "weight_pct": 0.17611068608392288
+  },
+  {
+   "name": "Graham 2",
+   "price": 4296.86499886,
+   "weight_pct": 0.17611068608392288
+  },
+  {
+   "name": "Graham 3",
+   "price": 13192.404595803204,
+   "weight_pct": 22.224844103208675
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 328.3
+}

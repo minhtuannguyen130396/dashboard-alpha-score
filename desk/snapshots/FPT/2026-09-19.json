@@ -1,0 +1,39 @@
+{
+ "symbol": "FPT",
+ "snapshot_date": "2026-09-19",
+ "composed": 71424.54733434909,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 66212.74608354854,
+   "weight_pct": 12.704938784825176
+  },
+  {
+   "name": "P/E",
+   "price": 71580.44980681012,
+   "weight_pct": 54.813141115249174
+  },
+  {
+   "name": "P/B",
+   "price": 39091.2307113033,
+   "weight_pct": 2.60263372539695
+  },
+  {
+   "name": "Graham 1",
+   "price": 87907.02105223088,
+   "weight_pct": 6.036071680816695
+  },
+  {
+   "name": "Graham 2",
+   "price": 77895.1539075559,
+   "weight_pct": 18.90728930944824
+  },
+  {
+   "name": "Graham 3",
+   "price": 55214.99691110363,
+   "weight_pct": 4.935925384263762
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 68.3
+}

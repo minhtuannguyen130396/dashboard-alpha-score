@@ -1,0 +1,39 @@
+{
+ "symbol": "VPI",
+ "snapshot_date": "2026-09-19",
+ "composed": 50433.95616514892,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 55999.602686160644,
+   "weight_pct": 47.9689538361527
+  },
+  {
+   "name": "P/E",
+   "price": 22684.424127989394,
+   "weight_pct": 3.1181916453713256
+  },
+  {
+   "name": "P/B",
+   "price": 54743.1582458458,
+   "weight_pct": 39.55827958236197
+  },
+  {
+   "name": "Graham 1",
+   "price": 10791.961411853657,
+   "weight_pct": 3.1181916453713256
+  },
+  {
+   "name": "Graham 2",
+   "price": 8044.9166888363625,
+   "weight_pct": 3.1181916453713256
+  },
+  {
+   "name": "Graham 3",
+   "price": 19927.166339098407,
+   "weight_pct": 3.1181916453713256
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 95.1
+}

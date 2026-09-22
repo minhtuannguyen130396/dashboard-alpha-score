@@ -1,0 +1,252 @@
+{
+ "generated": "2026-09-16 22:06",
+ "horizon": 20,
+ "hypotheses": [
+  {
+   "name": "H1",
+   "question": "Góc phần tư RRG tại t có dự báo lợi suất tương đối của ngành ở t+20 không?",
+   "buckets": [
+    {
+     "name": "dẫn dắt",
+     "n_overlapping": 29464,
+     "n_independent": 1419,
+     "median_rel": -0.0011985003652277282,
+     "mean_rel": 0.000833175385618174,
+     "hit_rate": 0.4897815362931642,
+     "placebo_median": -0.00431229961776991,
+     "edge": 0.003113799252542182,
+     "p_value": 0.025,
+     "verdict": "tách được khỏi nền"
+    },
+    {
+     "name": "đang cải thiện",
+     "n_overlapping": 22973,
+     "n_independent": 1112,
+     "median_rel": -0.0056410203040327955,
+     "mean_rel": -0.0013563210892747542,
+     "hit_rate": 0.4523381294964029,
+     "placebo_median": -0.004137094842221245,
+     "edge": -0.0015039254618115505,
+     "p_value": 0.32,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "đang suy yếu",
+     "n_overlapping": 18161,
+     "n_independent": 936,
+     "median_rel": -0.003698724697585032,
+     "mean_rel": -0.0012447475532175094,
+     "hit_rate": 0.4658119658119658,
+     "placebo_median": -0.004249396464123534,
+     "edge": 0.0005506717665385019,
+     "p_value": 0.75,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "tụt lại",
+     "n_overlapping": 32977,
+     "n_independent": 1733,
+     "median_rel": -0.005716792301322493,
+     "mean_rel": -0.005430410637767598,
+     "hit_rate": 0.44431621465666477,
+     "placebo_median": -0.004198396934161963,
+     "edge": -0.00151839536716053,
+     "p_value": 0.2375,
+     "verdict": "không tách được khỏi nền"
+    }
+   ],
+   "pool_median": -0.004198396934161963,
+   "pool_n": 5200,
+   "passed": false,
+   "note": "không đạt ở ngưỡng đã hiệu chỉnh 0.0042 (Bonferroni cho 12 phép kiểm)"
+  },
+  {
+   "name": "H1-đa-cửa-sổ",
+   "question": "Sau khi hiệu chỉnh cho 12 phép kiểm trên cùng dữ liệu, góc RRG còn dự báo được gì không?",
+   "buckets": [
+    {
+     "name": "dẫn dắt · 10 phiên",
+     "n_overlapping": 29586,
+     "n_independent": 2970,
+     "median_rel": -0.0012907419205032133,
+     "mean_rel": 0.0007050297377550848,
+     "hit_rate": 0.48249158249158247,
+     "placebo_median": -0.0021551265907204797,
+     "edge": 0.0008643846702172664,
+     "p_value": 0.2275,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "đang cải thiện · 10 phiên",
+     "n_overlapping": 23006,
+     "n_independent": 2282,
+     "median_rel": -0.00253099661967493,
+     "mean_rel": -0.002167003807821666,
+     "hit_rate": 0.46231375985977213,
+     "placebo_median": -0.002202779921085113,
+     "edge": -0.00032821669858981717,
+     "p_value": 0.725,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "đang suy yếu · 10 phiên",
+     "n_overlapping": 18199,
+     "n_independent": 1855,
+     "median_rel": -0.0011164567301412687,
+     "mean_rel": -0.00030557724460930364,
+     "hit_rate": 0.48517520215633425,
+     "placebo_median": -0.002174162207489172,
+     "edge": 0.0010577054773479033,
+     "p_value": 0.2475,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "tụt lại · 10 phiên",
+     "n_overlapping": 33034,
+     "n_independent": 3293,
+     "median_rel": -0.003048732755488337,
+     "mean_rel": -0.0021993710196720143,
+     "hit_rate": 0.45733373823261464,
+     "placebo_median": -0.002205254742395635,
+     "edge": -0.0008434780130927022,
+     "p_value": 0.2025,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "dẫn dắt · 20 phiên",
+     "n_overlapping": 29464,
+     "n_independent": 1419,
+     "median_rel": -0.0011985003652277282,
+     "mean_rel": 0.000833175385618174,
+     "hit_rate": 0.4897815362931642,
+     "placebo_median": -0.00431229961776991,
+     "edge": 0.003113799252542182,
+     "p_value": 0.025,
+     "verdict": "tách được khỏi nền"
+    },
+    {
+     "name": "đang cải thiện · 20 phiên",
+     "n_overlapping": 22973,
+     "n_independent": 1112,
+     "median_rel": -0.0056410203040327955,
+     "mean_rel": -0.0013563210892747542,
+     "hit_rate": 0.4523381294964029,
+     "placebo_median": -0.004137094842221245,
+     "edge": -0.0015039254618115505,
+     "p_value": 0.32,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "đang suy yếu · 20 phiên",
+     "n_overlapping": 18161,
+     "n_independent": 936,
+     "median_rel": -0.003698724697585032,
+     "mean_rel": -0.0012447475532175094,
+     "hit_rate": 0.4658119658119658,
+     "placebo_median": -0.004249396464123534,
+     "edge": 0.0005506717665385019,
+     "p_value": 0.75,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "tụt lại · 20 phiên",
+     "n_overlapping": 32977,
+     "n_independent": 1733,
+     "median_rel": -0.005716792301322493,
+     "mean_rel": -0.005430410637767598,
+     "hit_rate": 0.44431621465666477,
+     "placebo_median": -0.004198396934161963,
+     "edge": -0.00151839536716053,
+     "p_value": 0.2375,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "dẫn dắt · 60 phiên",
+     "n_overlapping": 29245,
+     "n_independent": 431,
+     "median_rel": -0.0031770716118040276,
+     "mean_rel": 0.001135823223713327,
+     "hit_rate": 0.4895591647331787,
+     "placebo_median": -0.007424564418892721,
+     "edge": 0.004247492807088693,
+     "p_value": 0.34,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "đang cải thiện · 60 phiên",
+     "n_overlapping": 22755,
+     "n_independent": 409,
+     "median_rel": -0.002813875066901783,
+     "mean_rel": -0.0038323833567384395,
+     "hit_rate": 0.4841075794621027,
+     "placebo_median": -0.007216881571483702,
+     "edge": 0.004403006504581919,
+     "p_value": 0.365,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "đang suy yếu · 60 phiên",
+     "n_overlapping": 17962,
+     "n_independent": 307,
+     "median_rel": -0.013595704083983695,
+     "mean_rel": -0.01469181122948488,
+     "hit_rate": 0.4234527687296417,
+     "placebo_median": -0.007274142419697482,
+     "edge": -0.006321561664286213,
+     "p_value": 0.2625,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "tụt lại · 60 phiên",
+     "n_overlapping": 32613,
+     "n_independent": 578,
+     "median_rel": -0.009352307471966859,
+     "mean_rel": -0.00764656656528173,
+     "hit_rate": 0.4602076124567474,
+     "placebo_median": -0.007856064744444391,
+     "edge": -0.0014962427275224677,
+     "p_value": 0.6525,
+     "verdict": "không tách được khỏi nền"
+    }
+   ],
+   "pool_median": null,
+   "pool_n": 17325,
+   "passed": false,
+   "note": "p nhỏ nhất qua 12 phép kiểm: **0.025**. Ngưỡng Bonferroni: 0.0042. **Không vượt.** Ở mức 0,05 thì 12 phép kiểm kỳ vọng sinh ra 0,6 kết quả dương tính giả; một p = 0,025 lẻ loi nằm gọn trong đó. Kết luận: góc RRG **không** chứng minh được sức dự báo trên dữ liệu này."
+  },
+  {
+   "name": "H2",
+   "question": "Xu hướng ROE của ngành có dự báo lợi suất tương đối ở t+20 không?",
+   "buckets": [
+    {
+     "name": "xu hướng đi lên",
+     "n_overlapping": 56070,
+     "n_independent": 1603,
+     "median_rel": -0.0038887500199071834,
+     "mean_rel": -0.00380566021178273,
+     "hit_rate": 0.4610106051154086,
+     "placebo_median": -0.0034520329589753374,
+     "edge": -0.00043671706093184604,
+     "p_value": 0.7275,
+     "verdict": "không tách được khỏi nền"
+    },
+    {
+     "name": "xu hướng đi xuống",
+     "n_overlapping": 56070,
+     "n_independent": 1216,
+     "median_rel": -0.0029128395055509904,
+     "mean_rel": 0.00010349064652298467,
+     "hit_rate": 0.47286184210526316,
+     "placebo_median": -0.003547307653455095,
+     "edge": 0.0006344681479041048,
+     "p_value": 0.675,
+     "verdict": "không tách được khỏi nền"
+    }
+   ],
+   "pool_median": -0.003522225794553413,
+   "pool_n": 2819,
+   "passed": false,
+   "note": "⚠️ dùng giá trị BCTC *đã sửa* — chỉ có một bản đóng băng · không đạt: hai nhóm không tách khỏi nền"
+  }
+ ]
+}

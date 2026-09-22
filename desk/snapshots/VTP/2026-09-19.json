@@ -1,0 +1,39 @@
+{
+ "symbol": "VTP",
+ "snapshot_date": "2026-09-19",
+ "composed": 41680.53663877981,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 48393.19556652797,
+   "weight_pct": 60.29256489337792
+  },
+  {
+   "name": "P/E",
+   "price": 25293.96970782522,
+   "weight_pct": 3.0790233770290265
+  },
+  {
+   "name": "P/B",
+   "price": 26517.63184920441,
+   "weight_pct": 3.0790233770290265
+  },
+  {
+   "name": "Graham 1",
+   "price": 34692.63921571048,
+   "weight_pct": 16.37137401862917
+  },
+  {
+   "name": "Graham 2",
+   "price": 31661.391929108995,
+   "weight_pct": 14.098990956905816
+  },
+  {
+   "name": "Graham 3",
+   "price": 24817.868280744973,
+   "weight_pct": 3.0790233770290265
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 56.6
+}

@@ -1,0 +1,81 @@
+{
+ "symbol": "VPL",
+ "fetched_at": "2026-09-20 09:29",
+ "notes": [
+  "2/8 kỳ dùng mốc công bố thay thế"
+ ],
+ "quarters": [
+  {
+   "year": 2024,
+   "quarter": 2,
+   "npat": null,
+   "equity": 31512859000000.0,
+   "shares": 1723212200.0,
+   "published": "2024-08-14",
+   "published_source": "lag"
+  },
+  {
+   "year": 2024,
+   "quarter": 4,
+   "npat": null,
+   "equity": 31483965000000.0,
+   "shares": 1723212200.0,
+   "published": "2025-02-14",
+   "published_source": "lag"
+  },
+  {
+   "year": 2025,
+   "quarter": 1,
+   "npat": 90334000000.0,
+   "equity": 35586508000000.0,
+   "shares": 1793300400.0,
+   "published": "2025-04-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2025,
+   "quarter": 2,
+   "npat": 168370000000.0,
+   "equity": 35754916000000.0,
+   "shares": 1793300400.0,
+   "published": "2025-07-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2025,
+   "quarter": 3,
+   "npat": 169291000000.0,
+   "equity": 35924252000000.0,
+   "shares": 1793300400.0,
+   "published": "2025-10-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2025,
+   "quarter": 4,
+   "npat": 702709000000.0,
+   "equity": 36626998000000.0,
+   "shares": 1793300400.0,
+   "published": "2026-01-30",
+   "published_source": "mark"
+  },
+  {
+   "year": 2026,
+   "quarter": 1,
+   "npat": 1508083000000.0,
+   "equity": 38105926000000.0,
+   "shares": 1793300400.0,
+   "published": "2026-04-29",
+   "published_source": "mark"
+  },
+  {
+   "year": 2026,
+   "quarter": 2,
+   "npat": 671913000000.0,
+   "equity": 45360652000000.0,
+   "shares": 1877450400.0,
+   "published": "2026-07-30",
+   "published_source": "mark"
+  }
+ ]
+}

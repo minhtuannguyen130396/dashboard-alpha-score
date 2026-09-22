@@ -1,0 +1,39 @@
+{
+ "symbol": "CII",
+ "snapshot_date": "2026-09-19",
+ "composed": 11508.95057754938,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 13296.821959401143,
+   "weight_pct": 67.02844191856587
+  },
+  {
+   "name": "P/E",
+   "price": 1920.7469549055525,
+   "weight_pct": 0.9405283779568759
+  },
+  {
+   "name": "P/B",
+   "price": 9155.846082495824,
+   "weight_pct": 16.96432660333275
+  },
+  {
+   "name": "Graham 1",
+   "price": 1659.5232649304878,
+   "weight_pct": 0.9405283779568759
+  },
+  {
+   "name": "Graham 2",
+   "price": 1237.0991611299999,
+   "weight_pct": 0.9405283779568759
+  },
+  {
+   "name": "Graham 3",
+   "price": 7567.028635510189,
+   "weight_pct": 13.185646344230737
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 104.8
+}

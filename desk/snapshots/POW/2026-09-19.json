@@ -1,0 +1,39 @@
+{
+ "symbol": "POW",
+ "snapshot_date": "2026-09-19",
+ "composed": 13871.893655169226,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 11849.548820962922,
+   "weight_pct": 15.432302918128165
+  },
+  {
+   "name": "P/E",
+   "price": 17060.35586464507,
+   "weight_pct": 4.872628127058514
+  },
+  {
+   "name": "P/B",
+   "price": 15683.969068703742,
+   "weight_pct": 7.46810076519658
+  },
+  {
+   "name": "Graham 1",
+   "price": 17962.455342069512,
+   "weight_pct": 3.9686413594942254
+  },
+  {
+   "name": "Graham 2",
+   "price": 13390.19398227,
+   "weight_pct": 66.49807562610374
+  },
+  {
+   "name": "Graham 3",
+   "price": 24062.833790525805,
+   "weight_pct": 1.76025120401877
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 88.0
+}

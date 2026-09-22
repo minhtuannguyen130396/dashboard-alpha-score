@@ -1,0 +1,39 @@
+{
+ "symbol": "NVL",
+ "snapshot_date": "2026-09-19",
+ "composed": 14234.378199601077,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 11804.321535386727,
+   "weight_pct": 23.76974141494799
+  },
+  {
+   "name": "P/E",
+   "price": 38045.545700602524,
+   "weight_pct": 1.1845892602101977
+  },
+  {
+   "name": "P/B",
+   "price": 71972.77968522899,
+   "weight_pct": 0.5025128676583729
+  },
+  {
+   "name": "Graham 1",
+   "price": 18099.91114507561,
+   "weight_pct": 5.863361579916196
+  },
+  {
+   "name": "Graham 2",
+   "price": 13492.66103542,
+   "weight_pct": 66.8896799600472
+  },
+  {
+   "name": "Graham 3",
+   "price": 29590.533071479626,
+   "weight_pct": 1.7901149172200308
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 422.7
+}

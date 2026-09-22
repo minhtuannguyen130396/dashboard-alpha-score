@@ -1,0 +1,39 @@
+{
+ "symbol": "DCL",
+ "snapshot_date": "2026-09-19",
+ "composed": 30121.177309316547,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 34825.00989366966,
+   "weight_pct": 59.22761354723461
+  },
+  {
+   "name": "P/E",
+   "price": 14161.291350000001,
+   "weight_pct": 2.176608938076441
+  },
+  {
+   "name": "P/B",
+   "price": 28344.585647204112,
+   "weight_pct": 21.432989954537877
+  },
+  {
+   "name": "Graham 1",
+   "price": 9390.243902439024,
+   "weight_pct": 2.176608938076441
+  },
+  {
+   "name": "Graham 2",
+   "price": 7000.0,
+   "weight_pct": 2.176608938076441
+  },
+  {
+   "name": "Graham 3",
+   "price": 21507.946466808495,
+   "weight_pct": 12.809569683998179
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 92.4
+}

@@ -1,0 +1,49 @@
+{
+ "code": "60",
+ "as_of": "2026-09-16",
+ "source": "Claude Opus 5",
+ "score": 14.0,
+ "stance": "tang_cho",
+ "label": "nen tang manh, da gia dang chung",
+ "claims": [
+  {
+   "text": "Chi so nganh vuot thi truong 12.2 diem phan tram trong 20 phien",
+   "evidence": [
+    "E01"
+   ],
+   "kind": "so_lieu"
+  },
+  {
+   "text": "ROE nganh 18.3% va dang cai thien",
+   "evidence": [
+    "E05"
+   ],
+   "kind": "so_lieu"
+  },
+  {
+   "text": "Dau Brent tang 24.2% qua 20 diem du lieu",
+   "evidence": [
+    "E20"
+   ],
+   "kind": "so_lieu"
+  }
+ ],
+ "trigger": {
+  "text": "RS-Ratio giu tren 100.33 va RS-Momentum vuot 100",
+  "evidence": [
+   "E04"
+  ]
+ },
+ "invalidation": {
+  "text": "RS-Momentum 99.49 tiep tuc giam keo RS-Ratio xuong duoi 100",
+  "evidence": [
+   "E04"
+  ]
+ },
+ "confidence": "trung binh",
+ "claims_total": 3,
+ "claims_dropped": [],
+ "rejected": "",
+ "accepted": true,
+ "drop_rate": 0.0
+}

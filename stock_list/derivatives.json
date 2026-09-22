@@ -1,0 +1,50 @@
+[
+  {
+    "share_code": "VN30F1M",
+    "ipo_date": "2017-08-10",
+    "name": "Hop dong tuong lai VN30 - thang hien tai (front month)",
+    "san": "hnx",
+    "kind": "futures",
+    "underlying": "VN30",
+    "role": "front_month",
+    "multiplier_vnd_per_point": 100000,
+    "expiry_rule": "thu Nam thu ba cua thang dao han",
+    "note": "KHONG PHAI MOT MA CO PHIEU. Day la hop dong tuong lai chi so VN30, thanh toan bang tien theo chi so VN30 phien dao han. Chuoi nay do FireAnt NOI LIEN TUC: sau phien dao han, VN30F1M nhay sang hop dong thang ke tiep, nen % thay doi qua ranh gioi do la gia tao. Xem futures.roll_sessions()."
+  },
+  {
+    "share_code": "VN30F2M",
+    "ipo_date": "2017-08-10",
+    "name": "Hop dong tuong lai VN30 - thang ke tiep",
+    "san": "hnx",
+    "kind": "futures",
+    "underlying": "VN30",
+    "role": "next_month",
+    "multiplier_vnd_per_point": 100000,
+    "expiry_rule": "thu Nam thu ba cua thang dao han",
+    "note": "Thanh khoan mong hon F1M hang tram lan. Dung de doc cau truc ky han (F2M - F1M), khong dung de doc dong tien."
+  },
+  {
+    "share_code": "VN30F1Q",
+    "ipo_date": "2017-08-10",
+    "name": "Hop dong tuong lai VN30 - quy gan nhat",
+    "san": "hnx",
+    "kind": "futures",
+    "underlying": "VN30",
+    "role": "front_quarter",
+    "multiplier_vnd_per_point": 100000,
+    "expiry_rule": "thu Nam thu ba cua thang dao han quy",
+    "note": "Thanh khoan rat mong. Chi dung cho cau truc ky han xa."
+  },
+  {
+    "share_code": "VN30F2Q",
+    "ipo_date": "2017-08-10",
+    "name": "Hop dong tuong lai VN30 - quy ke tiep",
+    "san": "hnx",
+    "kind": "futures",
+    "underlying": "VN30",
+    "role": "next_quarter",
+    "multiplier_vnd_per_point": 100000,
+    "expiry_rule": "thu Nam thu ba cua thang dao han quy",
+    "note": "Thanh khoan rat mong. Chi dung cho cau truc ky han xa."
+  }
+]

@@ -1,0 +1,8 @@
+flask
+google-generativeai
+pandas
+plotly
+python-dateutil
+requests
+tkcalendar
+XlsxWriter

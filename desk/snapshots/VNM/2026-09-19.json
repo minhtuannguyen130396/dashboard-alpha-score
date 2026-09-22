@@ -1,0 +1,39 @@
+{
+ "symbol": "VNM",
+ "snapshot_date": "2026-09-19",
+ "composed": 54348.9475752741,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 56353.19782793817,
+   "weight_pct": 38.99693600573297
+  },
+  {
+   "name": "P/E",
+   "price": 75497.71166581738,
+   "weight_pct": 17.571763167344976
+  },
+  {
+   "name": "P/B",
+   "price": 19444.879659667593,
+   "weight_pct": 2.3190706374264893
+  },
+  {
+   "name": "Graham 1",
+   "price": 50597.03803952921,
+   "weight_pct": 19.81609993486808
+  },
+  {
+   "name": "Graham 2",
+   "price": 38217.398103270396,
+   "weight_pct": 9.629651510958277
+  },
+  {
+   "name": "Graham 3",
+   "price": 42421.93148952567,
+   "weight_pct": 11.6664787436692
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 103.1
+}

@@ -1,0 +1,5560 @@
+[
+ {
+  "id": 27,
+  "type": "Prices",
+  "name": "CPI Transportation",
+  "name_vn": "CPI Giao thông vận tải",
+  "unit": "Điểm",
+  "frequency": "Hàng tháng",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 30,
+  "next_release": "2023-08-31",
+  "history": [
+   {
+    "period": "9/13",
+    "period_end": "2013-09-30",
+    "observed_at": "2013-10-30",
+    "value": 150.02
+   },
+   {
+    "period": "10/13",
+    "period_end": "2013-10-31",
+    "observed_at": "2013-11-30",
+    "value": 149.77
+   },
+   {
+    "period": "11/13",
+    "period_end": "2013-11-30",
+    "observed_at": "2013-12-30",
+    "value": 149.26
+   },
+   {
+    "period": "12/13",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-01-30",
+    "value": 148.91
+   },
+   {
+    "period": "1/14",
+    "period_end": "2014-01-31",
+    "observed_at": "2014-03-02",
+    "value": 150.73
+   },
+   {
+    "period": "2/14",
+    "period_end": "2014-02-28",
+    "observed_at": "2014-03-30",
+    "value": 151.73
+   },
+   {
+    "period": "3/14",
+    "period_end": "2014-03-31",
+    "observed_at": "2014-04-30",
+    "value": 151.68
+   },
+   {
+    "period": "4/14",
+    "period_end": "2014-04-30",
+    "observed_at": "2014-05-30",
+    "value": 152.18
+   },
+   {
+    "period": "5/14",
+    "period_end": "2014-05-31",
+    "observed_at": "2014-06-30",
+    "value": 152.73
+   },
+   {
+    "period": "6/14",
+    "period_end": "2014-06-30",
+    "observed_at": "2014-07-30",
+    "value": 153.0
+   },
+   {
+    "period": "7/14",
+    "period_end": "2014-07-31",
+    "observed_at": "2014-08-30",
+    "value": 153.68
+   },
+   {
+    "period": "8/14",
+    "period_end": "2014-08-31",
+    "observed_at": "2014-09-30",
+    "value": 153.59
+   },
+   {
+    "period": "9/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-10-30",
+    "value": 150.74
+   },
+   {
+    "period": "10/14",
+    "period_end": "2014-10-31",
+    "observed_at": "2014-11-30",
+    "value": 149.21
+   },
+   {
+    "period": "11/14",
+    "period_end": "2014-11-30",
+    "observed_at": "2014-12-30",
+    "value": 145.1
+   },
+   {
+    "period": "12/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-01-30",
+    "value": 140.62
+   },
+   {
+    "period": "1/15",
+    "period_end": "2015-01-31",
+    "observed_at": "2015-03-02",
+    "value": 135.05
+   },
+   {
+    "period": "2/15",
+    "period_end": "2015-02-28",
+    "observed_at": "2015-03-30",
+    "value": 129.1
+   },
+   {
+    "period": "3/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-04-30",
+    "value": 128.69
+   },
+   {
+    "period": "4/15",
+    "period_end": "2015-04-30",
+    "observed_at": "2015-05-30",
+    "value": 131.87
+   },
+   {
+    "period": "5/15",
+    "period_end": "2015-05-31",
+    "observed_at": "2015-06-30",
+    "value": 133.22
+   },
+   {
+    "period": "6/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-07-30",
+    "value": 137.93
+   },
+   {
+    "period": "7/15",
+    "period_end": "2015-07-31",
+    "observed_at": "2015-08-30",
+    "value": 138.16
+   },
+   {
+    "period": "8/15",
+    "period_end": "2015-08-31",
+    "observed_at": "2015-09-30",
+    "value": 135.23
+   },
+   {
+    "period": "9/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-10-30",
+    "value": 130.94
+   },
+   {
+    "period": "10/15",
+    "period_end": "2015-10-31",
+    "observed_at": "2015-11-30",
+    "value": 130.87
+   },
+   {
+    "period": "11/15",
+    "period_end": "2015-11-30",
+    "observed_at": "2015-12-30",
+    "value": 130.38
+   },
+   {
+    "period": "12/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-01-30",
+    "value": 128.33
+   },
+   {
+    "period": "1/16",
+    "period_end": "2016-01-31",
+    "observed_at": "2016-03-01",
+    "value": 83.08
+   },
+   {
+    "period": "2/16",
+    "period_end": "2016-02-29",
+    "observed_at": "2016-03-30",
+    "value": 79.79
+   },
+   {
+    "period": "3/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-04-30",
+    "value": 76.88
+   },
+   {
+    "period": "4/16",
+    "period_end": "2016-04-30",
+    "observed_at": "2016-05-30",
+    "value": 78.21
+   },
+   {
+    "period": "5/16",
+    "period_end": "2016-05-31",
+    "observed_at": "2016-06-30",
+    "value": 80.08
+   },
+   {
+    "period": "6/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-07-30",
+    "value": 82.48
+   },
+   {
+    "period": "7/16",
+    "period_end": "2016-07-31",
+    "observed_at": "2016-08-30",
+    "value": 83.46
+   },
+   {
+    "period": "8/16",
+    "period_end": "2016-08-31",
+    "observed_at": "2016-09-30",
+    "value": 81.82
+   },
+   {
+    "period": "9/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-10-30",
+    "value": 82.26
+   },
+   {
+    "period": "10/16",
+    "period_end": "2016-10-31",
+    "observed_at": "2016-11-30",
+    "value": 83.93
+   },
+   {
+    "period": "11/16",
+    "period_end": "2016-11-30",
+    "observed_at": "2016-12-30",
+    "value": 85.29
+   },
+   {
+    "period": "12/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-01-30",
+    "value": 84.54
+   },
+   {
+    "period": "1/17",
+    "period_end": "2017-01-31",
+    "observed_at": "2017-03-02",
+    "value": 87.25
+   },
+   {
+    "period": "2/17",
+    "period_end": "2017-02-28",
+    "observed_at": "2017-03-30",
+    "value": 87.75
+   },
+   {
+    "period": "3/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-04-30",
+    "value": 88.08
+   },
+   {
+    "period": "4/17",
+    "period_end": "2017-04-30",
+    "observed_at": "2017-05-30",
+    "value": 86.87
+   },
+   {
+    "period": "5/17",
+    "period_end": "2017-05-31",
+    "observed_at": "2017-06-30",
+    "value": 86.57
+   },
+   {
+    "period": "6/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-07-30",
+    "value": 85.96
+   },
+   {
+    "period": "7/17",
+    "period_end": "2017-07-31",
+    "observed_at": "2017-08-30",
+    "value": 84.65
+   },
+   {
+    "period": "8/17",
+    "period_end": "2017-08-31",
+    "observed_at": "2017-09-30",
+    "value": 86.45
+   },
+   {
+    "period": "9/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-10-30",
+    "value": 87.76
+   },
+   {
+    "period": "10/17",
+    "period_end": "2017-10-31",
+    "observed_at": "2017-11-30",
+    "value": 88.3
+   },
+   {
+    "period": "11/17",
+    "period_end": "2017-11-30",
+    "observed_at": "2017-12-30",
+    "value": 88.9
+   },
+   {
+    "period": "12/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-01-30",
+    "value": 89.6
+   },
+   {
+    "period": "1/18",
+    "period_end": "2018-01-31",
+    "observed_at": "2018-03-02",
+    "value": 90.69
+   },
+   {
+    "period": "2/18",
+    "period_end": "2018-02-28",
+    "observed_at": "2018-03-30",
+    "value": 91.41
+   },
+   {
+    "period": "3/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-04-30",
+    "value": 90.7
+   },
+   {
+    "period": "4/18",
+    "period_end": "2018-04-30",
+    "observed_at": "2018-05-30",
+    "value": 91.77
+   },
+   {
+    "period": "5/18",
+    "period_end": "2018-05-31",
+    "observed_at": "2018-06-30",
+    "value": 93.34
+   },
+   {
+    "period": "6/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-07-30",
+    "value": 94.32
+   },
+   {
+    "period": "7/18",
+    "period_end": "2018-07-31",
+    "observed_at": "2018-08-30",
+    "value": 93.83
+   },
+   {
+    "period": "8/18",
+    "period_end": "2018-08-31",
+    "observed_at": "2018-09-30",
+    "value": 93.95
+   },
+   {
+    "period": "9/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-10-30",
+    "value": 94.72
+   },
+   {
+    "period": "10/18",
+    "period_end": "2018-10-31",
+    "observed_at": "2018-11-30",
+    "value": 96.19
+   },
+   {
+    "period": "11/18",
+    "period_end": "2018-11-30",
+    "observed_at": "2018-12-30",
+    "value": 94.45
+   },
+   {
+    "period": "12/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-01-30",
+    "value": 89.84
+   },
+   {
+    "period": "1/19",
+    "period_end": "2019-01-31",
+    "observed_at": "2019-03-02",
+    "value": 87.11
+   },
+   {
+    "period": "2/19",
+    "period_end": "2019-02-28",
+    "observed_at": "2019-03-30",
+    "value": 87.25
+   },
+   {
+    "period": "3/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-04-30",
+    "value": 89.19
+   },
+   {
+    "period": "4/19",
+    "period_end": "2019-04-30",
+    "observed_at": "2019-05-30",
+    "value": 93.02
+   },
+   {
+    "period": "5/19",
+    "period_end": "2019-05-31",
+    "observed_at": "2019-06-30",
+    "value": 95.47
+   },
+   {
+    "period": "6/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-07-30",
+    "value": 93.82
+   },
+   {
+    "period": "7/19",
+    "period_end": "2019-07-31",
+    "observed_at": "2019-08-30",
+    "value": 93.8
+   },
+   {
+    "period": "8/19",
+    "period_end": "2019-08-31",
+    "observed_at": "2019-09-30",
+    "value": 93.37
+   },
+   {
+    "period": "9/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-10-30",
+    "value": 92.21
+   },
+   {
+    "period": "10/19",
+    "period_end": "2019-10-31",
+    "observed_at": "2019-11-30",
+    "value": 93.12
+   },
+   {
+    "period": "11/19",
+    "period_end": "2019-11-30",
+    "observed_at": "2019-12-30",
+    "value": 92.44
+   },
+   {
+    "period": "12/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-01-30",
+    "value": 93.0
+   },
+   {
+    "period": "1/20",
+    "period_end": "2020-01-31",
+    "observed_at": "2020-03-01",
+    "value": 93.64
+   },
+   {
+    "period": "2/20",
+    "period_end": "2020-02-29",
+    "observed_at": "2020-03-30",
+    "value": 91.3
+   },
+   {
+    "period": "3/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-04-30",
+    "value": 86.85
+   },
+   {
+    "period": "4/20",
+    "period_end": "2020-04-30",
+    "observed_at": "2020-05-30",
+    "value": 74.81
+   },
+   {
+    "period": "5/20",
+    "period_end": "2020-05-31",
+    "observed_at": "2020-06-30",
+    "value": 73.16
+   },
+   {
+    "period": "6/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-07-30",
+    "value": 77.59
+   },
+   {
+    "period": "7/20",
+    "period_end": "2020-07-31",
+    "observed_at": "2020-08-30",
+    "value": 80.62
+   },
+   {
+    "period": "8/20",
+    "period_end": "2020-08-31",
+    "observed_at": "2020-09-30",
+    "value": 90.04
+   },
+   {
+    "period": "9/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-10-30",
+    "value": 89.93
+   },
+   {
+    "period": "10/20",
+    "period_end": "2020-10-31",
+    "observed_at": "2020-11-30",
+    "value": 89.87
+   },
+   {
+    "period": "11/20",
+    "period_end": "2020-11-30",
+    "observed_at": "2020-12-30",
+    "value": 80.17
+   },
+   {
+    "period": "12/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-01-30",
+    "value": 82.14
+   },
+   {
+    "period": "1/21",
+    "period_end": "2021-01-31",
+    "observed_at": "2021-03-02",
+    "value": 93.73
+   },
+   {
+    "period": "2/21",
+    "period_end": "2021-02-28",
+    "observed_at": "2021-03-30",
+    "value": 95.18
+   },
+   {
+    "period": "3/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-04-30",
+    "value": 97.36
+   },
+   {
+    "period": "4/21",
+    "period_end": "2021-04-30",
+    "observed_at": "2021-05-30",
+    "value": 98.21
+   },
+   {
+    "period": "5/21",
+    "period_end": "2021-05-31",
+    "observed_at": "2021-06-30",
+    "value": 98.95
+   },
+   {
+    "period": "6/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-07-30",
+    "value": 99.82
+   },
+   {
+    "period": "7/21",
+    "period_end": "2021-07-31",
+    "observed_at": "2021-08-30",
+    "value": 102.37
+   },
+   {
+    "period": "8/21",
+    "period_end": "2021-08-31",
+    "observed_at": "2021-09-30",
+    "value": 102.31
+   },
+   {
+    "period": "9/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-10-30",
+    "value": 102.15
+   },
+   {
+    "period": "10/21",
+    "period_end": "2021-10-31",
+    "observed_at": "2021-11-30",
+    "value": 104.71
+   },
+   {
+    "period": "11/21",
+    "period_end": "2021-11-30",
+    "observed_at": "2021-12-30",
+    "value": 107.96
+   },
+   {
+    "period": "12/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-01-30",
+    "value": 106.12
+   },
+   {
+    "period": "1/22",
+    "period_end": "2022-01-31",
+    "observed_at": "2022-03-02",
+    "value": 107.37
+   },
+   {
+    "period": "2/22",
+    "period_end": "2022-02-28",
+    "observed_at": "2022-03-30",
+    "value": 109.89
+   },
+   {
+    "period": "3/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-04-30",
+    "value": 115.17
+   },
+   {
+    "period": "4/22",
+    "period_end": "2022-04-30",
+    "observed_at": "2022-05-30",
+    "value": 114.49
+   },
+   {
+    "period": "5/22",
+    "period_end": "2022-05-31",
+    "observed_at": "2022-06-30",
+    "value": 117.18
+   },
+   {
+    "period": "6/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-07-30",
+    "value": 121.19
+   },
+   {
+    "period": "7/22",
+    "period_end": "2022-07-31",
+    "observed_at": "2022-08-30",
+    "value": 117.96
+   },
+   {
+    "period": "8/22",
+    "period_end": "2022-08-31",
+    "observed_at": "2022-09-30",
+    "value": 111.46
+   },
+   {
+    "period": "9/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-10-30",
+    "value": 108.97
+   },
+   {
+    "period": "10/22",
+    "period_end": "2022-10-31",
+    "observed_at": "2022-11-30",
+    "value": 106.6
+   },
+   {
+    "period": "11/22",
+    "period_end": "2022-11-30",
+    "observed_at": "2022-12-30",
+    "value": 108.98
+   },
+   {
+    "period": "12/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-01-30",
+    "value": 105.95
+   },
+   {
+    "period": "1/23",
+    "period_end": "2023-01-31",
+    "observed_at": "2023-03-02",
+    "value": 115.59
+   },
+   {
+    "period": "2/23",
+    "period_end": "2023-02-28",
+    "observed_at": "2023-03-30",
+    "value": 109.69
+   },
+   {
+    "period": "3/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-04-30",
+    "value": 109.51
+   },
+   {
+    "period": "4/23",
+    "period_end": "2023-04-30",
+    "observed_at": "2023-05-30",
+    "value": 109.98
+   },
+   {
+    "period": "5/23",
+    "period_end": "2023-05-31",
+    "observed_at": "2023-06-30",
+    "value": 106.7
+   },
+   {
+    "period": "6/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-07-30",
+    "value": 106.87
+   },
+   {
+    "period": "7/23",
+    "period_end": "2023-07-31",
+    "observed_at": "2023-08-30",
+    "value": 107.0
+   },
+   {
+    "period": "8/23",
+    "period_end": "2023-08-31",
+    "observed_at": "2023-09-30",
+    "value": 111.12
+   },
+   {
+    "period": "9/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-10-30",
+    "value": 112.46
+   },
+   {
+    "period": "10/23",
+    "period_end": "2023-10-31",
+    "observed_at": "2023-11-30",
+    "value": 110.76
+   },
+   {
+    "period": "11/23",
+    "period_end": "2023-11-30",
+    "observed_at": "2023-12-30",
+    "value": 110.75
+   },
+   {
+    "period": "12/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-01-30",
+    "value": 108.67
+   },
+   {
+    "period": "1/24",
+    "period_end": "2024-01-31",
+    "observed_at": "2024-03-01",
+    "value": 109.12
+   },
+   {
+    "period": "2/24",
+    "period_end": "2024-02-29",
+    "observed_at": "2024-03-30",
+    "value": 112.49
+   },
+   {
+    "period": "3/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-04-30",
+    "value": 112.45
+   },
+   {
+    "period": "4/24",
+    "period_end": "2024-04-30",
+    "observed_at": "2024-05-30",
+    "value": 114.64
+   },
+   {
+    "period": "5/24",
+    "period_end": "2024-05-31",
+    "observed_at": "2024-06-30",
+    "value": 112.66
+   },
+   {
+    "period": "6/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-07-30",
+    "value": 110.11
+   },
+   {
+    "period": "7/24",
+    "period_end": "2024-07-31",
+    "observed_at": "2024-08-30",
+    "value": 111.7
+   },
+   {
+    "period": "8/24",
+    "period_end": "2024-08-31",
+    "observed_at": "2024-09-30",
+    "value": 109.49
+   },
+   {
+    "period": "9/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-10-30",
+    "value": 106.46
+   },
+   {
+    "period": "10/24",
+    "period_end": "2024-10-31",
+    "observed_at": "2024-11-30",
+    "value": 107.17
+   },
+   {
+    "period": "11/24",
+    "period_end": "2024-11-30",
+    "observed_at": "2024-12-30",
+    "value": 107.1
+   },
+   {
+    "period": "12/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-01-30",
+    "value": 107.7
+   },
+   {
+    "period": "1/25",
+    "period_end": "2025-01-31",
+    "observed_at": "2025-03-02",
+    "value": 108.72
+   },
+   {
+    "period": "2/25",
+    "period_end": "2025-02-28",
+    "observed_at": "2025-03-30",
+    "value": 109.4
+   },
+   {
+    "period": "3/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-04-30",
+    "value": 107.87
+   },
+   {
+    "period": "4/25",
+    "period_end": "2025-04-30",
+    "observed_at": "2025-05-30",
+    "value": 106.74
+   },
+   {
+    "period": "5/25",
+    "period_end": "2025-05-31",
+    "observed_at": "2025-06-30",
+    "value": 106.28
+   },
+   {
+    "period": "6/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-07-30",
+    "value": 108.04
+   },
+   {
+    "period": "7/25",
+    "period_end": "2025-07-31",
+    "observed_at": "2025-08-30",
+    "value": 107.52
+   },
+   {
+    "period": "8/25",
+    "period_end": "2025-08-31",
+    "observed_at": "2025-09-30",
+    "value": 107.4
+   },
+   {
+    "period": "9/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-10-30",
+    "value": 108.01
+   },
+   {
+    "period": "10/25",
+    "period_end": "2025-10-31",
+    "observed_at": "2025-11-30",
+    "value": 107.14
+   },
+   {
+    "period": "11/25",
+    "period_end": "2025-11-30",
+    "observed_at": "2025-12-30",
+    "value": 96.65
+   },
+   {
+    "period": "12/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-01-30",
+    "value": 95.6
+   },
+   {
+    "period": "1/26",
+    "period_end": "2026-01-31",
+    "observed_at": "2026-03-02",
+    "value": 93.38
+   },
+   {
+    "period": "2/26",
+    "period_end": "2026-02-28",
+    "observed_at": "2026-03-30",
+    "value": 94.53
+   },
+   {
+    "period": "3/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-30",
+    "value": 106.68
+   },
+   {
+    "period": "4/26",
+    "period_end": "2026-04-30",
+    "observed_at": "2026-05-30",
+    "value": 105.81
+   },
+   {
+    "period": "5/26",
+    "period_end": "2026-05-31",
+    "observed_at": "2026-06-30",
+    "value": 106.69
+   }
+  ],
+  "label": "CPI Giao thông vận tải"
+ },
+ {
+  "id": 28,
+  "type": "Prices",
+  "name": "Consumer Price Index",
+  "name_vn": "Chỉ số giá tiêu dùng so với kỳ gốc 2019",
+  "unit": "Điểm",
+  "frequency": "Hàng tháng",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 30,
+  "next_release": "2023-08-31",
+  "history": [
+   {
+    "period": "7/13",
+    "period_end": "2013-07-31",
+    "observed_at": "2013-08-30",
+    "value": 83.8
+   },
+   {
+    "period": "8/13",
+    "period_end": "2013-08-31",
+    "observed_at": "2013-09-30",
+    "value": 84.5
+   },
+   {
+    "period": "9/13",
+    "period_end": "2013-09-30",
+    "observed_at": "2013-10-30",
+    "value": 85.39
+   },
+   {
+    "period": "10/13",
+    "period_end": "2013-10-31",
+    "observed_at": "2013-11-30",
+    "value": 85.82
+   },
+   {
+    "period": "11/13",
+    "period_end": "2013-11-30",
+    "observed_at": "2013-12-30",
+    "value": 86.11
+   },
+   {
+    "period": "12/13",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-01-30",
+    "value": 86.55
+   },
+   {
+    "period": "1/14",
+    "period_end": "2014-01-31",
+    "observed_at": "2014-03-02",
+    "value": 87.15
+   },
+   {
+    "period": "2/14",
+    "period_end": "2014-02-28",
+    "observed_at": "2014-03-30",
+    "value": 87.62
+   },
+   {
+    "period": "3/14",
+    "period_end": "2014-03-31",
+    "observed_at": "2014-04-30",
+    "value": 87.24
+   },
+   {
+    "period": "4/14",
+    "period_end": "2014-04-30",
+    "observed_at": "2014-05-30",
+    "value": 87.31
+   },
+   {
+    "period": "5/14",
+    "period_end": "2014-05-31",
+    "observed_at": "2014-06-30",
+    "value": 87.48
+   },
+   {
+    "period": "6/14",
+    "period_end": "2014-06-30",
+    "observed_at": "2014-07-30",
+    "value": 87.75
+   },
+   {
+    "period": "7/14",
+    "period_end": "2014-07-31",
+    "observed_at": "2014-08-30",
+    "value": 87.95
+   },
+   {
+    "period": "8/14",
+    "period_end": "2014-08-31",
+    "observed_at": "2014-09-30",
+    "value": 88.14
+   },
+   {
+    "period": "9/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-10-30",
+    "value": 88.49
+   },
+   {
+    "period": "10/14",
+    "period_end": "2014-10-31",
+    "observed_at": "2014-11-30",
+    "value": 88.59
+   },
+   {
+    "period": "11/14",
+    "period_end": "2014-11-30",
+    "observed_at": "2014-12-30",
+    "value": 88.35
+   },
+   {
+    "period": "12/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-01-30",
+    "value": 88.14
+   },
+   {
+    "period": "1/15",
+    "period_end": "2015-01-31",
+    "observed_at": "2015-03-02",
+    "value": 87.96
+   },
+   {
+    "period": "2/15",
+    "period_end": "2015-02-28",
+    "observed_at": "2015-03-30",
+    "value": 87.92
+   },
+   {
+    "period": "3/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-04-30",
+    "value": 88.05
+   },
+   {
+    "period": "4/15",
+    "period_end": "2015-04-30",
+    "observed_at": "2015-05-30",
+    "value": 88.17
+   },
+   {
+    "period": "5/15",
+    "period_end": "2015-05-31",
+    "observed_at": "2015-06-30",
+    "value": 88.31
+   },
+   {
+    "period": "6/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-07-30",
+    "value": 88.62
+   },
+   {
+    "period": "7/15",
+    "period_end": "2015-07-31",
+    "observed_at": "2015-08-30",
+    "value": 88.74
+   },
+   {
+    "period": "8/15",
+    "period_end": "2015-08-31",
+    "observed_at": "2015-09-30",
+    "value": 88.67
+   },
+   {
+    "period": "9/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-10-30",
+    "value": 88.49
+   },
+   {
+    "period": "10/15",
+    "period_end": "2015-10-31",
+    "observed_at": "2015-11-30",
+    "value": 88.59
+   },
+   {
+    "period": "11/15",
+    "period_end": "2015-11-30",
+    "observed_at": "2015-12-30",
+    "value": 88.65
+   },
+   {
+    "period": "12/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-01-30",
+    "value": 88.66
+   },
+   {
+    "period": "1/16",
+    "period_end": "2016-01-31",
+    "observed_at": "2016-03-01",
+    "value": 88.66
+   },
+   {
+    "period": "2/16",
+    "period_end": "2016-02-29",
+    "observed_at": "2016-03-30",
+    "value": 89.03
+   },
+   {
+    "period": "3/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-04-30",
+    "value": 89.54
+   },
+   {
+    "period": "4/16",
+    "period_end": "2016-04-30",
+    "observed_at": "2016-05-30",
+    "value": 89.84
+   },
+   {
+    "period": "5/16",
+    "period_end": "2016-05-31",
+    "observed_at": "2016-06-30",
+    "value": 90.33
+   },
+   {
+    "period": "6/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-07-30",
+    "value": 90.74
+   },
+   {
+    "period": "7/16",
+    "period_end": "2016-07-31",
+    "observed_at": "2016-08-30",
+    "value": 90.86
+   },
+   {
+    "period": "8/16",
+    "period_end": "2016-08-31",
+    "observed_at": "2016-09-30",
+    "value": 90.96
+   },
+   {
+    "period": "9/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-10-30",
+    "value": 91.44
+   },
+   {
+    "period": "10/16",
+    "period_end": "2016-10-31",
+    "observed_at": "2016-11-30",
+    "value": 92.2
+   },
+   {
+    "period": "11/16",
+    "period_end": "2016-11-30",
+    "observed_at": "2016-12-30",
+    "value": 92.65
+   },
+   {
+    "period": "12/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-01-30",
+    "value": 92.86
+   },
+   {
+    "period": "1/17",
+    "period_end": "2017-01-31",
+    "observed_at": "2017-03-02",
+    "value": 93.28
+   },
+   {
+    "period": "2/17",
+    "period_end": "2017-02-28",
+    "observed_at": "2017-03-30",
+    "value": 93.5
+   },
+   {
+    "period": "3/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-04-30",
+    "value": 93.7
+   },
+   {
+    "period": "4/17",
+    "period_end": "2017-04-30",
+    "observed_at": "2017-05-30",
+    "value": 93.7
+   },
+   {
+    "period": "5/17",
+    "period_end": "2017-05-31",
+    "observed_at": "2017-06-30",
+    "value": 93.2
+   },
+   {
+    "period": "6/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-07-30",
+    "value": 93.04
+   },
+   {
+    "period": "7/17",
+    "period_end": "2017-07-31",
+    "observed_at": "2017-08-30",
+    "value": 93.15
+   },
+   {
+    "period": "8/17",
+    "period_end": "2017-08-31",
+    "observed_at": "2017-09-30",
+    "value": 94.0
+   },
+   {
+    "period": "9/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-10-30",
+    "value": 94.56
+   },
+   {
+    "period": "10/17",
+    "period_end": "2017-10-31",
+    "observed_at": "2017-11-30",
+    "value": 94.95
+   },
+   {
+    "period": "11/17",
+    "period_end": "2017-11-30",
+    "observed_at": "2017-12-30",
+    "value": 95.07
+   },
+   {
+    "period": "12/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-01-30",
+    "value": 95.27
+   },
+   {
+    "period": "1/18",
+    "period_end": "2018-01-31",
+    "observed_at": "2018-03-02",
+    "value": 95.75
+   },
+   {
+    "period": "2/18",
+    "period_end": "2018-02-28",
+    "observed_at": "2018-03-30",
+    "value": 96.45
+   },
+   {
+    "period": "3/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-04-30",
+    "value": 96.2
+   },
+   {
+    "period": "4/18",
+    "period_end": "2018-04-30",
+    "observed_at": "2018-05-30",
+    "value": 96.28
+   },
+   {
+    "period": "5/18",
+    "period_end": "2018-05-31",
+    "observed_at": "2018-06-30",
+    "value": 96.8
+   },
+   {
+    "period": "6/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-07-30",
+    "value": 97.39
+   },
+   {
+    "period": "7/18",
+    "period_end": "2018-07-31",
+    "observed_at": "2018-08-30",
+    "value": 97.3
+   },
+   {
+    "period": "8/18",
+    "period_end": "2018-08-31",
+    "observed_at": "2018-09-30",
+    "value": 97.74
+   },
+   {
+    "period": "9/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-10-30",
+    "value": 98.32
+   },
+   {
+    "period": "10/18",
+    "period_end": "2018-10-31",
+    "observed_at": "2018-11-30",
+    "value": 98.65
+   },
+   {
+    "period": "11/18",
+    "period_end": "2018-11-30",
+    "observed_at": "2018-12-30",
+    "value": 98.36
+   },
+   {
+    "period": "12/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-01-30",
+    "value": 98.12
+   },
+   {
+    "period": "1/19",
+    "period_end": "2019-01-31",
+    "observed_at": "2019-03-02",
+    "value": 98.21
+   },
+   {
+    "period": "2/19",
+    "period_end": "2019-02-28",
+    "observed_at": "2019-03-30",
+    "value": 99.0
+   },
+   {
+    "period": "3/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-04-30",
+    "value": 98.79
+   },
+   {
+    "period": "4/19",
+    "period_end": "2019-04-30",
+    "observed_at": "2019-05-30",
+    "value": 99.1
+   },
+   {
+    "period": "5/19",
+    "period_end": "2019-05-31",
+    "observed_at": "2019-06-30",
+    "value": 99.59
+   },
+   {
+    "period": "6/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-07-30",
+    "value": 99.5
+   },
+   {
+    "period": "7/19",
+    "period_end": "2019-07-31",
+    "observed_at": "2019-08-30",
+    "value": 99.67
+   },
+   {
+    "period": "8/19",
+    "period_end": "2019-08-31",
+    "observed_at": "2019-09-30",
+    "value": 99.95
+   },
+   {
+    "period": "9/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-10-30",
+    "value": 100.27
+   },
+   {
+    "period": "10/19",
+    "period_end": "2019-10-31",
+    "observed_at": "2019-11-30",
+    "value": 100.85
+   },
+   {
+    "period": "11/19",
+    "period_end": "2019-11-30",
+    "observed_at": "2019-12-30",
+    "value": 101.82
+   },
+   {
+    "period": "12/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-01-30",
+    "value": 103.25
+   },
+   {
+    "period": "1/20",
+    "period_end": "2020-01-31",
+    "observed_at": "2020-03-01",
+    "value": 104.52
+   },
+   {
+    "period": "2/20",
+    "period_end": "2020-02-29",
+    "observed_at": "2020-03-30",
+    "value": 104.35
+   },
+   {
+    "period": "3/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-04-30",
+    "value": 103.6
+   },
+   {
+    "period": "4/20",
+    "period_end": "2020-04-30",
+    "observed_at": "2020-05-30",
+    "value": 102.0
+   },
+   {
+    "period": "5/20",
+    "period_end": "2020-05-31",
+    "observed_at": "2020-06-30",
+    "value": 101.97
+   },
+   {
+    "period": "6/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-07-30",
+    "value": 102.64
+   },
+   {
+    "period": "7/20",
+    "period_end": "2020-07-31",
+    "observed_at": "2020-08-30",
+    "value": 103.06
+   },
+   {
+    "period": "8/20",
+    "period_end": "2020-08-31",
+    "observed_at": "2020-09-30",
+    "value": 102.89
+   },
+   {
+    "period": "9/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-10-30",
+    "value": 103.02
+   },
+   {
+    "period": "10/20",
+    "period_end": "2020-10-31",
+    "observed_at": "2020-11-30",
+    "value": 103.11
+   },
+   {
+    "period": "11/20",
+    "period_end": "2020-11-30",
+    "observed_at": "2020-12-30",
+    "value": 103.33
+   },
+   {
+    "period": "12/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-01-30",
+    "value": 103.45
+   },
+   {
+    "period": "1/21",
+    "period_end": "2021-01-31",
+    "observed_at": "2021-03-02",
+    "value": 103.27
+   },
+   {
+    "period": "2/21",
+    "period_end": "2021-02-28",
+    "observed_at": "2021-03-30",
+    "value": 104.84
+   },
+   {
+    "period": "3/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-04-30",
+    "value": 104.56
+   },
+   {
+    "period": "4/21",
+    "period_end": "2021-04-30",
+    "observed_at": "2021-05-30",
+    "value": 104.52
+   },
+   {
+    "period": "5/21",
+    "period_end": "2021-05-31",
+    "observed_at": "2021-06-30",
+    "value": 104.68
+   },
+   {
+    "period": "6/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-07-30",
+    "value": 104.86
+   },
+   {
+    "period": "7/21",
+    "period_end": "2021-07-31",
+    "observed_at": "2021-08-30",
+    "value": 105.53
+   },
+   {
+    "period": "8/21",
+    "period_end": "2021-08-31",
+    "observed_at": "2021-09-30",
+    "value": 105.79
+   },
+   {
+    "period": "9/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-10-30",
+    "value": 105.14
+   },
+   {
+    "period": "10/21",
+    "period_end": "2021-10-31",
+    "observed_at": "2021-11-30",
+    "value": 104.93
+   },
+   {
+    "period": "11/21",
+    "period_end": "2021-11-30",
+    "observed_at": "2021-12-30",
+    "value": 105.27
+   },
+   {
+    "period": "12/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-01-30",
+    "value": 105.08
+   },
+   {
+    "period": "1/22",
+    "period_end": "2022-01-31",
+    "observed_at": "2022-03-02",
+    "value": 105.28
+   },
+   {
+    "period": "2/22",
+    "period_end": "2022-02-28",
+    "observed_at": "2022-03-30",
+    "value": 106.33
+   },
+   {
+    "period": "3/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-04-30",
+    "value": 107.08
+   },
+   {
+    "period": "4/22",
+    "period_end": "2022-04-30",
+    "observed_at": "2022-05-30",
+    "value": 107.28
+   },
+   {
+    "period": "5/22",
+    "period_end": "2022-05-31",
+    "observed_at": "2022-06-30",
+    "value": 107.68
+   },
+   {
+    "period": "6/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-07-30",
+    "value": 108.42
+   },
+   {
+    "period": "7/22",
+    "period_end": "2022-07-31",
+    "observed_at": "2022-08-30",
+    "value": 108.85
+   },
+   {
+    "period": "8/22",
+    "period_end": "2022-08-31",
+    "observed_at": "2022-09-30",
+    "value": 108.85
+   },
+   {
+    "period": "9/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-10-30",
+    "value": 109.29
+   },
+   {
+    "period": "10/22",
+    "period_end": "2022-10-31",
+    "observed_at": "2022-11-30",
+    "value": 109.44
+   },
+   {
+    "period": "11/22",
+    "period_end": "2022-11-30",
+    "observed_at": "2022-12-30",
+    "value": 109.87
+   },
+   {
+    "period": "12/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-01-30",
+    "value": 109.95
+   },
+   {
+    "period": "1/23",
+    "period_end": "2023-01-31",
+    "observed_at": "2023-03-02",
+    "value": 110.42
+   },
+   {
+    "period": "2/23",
+    "period_end": "2023-02-28",
+    "observed_at": "2023-03-30",
+    "value": 110.92
+   },
+   {
+    "period": "3/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-04-30",
+    "value": 110.67
+   },
+   {
+    "period": "4/23",
+    "period_end": "2023-04-30",
+    "observed_at": "2023-05-30",
+    "value": 110.29
+   },
+   {
+    "period": "5/23",
+    "period_end": "2023-05-31",
+    "observed_at": "2023-06-30",
+    "value": 110.3
+   },
+   {
+    "period": "6/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-07-30",
+    "value": 110.59
+   },
+   {
+    "period": "7/23",
+    "period_end": "2023-07-31",
+    "observed_at": "2023-08-30",
+    "value": 111.09
+   },
+   {
+    "period": "8/23",
+    "period_end": "2023-08-31",
+    "observed_at": "2023-09-30",
+    "value": 112.07
+   },
+   {
+    "period": "9/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-10-30",
+    "value": 113.28
+   },
+   {
+    "period": "10/23",
+    "period_end": "2023-10-31",
+    "observed_at": "2023-11-30",
+    "value": 113.38
+   },
+   {
+    "period": "11/23",
+    "period_end": "2023-11-30",
+    "observed_at": "2023-12-30",
+    "value": 113.66
+   },
+   {
+    "period": "12/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-01-30",
+    "value": 113.79
+   },
+   {
+    "period": "1/24",
+    "period_end": "2024-01-31",
+    "observed_at": "2024-03-01",
+    "value": 114.14
+   },
+   {
+    "period": "2/24",
+    "period_end": "2024-02-29",
+    "observed_at": "2024-03-30",
+    "value": 115.33
+   },
+   {
+    "period": "3/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-04-30",
+    "value": 115.06
+   },
+   {
+    "period": "4/24",
+    "period_end": "2024-04-30",
+    "observed_at": "2024-05-30",
+    "value": 115.14
+   },
+   {
+    "period": "5/24",
+    "period_end": "2024-05-31",
+    "observed_at": "2024-06-30",
+    "value": 115.2
+   },
+   {
+    "period": "6/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-07-30",
+    "value": 115.39
+   },
+   {
+    "period": "7/24",
+    "period_end": "2024-07-31",
+    "observed_at": "2024-08-30",
+    "value": 115.94
+   },
+   {
+    "period": "8/24",
+    "period_end": "2024-08-31",
+    "observed_at": "2024-09-30",
+    "value": 115.94
+   },
+   {
+    "period": "9/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-10-30",
+    "value": 116.27
+   },
+   {
+    "period": "10/24",
+    "period_end": "2024-10-31",
+    "observed_at": "2024-11-30",
+    "value": 116.65
+   },
+   {
+    "period": "11/24",
+    "period_end": "2024-11-30",
+    "observed_at": "2024-12-30",
+    "value": 116.8
+   },
+   {
+    "period": "12/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-01-30",
+    "value": 117.14
+   },
+   {
+    "period": "1/25",
+    "period_end": "2025-01-31",
+    "observed_at": "2025-03-02",
+    "value": 118.29
+   },
+   {
+    "period": "2/25",
+    "period_end": "2025-02-28",
+    "observed_at": "2025-03-30",
+    "value": 118.69
+   },
+   {
+    "period": "3/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-04-30",
+    "value": 118.66
+   },
+   {
+    "period": "4/25",
+    "period_end": "2025-04-30",
+    "observed_at": "2025-05-30",
+    "value": 118.74
+   },
+   {
+    "period": "5/25",
+    "period_end": "2025-05-31",
+    "observed_at": "2025-06-30",
+    "value": 118.93
+   },
+   {
+    "period": "6/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-07-30",
+    "value": 119.5
+   },
+   {
+    "period": "7/25",
+    "period_end": "2025-07-31",
+    "observed_at": "2025-08-30",
+    "value": 119.63
+   },
+   {
+    "period": "8/25",
+    "period_end": "2025-08-31",
+    "observed_at": "2025-09-30",
+    "value": 119.69
+   },
+   {
+    "period": "9/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-10-30",
+    "value": 116.27
+   },
+   {
+    "period": "10/25",
+    "period_end": "2025-10-31",
+    "observed_at": "2025-11-30",
+    "value": 120.44
+   },
+   {
+    "period": "11/25",
+    "period_end": "2025-11-30",
+    "observed_at": "2025-12-30",
+    "value": 116.65
+   },
+   {
+    "period": "12/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-01-30",
+    "value": 104.28
+   },
+   {
+    "period": "1/26",
+    "period_end": "2026-01-31",
+    "observed_at": "2026-03-02",
+    "value": 104.33
+   },
+   {
+    "period": "2/26",
+    "period_end": "2026-02-28",
+    "observed_at": "2026-03-30",
+    "value": 105.52
+   },
+   {
+    "period": "3/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-30",
+    "value": 106.83
+   },
+   {
+    "period": "4/26",
+    "period_end": "2026-04-30",
+    "observed_at": "2026-05-30",
+    "value": 107.73
+   },
+   {
+    "period": "5/26",
+    "period_end": "2026-05-31",
+    "observed_at": "2026-06-30",
+    "value": 108.04
+   }
+  ],
+  "label": "Chỉ số giá tiêu dùng so với kỳ gốc 2019"
+ },
+ {
+  "id": 29,
+  "type": "Prices",
+  "name": "Core Inflation Rate",
+  "name_vn": "Tỷ lệ lạm phát cơ bản\r\n (YoY)",
+  "unit": "%",
+  "frequency": "Hàng tháng",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 30,
+  "next_release": "2023-08-31",
+  "history": [
+   {
+    "period": "8/18",
+    "period_end": "2018-08-31",
+    "observed_at": "2018-09-30",
+    "value": 1.54
+   },
+   {
+    "period": "9/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-10-30",
+    "value": 1.61
+   },
+   {
+    "period": "10/18",
+    "period_end": "2018-10-31",
+    "observed_at": "2018-11-30",
+    "value": 1.67
+   },
+   {
+    "period": "11/18",
+    "period_end": "2018-11-30",
+    "observed_at": "2018-12-30",
+    "value": 1.72
+   },
+   {
+    "period": "12/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-01-30",
+    "value": 1.7
+   },
+   {
+    "period": "1/19",
+    "period_end": "2019-01-31",
+    "observed_at": "2019-03-02",
+    "value": 1.83
+   },
+   {
+    "period": "2/19",
+    "period_end": "2019-02-28",
+    "observed_at": "2019-03-30",
+    "value": 1.82
+   },
+   {
+    "period": "3/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-04-30",
+    "value": 1.84
+   },
+   {
+    "period": "4/19",
+    "period_end": "2019-04-30",
+    "observed_at": "2019-05-30",
+    "value": 1.88
+   },
+   {
+    "period": "5/19",
+    "period_end": "2019-05-31",
+    "observed_at": "2019-06-30",
+    "value": 1.9
+   },
+   {
+    "period": "6/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-07-30",
+    "value": 1.96
+   },
+   {
+    "period": "7/19",
+    "period_end": "2019-07-31",
+    "observed_at": "2019-08-30",
+    "value": 2.04
+   },
+   {
+    "period": "8/19",
+    "period_end": "2019-08-31",
+    "observed_at": "2019-09-30",
+    "value": 1.95
+   },
+   {
+    "period": "9/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-10-30",
+    "value": 1.96
+   },
+   {
+    "period": "10/19",
+    "period_end": "2019-10-31",
+    "observed_at": "2019-11-30",
+    "value": 1.99
+   },
+   {
+    "period": "11/19",
+    "period_end": "2019-11-30",
+    "observed_at": "2019-12-30",
+    "value": 2.18
+   },
+   {
+    "period": "12/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-01-30",
+    "value": 2.78
+   },
+   {
+    "period": "1/20",
+    "period_end": "2020-01-31",
+    "observed_at": "2020-03-01",
+    "value": 3.25
+   },
+   {
+    "period": "2/20",
+    "period_end": "2020-02-29",
+    "observed_at": "2020-03-30",
+    "value": 2.94
+   },
+   {
+    "period": "3/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-04-30",
+    "value": 2.95
+   },
+   {
+    "period": "4/20",
+    "period_end": "2020-04-30",
+    "observed_at": "2020-05-30",
+    "value": 2.71
+   },
+   {
+    "period": "5/20",
+    "period_end": "2020-05-31",
+    "observed_at": "2020-06-30",
+    "value": 2.54
+   },
+   {
+    "period": "6/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-07-30",
+    "value": 2.45
+   },
+   {
+    "period": "7/20",
+    "period_end": "2020-07-31",
+    "observed_at": "2020-08-30",
+    "value": 2.31
+   },
+   {
+    "period": "8/20",
+    "period_end": "2020-08-31",
+    "observed_at": "2020-09-30",
+    "value": 2.16
+   },
+   {
+    "period": "9/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-10-30",
+    "value": 1.97
+   },
+   {
+    "period": "10/20",
+    "period_end": "2020-10-31",
+    "observed_at": "2020-11-30",
+    "value": 1.88
+   },
+   {
+    "period": "11/20",
+    "period_end": "2020-11-30",
+    "observed_at": "2020-12-30",
+    "value": 1.61
+   },
+   {
+    "period": "12/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-01-30",
+    "value": 0.99
+   },
+   {
+    "period": "1/21",
+    "period_end": "2021-01-31",
+    "observed_at": "2021-03-02",
+    "value": 0.49
+   },
+   {
+    "period": "2/21",
+    "period_end": "2021-02-28",
+    "observed_at": "2021-03-30",
+    "value": 0.79
+   },
+   {
+    "period": "3/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-04-30",
+    "value": 0.73
+   },
+   {
+    "period": "4/21",
+    "period_end": "2021-04-30",
+    "observed_at": "2021-05-30",
+    "value": 0.95
+   },
+   {
+    "period": "5/21",
+    "period_end": "2021-05-31",
+    "observed_at": "2021-06-30",
+    "value": 1.13
+   },
+   {
+    "period": "6/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-07-30",
+    "value": 1.14
+   },
+   {
+    "period": "7/21",
+    "period_end": "2021-07-31",
+    "observed_at": "2021-08-30",
+    "value": 0.99
+   },
+   {
+    "period": "8/21",
+    "period_end": "2021-08-31",
+    "observed_at": "2021-09-30",
+    "value": 0.98
+   },
+   {
+    "period": "9/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-10-30",
+    "value": 0.74
+   },
+   {
+    "period": "10/21",
+    "period_end": "2021-10-31",
+    "observed_at": "2021-11-30",
+    "value": 0.5
+   },
+   {
+    "period": "11/21",
+    "period_end": "2021-11-30",
+    "observed_at": "2021-12-30",
+    "value": 0.58
+   },
+   {
+    "period": "12/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-01-30",
+    "value": 0.67
+   },
+   {
+    "period": "1/22",
+    "period_end": "2022-01-31",
+    "observed_at": "2022-03-02",
+    "value": 0.66
+   },
+   {
+    "period": "2/22",
+    "period_end": "2022-02-28",
+    "observed_at": "2022-03-30",
+    "value": 0.68
+   },
+   {
+    "period": "3/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-04-30",
+    "value": 1.09
+   },
+   {
+    "period": "4/22",
+    "period_end": "2022-04-30",
+    "observed_at": "2022-05-30",
+    "value": 1.47
+   },
+   {
+    "period": "5/22",
+    "period_end": "2022-05-31",
+    "observed_at": "2022-06-30",
+    "value": 1.61
+   },
+   {
+    "period": "6/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-07-30",
+    "value": 1.98
+   },
+   {
+    "period": "7/22",
+    "period_end": "2022-07-31",
+    "observed_at": "2022-08-30",
+    "value": 2.63
+   },
+   {
+    "period": "8/22",
+    "period_end": "2022-08-31",
+    "observed_at": "2022-09-30",
+    "value": 1.64
+   },
+   {
+    "period": "9/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-10-30",
+    "value": 3.82
+   },
+   {
+    "period": "10/22",
+    "period_end": "2022-10-31",
+    "observed_at": "2022-11-30",
+    "value": 4.47
+   },
+   {
+    "period": "11/22",
+    "period_end": "2022-11-30",
+    "observed_at": "2022-12-30",
+    "value": 4.81
+   },
+   {
+    "period": "12/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-01-30",
+    "value": 4.99
+   },
+   {
+    "period": "1/23",
+    "period_end": "2023-01-31",
+    "observed_at": "2023-03-02",
+    "value": 5.21
+   },
+   {
+    "period": "2/23",
+    "period_end": "2023-02-28",
+    "observed_at": "2023-03-30",
+    "value": 4.96
+   },
+   {
+    "period": "3/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-04-30",
+    "value": 4.88
+   },
+   {
+    "period": "4/23",
+    "period_end": "2023-04-30",
+    "observed_at": "2023-05-30",
+    "value": 4.56
+   },
+   {
+    "period": "5/23",
+    "period_end": "2023-05-31",
+    "observed_at": "2023-06-30",
+    "value": 4.54
+   },
+   {
+    "period": "6/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-07-30",
+    "value": 4.33
+   },
+   {
+    "period": "7/23",
+    "period_end": "2023-07-31",
+    "observed_at": "2023-08-30",
+    "value": 4.11
+   },
+   {
+    "period": "8/23",
+    "period_end": "2023-08-31",
+    "observed_at": "2023-09-30",
+    "value": 4.02
+   },
+   {
+    "period": "9/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-10-30",
+    "value": 3.8
+   },
+   {
+    "period": "10/23",
+    "period_end": "2023-10-31",
+    "observed_at": "2023-11-30",
+    "value": 3.43
+   },
+   {
+    "period": "11/23",
+    "period_end": "2023-11-30",
+    "observed_at": "2023-12-30",
+    "value": 3.15
+   },
+   {
+    "period": "12/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-01-30",
+    "value": 2.98
+   },
+   {
+    "period": "1/24",
+    "period_end": "2024-01-31",
+    "observed_at": "2024-03-01",
+    "value": 2.72
+   },
+   {
+    "period": "2/24",
+    "period_end": "2024-02-29",
+    "observed_at": "2024-03-30",
+    "value": 2.96
+   },
+   {
+    "period": "3/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-04-30",
+    "value": 2.76
+   },
+   {
+    "period": "4/24",
+    "period_end": "2024-04-30",
+    "observed_at": "2024-05-30",
+    "value": 2.79
+   },
+   {
+    "period": "5/24",
+    "period_end": "2024-05-31",
+    "observed_at": "2024-06-30",
+    "value": 2.68
+   },
+   {
+    "period": "6/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-07-30",
+    "value": 2.61
+   },
+   {
+    "period": "7/24",
+    "period_end": "2024-07-31",
+    "observed_at": "2024-08-30",
+    "value": 2.61
+   },
+   {
+    "period": "8/24",
+    "period_end": "2024-08-31",
+    "observed_at": "2024-09-30",
+    "value": 2.53
+   },
+   {
+    "period": "9/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-10-30",
+    "value": 2.54
+   },
+   {
+    "period": "10/24",
+    "period_end": "2024-10-31",
+    "observed_at": "2024-11-30",
+    "value": 2.68
+   },
+   {
+    "period": "11/24",
+    "period_end": "2024-11-30",
+    "observed_at": "2024-12-30",
+    "value": 2.77
+   },
+   {
+    "period": "12/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-01-30",
+    "value": 2.85
+   },
+   {
+    "period": "1/25",
+    "period_end": "2025-01-31",
+    "observed_at": "2025-03-02",
+    "value": 3.07
+   },
+   {
+    "period": "2/25",
+    "period_end": "2025-02-28",
+    "observed_at": "2025-03-30",
+    "value": 2.87
+   },
+   {
+    "period": "3/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-04-30",
+    "value": 3.1
+   },
+   {
+    "period": "4/25",
+    "period_end": "2025-04-30",
+    "observed_at": "2025-05-30",
+    "value": 3.14
+   },
+   {
+    "period": "5/25",
+    "period_end": "2025-05-31",
+    "observed_at": "2025-06-30",
+    "value": 3.33
+   },
+   {
+    "period": "6/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-07-30",
+    "value": 3.46
+   },
+   {
+    "period": "7/25",
+    "period_end": "2025-07-31",
+    "observed_at": "2025-08-30",
+    "value": 3.3
+   },
+   {
+    "period": "8/25",
+    "period_end": "2025-08-31",
+    "observed_at": "2025-09-30",
+    "value": 3.25
+   },
+   {
+    "period": "9/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-10-30",
+    "value": 2.54
+   },
+   {
+    "period": "10/25",
+    "period_end": "2025-10-31",
+    "observed_at": "2025-11-30",
+    "value": 3.3
+   },
+   {
+    "period": "11/25",
+    "period_end": "2025-11-30",
+    "observed_at": "2025-12-30",
+    "value": 2.68
+   },
+   {
+    "period": "12/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-01-30",
+    "value": 3.27
+   },
+   {
+    "period": "1/26",
+    "period_end": "2026-01-31",
+    "observed_at": "2026-03-02",
+    "value": 3.19
+   },
+   {
+    "period": "2/26",
+    "period_end": "2026-02-28",
+    "observed_at": "2026-03-30",
+    "value": 3.74
+   },
+   {
+    "period": "3/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-30",
+    "value": 3.96
+   },
+   {
+    "period": "4/26",
+    "period_end": "2026-04-30",
+    "observed_at": "2026-05-30",
+    "value": 4.66
+   },
+   {
+    "period": "5/26",
+    "period_end": "2026-05-31",
+    "observed_at": "2026-06-30",
+    "value": 4.67
+   }
+  ],
+  "label": "Tỷ lệ lạm phát cơ bản\r\n (YoY)"
+ },
+ {
+  "id": 31,
+  "type": "Prices",
+  "name": "Food Inflation",
+  "name_vn": "Lạm phát lương thực",
+  "unit": "%",
+  "frequency": "Hàng tháng",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 30,
+  "next_release": "2023-08-31",
+  "history": [
+   {
+    "period": "8/13",
+    "period_end": "2013-08-31",
+    "observed_at": "2013-09-30",
+    "value": -0.95
+   },
+   {
+    "period": "9/13",
+    "period_end": "2013-09-30",
+    "observed_at": "2013-10-30",
+    "value": -0.89
+   },
+   {
+    "period": "10/13",
+    "period_end": "2013-10-31",
+    "observed_at": "2013-11-30",
+    "value": -0.36
+   },
+   {
+    "period": "11/13",
+    "period_end": "2013-11-30",
+    "observed_at": "2013-12-30",
+    "value": 0.88
+   },
+   {
+    "period": "12/13",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-01-30",
+    "value": 1.98
+   },
+   {
+    "period": "1/14",
+    "period_end": "2014-01-31",
+    "observed_at": "2014-03-02",
+    "value": 3.33
+   },
+   {
+    "period": "2/14",
+    "period_end": "2014-02-28",
+    "observed_at": "2014-03-30",
+    "value": 3.5
+   },
+   {
+    "period": "3/14",
+    "period_end": "2014-03-31",
+    "observed_at": "2014-04-30",
+    "value": 3.97
+   },
+   {
+    "period": "4/14",
+    "period_end": "2014-04-30",
+    "observed_at": "2014-05-30",
+    "value": 4.6
+   },
+   {
+    "period": "5/14",
+    "period_end": "2014-05-31",
+    "observed_at": "2014-06-30",
+    "value": 4.79
+   },
+   {
+    "period": "6/14",
+    "period_end": "2014-06-30",
+    "observed_at": "2014-07-30",
+    "value": 4.99
+   },
+   {
+    "period": "7/14",
+    "period_end": "2014-07-31",
+    "observed_at": "2014-08-30",
+    "value": 4.65
+   },
+   {
+    "period": "8/14",
+    "period_end": "2014-08-31",
+    "observed_at": "2014-09-30",
+    "value": 4.39
+   },
+   {
+    "period": "9/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-10-30",
+    "value": 4.32
+   },
+   {
+    "period": "10/14",
+    "period_end": "2014-10-31",
+    "observed_at": "2014-11-30",
+    "value": 3.59
+   },
+   {
+    "period": "11/14",
+    "period_end": "2014-11-30",
+    "observed_at": "2014-12-30",
+    "value": 2.39
+   },
+   {
+    "period": "12/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-01-30",
+    "value": 1.3
+   },
+   {
+    "period": "1/15",
+    "period_end": "2015-01-31",
+    "observed_at": "2015-03-02",
+    "value": 0.0
+   },
+   {
+    "period": "2/15",
+    "period_end": "2015-02-28",
+    "observed_at": "2015-03-30",
+    "value": -0.55
+   },
+   {
+    "period": "3/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-04-30",
+    "value": -0.65
+   },
+   {
+    "period": "4/15",
+    "period_end": "2015-04-30",
+    "observed_at": "2015-05-30",
+    "value": -0.7
+   },
+   {
+    "period": "5/15",
+    "period_end": "2015-05-31",
+    "observed_at": "2015-06-30",
+    "value": -0.65
+   },
+   {
+    "period": "6/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-07-30",
+    "value": -0.84
+   },
+   {
+    "period": "7/15",
+    "period_end": "2015-07-31",
+    "observed_at": "2015-08-30",
+    "value": -0.59
+   },
+   {
+    "period": "8/15",
+    "period_end": "2015-08-31",
+    "observed_at": "2015-09-30",
+    "value": -1.2
+   },
+   {
+    "period": "9/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-10-30",
+    "value": -1.78
+   },
+   {
+    "period": "10/15",
+    "period_end": "2015-10-31",
+    "observed_at": "2015-11-30",
+    "value": -2.14
+   },
+   {
+    "period": "11/15",
+    "period_end": "2015-11-30",
+    "observed_at": "2015-12-30",
+    "value": -1.95
+   },
+   {
+    "period": "12/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-01-30",
+    "value": -1.65
+   },
+   {
+    "period": "1/16",
+    "period_end": "2016-01-31",
+    "observed_at": "2016-03-01",
+    "value": -1.21
+   },
+   {
+    "period": "2/16",
+    "period_end": "2016-02-29",
+    "observed_at": "2016-03-30",
+    "value": -0.69
+   },
+   {
+    "period": "3/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-04-30",
+    "value": -0.22
+   },
+   {
+    "period": "4/16",
+    "period_end": "2016-04-30",
+    "observed_at": "2016-05-30",
+    "value": 1.21
+   },
+   {
+    "period": "5/16",
+    "period_end": "2016-05-31",
+    "observed_at": "2016-06-30",
+    "value": 2.36
+   },
+   {
+    "period": "6/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-07-30",
+    "value": 2.75
+   },
+   {
+    "period": "7/16",
+    "period_end": "2016-07-31",
+    "observed_at": "2016-08-30",
+    "value": 2.48
+   },
+   {
+    "period": "8/16",
+    "period_end": "2016-08-31",
+    "observed_at": "2016-09-30",
+    "value": 2.29
+   },
+   {
+    "period": "9/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-10-30",
+    "value": 2.7
+   },
+   {
+    "period": "10/16",
+    "period_end": "2016-10-31",
+    "observed_at": "2016-11-30",
+    "value": 2.9
+   },
+   {
+    "period": "11/16",
+    "period_end": "2016-11-30",
+    "observed_at": "2016-12-30",
+    "value": 2.8
+   },
+   {
+    "period": "12/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-01-30",
+    "value": 2.57
+   },
+   {
+    "period": "1/17",
+    "period_end": "2017-01-31",
+    "observed_at": "2017-03-02",
+    "value": 2.57
+   },
+   {
+    "period": "2/17",
+    "period_end": "2017-02-28",
+    "observed_at": "2017-03-30",
+    "value": 2.15
+   },
+   {
+    "period": "3/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-04-30",
+    "value": 2.08
+   },
+   {
+    "period": "4/17",
+    "period_end": "2017-04-30",
+    "observed_at": "2017-05-30",
+    "value": 1.11
+   },
+   {
+    "period": "5/17",
+    "period_end": "2017-05-31",
+    "observed_at": "2017-06-30",
+    "value": 0.37
+   },
+   {
+    "period": "6/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-07-30",
+    "value": 0.09
+   },
+   {
+    "period": "7/17",
+    "period_end": "2017-07-31",
+    "observed_at": "2017-08-30",
+    "value": 0.66
+   },
+   {
+    "period": "8/17",
+    "period_end": "2017-08-31",
+    "observed_at": "2017-09-30",
+    "value": 1.33
+   },
+   {
+    "period": "9/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-10-30",
+    "value": 1.31
+   },
+   {
+    "period": "10/17",
+    "period_end": "2017-10-31",
+    "observed_at": "2017-11-30",
+    "value": 1.86
+   },
+   {
+    "period": "11/17",
+    "period_end": "2017-11-30",
+    "observed_at": "2017-12-30",
+    "value": 2.78
+   },
+   {
+    "period": "12/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-01-30",
+    "value": 3.12
+   },
+   {
+    "period": "1/18",
+    "period_end": "2018-01-31",
+    "observed_at": "2018-03-02",
+    "value": 3.11
+   },
+   {
+    "period": "2/18",
+    "period_end": "2018-02-28",
+    "observed_at": "2018-03-30",
+    "value": 4.33
+   },
+   {
+    "period": "3/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-04-30",
+    "value": 4.54
+   },
+   {
+    "period": "4/18",
+    "period_end": "2018-04-30",
+    "observed_at": "2018-05-30",
+    "value": 4.5
+   },
+   {
+    "period": "5/18",
+    "period_end": "2018-05-31",
+    "observed_at": "2018-06-30",
+    "value": 4.6
+   },
+   {
+    "period": "6/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-07-30",
+    "value": 4.67
+   },
+   {
+    "period": "7/18",
+    "period_end": "2018-07-31",
+    "observed_at": "2018-08-30",
+    "value": 3.78
+   },
+   {
+    "period": "8/18",
+    "period_end": "2018-08-31",
+    "observed_at": "2018-09-30",
+    "value": 3.56
+   },
+   {
+    "period": "9/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-10-30",
+    "value": 3.71
+   },
+   {
+    "period": "10/18",
+    "period_end": "2018-10-31",
+    "observed_at": "2018-11-30",
+    "value": 3.28
+   },
+   {
+    "period": "11/18",
+    "period_end": "2018-11-30",
+    "observed_at": "2018-12-30",
+    "value": 2.41
+   },
+   {
+    "period": "12/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-01-30",
+    "value": 3.71
+   },
+   {
+    "period": "1/19",
+    "period_end": "2019-01-31",
+    "observed_at": "2019-03-02",
+    "value": 2.06
+   },
+   {
+    "period": "2/19",
+    "period_end": "2019-02-28",
+    "observed_at": "2019-03-30",
+    "value": 1.15
+   },
+   {
+    "period": "3/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-04-30",
+    "value": 0.24
+   },
+   {
+    "period": "4/19",
+    "period_end": "2019-04-30",
+    "observed_at": "2019-05-30",
+    "value": -0.28
+   },
+   {
+    "period": "5/19",
+    "period_end": "2019-05-31",
+    "observed_at": "2019-06-30",
+    "value": -0.68
+   },
+   {
+    "period": "6/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-07-30",
+    "value": -0.56
+   },
+   {
+    "period": "7/19",
+    "period_end": "2019-07-31",
+    "observed_at": "2019-08-30",
+    "value": 0.41
+   },
+   {
+    "period": "8/19",
+    "period_end": "2019-08-31",
+    "observed_at": "2019-09-30",
+    "value": 0.62
+   },
+   {
+    "period": "9/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-10-30",
+    "value": 0.64
+   },
+   {
+    "period": "10/19",
+    "period_end": "2019-10-31",
+    "observed_at": "2019-11-30",
+    "value": 0.54
+   },
+   {
+    "period": "11/19",
+    "period_end": "2019-11-30",
+    "observed_at": "2019-12-30",
+    "value": 0.53
+   },
+   {
+    "period": "12/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-01-30",
+    "value": 0.82
+   },
+   {
+    "period": "1/20",
+    "period_end": "2020-01-31",
+    "observed_at": "2020-03-01",
+    "value": 1.1
+   },
+   {
+    "period": "2/20",
+    "period_end": "2020-02-29",
+    "observed_at": "2020-03-30",
+    "value": 0.88
+   },
+   {
+    "period": "3/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-04-30",
+    "value": 2.55
+   },
+   {
+    "period": "4/20",
+    "period_end": "2020-04-30",
+    "observed_at": "2020-05-30",
+    "value": 5.1
+   },
+   {
+    "period": "5/20",
+    "period_end": "2020-05-31",
+    "observed_at": "2020-06-30",
+    "value": 5.41
+   },
+   {
+    "period": "6/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-07-30",
+    "value": 5.34
+   },
+   {
+    "period": "7/20",
+    "period_end": "2020-07-31",
+    "observed_at": "2020-08-30",
+    "value": 5.08
+   },
+   {
+    "period": "8/20",
+    "period_end": "2020-08-31",
+    "observed_at": "2020-09-30",
+    "value": 5.38
+   },
+   {
+    "period": "9/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-10-30",
+    "value": 5.62
+   },
+   {
+    "period": "10/20",
+    "period_end": "2020-10-31",
+    "observed_at": "2020-11-30",
+    "value": 5.74
+   },
+   {
+    "period": "11/20",
+    "period_end": "2020-11-30",
+    "observed_at": "2020-12-30",
+    "value": 6.08
+   },
+   {
+    "period": "12/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-01-30",
+    "value": 6.07
+   },
+   {
+    "period": "1/21",
+    "period_end": "2021-01-31",
+    "observed_at": "2021-03-02",
+    "value": 6.1
+   },
+   {
+    "period": "2/21",
+    "period_end": "2021-02-28",
+    "observed_at": "2021-03-30",
+    "value": 7.64
+   },
+   {
+    "period": "3/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-04-30",
+    "value": 6.49
+   },
+   {
+    "period": "4/21",
+    "period_end": "2021-04-30",
+    "observed_at": "2021-05-30",
+    "value": 4.29
+   },
+   {
+    "period": "5/21",
+    "period_end": "2021-05-31",
+    "observed_at": "2021-06-30",
+    "value": 4.28
+   },
+   {
+    "period": "6/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-07-30",
+    "value": 4.41
+   },
+   {
+    "period": "7/21",
+    "period_end": "2021-07-31",
+    "observed_at": "2021-08-30",
+    "value": 5.0
+   },
+   {
+    "period": "8/21",
+    "period_end": "2021-08-31",
+    "observed_at": "2021-09-30",
+    "value": 5.09
+   },
+   {
+    "period": "9/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-10-30",
+    "value": 4.66
+   },
+   {
+    "period": "10/21",
+    "period_end": "2021-10-31",
+    "observed_at": "2021-11-30",
+    "value": 4.31
+   },
+   {
+    "period": "11/21",
+    "period_end": "2021-11-30",
+    "observed_at": "2021-12-30",
+    "value": 3.94
+   },
+   {
+    "period": "12/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-01-30",
+    "value": 3.86
+   },
+   {
+    "period": "1/22",
+    "period_end": "2022-01-31",
+    "observed_at": "2022-03-02",
+    "value": 3.1
+   },
+   {
+    "period": "2/22",
+    "period_end": "2022-02-28",
+    "observed_at": "2022-03-30",
+    "value": 1.66
+   },
+   {
+    "period": "3/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-04-30",
+    "value": 1.82
+   },
+   {
+    "period": "4/22",
+    "period_end": "2022-04-30",
+    "observed_at": "2022-05-30",
+    "value": 2.05
+   },
+   {
+    "period": "5/22",
+    "period_end": "2022-05-31",
+    "observed_at": "2022-06-30",
+    "value": 2.42
+   },
+   {
+    "period": "6/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-07-30",
+    "value": 2.87
+   },
+   {
+    "period": "7/22",
+    "period_end": "2022-07-31",
+    "observed_at": "2022-08-30",
+    "value": 2.82
+   },
+   {
+    "period": "8/22",
+    "period_end": "2022-08-31",
+    "observed_at": "2022-09-30",
+    "value": 2.31
+   },
+   {
+    "period": "9/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-10-30",
+    "value": 2.1
+   },
+   {
+    "period": "10/22",
+    "period_end": "2022-10-31",
+    "observed_at": "2022-11-30",
+    "value": 2.41
+   },
+   {
+    "period": "11/22",
+    "period_end": "2022-11-30",
+    "observed_at": "2022-12-30",
+    "value": 2.79
+   },
+   {
+    "period": "12/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-01-30",
+    "value": 2.91
+   },
+   {
+    "period": "1/23",
+    "period_end": "2023-01-31",
+    "observed_at": "2023-03-02",
+    "value": 3.74
+   },
+   {
+    "period": "2/23",
+    "period_end": "2023-02-28",
+    "observed_at": "2023-03-30",
+    "value": 3.64
+   },
+   {
+    "period": "3/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-04-30",
+    "value": 3.75
+   },
+   {
+    "period": "4/23",
+    "period_end": "2023-04-30",
+    "observed_at": "2023-05-30",
+    "value": 3.84
+   },
+   {
+    "period": "5/23",
+    "period_end": "2023-05-31",
+    "observed_at": "2023-06-30",
+    "value": 3.85
+   },
+   {
+    "period": "6/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-07-30",
+    "value": 3.78
+   },
+   {
+    "period": "7/23",
+    "period_end": "2023-07-31",
+    "observed_at": "2023-08-30",
+    "value": 3.79
+   },
+   {
+    "period": "8/23",
+    "period_end": "2023-08-31",
+    "observed_at": "2023-09-30",
+    "value": 6.99
+   },
+   {
+    "period": "9/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-10-30",
+    "value": 2.87
+   },
+   {
+    "period": "10/23",
+    "period_end": "2023-10-31",
+    "observed_at": "2023-11-30",
+    "value": 2.81
+   },
+   {
+    "period": "11/23",
+    "period_end": "2023-11-30",
+    "observed_at": "2023-12-30",
+    "value": 2.98
+   },
+   {
+    "period": "12/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-01-30",
+    "value": 2.93
+   },
+   {
+    "period": "1/24",
+    "period_end": "2024-01-31",
+    "observed_at": "2024-03-01",
+    "value": 2.31
+   },
+   {
+    "period": "2/24",
+    "period_end": "2024-02-29",
+    "observed_at": "2024-03-30",
+    "value": 4.23
+   },
+   {
+    "period": "3/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-04-30",
+    "value": 4.05
+   },
+   {
+    "period": "4/24",
+    "period_end": "2024-04-30",
+    "observed_at": "2024-05-30",
+    "value": 4.32
+   },
+   {
+    "period": "5/24",
+    "period_end": "2024-05-31",
+    "observed_at": "2024-06-30",
+    "value": 4.47
+   },
+   {
+    "period": "6/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-07-30",
+    "value": 4.66
+   },
+   {
+    "period": "7/24",
+    "period_end": "2024-07-31",
+    "observed_at": "2024-08-30",
+    "value": 4.27
+   },
+   {
+    "period": "8/24",
+    "period_end": "2024-08-31",
+    "observed_at": "2024-09-30",
+    "value": 3.74
+   },
+   {
+    "period": "9/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-10-30",
+    "value": 3.94
+   },
+   {
+    "period": "10/24",
+    "period_end": "2024-10-31",
+    "observed_at": "2024-11-30",
+    "value": 4.45
+   },
+   {
+    "period": "11/24",
+    "period_end": "2024-11-30",
+    "observed_at": "2024-12-30",
+    "value": 4.12
+   },
+   {
+    "period": "12/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-01-30",
+    "value": 3.87
+   },
+   {
+    "period": "1/25",
+    "period_end": "2025-01-31",
+    "observed_at": "2025-03-02",
+    "value": 4.42
+   },
+   {
+    "period": "2/25",
+    "period_end": "2025-02-28",
+    "observed_at": "2025-03-30",
+    "value": 3.1
+   },
+   {
+    "period": "3/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-04-30",
+    "value": 3.83
+   },
+   {
+    "period": "4/25",
+    "period_end": "2025-04-30",
+    "observed_at": "2025-05-30",
+    "value": 4.91
+   },
+   {
+    "period": "5/25",
+    "period_end": "2025-05-31",
+    "observed_at": "2025-06-30",
+    "value": 4.25
+   },
+   {
+    "period": "6/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-07-30",
+    "value": 3.16
+   },
+   {
+    "period": "7/25",
+    "period_end": "2025-07-31",
+    "observed_at": "2025-08-30",
+    "value": 2.92
+   },
+   {
+    "period": "8/25",
+    "period_end": "2025-08-31",
+    "observed_at": "2025-09-30",
+    "value": 2.51
+   },
+   {
+    "period": "9/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-10-30",
+    "value": 2.06
+   },
+   {
+    "period": "10/25",
+    "period_end": "2025-10-31",
+    "observed_at": "2025-11-30",
+    "value": 2.09
+   },
+   {
+    "period": "11/25",
+    "period_end": "2025-11-30",
+    "observed_at": "2025-12-30",
+    "value": 3.29
+   },
+   {
+    "period": "12/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-01-30",
+    "value": 4.2
+   },
+   {
+    "period": "1/26",
+    "period_end": "2026-01-31",
+    "observed_at": "2026-03-02",
+    "value": 3.64
+   },
+   {
+    "period": "2/26",
+    "period_end": "2026-02-28",
+    "observed_at": "2026-03-30",
+    "value": 5.28
+   },
+   {
+    "period": "3/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-30",
+    "value": 4.72
+   },
+   {
+    "period": "4/26",
+    "period_end": "2026-04-30",
+    "observed_at": "2026-05-30",
+    "value": 4.51
+   },
+   {
+    "period": "5/26",
+    "period_end": "2026-05-31",
+    "observed_at": "2026-06-30",
+    "value": 4.29
+   }
+  ],
+  "label": "Lạm phát lương thực"
+ },
+ {
+  "id": 34,
+  "type": "Prices",
+  "name": "Inflation Rate\r\n",
+  "name_vn": "Tỷ lệ lạm phát\r\n (YoY)",
+  "unit": "%",
+  "frequency": "Hàng tháng",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 30,
+  "next_release": "2023-08-31",
+  "history": [
+   {
+    "period": "7/13",
+    "period_end": "2013-07-31",
+    "observed_at": "2013-08-30",
+    "value": 7.29
+   },
+   {
+    "period": "8/13",
+    "period_end": "2013-08-31",
+    "observed_at": "2013-09-30",
+    "value": 7.5
+   },
+   {
+    "period": "9/13",
+    "period_end": "2013-09-30",
+    "observed_at": "2013-10-30",
+    "value": 6.3
+   },
+   {
+    "period": "10/13",
+    "period_end": "2013-10-31",
+    "observed_at": "2013-11-30",
+    "value": 5.92
+   },
+   {
+    "period": "11/13",
+    "period_end": "2013-11-30",
+    "observed_at": "2013-12-30",
+    "value": 5.78
+   },
+   {
+    "period": "12/13",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-01-30",
+    "value": 6.04
+   },
+   {
+    "period": "1/14",
+    "period_end": "2014-01-31",
+    "observed_at": "2014-03-02",
+    "value": 5.45
+   },
+   {
+    "period": "2/14",
+    "period_end": "2014-02-28",
+    "observed_at": "2014-03-30",
+    "value": 4.65
+   },
+   {
+    "period": "3/14",
+    "period_end": "2014-03-31",
+    "observed_at": "2014-04-30",
+    "value": 4.39
+   },
+   {
+    "period": "4/14",
+    "period_end": "2014-04-30",
+    "observed_at": "2014-05-30",
+    "value": 4.45
+   },
+   {
+    "period": "5/14",
+    "period_end": "2014-05-31",
+    "observed_at": "2014-06-30",
+    "value": 4.72
+   },
+   {
+    "period": "6/14",
+    "period_end": "2014-06-30",
+    "observed_at": "2014-07-30",
+    "value": 4.98
+   },
+   {
+    "period": "7/14",
+    "period_end": "2014-07-31",
+    "observed_at": "2014-08-30",
+    "value": 4.94
+   },
+   {
+    "period": "8/14",
+    "period_end": "2014-08-31",
+    "observed_at": "2014-09-30",
+    "value": 4.31
+   },
+   {
+    "period": "9/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-10-30",
+    "value": 3.62
+   },
+   {
+    "period": "10/14",
+    "period_end": "2014-10-31",
+    "observed_at": "2014-11-30",
+    "value": 3.23
+   },
+   {
+    "period": "11/14",
+    "period_end": "2014-11-30",
+    "observed_at": "2014-12-30",
+    "value": 2.6
+   },
+   {
+    "period": "12/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-01-30",
+    "value": 1.84
+   },
+   {
+    "period": "1/15",
+    "period_end": "2015-01-31",
+    "observed_at": "2015-03-02",
+    "value": 0.94
+   },
+   {
+    "period": "2/15",
+    "period_end": "2015-02-28",
+    "observed_at": "2015-03-30",
+    "value": 0.34
+   },
+   {
+    "period": "3/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-04-30",
+    "value": 0.93
+   },
+   {
+    "period": "4/15",
+    "period_end": "2015-04-30",
+    "observed_at": "2015-05-30",
+    "value": 0.99
+   },
+   {
+    "period": "5/15",
+    "period_end": "2015-05-31",
+    "observed_at": "2015-06-30",
+    "value": 0.95
+   },
+   {
+    "period": "6/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-07-30",
+    "value": 1.0
+   },
+   {
+    "period": "7/15",
+    "period_end": "2015-07-31",
+    "observed_at": "2015-08-30",
+    "value": 0.9
+   },
+   {
+    "period": "8/15",
+    "period_end": "2015-08-31",
+    "observed_at": "2015-09-30",
+    "value": 0.61
+   },
+   {
+    "period": "9/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-10-30",
+    "value": 0.0
+   },
+   {
+    "period": "10/15",
+    "period_end": "2015-10-31",
+    "observed_at": "2015-11-30",
+    "value": 0.0
+   },
+   {
+    "period": "11/15",
+    "period_end": "2015-11-30",
+    "observed_at": "2015-12-30",
+    "value": 0.34
+   },
+   {
+    "period": "12/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-01-30",
+    "value": 0.6
+   },
+   {
+    "period": "1/16",
+    "period_end": "2016-01-31",
+    "observed_at": "2016-03-01",
+    "value": 0.8
+   },
+   {
+    "period": "2/16",
+    "period_end": "2016-02-29",
+    "observed_at": "2016-03-30",
+    "value": 1.27
+   },
+   {
+    "period": "3/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-04-30",
+    "value": 1.69
+   },
+   {
+    "period": "4/16",
+    "period_end": "2016-04-30",
+    "observed_at": "2016-05-30",
+    "value": 1.89
+   },
+   {
+    "period": "5/16",
+    "period_end": "2016-05-31",
+    "observed_at": "2016-06-30",
+    "value": 2.28
+   },
+   {
+    "period": "6/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-07-30",
+    "value": 2.4
+   },
+   {
+    "period": "7/16",
+    "period_end": "2016-07-31",
+    "observed_at": "2016-08-30",
+    "value": 2.39
+   },
+   {
+    "period": "8/16",
+    "period_end": "2016-08-31",
+    "observed_at": "2016-09-30",
+    "value": 2.57
+   },
+   {
+    "period": "9/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-10-30",
+    "value": 3.34
+   },
+   {
+    "period": "10/16",
+    "period_end": "2016-10-31",
+    "observed_at": "2016-11-30",
+    "value": 4.09
+   },
+   {
+    "period": "11/16",
+    "period_end": "2016-11-30",
+    "observed_at": "2016-12-30",
+    "value": 4.52
+   },
+   {
+    "period": "12/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-01-30",
+    "value": 4.74
+   },
+   {
+    "period": "1/17",
+    "period_end": "2017-01-31",
+    "observed_at": "2017-03-02",
+    "value": 5.22
+   },
+   {
+    "period": "2/17",
+    "period_end": "2017-02-28",
+    "observed_at": "2017-03-30",
+    "value": 5.02
+   },
+   {
+    "period": "3/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-04-30",
+    "value": 4.65
+   },
+   {
+    "period": "4/17",
+    "period_end": "2017-04-30",
+    "observed_at": "2017-05-30",
+    "value": 4.3
+   },
+   {
+    "period": "5/17",
+    "period_end": "2017-05-31",
+    "observed_at": "2017-06-30",
+    "value": 3.19
+   },
+   {
+    "period": "6/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-07-30",
+    "value": 2.54
+   },
+   {
+    "period": "7/17",
+    "period_end": "2017-07-31",
+    "observed_at": "2017-08-30",
+    "value": 2.52
+   },
+   {
+    "period": "8/17",
+    "period_end": "2017-08-31",
+    "observed_at": "2017-09-30",
+    "value": 3.35
+   },
+   {
+    "period": "9/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-10-30",
+    "value": 3.4
+   },
+   {
+    "period": "10/17",
+    "period_end": "2017-10-31",
+    "observed_at": "2017-11-30",
+    "value": 2.98
+   },
+   {
+    "period": "11/17",
+    "period_end": "2017-11-30",
+    "observed_at": "2017-12-30",
+    "value": 2.62
+   },
+   {
+    "period": "12/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-01-30",
+    "value": 2.6
+   },
+   {
+    "period": "1/18",
+    "period_end": "2018-01-31",
+    "observed_at": "2018-03-02",
+    "value": 2.65
+   },
+   {
+    "period": "2/18",
+    "period_end": "2018-02-28",
+    "observed_at": "2018-03-30",
+    "value": 3.15
+   },
+   {
+    "period": "3/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-04-30",
+    "value": 2.66
+   },
+   {
+    "period": "4/18",
+    "period_end": "2018-04-30",
+    "observed_at": "2018-05-30",
+    "value": 2.75
+   },
+   {
+    "period": "5/18",
+    "period_end": "2018-05-31",
+    "observed_at": "2018-06-30",
+    "value": 3.86
+   },
+   {
+    "period": "6/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-07-30",
+    "value": 4.67
+   },
+   {
+    "period": "7/18",
+    "period_end": "2018-07-31",
+    "observed_at": "2018-08-30",
+    "value": 4.46
+   },
+   {
+    "period": "8/18",
+    "period_end": "2018-08-31",
+    "observed_at": "2018-09-30",
+    "value": 3.98
+   },
+   {
+    "period": "9/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-10-30",
+    "value": 3.98
+   },
+   {
+    "period": "10/18",
+    "period_end": "2018-10-31",
+    "observed_at": "2018-11-30",
+    "value": 3.89
+   },
+   {
+    "period": "11/18",
+    "period_end": "2018-11-30",
+    "observed_at": "2018-12-30",
+    "value": 3.46
+   },
+   {
+    "period": "12/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-01-30",
+    "value": 2.98
+   },
+   {
+    "period": "1/19",
+    "period_end": "2019-01-31",
+    "observed_at": "2019-03-02",
+    "value": 2.56
+   },
+   {
+    "period": "2/19",
+    "period_end": "2019-02-28",
+    "observed_at": "2019-03-30",
+    "value": 2.64
+   },
+   {
+    "period": "3/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-04-30",
+    "value": 2.7
+   },
+   {
+    "period": "4/19",
+    "period_end": "2019-04-30",
+    "observed_at": "2019-05-30",
+    "value": 2.93
+   },
+   {
+    "period": "5/19",
+    "period_end": "2019-05-31",
+    "observed_at": "2019-06-30",
+    "value": 2.88
+   },
+   {
+    "period": "6/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-07-30",
+    "value": 2.16
+   },
+   {
+    "period": "7/19",
+    "period_end": "2019-07-31",
+    "observed_at": "2019-08-30",
+    "value": 2.44
+   },
+   {
+    "period": "8/19",
+    "period_end": "2019-08-31",
+    "observed_at": "2019-09-30",
+    "value": 2.26
+   },
+   {
+    "period": "9/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-10-30",
+    "value": 1.98
+   },
+   {
+    "period": "10/19",
+    "period_end": "2019-10-31",
+    "observed_at": "2019-11-30",
+    "value": 2.24
+   },
+   {
+    "period": "11/19",
+    "period_end": "2019-11-30",
+    "observed_at": "2019-12-30",
+    "value": 3.52
+   },
+   {
+    "period": "12/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-01-30",
+    "value": 5.23
+   },
+   {
+    "period": "1/20",
+    "period_end": "2020-01-31",
+    "observed_at": "2020-03-01",
+    "value": 6.43
+   },
+   {
+    "period": "2/20",
+    "period_end": "2020-02-29",
+    "observed_at": "2020-03-30",
+    "value": 5.4
+   },
+   {
+    "period": "3/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-04-30",
+    "value": 4.9
+   },
+   {
+    "period": "4/20",
+    "period_end": "2020-04-30",
+    "observed_at": "2020-05-30",
+    "value": 2.93
+   },
+   {
+    "period": "5/20",
+    "period_end": "2020-05-31",
+    "observed_at": "2020-06-30",
+    "value": 2.4
+   },
+   {
+    "period": "6/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-07-30",
+    "value": 3.17
+   },
+   {
+    "period": "7/20",
+    "period_end": "2020-07-31",
+    "observed_at": "2020-08-30",
+    "value": 3.39
+   },
+   {
+    "period": "8/20",
+    "period_end": "2020-08-31",
+    "observed_at": "2020-09-30",
+    "value": 3.18
+   },
+   {
+    "period": "9/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-10-30",
+    "value": 2.98
+   },
+   {
+    "period": "10/20",
+    "period_end": "2020-10-31",
+    "observed_at": "2020-11-30",
+    "value": 2.47
+   },
+   {
+    "period": "11/20",
+    "period_end": "2020-11-30",
+    "observed_at": "2020-12-30",
+    "value": 1.48
+   },
+   {
+    "period": "12/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-01-30",
+    "value": 0.19
+   },
+   {
+    "period": "1/21",
+    "period_end": "2021-01-31",
+    "observed_at": "2021-03-02",
+    "value": -0.97
+   },
+   {
+    "period": "2/21",
+    "period_end": "2021-02-28",
+    "observed_at": "2021-03-30",
+    "value": 0.7
+   },
+   {
+    "period": "3/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-04-30",
+    "value": 1.16
+   },
+   {
+    "period": "4/21",
+    "period_end": "2021-04-30",
+    "observed_at": "2021-05-30",
+    "value": 2.7
+   },
+   {
+    "period": "5/21",
+    "period_end": "2021-05-31",
+    "observed_at": "2021-06-30",
+    "value": 2.9
+   },
+   {
+    "period": "6/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-07-30",
+    "value": 2.4
+   },
+   {
+    "period": "7/21",
+    "period_end": "2021-07-31",
+    "observed_at": "2021-08-30",
+    "value": 2.64
+   },
+   {
+    "period": "8/21",
+    "period_end": "2021-08-31",
+    "observed_at": "2021-09-30",
+    "value": 2.82
+   },
+   {
+    "period": "9/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-10-30",
+    "value": 2.06
+   },
+   {
+    "period": "10/21",
+    "period_end": "2021-10-31",
+    "observed_at": "2021-11-30",
+    "value": 1.77
+   },
+   {
+    "period": "11/21",
+    "period_end": "2021-11-30",
+    "observed_at": "2021-12-30",
+    "value": 2.1
+   },
+   {
+    "period": "12/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-01-30",
+    "value": 1.81
+   },
+   {
+    "period": "1/22",
+    "period_end": "2022-01-31",
+    "observed_at": "2022-03-02",
+    "value": 1.94
+   },
+   {
+    "period": "2/22",
+    "period_end": "2022-02-28",
+    "observed_at": "2022-03-30",
+    "value": 1.42
+   },
+   {
+    "period": "3/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-04-30",
+    "value": 2.41
+   },
+   {
+    "period": "4/22",
+    "period_end": "2022-04-30",
+    "observed_at": "2022-05-30",
+    "value": 2.64
+   },
+   {
+    "period": "5/22",
+    "period_end": "2022-05-31",
+    "observed_at": "2022-06-30",
+    "value": 2.86
+   },
+   {
+    "period": "6/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-07-30",
+    "value": 3.37
+   },
+   {
+    "period": "7/22",
+    "period_end": "2022-07-31",
+    "observed_at": "2022-08-30",
+    "value": 3.14
+   },
+   {
+    "period": "8/22",
+    "period_end": "2022-08-31",
+    "observed_at": "2022-09-30",
+    "value": 2.89
+   },
+   {
+    "period": "9/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-10-30",
+    "value": 3.94
+   },
+   {
+    "period": "10/22",
+    "period_end": "2022-10-31",
+    "observed_at": "2022-11-30",
+    "value": 4.3
+   },
+   {
+    "period": "11/22",
+    "period_end": "2022-11-30",
+    "observed_at": "2022-12-30",
+    "value": 4.37
+   },
+   {
+    "period": "12/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-01-30",
+    "value": 4.55
+   },
+   {
+    "period": "1/23",
+    "period_end": "2023-01-31",
+    "observed_at": "2023-03-02",
+    "value": 4.89
+   },
+   {
+    "period": "2/23",
+    "period_end": "2023-02-28",
+    "observed_at": "2023-03-30",
+    "value": 4.31
+   },
+   {
+    "period": "3/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-04-30",
+    "value": 3.35
+   },
+   {
+    "period": "4/23",
+    "period_end": "2023-04-30",
+    "observed_at": "2023-05-30",
+    "value": 2.81
+   },
+   {
+    "period": "5/23",
+    "period_end": "2023-05-31",
+    "observed_at": "2023-06-30",
+    "value": 2.43
+   },
+   {
+    "period": "6/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-07-30",
+    "value": 2.0
+   },
+   {
+    "period": "7/23",
+    "period_end": "2023-07-31",
+    "observed_at": "2023-08-30",
+    "value": 2.06
+   },
+   {
+    "period": "8/23",
+    "period_end": "2023-08-31",
+    "observed_at": "2023-09-30",
+    "value": 2.96
+   },
+   {
+    "period": "9/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-10-30",
+    "value": 3.66
+   },
+   {
+    "period": "10/23",
+    "period_end": "2023-10-31",
+    "observed_at": "2023-11-30",
+    "value": 3.59
+   },
+   {
+    "period": "11/23",
+    "period_end": "2023-11-30",
+    "observed_at": "2023-12-30",
+    "value": 3.45
+   },
+   {
+    "period": "12/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-01-30",
+    "value": 3.58
+   },
+   {
+    "period": "1/24",
+    "period_end": "2024-01-31",
+    "observed_at": "2024-03-01",
+    "value": 3.37
+   },
+   {
+    "period": "2/24",
+    "period_end": "2024-02-29",
+    "observed_at": "2024-03-30",
+    "value": 3.98
+   },
+   {
+    "period": "3/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-04-30",
+    "value": 3.97
+   },
+   {
+    "period": "4/24",
+    "period_end": "2024-04-30",
+    "observed_at": "2024-05-30",
+    "value": 4.4
+   },
+   {
+    "period": "5/24",
+    "period_end": "2024-05-31",
+    "observed_at": "2024-06-30",
+    "value": 4.44
+   },
+   {
+    "period": "6/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-07-30",
+    "value": 4.34
+   },
+   {
+    "period": "7/24",
+    "period_end": "2024-07-31",
+    "observed_at": "2024-08-30",
+    "value": 4.36
+   },
+   {
+    "period": "8/24",
+    "period_end": "2024-08-31",
+    "observed_at": "2024-09-30",
+    "value": 3.45
+   },
+   {
+    "period": "9/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-10-30",
+    "value": 2.63
+   },
+   {
+    "period": "10/24",
+    "period_end": "2024-10-31",
+    "observed_at": "2024-11-30",
+    "value": 2.89
+   },
+   {
+    "period": "11/24",
+    "period_end": "2024-11-30",
+    "observed_at": "2024-12-30",
+    "value": 2.77
+   },
+   {
+    "period": "12/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-01-30",
+    "value": 2.94
+   },
+   {
+    "period": "1/25",
+    "period_end": "2025-01-31",
+    "observed_at": "2025-03-02",
+    "value": 3.63
+   },
+   {
+    "period": "2/25",
+    "period_end": "2025-02-28",
+    "observed_at": "2025-03-30",
+    "value": 2.91
+   },
+   {
+    "period": "3/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-04-30",
+    "value": 3.13
+   },
+   {
+    "period": "4/25",
+    "period_end": "2025-04-30",
+    "observed_at": "2025-05-30",
+    "value": 3.12
+   },
+   {
+    "period": "5/25",
+    "period_end": "2025-05-31",
+    "observed_at": "2025-06-30",
+    "value": 3.24
+   },
+   {
+    "period": "6/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-07-30",
+    "value": 3.57
+   },
+   {
+    "period": "7/25",
+    "period_end": "2025-07-31",
+    "observed_at": "2025-08-30",
+    "value": 3.19
+   },
+   {
+    "period": "8/25",
+    "period_end": "2025-08-31",
+    "observed_at": "2025-09-30",
+    "value": 3.24
+   },
+   {
+    "period": "9/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-10-30",
+    "value": 3.38
+   },
+   {
+    "period": "10/25",
+    "period_end": "2025-10-31",
+    "observed_at": "2025-11-30",
+    "value": 3.25
+   },
+   {
+    "period": "11/25",
+    "period_end": "2025-11-30",
+    "observed_at": "2025-12-30",
+    "value": 3.58
+   },
+   {
+    "period": "12/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-01-30",
+    "value": 3.48
+   },
+   {
+    "period": "1/26",
+    "period_end": "2026-01-31",
+    "observed_at": "2026-03-02",
+    "value": 2.53
+   },
+   {
+    "period": "2/26",
+    "period_end": "2026-02-28",
+    "observed_at": "2026-03-30",
+    "value": 3.35
+   },
+   {
+    "period": "3/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-30",
+    "value": 4.65
+   },
+   {
+    "period": "4/26",
+    "period_end": "2026-04-30",
+    "observed_at": "2026-05-30",
+    "value": 5.46
+   },
+   {
+    "period": "5/26",
+    "period_end": "2026-05-31",
+    "observed_at": "2026-06-30",
+    "value": 5.6
+   }
+  ],
+  "label": "Tỷ lệ lạm phát\r\n (YoY)"
+ },
+ {
+  "id": 35,
+  "type": "Prices",
+  "name": "Inflation Rate MoM",
+  "name_vn": "Tỷ lệ lạm phát (MoM)",
+  "unit": "%",
+  "frequency": "Hàng tháng",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 30,
+  "next_release": "2023-08-31",
+  "history": [
+   {
+    "period": "9/13",
+    "period_end": "2013-09-30",
+    "observed_at": "2013-10-30",
+    "value": 1.05
+   },
+   {
+    "period": "10/13",
+    "period_end": "2013-10-31",
+    "observed_at": "2013-11-30",
+    "value": 0.49
+   },
+   {
+    "period": "11/13",
+    "period_end": "2013-11-30",
+    "observed_at": "2013-12-30",
+    "value": 0.33
+   },
+   {
+    "period": "12/13",
+    "period_end": "2013-12-31",
+    "observed_at": "2014-01-30",
+    "value": 0.51
+   },
+   {
+    "period": "1/14",
+    "period_end": "2014-01-31",
+    "observed_at": "2014-03-02",
+    "value": 0.69
+   },
+   {
+    "period": "2/14",
+    "period_end": "2014-02-28",
+    "observed_at": "2014-03-30",
+    "value": 0.54
+   },
+   {
+    "period": "3/14",
+    "period_end": "2014-03-31",
+    "observed_at": "2014-04-30",
+    "value": -0.43
+   },
+   {
+    "period": "4/14",
+    "period_end": "2014-04-30",
+    "observed_at": "2014-05-30",
+    "value": 0.07
+   },
+   {
+    "period": "5/14",
+    "period_end": "2014-05-31",
+    "observed_at": "2014-06-30",
+    "value": 0.19
+   },
+   {
+    "period": "6/14",
+    "period_end": "2014-06-30",
+    "observed_at": "2014-07-30",
+    "value": 0.3
+   },
+   {
+    "period": "7/14",
+    "period_end": "2014-07-31",
+    "observed_at": "2014-08-30",
+    "value": 0.22
+   },
+   {
+    "period": "8/14",
+    "period_end": "2014-08-31",
+    "observed_at": "2014-09-30",
+    "value": 0.22
+   },
+   {
+    "period": "9/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-10-30",
+    "value": 0.4
+   },
+   {
+    "period": "10/14",
+    "period_end": "2014-10-31",
+    "observed_at": "2014-11-30",
+    "value": 0.11
+   },
+   {
+    "period": "11/14",
+    "period_end": "2014-11-30",
+    "observed_at": "2014-12-30",
+    "value": -0.27
+   },
+   {
+    "period": "12/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-01-30",
+    "value": -0.24
+   },
+   {
+    "period": "1/15",
+    "period_end": "2015-01-31",
+    "observed_at": "2015-03-02",
+    "value": -0.2
+   },
+   {
+    "period": "2/15",
+    "period_end": "2015-02-28",
+    "observed_at": "2015-03-30",
+    "value": -0.05
+   },
+   {
+    "period": "3/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-04-30",
+    "value": 0.15
+   },
+   {
+    "period": "4/15",
+    "period_end": "2015-04-30",
+    "observed_at": "2015-05-30",
+    "value": 0.14
+   },
+   {
+    "period": "5/15",
+    "period_end": "2015-05-31",
+    "observed_at": "2015-06-30",
+    "value": 0.16
+   },
+   {
+    "period": "6/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-07-30",
+    "value": 0.35
+   },
+   {
+    "period": "7/15",
+    "period_end": "2015-07-31",
+    "observed_at": "2015-08-30",
+    "value": 0.13
+   },
+   {
+    "period": "8/15",
+    "period_end": "2015-08-31",
+    "observed_at": "2015-09-30",
+    "value": -0.07
+   },
+   {
+    "period": "9/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-10-30",
+    "value": -0.21
+   },
+   {
+    "period": "10/15",
+    "period_end": "2015-10-31",
+    "observed_at": "2015-11-30",
+    "value": 0.11
+   },
+   {
+    "period": "11/15",
+    "period_end": "2015-11-30",
+    "observed_at": "2015-12-30",
+    "value": 0.07
+   },
+   {
+    "period": "12/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-01-30",
+    "value": 0.02
+   },
+   {
+    "period": "1/16",
+    "period_end": "2016-01-31",
+    "observed_at": "2016-03-01",
+    "value": 0.0
+   },
+   {
+    "period": "2/16",
+    "period_end": "2016-02-29",
+    "observed_at": "2016-03-30",
+    "value": 0.42
+   },
+   {
+    "period": "3/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-04-30",
+    "value": 0.57
+   },
+   {
+    "period": "4/16",
+    "period_end": "2016-04-30",
+    "observed_at": "2016-05-30",
+    "value": 0.33
+   },
+   {
+    "period": "5/16",
+    "period_end": "2016-05-31",
+    "observed_at": "2016-06-30",
+    "value": 0.54
+   },
+   {
+    "period": "6/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-07-30",
+    "value": 0.46
+   },
+   {
+    "period": "7/16",
+    "period_end": "2016-07-31",
+    "observed_at": "2016-08-30",
+    "value": 0.13
+   },
+   {
+    "period": "8/16",
+    "period_end": "2016-08-31",
+    "observed_at": "2016-09-30",
+    "value": 0.1
+   },
+   {
+    "period": "9/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-10-30",
+    "value": 0.54
+   },
+   {
+    "period": "10/16",
+    "period_end": "2016-10-31",
+    "observed_at": "2016-11-30",
+    "value": 0.83
+   },
+   {
+    "period": "11/16",
+    "period_end": "2016-11-30",
+    "observed_at": "2016-12-30",
+    "value": 0.48
+   },
+   {
+    "period": "12/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-01-30",
+    "value": 0.23
+   },
+   {
+    "period": "1/17",
+    "period_end": "2017-01-31",
+    "observed_at": "2017-03-02",
+    "value": 0.46
+   },
+   {
+    "period": "2/17",
+    "period_end": "2017-02-28",
+    "observed_at": "2017-03-30",
+    "value": 0.23
+   },
+   {
+    "period": "3/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-04-30",
+    "value": 0.21
+   },
+   {
+    "period": "4/17",
+    "period_end": "2017-04-30",
+    "observed_at": "2017-05-30",
+    "value": 0.0
+   },
+   {
+    "period": "5/17",
+    "period_end": "2017-05-31",
+    "observed_at": "2017-06-30",
+    "value": 0.53
+   },
+   {
+    "period": "6/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-07-30",
+    "value": -0.17
+   },
+   {
+    "period": "7/17",
+    "period_end": "2017-07-31",
+    "observed_at": "2017-08-30",
+    "value": 0.11
+   },
+   {
+    "period": "8/17",
+    "period_end": "2017-08-31",
+    "observed_at": "2017-09-30",
+    "value": 0.92
+   },
+   {
+    "period": "9/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-10-30",
+    "value": 0.59
+   },
+   {
+    "period": "10/17",
+    "period_end": "2017-10-31",
+    "observed_at": "2017-11-30",
+    "value": 0.41
+   },
+   {
+    "period": "11/17",
+    "period_end": "2017-11-30",
+    "observed_at": "2017-12-30",
+    "value": 0.13
+   },
+   {
+    "period": "12/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-01-30",
+    "value": 0.21
+   },
+   {
+    "period": "1/18",
+    "period_end": "2018-01-31",
+    "observed_at": "2018-03-02",
+    "value": 0.51
+   },
+   {
+    "period": "2/18",
+    "period_end": "2018-02-28",
+    "observed_at": "2018-03-30",
+    "value": 0.73
+   },
+   {
+    "period": "3/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-04-30",
+    "value": -0.27
+   },
+   {
+    "period": "4/18",
+    "period_end": "2018-04-30",
+    "observed_at": "2018-05-30",
+    "value": 0.08
+   },
+   {
+    "period": "5/18",
+    "period_end": "2018-05-31",
+    "observed_at": "2018-06-30",
+    "value": 0.55
+   },
+   {
+    "period": "6/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-07-30",
+    "value": 0.61
+   },
+   {
+    "period": "7/18",
+    "period_end": "2018-07-31",
+    "observed_at": "2018-08-30",
+    "value": -0.09
+   },
+   {
+    "period": "8/18",
+    "period_end": "2018-08-31",
+    "observed_at": "2018-09-30",
+    "value": 0.45
+   },
+   {
+    "period": "9/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-10-30",
+    "value": 0.59
+   },
+   {
+    "period": "10/18",
+    "period_end": "2018-10-31",
+    "observed_at": "2018-11-30",
+    "value": 0.33
+   },
+   {
+    "period": "11/18",
+    "period_end": "2018-11-30",
+    "observed_at": "2018-12-30",
+    "value": -0.29
+   },
+   {
+    "period": "12/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-01-30",
+    "value": -0.25
+   },
+   {
+    "period": "1/19",
+    "period_end": "2019-01-31",
+    "observed_at": "2019-03-02",
+    "value": 0.1
+   },
+   {
+    "period": "2/19",
+    "period_end": "2019-02-28",
+    "observed_at": "2019-03-30",
+    "value": 0.8
+   },
+   {
+    "period": "3/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-04-30",
+    "value": -0.21
+   },
+   {
+    "period": "4/19",
+    "period_end": "2019-04-30",
+    "observed_at": "2019-05-30",
+    "value": 0.31
+   },
+   {
+    "period": "5/19",
+    "period_end": "2019-05-31",
+    "observed_at": "2019-06-30",
+    "value": 0.49
+   },
+   {
+    "period": "6/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-07-30",
+    "value": -0.09
+   },
+   {
+    "period": "7/19",
+    "period_end": "2019-07-31",
+    "observed_at": "2019-08-30",
+    "value": 0.18
+   },
+   {
+    "period": "8/19",
+    "period_end": "2019-08-31",
+    "observed_at": "2019-09-30",
+    "value": 0.28
+   },
+   {
+    "period": "9/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-10-30",
+    "value": 0.32
+   },
+   {
+    "period": "10/19",
+    "period_end": "2019-10-31",
+    "observed_at": "2019-11-30",
+    "value": 0.59
+   },
+   {
+    "period": "11/19",
+    "period_end": "2019-11-30",
+    "observed_at": "2019-12-30",
+    "value": 0.96
+   },
+   {
+    "period": "12/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-01-30",
+    "value": 1.4
+   },
+   {
+    "period": "1/20",
+    "period_end": "2020-01-31",
+    "observed_at": "2020-03-01",
+    "value": 1.23
+   },
+   {
+    "period": "2/20",
+    "period_end": "2020-02-29",
+    "observed_at": "2020-03-30",
+    "value": -0.72
+   },
+   {
+    "period": "3/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-04-30",
+    "value": -0.72
+   },
+   {
+    "period": "4/20",
+    "period_end": "2020-04-30",
+    "observed_at": "2020-05-30",
+    "value": -1.54
+   },
+   {
+    "period": "5/20",
+    "period_end": "2020-05-31",
+    "observed_at": "2020-06-30",
+    "value": -0.23
+   },
+   {
+    "period": "6/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-07-30",
+    "value": 0.66
+   },
+   {
+    "period": "7/20",
+    "period_end": "2020-07-31",
+    "observed_at": "2020-08-30",
+    "value": 0.4
+   },
+   {
+    "period": "8/20",
+    "period_end": "2020-08-31",
+    "observed_at": "2020-09-30",
+    "value": 0.07
+   },
+   {
+    "period": "9/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-10-30",
+    "value": 0.12
+   },
+   {
+    "period": "10/20",
+    "period_end": "2020-10-31",
+    "observed_at": "2020-11-30",
+    "value": 0.09
+   },
+   {
+    "period": "11/20",
+    "period_end": "2020-11-30",
+    "observed_at": "2020-12-30",
+    "value": 0.08
+   },
+   {
+    "period": "12/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-01-30",
+    "value": 0.1
+   },
+   {
+    "period": "1/21",
+    "period_end": "2021-01-31",
+    "observed_at": "2021-03-02",
+    "value": 0.06
+   },
+   {
+    "period": "2/21",
+    "period_end": "2021-02-28",
+    "observed_at": "2021-03-30",
+    "value": 1.52
+   },
+   {
+    "period": "3/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-04-30",
+    "value": -0.27
+   },
+   {
+    "period": "4/21",
+    "period_end": "2021-04-30",
+    "observed_at": "2021-05-30",
+    "value": -0.04
+   },
+   {
+    "period": "5/21",
+    "period_end": "2021-05-31",
+    "observed_at": "2021-06-30",
+    "value": 0.16
+   },
+   {
+    "period": "6/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-07-30",
+    "value": 0.17
+   },
+   {
+    "period": "7/21",
+    "period_end": "2021-07-31",
+    "observed_at": "2021-08-30",
+    "value": 0.62
+   },
+   {
+    "period": "8/21",
+    "period_end": "2021-08-31",
+    "observed_at": "2021-09-30",
+    "value": 0.25
+   },
+   {
+    "period": "9/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-10-30",
+    "value": -0.62
+   },
+   {
+    "period": "10/21",
+    "period_end": "2021-10-31",
+    "observed_at": "2021-11-30",
+    "value": -0.2
+   },
+   {
+    "period": "11/21",
+    "period_end": "2021-11-30",
+    "observed_at": "2021-12-30",
+    "value": 0.32
+   },
+   {
+    "period": "12/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-01-30",
+    "value": -0.18
+   },
+   {
+    "period": "1/22",
+    "period_end": "2022-01-31",
+    "observed_at": "2022-03-02",
+    "value": 0.19
+   },
+   {
+    "period": "2/22",
+    "period_end": "2022-02-28",
+    "observed_at": "2022-03-30",
+    "value": 1.0
+   },
+   {
+    "period": "3/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-04-30",
+    "value": 0.7
+   },
+   {
+    "period": "4/22",
+    "period_end": "2022-04-30",
+    "observed_at": "2022-05-30",
+    "value": 0.18
+   },
+   {
+    "period": "5/22",
+    "period_end": "2022-05-31",
+    "observed_at": "2022-06-30",
+    "value": 0.38
+   },
+   {
+    "period": "6/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-07-30",
+    "value": 0.69
+   },
+   {
+    "period": "7/22",
+    "period_end": "2022-07-31",
+    "observed_at": "2022-08-30",
+    "value": 0.4
+   },
+   {
+    "period": "8/22",
+    "period_end": "2022-08-31",
+    "observed_at": "2022-09-30",
+    "value": 0.05
+   },
+   {
+    "period": "9/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-10-30",
+    "value": 0.4
+   },
+   {
+    "period": "10/22",
+    "period_end": "2022-10-31",
+    "observed_at": "2022-11-30",
+    "value": 0.15
+   },
+   {
+    "period": "11/22",
+    "period_end": "2022-11-30",
+    "observed_at": "2022-12-30",
+    "value": 0.39
+   },
+   {
+    "period": "12/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-01-30",
+    "value": -0.01
+   },
+   {
+    "period": "1/23",
+    "period_end": "2023-01-31",
+    "observed_at": "2023-03-02",
+    "value": 0.52
+   },
+   {
+    "period": "2/23",
+    "period_end": "2023-02-28",
+    "observed_at": "2023-03-30",
+    "value": 0.45
+   },
+   {
+    "period": "3/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-04-30",
+    "value": -0.23
+   },
+   {
+    "period": "4/23",
+    "period_end": "2023-04-30",
+    "observed_at": "2023-05-30",
+    "value": -0.34
+   },
+   {
+    "period": "5/23",
+    "period_end": "2023-05-31",
+    "observed_at": "2023-06-30",
+    "value": 0.01
+   },
+   {
+    "period": "6/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-07-30",
+    "value": 0.27
+   },
+   {
+    "period": "7/23",
+    "period_end": "2023-07-31",
+    "observed_at": "2023-08-30",
+    "value": 0.45
+   },
+   {
+    "period": "8/23",
+    "period_end": "2023-08-31",
+    "observed_at": "2023-09-30",
+    "value": 0.88
+   },
+   {
+    "period": "9/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-10-30",
+    "value": 1.08
+   },
+   {
+    "period": "10/23",
+    "period_end": "2023-10-31",
+    "observed_at": "2023-11-30",
+    "value": 0.08
+   },
+   {
+    "period": "11/23",
+    "period_end": "2023-11-30",
+    "observed_at": "2023-12-30",
+    "value": 0.25
+   },
+   {
+    "period": "12/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-01-30",
+    "value": 0.12
+   },
+   {
+    "period": "1/24",
+    "period_end": "2024-01-31",
+    "observed_at": "2024-03-01",
+    "value": 0.31
+   },
+   {
+    "period": "2/24",
+    "period_end": "2024-02-29",
+    "observed_at": "2024-03-30",
+    "value": 1.04
+   },
+   {
+    "period": "3/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-04-30",
+    "value": -0.23
+   },
+   {
+    "period": "4/24",
+    "period_end": "2024-04-30",
+    "observed_at": "2024-05-30",
+    "value": 0.07
+   },
+   {
+    "period": "5/24",
+    "period_end": "2024-05-31",
+    "observed_at": "2024-06-30",
+    "value": 0.05
+   },
+   {
+    "period": "6/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-07-30",
+    "value": 0.17
+   },
+   {
+    "period": "7/24",
+    "period_end": "2024-07-31",
+    "observed_at": "2024-08-30",
+    "value": 0.48
+   },
+   {
+    "period": "8/24",
+    "period_end": "2024-08-31",
+    "observed_at": "2024-09-30",
+    "value": 0.0
+   },
+   {
+    "period": "9/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-10-30",
+    "value": 0.28
+   },
+   {
+    "period": "10/24",
+    "period_end": "2024-10-31",
+    "observed_at": "2024-11-30",
+    "value": 0.33
+   },
+   {
+    "period": "11/24",
+    "period_end": "2024-11-30",
+    "observed_at": "2024-12-30",
+    "value": 0.13
+   },
+   {
+    "period": "12/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-01-30",
+    "value": 0.29
+   },
+   {
+    "period": "1/25",
+    "period_end": "2025-01-31",
+    "observed_at": "2025-03-02",
+    "value": 0.98
+   },
+   {
+    "period": "2/25",
+    "period_end": "2025-02-28",
+    "observed_at": "2025-03-30",
+    "value": 0.34
+   },
+   {
+    "period": "3/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-04-30",
+    "value": -0.03
+   },
+   {
+    "period": "4/25",
+    "period_end": "2025-04-30",
+    "observed_at": "2025-05-30",
+    "value": 0.07
+   },
+   {
+    "period": "5/25",
+    "period_end": "2025-05-31",
+    "observed_at": "2025-06-30",
+    "value": 0.16
+   },
+   {
+    "period": "6/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-07-30",
+    "value": 0.48
+   },
+   {
+    "period": "7/25",
+    "period_end": "2025-07-31",
+    "observed_at": "2025-08-30",
+    "value": 0.11
+   },
+   {
+    "period": "8/25",
+    "period_end": "2025-08-31",
+    "observed_at": "2025-09-30",
+    "value": 0.05
+   },
+   {
+    "period": "9/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-10-30",
+    "value": 0.28
+   },
+   {
+    "period": "10/25",
+    "period_end": "2025-10-31",
+    "observed_at": "2025-11-30",
+    "value": 0.2
+   },
+   {
+    "period": "11/25",
+    "period_end": "2025-11-30",
+    "observed_at": "2025-12-30",
+    "value": 0.33
+   },
+   {
+    "period": "12/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-01-30",
+    "value": 0.19
+   },
+   {
+    "period": "1/26",
+    "period_end": "2026-01-31",
+    "observed_at": "2026-03-02",
+    "value": 0.05
+   },
+   {
+    "period": "2/26",
+    "period_end": "2026-02-28",
+    "observed_at": "2026-03-30",
+    "value": 1.14
+   },
+   {
+    "period": "3/26",
+    "period_end": "2026-03-31",
+    "observed_at": "2026-04-30",
+    "value": 1.23
+   },
+   {
+    "period": "4/26",
+    "period_end": "2026-04-30",
+    "observed_at": "2026-05-30",
+    "value": 0.84
+   },
+   {
+    "period": "5/26",
+    "period_end": "2026-05-31",
+    "observed_at": "2026-06-30",
+    "value": 0.29
+   }
+  ],
+  "label": "Tỷ lệ lạm phát (MoM)"
+ },
+ {
+  "id": 36,
+  "type": "Prices",
+  "name": "Producer Prices\r\n",
+  "name_vn": "Chỉ số giá sản xuất công nghiệp",
+  "unit": "Điểm",
+  "frequency": "Hàng quý",
+  "source": "Tổng cục Thống kê Việt Nam",
+  "lag_days": 45,
+  "next_release": "2023-09-20",
+  "history": [
+   {
+    "period": "Q3/14",
+    "period_end": "2014-09-30",
+    "observed_at": "2014-11-14",
+    "value": 102.79
+   },
+   {
+    "period": "Q4/14",
+    "period_end": "2014-12-31",
+    "observed_at": "2015-02-14",
+    "value": 102.0
+   },
+   {
+    "period": "Q1/15",
+    "period_end": "2015-03-31",
+    "observed_at": "2015-05-15",
+    "value": 100.15
+   },
+   {
+    "period": "Q2/15",
+    "period_end": "2015-06-30",
+    "observed_at": "2015-08-14",
+    "value": 99.64
+   },
+   {
+    "period": "Q3/15",
+    "period_end": "2015-09-30",
+    "observed_at": "2015-11-14",
+    "value": 99.22
+   },
+   {
+    "period": "Q4/15",
+    "period_end": "2015-12-31",
+    "observed_at": "2016-02-14",
+    "value": 98.66
+   },
+   {
+    "period": "Q1/16",
+    "period_end": "2016-03-31",
+    "observed_at": "2016-05-15",
+    "value": 98.99
+   },
+   {
+    "period": "Q2/16",
+    "period_end": "2016-06-30",
+    "observed_at": "2016-08-14",
+    "value": 98.71
+   },
+   {
+    "period": "Q3/16",
+    "period_end": "2016-09-30",
+    "observed_at": "2016-11-14",
+    "value": 99.5
+   },
+   {
+    "period": "Q4/16",
+    "period_end": "2016-12-31",
+    "observed_at": "2017-02-14",
+    "value": 100.87
+   },
+   {
+    "period": "Q1/17",
+    "period_end": "2017-03-31",
+    "observed_at": "2017-05-15",
+    "value": 101.96
+   },
+   {
+    "period": "Q2/17",
+    "period_end": "2017-06-30",
+    "observed_at": "2017-08-14",
+    "value": 100.59
+   },
+   {
+    "period": "Q3/17",
+    "period_end": "2017-09-30",
+    "observed_at": "2017-11-14",
+    "value": 99.3
+   },
+   {
+    "period": "Q4/17",
+    "period_end": "2017-12-31",
+    "observed_at": "2018-02-14",
+    "value": 103.47
+   },
+   {
+    "period": "Q1/18",
+    "period_end": "2018-03-31",
+    "observed_at": "2018-05-15",
+    "value": 97.41
+   },
+   {
+    "period": "Q2/18",
+    "period_end": "2018-06-30",
+    "observed_at": "2018-08-14",
+    "value": 103.02
+   },
+   {
+    "period": "Q3/18",
+    "period_end": "2018-09-30",
+    "observed_at": "2018-11-14",
+    "value": 103.91
+   },
+   {
+    "period": "Q4/18",
+    "period_end": "2018-12-31",
+    "observed_at": "2019-02-14",
+    "value": 102.8
+   },
+   {
+    "period": "Q1/19",
+    "period_end": "2019-03-31",
+    "observed_at": "2019-05-15",
+    "value": 101.45
+   },
+   {
+    "period": "Q2/19",
+    "period_end": "2019-06-30",
+    "observed_at": "2019-08-14",
+    "value": 102.28
+   },
+   {
+    "period": "Q3/19",
+    "period_end": "2019-09-30",
+    "observed_at": "2019-11-14",
+    "value": 101.0
+   },
+   {
+    "period": "Q4/19",
+    "period_end": "2019-12-31",
+    "observed_at": "2020-02-14",
+    "value": 100.52
+   },
+   {
+    "period": "Q1/20",
+    "period_end": "2020-03-31",
+    "observed_at": "2020-05-15",
+    "value": 101.05
+   },
+   {
+    "period": "Q2/20",
+    "period_end": "2020-06-30",
+    "observed_at": "2020-08-14",
+    "value": 98.31
+   },
+   {
+    "period": "Q3/20",
+    "period_end": "2020-09-30",
+    "observed_at": "2020-11-14",
+    "value": 99.05
+   },
+   {
+    "period": "Q4/20",
+    "period_end": "2020-12-31",
+    "observed_at": "2021-02-14",
+    "value": 99.22
+   },
+   {
+    "period": "Q1/21",
+    "period_end": "2021-03-31",
+    "observed_at": "2021-05-15",
+    "value": 100.27
+   },
+   {
+    "period": "Q2/21",
+    "period_end": "2021-06-30",
+    "observed_at": "2021-08-14",
+    "value": 103.39
+   },
+   {
+    "period": "Q3/21",
+    "period_end": "2021-09-30",
+    "observed_at": "2021-11-14",
+    "value": 103.71
+   },
+   {
+    "period": "Q4/21",
+    "period_end": "2021-12-31",
+    "observed_at": "2022-02-14",
+    "value": 104.33
+   },
+   {
+    "period": "Q1/22",
+    "period_end": "2022-03-31",
+    "observed_at": "2022-05-15",
+    "value": 104.39
+   },
+   {
+    "period": "Q2/22",
+    "period_end": "2022-06-30",
+    "observed_at": "2022-08-14",
+    "value": 105.11
+   },
+   {
+    "period": "Q3/22",
+    "period_end": "2022-09-30",
+    "observed_at": "2022-11-14",
+    "value": 104.62
+   },
+   {
+    "period": "Q4/22",
+    "period_end": "2022-12-31",
+    "observed_at": "2023-02-14",
+    "value": 102.84
+   },
+   {
+    "period": "Q1/23",
+    "period_end": "2023-03-31",
+    "observed_at": "2023-05-15",
+    "value": 101.05
+   },
+   {
+    "period": "Q2/23",
+    "period_end": "2023-06-30",
+    "observed_at": "2023-08-14",
+    "value": 98.48
+   },
+   {
+    "period": "Q3/23",
+    "period_end": "2023-09-30",
+    "observed_at": "2023-11-14",
+    "value": 97.51
+   },
+   {
+    "period": "Q4/23",
+    "period_end": "2023-12-31",
+    "observed_at": "2024-02-14",
+    "value": 99.47
+   },
+   {
+    "period": "Q1/24",
+    "period_end": "2024-03-31",
+    "observed_at": "2024-05-15",
+    "value": 99.44
+   },
+   {
+    "period": "Q2/24",
+    "period_end": "2024-06-30",
+    "observed_at": "2024-08-14",
+    "value": 101.07
+   },
+   {
+    "period": "Q3/24",
+    "period_end": "2024-09-30",
+    "observed_at": "2024-11-14",
+    "value": 101.51
+   },
+   {
+    "period": "Q4/24",
+    "period_end": "2024-12-31",
+    "observed_at": "2025-02-14",
+    "value": 100.34
+   },
+   {
+    "period": "Q1/25",
+    "period_end": "2025-03-31",
+    "observed_at": "2025-05-15",
+    "value": 102.24
+   },
+   {
+    "period": "Q2/25",
+    "period_end": "2025-06-30",
+    "observed_at": "2025-08-14",
+    "value": 101.58
+   },
+   {
+    "period": "Q3/25",
+    "period_end": "2025-09-30",
+    "observed_at": "2025-11-14",
+    "value": 100.31
+   },
+   {
+    "period": "Q4/25",
+    "period_end": "2025-12-31",
+    "observed_at": "2026-02-14",
+    "value": 100.82
+   }
+  ],
+  "label": "Chỉ số giá sản xuất công nghiệp"
+ }
+]

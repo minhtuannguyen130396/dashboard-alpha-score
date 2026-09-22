@@ -47,6 +47,43 @@ class StockRecord:
         return self.dealVolume
 
 
+def record_from_json(item: dict) -> StockRecord:
+    """Build one ``StockRecord`` from a raw FireAnt JSON item.
+
+    Prices are divided by ``adjRatio`` and volumes multiplied by it, so the
+    whole series is expressed in today's adjusted terms.
+    """
+    return StockRecord(
+        date=datetime.fromisoformat(item["date"]),
+        symbol=item["symbol"],
+        priceHigh=item["priceHigh"] / item["adjRatio"],
+        priceLow=item["priceLow"] / item["adjRatio"],
+        priceOpen=item["priceOpen"] / item["adjRatio"],
+        priceAverage=item["priceAverage"] / item["adjRatio"],
+        priceClose=item["priceClose"] / item["adjRatio"],
+        priceBasic=item["priceBasic"] / item["adjRatio"],
+        totalVolume=item["totalVolume"] * item["adjRatio"],
+        dealVolume=item["dealVolume"] * item["adjRatio"],
+        putthroughVolume=item["putthroughVolume"] * item["adjRatio"],
+        totalValue=item["totalValue"],
+        putthroughValue=item["putthroughValue"],
+        buyForeignQuantity=item["buyForeignQuantity"] * item["adjRatio"],
+        buyForeignValue=item["buyForeignValue"],
+        sellForeignQuantity=item["sellForeignQuantity"] * item["adjRatio"],
+        sellForeignValue=item["sellForeignValue"],
+        buyCount=item["buyCount"],
+        buyQuantity=item["buyQuantity"] * item["adjRatio"],
+        sellCount=item["sellCount"],
+        sellQuantity=item["sellQuantity"] * item["adjRatio"],
+        adjRatio=item["adjRatio"],
+        currentForeignRoom=item["currentForeignRoom"],
+        propTradingNetDealValue=item.get("propTradingNetDealValue"),
+        propTradingNetPTValue=item.get("propTradingNetPTValue"),
+        propTradingNetValue=item.get("propTradingNetValue"),
+        unit=item["unit"],
+    )
+
+
 def load_stock_history(
     symbol: str,
     date_begin: Union[str, datetime],
@@ -84,37 +121,7 @@ def load_stock_history(
                     continue
                 if dt_end is not None and rec_dt > dt_end:
                     continue
-                records.append(
-                    StockRecord(
-                        date=rec_dt,
-                        symbol=item["symbol"],
-                        priceHigh=item["priceHigh"] / item["adjRatio"],
-                        priceLow=item["priceLow"] / item["adjRatio"],
-                        priceOpen=item["priceOpen"] / item["adjRatio"],
-                        priceAverage=item["priceAverage"] / item["adjRatio"],
-                        priceClose=item["priceClose"] / item["adjRatio"],
-                        priceBasic=item["priceBasic"] / item["adjRatio"],
-                        totalVolume=item["totalVolume"],
-                        dealVolume=item["dealVolume"],
-                        putthroughVolume=item["putthroughVolume"],
-                        totalValue=item["totalValue"],
-                        putthroughValue=item["putthroughValue"],
-                        buyForeignQuantity=item["buyForeignQuantity"],
-                        buyForeignValue=item["buyForeignValue"],
-                        sellForeignQuantity=item["sellForeignQuantity"],
-                        sellForeignValue=item["sellForeignValue"],
-                        buyCount=item["buyCount"],
-                        buyQuantity=item["buyQuantity"],
-                        sellCount=item["sellCount"],
-                        sellQuantity=item["sellQuantity"],
-                        adjRatio=item["adjRatio"],
-                        currentForeignRoom=item["currentForeignRoom"],
-                        propTradingNetDealValue=item.get("propTradingNetDealValue"),
-                        propTradingNetPTValue=item.get("propTradingNetPTValue"),
-                        propTradingNetValue=item.get("propTradingNetValue"),
-                        unit=item["unit"],
-                    )
-                )
+                records.append(record_from_json(item))
     records.sort(key=lambda r: r.date)
     return records
 

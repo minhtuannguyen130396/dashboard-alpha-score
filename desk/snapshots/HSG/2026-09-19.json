@@ -1,0 +1,39 @@
+{
+ "symbol": "HSG",
+ "snapshot_date": "2026-09-19",
+ "composed": 10900.0,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 9859.54825561037,
+   "weight_pct": 40.24487752838329
+  },
+  {
+   "name": "P/E",
+   "price": 7571.776852883295,
+   "weight_pct": 12.581143503983059
+  },
+  {
+   "name": "P/B",
+   "price": 9260.142700774371,
+   "weight_pct": 25.534449276120867
+  },
+  {
+   "name": "Graham 1",
+   "price": 17307.230126392176,
+   "weight_pct": 6.535250365781916
+  },
+  {
+   "name": "Graham 2",
+   "price": 16507.287235140342,
+   "weight_pct": 7.467577684399712
+  },
+  {
+   "name": "Graham 3",
+   "price": 16383.107104843572,
+   "weight_pct": 7.636701641331148
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 89.3
+}

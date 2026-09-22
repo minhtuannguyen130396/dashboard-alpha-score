@@ -1,0 +1,39 @@
+{
+ "symbol": "VHM",
+ "snapshot_date": "2026-09-19",
+ "composed": 106772.98937127131,
+ "models": [
+  {
+   "name": "DCF",
+   "price": 79440.13400621233,
+   "weight_pct": 87.40239809371701
+  },
+  {
+   "name": "P/E",
+   "price": 379849.6779132556,
+   "weight_pct": 1.834393830933003
+  },
+  {
+   "name": "P/B",
+   "price": 225446.50596779992,
+   "weight_pct": 3.692332288066664
+  },
+  {
+   "name": "Graham 1",
+   "price": 1181704.8486580232,
+   "weight_pct": 0.5076943217747889
+  },
+  {
+   "name": "Graham 2",
+   "price": 1254004.9893006785,
+   "weight_pct": 0.47661369874581244
+  },
+  {
+   "name": "Graham 3",
+   "price": 165479.56775600568,
+   "weight_pct": 6.086567766762741
+  }
+ ],
+ "stale_days": null,
+ "spread_pct": 1100.1
+}
